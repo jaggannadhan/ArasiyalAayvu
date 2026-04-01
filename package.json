@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "__NEXT_PRIVATE_STANDALONE_CONFIG= next dev",
+    "dev:hot": "__NEXT_PRIVATE_STANDALONE_CONFIG= CHOKIDAR_USEPOLLING=1 WATCHPACK_POLLING=true next dev",
     "build": "__NEXT_PRIVATE_STANDALONE_CONFIG= next build",
     "start": "__NEXT_PRIVATE_STANDALONE_CONFIG= next start",
     "lint": "eslint"
