@@ -1,0 +1,12 @@
+requests
+beautifulsoup4
+lxml
+pydantic
+google-cloud-firestore
+google-cloud-storage
+tqdm
+python-dotenv
+tenacity
+tabula-py
+pdfminer.six
+pdfplumber

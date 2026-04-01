@@ -1,0 +1,167 @@
+[
+  {
+    "leader_id": "periyar_ev_ramasamy",
+    "full_name": "Erode Venkatappa Ramasamy (Periyar)",
+    "tamil_name": "பெரியார் ஈ. வெ. இராமசாமி",
+    "born": "1879-09-17",
+    "died": "1973-12-24",
+    "party_affiliations": [
+      {"party_id": "inc", "from": "1919", "to": "1925", "role": "Member"},
+      {"party_id": "justice_party", "from": "1925", "to": "1944", "role": "President"},
+      {"party_id": "dk", "from": "1944", "to": "1973", "role": "Founder-President"}
+    ],
+    "chief_minister_tenures": [],
+    "ideological_position": "Rationalism, Atheism, Anti-caste, Dravidian self-respect",
+    "notable_achievements": [
+      "Founded Self-Respect Movement (1925)",
+      "Founded Dravidar Kazhagam (1944)",
+      "Led anti-Hindi agitation (1937-40)",
+      "Advocated widow remarriage and inter-caste marriage"
+    ],
+    "source_urls": ["https://tamildigitallibrary.in", "https://www.thehindu.com/archives"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "cn_annadurai",
+    "full_name": "Conjeevaram Natarajan Annadurai (Anna)",
+    "tamil_name": "அண்ணாதுரை சி. என்.",
+    "born": "1909-09-15",
+    "died": "1969-02-03",
+    "party_affiliations": [
+      {"party_id": "dk", "from": "1935", "to": "1949", "role": "Senior Leader"},
+      {"party_id": "dmk", "from": "1949", "to": "1969", "role": "Founder-President"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "1967-03-06", "to": "1969-02-03", "term_number": 1}
+    ],
+    "ideological_position": "Dravidian nationalism, Tamil federalism, Social democracy",
+    "notable_achievements": [
+      "Founded DMK (1949)",
+      "First non-Congress CM of Tamil Nadu",
+      "Ended Congress dominance in Tamil Nadu",
+      "Renamed Madras State to Tamil Nadu (1969)"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in", "https://tamildigitallibrary.in"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "m_karunanidhi",
+    "full_name": "Muthuvel Karunanidhi (Kalaignar)",
+    "tamil_name": "கலைஞர் மு. கருணாநிதி",
+    "born": "1924-06-03",
+    "died": "2018-08-07",
+    "party_affiliations": [
+      {"party_id": "dmk", "from": "1949", "to": "2018", "role": "President (1969-2018)"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "1969-03-10", "to": "1971-01-15", "term_number": 1},
+      {"from": "1971-03-15", "to": "1976-01-31", "term_number": 2},
+      {"from": "1989-01-27", "to": "1991-01-30", "term_number": 3},
+      {"from": "1996-05-13", "to": "2001-05-14", "term_number": 4},
+      {"from": "2006-05-13", "to": "2011-05-16", "term_number": 5}
+    ],
+    "ideological_position": "Dravidian nationalism, Social democracy, Tamil identity, Atheism",
+    "notable_achievements": [
+      "Served as TN CM 5 times — longest-serving CM",
+      "Mid-day meal scheme expansion",
+      "Kalaignar Insurance Scheme",
+      "Promoted Tamil language and literature globally",
+      "Authored over 100 books, plays and screenplays"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in", "https://www.thehindu.com/archives"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "mgr_ramachandran",
+    "full_name": "Marudur Gopalan Ramachandran (MGR)",
+    "tamil_name": "எம். ஜி. ராமசந்திரன்",
+    "born": "1917-01-17",
+    "died": "1987-12-24",
+    "party_affiliations": [
+      {"party_id": "dmk", "from": "1953", "to": "1972", "role": "Treasurer, Senior Leader"},
+      {"party_id": "aiadmk", "from": "1972", "to": "1987", "role": "Founder-President"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "1977-06-30", "to": "1987-12-24", "term_number": 1}
+    ],
+    "ideological_position": "Populist welfare, Tamil pride, Mass cinema-politics",
+    "notable_achievements": [
+      "Founded AIADMK (1972)",
+      "Nutritious Meal Programme for school children (1982)",
+      "Served TN as CM for 10 years",
+      "First film actor to become Chief Minister of an Indian state"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "j_jayalalithaa",
+    "full_name": "Jayaram Jayalalithaa (Amma)",
+    "tamil_name": "ஜெ. ஜெயலலிதா",
+    "born": "1948-02-24",
+    "died": "2016-12-05",
+    "party_affiliations": [
+      {"party_id": "aiadmk", "from": "1982", "to": "2016", "role": "General Secretary, CM"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "1991-06-24", "to": "1996-05-13", "term_number": 1},
+      {"from": "2001-05-14", "to": "2006-05-13", "term_number": 2},
+      {"from": "2011-05-16", "to": "2016-05-23", "term_number": 3},
+      {"from": "2016-05-23", "to": "2016-12-05", "term_number": 4}
+    ],
+    "ideological_position": "Populist welfare, AIADMK nationalism, Tamil identity",
+    "notable_achievements": [
+      "Amma Canteen scheme (subsidised meals)",
+      "Amma Water (subsidised water)",
+      "Tamil Nadu's first woman CM",
+      "Served as CM 4 times",
+      "TANGEDCO power sector reforms"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "k_kamaraj",
+    "full_name": "Kumaraswami Kamaraj (Perunthalaivar)",
+    "tamil_name": "கா. காமராஜர்",
+    "born": "1903-07-15",
+    "died": "1975-10-02",
+    "party_affiliations": [
+      {"party_id": "inc", "from": "1920", "to": "1975", "role": "President of INC (1964-67), TN CM"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "1954-04-13", "to": "1963-10-02", "term_number": 1}
+    ],
+    "ideological_position": "Secular nationalism, Gandhian socialism, Mass education",
+    "notable_achievements": [
+      "Mid-day meal scheme (original 1956 launch)",
+      "Free education for children",
+      "Tamil Nadu's longest-serving Congress CM",
+      "Facilitated Nehru, Shastri and Indira Gandhi as PMs — called 'Kingmaker'"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in", "https://tamildigitallibrary.in"],
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "leader_id": "mk_stalin",
+    "full_name": "Muthuvel Karunanidhi Stalin",
+    "tamil_name": "மு. க. ஸ்டாலின்",
+    "born": "1953-03-01",
+    "died": null,
+    "party_affiliations": [
+      {"party_id": "dmk", "from": "1973", "to": null, "role": "President (2018-present)"}
+    ],
+    "chief_minister_tenures": [
+      {"from": "2021-05-07", "to": null, "term_number": 1}
+    ],
+    "ideological_position": "Dravidian nationalism, Social democracy, Secular federalism",
+    "notable_achievements": [
+      "DMK's first election victory as party president (2021)",
+      "Kalaignar Kanavu Illam housing scheme",
+      "Naan Mudhalvan skill development initiative",
+      "Meenakshi Ammal scheme for women self-help groups"
+    ],
+    "source_urls": ["https://www.assembly.tn.gov.in"],
+    "ground_truth_confidence": "HIGH"
+  }
+]

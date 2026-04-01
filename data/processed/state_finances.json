@@ -1,0 +1,592 @@
+[
+  {
+    "fiscal_year": "2025-26",
+    "budget_type": "Full",
+    "summary": {
+      "gsdp_projected_cr": 3567818.0,
+      "gsdp_growth_pct": 15.0,
+      "net_expenditure_cr": 439293.0,
+      "net_receipts_cr": 332325.0,
+      "total_borrowings_cr": 152040.0,
+      "debt_repayment_cr": 47040.0,
+      "fiscal_deficit_cr": 106968.0,
+      "fiscal_deficit_pct_gsdp": 3.0,
+      "revenue_deficit_cr": 41635.0,
+      "revenue_deficit_pct_gsdp": 1.2,
+      "primary_deficit_cr": 37855.0,
+      "primary_deficit_pct_gsdp": 1.1
+    },
+    "receipts": {
+      "revenue_receipts_cr": 331569.0,
+      "sotr_cr": 220895.0,
+      "own_non_tax_revenue_cr": 28819.0,
+      "central_tax_devolution_cr": 58022.0,
+      "grants_from_centre_cr": 23834.0,
+      "devolution_pct_revenue": 17.0
+    },
+    "committed_expenditure": {
+      "salaries_cr": 91726.0,
+      "pensions_cr": 46214.0,
+      "interest_payments_cr": 69114.0,
+      "committed_total_cr": 207054.0,
+      "committed_pct_revenue_receipts": null,
+      "interest_pct_revenue_receipts": 21.0
+    },
+    "debt_context": {
+      "outstanding_debt_cr": 83156.0,
+      "debt_to_gsdp_pct": 3.0,
+      "interest_payments_cr": 69114.0,
+      "interest_as_pct_revenue": 21.0,
+      "tangedco_grants_total_cr": null
+    },
+    "sector_expenditure": [
+      {
+        "sector": "Transport",
+        "sector_slug": "transport",
+        "actuals_2023_24_cr": 20433.0,
+        "be_2024_25_cr": 23828.0,
+        "re_2024_25_cr": 21991.0,
+        "be_2025_26_cr": 27971.0,
+        "pct_change_re_to_be": 27.0
+      },
+      {
+        "sector": "Energy",
+        "sector_slug": "energy",
+        "actuals_2023_24_cr": 24166.0,
+        "be_2024_25_cr": 21606.0,
+        "re_2024_25_cr": 22970.0,
+        "be_2025_26_cr": 20354.0,
+        "pct_change_re_to_be": -11.0
+      },
+      {
+        "sector": "Police",
+        "sector_slug": "police",
+        "actuals_2023_24_cr": 10490.0,
+        "be_2024_25_cr": 11965.0,
+        "re_2024_25_cr": 11302.0,
+        "be_2025_26_cr": 12714.0,
+        "pct_change_re_to_be": 12.0
+      }
+    ],
+    "sources": [
+      {
+        "title": "PRS Legislative Research — TN Budget Analysis 2025-26",
+        "url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2025/TN_Budget_Analysis_2025-26.pdf",
+        "pdf_checksum": "45477a25c9f82959f25e182fdab357e3de6b15befe4118bd62e7394c85ffeebb",
+        "accessed_date": "2026-03-31"
+      }
+    ],
+    "ground_truth_confidence": "HIGH",
+    "debt_why": [
+      {
+        "category": "Committed Expenditure Growth",
+        "label": "Salaries + pension + interest = 62% of revenue receipts",
+        "amount_cr": 207054,
+        "year_committed": "2025-26",
+        "notes": "Committed expenditure (Rs 2,07,054 crore) consumes 62% of estimated revenue receipts (Rs 3,31,569 crore). Salaries: 28%, Pension: 14%, Interest: 21%. This structural rigidity limits capital investment flexibility.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      },
+      {
+        "category": "Debt Projection",
+        "label": "Outstanding debt projected at Rs 10.71 lakh crore by 2026-27",
+        "amount_cr": 1071000,
+        "year_committed": "2026-27",
+        "notes": "Outstanding liabilities projected to reach Rs 10.71 lakh crore (26.12% of GSDP) in 2026-27 as per TN Interim Budget. Remains within FRBM ceiling. Net borrowings for 2025-26: Rs 1,05,000 crore.",
+        "source_url": "https://finance.tn.gov.in"
+      }
+    ],
+    "viz_metrics": {
+      "interest_as_pct_revenue": 20.84,
+      "committed_as_pct_revenue": 62.45,
+      "discretionary_revenue_cr": 124515.0,
+      "discretionary_as_pct_revenue": 37.55,
+      "own_resources_pct_revenue": 75.31,
+      "central_dependency_pct_revenue": 24.69,
+      "devolution_as_pct_revenue": 17.5,
+      "fiscal_deficit_pct_gsdp": 3.0,
+      "revenue_deficit_pct_gsdp": 1.2,
+      "interest_as_pct_expenditure": 15.73,
+      "devolution_gap_note": "TN's share of central taxes declined from ~7.9% (pre-2010) to 4.079% (15th Finance Commission). Estimated cumulative loss: >Rs 3 lakh crore (2015-2025)."
+    }
+  },
+  {
+    "fiscal_year": "2024-25",
+    "budget_type": "Full",
+    "summary": {
+      "gsdp_projected_cr": 3155096.0,
+      "gsdp_growth_pct": 16.0,
+      "net_expenditure_cr": 412504.0,
+      "net_receipts_cr": 303814.0,
+      "total_borrowings_cr": null,
+      "debt_repayment_cr": null,
+      "fiscal_deficit_cr": 108690.0,
+      "fiscal_deficit_pct_gsdp": 3.4,
+      "revenue_deficit_cr": 49279.0,
+      "revenue_deficit_pct_gsdp": 1.6,
+      "primary_deficit_cr": 46234.0,
+      "primary_deficit_pct_gsdp": 1.5
+    },
+    "receipts": {
+      "revenue_receipts_cr": 299010.0,
+      "sotr_cr": 195173.0,
+      "own_non_tax_revenue_cr": 30728.0,
+      "central_tax_devolution_cr": 49755.0,
+      "grants_from_centre_cr": 23354.0,
+      "devolution_pct_revenue": 17.0
+    },
+    "committed_expenditure": {
+      "salaries_cr": 84932.0,
+      "pensions_cr": 42509.0,
+      "interest_payments_cr": null,
+      "committed_total_cr": null,
+      "committed_pct_revenue_receipts": 64.0,
+      "interest_pct_revenue_receipts": 21.0
+    },
+    "debt_context": {
+      "outstanding_debt_cr": null,
+      "debt_to_gsdp_pct": 26.4,
+      "interest_payments_cr": null,
+      "interest_as_pct_revenue": 21.0,
+      "tangedco_grants_total_cr": null
+    },
+    "sector_expenditure": [
+      {
+        "sector": "Transport",
+        "sector_slug": "transport",
+        "actuals_2023_24_cr": 19807.0,
+        "be_2024_25_cr": 22306.0,
+        "re_2024_25_cr": 21250.0,
+        "be_2025_26_cr": 23828.0,
+        "pct_change_re_to_be": 12.0
+      },
+      {
+        "sector": "Rural Development",
+        "sector_slug": "rural_development",
+        "actuals_2023_24_cr": 10527.0,
+        "be_2024_25_cr": 9413.0,
+        "re_2024_25_cr": 9614.0,
+        "be_2025_26_cr": 12043.0,
+        "pct_change_re_to_be": 25.0
+      },
+      {
+        "sector": "Energy",
+        "sector_slug": "energy",
+        "actuals_2023_24_cr": 17642.0,
+        "be_2024_25_cr": 8426.0,
+        "re_2024_25_cr": 24176.0,
+        "be_2025_26_cr": 21606.0,
+        "pct_change_re_to_be": -11.0
+      },
+      {
+        "sector": "Police",
+        "sector_slug": "police",
+        "actuals_2023_24_cr": 9683.0,
+        "be_2024_25_cr": 10368.0,
+        "re_2024_25_cr": 10731.0,
+        "be_2025_26_cr": 11965.0,
+        "pct_change_re_to_be": 11.0
+      }
+    ],
+    "sources": [
+      {
+        "title": "PRS Legislative Research — TN Budget Analysis 2024-25",
+        "url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2024/Tamil_Nadu_Budget_Analysis_2024-25.pdf",
+        "pdf_checksum": "ccbd0e02f68821e9a8edb6e5a3502778a93f3a57a77acb1b05f968cde701c5af",
+        "accessed_date": "2026-03-31"
+      }
+    ],
+    "ground_truth_confidence": "HIGH",
+    "debt_why": [
+      {
+        "category": "Central Devolution Gap",
+        "label": "TN share of central taxes: 4.079% (15th FC) vs historical 7.9%",
+        "amount_cr": 300000,
+        "year_committed": "2015-16",
+        "notes": "Cumulative loss estimated at over Rs 3 lakh crore (2015-2025). TN's share declined through 13th FC (4.969%), 14th FC (4.023%), 15th FC (4.079%). At original 7.9% share, TN would have received ~Rs 3 lakh crore more in central transfers.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25"
+      },
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO cumulative grants 2019-2025",
+        "amount_cr": 83156,
+        "year_committed": "2019-20",
+        "notes": "Total TANGEDCO grants from state between 2019-20 and 2025-26 estimated at Rs 83,156 crore.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      }
+    ],
+    "viz_metrics": {
+      "interest_as_pct_revenue": 0.0,
+      "committed_as_pct_revenue": 0.0,
+      "discretionary_revenue_cr": 299010.0,
+      "discretionary_as_pct_revenue": 100.0,
+      "own_resources_pct_revenue": 75.55,
+      "central_dependency_pct_revenue": 24.45,
+      "devolution_as_pct_revenue": 16.64,
+      "fiscal_deficit_pct_gsdp": 3.4,
+      "revenue_deficit_pct_gsdp": 1.6,
+      "interest_as_pct_expenditure": 0.0,
+      "devolution_gap_note": "TN's share of central taxes declined from ~7.9% (pre-2010) to 4.079% (15th Finance Commission). Estimated cumulative loss: >Rs 3 lakh crore (2015-2025)."
+    }
+  },
+  {
+    "fiscal_year": "2023-24",
+    "budget_type": "Full",
+    "summary": {
+      "gsdp_projected_cr": 365321.0,
+      "gsdp_growth_pct": 0.1,
+      "net_expenditure_cr": 365321.0,
+      "net_receipts_cr": 273246.0,
+      "total_borrowings_cr": null,
+      "debt_repayment_cr": 43826.0,
+      "fiscal_deficit_cr": null,
+      "fiscal_deficit_pct_gsdp": 3.25,
+      "revenue_deficit_cr": 37540.0,
+      "revenue_deficit_pct_gsdp": 1.33,
+      "primary_deficit_cr": 37399.0,
+      "primary_deficit_pct_gsdp": 1.32
+    },
+    "receipts": {
+      "revenue_receipts_cr": 270515.0,
+      "sotr_cr": 181182.0,
+      "own_non_tax_revenue_cr": 20224.0,
+      "central_tax_devolution_cr": 41665.0,
+      "grants_from_centre_cr": 27445.0,
+      "devolution_pct_revenue": 16.0
+    },
+    "committed_expenditure": {
+      "salaries_cr": 77240.0,
+      "pensions_cr": 41232.0,
+      "interest_payments_cr": null,
+      "committed_total_cr": null,
+      "committed_pct_revenue_receipts": null,
+      "interest_pct_revenue_receipts": null
+    },
+    "debt_context": {
+      "outstanding_debt_cr": 806.0,
+      "debt_to_gsdp_pct": 1.3,
+      "interest_payments_cr": null,
+      "interest_as_pct_revenue": null,
+      "tangedco_grants_total_cr": null
+    },
+    "sector_expenditure": [
+      {
+        "sector": "Rural Development",
+        "sector_slug": "rural_development",
+        "actuals_2023_24_cr": 8817.0,
+        "be_2024_25_cr": 9562.0,
+        "re_2024_25_cr": 9713.0,
+        "be_2025_26_cr": 9413.0,
+        "pct_change_re_to_be": -3.0
+      },
+      {
+        "sector": "Energy",
+        "sector_slug": "energy",
+        "actuals_2023_24_cr": 15584.0,
+        "be_2024_25_cr": 17433.0,
+        "re_2024_25_cr": 17830.0,
+        "be_2025_26_cr": 8426.0,
+        "pct_change_re_to_be": -53.0
+      },
+      {
+        "sector": "Police",
+        "sector_slug": "police",
+        "actuals_2023_24_cr": 8051.0,
+        "be_2024_25_cr": 9857.0,
+        "re_2024_25_cr": 9869.0,
+        "be_2025_26_cr": 10368.0,
+        "pct_change_re_to_be": 5.0
+      }
+    ],
+    "sources": [
+      {
+        "title": "PRS Legislative Research — TN Budget Analysis 2023-24",
+        "url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2023/TN_Budget_Analysis_2023-24.pdf",
+        "pdf_checksum": "aecb058e99bdbbda844dff421f89d7aee03363da231dc553c0e0d0959379e42d",
+        "accessed_date": "2026-03-31"
+      }
+    ],
+    "ground_truth_confidence": "HIGH",
+    "debt_why": [
+      {
+        "category": "Infrastructure",
+        "label": "Roads and bridges capital outlay spike",
+        "amount_cr": 18456,
+        "year_committed": "2025-26",
+        "notes": "Rs 18,456 crore allocated for capital outlay on roads in 2025-26 BE — part of multi-year highway programme.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      },
+      {
+        "category": "Energy Sector",
+        "label": "Energy capital outlay — 3,973% increase",
+        "amount_cr": 5068,
+        "year_committed": "2025-26",
+        "notes": "Energy sector capital outlay jumped from Rs 124 crore (RE 2024-25) to Rs 5,068 crore (BE 2025-26) — a 3,973% increase. Represents state investment in power corporation infrastructure.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      }
+    ],
+    "viz_metrics": {
+      "interest_as_pct_revenue": 0.0,
+      "committed_as_pct_revenue": 0.0,
+      "discretionary_revenue_cr": 270515.0,
+      "discretionary_as_pct_revenue": 100.0,
+      "own_resources_pct_revenue": 74.45,
+      "central_dependency_pct_revenue": 25.55,
+      "devolution_as_pct_revenue": 15.4,
+      "fiscal_deficit_pct_gsdp": 3.25,
+      "revenue_deficit_pct_gsdp": 1.33,
+      "interest_as_pct_expenditure": 0.0,
+      "devolution_gap_note": "TN's share of central taxes declined from ~7.9% (pre-2010) to 4.079% (15th Finance Commission). Estimated cumulative loss: >Rs 3 lakh crore (2015-2025)."
+    }
+  },
+  {
+    "fiscal_year": "2022-23",
+    "budget_type": "Full",
+    "summary": {
+      "gsdp_projected_cr": 2484807.0,
+      "gsdp_growth_pct": 14.0,
+      "net_expenditure_cr": 333251.0,
+      "net_receipts_cr": 236638.0,
+      "total_borrowings_cr": null,
+      "debt_repayment_cr": 27128.0,
+      "fiscal_deficit_cr": null,
+      "fiscal_deficit_pct_gsdp": 3.63,
+      "revenue_deficit_cr": 52781.0,
+      "revenue_deficit_pct_gsdp": 2.12,
+      "primary_deficit_cr": 43387.0,
+      "primary_deficit_pct_gsdp": 1.75
+    },
+    "receipts": {
+      "revenue_receipts_cr": 231407.0,
+      "sotr_cr": 142800.0,
+      "own_non_tax_revenue_cr": 15537.0,
+      "central_tax_devolution_cr": 33311.0,
+      "grants_from_centre_cr": 39759.0,
+      "devolution_pct_revenue": null
+    },
+    "committed_expenditure": {
+      "salaries_cr": 71567.0,
+      "pensions_cr": null,
+      "interest_payments_cr": null,
+      "committed_total_cr": null,
+      "committed_pct_revenue_receipts": null,
+      "interest_pct_revenue_receipts": 20.0
+    },
+    "debt_context": {
+      "outstanding_debt_cr": 62326.0,
+      "debt_to_gsdp_pct": 1.95,
+      "interest_payments_cr": null,
+      "interest_as_pct_revenue": 20.0,
+      "tangedco_grants_total_cr": null
+    },
+    "sector_expenditure": [
+      {
+        "sector": "Transport",
+        "sector_slug": "transport",
+        "actuals_2023_24_cr": 15116.0,
+        "be_2024_25_cr": 18156.0,
+        "re_2024_25_cr": 15842.0,
+        "be_2025_26_cr": 20059.0,
+        "pct_change_re_to_be": 27.0
+      },
+      {
+        "sector": "Rural Development",
+        "sector_slug": "rural_development",
+        "actuals_2023_24_cr": 5122.0,
+        "be_2024_25_cr": 8965.0,
+        "re_2024_25_cr": 8876.0,
+        "be_2025_26_cr": 9562.0,
+        "pct_change_re_to_be": 8.0
+      },
+      {
+        "sector": "Urban Development",
+        "sector_slug": "urban_development",
+        "actuals_2023_24_cr": 5702.0,
+        "be_2024_25_cr": 8803.0,
+        "re_2024_25_cr": 9455.0,
+        "be_2025_26_cr": 10396.0,
+        "pct_change_re_to_be": 10.0
+      },
+      {
+        "sector": "Energy",
+        "sector_slug": "energy",
+        "actuals_2023_24_cr": 16577.0,
+        "be_2024_25_cr": 16020.0,
+        "re_2024_25_cr": 15626.0,
+        "be_2025_26_cr": 17433.0,
+        "pct_change_re_to_be": 12.0
+      },
+      {
+        "sector": "Police",
+        "sector_slug": "police",
+        "actuals_2023_24_cr": 7710.0,
+        "be_2024_25_cr": 8601.0,
+        "re_2024_25_cr": 8493.0,
+        "be_2025_26_cr": 9857.0,
+        "pct_change_re_to_be": 16.0
+      }
+    ],
+    "sources": [
+      {
+        "title": "PRS Legislative Research — TN Budget Analysis 2022-23",
+        "url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2022/Tamil Nadu Budget Analysis 2022-23.pdf",
+        "pdf_checksum": "6ceafeec56c968b59c131a826f1b1f22ff6bae4d51ed37c84ffc7eaa80a9a4d5",
+        "accessed_date": "2026-03-31"
+      }
+    ],
+    "ground_truth_confidence": "HIGH",
+    "debt_why": [
+      {
+        "category": "Infrastructure",
+        "label": "Chennai Metro Rail Phase-II — state share",
+        "amount_cr": 63246,
+        "year_committed": "2022-23",
+        "notes": "CMRL Phase II approved at total project cost of ~Rs 63,246 crore. State provides equity and guarantees. Loan component from JICA and central govt.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23"
+      },
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO ongoing grants",
+        "amount_cr": 15000,
+        "year_committed": "2022-23",
+        "notes": "Annual grants to bridge TANGEDCO revenue gap. Cumulative grants 2019-26 estimated at Rs 83,156 crore.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23"
+      },
+      {
+        "category": "Revenue Deficit Financing",
+        "label": "Revenue deficit borrowing (1.7% of GSDP)",
+        "amount_cr": 45121,
+        "year_committed": "2023-24",
+        "notes": "State borrows to cover revenue expenditure that exceeds revenue receipts — structurally driven by committed expenditure growth.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24"
+      }
+    ],
+    "viz_metrics": {
+      "interest_as_pct_revenue": 0.0,
+      "committed_as_pct_revenue": 0.0,
+      "discretionary_revenue_cr": 231407.0,
+      "discretionary_as_pct_revenue": 100.0,
+      "own_resources_pct_revenue": 68.42,
+      "central_dependency_pct_revenue": 31.58,
+      "devolution_as_pct_revenue": 14.39,
+      "fiscal_deficit_pct_gsdp": 3.63,
+      "revenue_deficit_pct_gsdp": 2.12,
+      "interest_as_pct_expenditure": 0.0,
+      "devolution_gap_note": "TN's share of central taxes declined from ~7.9% (pre-2010) to 4.079% (15th Finance Commission). Estimated cumulative loss: >Rs 3 lakh crore (2015-2025)."
+    }
+  },
+  {
+    "fiscal_year": "2021-22",
+    "budget_type": "Full",
+    "summary": {
+      "gsdp_projected_cr": null,
+      "gsdp_growth_pct": null,
+      "net_expenditure_cr": null,
+      "net_receipts_cr": null,
+      "total_borrowings_cr": null,
+      "debt_repayment_cr": null,
+      "fiscal_deficit_cr": null,
+      "fiscal_deficit_pct_gsdp": null,
+      "revenue_deficit_cr": 58693.0,
+      "revenue_deficit_pct_gsdp": null,
+      "primary_deficit_cr": 57697.0,
+      "primary_deficit_pct_gsdp": null
+    },
+    "receipts": {
+      "revenue_receipts_cr": 202496.0,
+      "sotr_cr": 126644.0,
+      "own_non_tax_revenue_cr": 14139.0,
+      "central_tax_devolution_cr": 27148.0,
+      "grants_from_centre_cr": null,
+      "devolution_pct_revenue": null
+    },
+    "committed_expenditure": {
+      "salaries_cr": 63919.0,
+      "pensions_cr": 28251.0,
+      "interest_payments_cr": null,
+      "committed_total_cr": null,
+      "committed_pct_revenue_receipts": null,
+      "interest_pct_revenue_receipts": 21.0
+    },
+    "debt_context": {
+      "outstanding_debt_cr": 2204.0,
+      "debt_to_gsdp_pct": 27.1,
+      "interest_payments_cr": null,
+      "interest_as_pct_revenue": 21.0,
+      "tangedco_grants_total_cr": null
+    },
+    "sector_expenditure": [
+      {
+        "sector": "Transport",
+        "sector_slug": "transport",
+        "actuals_2023_24_cr": 11660.0,
+        "be_2024_25_cr": 14745.0,
+        "re_2024_25_cr": 15238.0,
+        "be_2025_26_cr": 18156.0,
+        "pct_change_re_to_be": 25.0
+      },
+      {
+        "sector": "Energy",
+        "sector_slug": "energy",
+        "actuals_2023_24_cr": 9497.0,
+        "be_2024_25_cr": 13118.0,
+        "re_2024_25_cr": 17042.0,
+        "be_2025_26_cr": 16020.0,
+        "pct_change_re_to_be": 30.0
+      },
+      {
+        "sector": "Police",
+        "sector_slug": "police",
+        "actuals_2023_24_cr": 7930.0,
+        "be_2024_25_cr": 8517.0,
+        "re_2024_25_cr": 8091.0,
+        "be_2025_26_cr": 8601.0,
+        "pct_change_re_to_be": 4.0
+      }
+    ],
+    "sources": [
+      {
+        "title": "PRS Legislative Research — TN Budget Analysis 2021-22",
+        "url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2021/Tamil Nadu Budget Analysis 2021-22.pdf",
+        "pdf_checksum": "e62e3dda036dace9d44e7104822e931528bd303e9151abeacb6b5b0b27b54bbd",
+        "accessed_date": "2026-03-31"
+      }
+    ],
+    "ground_truth_confidence": "HIGH",
+    "debt_why": [
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO accumulated losses absorption",
+        "amount_cr": 47000,
+        "year_committed": "2021-22",
+        "notes": "State absorbed TANGEDCO losses as UDAY grants. Per unit supply cost gap vs revenue: Rs 0.89/kWh vs state average Rs 0.47/kWh. TN White Paper (2021) called for full restructuring.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22"
+      },
+      {
+        "category": "Central Devolution Gap",
+        "label": "TN share of central taxes: 7.9% → 4.023% (14th FC)",
+        "amount_cr": 50000,
+        "year_committed": "2015-16",
+        "notes": "14th Finance Commission reduced TN's share of divisible pool from 4.969% to 4.023%. Loss compounded over 5 years (2015-20), forcing state to borrow to maintain expenditure.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22"
+      },
+      {
+        "category": "COVID-19 Relief",
+        "label": "COVID-19 relief and health expenditure",
+        "amount_cr": 12000,
+        "year_committed": "2020-21",
+        "notes": "Emergency health and welfare spending during pandemic; no central compensation for full amount.",
+        "source_url": "https://cms.tn.gov.in"
+      }
+    ],
+    "viz_metrics": {
+      "interest_as_pct_revenue": 0.0,
+      "committed_as_pct_revenue": 0.0,
+      "discretionary_revenue_cr": 202496.0,
+      "discretionary_as_pct_revenue": 100.0,
+      "own_resources_pct_revenue": 69.52,
+      "central_dependency_pct_revenue": 13.41,
+      "devolution_as_pct_revenue": 13.41,
+      "devolution_gap_note": "TN's share of central taxes declined from ~7.9% (pre-2010) to 4.079% (15th Finance Commission). Estimated cumulative loss: >Rs 3 lakh crore (2015-2025)."
+    }
+  }
+]

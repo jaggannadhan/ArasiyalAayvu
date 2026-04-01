@@ -1,0 +1,110 @@
+[
+  {
+    "scheme_id": "midday_meal_1956",
+    "scheme_name": "Mid-Day Meal Scheme",
+    "tamil_name": "மதிய உணவு திட்டம்",
+    "category": "Education",
+    "introduced_by_party": "inc",
+    "introduced_by_cm": "k_kamaraj",
+    "year_launched": 1956,
+    "government_order_ref": "G.O.Ms.No.1218 (1956)",
+    "description": "Free nutritious noon meals for school children to improve attendance and reduce malnutrition. First launched by Kamaraj, expanded nationally after MGR's 1982 revival.",
+    "impact_metrics": [
+      {"metric": "Students covered (2021)", "value": "17 million+", "source": "TN School Education Dept"},
+      {"metric": "School attendance improvement", "value": "~40% increase post-launch", "source": "UNICEF India Report"}
+    ],
+    "source_url": "https://www.assembly.tn.gov.in",
+    "press_release_url": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "scheme_id": "nutritious_meal_1982",
+    "scheme_name": "Nutritious Meal Programme (MGR Scheme)",
+    "tamil_name": "சத்துணவு திட்டம்",
+    "category": "Welfare",
+    "introduced_by_party": "aiadmk",
+    "introduced_by_cm": "mgr_ramachandran",
+    "year_launched": 1982,
+    "government_order_ref": "G.O.Ms.No.624 (1982)",
+    "description": "Extended mid-day meals to pre-school children (Noon Meal Centres), pregnant women and nursing mothers. One of MGR's flagship welfare programmes.",
+    "impact_metrics": [
+      {"metric": "Centres established", "value": "27,000+", "source": "TN Social Welfare Dept"},
+      {"metric": "Beneficiaries per day", "value": "13 million+", "source": "TN Government Press Release 1987"}
+    ],
+    "source_url": "https://tnsche.ac.in",
+    "press_release_url": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "scheme_id": "kalaignar_insurance_2009",
+    "scheme_name": "Kalaignar Kapitu Thittam (Health Insurance)",
+    "tamil_name": "கலைஞர் காப்பீட்டுத் திட்டம்",
+    "category": "Health",
+    "introduced_by_party": "dmk",
+    "introduced_by_cm": "m_karunanidhi",
+    "year_launched": 2009,
+    "government_order_ref": "G.O.Ms.No.215 Health (2009)",
+    "description": "Free health insurance up to Rs.1 lakh per family per year for BPL families. Precursor to national Ayushman Bharat scheme.",
+    "impact_metrics": [
+      {"metric": "Families covered", "value": "15.6 million", "source": "TN Health Dept 2011 Annual Report"},
+      {"metric": "Hospitalizations covered", "value": "200,000+ per year", "source": "TN Health Dept"}
+    ],
+    "source_url": "https://www.tnhealth.tn.gov.in",
+    "press_release_url": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "scheme_id": "amma_canteen_2013",
+    "scheme_name": "Amma Canteen (Unavagam)",
+    "tamil_name": "அம்மா உணவகம்",
+    "category": "Welfare",
+    "introduced_by_party": "aiadmk",
+    "introduced_by_cm": "j_jayalalithaa",
+    "year_launched": 2013,
+    "government_order_ref": "G.O.Ms.No.49 Municipal Admn (2013)",
+    "description": "Subsidised meals at Rs.1 for idli, Rs.5 for meals at government-run canteens across Tamil Nadu. One of India's largest subsidised food programmes.",
+    "impact_metrics": [
+      {"metric": "Canteen locations (peak)", "value": "400+ across TN", "source": "GCC Chennai"},
+      {"metric": "Meals served daily (peak)", "value": "200,000+", "source": "TN Govt Press Release 2014"}
+    ],
+    "source_url": "https://chennaicorporation.gov.in",
+    "press_release_url": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "scheme_id": "anti_hindi_agitation_1937",
+    "scheme_name": "Anti-Hindi Agitation",
+    "tamil_name": "இந்தி எதிர்ப்பு போராட்டம்",
+    "category": "Language Rights",
+    "introduced_by_party": "dk",
+    "introduced_by_cm": null,
+    "year_launched": 1937,
+    "government_order_ref": null,
+    "description": "Mass agitation led by Periyar against the Congress government's compulsory Hindi education order. Led to suspension of Hindi imposition in 1940 and permanently shaped Tamil political identity.",
+    "impact_metrics": [
+      {"metric": "Deaths during agitation", "value": "2", "source": "Madras Legislative Assembly Records 1938"},
+      {"metric": "Arrests", "value": "1,198", "source": "TN Archives"}
+    ],
+    "source_url": "https://tamildigitallibrary.in",
+    "press_release_url": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "scheme_id": "naan_mudhalvan_2022",
+    "scheme_name": "Naan Mudhalvan Scheme",
+    "tamil_name": "நான் முதல்வன் திட்டம்",
+    "category": "Education",
+    "introduced_by_party": "dmk",
+    "introduced_by_cm": "mk_stalin",
+    "year_launched": 2022,
+    "government_order_ref": "G.O.Ms.No.6 School Education (2022)",
+    "description": "Skill development and career guidance initiative for government school students. Provides coding, AI, and vocational training. Partners with NASSCOM and global companies.",
+    "impact_metrics": [
+      {"metric": "Students enrolled (2023)", "value": "1.5 million+", "source": "TN School Education Dept"},
+      {"metric": "Industry partners", "value": "50+", "source": "TN Govt Press Release 2023"}
+    ],
+    "source_url": "https://www.naan-mudhalvan.tn.gov.in",
+    "press_release_url": "https://cms.tn.gov.in/sites/default/files/press_release",
+    "ground_truth_confidence": "HIGH"
+  }
+]

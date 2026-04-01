@@ -1,0 +1,26 @@
+{
+  "doc_id": "tn_assembly_2021_summary",
+  "election_year": 2021,
+  "total_constituencies": 234,
+  "winners_analyzed": 224,
+  "criminal_accountability": {
+    "with_criminal_cases": 134,
+    "with_criminal_cases_pct": 60,
+    "with_serious_cases": 58,
+    "with_serious_cases_pct": 26,
+    "clean_record": 90
+  },
+  "financial_profile": {
+    "crorepati_winners": 192,
+    "crorepati_pct": 86,
+    "avg_assets_cr": 11.14,
+    "max_assets_cr": 211.21
+  },
+  "education_profile": {
+    "graduate_or_above": 142,
+    "graduate_or_above_pct": 63
+  },
+  "source_url": "https://myneta.info/tamilnadu2021/index.php?action=summary",
+  "source_title": "MyNeta — ADR Tamil Nadu 2021 Assembly Election Analysis",
+  "ground_truth_confidence": "HIGH"
+}

@@ -1,0 +1,329 @@
+{
+  "1952": [
+    {
+      "alliance_name": "INC (standalone)",
+      "anchor_party": "inc",
+      "member_parties": [
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    }
+  ],
+  "1957": [
+    {
+      "alliance_name": "INC (standalone)",
+      "anchor_party": "inc",
+      "member_parties": [
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    }
+  ],
+  "1962": [
+    {
+      "alliance_name": "INC (standalone)",
+      "anchor_party": "inc",
+      "member_parties": [
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    }
+  ],
+  "1967": [
+    {
+      "alliance_name": "DMK (standalone)",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "INC (standalone)",
+      "anchor_party": "inc",
+      "member_parties": [
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1971": [
+    {
+      "alliance_name": "DMK (standalone)",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    }
+  ],
+  "1977": [
+    {
+      "alliance_name": "AIADMK-INC front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK (standalone)",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1980": [
+    {
+      "alliance_name": "AIADMK (standalone)",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK-INC front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1984": [
+    {
+      "alliance_name": "AIADMK-INC front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "inc"
+      ],
+      "national_front_alignment": "INC-led",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK (standalone)",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1989": [
+    {
+      "alliance_name": "DMK-INC front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc"
+      ],
+      "national_front_alignment": "INC-led",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "AIADMK (standalone)",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1991": [
+    {
+      "alliance_name": "AIADMK-BJP-PMK front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "bjp",
+        "pmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK (standalone)",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "1996": [
+    {
+      "alliance_name": "DMK-TMC front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "tmc"
+      ],
+      "national_front_alignment": "Third Front",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "AIADMK-INC front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "inc"
+      ],
+      "national_front_alignment": "INC-led",
+      "outcome": "Lost"
+    }
+  ],
+  "2001": [
+    {
+      "alliance_name": "AIADMK-INC-PMK-MDMK front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "inc",
+        "pmk",
+        "mdmk"
+      ],
+      "national_front_alignment": "UPA",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK-BJP front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "bjp"
+      ],
+      "national_front_alignment": "NDA",
+      "outcome": "Lost"
+    }
+  ],
+  "2006": [
+    {
+      "alliance_name": "DMK-INC-PMK-Left front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc",
+        "pmk",
+        "cpi",
+        "cpim",
+        "mdmk",
+        "vck"
+      ],
+      "national_front_alignment": "UPA",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "AIADMK-DMDK front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "dmdk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Lost"
+    }
+  ],
+  "2011": [
+    {
+      "alliance_name": "AIADMK-DMDK-PMK-Left front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "dmdk",
+        "pmk",
+        "mdmk",
+        "vck",
+        "cpi",
+        "cpim"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK-INC-BJPfront",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc",
+        "bjp",
+        "pmk"
+      ],
+      "national_front_alignment": "UPA",
+      "outcome": "Lost"
+    }
+  ],
+  "2016": [
+    {
+      "alliance_name": "AIADMK (standalone)",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk"
+      ],
+      "national_front_alignment": null,
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "DMK-INC-Left front",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc",
+        "cpi",
+        "cpim",
+        "mdmk",
+        "vck"
+      ],
+      "national_front_alignment": "UPA",
+      "outcome": "Lost"
+    }
+  ],
+  "2021": [
+    {
+      "alliance_name": "Secular Progressive Alliance",
+      "anchor_party": "dmk",
+      "member_parties": [
+        "dmk",
+        "inc",
+        "cpi",
+        "cpim",
+        "vck",
+        "mdmk",
+        "mmk",
+        "iuml"
+      ],
+      "national_front_alignment": "UPA",
+      "outcome": "Won"
+    },
+    {
+      "alliance_name": "AIADMK-BJP-PMK front",
+      "anchor_party": "aiadmk",
+      "member_parties": [
+        "aiadmk",
+        "bjp",
+        "pmk",
+        "dmdk"
+      ],
+      "national_front_alignment": "NDA",
+      "outcome": "Lost"
+    }
+  ]
+}

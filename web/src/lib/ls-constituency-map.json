@@ -1,0 +1,541 @@
+{
+  "thiruvallur": {
+    "name": "Thiruvallur",
+    "name_ta": "திருவள்ளூர்",
+    "ls_id": 1,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "gummidipoondi",
+      "ponneri_sc",
+      "tiruttani",
+      "thiruvallur",
+      "avadi",
+      "ambattur"
+    ]
+  },
+  "chennai_north": {
+    "name": "Chennai North",
+    "name_ta": "சென்னை வடக்கு",
+    "ls_id": 2,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "thiruvottiyur",
+      "madhavaram",
+      "madhuravoyal",
+      "perambur",
+      "kolathur",
+      "villivakkam"
+    ]
+  },
+  "chennai_south": {
+    "name": "Chennai South",
+    "name_ta": "சென்னை தெற்கு",
+    "ls_id": 3,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "royapuram",
+      "harbour",
+      "egmore_sc",
+      "chepauk_thiruvallikeni",
+      "thousand_lights",
+      "anna_nagar"
+    ]
+  },
+  "chennai_central": {
+    "name": "Chennai Central",
+    "name_ta": "சென்னை மத்திய",
+    "ls_id": 4,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "thiru_vi_ka_nagar_sc",
+      "dr_radhakrishnan_nagar",
+      "virugampakkam",
+      "saidapet",
+      "mylapore",
+      "velachery"
+    ]
+  },
+  "kancheepuram_sc": {
+    "name": "Kancheepuram (SC)",
+    "name_ta": "காஞ்சிபுரம்",
+    "ls_id": 5,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "alandur",
+      "pallavaram",
+      "tambaram",
+      "chengalpattu",
+      "kancheepuram",
+      "sriperumbudur_sc"
+    ]
+  },
+  "arakkonam": {
+    "name": "Arakkonam",
+    "name_ta": "ஆரக்கோணம்",
+    "ls_id": 6,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "arakkonam_sc",
+      "sholinghur",
+      "ranipet",
+      "arcot",
+      "katpadi",
+      "anaikattu"
+    ]
+  },
+  "vellore": {
+    "name": "Vellore",
+    "name_ta": "வேலூர்",
+    "ls_id": 7,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "vellore",
+      "kilvaithinankuppam_sc",
+      "gudiyattam_sc",
+      "vaniyambadi",
+      "ambur",
+      "jolarpet"
+    ]
+  },
+  "krishnagiri": {
+    "name": "Krishnagiri",
+    "name_ta": "கிருஷ்ணகிரி",
+    "ls_id": 8,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "uthangarai_sc",
+      "bargur",
+      "krishnagiri",
+      "veppanahalli",
+      "hosur",
+      "thally"
+    ]
+  },
+  "dharmapuri": {
+    "name": "Dharmapuri",
+    "name_ta": "தர்மபுரி",
+    "ls_id": 9,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "palacode",
+      "pennagaram",
+      "dharmapuri",
+      "pappireddipatti",
+      "harur_sc",
+      "yercaud_st"
+    ]
+  },
+  "tiruvannamalai": {
+    "name": "Tiruvannamalai",
+    "name_ta": "திருவண்ணாமலை",
+    "ls_id": 10,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "tiruvannamalai",
+      "kilpennathur",
+      "kalasapakkam",
+      "polur",
+      "chengam_sc",
+      "vandavasi_sc"
+    ]
+  },
+  "arani_sc": {
+    "name": "Arani (SC)",
+    "name_ta": "ஆரணி",
+    "ls_id": 11,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "arani",
+      "cheyyar",
+      "sholinganallur",
+      "thiruporur",
+      "cheyyur_sc",
+      "madurantakam_sc"
+    ]
+  },
+  "villupuram_sc": {
+    "name": "Villupuram (SC)",
+    "name_ta": "விழுப்புரம்",
+    "ls_id": 12,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "gingee",
+      "mailam",
+      "tindivanam_sc",
+      "vanur_sc",
+      "villupuram",
+      "rishivandiyam"
+    ]
+  },
+  "kallakurichi_sc": {
+    "name": "Kallakurichi (SC)",
+    "name_ta": "கள்ளக்குறிச்சி",
+    "ls_id": 13,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "ulundurpettai",
+      "sankarapuram",
+      "kallakurichi_sc",
+      "attur_sc",
+      "gangavalli_sc",
+      "tirukkoyilur"
+    ]
+  },
+  "salem": {
+    "name": "Salem",
+    "name_ta": "சேலம்",
+    "ls_id": 14,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "omalur",
+      "mettur",
+      "edappadi",
+      "sankari",
+      "salem_west",
+      "salem_north"
+    ]
+  },
+  "namakkal": {
+    "name": "Namakkal",
+    "name_ta": "நாமக்கல்",
+    "ls_id": 15,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "salem_south",
+      "veerapandi",
+      "rasipuram_sc",
+      "senthamangalam_st",
+      "namakkal",
+      "paramathivelur"
+    ]
+  },
+  "erode_sc": {
+    "name": "Erode (SC)",
+    "name_ta": "ஈரோடு",
+    "ls_id": 16,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "tiruchengodu",
+      "erode_west",
+      "modakkurichi",
+      "bhavani",
+      "gobichettipalayam",
+      "perundurai"
+    ]
+  },
+  "tiruppur": {
+    "name": "Tiruppur",
+    "name_ta": "திருப்பூர்",
+    "ls_id": 17,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "avanashi_sc",
+      "dharapuram_sc",
+      "kangayam",
+      "madathukulam",
+      "palladam",
+      "tiruppur_north"
+    ]
+  },
+  "nilgiris_st": {
+    "name": "Nilgiris (ST)",
+    "name_ta": "நீலகிரி",
+    "ls_id": 18,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "udhagamandalam",
+      "gudalur_sc",
+      "coonoor",
+      "tiruppur_south",
+      "udumalaipettai",
+      "anthiyur"
+    ]
+  },
+  "coimbatore": {
+    "name": "Coimbatore",
+    "name_ta": "கோயம்புத்தூர்",
+    "ls_id": 19,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "coimbatore_north",
+      "coimbatore_south",
+      "kavundampalayam",
+      "kinathukadavu",
+      "singanallur",
+      "sulur"
+    ]
+  },
+  "pollachi_sc": {
+    "name": "Pollachi (SC)",
+    "name_ta": "பொள்ளாச்சி",
+    "ls_id": 20,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "pollachi",
+      "mettupalayam",
+      "thondamuthur",
+      "valparai_sc",
+      "bhavanisagar_sc",
+      "periyakulam_sc"
+    ]
+  },
+  "dindigul": {
+    "name": "Dindigul",
+    "name_ta": "திண்டுக்கல்",
+    "ls_id": 21,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "palani",
+      "oddanchatram",
+      "nilakkottai_sc",
+      "natham",
+      "dindigul",
+      "vedasandur"
+    ]
+  },
+  "karur": {
+    "name": "Karur",
+    "name_ta": "கரூர்",
+    "ls_id": 22,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "karur",
+      "aravakurichi",
+      "krishnarayapuram_sc",
+      "kulithalai",
+      "manapparai",
+      "musiri"
+    ]
+  },
+  "tiruchirappalli": {
+    "name": "Tiruchirappalli",
+    "name_ta": "திருச்சிராப்பள்ளி",
+    "ls_id": 23,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "srirangam",
+      "tiruchirappalli_west",
+      "tiruchirappalli_east",
+      "thiruverumbur",
+      "lalgudi",
+      "manachanallur"
+    ]
+  },
+  "perambalur_sc": {
+    "name": "Perambalur (SC)",
+    "name_ta": "பெரம்பலூர்",
+    "ls_id": 24,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "ariyalur",
+      "jayankondam",
+      "perambalur_sc",
+      "kunnam",
+      "thuraiyur_sc",
+      "viralimalai"
+    ]
+  },
+  "cuddalore": {
+    "name": "Cuddalore",
+    "name_ta": "கடலூர்",
+    "ls_id": 25,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "tittakudi_sc",
+      "vridhachalam",
+      "neyveli",
+      "panruti",
+      "cuddalore",
+      "kurinjipadi"
+    ]
+  },
+  "chidambaram": {
+    "name": "Chidambaram",
+    "name_ta": "சிதம்பரம்",
+    "ls_id": 26,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "bhuvanagiri",
+      "chidambaram",
+      "kattumannarkoil_sc",
+      "sirkazhi_sc",
+      "mayiladuthurai",
+      "poompuhar"
+    ]
+  },
+  "mayiladuthurai_sc": {
+    "name": "Mayiladuthurai (SC)",
+    "name_ta": "மயிலாடுதுறை",
+    "ls_id": 27,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "nagapattinam",
+      "kilvelur",
+      "vedharanyam",
+      "thiruvidaimarudur_sc",
+      "kumbakonam",
+      "papanasam"
+    ]
+  },
+  "thanjavur": {
+    "name": "Thanjavur",
+    "name_ta": "தஞ்சாவூர்",
+    "ls_id": 28,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "thanjavur",
+      "thiruvaiyaru",
+      "orathanadu",
+      "pattukkottai",
+      "peravurani",
+      "athoor"
+    ]
+  },
+  "nagapattinam_sc": {
+    "name": "Nagapattinam (SC)",
+    "name_ta": "நாகப்பட்டினம்",
+    "ls_id": 29,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "mannargudi",
+      "thiruvaur",
+      "nannilam",
+      "thiruthuraipoondi_sc",
+      "sivaganga",
+      "tiruppathur"
+    ]
+  },
+  "tiruvarur": {
+    "name": "Tiruvarur",
+    "name_ta": "திருவாரூர்",
+    "ls_id": 30,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "gandarvakottai_sc",
+      "pudukkottai",
+      "thirumayam",
+      "alangudi",
+      "aranthangi"
+    ]
+  },
+  "sivaganga": {
+    "name": "Sivaganga",
+    "name_ta": "சிவகங்கை",
+    "ls_id": 31,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "melur",
+      "sholavandan_sc",
+      "madurai_east",
+      "karaikudi",
+      "manamadurai_sc",
+      "paramakudi_sc"
+    ]
+  },
+  "madurai": {
+    "name": "Madurai",
+    "name_ta": "மதுரை",
+    "ls_id": 32,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "madurai_north",
+      "madurai_south",
+      "madurai_central",
+      "madurai_west",
+      "thiruparankundram",
+      "usilampatti"
+    ]
+  },
+  "theni": {
+    "name": "Theni",
+    "name_ta": "தேனி",
+    "ls_id": 33,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "andipatti",
+      "bodinayakkanur",
+      "cumbum",
+      "thirumangalam"
+    ]
+  },
+  "virudhunagar": {
+    "name": "Virudhunagar",
+    "name_ta": "விருதுநகர்",
+    "ls_id": 34,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "virudhunagar",
+      "srivilliputhur_sc",
+      "aruppukottai",
+      "rajapalayam",
+      "sattur",
+      "sivakasi"
+    ]
+  },
+  "ramanathapuram_sc": {
+    "name": "Ramanathapuram (SC)",
+    "name_ta": "இராமநாதபுரம்",
+    "ls_id": 35,
+    "confidence": "MEDIUM",
+    "assembly_slugs": [
+      "tiruvadanai",
+      "ramanathapuram",
+      "mudukulathur",
+      "ottapidaram_sc",
+      "tiruchuli"
+    ]
+  },
+  "thoothukudi": {
+    "name": "Thoothukudi",
+    "name_ta": "தூத்துக்குடி",
+    "ls_id": 36,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "vilathikulam",
+      "thoothukudi",
+      "tiruchendur",
+      "srivaikuntam",
+      "kovilpatti",
+      "kadayanallur"
+    ]
+  },
+  "tenkasi_sc": {
+    "name": "Tenkasi (SC)",
+    "name_ta": "தென்காசி",
+    "ls_id": 37,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "vasudevanallur_sc",
+      "tenkasi",
+      "alangulam",
+      "sankarankovil_sc",
+      "radhapuram",
+      "ambasamudram"
+    ]
+  },
+  "tirunelveli": {
+    "name": "Tirunelveli",
+    "name_ta": "திருநெல்வேலி",
+    "ls_id": 38,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "tirunelveli",
+      "palayamkottai",
+      "nanguneri",
+      "tirupattur"
+    ]
+  },
+  "kanniyakumari": {
+    "name": "Kanniyakumari",
+    "name_ta": "கன்னியாகுமரி",
+    "ls_id": 39,
+    "confidence": "HIGH",
+    "assembly_slugs": [
+      "killiyoor",
+      "nagercoil",
+      "padmanabhapuram",
+      "kanniyakumari",
+      "colachal"
+    ]
+  }
+}

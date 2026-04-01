@@ -1,0 +1,201 @@
+[
+  {
+    "fiscal_year": "2020-21",
+    "outstanding_debt_cr": 570000,
+    "debt_to_gsdp_pct": 27.4,
+    "revenue_receipts_cr": 180541,
+    "interest_payments_cr": 48263,
+    "interest_as_pct_revenue": 26.73,
+    "fiscal_deficit_pct_gsdp": 4.36,
+    "within_frbm_limits": false,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2020-21",
+    "ground_truth_confidence": "MEDIUM"
+  },
+  {
+    "fiscal_year": "2021-22",
+    "outstanding_debt_cr": 642000,
+    "debt_to_gsdp_pct": 27.1,
+    "revenue_receipts_cr": 202496.0,
+    "interest_payments_cr": 52940,
+    "interest_as_pct_revenue": 26.14,
+    "fiscal_deficit_pct_gsdp": 3.84,
+    "within_frbm_limits": false,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO accumulated losses absorption",
+        "amount_cr": 47000,
+        "year_committed": "2021-22",
+        "notes": "State absorbed TANGEDCO losses as UDAY grants. Per unit supply cost gap vs revenue: Rs 0.89/kWh vs state average Rs 0.47/kWh. TN White Paper (2021) called for full restructuring.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22"
+      },
+      {
+        "category": "Central Devolution Gap",
+        "label": "TN share of central taxes: 7.9% → 4.023% (14th FC)",
+        "amount_cr": 50000,
+        "year_committed": "2015-16",
+        "notes": "14th Finance Commission reduced TN's share of divisible pool from 4.969% to 4.023%. Loss compounded over 5 years (2015-20), forcing state to borrow to maintain expenditure.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22"
+      },
+      {
+        "category": "COVID-19 Relief",
+        "label": "COVID-19 relief and health expenditure",
+        "amount_cr": 12000,
+        "year_committed": "2020-21",
+        "notes": "Emergency health and welfare spending during pandemic; no central compensation for full amount.",
+        "source_url": "https://cms.tn.gov.in"
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "fiscal_year": "2022-23",
+    "outstanding_debt_cr": 721000,
+    "debt_to_gsdp_pct": 26.8,
+    "revenue_receipts_cr": 231407.0,
+    "interest_payments_cr": 53566,
+    "interest_as_pct_revenue": 23.15,
+    "fiscal_deficit_pct_gsdp": 3.63,
+    "within_frbm_limits": false,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [
+      {
+        "category": "Infrastructure",
+        "label": "Chennai Metro Rail Phase-II — state share",
+        "amount_cr": 63246,
+        "year_committed": "2022-23",
+        "notes": "CMRL Phase II approved at total project cost of ~Rs 63,246 crore. State provides equity and guarantees. Loan component from JICA and central govt.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23"
+      },
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO ongoing grants",
+        "amount_cr": 15000,
+        "year_committed": "2022-23",
+        "notes": "Annual grants to bridge TANGEDCO revenue gap. Cumulative grants 2019-26 estimated at Rs 83,156 crore.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23"
+      },
+      {
+        "category": "Revenue Deficit Financing",
+        "label": "Revenue deficit borrowing (1.7% of GSDP)",
+        "amount_cr": 45121,
+        "year_committed": "2023-24",
+        "notes": "State borrows to cover revenue expenditure that exceeds revenue receipts — structurally driven by committed expenditure growth.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24"
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "fiscal_year": "2023-24",
+    "outstanding_debt_cr": 806000,
+    "debt_to_gsdp_pct": 26.5,
+    "revenue_receipts_cr": 270515.0,
+    "interest_payments_cr": 53566,
+    "interest_as_pct_revenue": 19.8,
+    "fiscal_deficit_pct_gsdp": 3.25,
+    "within_frbm_limits": false,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [
+      {
+        "category": "Infrastructure",
+        "label": "Roads and bridges capital outlay spike",
+        "amount_cr": 18456,
+        "year_committed": "2025-26",
+        "notes": "Rs 18,456 crore allocated for capital outlay on roads in 2025-26 BE — part of multi-year highway programme.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      },
+      {
+        "category": "Energy Sector",
+        "label": "Energy capital outlay — 3,973% increase",
+        "amount_cr": 5068,
+        "year_committed": "2025-26",
+        "notes": "Energy sector capital outlay jumped from Rs 124 crore (RE 2024-25) to Rs 5,068 crore (BE 2025-26) — a 3,973% increase. Represents state investment in power corporation infrastructure.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "fiscal_year": "2024-25",
+    "outstanding_debt_cr": 926000,
+    "debt_to_gsdp_pct": 26.3,
+    "revenue_receipts_cr": 299010.0,
+    "interest_payments_cr": 60357,
+    "interest_as_pct_revenue": 20.19,
+    "fiscal_deficit_pct_gsdp": 3.4,
+    "within_frbm_limits": false,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [
+      {
+        "category": "Central Devolution Gap",
+        "label": "TN share of central taxes: 4.079% (15th FC) vs historical 7.9%",
+        "amount_cr": 300000,
+        "year_committed": "2015-16",
+        "notes": "Cumulative loss estimated at over Rs 3 lakh crore (2015-2025). TN's share declined through 13th FC (4.969%), 14th FC (4.023%), 15th FC (4.079%). At original 7.9% share, TN would have received ~Rs 3 lakh crore more in central transfers.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25"
+      },
+      {
+        "category": "PSU Liabilities",
+        "label": "TANGEDCO cumulative grants 2019-2025",
+        "amount_cr": 83156,
+        "year_committed": "2019-20",
+        "notes": "Total TANGEDCO grants from state between 2019-20 and 2025-26 estimated at Rs 83,156 crore.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "fiscal_year": "2025-26",
+    "outstanding_debt_cr": 989000,
+    "debt_to_gsdp_pct": 26.2,
+    "revenue_receipts_cr": 331569.0,
+    "interest_payments_cr": 69114.0,
+    "interest_as_pct_revenue": 20.84,
+    "fiscal_deficit_pct_gsdp": 3.0,
+    "within_frbm_limits": true,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [
+      {
+        "category": "Committed Expenditure Growth",
+        "label": "Salaries + pension + interest = 62% of revenue receipts",
+        "amount_cr": 207054,
+        "year_committed": "2025-26",
+        "notes": "Committed expenditure (Rs 2,07,054 crore) consumes 62% of estimated revenue receipts (Rs 3,31,569 crore). Salaries: 28%, Pension: 14%, Interest: 21%. This structural rigidity limits capital investment flexibility.",
+        "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"
+      },
+      {
+        "category": "Debt Projection",
+        "label": "Outstanding debt projected at Rs 10.71 lakh crore by 2026-27",
+        "amount_cr": 1071000,
+        "year_committed": "2026-27",
+        "notes": "Outstanding liabilities projected to reach Rs 10.71 lakh crore (26.12% of GSDP) in 2026-27 as per TN Interim Budget. Remains within FRBM ceiling. Net borrowings for 2025-26: Rs 1,05,000 crore.",
+        "source_url": "https://finance.tn.gov.in"
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "fiscal_year": "2026-27",
+    "outstanding_debt_cr": 1071000,
+    "debt_to_gsdp_pct": 26.12,
+    "revenue_receipts_cr": null,
+    "interest_payments_cr": null,
+    "interest_as_pct_revenue": null,
+    "fiscal_deficit_pct_gsdp": null,
+    "within_frbm_limits": null,
+    "frbm_limit_pct": 25.0,
+    "debt_why": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2026-27",
+    "ground_truth_confidence": "MEDIUM"
+  }
+]

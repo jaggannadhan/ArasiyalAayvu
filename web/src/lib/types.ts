@@ -1,0 +1,322 @@
+// ---------------------------------------------------------------------------
+// Lok Sabha parent constituency
+// ---------------------------------------------------------------------------
+
+export interface LsConstituencyMeta {
+  ls_slug: string;
+  ls_name: string;       // "Chennai South"
+  ls_name_ta: string;    // "சென்னை தெற்கு"
+  ls_id: number;
+  confidence: "HIGH" | "MEDIUM";
+}
+
+// ---------------------------------------------------------------------------
+// Usage counter / Frequently Browsed
+// ---------------------------------------------------------------------------
+
+export interface FrequentlyBrowsedItem {
+  slug: string;
+  name: string;
+  district: string;
+  view_count: number;
+}
+
+// ---------------------------------------------------------------------------
+// State Vitals — Macro, Health, Water, Crops
+// ---------------------------------------------------------------------------
+
+export interface StateMacroRecord {
+  doc_id: string;
+  metric_id: string;
+  metric_name: string;
+  metric_name_ta: string;
+  category: string;
+  subcategory?: string;
+  value: number;
+  unit: string;
+  comparison_national?: number;
+  tn_vs_national?: string;
+  year: number;
+  context: string;
+  alert_level?: "HIGH" | "MEDIUM" | "LOW";
+  source_title: string;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface DistrictHealthRecord {
+  doc_id: string;
+  metric_id: string;
+  metric_name: string;
+  metric_name_ta: string;
+  district_slug: string | null;
+  district_name: string | null;
+  metric_scope: "state" | "district";
+  value: number;
+  unit: string;
+  national_average?: number;
+  tn_vs_national?: string;
+  year: number;
+  category: string;
+  alert_level?: "HIGH" | "MEDIUM" | "LOW";
+  policy_gap?: boolean;
+  context: string;
+  source_title: string;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface DistrictWaterRisk {
+  doc_id: string;
+  district_slug: string;
+  district_name: string;
+  risk_level: "EXTREMELY_HIGH" | "HIGH" | "MEDIUM" | "LOW" | "FLOOD_PRONE";
+  risk_label_en: string;
+  risk_label_ta: string;
+  water_stress_score: number;   // 0–5
+  avg_annual_rainfall_mm: number;
+  context: string;
+  policy_implication: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface CropEconomicsRecord {
+  doc_id: string;
+  crop_name: string;
+  crop_name_ta: string;
+  crop_type: string;
+  season: string;
+  marketing_year: string;
+  msp_per_quintal: number | null;
+  frp_per_quintal?: number | null;
+  a2_fl_cost_per_quintal: number;
+  c2_cost_per_quintal: number;
+  profit_over_a2fl_pct: number;
+  frp_applicable: boolean;
+  primary_tn_districts: string[];
+  context: string;
+  policy_tension?: string;
+  source_title: string;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface StateVitalsData {
+  economy?: StateMacroRecord[];
+  health?: DistrictHealthRecord[];
+  water?: DistrictWaterRisk[];
+  crops?: CropEconomicsRecord[];
+}
+
+// ---------------------------------------------------------------------------
+// Constituency Drill-Down types
+// ---------------------------------------------------------------------------
+
+export interface MlaRecord {
+  doc_id: string;
+  mla_name: string;
+  constituency: string;
+  constituency_id?: number;
+  constituency_slug?: string;
+  party: string;                // raw party name e.g. "DMK"
+  party_id?: string;            // slug e.g. "dmk" — may be absent in older docs
+  photo_url?: string | null;    // optional image URL; UI falls back to initials
+  criminal_cases_total: number;
+  criminal_severity: "CLEAN" | "MINOR" | "MODERATE" | "SERIOUS";
+  assets_cr: number | null;
+  liabilities_cr: number | null;
+  net_assets_cr: number | null;
+  is_crorepati: boolean;
+  education: string;
+  education_tier: string;
+  election_year: number;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface SocioMetric {
+  metric_id: string;
+  category: string;
+  metric_name: string;
+  tamil_name: string;
+  value: number;
+  unit: string;
+  year: number;
+  survey: string;
+  national_average: number | null;
+  tn_vs_national: string | null;
+  context: string;
+  district_id?: string | null;
+  district_slug?: string | null;
+  district_name?: string | null;
+  metric_scope?: "district" | "state";
+  alert_level?: string | null;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface ConstituencyMeta {
+  name: string;           // "HARUR (SC)"
+  district: string;       // "DHARMAPURI"
+  district_slug: string;  // "dharmapuri"
+  constituency_id: number;
+}
+
+// ---------------------------------------------------------------------------
+// Manifesto types
+// ---------------------------------------------------------------------------
+
+export type PromiseStatus = "Proposed" | "Fulfilled" | "Partial" | "Abandoned" | "Historical";
+
+export type Pillar =
+  | "Agriculture"
+  | "Education"
+  | "TASMAC & Revenue"
+  | "Women's Welfare"
+  | "Infrastructure";
+
+export type StanceVibe =
+  | "Welfare-centric"
+  | "Infrastructure-heavy"
+  | "Revenue-focused"
+  | "Populist"
+  | "Reform-oriented"
+  | "Women-focused"
+  | "Farmer-focused";
+
+export interface ManifestoPromise {
+  doc_id: string;
+  party_id: string;           // "dmk" | "aiadmk" | "bjp" | "pmk" etc.
+  party_name: string;
+  party_color: string;        // Tailwind bg color class
+  category: Pillar;
+  promise_text_en: string;
+  promise_text_ta: string;
+  target_year: number;        // 2026 for upcoming; 2021 for current mandate
+  status: PromiseStatus;
+  stance_vibe: StanceVibe;
+  amount_mentioned?: string;  // e.g. "₹1,000 crore", "₹500/month"
+  scheme_name?: string;       // Official scheme name if named
+  manifesto_pdf_url: string;  // Link to official party manifesto PDF
+  manifesto_pdf_page?: number;
+  source_notes?: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+  _uploaded_at?: string;  // ISO timestamp — set by Firestore loader; absent in seed data
+}
+
+export interface PartyMeta {
+  party_id: string;
+  party_name: string;
+  tamil_name: string;
+  color: string;              // Tailwind bg class
+  text_color: string;         // Tailwind text class
+  border_color: string;       // Tailwind border class
+  manifesto_pdf_url: string;
+  manifesto_year: number;
+}
+
+export const PARTIES: Record<string, PartyMeta> = {
+  dmk: {
+    party_id: "dmk",
+    party_name: "DMK",
+    tamil_name: "திமுக",
+    color: "bg-red-600",
+    text_color: "text-red-600",
+    border_color: "border-red-600",
+    manifesto_pdf_url: "https://www.dmk.in/manifesto2021.pdf",
+    manifesto_year: 2021,
+  },
+  aiadmk: {
+    party_id: "aiadmk",
+    party_name: "AIADMK",
+    tamil_name: "அதிமுக",
+    color: "bg-green-700",
+    text_color: "text-green-700",
+    border_color: "border-green-700",
+    manifesto_pdf_url: "https://www.aiadmk.com/manifesto2021.pdf",
+    manifesto_year: 2021,
+  },
+  bjp: {
+    party_id: "bjp",
+    party_name: "BJP",
+    tamil_name: "பாஜக",
+    color: "bg-orange-500",
+    text_color: "text-orange-500",
+    border_color: "border-orange-500",
+    manifesto_pdf_url: "https://www.bjp4india.com/manifesto/tamil-nadu-2026",
+    manifesto_year: 2026,
+  },
+  pmk: {
+    party_id: "pmk",
+    party_name: "PMK",
+    tamil_name: "பாமக",
+    color: "bg-yellow-500",
+    text_color: "text-yellow-600",
+    border_color: "border-yellow-500",
+    manifesto_pdf_url: "https://www.pmk.in/manifesto2026.pdf",
+    manifesto_year: 2026,
+  },
+  inc: {
+    party_id: "inc",
+    party_name: "INC",
+    tamil_name: "காங்கிரஸ்",
+    color: "bg-blue-600",
+    text_color: "text-blue-600",
+    border_color: "border-blue-600",
+    manifesto_pdf_url: "https://www.inc.in/manifesto",
+    manifesto_year: 2021,
+  },
+};
+
+export const PILLARS: Pillar[] = [
+  "Agriculture",
+  "Education",
+  "TASMAC & Revenue",
+  "Women's Welfare",
+  "Infrastructure",
+];
+
+export const PILLAR_META: Record<Pillar, { icon: string; tamil: string; description: string }> = {
+  Agriculture: {
+    icon: "🌾",
+    tamil: "விவசாயம்",
+    description: "Farmer welfare, crop insurance, MSP, irrigation",
+  },
+  Education: {
+    icon: "📚",
+    tamil: "கல்வி",
+    description: "Schools, colleges, midday meals, scholarships",
+  },
+  "TASMAC & Revenue": {
+    icon: "🏛️",
+    tamil: "தாஸ்மாக் & வருவாய்",
+    description: "Liquor policy, state revenue, taxation",
+  },
+  "Women's Welfare": {
+    icon: "👩",
+    tamil: "பெண்கள் நலன்",
+    description: "SHGs, safety, reservations, maternity benefits",
+  },
+  Infrastructure: {
+    icon: "🏗️",
+    tamil: "உள்கட்டமைப்பு",
+    description: "Roads, metro, power, water, housing",
+  },
+};
+
+export const VIBE_META: Record<StanceVibe, { label: string; bg: string; text: string }> = {
+  "Welfare-centric":     { label: "நலன்புரி",         bg: "bg-blue-100",   text: "text-blue-800" },
+  "Infrastructure-heavy":{ label: "உள்கட்டமைப்பு",  bg: "bg-slate-100",  text: "text-slate-800" },
+  "Revenue-focused":     { label: "வருவாய் கவனம்",   bg: "bg-amber-100",  text: "text-amber-800" },
+  "Populist":            { label: "மக்கள் சார்பு",   bg: "bg-pink-100",   text: "text-pink-800" },
+  "Reform-oriented":     { label: "சீர்திருத்தம்",   bg: "bg-purple-100", text: "text-purple-800" },
+  "Women-focused":       { label: "பெண்கள் கவனம்",   bg: "bg-rose-100",   text: "text-rose-800" },
+  "Farmer-focused":      { label: "விவசாயி கவனம்",   bg: "bg-green-100",  text: "text-green-800" },
+};
+
+export const STATUS_META: Record<PromiseStatus, { label_en: string; label_ta: string; bg: string; text: string }> = {
+  Proposed:    { label_en: "Proposed",    label_ta: "முன்மொழிவு",   bg: "bg-sky-100",    text: "text-sky-800" },
+  Fulfilled:   { label_en: "Fulfilled",   label_ta: "நிறைவேற்றப்பட்டது", bg: "bg-emerald-100", text: "text-emerald-800" },
+  Partial:     { label_en: "Partial",     label_ta: "பகுதி நிறைவு",  bg: "bg-yellow-100", text: "text-yellow-800" },
+  Abandoned:   { label_en: "Abandoned",   label_ta: "கைவிடப்பட்டது", bg: "bg-red-100",    text: "text-red-800" },
+  Historical:  { label_en: "Historical",  label_ta: "வரலாற்று வாக்குறுதி", bg: "bg-gray-100",   text: "text-gray-700" },
+};

@@ -1,0 +1,371 @@
+[
+  {
+    "doc_id": "2025-26_transport",
+    "fiscal_year": "2025-26",
+    "department": "Transport",
+    "department_slug": "transport",
+    "allocation_cr": 27971.0,
+    "actuals_prior_year_cr": 20433.0,
+    "revised_estimate_cr": 21991.0,
+    "pct_of_sector_budget": 45.82,
+    "pct_change_from_re": 27.19,
+    "sub_allocations": [
+      {
+        "label": "Capital outlay on roads and bridges",
+        "amount_cr": 18456
+      },
+      {
+        "label": "Chennai Metro Rail (state contribution)",
+        "amount_cr": 3200
+      },
+      {
+        "label": "TNSTC bus services",
+        "amount_cr": 1800
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2025-26_energy",
+    "fiscal_year": "2025-26",
+    "department": "Energy",
+    "department_slug": "energy",
+    "allocation_cr": 20354.0,
+    "actuals_prior_year_cr": 24166.0,
+    "revised_estimate_cr": 22970.0,
+    "pct_of_sector_budget": 33.35,
+    "pct_change_from_re": -11.39,
+    "sub_allocations": [
+      {
+        "label": "TANGEDCO grants (loss subsidy)",
+        "amount_cr": 3100
+      },
+      {
+        "label": "Energy capital outlay (power infrastructure)",
+        "amount_cr": 5068
+      },
+      {
+        "label": "Solar energy promotion",
+        "amount_cr": 400
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2025-26_police",
+    "fiscal_year": "2025-26",
+    "department": "Police",
+    "department_slug": "police",
+    "allocation_cr": 12714.0,
+    "actuals_prior_year_cr": 10490.0,
+    "revised_estimate_cr": 11302.0,
+    "pct_of_sector_budget": 20.83,
+    "pct_change_from_re": 12.49,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2024-25_transport",
+    "fiscal_year": "2024-25",
+    "department": "Transport",
+    "department_slug": "transport",
+    "allocation_cr": 23828.0,
+    "actuals_prior_year_cr": 19807.0,
+    "revised_estimate_cr": 21250.0,
+    "pct_of_sector_budget": 34.31,
+    "pct_change_from_re": 12.13,
+    "sub_allocations": [
+      {
+        "label": "Capital outlay on roads and bridges",
+        "amount_cr": 18456
+      },
+      {
+        "label": "Chennai Metro Rail (state contribution)",
+        "amount_cr": 3200
+      },
+      {
+        "label": "TNSTC bus services",
+        "amount_cr": 1800
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2024-25_rural_development",
+    "fiscal_year": "2024-25",
+    "department": "Rural Development",
+    "department_slug": "rural_development",
+    "allocation_cr": 12043.0,
+    "actuals_prior_year_cr": 10527.0,
+    "revised_estimate_cr": 9614.0,
+    "pct_of_sector_budget": 17.34,
+    "pct_change_from_re": 25.27,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2024-25_energy",
+    "fiscal_year": "2024-25",
+    "department": "Energy",
+    "department_slug": "energy",
+    "allocation_cr": 21606.0,
+    "actuals_prior_year_cr": 17642.0,
+    "revised_estimate_cr": 24176.0,
+    "pct_of_sector_budget": 31.11,
+    "pct_change_from_re": -10.63,
+    "sub_allocations": [
+      {
+        "label": "TANGEDCO grants (loss subsidy)",
+        "amount_cr": 3100
+      },
+      {
+        "label": "Energy capital outlay (power infrastructure)",
+        "amount_cr": 5068
+      },
+      {
+        "label": "Solar energy promotion",
+        "amount_cr": 400
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2024-25_police",
+    "fiscal_year": "2024-25",
+    "department": "Police",
+    "department_slug": "police",
+    "allocation_cr": 11965.0,
+    "actuals_prior_year_cr": 9683.0,
+    "revised_estimate_cr": 10731.0,
+    "pct_of_sector_budget": 17.23,
+    "pct_change_from_re": 11.5,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2023-24_rural_development",
+    "fiscal_year": "2023-24",
+    "department": "Rural Development",
+    "department_slug": "rural_development",
+    "allocation_cr": 9413.0,
+    "actuals_prior_year_cr": 8817.0,
+    "revised_estimate_cr": 9713.0,
+    "pct_of_sector_budget": 33.37,
+    "pct_change_from_re": -3.09,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2023-24_energy",
+    "fiscal_year": "2023-24",
+    "department": "Energy",
+    "department_slug": "energy",
+    "allocation_cr": 8426.0,
+    "actuals_prior_year_cr": 15584.0,
+    "revised_estimate_cr": 17830.0,
+    "pct_of_sector_budget": 29.87,
+    "pct_change_from_re": -52.74,
+    "sub_allocations": [
+      {
+        "label": "TANGEDCO grants (loss subsidy)",
+        "amount_cr": 3100
+      },
+      {
+        "label": "Energy capital outlay (power infrastructure)",
+        "amount_cr": 5068
+      },
+      {
+        "label": "Solar energy promotion",
+        "amount_cr": 400
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2023-24_police",
+    "fiscal_year": "2023-24",
+    "department": "Police",
+    "department_slug": "police",
+    "allocation_cr": 10368.0,
+    "actuals_prior_year_cr": 8051.0,
+    "revised_estimate_cr": 9869.0,
+    "pct_of_sector_budget": 36.76,
+    "pct_change_from_re": 5.06,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2023-24",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2022-23_transport",
+    "fiscal_year": "2022-23",
+    "department": "Transport",
+    "department_slug": "transport",
+    "allocation_cr": 20059.0,
+    "actuals_prior_year_cr": 15116.0,
+    "revised_estimate_cr": 15842.0,
+    "pct_of_sector_budget": 29.8,
+    "pct_change_from_re": 26.62,
+    "sub_allocations": [
+      {
+        "label": "Capital outlay on roads and bridges",
+        "amount_cr": 18456
+      },
+      {
+        "label": "Chennai Metro Rail (state contribution)",
+        "amount_cr": 3200
+      },
+      {
+        "label": "TNSTC bus services",
+        "amount_cr": 1800
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2022-23_rural_development",
+    "fiscal_year": "2022-23",
+    "department": "Rural Development",
+    "department_slug": "rural_development",
+    "allocation_cr": 9562.0,
+    "actuals_prior_year_cr": 5122.0,
+    "revised_estimate_cr": 8876.0,
+    "pct_of_sector_budget": 14.21,
+    "pct_change_from_re": 7.73,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2022-23_urban_development",
+    "fiscal_year": "2022-23",
+    "department": "Urban Development",
+    "department_slug": "urban_development",
+    "allocation_cr": 10396.0,
+    "actuals_prior_year_cr": 5702.0,
+    "revised_estimate_cr": 9455.0,
+    "pct_of_sector_budget": 15.45,
+    "pct_change_from_re": 9.95,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2022-23_energy",
+    "fiscal_year": "2022-23",
+    "department": "Energy",
+    "department_slug": "energy",
+    "allocation_cr": 17433.0,
+    "actuals_prior_year_cr": 16577.0,
+    "revised_estimate_cr": 15626.0,
+    "pct_of_sector_budget": 25.9,
+    "pct_change_from_re": 11.56,
+    "sub_allocations": [
+      {
+        "label": "TANGEDCO grants (loss subsidy)",
+        "amount_cr": 3100
+      },
+      {
+        "label": "Energy capital outlay (power infrastructure)",
+        "amount_cr": 5068
+      },
+      {
+        "label": "Solar energy promotion",
+        "amount_cr": 400
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2022-23_police",
+    "fiscal_year": "2022-23",
+    "department": "Police",
+    "department_slug": "police",
+    "allocation_cr": 9857.0,
+    "actuals_prior_year_cr": 7710.0,
+    "revised_estimate_cr": 8493.0,
+    "pct_of_sector_budget": 14.64,
+    "pct_change_from_re": 16.06,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2022-23",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2021-22_transport",
+    "fiscal_year": "2021-22",
+    "department": "Transport",
+    "department_slug": "transport",
+    "allocation_cr": 18156.0,
+    "actuals_prior_year_cr": 11660.0,
+    "revised_estimate_cr": 15238.0,
+    "pct_of_sector_budget": 42.44,
+    "pct_change_from_re": 19.15,
+    "sub_allocations": [
+      {
+        "label": "Capital outlay on roads and bridges",
+        "amount_cr": 18456
+      },
+      {
+        "label": "Chennai Metro Rail (state contribution)",
+        "amount_cr": 3200
+      },
+      {
+        "label": "TNSTC bus services",
+        "amount_cr": 1800
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2021-22_energy",
+    "fiscal_year": "2021-22",
+    "department": "Energy",
+    "department_slug": "energy",
+    "allocation_cr": 16020.0,
+    "actuals_prior_year_cr": 9497.0,
+    "revised_estimate_cr": 17042.0,
+    "pct_of_sector_budget": 37.45,
+    "pct_change_from_re": -6.0,
+    "sub_allocations": [
+      {
+        "label": "TANGEDCO grants (loss subsidy)",
+        "amount_cr": 3100
+      },
+      {
+        "label": "Energy capital outlay (power infrastructure)",
+        "amount_cr": 5068
+      },
+      {
+        "label": "Solar energy promotion",
+        "amount_cr": 400
+      }
+    ],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "doc_id": "2021-22_police",
+    "fiscal_year": "2021-22",
+    "department": "Police",
+    "department_slug": "police",
+    "allocation_cr": 8601.0,
+    "actuals_prior_year_cr": 7930.0,
+    "revised_estimate_cr": 8091.0,
+    "pct_of_sector_budget": 20.11,
+    "pct_change_from_re": 6.3,
+    "sub_allocations": [],
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2021-22",
+    "ground_truth_confidence": "HIGH"
+  }
+]

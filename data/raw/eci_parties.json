@@ -1,0 +1,102 @@
+[
+  {
+    "party_id": "dmk",
+    "party_name": "Dravida Munnetra Kazhagam",
+    "abbreviation": "DMK",
+    "symbol": "Rising Sun",
+    "eci_status": "State Party",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "aiadmk",
+    "party_name": "All India Anna Dravida Munnetra Kazhagam",
+    "abbreviation": "AIADMK",
+    "symbol": "Two Leaves",
+    "eci_status": "State Party",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "pmk",
+    "party_name": "Pattali Makkal Katchi",
+    "abbreviation": "PMK",
+    "symbol": "Mango",
+    "eci_status": "State Party",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "vck",
+    "party_name": "Viduthalai Chiruthaigal Katchi",
+    "abbreviation": "VCK",
+    "symbol": "Star",
+    "eci_status": "Registered Unrecognized",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "ntk",
+    "party_name": "Naam Tamilar Katchi",
+    "abbreviation": "NTK",
+    "symbol": "Jar",
+    "eci_status": "Registered Unrecognized",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "mdmk",
+    "party_name": "Marumalarchi Dravida Munnetra Kazhagam",
+    "abbreviation": "MDMK",
+    "symbol": "Pot",
+    "eci_status": "Registered Unrecognized",
+    "state": "Tamil Nadu",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "inc",
+    "party_name": "Indian National Congress",
+    "abbreviation": "INC",
+    "symbol": "Hand",
+    "eci_status": "National Party",
+    "state": "All India",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "bjp",
+    "party_name": "Bharatiya Janata Party",
+    "abbreviation": "BJP",
+    "symbol": "Lotus",
+    "eci_status": "National Party",
+    "state": "All India",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "cpi",
+    "party_name": "Communist Party of India",
+    "abbreviation": "CPI",
+    "symbol": "Ears of Corn and Sickle",
+    "eci_status": "National Party",
+    "state": "All India",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  },
+  {
+    "party_id": "cpim",
+    "party_name": "Communist Party of India (Marxist)",
+    "abbreviation": "CPI(M)",
+    "symbol": "Hammer, Sickle and Star",
+    "eci_status": "National Party",
+    "state": "All India",
+    "source_url": "https://eci.gov.in/party-and-candidate/list-of-political-parties-and-symbols",
+    "ground_truth_confidence": "HIGH"
+  }
+]

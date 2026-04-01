@@ -1,0 +1,473 @@
+{
+  "1952": {
+    "year": 1952,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "INC (standalone)",
+        "anchor_party": "inc",
+        "member_parties": [
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1957": {
+    "year": 1957,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "INC (standalone)",
+        "anchor_party": "inc",
+        "member_parties": [
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1962": {
+    "year": 1962,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "INC (standalone)",
+        "anchor_party": "inc",
+        "member_parties": [
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1967": {
+    "year": 1967,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "DMK (standalone)",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "INC (standalone)",
+        "anchor_party": "inc",
+        "member_parties": [
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1971": {
+    "year": 1971,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "DMK (standalone)",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1977": {
+    "year": 1977,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK-INC front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK (standalone)",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1980": {
+    "year": 1980,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK (standalone)",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK-INC front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1984": {
+    "year": 1984,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK-INC front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "inc"
+        ],
+        "national_front_alignment": "INC-led",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK (standalone)",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1989": {
+    "year": 1989,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "DMK-INC front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc"
+        ],
+        "national_front_alignment": "INC-led",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "AIADMK (standalone)",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1991": {
+    "year": 1991,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK-BJP-PMK front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "bjp",
+          "pmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK (standalone)",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "1996": {
+    "year": 1996,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "DMK-TMC front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "tmc"
+        ],
+        "national_front_alignment": "Third Front",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "AIADMK-INC front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "inc"
+        ],
+        "national_front_alignment": "INC-led",
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "2001": {
+    "year": 2001,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK-INC-PMK-MDMK front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "inc",
+          "pmk",
+          "mdmk"
+        ],
+        "national_front_alignment": "UPA",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK-BJP front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "bjp"
+        ],
+        "national_front_alignment": "NDA",
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "2006": {
+    "year": 2006,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "DMK-INC-PMK-Left front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc",
+          "pmk",
+          "cpi",
+          "cpim",
+          "mdmk",
+          "vck"
+        ],
+        "national_front_alignment": "UPA",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "AIADMK-DMDK front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "dmdk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "2011": {
+    "year": 2011,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK-DMDK-PMK-Left front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "dmdk",
+          "pmk",
+          "mdmk",
+          "vck",
+          "cpi",
+          "cpim"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK-INC-BJPfront",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc",
+          "bjp",
+          "pmk"
+        ],
+        "national_front_alignment": "UPA",
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "2016": {
+    "year": 2016,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "AIADMK (standalone)",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk"
+        ],
+        "national_front_alignment": null,
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "DMK-INC-Left front",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc",
+          "cpi",
+          "cpim",
+          "mdmk",
+          "vck"
+        ],
+        "national_front_alignment": "UPA",
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  },
+  "2021": {
+    "year": 2021,
+    "total_seats": 234,
+    "majority_mark": 118,
+    "party_results": [],
+    "alliance_composition": [
+      {
+        "alliance_name": "Secular Progressive Alliance",
+        "anchor_party": "dmk",
+        "member_parties": [
+          "dmk",
+          "inc",
+          "cpi",
+          "cpim",
+          "vck",
+          "mdmk",
+          "mmk",
+          "iuml"
+        ],
+        "national_front_alignment": "UPA",
+        "outcome": "Won"
+      },
+      {
+        "alliance_name": "AIADMK-BJP-PMK front",
+        "anchor_party": "aiadmk",
+        "member_parties": [
+          "aiadmk",
+          "bjp",
+          "pmk",
+          "dmdk"
+        ],
+        "national_front_alignment": "NDA",
+        "outcome": "Lost"
+      }
+    ],
+    "source_url": "https://www.assembly.tn.gov.in (curated)",
+    "pdf_checksum": null,
+    "ground_truth_confidence": "HIGH"
+  }
+}
