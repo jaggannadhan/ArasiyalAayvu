@@ -1,0 +1,28 @@
+{
+  "name": "arasiyalaayvu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "__NEXT_PRIVATE_STANDALONE_CONFIG= next dev",
+    "dev:hot": "__NEXT_PRIVATE_STANDALONE_CONFIG= CHOKIDAR_USEPOLLING=1 WATCHPACK_POLLING=true next dev",
+    "build": "__NEXT_PRIVATE_STANDALONE_CONFIG= next build",
+    "start": "__NEXT_PRIVATE_STANDALONE_CONFIG= next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "firebase": "^12.11.0",
+    "next": "^15.5.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9",
+    "eslint-config-next": "^15.5.14",
+    "tailwindcss": "^4",
+    "typescript": "^5.9.3"
+  }
+}
