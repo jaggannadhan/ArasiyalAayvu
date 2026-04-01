@@ -1,26 +1,27 @@
 {
-  "name": "web",
+  "name": "arasiyalaayvu",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "__NEXT_PRIVATE_STANDALONE_CONFIG= next dev",
+    "build": "__NEXT_PRIVATE_STANDALONE_CONFIG= next build",
+    "start": "__NEXT_PRIVATE_STANDALONE_CONFIG= next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "firebase": "^12.11.0",
+    "next": "^15.5.14",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^9",
-    "eslint-config-next": "16.2.2",
+    "eslint-config-next": "^15.5.14",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
