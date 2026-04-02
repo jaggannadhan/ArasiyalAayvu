@@ -83,7 +83,107 @@ export interface DistrictHealthRecord {
   ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
 }
 
+export interface DistrictRoadSafety {
+  tn_percentile?: number;
+  doc_id: string;
+  district_slug: string;
+  district_name: string;
+  year_range: string;
+  population_lakhs: number;
+  accidents_2021: number;
+  deaths_2021: number;
+  death_rate_per_lakh_2021: number;
+  accidents_2022: number;
+  deaths_2022: number;
+  death_rate_per_lakh_2022: number;
+  accidents_2023: number;
+  deaths_2023: number;
+  death_rate_per_lakh_2023: number;
+  road_safety_level: "HIGH_RISK" | "MEDIUM_RISK" | "LOW_RISK";
+  trend_2021_2023: "IMPROVING" | "STABLE" | "WORSENING";
+  trend_pct_change: number;
+  context: string;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+export interface DistrictCrimeIndex {
+  tn_percentile?: number;
+  doc_id: string;
+  district_slug: string;
+  district_name: string;
+  year: number;
+  population_lakhs: number;
+  ipc_crimes_total: number;
+  ipc_crime_rate_per_lakh: number;
+  crime_index_level: "HIGH" | "MEDIUM" | "LOW";
+  murder_incidents: number;
+  murder_rate_per_lakh: number;
+  rape_incidents: number;
+  rape_rate_per_lakh: number;
+  assault_on_women_incidents: number;
+  assault_on_women_rate_per_lakh: number;
+  theft_incidents: number;
+  theft_rate_per_lakh: number;
+  robbery_incidents: number;
+  robbery_rate_per_lakh: number;
+  negligence_deaths: number;
+  negligence_death_rate_per_lakh: number;
+  suicides_total: number;
+  suicides_male: number;
+  suicides_female: number;
+  context: string;
+  source_url: string;
+  ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+}
+
+// ---------------------------------------------------------------------------
+// Ward & Local Body Mapping (LGD data — urban wards only)
+// ---------------------------------------------------------------------------
+
+export interface WardLocalBody {
+  name: string;        // "Greater Chennai Corporation"
+  type: string;        // "Municipal Corporation" | "Municipality" | "Town Panchayat"
+  ward_count: number;
+}
+
+export interface WardMapping {
+  constituency_slug: string;
+  constituency_name: string;
+  eci_code: number;
+  total_urban_wards: number;
+  local_bodies: WardLocalBody[];
+  data_date: string;   // "2026-04-02"
+}
+
+export interface UlbCouncillor {
+  local_body_slug: string;
+  local_body_name: string;
+  ward_number: number;
+  zone_number: number;
+  zone_name: string;
+  councillor_name: string;
+  party: string;
+  party_full: string;
+  sex: string;
+  age: number | null;
+  ward_reservation: string;
+}
+
+export interface UlbHead {
+  local_body_slug: string;
+  local_body_name: string;
+  local_body_type: string;
+  head_title: string;   // "Mayor" | "Chairman" | "Chairperson"
+  head_name: string;
+  party: string;
+  party_full: string;
+  election_year: number;
+  notes?: string;
+}
+
 export interface DistrictWaterRisk {
+  tn_percentile?: number;
   doc_id: string;
   district_slug: string;
   district_name: string;
@@ -129,6 +229,23 @@ export interface StateVitalsData {
 // Constituency Drill-Down types
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// B.6 Criminal case detail (populated by affidavit_ingest.py)
+// ---------------------------------------------------------------------------
+
+export type CriminalCaseStatus = "Pending" | "Dismissed" | "Convicted";
+
+export interface CriminalCase {
+  case_id?: string;
+  ipc_sections: string[];          // ["302", "307"] — raw section numbers
+  act: string;                     // "IPC" | "POCSO" | "Prevention of Corruption Act"
+  description: string;             // Human-readable crime description
+  status: CriminalCaseStatus;
+  court?: string;                  // "Sessions Court, Chennai"
+  year_filed?: number;
+  is_serious: boolean;             // Pre-computed by ingest using isSeriousCrime()
+}
+
 export interface MlaRecord {
   doc_id: string;
   mla_name: string;
@@ -149,6 +266,13 @@ export interface MlaRecord {
   election_year: number;
   source_url: string;
   ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+  // B.5 affidavit enrichment (optional — populated after affidavit_ingest.py run)
+  movable_assets_cr?: number | null;
+  immovable_assets_cr?: number | null;
+  institution_name?: string | null;
+  source_pdf?: string | null;
+  // B.6 structured criminal case details (optional — populated by affidavit_ingest.py)
+  criminal_cases?: CriminalCase[];
 }
 
 export interface SocioMetric {
@@ -169,6 +293,7 @@ export interface SocioMetric {
   metric_scope?: "district" | "state";
   alert_level?: string | null;
   ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+  tn_percentile?: number;   // % of TN districts this value is better than
 }
 
 export interface ConstituencyMeta {

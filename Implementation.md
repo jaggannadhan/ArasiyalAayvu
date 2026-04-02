@@ -4,7 +4,7 @@
 **GCP Project:** `naatunadappu` (Project No: 301895032269)
 **Firestore Region:** `asia-south1`
 **Python Runtime:** 3.14.3 (macOS local dev) / 3.12 (Cloud Run target)
-**Last updated:** 2026-04-01 (Session 7 — B.4 Pincode-to-Constituency Resolver)
+**Last updated:** 2026-04-01 (Session 8 — B.5 Tenure Report Card & Affidavit Integration)
 
 ---
 
@@ -41,6 +41,8 @@ A public-facing web app (mobile + desktop) that presents **verified, sourced inf
 
 **Total: 20 collections defined. 14 fully live; 6 seeded via ingest scripts (run to populate).**
 
+> **B.5 Affidavit enrichment:** `candidate_accountability` docs are extended (via `merge=True`) with optional fields `movable_assets_cr`, `immovable_assets_cr`, `institution_name`, `source_pdf`. Run `scrapers/affidavit_ingest.py` to populate. Existing docs without these fields render correctly (all fields are optional in `MlaRecord`).
+
 ---
 
 ## Project Structure
@@ -56,6 +58,7 @@ NaatuNadappu/
 │   ├── myneta_scraper.py              # MyNeta TN 2021 MLA winners — WORKING (two-stage)
 │   ├── aser_scraper.py                # ASER 2024 India state PDF — WORKING
 │   ├── candidate_transparency_ingest.py  # MyNeta all-candidates (Level 1+2) — STANDALONE
+│   ├── affidavit_ingest.py            # B.5 Affidavit enrichment — patches candidate_accountability — STANDALONE
 │   ├── state_macro_ingest.py          # State macro/health/water/crops seed — STANDALONE
 │   └── pincode_ingest.py              # TN pincode→constituency mapping — STANDALONE (~183 pincodes)
 ├── transformers/
@@ -182,6 +185,26 @@ pdfplumber
 # Manifesto Tracker seed data upload
 .venv/bin/python main.py --task manifesto
 ```
+
+### Standalone: Affidavit Enrichment (B.5)
+
+`affidavit_ingest.py` patches `candidate_accountability` docs with movable/immovable asset breakdown, institution name, and ECI Form 26 PDF link:
+
+```bash
+# Dry-run (scrape 5 winners, print, no Firestore write)
+.venv/bin/python scrapers/affidavit_ingest.py --dry-run --limit 5
+
+# Full run (~8 min at 1.2 req/s for all 224 winners)
+.venv/bin/python scrapers/affidavit_ingest.py
+
+# Resume: skip docs that already have source_pdf set
+.venv/bin/python scrapers/affidavit_ingest.py --resume
+```
+
+**Source:** MyNeta TN 2021 winner detail pages (`myneta.info/tamilnadu2021`)
+**Write strategy:** `db.collection("candidate_accountability").document(doc_id).set({...}, merge=True)` — never overwrites existing fields
+
+---
 
 ### Standalone: Candidate Transparency Ingestion
 
@@ -555,6 +578,10 @@ EOF occurred in violation of protocol
 | `education_tier` | string | `"Graduate"` / `"Post Graduate"` / `"Doctorate"` / `"Class XII"` / `"Class X"` / `"Below Class X"` / `"Not Disclosed"` |
 | `source_url` | string | MyNeta winners/constituency URL |
 | `ground_truth_confidence` | string | `"HIGH"` |
+| `movable_assets_cr` | float\|null | **B.5** — movable assets in crore (from affidavit_ingest.py) |
+| `immovable_assets_cr` | float\|null | **B.5** — immovable assets in crore (from affidavit_ingest.py) |
+| `institution_name` | string\|null | **B.5** — educational institution (from affidavit_ingest.py) |
+| `source_pdf` | string\|null | **B.5** — ECI Form 26 PDF URL (from affidavit_ingest.py) |
 
 **Criminal severity classification:**
 ```python
@@ -761,7 +788,7 @@ This collection covers **all declared candidates** (target: ~3,859 for 2021), un
 | Route | Status | Description |
 |---|---|---|
 | `/` | **LIVE** | Homepage — search + Frequently Browsed (dynamic, Firestore-backed) |
-| `/constituency/[slug]` | **LIVE** | Per-constituency drill: MLA card, socio-economic metrics, manifesto promises |
+| `/constituency/[slug]` | **LIVE** | Per-constituency drill: MLA card, Tenure Pulse, socio-economic metrics, manifesto promises |
 | `/manifesto-tracker` | **LIVE** | Promise vs. Performance comparison interface |
 
 ### Manifesto Tracker Feature
@@ -827,6 +854,28 @@ Firebase singleton is initialized in `web/src/lib/firebase.ts` (already exists).
 
 ### Constituency Drill Feature (`/constituency/[slug]`)
 
+### B.5 — Tenure Report Card & Affidavit Integration (Session 8)
+
+| File | Change |
+|---|---|
+| `scrapers/affidavit_ingest.py` | **NEW** — scrapes MyNeta winner detail pages; patches `candidate_accountability` with `movable_assets_cr`, `immovable_assets_cr`, `institution_name`, `source_pdf` |
+| `web/backend_api/main.py` | Added `district_water_risk` lookup by `district_slug` in `constituency_drill()`; included in response payload |
+| `web/src/lib/types.ts` | Added optional affidavit fields to `MlaRecord`; updated `DistrictWaterRisk` schema to match actual Firestore fields |
+| `web/src/lib/constituency-fetcher.ts` | Added `district_water_risk: DistrictWaterRisk \| null` to `ConstituencyDrillData` |
+| `web/src/components/constituency/MlaCard.tsx` | Added movable/immovable asset grid (conditional), institution name line, "View ECI Affidavit" link (conditional on `source_pdf`) |
+| `web/src/components/constituency/TenurePulse.tsx` | **NEW** — Tenure Pulse card: water risk (live data), crime index + road quality (data pending placeholders), bilingual |
+| `web/src/app/constituency/[slug]/page.tsx` | `<TenurePulse>` inserted between MlaCard and SocioPanel |
+| `web/src/components/constituency/SocioPanel.tsx` | Footer updated: "Note: Socio-economic data is reported at the District level as per State Planning Commission standards." |
+
+**TenurePulse component** (`web/src/components/constituency/TenurePulse.tsx`):
+- Props: `{ districtName, waterRisk: DistrictWaterRisk | null, lang }`
+- Water risk row: live — shows `risk_label_en`/`risk_label_ta` with color indicator (🔴/🟡/🟢/🔵)
+- Crime Index row: grayed out "Data pending" (SCRB data not yet ingested)
+- Road Quality row: grayed out "Data pending" (PWD data not yet ingested)
+- Renders even when `waterRisk === null` (shows "District data unavailable")
+
+---
+
 **Data fetched:** `_fetch_constituency_drill(slug)` in `main.py` — assembles:
 - MLA record from `candidate_accountability` (3-tier lookup: by `constituency_id`, by slug field, by doc ID)
 - Socio-economic metrics from `socio_economics`
@@ -853,11 +902,21 @@ Firebase singleton is initialized in `web/src/lib/firebase.ts` (already exists).
 ```typescript
 interface LsConstituencyMeta    { ls_slug, ls_name, ls_name_ta, ls_id, confidence }
 interface FrequentlyBrowsedItem { slug, name, district, view_count }
-interface StateMacroRecord      { metric_id, category, metric_name, tamil_name, value, unit, year, national_average, context, source_url, ground_truth_confidence }
-interface DistrictHealthRecord  { metric_id, district, metric_name, tamil_name, value, unit, year, alert_level, source_url }
-interface DistrictWaterRisk     { district, district_slug, risk_score, risk_level, primary_driver, secondary_driver, affected_taluks, source_url }
-interface CropEconomicsRecord   { crop_id, crop_name, crop_name_ta, category, msp_inr_per_qtl, frp_inr_per_qtl, production_cost_inr_per_qtl, price_gap_pct, year, source_url }
-interface StateVitalsData       { economy: StateMacroRecord[], health: DistrictHealthRecord[], water: DistrictWaterRisk[], crops: CropEconomicsRecord[] }
+interface StateMacroRecord      { metric_id, category, metric_name, metric_name_ta, value, unit, year, national_average, context, source_url, ground_truth_confidence }
+interface DistrictHealthRecord  { metric_id, district_slug, district_name, metric_name, metric_name_ta, value, unit, year, alert_level, source_url, ground_truth_confidence }
+interface DistrictWaterRisk     { doc_id, district_slug, district_name, risk_level, risk_label_en, risk_label_ta, water_stress_score, avg_annual_rainfall_mm, context, policy_implication, ground_truth_confidence }
+interface CropEconomicsRecord   { doc_id, crop_name, crop_name_ta, crop_type, season, msp_per_quintal, frp_per_quintal, a2_fl_cost_per_quintal, c2_cost_per_quintal, profit_over_a2fl_pct, source_url, ground_truth_confidence }
+interface StateVitalsData       { economy?: StateMacroRecord[], health?: DistrictHealthRecord[], water?: DistrictWaterRisk[], crops?: CropEconomicsRecord[] }
+interface PincodeConstituency   { slug, name, name_ta }
+interface PincodeResult         { pincode, district, constituencies: PincodeConstituency[], is_ambiguous }
+```
+
+**`MlaRecord` optional affidavit fields (Session 8):**
+```typescript
+movable_assets_cr?: number | null;
+immovable_assets_cr?: number | null;
+institution_name?: string | null;
+source_pdf?: string | null;
 ```
 
 **`PARTIES` constant** updated — added `inc` entry (blue-600, INC/Congress support end-to-end).
@@ -887,7 +946,7 @@ interface StateVitalsData       { economy: StateMacroRecord[], health: DistrictH
 | Method | Path | Description |
 |---|---|---|
 | `GET` | `/health` | Service status + `ls_map_loaded` count |
-| `GET` | `/api/constituency/{slug}` | Full drill data: MLA + metrics + promises + parent_ls |
+| `GET` | `/api/constituency/{slug}` | Full drill data: MLA + metrics + promises + parent_ls + district_water_risk |
 | `GET` | `/api/socio-economics` | All `socio_economics` docs (sorted by METRIC_ORDER) |
 | `GET` | `/api/manifesto-promises` | All `manifesto_promises` docs (sorted by PILLAR_ORDER) |
 | `GET` | `/api/frequently-browsed?limit=N` | Top-N by `view_count DESC` from `usage_counters` |
@@ -1068,22 +1127,20 @@ col.where(filter=FieldFilter("field", "==", value))
 
 ### B.4 Pincode Resolver — Frontend
 
-**Component:** `web/src/components/constituency/PincodeResolverModal.tsx`
-**Trigger:** rendered inside `ConstituencySearch` — "Find by pincode" link below the search box
+**Implementation:** Merged into `ConstituencySearch` — single unified input auto-detects pincode vs. constituency name. No separate component.
 
-**State machine:**
+**Detection:** `IS_PINCODE = (v: string) => /^\d+$/.test(v)` — any all-digit input triggers pincode mode; icon swaps 🔍→📮 and placeholder changes.
+
+**State machine (`PincodeStatus`):**
 | State | UI |
 |---|---|
-| `idle` | Input + "Find" button |
-| `loading` | Spinner in button |
-| `single` | Green confirmation flash → auto-redirect (600ms) |
-| `ambiguous` | Constituency choice cards |
+| `idle` | Standard search/pincode input |
+| `loading` | Spinner while fetching |
+| `ambiguous` | Constituency choice cards inline below input |
 | `not_found` | Amber error — pincode not in DB |
 | `error` | Red error — network/server failure |
 
-**localStorage persistence:** key `aayvu_p2c_{pincode}` → selected slug. On re-lookup of the same pincode, skips API call and navigates directly.
-
-**Geolocation:** "Use my location" button → `navigator.geolocation` → Nominatim reverse geocode (`nominatim.openstreetmap.org/reverse`) → extracts postcode → pre-fills input and triggers lookup automatically.
+**localStorage persistence:** key `aayvu_p2c_{pincode}` → selected slug. On re-lookup of same pincode, skips API and navigates directly.
 
 **Bilingual:** full EN/Tamil support via `lang` prop (labels, placeholders, status messages).
 

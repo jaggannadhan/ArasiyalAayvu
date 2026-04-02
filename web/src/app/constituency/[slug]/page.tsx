@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { MlaCard } from "@/components/constituency/MlaCard";
-import { SocioPanel } from "@/components/constituency/SocioPanel";
-import { PromiseMatrix } from "@/components/constituency/PromiseMatrix";
+import { WardPanel } from "@/components/constituency/WardPanel";
+import { DistrictPanel } from "@/components/constituency/DistrictPanel";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
 import { ConstituencySkeleton } from "@/components/constituency/ConstituencySkeleton";
+import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
 import {
   fetchConstituencyData,
   type ConstituencyDrillData,
@@ -62,9 +63,12 @@ export default function ConstituencyPage() {
   const slug = typeof params.slug === "string" ? params.slug : "";
 
   const [lang, setLang] = useState<"en" | "ta">("en");
+  const [selectedTerm, setSelectedTerm] = useState(2021);
   const [data, setData] = useState<ConstituencyDrillData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorState | null>(null);
+
+  const currentTermMeta = TERMS.find((t) => t.electionYear === selectedTerm) ?? TERMS[2];
 
   const meta = MAP[slug] as MapEntry | undefined;
   const isTA = lang === "ta";
@@ -132,7 +136,7 @@ export default function ConstituencyPage() {
           </div>
           <button
             onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
           >
             {lang === "en" ? "தமிழ்" : "English"}
           </button>
@@ -150,6 +154,15 @@ export default function ConstituencyPage() {
               ? `"${slug}" என்ற தொகுதி காணப்படவில்லை. மேலே தேடுங்கள்.`
               : `Constituency "${slug}" not found. Try searching above.`}
           </div>
+        )}
+
+        {/* Tenure navigator — always visible once constituency is known */}
+        {meta && (
+          <TenureNavigator
+            selectedYear={selectedTerm}
+            onChange={setSelectedTerm}
+            lang={lang}
+          />
         )}
 
         {/* Loading skeleton */}
@@ -174,8 +187,25 @@ export default function ConstituencyPage() {
           </div>
         )}
 
-        {/* Main content */}
-        {!loading && !error && data && (
+        {/* Term not yet available */}
+        {!loading && !currentTermMeta.hasDrillData && (
+          <div className="rounded-2xl border border-gray-200 bg-white px-5 py-10 text-center space-y-1">
+            <p className="text-2xl">🗓</p>
+            <p className="text-sm font-semibold text-gray-700">
+              {isTA
+                ? `${currentTermMeta.label} காலத்திற்கான தரவு இல்லை`
+                : `Data for ${currentTermMeta.label} not yet available`}
+            </p>
+            <p className="text-xs text-gray-400">
+              {isTA
+                ? "2021–2026 காலத்திற்கு திரும்பவும்"
+                : "Switch back to 2021–2026 to view current data"}
+            </p>
+          </div>
+        )}
+
+        {/* Main content — current term only */}
+        {!loading && !error && data && currentTermMeta.hasDrillData && (
           <>
             {/* MLA not found */}
             {!data.mla && (
@@ -191,30 +221,30 @@ export default function ConstituencyPage() {
               <MlaCard mla={data.mla} district={meta?.district ?? ""} lang={lang} />
             )}
 
-            {/* Socio panel */}
-            {data.metrics.length > 0 && (
-              <SocioPanel
-                metrics={data.metrics}
-                district={meta?.district ?? "Tamil Nadu"}
-                metricsScope={data.metrics_scope}
-                lang={lang}
-              />
-            )}
+            {/* Ward & Local Body mapping + councillors */}
+            <WardPanel
+              wardMapping={data.ward_mapping}
+              ulbHeads={data.ulb_heads}
+              ulbCouncillors={data.ulb_councillors}
+              lang={lang}
+            />
 
-            {/* Promise matrix */}
-            {data.mla && (
-              <PromiseMatrix
-                promises={data.promises}
-                partyName={data.mla.party}
-                lang={lang}
-              />
-            )}
+            {/* District Indicators — combines socio metrics + risk data with toggle */}
+            <DistrictPanel
+              metrics={data.metrics}
+              waterRisk={data.district_water_risk}
+              crimeIndex={data.district_crime_index}
+              roadSafety={data.district_road_safety}
+              districtName={meta?.district ?? ""}
+              metricsScope={data.metrics_scope}
+              lang={lang}
+            />
 
             {/* Data attribution */}
             <p className="text-xs text-center text-gray-400 pb-8">
               {isTA
-                ? "ஆதாரம்: MyNeta/ADR 2021, NFHS-5, ASER 2024 · அரசியல்ஆய்வு"
-                : "Sources: MyNeta/ADR 2021, NFHS-5, ASER 2024 · ArasiyalAayvu"}
+                ? "ஆதாரம்: MyNeta/ADR 2021, NFHS-5, ASER 2024, LGD GoI · அரசியல்ஆய்வு"
+                : "Sources: MyNeta/ADR 2021, NFHS-5, ASER 2024, LGD GoI · ArasiyalAayvu"}
             </p>
           </>
         )}

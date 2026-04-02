@@ -1,5 +1,5 @@
 import { apiGet } from "@/lib/api-client";
-import type { MlaRecord, SocioMetric, ManifestoPromise, LsConstituencyMeta } from "@/lib/types";
+import type { MlaRecord, SocioMetric, ManifestoPromise, LsConstituencyMeta, DistrictWaterRisk, DistrictCrimeIndex, DistrictRoadSafety, WardMapping, UlbCouncillor, UlbHead } from "@/lib/types";
 
 type MetricsScope = "district" | "state_fallback";
 
@@ -17,6 +17,12 @@ export interface ConstituencyDrillData {
   district_meta: DistrictMeta | null;
   promises: ManifestoPromise[];
   parent_ls: LsConstituencyMeta | null;
+  district_water_risk: DistrictWaterRisk | null;
+  district_crime_index: DistrictCrimeIndex | null;
+  district_road_safety: DistrictRoadSafety | null;
+  ward_mapping: WardMapping | null;
+  ulb_councillors: UlbCouncillor[];
+  ulb_heads: UlbHead[];
 }
 
 export async function fetchConstituencyData(

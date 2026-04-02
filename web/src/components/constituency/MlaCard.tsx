@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import type { MlaRecord } from "@/lib/types";
 import { PARTIES } from "@/lib/types";
+import { CandidateCriminalModal } from "./CandidateCriminalModal";
 
 interface MlaCardProps {
   mla: MlaRecord;
@@ -32,6 +34,13 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
   const partyId = mla.party_id ?? partyIdFromName(mla.party);
   const partyMeta = PARTIES[partyId];
   const severity = SEVERITY_META[mla.criminal_severity];
+  const [modalOpen, setModalOpen] = useState(false);
+  const [assetsExpanded, setAssetsExpanded] = useState(false);
+  const hasAssetBreakdown = mla.movable_assets_cr != null || mla.immovable_assets_cr != null;
+  // Use parsed case count when available — single source of truth for what's displayed
+  const caseCount = mla.criminal_cases && mla.criminal_cases.length > 0
+    ? mla.criminal_cases.length
+    : mla.criminal_cases_total;
 
   // Initials avatar from MLA name
   const initials = mla.mla_name
@@ -63,8 +72,8 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
         )}
 
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-0.5">
-            {isTA ? "தேர்ந்தெடுக்கப்பட்ட சட்டமன்ற உறுப்பினர் · 2021" : "Elected MLA · 2021"}
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
+            {isTA ? "சட்டமன்ற உறுப்பினர்" : "Elected MLA"}
           </p>
           <h2 className="text-lg font-black text-gray-900 leading-tight truncate">{mla.mla_name}</h2>
           <div className="flex flex-wrap items-center gap-2 mt-1">
@@ -76,39 +85,47 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
         </div>
       </div>
 
-      {mla.criminal_cases_total > 0 && (
-        <div className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700 font-medium">
-          {isTA
-            ? `⚠ ${mla.criminal_cases_total} குற்ற வழக்குகள் பதிவாகியுள்ளன`
-            : `⚠ High Alert: ${mla.criminal_cases_total} criminal case(s) declared`}
-        </div>
-      )}
-
       {/* Stats row */}
       <div className="mt-4 grid grid-cols-3 gap-3">
-        {/* Criminal record */}
+        {/* Criminal record — clickable badge opens detail modal */}
         <div className="flex flex-col gap-1">
           <p className="text-xs text-gray-500">{isTA ? "வழக்குகள்" : "Cases"}</p>
-          <span className={`text-xs font-semibold px-2 py-1 rounded-lg border text-center ${severity.color}`}>
-            {mla.criminal_cases_total === 0
+          <button
+            onClick={() => setModalOpen(true)}
+            className={`text-xs font-semibold px-2 py-1 rounded-lg border text-center transition-opacity hover:opacity-80 ${severity.color}`}
+          >
+            {caseCount === 0
               ? (isTA ? severity.label_ta : severity.label_en)
-              : `${mla.criminal_cases_total} ${isTA ? severity.label_ta : severity.label_en}`}
-          </span>
+              : `${caseCount} ${isTA ? severity.label_ta : severity.label_en}`}
+          </button>
         </div>
 
-        {/* Net assets */}
+        {/* Total assets — clickable if movable/immovable breakdown exists */}
         <div className="flex flex-col gap-1">
-          <p className="text-xs text-gray-500">{isTA ? "நிகர சொத்து" : "Net Assets"}</p>
-          <div>
-            <p className="text-sm font-bold text-gray-900">
-              {mla.net_assets_cr != null
-                ? `₹${mla.net_assets_cr.toFixed(2)} Cr`
-                : "—"}
-            </p>
-            {mla.is_crorepati && (
-              <p className="text-xs text-amber-700">{isTA ? "கோடீஸ்வரர்" : "Crorepati"}</p>
-            )}
-          </div>
+          <p className="text-xs text-gray-500">{isTA ? "மொத்த சொத்து" : "Total Assets"}</p>
+          {hasAssetBreakdown ? (
+            <button
+              onClick={() => setAssetsExpanded((v) => !v)}
+              className="text-left group"
+            >
+              <p className="text-sm font-bold text-gray-900 group-hover:underline decoration-dotted underline-offset-2">
+                {mla.assets_cr != null ? `₹${mla.assets_cr.toFixed(2)} Cr` : "—"}
+                <span className="ml-1 text-gray-400 text-xs">{assetsExpanded ? "▲" : "▼"}</span>
+              </p>
+              {mla.is_crorepati && (
+                <p className="text-xs text-amber-700">{isTA ? "கோடீஸ்வரர்" : "Crorepati"}</p>
+              )}
+            </button>
+          ) : (
+            <div>
+              <p className="text-sm font-bold text-gray-900">
+                {mla.assets_cr != null ? `₹${mla.assets_cr.toFixed(2)} Cr` : "—"}
+              </p>
+              {mla.is_crorepati && (
+                <p className="text-xs text-amber-700">{isTA ? "கோடீஸ்வரர்" : "Crorepati"}</p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Education */}
@@ -118,27 +135,60 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
         </div>
       </div>
 
-      {/* Assets bar */}
-      {mla.assets_cr != null && mla.assets_cr > 0 && (
-        <div className="mt-4">
-          <div className="flex justify-between text-xs text-gray-500 mb-1">
-            <span>{isTA ? "மொத்த சொத்துக்கள்" : "Total Assets"}</span>
-            <span>₹{mla.assets_cr.toFixed(2)} Cr</span>
+      {/* Asset breakdown — expands when Total Assets is tapped */}
+      {assetsExpanded && hasAssetBreakdown && (
+        <div className="mt-3 grid grid-cols-2 gap-2 rounded-xl bg-gray-50 border border-gray-100 px-4 py-3">
+          <div>
+            <p className="text-xs text-gray-500">{isTA ? "நடமாடும் சொத்து" : "Movable"}</p>
+            <p className="text-sm font-bold text-gray-900">
+              {mla.movable_assets_cr != null ? `₹${mla.movable_assets_cr.toFixed(2)} Cr` : "—"}
+            </p>
           </div>
-          <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-            {/* Bar scaled relative to 50 Cr as max for visual comparison */}
-            <div
-              className={`h-full rounded-full ${partyMeta?.color ?? "bg-gray-400"}`}
-              style={{ width: `${Math.min((mla.assets_cr / 50) * 100, 100)}%` }}
-            />
+          <div>
+            <p className="text-xs text-gray-500">{isTA ? "நிலையான சொத்து" : "Immovable"}</p>
+            <p className="text-sm font-bold text-gray-900">
+              {mla.immovable_assets_cr != null ? `₹${mla.immovable_assets_cr.toFixed(2)} Cr` : "—"}
+            </p>
           </div>
           {mla.liabilities_cr != null && mla.liabilities_cr > 0 && (
-            <p className="text-xs text-gray-400 mt-1">
-              {isTA ? "கடன்கள்" : "Liabilities"}: ₹{mla.liabilities_cr.toFixed(2)} Cr
-            </p>
+            <div className="col-span-2 border-t border-gray-200 pt-2 mt-1">
+              <p className="text-xs text-gray-500">{isTA ? "கடன்கள்" : "Liabilities"}</p>
+              <p className="text-sm font-bold text-red-600">
+                − ₹{mla.liabilities_cr.toFixed(2)} Cr
+              </p>
+            </div>
           )}
         </div>
       )}
+
+      {/* Institution name (below education_tier) */}
+      {mla.institution_name && (
+        <p className="mt-2 text-xs text-gray-500">
+          🏫 {mla.institution_name}
+        </p>
+      )}
+
+      {/* View ECI Affidavit link */}
+      {mla.source_pdf && (
+        <div className="mt-4 border-t border-gray-100 pt-4">
+          <a
+            href={mla.source_pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            📄 {isTA ? "தேர்தல் உறுதிமொழி ஆவணம்" : "View ECI Affidavit"}
+          </a>
+        </div>
+      )}
+
+      {/* Criminal detail modal — portal-rendered, scroll-locked */}
+      <CandidateCriminalModal
+        mla={mla}
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        lang={lang}
+      />
     </div>
   );
 }

@@ -21,17 +21,31 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 MAP_PATH = ROOT_DIR / "src" / "lib" / "constituency-map.json"
 LS_MAP_PATH = ROOT_DIR / "src" / "lib" / "ls-constituency-map.json"
 
+# True = higher value is better for that metric (used for percentile direction)
+METRIC_HIGHER_IS_BETTER: Dict[str, bool] = {
+    "nfhs5_women_literacy":                  True,
+    "nfhs5_institutional_deliveries":        True,
+    "aser2024_std3_reading_recovery":        True,
+    "industrial_corridors_district_coverage": True,
+    "nfhs5_anaemia_women":                   False,
+    "nfhs5_stunting_under5":                 False,
+}
+
 KEY_METRIC_IDS = {
     "aser2024_std3_reading_recovery",
+    "nfhs5_women_literacy",
     "nfhs5_stunting_under5",
     "nfhs5_anaemia_women",
+    "nfhs5_institutional_deliveries",
     "industrial_corridors_district_coverage",
 }
 METRIC_ORDER = {
     "aser2024_std3_reading_recovery": 0,
-    "nfhs5_stunting_under5": 1,
+    "nfhs5_women_literacy": 1,
     "nfhs5_anaemia_women": 2,
-    "industrial_corridors_district_coverage": 3,
+    "nfhs5_stunting_under5": 3,
+    "nfhs5_institutional_deliveries": 4,
+    "industrial_corridors_district_coverage": 5,
 }
 PILLAR_ORDER = {
     "Agriculture": 0,
@@ -111,6 +125,16 @@ def _sort_promises(promises: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     )
 
 
+def _compute_tn_percentile(
+    value: float, all_values: List[float], higher_is_better: bool
+) -> int:
+    """Returns % of TN districts this value is 'better than' (0-100)."""
+    if not all_values:
+        return 0
+    n_worse = sum(1 for v in all_values if (v < value if higher_is_better else v > value))
+    return round(n_worse / len(all_values) * 100)
+
+
 def _doc_to_dict(doc: firestore.DocumentSnapshot) -> Dict[str, Any]:
     data = doc.to_dict() or {}
     data.setdefault("doc_id", doc.id)
@@ -163,15 +187,43 @@ def _fetch_socio_metrics_for_district(
     district_slug: Optional[str],
 ) -> Tuple[List[Dict[str, Any]], str]:
     col = _db.collection("socio_economics")
+    all_docs = list(col.stream())
+
+    # State-level docs have no district_slug (ASER and similar state-only metrics)
+    state_docs = [d for d in all_docs if not d.to_dict().get("district_slug")]
+    state_metrics = _filter_metrics(state_docs)
 
     if district_slug:
-        district_docs = list(col.where(filter=FieldFilter("district_slug", "==", district_slug)).stream())
+        district_docs = [d for d in all_docs if d.to_dict().get("district_slug") == district_slug]
         district_metrics = _filter_metrics(district_docs)
         if district_metrics:
-            return _sort_metrics(district_metrics), "district"
+            # Build per-metric list of all district values for TN percentile
+            metric_all_values: Dict[str, List[float]] = {}
+            for doc in all_docs:
+                d = doc.to_dict() or {}
+                mid = str(d.get("metric_id", ""))
+                ds  = d.get("district_slug")
+                val = d.get("value")
+                if ds and mid in KEY_METRIC_IDS and val is not None:
+                    try:
+                        metric_all_values.setdefault(mid, []).append(float(val))
+                    except (TypeError, ValueError):
+                        pass
 
-    state_docs = list(col.stream())
-    state_metrics = _filter_metrics(state_docs)
+            # Annotate each district metric with its TN percentile
+            for m in district_metrics:
+                mid  = str(m.get("metric_id", ""))
+                val  = m.get("value")
+                vals = metric_all_values.get(mid, [])
+                if vals and val is not None:
+                    higher = METRIC_HIGHER_IS_BETTER.get(mid, True)
+                    m["tn_percentile"] = _compute_tn_percentile(float(val), vals, higher)
+
+            # Merge: district wins for shared metric_ids; keep state-only for the rest
+            district_ids = {m["metric_id"] for m in district_metrics}
+            merged = district_metrics + [m for m in state_metrics if m["metric_id"] not in district_ids]
+            return _sort_metrics(merged), "district"
+
     return _sort_metrics(state_metrics), "state_fallback"
 
 
@@ -252,13 +304,104 @@ def constituency_drill(slug: str) -> Dict[str, Any]:
         # Parent Lok Sabha constituency lookup
         parent_ls = ASSEMBLY_TO_LS.get(slug)
 
+        # District water risk — with TN percentile across all districts
+        district_water_risk = None
+        if district_slug:
+            all_wr = list(_db.collection("district_water_risk").stream())
+            wr_doc = next((d for d in all_wr if d.id == district_slug), None)
+            if wr_doc and wr_doc.exists:
+                district_water_risk = _doc_to_dict(wr_doc)
+                score = district_water_risk.get("water_stress_score")
+                if score is not None:
+                    all_scores = [float(d.to_dict()["water_stress_score"]) for d in all_wr
+                                  if d.to_dict().get("water_stress_score") is not None]
+                    district_water_risk["tn_percentile"] = _compute_tn_percentile(
+                        float(score), all_scores, higher_is_better=False
+                    )
+
+        # District crime index — with TN percentile
+        district_crime_index = None
+        if district_slug:
+            all_ci = list(_db.collection("district_crime_index").stream())
+            ci_doc = next((d for d in all_ci if d.id == district_slug), None)
+            if ci_doc and ci_doc.exists:
+                district_crime_index = _doc_to_dict(ci_doc)
+                rate = district_crime_index.get("ipc_crime_rate_per_lakh")
+                if rate is not None:
+                    all_rates = [float(d.to_dict()["ipc_crime_rate_per_lakh"]) for d in all_ci
+                                 if d.to_dict().get("ipc_crime_rate_per_lakh") is not None]
+                    district_crime_index["tn_percentile"] = _compute_tn_percentile(
+                        float(rate), all_rates, higher_is_better=False
+                    )
+
+        # District road safety — with TN percentile
+        district_road_safety = None
+        if district_slug:
+            all_rs = list(_db.collection("district_road_safety").stream())
+            rs_doc = next((d for d in all_rs if d.id == district_slug), None)
+            if rs_doc and rs_doc.exists:
+                district_road_safety = _doc_to_dict(rs_doc)
+                dr = district_road_safety.get("death_rate_per_lakh_2023")
+                if dr is not None:
+                    all_dr = [float(d.to_dict()["death_rate_per_lakh_2023"]) for d in all_rs
+                              if d.to_dict().get("death_rate_per_lakh_2023") is not None]
+                    district_road_safety["tn_percentile"] = _compute_tn_percentile(
+                        float(dr), all_dr, higher_is_better=False
+                    )
+
+        # Ward mapping — single doc keyed by constituency_slug
+        ward_mapping = None
+        wm_doc = _db.collection("ward_mapping").document(slug).get()
+        if wm_doc.exists:
+            ward_mapping = _doc_to_dict(wm_doc)
+
+        # ULB councillors — filter by assembly_constituency_slug (exact match)
+        # ULB heads — look up for each local body in the ward mapping
+        ulb_councillors: List[Dict[str, Any]] = []
+        ulb_heads: List[Dict[str, Any]] = []
+
+        # Councillors: filter by this constituency's slug
+        c_docs = (
+            _db.collection("ulb_councillors")
+            .where(filter=FieldFilter("assembly_constituency_slug", "==", slug))
+            .stream()
+        )
+        for cdoc in c_docs:
+            ulb_councillors.append(_doc_to_dict(cdoc))
+
+        # Heads: one per unique local body that appears in this constituency
+        if ward_mapping:
+            seen_local_body_slugs: set[str] = set()
+            for lb in ward_mapping.get("local_bodies", []):
+                lb_slug = (
+                    lb.get("name", "")
+                    .lower()
+                    .replace(" ", "_")
+                    .replace(".", "")
+                    .replace("(", "")
+                    .replace(")", "")
+                    .replace("-", "_")
+                )
+                if lb_slug in seen_local_body_slugs:
+                    continue
+                seen_local_body_slugs.add(lb_slug)
+                head_doc = _db.collection("ulb_heads").document(lb_slug).get()
+                if head_doc.exists:
+                    ulb_heads.append(_doc_to_dict(head_doc))
+
         payload = {
             "mla": mla,
             "metrics": metrics,
             "metrics_scope": metrics_scope,
             "district_meta": district_meta,
             "promises": promises,
-            "parent_ls": parent_ls,  # { ls_slug, ls_name, ls_name_ta, ls_id, confidence } | null
+            "parent_ls": parent_ls,
+            "district_water_risk": district_water_risk,
+            "district_crime_index": district_crime_index,
+            "district_road_safety": district_road_safety,
+            "ward_mapping": ward_mapping,
+            "ulb_councillors": ulb_councillors,
+            "ulb_heads": ulb_heads,
         }
         return jsonable_encoder(payload)
     except (GoogleAPICallError, RetryError) as exc:
