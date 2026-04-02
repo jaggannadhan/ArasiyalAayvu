@@ -11,6 +11,23 @@ export interface LsConstituencyMeta {
 }
 
 // ---------------------------------------------------------------------------
+// B.4 Pincode-to-Constituency Resolver
+// ---------------------------------------------------------------------------
+
+export interface PincodeConstituency {
+  slug: string;
+  name: string;       // "Mylapore"
+  name_ta: string;    // "மயிலாப்பூர்"
+}
+
+export interface PincodeResult {
+  pincode: string;
+  district: string;
+  constituencies: PincodeConstituency[];
+  is_ambiguous: boolean;
+}
+
+// ---------------------------------------------------------------------------
 // Usage counter / Frequently Browsed
 // ---------------------------------------------------------------------------
 

@@ -4,7 +4,7 @@
 **GCP Project:** `naatunadappu` (Project No: 301895032269)
 **Firestore Region:** `asia-south1`
 **Python Runtime:** 3.14.3 (macOS local dev) / 3.12 (Cloud Run target)
-**Last updated:** 2026-04-01 (Session 5 — A.1 + A.2)
+**Last updated:** 2026-04-01 (Session 7 — B.4 Pincode-to-Constituency Resolver)
 
 ---
 
@@ -32,8 +32,14 @@ A public-facing web app (mobile + desktop) that presents **verified, sourced inf
 | 12 | Party Accountability | `party_accountability` | **LIVE** | 8 | Derived from MyNeta |
 | 13 | Manifesto Tracker | `manifesto_promises` | **LIVE** | 13 | DMK/AIADMK 2021 manifestos (curated seed) |
 | 14 | Candidate Transparency | `candidate_transparency` | **LIVE** | 3,578 | MyNeta TN 2021 — all candidates (238 constituencies) |
+| 15 | View Counters | `usage_counters` | **LIVE** | grows | Client-side page-view increment (Firestore `Increment`) |
+| 16 | State Macro — Economy | `state_macro` | **SEEDED** (script ready) | 6 | GSDP growth, sectoral shares, debt ratio, TASMAC |
+| 17 | District Health | `district_health` | **SEEDED** (script ready) | 6 | NCD prevalence: Hypertension 31.4%, Diabetes 16.8% |
+| 18 | District Water Risk | `district_water_risk` | **SEEDED** (script ready) | 6 | Risk scores: Pudukottai 4.8, Ramanathapuram 4.7 |
+| 19 | Crop Economics | `crop_economics` | **SEEDED** (script ready) | 6 | MSP data: Paddy ₹2,300/qtl, Sugarcane FRP ₹340/qtl |
+| 20 | Pincode Mapping | `pincode_mapping` | **SEEDED** (script ready) | ~183 | 6-digit pincode → Assembly Constituency (ambiguity-aware) |
 
-**Total: 14 collections, all live in Firestore.**
+**Total: 20 collections defined. 14 fully live; 6 seeded via ingest scripts (run to populate).**
 
 ---
 
@@ -49,7 +55,9 @@ NaatuNadappu/
 │   ├── tn_budget_scraper.py           # Manual-Link PDF utility — WORKING
 │   ├── myneta_scraper.py              # MyNeta TN 2021 MLA winners — WORKING (two-stage)
 │   ├── aser_scraper.py                # ASER 2024 India state PDF — WORKING
-│   └── candidate_transparency_ingest.py  # MyNeta all-candidates (Level 1+2) — STANDALONE
+│   ├── candidate_transparency_ingest.py  # MyNeta all-candidates (Level 1+2) — STANDALONE
+│   ├── state_macro_ingest.py          # State macro/health/water/crops seed — STANDALONE
+│   └── pincode_ingest.py              # TN pincode→constituency mapping — STANDALONE (~183 pincodes)
 ├── transformers/
 │   ├── election_transformer.py        # Election data + alliance matrix — LIVE
 │   ├── finance_transformer.py         # Budget/debt/viz metrics — LIVE
@@ -98,7 +106,11 @@ NaatuNadappu/
 │   │   │   └── useManifestos.ts       # Firestore onSnapshot hook with yearFilter
 │   │   └── lib/
 │   │       ├── firebase.ts            # Firebase singleton (Client SDK, env vars only)
-│   │       ├── types.ts               # All TypeScript types (ManifestoPromise, PARTIES, PILLARS, etc.)
+│   │       ├── api-client.ts          # `apiGet<T>()` — fetch wrapper for FastAPI backend
+│   │       ├── constituency-fetcher.ts # `fetchConstituencyDrillData()` — full drill response type
+│   │       ├── constituency-map.json  # 234 assembly slugs → {name, district, constituency_id}
+│   │       ├── ls-constituency-map.json  # 39 LS constituencies → assembly_slugs (98.7% coverage)
+│   │       ├── types.ts               # All TypeScript types (ManifestoPromise, PARTIES, PILLARS, + new C.1 types)
 │   │       └── manifesto-data.ts      # 30 curated promise records (static seed — kept as fallback reference)
 │   ├── package.json                   # next@15.5.14, react@19, firebase@12, tailwindcss@4
 │   ├── next.config.ts
@@ -748,6 +760,8 @@ This collection covers **all declared candidates** (target: ~3,859 for 2021), un
 
 | Route | Status | Description |
 |---|---|---|
+| `/` | **LIVE** | Homepage — search + Frequently Browsed (dynamic, Firestore-backed) |
+| `/constituency/[slug]` | **LIVE** | Per-constituency drill: MLA card, socio-economic metrics, manifesto promises |
 | `/manifesto-tracker` | **LIVE** | Promise vs. Performance comparison interface |
 
 ### Manifesto Tracker Feature
@@ -811,6 +825,45 @@ Firebase singleton is initialized in `web/src/lib/firebase.ts` (already exists).
 | `web/src/app/manifesto-tracker/page.tsx` | Updated — replaced static `SEED_PROMISES` with `useManifestos(yearFilter)`; added year filter pills; skeleton during load; live promise count in status banner; error banner on Firestore failure |
 | `web/src/lib/types.ts` | Updated — added optional `_uploaded_at?: string` field to `ManifestoPromise` |
 
+### Constituency Drill Feature (`/constituency/[slug]`)
+
+**Data fetched:** `_fetch_constituency_drill(slug)` in `main.py` — assembles:
+- MLA record from `candidate_accountability` (3-tier lookup: by `constituency_id`, by slug field, by doc ID)
+- Socio-economic metrics from `socio_economics`
+- Manifesto promises from `manifesto_promises` (filtered by party)
+- `parent_ls` breadcrumb from `ASSEMBLY_TO_LS` reverse map
+
+**SC/ST slug normalization (fixed Session 6):**
+- 45 of 230 constituencies have names like "HARUR (SC)" → `accountability_transformer.py` previously generated `harur__sc_` (double underscore, trailing underscore)
+- Fix 1 (retroactive): `_fetch_mla_by_constituency()` derives the transformer's dirty slug from `constituency_name` and tries it as a fallback doc ID lookup
+- Fix 2 (future loads): `accountability_transformer.py` now uses `re.sub(r"_+", "_", ...).strip("_")` for clean slugs
+
+**Breadcrumb:** `Tamil Nadu › Chennai South (LS) › Mylapore` (bilingual; LS name from `ls-constituency-map.json`)
+
+**View counter:** `useEffect` on page load fires `POST /api/constituency/{slug}/view` (fire-and-forget, non-blocking). Atomically increments `usage_counters/{slug}.view_count` via Firestore `Increment(1)`.
+
+### Homepage Frequently Browsed
+
+- Initialises from `FEATURED_FALLBACK` (6 hardcoded slugs) so the grid renders immediately
+- `useEffect` fetches `GET /api/frequently-browsed?limit=6`; merges API results with fallback to always show 6 cards
+- Falls back silently on any API error
+
+### TypeScript Types Added (Session 6)
+
+```typescript
+interface LsConstituencyMeta    { ls_slug, ls_name, ls_name_ta, ls_id, confidence }
+interface FrequentlyBrowsedItem { slug, name, district, view_count }
+interface StateMacroRecord      { metric_id, category, metric_name, tamil_name, value, unit, year, national_average, context, source_url, ground_truth_confidence }
+interface DistrictHealthRecord  { metric_id, district, metric_name, tamil_name, value, unit, year, alert_level, source_url }
+interface DistrictWaterRisk     { district, district_slug, risk_score, risk_level, primary_driver, secondary_driver, affected_taluks, source_url }
+interface CropEconomicsRecord   { crop_id, crop_name, crop_name_ta, category, msp_inr_per_qtl, frp_inr_per_qtl, production_cost_inr_per_qtl, price_gap_pct, year, source_url }
+interface StateVitalsData       { economy: StateMacroRecord[], health: DistrictHealthRecord[], water: DistrictWaterRisk[], crops: CropEconomicsRecord[] }
+```
+
+**`PARTIES` constant** updated — added `inc` entry (blue-600, INC/Congress support end-to-end).
+
+---
+
 ### Known Issue — `next build` under `NODE_ENV=production`
 
 **Symptom:** `Build error occurred [TypeError: generate is not a function]`
@@ -818,6 +871,244 @@ Firebase singleton is initialized in `web/src/lib/firebase.ts` (already exists).
 **Cause:** `NODE_ENV=production` in the shell causes `npm install` to skip devDependencies (`typescript`, `@types/react`, etc.), which breaks the Next.js build toolchain.
 
 **Workaround:** Run `npm install --include=dev` once, then `npm run build`. The dev server (`npm run dev`) works correctly regardless.
+
+---
+
+## Backend API — FastAPI (`web/backend_api/main.py`)
+
+**Server:** `make run-be` → `.venv/bin/uvicorn web.backend_api.main:app --reload --port 8000`
+
+**CORS:** `allow_origins=["*"]`, `allow_methods=["GET", "POST"]`
+
+**Startup:** Loads `CONSTITUENCY_MAP` from `constituency-map.json` (234 slugs) and `ASSEMBLY_TO_LS` from `ls-constituency-map.json` (227 assembly → LS mappings, optional).
+
+### Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/health` | Service status + `ls_map_loaded` count |
+| `GET` | `/api/constituency/{slug}` | Full drill data: MLA + metrics + promises + parent_ls |
+| `GET` | `/api/socio-economics` | All `socio_economics` docs (sorted by METRIC_ORDER) |
+| `GET` | `/api/manifesto-promises` | All `manifesto_promises` docs (sorted by PILLAR_ORDER) |
+| `GET` | `/api/frequently-browsed?limit=N` | Top-N by `view_count DESC` from `usage_counters` |
+| `POST` | `/api/constituency/{slug}/view` | Atomic `Increment(1)` on `usage_counters/{slug}` |
+| `GET` | `/api/lookup-pincode?code=600023` | Resolve 6-digit pincode → constituency list from `pincode_mapping` |
+| `GET` | `/api/state-vitals?category=all\|economy\|health\|water\|crops` | Reads `state_macro` / `district_health` / `district_water_risk` / `crop_economics` |
+
+### MLA Lookup — 3-Tier Strategy
+
+```python
+def _fetch_mla_by_constituency(slug, constituency_id, constituency_name):
+    # 1. by constituency_id (int field) — fastest, most reliable
+    # 2. by constituency_slug field — handles rename cases
+    # 3. direct doc ID (f"2021_{slug}") — standard case
+    # 4. dirty-slug fallback: derive transformer slug from constituency_name
+    #    catches SC/ST names like "HARUR (SC)" → "harur__sc_" stored in Firestore
+```
+
+### Firestore Query Syntax (FieldFilter — required from google-cloud-firestore ≥2.13)
+
+All `.where()` calls use the new API to avoid deprecation warnings:
+```python
+from google.cloud.firestore_v1.base_query import FieldFilter
+col.where(filter=FieldFilter("field", "==", value))
+```
+
+---
+
+## Firestore Schema — Module 7: State Macro & Correlation Engine
+
+### Collection: `usage_counters`
+**Document ID:** `<constituency_slug>` (e.g. `harur_sc`)
+**Written by:** `POST /api/constituency/{slug}/view` on every constituency page load
+
+| Field | Type | Notes |
+|---|---|---|
+| `view_count` | number | Atomically incremented via `Increment(1)` |
+| `constituency_name` | string | From `CONSTITUENCY_MAP` |
+| `district` | string | From `CONSTITUENCY_MAP` |
+| `district_slug` | string | |
+| `last_viewed` | timestamp | `SERVER_TIMESTAMP` |
+
+---
+
+### Collection: `state_macro`
+**Document ID:** `<metric_id>` (e.g. `gsdp_growth_2024`)
+**Source:** Curated — MoSPI, PRS India, TN Budget 2025-26
+**Ingest:** `scrapers/state_macro_ingest.py`
+
+| Field | Type | Notes |
+|---|---|---|
+| `metric_id` | string | |
+| `category` | string | `"economy"` |
+| `metric_name` | string | English label |
+| `tamil_name` | string | Tamil label |
+| `value` | number | |
+| `unit` | string | `"percent"`, `"crore_inr"`, etc. |
+| `year` | int | |
+| `national_average` | number\|null | For comparison |
+| `context` | string | UI narrative |
+| `source_url` | string | |
+| `ground_truth_confidence` | string | |
+
+**6 seed records:** GSDP growth 11.19% (vs 8.2% national), Services 53%, Manufacturing 34%, Agriculture 13%, Debt/GSDP 24.1%, TASMAC revenue ₹47,800cr.
+
+---
+
+### Collection: `district_health`
+**Document ID:** `<metric_id>` (e.g. `tn_hypertension_prevalence`)
+**Source:** NFHS-5, ICMR-INDIAB, State Health Department
+**Ingest:** `scrapers/state_macro_ingest.py`
+
+| Field | Type | Notes |
+|---|---|---|
+| `metric_id` | string | |
+| `district` | string | `"Tamil Nadu"` for state-level |
+| `metric_name` | string | |
+| `tamil_name` | string | |
+| `value` | number | |
+| `unit` | string | |
+| `year` | int | |
+| `alert_level` | string\|null | `"HIGH"` for policy-gap metrics |
+| `source_url` | string | |
+
+**6 seed records:** Hypertension 31.4%, Diabetes 16.8%, High BMI 40%, NCD deaths 75%, Chennai hypertension 37.5%, Coimbatore diabetes 19.2%.
+
+---
+
+### Collection: `district_water_risk`
+**Document ID:** `<district_slug>` (e.g. `pudukottai`)
+**Source:** NITI Aayog Composite Water Management Index, IMD
+**Ingest:** `scrapers/state_macro_ingest.py`
+
+| Field | Type | Notes |
+|---|---|---|
+| `district` | string | |
+| `district_slug` | string | |
+| `risk_score` | number | 0–5 scale |
+| `risk_level` | string | `"Extreme"` / `"High"` / `"Moderate"` |
+| `primary_driver` | string | e.g. `"Groundwater depletion"` |
+| `secondary_driver` | string | |
+| `affected_taluks` | string[] | |
+| `source_url` | string | |
+
+**6 seed records:** Pudukottai 4.8 (Extreme), Ramanathapuram 4.7, Kancheepuram 4.6, Vellore 4.5, Chennai 4.1, Cauvery delta flood risk.
+
+---
+
+### Collection: `crop_economics`
+**Document ID:** `<crop_id>` (e.g. `paddy_kharif_2024`)
+**Source:** CACP (Commission for Agricultural Costs and Prices), FCI, Sugar Directorate
+**Ingest:** `scrapers/state_macro_ingest.py`
+
+| Field | Type | Notes |
+|---|---|---|
+| `crop_id` | string | |
+| `crop_name` | string | |
+| `crop_name_ta` | string | Tamil name |
+| `category` | string | `"cereal"` / `"cash_crop"` / `"oilseed"` / `"horticulture"` |
+| `msp_inr_per_qtl` | number\|null | Minimum Support Price; null if no MSP |
+| `frp_inr_per_qtl` | number\|null | Fair and Remunerative Price (sugarcane only) |
+| `production_cost_inr_per_qtl` | number\|null | C2 cost (full cost including land rent) |
+| `price_gap_pct` | number\|null | `(MSP - cost) / cost × 100`; negative = farmer loss |
+| `year` | int | |
+| `source_url` | string | |
+
+**6 seed records:** Paddy kharif ₹2,300 MSP, Paddy rabi ₹2,320, Sugarcane FRP ₹340/qtl, Groundnut ₹6,783, Cotton ₹7,121, Banana (no MSP — market-linked).
+
+**Run ingest:**
+```bash
+# Dry-run first
+.venv/bin/python scrapers/state_macro_ingest.py --dry-run
+
+# Live upload
+.venv/bin/python scrapers/state_macro_ingest.py
+```
+
+---
+
+### Collection: `pincode_mapping`
+**Document ID:** `<pincode>` (e.g. `"600023"`)
+**Source:** Curated — India Post postal area boundaries + ECI Delimitation Order 2008
+**Ingest:** `scrapers/pincode_ingest.py`
+
+| Field | Type | Notes |
+|---|---|---|
+| `pincode` | string | 6-digit postal code |
+| `district` | string | Revenue district |
+| `is_ambiguous` | bool | `true` when pincode straddles ≥2 AC boundaries |
+| `constituencies` | object[] | `{slug, name, name_ta}` — 1 entry if unambiguous, 2-3 if ambiguous |
+| `ground_truth_confidence` | string | `"MEDIUM"` — postal areas ≠ ECI boundaries exactly |
+
+**Seed coverage (~183 pincodes):**
+- Chennai 600001–600119: ~90 pincodes, full range
+- Coimbatore 641xxx: ~15 pincodes
+- Madurai 625xxx: ~15 pincodes
+- Trichy 620xxx: ~7 pincodes
+- Salem 636xxx: ~6 pincodes
+- District HQs (35 districts): ~35 pincodes
+
+**Run ingest:**
+```bash
+.venv/bin/python scrapers/pincode_ingest.py --dry-run
+.venv/bin/python scrapers/pincode_ingest.py
+```
+
+**API:** `GET /api/lookup-pincode?code=600023`
+```json
+{
+  "pincode": "600023",
+  "district": "Chennai",
+  "is_ambiguous": false,
+  "constituencies": [
+    { "slug": "anna_nagar", "name": "Anna Nagar", "name_ta": "அண்ணா நகர்" }
+  ]
+}
+```
+
+### B.4 Pincode Resolver — Frontend
+
+**Component:** `web/src/components/constituency/PincodeResolverModal.tsx`
+**Trigger:** rendered inside `ConstituencySearch` — "Find by pincode" link below the search box
+
+**State machine:**
+| State | UI |
+|---|---|
+| `idle` | Input + "Find" button |
+| `loading` | Spinner in button |
+| `single` | Green confirmation flash → auto-redirect (600ms) |
+| `ambiguous` | Constituency choice cards |
+| `not_found` | Amber error — pincode not in DB |
+| `error` | Red error — network/server failure |
+
+**localStorage persistence:** key `aayvu_p2c_{pincode}` → selected slug. On re-lookup of the same pincode, skips API call and navigates directly.
+
+**Geolocation:** "Use my location" button → `navigator.geolocation` → Nominatim reverse geocode (`nominatim.openstreetmap.org/reverse`) → extracts postcode → pre-fills input and triggers lookup automatically.
+
+**Bilingual:** full EN/Tamil support via `lang` prop (labels, placeholders, status messages).
+
+---
+
+### LS Constituency Map (`web/src/lib/ls-constituency-map.json`)
+
+Maps 39 Lok Sabha constituencies → arrays of assembly slugs.
+
+**Coverage:** 227/230 assembly slugs (98.7%). Three slugs without LS parent: `rameswaram` (Ramanathapuram LS), `thovalai`, `vilavancode` (Kanniyakumari LS).
+
+**Loaded at startup** into `ASSEMBLY_TO_LS` reverse map: `assembly_slug → { ls_slug, ls_name, ls_name_ta, ls_id, confidence }`.
+
+**Schema per entry:**
+```json
+"madurai": {
+  "name": "Madurai",
+  "name_ta": "மதுரை",
+  "ls_id": 32,
+  "confidence": "HIGH",
+  "assembly_slugs": ["madurai_north", "madurai_south", "madurai_central", ...]
+}
+```
+
+**Confidence levels:** `HIGH` (official ECI boundary data), `MEDIUM` (derived from census/news).
 
 ---
 
@@ -953,20 +1244,37 @@ CMD ["--task", "all"]
 
 ## Next Steps (Ordered by Priority)
 
-1. **Add `web/.env.local`** — Firebase config keys needed to activate live Firestore reads. The hook and singleton are wired; only the env file is missing. Get the values from Firebase Console → Project Settings → Your apps.
+1. **Run `pincode_ingest.py`** — Upload the 183-pincode seed to Firestore:
+   ```bash
+   .venv/bin/python scrapers/pincode_ingest.py --dry-run   # verify
+   .venv/bin/python scrapers/pincode_ingest.py              # upload
+   ```
+   Expand coverage by adding entries to `_PINCODE_DATA` in the script.
 
-2. **`candidate_transparency` is live** — 3,578 records uploaded. Next: build a frontend route (e.g. `/candidates`) to surface this data — searchable by name, party, constituency, criminal cases, or education level.
+2. **Run `state_macro_ingest.py`** — Script is created but not yet executed. Populates `state_macro`, `district_health`, `district_water_risk`, `crop_economics` collections:
+   ```bash
+   .venv/bin/python scrapers/state_macro_ingest.py --dry-run   # verify
+   .venv/bin/python scrapers/state_macro_ingest.py              # upload
+   ```
 
-3. **Constituency-level drill-down** — `candidate_accountability` has all 224 MLA winners. Add a `/constituency/<slug>` route in Next.js linking MLA record → socio_economics context → manifesto promises for that party. Enables per-voter district view.
+2. **Phase 3: Correlation Matrix UI** — "What's the Connection?" heatmap feature. X/Y axis toggles:
+   - Industrial Growth vs NRI/Migration
+   - TASMAC Revenue vs Health Ailments
+   - MSP/Agriculture vs District Literacy
+   Reads from `state_macro`, `district_health`, `crop_economics` already in Firestore.
 
-4. **Expand manifesto seed** — Current seed is 13 records (Firestore) / 30 records (frontend static). Expand to cover all 5 pillars × 4 parties with verified source citations. Target: ~60–80 atomic promises. Re-run `python main.py --task manifesto` after updating `manifesto_promises_seed.json`.
+3. **State Vitals page** — Wire `GET /api/state-vitals` to a `/state-vitals` frontend route. Currently shows "Coming soon" on homepage nav card.
 
-5. **2026 Election data** — Add collection `election_2026` for candidate announcements and polling schedule as ECI publishes them. Run `candidate_transparency_ingest.py --year 2026 --placeholders-only` to pre-populate constituency stubs.
+4. **Add `web/.env.local`** — Firebase config keys needed to activate live Firestore reads for the manifesto tracker. Get values from Firebase Console → Project Settings → Your apps.
 
-6. **Finance scraper improvement** — 2020-21 PRS PDF is corrupt. Use `tn_budget_scraper.py --task manual-pdf` to fill the gap if the PDF can be sourced manually.
+5. **`candidate_transparency` frontend** — 3,578 records uploaded. Build a `/candidates` route: searchable by name, party, constituency, criminal cases, or education level.
 
-7. **Alert dashboard** — Surface `alert_level: "HIGH"` metrics (anaemia_women 53%, anaemia_children 57%) in the UI. These are policy gaps where TN underperforms despite strong overall SDG rank.
+6. **Expand manifesto seed** — Current seed is 13 records (Firestore) / 30 records (frontend static). Target ~60–80 atomic promises across all 5 pillars × 4 parties. Re-run `python main.py --task manifesto` after updating `manifesto_promises_seed.json`.
 
-8. **Committed expenditure warning** — `interest_as_pct_revenue` ~24% and rising. Wire `viz_metrics.interest_as_pct_revenue` from `state_finances` into a budget health gauge.
+7. **2026 Election data** — Add `election_2026` collection for candidate announcements. Run `candidate_transparency_ingest.py --year 2026 --placeholders-only` to pre-populate constituency stubs.
 
-9. **GCP Cloud Run job** — Containerise pipeline with Python 3.12 Dockerfile. Schedule monthly re-scrape for MyNeta and ASER updates.
+8. **Finance scraper improvement** — 2020-21 PRS PDF is corrupt. Use `tn_budget_scraper.py --task manual-pdf` to fill the gap if the PDF can be sourced manually.
+
+9. **Alert dashboard** — Surface `alert_level: "HIGH"` metrics (anaemia_women 53%, anaemia_children 57%) in the UI.
+
+10. **GCP Cloud Run job** — Containerise pipeline with Python 3.12 Dockerfile. Schedule monthly re-scrape for MyNeta and ASER updates.

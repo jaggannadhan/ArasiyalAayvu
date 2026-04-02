@@ -315,6 +315,26 @@ def frequently_browsed(limit: int = Query(6, ge=1, le=20)) -> List[Dict[str, Any
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
 
+@app.get("/api/lookup-pincode")
+def lookup_pincode(code: str = Query(..., min_length=6, max_length=6)) -> Dict[str, Any]:
+    """Resolve a 6-digit pincode to one or more Assembly Constituencies.
+
+    Returns:
+        { pincode, district, constituencies: [{slug, name, name_ta}], is_ambiguous }
+
+    Raises 400 if the code is not 6 digits, 404 if not in the mapping.
+    """
+    if not code.isdigit():
+        raise HTTPException(status_code=400, detail="Pincode must be 6 digits")
+    try:
+        doc = _db.collection("pincode_mapping").document(code).get()
+        if not doc.exists:
+            raise HTTPException(status_code=404, detail=f"Pincode {code} not found in mapping")
+        return jsonable_encoder(doc.to_dict())
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
 @app.get("/api/state-vitals")
 def state_vitals(category: str = Query("all")) -> Dict[str, List[Dict[str, Any]]]:
     """Return state macro, health, water risk, and crop economics data.

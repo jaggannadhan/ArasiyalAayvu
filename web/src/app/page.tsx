@@ -56,7 +56,7 @@ export default function Home() {
           </div>
           <button
             onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            className="text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
           >
             {lang === "en" ? "தமிழ்" : "English"}
           </button>
