@@ -8,8 +8,9 @@ interface Term {
 }
 
 const TERMS: Term[] = [
-  { electionYear: 2011, label: "2011–2016", assembly: "13th Assembly", hasDrillData: false },
-  { electionYear: 2016, label: "2016–2021", assembly: "14th Assembly", hasDrillData: false },
+  { electionYear: 2006, label: "2006–2011", assembly: "12th Assembly", hasDrillData: true  },
+  { electionYear: 2011, label: "2011–2016", assembly: "13th Assembly", hasDrillData: true  },
+  { electionYear: 2016, label: "2016–2021", assembly: "14th Assembly", hasDrillData: true  },
   { electionYear: 2021, label: "2021–2026", assembly: "15th Assembly", hasDrillData: true  },
   { electionYear: 2026, label: "2026–2031", assembly: "16th Assembly", hasDrillData: false },
 ];
@@ -23,7 +24,7 @@ interface TenureNavigatorProps {
 export function TenureNavigator({ selectedYear, onChange, lang = "en" }: TenureNavigatorProps) {
   const isTA = lang === "ta";
   const idx = TERMS.findIndex((t) => t.electionYear === selectedYear);
-  const current = TERMS[idx] ?? TERMS[2];
+  const current = TERMS[idx] ?? TERMS.find((t) => t.electionYear === 2021)!;
   const prev = idx > 0 ? TERMS[idx - 1] : null;
   const next = idx < TERMS.length - 1 ? TERMS[idx + 1] : null;
 

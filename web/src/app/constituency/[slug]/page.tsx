@@ -68,7 +68,7 @@ export default function ConstituencyPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorState | null>(null);
 
-  const currentTermMeta = TERMS.find((t) => t.electionYear === selectedTerm) ?? TERMS[2];
+  const currentTermMeta = TERMS.find((t) => t.electionYear === selectedTerm) ?? TERMS.find((t) => t.electionYear === 2021)!;
 
   const meta = MAP[slug] as MapEntry | undefined;
   const isTA = lang === "ta";
@@ -77,14 +77,14 @@ export default function ConstituencyPage() {
     ? `${constituencyName} / ${meta.tamil_name}`
     : constituencyName;
 
-  // Fetch constituency data
+  // Fetch constituency data (re-fetches when slug or term changes)
   useEffect(() => {
-    if (!slug) return;
+    if (!slug || !currentTermMeta.hasDrillData) return;
     setLoading(true);
     setError(null);
     setData(null);
 
-    fetchConstituencyData(slug)
+    fetchConstituencyData(slug, selectedTerm)
       .then(setData)
       .catch((err: unknown) => {
         if (isOfflineError(err)) {
@@ -96,7 +96,7 @@ export default function ConstituencyPage() {
         setError({ kind: "generic", message: getErrorMessage(err) });
       })
       .finally(() => setLoading(false));
-  }, [slug]);
+  }, [slug, selectedTerm]);
 
   // Fire-and-forget view counter increment (client-side only, non-blocking)
   useEffect(() => {
@@ -226,6 +226,7 @@ export default function ConstituencyPage() {
               wardMapping={data.ward_mapping}
               ulbHeads={data.ulb_heads}
               ulbCouncillors={data.ulb_councillors}
+              selectedTerm={selectedTerm}
               lang={lang}
             />
 

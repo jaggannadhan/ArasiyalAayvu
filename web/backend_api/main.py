@@ -142,34 +142,40 @@ def _doc_to_dict(doc: firestore.DocumentSnapshot) -> Dict[str, Any]:
 
 
 def _fetch_mla_by_constituency(
-    constituency_slug: str, constituency_id: Optional[int], constituency_name: str = ""
+    constituency_slug: str, constituency_id: Optional[int],
+    constituency_name: str = "", election_year: int = 2021
 ) -> Optional[Dict[str, Any]]:
     col = _db.collection("candidate_accountability")
 
-    if isinstance(constituency_id, int):
-        docs = list(col.where(filter=FieldFilter("constituency_id", "==", constituency_id)).limit(1).stream())
-        if docs:
-            return _doc_to_dict(docs[0])
-
-    docs = list(col.where(filter=FieldFilter("constituency_slug", "==", constituency_slug)).limit(1).stream())
-    if docs:
-        return _doc_to_dict(docs[0])
-
-    # Try direct lookup using the clean map slug
-    mla_doc_id = f"2021_{constituency_slug}"
+    # Direct doc ID lookup — primary path for all years
+    mla_doc_id = f"{election_year}_{constituency_slug}"
     direct = col.document(mla_doc_id).get()
     if direct.exists:
         return _doc_to_dict(direct)
 
-    # Fallback: SC/ST constituencies were loaded with a "dirty" slug derived from
-    # the raw constituency name (e.g. "HARUR (SC)" → "harur__sc_"), which differs
-    # from the clean map slug ("harur_sc"). Try that variant too.
-    if constituency_name:
+    # Cross-year fallback: SC/ST reserved seats are stored without the _sc/_st suffix
+    # when the source (e.g. MyNeta 2016) omits the reservation category from the name.
+    # e.g. our slug map has "harur_sc" but the doc is stored as "2016_harur".
+    base_slug = re.sub(r"_(sc|st)$", "", constituency_slug, flags=re.IGNORECASE)
+    if base_slug != constituency_slug:
+        base_fallback = col.document(f"{election_year}_{base_slug}").get()
+        if base_fallback.exists:
+            return _doc_to_dict(base_fallback)
+
+    # 2021 fallback: SC/ST constituencies were loaded with a "dirty" slug
+    # (e.g. "HARUR (SC)" → "harur__sc_") which differs from the clean map slug.
+    if election_year == 2021 and constituency_name:
         dirty_slug = re.sub(r"[^a-z0-9]", "_", constituency_name.lower())
         if dirty_slug != constituency_slug:
             fallback = col.document(f"2021_{dirty_slug}").get()
             if fallback.exists:
                 return _doc_to_dict(fallback)
+
+    # 2021 fallback: query by constituency_id (older docs before slug-keyed re-ingest)
+    if election_year == 2021 and isinstance(constituency_id, int):
+        docs = list(col.where(filter=FieldFilter("constituency_id", "==", constituency_id)).limit(1).stream())
+        if docs:
+            return _doc_to_dict(docs[0])
 
     return None
 
@@ -275,7 +281,7 @@ def manifesto_promises(year: str = Query("all")) -> List[Dict[str, Any]]:
 
 
 @app.get("/api/constituency/{slug}")
-def constituency_drill(slug: str) -> Dict[str, Any]:
+def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=2031)) -> Dict[str, Any]:
     try:
         map_entry = CONSTITUENCY_MAP.get(slug)
         district_meta = (
@@ -293,7 +299,7 @@ def constituency_drill(slug: str) -> Dict[str, Any]:
         district_slug = district_meta.get("district_slug") if district_meta else None
 
         constituency_name = district_meta.get("constituency_name", "") if district_meta else ""
-        mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name)
+        mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name, election_year=term)
         metrics, metrics_scope = _fetch_socio_metrics_for_district(district_slug)
 
         promises: List[Dict[str, Any]] = []
@@ -355,21 +361,41 @@ def constituency_drill(slug: str) -> Dict[str, Any]:
         if wm_doc.exists:
             ward_mapping = _doc_to_dict(wm_doc)
 
+        # Map state assembly term → local body election year (GCC only for now)
+        # term=2021 → 2022 GCC election
+        # term=2011 → 2011 GCC election (elected Oct 2011, served through 2016)
+        # term=2016 → None: Chennai Corp under administrator rule 2016–2022
+        # term=2006 → None: no GCC data for pre-2011 elections
+        TERM_TO_COUNCIL_YEAR: Dict[int, int] = {
+            2021: 2022,
+            2011: 2011,
+        }
+        council_year = TERM_TO_COUNCIL_YEAR.get(term)
+
         # ULB councillors — filter by assembly_constituency_slug (exact match)
         # ULB heads — look up for each local body in the ward mapping
         ulb_councillors: List[Dict[str, Any]] = []
         ulb_heads: List[Dict[str, Any]] = []
 
-        # Councillors: filter by this constituency's slug
-        c_docs = (
+        # Councillors: fetch all for this AC slug, then filter by council_year
+        all_c_docs = list(
             _db.collection("ulb_councillors")
             .where(filter=FieldFilter("assembly_constituency_slug", "==", slug))
             .stream()
         )
-        for cdoc in c_docs:
-            ulb_councillors.append(_doc_to_dict(cdoc))
+        for cdoc in all_c_docs:
+            d = _doc_to_dict(cdoc)
+            doc_year = d.get("election_year")
+            if council_year == 2022:
+                # 2022 docs may lack the election_year field (legacy); include them too
+                if doc_year in (2022, None):
+                    ulb_councillors.append(d)
+            elif council_year is not None:
+                if doc_year == council_year:
+                    ulb_councillors.append(d)
+            # If council_year is None (e.g. term=2011 with no data), return empty
 
-        # Heads: one per unique local body that appears in this constituency
+        # Heads: one per unique local body, keyed by council_year suffix
         if ward_mapping:
             seen_local_body_slugs: set[str] = set()
             for lb in ward_mapping.get("local_bodies", []):
@@ -385,8 +411,19 @@ def constituency_drill(slug: str) -> Dict[str, Any]:
                 if lb_slug in seen_local_body_slugs:
                     continue
                 seen_local_body_slugs.add(lb_slug)
-                head_doc = _db.collection("ulb_heads").document(lb_slug).get()
-                if head_doc.exists:
+                # Only look up heads when we have a council year for this term
+                if council_year is None:
+                    continue
+                # Try year-specific doc first (e.g. greater_chennai_corporation_2011),
+                # fall back to plain slug (e.g. greater_chennai_corporation for 2022)
+                head_doc = None
+                if council_year != 2022:
+                    head_doc = _db.collection("ulb_heads").document(f"{lb_slug}_{council_year}").get()
+                    if not head_doc.exists:
+                        head_doc = None
+                if head_doc is None:
+                    head_doc = _db.collection("ulb_heads").document(lb_slug).get()
+                if head_doc and head_doc.exists:
                     ulb_heads.append(_doc_to_dict(head_doc))
 
         payload = {

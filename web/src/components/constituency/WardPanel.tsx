@@ -7,6 +7,7 @@ interface WardPanelProps {
   wardMapping: WardMapping | null;
   ulbHeads?: UlbHead[];
   ulbCouncillors?: UlbCouncillor[];
+  selectedTerm?: number;
   lang?: "en" | "ta";
 }
 
@@ -24,6 +25,7 @@ const PARTY_COLORS: Record<string, string> = {
 };
 
 function partyChip(party: string) {
+  if (!party) return null;
   const cls = PARTY_COLORS[party] ?? "bg-gray-100 text-gray-700";
   return (
     <span className={`inline-block text-[10px] font-bold px-1.5 py-0.5 rounded ${cls}`}>
@@ -40,6 +42,35 @@ function typeShort(type: string): string {
   return type;
 }
 
+// Map state assembly term → the local body election year shown
+const TERM_TO_COUNCIL_YEAR: Record<number, number> = {
+  2021: 2022,
+  2011: 2011,  // GCC elected Oct 2011, served through the 2011–2016 assembly term
+};
+
+const COUNCIL_NOTE: Record<number, { en: string; ta: string }> = {
+  2022: {
+    en: "2022 election results · OpenCity / LGD",
+    ta: "2022 தேர்தல் முடிவுகள் · OpenCity / LGD",
+  },
+  2011: {
+    en: "2011 GCC election · OpenCity / LGD · Names only (party data not in source)",
+    ta: "2011 GCC தேர்தல் · OpenCity / LGD · பெயர்கள் மட்டும் (கட்சி தரவு இல்லை)",
+  },
+};
+
+// Per-term message shown when there is no elected local body (administrator rule, etc.)
+const NO_COUNCIL_MSG: Record<number, { en: string; ta: string }> = {
+  2016: {
+    en: "Chennai Corporation was under administrator rule from 2016–2022. No ward councillors were elected during the 2016–2021 state assembly term.",
+    ta: "2016–2022 காலத்தில் சென்னை மாநகராட்சி நிர்வாகி ஆட்சியில் இருந்தது. 2016–2021 சட்டமன்றக் காலத்தில் வார்டு உறுப்பினர்கள் யாரும் தேர்ந்தெடுக்கப்படவில்லை.",
+  },
+  2006: {
+    en: "Local body election data for the 2006–2011 period is not available in public datasets.",
+    ta: "2006–2011 காலத்திற்கான உள்ளாட்சித் தேர்தல் தரவு கிடைக்கவில்லை.",
+  },
+};
+
 const T = {
   en: {
     title: "Local Governance",
@@ -50,10 +81,7 @@ const T = {
     urbanOnly: "Urban wards only · Rural panchayat wards not included",
     totalWards: "wards",
     wardCouncillors: "Ward Councillors",
-    councilNote: "2022 election results · OpenCity / LGD",
     ward: "Ward",
-    showCouncillors: (n: number) => `Show ${n} ward councillors`,
-    hideCouncillors: "Hide councillors",
   },
   ta: {
     title: "உள்ளாட்சி அமைப்பு",
@@ -64,10 +92,7 @@ const T = {
     urbanOnly: "நகர்ப்புற வார்டுகள் மட்டும் · கிராம பஞ்சாயத்து வார்டுகள் இல்லை",
     totalWards: "வார்டுகள்",
     wardCouncillors: "வார்டு உறுப்பினர்கள்",
-    councilNote: "2022 தேர்தல் முடிவுகள் · OpenCity / LGD",
     ward: "வார்டு",
-    showCouncillors: (n: number) => `${n} வார்டு உறுப்பினர்களை காட்டு`,
-    hideCouncillors: "மறை",
   },
 } as const;
 
@@ -75,10 +100,15 @@ export function WardPanel({
   wardMapping,
   ulbHeads = [],
   ulbCouncillors = [],
+  selectedTerm = 2021,
   lang = "en",
 }: WardPanelProps) {
   const t = T[lang];
   const [expanded, setExpanded] = useState(false);
+  const councilYear = TERM_TO_COUNCIL_YEAR[selectedTerm];
+  const councilNote = councilYear ? COUNCIL_NOTE[councilYear]?.[lang] : undefined;
+  const noCouncilMsg = !councilYear ? NO_COUNCIL_MSG[selectedTerm]?.[lang] : undefined;
+  const hasCouncilData = ulbCouncillors.length > 0 || ulbHeads.length > 0;
 
   if (!wardMapping) return null;
 
@@ -140,7 +170,7 @@ export function WardPanel({
         </div>
       )}
 
-      {/* ── Local Bodies list (shown only when no head data) ── */}
+      {/* ── Local Bodies list (shown only when no head data available) ── */}
       {!isRural && ulbHeads.length === 0 && wardMapping.local_bodies.length > 0 && (
         <div className="space-y-1.5">
           {wardMapping.local_bodies.map((lb) => (
@@ -160,7 +190,14 @@ export function WardPanel({
         </div>
       )}
 
-      {/* ── Ward Councillors ── */}
+      {/* ── No elected body for this term (e.g. administrator rule) ── */}
+      {!isRural && noCouncilMsg && (
+        <p className="text-[11px] text-gray-500 leading-relaxed">
+          {noCouncilMsg}
+        </p>
+      )}
+
+      {/* ── Ward Councillors (with full data) ── */}
       {sortedCouncillors.length > 0 && (
         <div>
           <button
@@ -175,7 +212,9 @@ export function WardPanel({
 
           {expanded && (
             <div className="mt-2">
-              <p className="text-[10px] text-gray-400 italic px-1 mb-2">{t.councilNote}</p>
+              {councilNote && (
+                <p className="text-[10px] text-gray-400 italic px-1 mb-2">{councilNote}</p>
+              )}
               <div className="rounded-xl border border-gray-100 overflow-hidden">
                 {sortedCouncillors.map((c, i) => (
                   <div
@@ -201,6 +240,55 @@ export function WardPanel({
                   </div>
                 ))}
               </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ── Ward Numbers only (no councillor data available) ── */}
+      {!isRural && sortedCouncillors.length === 0 && councilYear && !noCouncilMsg &&
+        wardMapping.local_bodies.some((lb) => (lb.ward_numbers?.length ?? 0) > 0) && (
+        <div>
+          <button
+            onClick={() => setExpanded((v) => !v)}
+            className="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-left"
+          >
+            <span className="text-xs font-semibold text-gray-700">
+              🗺 {lang === "ta" ? "வார்டு எண்கள்" : "Ward Numbers"} ({wardMapping.total_urban_wards})
+            </span>
+            <span className="text-gray-400 text-xs select-none">{expanded ? "▲" : "▼"}</span>
+          </button>
+
+          {expanded && (
+            <div className="mt-2 space-y-3">
+              <p className="text-[10px] text-gray-400 italic px-1">
+                {lang === "ta"
+                  ? "வார்டு எண்கள் LGD தரவிலிருந்து · தேர்தல் முடிவுகள் கிடைக்கவில்லை"
+                  : "Ward numbers from LGD · Election results not available"}
+              </p>
+              {wardMapping.local_bodies.map((lb) => {
+                const nums = lb.ward_numbers ?? [];
+                if (nums.length === 0) return null;
+                return (
+                  <div key={lb.name}>
+                    {wardMapping.local_bodies.length > 1 && (
+                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide px-1 mb-1">
+                        {lb.name}
+                      </p>
+                    )}
+                    <div className="flex flex-wrap gap-1.5">
+                      {nums.map((n) => (
+                        <span
+                          key={n}
+                          className="text-[11px] font-semibold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md"
+                        >
+                          {lang === "ta" ? `வ. ${n}` : `W${n}`}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

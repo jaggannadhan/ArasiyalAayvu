@@ -145,6 +145,7 @@ export interface WardLocalBody {
   name: string;        // "Greater Chennai Corporation"
   type: string;        // "Municipal Corporation" | "Municipality" | "Town Panchayat"
   ward_count: number;
+  ward_numbers?: number[];  // sorted ward numbers from LGD (non-GCC bodies only)
 }
 
 export interface WardMapping {

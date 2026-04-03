@@ -25,14 +25,38 @@ export interface ConstituencyDrillData {
   ulb_heads: UlbHead[];
 }
 
+// In-memory cache for the browser session.
+// Keyed by "slug:termYear". In-flight map prevents duplicate concurrent fetches.
+const _cache = new Map<string, ConstituencyDrillData>();
+const _inFlight = new Map<string, Promise<ConstituencyDrillData>>();
+
 export async function fetchConstituencyData(
-  constituencySlug: string
+  constituencySlug: string,
+  termYear: number = 2021
 ): Promise<ConstituencyDrillData> {
   if (!constituencySlug) {
     throw new Error("Missing constituency slug");
   }
 
-  return apiGet<ConstituencyDrillData>(
-    `/api/constituency/${encodeURIComponent(constituencySlug)}`
-  );
+  const key = `${constituencySlug}:${termYear}`;
+
+  const cached = _cache.get(key);
+  if (cached) return cached;
+
+  const inFlight = _inFlight.get(key);
+  if (inFlight) return inFlight;
+
+  const promise = apiGet<ConstituencyDrillData>(
+    `/api/constituency/${encodeURIComponent(constituencySlug)}?term=${termYear}`
+  ).then((data) => {
+    _cache.set(key, data);
+    _inFlight.delete(key);
+    return data;
+  }).catch((err) => {
+    _inFlight.delete(key);
+    throw err;
+  });
+
+  _inFlight.set(key, promise);
+  return promise;
 }

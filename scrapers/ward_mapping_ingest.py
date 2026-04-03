@@ -93,11 +93,20 @@ def build_name_to_slug(map_path: Path) -> dict[str, str]:
     return mapping
 
 
+_WARD_NO_RE = re.compile(r"Ward\s+No[-.](\d+)", re.IGNORECASE)
+
+
+def _parse_ward_number(ward_name: str) -> int | None:
+    """Extract ward number from LGD Ward Name like 'Ward No-50' or 'Arakonam (M) - Ward No.11'."""
+    m = _WARD_NO_RE.search(ward_name)
+    return int(m.group(1)) if m else None
+
+
 def parse_csv(csv_path: Path, name_to_slug: dict[str, str]) -> list[dict]:
     ac_data: dict[int, dict] = defaultdict(lambda: {
         "name": None,
         "ward_codes": set(),
-        "local_bodies": defaultdict(lambda: {"type": None, "ward_codes": set()}),
+        "local_bodies": defaultdict(lambda: {"type": None, "wards": {}}),
     })
 
     with open(csv_path, encoding="utf-8-sig") as f:
@@ -109,10 +118,15 @@ def parse_csv(csv_path: Path, name_to_slug: dict[str, str]) -> list[dict]:
                 continue
             eci = int(eci_raw)
             ac_data[eci]["name"] = row["Assembly Constituency Name"].strip()
-            ac_data[eci]["ward_codes"].add(row["Ward Code"].strip())
+            ward_code = row["Ward Code"].strip()
+            ward_name = row["Ward Name"].strip()
+            ac_data[eci]["ward_codes"].add(ward_code)
             lb = row["Urban Localbody Name"].strip()
             ac_data[eci]["local_bodies"][lb]["type"] = row["Localbody Type"].strip()
-            ac_data[eci]["local_bodies"][lb]["ward_codes"].add(row["Ward Code"].strip())
+            # Store ward_code → ward_number mapping (deduplicated by ward_code)
+            if ward_code not in ac_data[eci]["local_bodies"][lb]["wards"]:
+                num = _parse_ward_number(ward_name)
+                ac_data[eci]["local_bodies"][lb]["wards"][ward_code] = num
 
     results = []
     for eci, d in sorted(ac_data.items()):
@@ -122,10 +136,18 @@ def parse_csv(csv_path: Path, name_to_slug: dict[str, str]) -> list[dict]:
         # ECI override wins (for identical-name constituencies like both Tiruppattur)
         slug = ECI_OVERRIDES.get(eci) or name_to_slug.get(normed)
 
-        lbs = sorted([
-            {"name": n, "type": v["type"], "ward_count": len(v["ward_codes"])}
-            for n, v in d["local_bodies"].items()
-        ], key=lambda x: -x["ward_count"])
+        lbs = []
+        for n, v in d["local_bodies"].items():
+            ward_numbers = sorted(
+                [num for num in v["wards"].values() if num is not None]
+            )
+            lbs.append({
+                "name":         n,
+                "type":         v["type"],
+                "ward_count":   len(v["wards"]),
+                "ward_numbers": ward_numbers,
+            })
+        lbs.sort(key=lambda x: -x["ward_count"])
 
         results.append({
             "eci_code":           eci,
