@@ -10,3 +10,4 @@ tenacity
 tabula-py
 pdfminer.six
 pdfplumber
+anthropic

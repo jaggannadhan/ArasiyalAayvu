@@ -1,192 +1,439 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ComparisonMatrix } from "@/components/manifesto/ComparisonMatrix";
+import Link from "next/link";
+import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
 import { PillarTabs } from "@/components/manifesto/PillarTabs";
-import { PartySelector } from "@/components/manifesto/PartySelector";
+import { PromiseCard } from "@/components/manifesto/PromiseCard";
 import { ComparisonSkeleton } from "@/components/manifesto/PromiseSkeleton";
-import { useManifestos, type ManifestoYearFilter } from "@/hooks/useManifestos";
-import type { Pillar } from "@/lib/types";
-import { PILLARS } from "@/lib/types";
+import { useManifestos } from "@/hooks/useManifestos";
+import {
+  PILLARS,
+  PILLAR_META,
+  STATUS_META,
+  TERM_COALITIONS,
+  type Pillar,
+  type PromiseStatus,
+  type CoalitionParty,
+} from "@/lib/types";
 
+const HAS_DATA_FOR = new Set([2021, 2026]);
+const STATUS_ORDER: PromiseStatus[] = ["Fulfilled", "Partial", "Proposed", "Abandoned", "Historical"];
+const FILTER_STATUSES = ["All", "Fulfilled", "Partial", "Abandoned"] as const;
+type StatusFilter = (typeof FILTER_STATUSES)[number];
+
+// ---------------------------------------------------------------------------
+// Party chip — clickable, active/inactive visual states
+// ---------------------------------------------------------------------------
+function PartyChip({
+  p, lang, isActive, onClick,
+}: {
+  p: CoalitionParty;
+  lang: "en" | "ta";
+  isActive: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+        isActive
+          ? `${p.bg_active} text-white shadow-sm ring-2 ring-offset-1 ring-current`
+          : `${p.bg} ${p.text} hover:opacity-80`
+      }`}
+    >
+      {lang === "ta" ? p.name_ta : p.name}
+    </button>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// One row of the parties block
+// ---------------------------------------------------------------------------
+function CoalitionRow({
+  label, parties, lang, selectedId, onSelect,
+}: {
+  label: string;
+  parties: CoalitionParty[];
+  lang: "en" | "ta";
+  selectedId: string;
+  onSelect: (id: string) => void;
+}) {
+  if (parties.length === 0) return null;
+  return (
+    <div>
+      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">{label}</p>
+      <div className="flex flex-wrap gap-1.5">
+        {parties.map((p) => (
+          <PartyChip
+            key={p.id}
+            p={p}
+            lang={lang}
+            isActive={selectedId === p.id}
+            onClick={() => onSelect(p.id)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
 export default function ManifestoTrackerPage() {
   const [lang, setLang] = useState<"en" | "ta">("en");
-  const [partyA, setPartyA] = useState("dmk");
-  const [partyB, setPartyB] = useState("aiadmk");
-  const [activePillar, setActivePillar] = useState<Pillar>("Agriculture");
-  const [yearFilter, setYearFilter] = useState<ManifestoYearFilter>("all");
+  const [selectedTerm, setSelectedTerm] = useState(TERMS[TERMS.length - 1].electionYear);
+  const [activePillar, setActivePillar] = useState<Pillar | "All">("All");
+  const [activeStatus, setActiveStatus] = useState<StatusFilter>("All");
 
-  const { promises, loading, error } = useManifestos(yearFilter);
+  // selectedPartyId and activeStatus reset when term changes
+  const [partyOverride, setPartyOverride] = useState<string | null>(null);
+  const [lastTerm, setLastTerm] = useState(selectedTerm);
+  if (lastTerm !== selectedTerm) {
+    setLastTerm(selectedTerm);
+    setPartyOverride(null);
+    setActiveStatus("All");
+  }
 
-  // Swap parties when the same one is selected on both sides
-  const handlePartyAChange = (id: string) => {
-    if (id === partyB) setPartyB(partyA);
-    setPartyA(id);
-  };
-  const handlePartyBChange = (id: string) => {
-    if (id === partyA) setPartyA(partyB);
-    setPartyB(id);
-  };
+  const isTA = lang === "ta";
+  const hasData = HAS_DATA_FOR.has(selectedTerm);
+  const coalition = TERM_COALITIONS[selectedTerm];
+  const termMeta = TERMS.find((t) => t.electionYear === selectedTerm)!;
 
+  const isUpcoming = coalition?.is_upcoming ?? false;
+
+  const defaultPartyId = isUpcoming
+    ? (coalition?.contesting?.[0]?.id ?? "")
+    : (coalition?.ruling[0]?.id ?? "");
+  const selectedPartyId = partyOverride ?? defaultPartyId;
+
+  // All parties (flat list regardless of mode — for lookup)
+  const allParties: CoalitionParty[] = useMemo(() => {
+    if (!coalition) return [];
+    if (isUpcoming) return coalition.contesting ?? [];
+    return [...coalition.ruling, ...coalition.opposition, ...(coalition.others ?? [])];
+  }, [coalition, isUpcoming]);
+
+  const selectedParty = allParties.find((p) => p.id === selectedPartyId);
+
+  const { promises, loading, error } = useManifestos(hasData ? selectedTerm as 2021 | 2026 : "all");
+
+  // Party has data in Firestore?
+  const partyHasData = useMemo(
+    () => promises.some((p) => p.party_id === selectedPartyId),
+    [promises, selectedPartyId]
+  );
+
+  // Pillar counts for selected party
   const promiseCounts = useMemo(() => {
     const counts: Partial<Record<Pillar, number>> = {};
     for (const pillar of PILLARS) {
       counts[pillar] = promises.filter(
-        (p) => p.category === pillar && (p.party_id === partyA || p.party_id === partyB)
+        (p) => p.category === pillar && p.party_id === selectedPartyId
       ).length;
     }
     return counts;
-  }, [promises, partyA, partyB]);
+  }, [promises, selectedPartyId]);
 
-  const isTA = lang === "ta";
+  // Status counts for selected party
+  const statusCounts = useMemo(() => {
+    const counts: Partial<Record<PromiseStatus, number>> = {};
+    for (const p of promises.filter((p) => p.party_id === selectedPartyId)) {
+      counts[p.status] = (counts[p.status] ?? 0) + 1;
+    }
+    return counts;
+  }, [promises, selectedPartyId]);
+
+  // Visible promise list
+  const visiblePromises = useMemo(() => {
+    return promises
+      .filter((p) =>
+        p.party_id === selectedPartyId &&
+        (activePillar === "All" || p.category === activePillar) &&
+        (activeStatus === "All" || p.status === activeStatus)
+      )
+      .sort((a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status));
+  }, [promises, selectedPartyId, activePillar, activeStatus]);
+
+  function handlePartySelect(id: string) {
+    setPartyOverride(id);
+    setActiveStatus("All");
+  }
+
+  function handleTermChange(year: number) {
+    setSelectedTerm(year);
+    setActivePillar("All");
+  }
 
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div>
-            <h1 className="text-base font-black text-gray-900 leading-tight">
-              {isTA ? "தேர்தல் அறிக்கை ஒப்பீடு" : "Manifesto Tracker"}
-            </h1>
-            <p className="text-xs text-gray-500">
-              {isTA ? "வாக்குறுதி vs செயல்திறன்" : "Promise vs. Performance · Tamil Nadu 2026"}
-            </p>
+        <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <Link href="/" className="text-gray-400 hover:text-gray-700 shrink-0 text-lg">←</Link>
+            <div className="min-w-0">
+              <h1 className="text-sm font-black text-gray-900 leading-tight">
+                {isTA ? "தேர்தல் அறிக்கை கண்காணிப்பு" : "Manifesto Tracker"}
+              </h1>
+              <p className="text-xs text-gray-500 truncate">
+                {isTA ? "வாக்குறுதி vs செயல்திறன் · தமிழ்நாடு" : "Promise vs. Performance · Tamil Nadu"}
+              </p>
+            </div>
           </div>
-          {/* Language toggle */}
           <button
             onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
           >
             {lang === "en" ? "தமிழ்" : "English"}
           </button>
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4 py-5 space-y-5">
-        {/* Year filter toggle */}
-        <section className="flex items-center gap-2">
-          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide mr-1">
-            {isTA ? "காலம்" : "View"}
-          </span>
-          {(
-            [
-              { value: "all",  en: "All",                   ta: "அனைத்தும்" },
-              { value: 2021,   en: "Historical Performance", ta: "2021 செயல்திறன்" },
-              { value: 2026,   en: "Upcoming Promises",      ta: "2026 வாக்குறுதிகள்" },
-            ] as { value: ManifestoYearFilter; en: string; ta: string }[]
-          ).map(({ value, en, ta }) => (
-            <button
-              key={String(value)}
-              onClick={() => setYearFilter(value)}
-              className={`text-xs px-3 py-1.5 rounded-full border transition-colors font-medium ${
-                yearFilter === value
-                  ? "bg-gray-900 text-white border-gray-900"
-                  : "bg-white text-gray-600 border-gray-300 hover:bg-gray-50"
-              }`}
-            >
-              {isTA ? ta : en}
-            </button>
-          ))}
-        </section>
+      <div className="max-w-2xl mx-auto px-4 py-5 space-y-4">
 
-        {/* Party selector */}
-        <section className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 space-y-3">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            {isTA ? "ஒப்பிட இரண்டு கட்சிகளை தேர்வு செய்க" : "Select two parties to compare"}
-          </p>
-          <div className="flex gap-3 items-end">
-            <PartySelector
-              label={isTA ? "கட்சி A" : "Party A"}
-              value={partyA}
-              onChange={handlePartyAChange}
-              excludeId={partyB}
-              lang={lang}
-            />
-            <div className="pb-3 text-gray-400 font-bold text-sm shrink-0">vs</div>
-            <PartySelector
-              label={isTA ? "கட்சி B" : "Party B"}
-              value={partyB}
-              onChange={handlePartyBChange}
-              excludeId={partyA}
-              lang={lang}
-            />
+        {/* Tenure navigator */}
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm px-4 py-3">
+          <TenureNavigator selectedYear={selectedTerm} onChange={handleTermChange} lang={lang} />
+        </div>
+
+        {/* Parties in play */}
+        {coalition && (
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 space-y-3">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              {isTA ? "கட்சிகள்" : "Parties"} · {termMeta.label}
+            </h3>
+
+            {isUpcoming ? (
+              /* Upcoming election — flat contesting parties, no ruling/opposition */
+              <div>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                  {isTA ? "போட்டியிடும் கட்சிகள்" : "Contesting Parties"}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {(coalition.contesting ?? []).map((p) => (
+                    <PartyChip
+                      key={p.id}
+                      p={p}
+                      lang={lang}
+                      isActive={selectedPartyId === p.id}
+                      onClick={() => handlePartySelect(p.id)}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : coalition.ruling.length > 0 ? (
+              <>
+                <CoalitionRow
+                  label={isTA ? `🟢 ஆளும் கூட்டணி · ${coalition.ruling_label_ta}` : `🟢 Ruling · ${coalition.ruling_label_en}`}
+                  parties={coalition.ruling}
+                  lang={lang}
+                  selectedId={selectedPartyId}
+                  onSelect={handlePartySelect}
+                />
+                <CoalitionRow
+                  label={isTA ? "🔵 எதிர்க்கட்சி" : "🔵 Opposition"}
+                  parties={coalition.opposition}
+                  lang={lang}
+                  selectedId={selectedPartyId}
+                  onSelect={handlePartySelect}
+                />
+                <CoalitionRow
+                  label={isTA ? "○ மற்ற கட்சிகள்" : "○ Other Parties"}
+                  parties={coalition.others ?? []}
+                  lang={lang}
+                  selectedId={selectedPartyId}
+                  onSelect={handlePartySelect}
+                />
+              </>
+            ) : (
+              <p className="text-xs text-gray-400 italic">
+                {isTA ? coalition.ruling_label_ta : coalition.ruling_label_en}
+              </p>
+            )}
           </div>
-        </section>
+        )}
 
-        {/* Pillar filter */}
-        <section>
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-1">
-            {isTA ? "தூண் வாயிலாக தேடவும்" : "Search by Pillar"}
-          </p>
-          <PillarTabs
-            selected={activePillar}
-            onChange={setActivePillar}
-            lang={lang}
-            promiseCounts={promiseCounts}
-          />
-        </section>
+        {/* Selected party indicator */}
+        {coalition && selectedParty && (
+          <div className="flex items-center gap-2 px-1">
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              {isTA ? "காண்பிக்கப்படுவது:" : "Viewing:"}
+            </span>
+            <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white ${selectedParty.bg_active}`}>
+              {isTA ? selectedParty.name_ta : selectedParty.name}
+            </span>
+            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+              {isTA ? "அறிக்கை" : "Manifesto"}
+            </span>
+          </div>
+        )}
 
-        {/* Status banner */}
-        {error ? (
-          <div className="flex items-center gap-2 text-xs text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-2.5">
-            <span>⚠️</span>
-            <span>
+        {/* No data for this term */}
+        {!hasData && (
+          <div className="rounded-2xl border border-gray-200 bg-white px-5 py-10 text-center space-y-1">
+            <p className="text-2xl">📋</p>
+            <p className="text-sm font-semibold text-gray-700">
               {isTA
-                ? "தரவு ஏற்றுவதில் பிழை. தயவுசெய்து பின்னர் முயற்சிக்கவும்."
-                : "Failed to load data from backend API. Please try again later."}
-            </span>
-          </div>
-        ) : (
-          <div className="flex items-center gap-2 text-xs text-gray-500 bg-amber-50 border border-amber-200 rounded-xl px-4 py-2.5">
-            <span>{loading ? "⏳" : "✓"}</span>
-            <span>
-              {loading
-                ? (isTA ? "தரவு ஏற்றுகிறது…" : "Loading from backend API…")
-                : isTA
-                ? `${promises.length} வாக்குறுதிகள் ஏற்றப்பட்டன · ஒவ்வொரு அட்டையிலும் நம்பகத்தன்மை குறிப்பிடப்பட்டுள்ளது`
-                : `${promises.length} promises loaded · Confidence level shown on every card · Click "Show source" to view PDF`}
-            </span>
+                ? `${termMeta.label} காலத்திற்கான அறிக்கை தரவு இல்லை`
+                : `Manifesto data for ${termMeta.label} not yet available`}
+            </p>
+            <p className="text-xs text-gray-400">
+              {isTA ? "2021–2026 காலத்திற்கு திரும்பவும்" : "Switch to 2021–2026 to view tracked promises"}
+            </p>
           </div>
         )}
 
-        {/* Comparison grid or skeleton */}
-        {loading ? (
-          <ComparisonSkeleton rows={3} />
-        ) : (
-          <ComparisonMatrix
-            promises={promises}
-            partyA={partyA}
-            partyB={partyB}
-            pillar={activePillar}
-            lang={lang}
-          />
-        )}
+        {/* Data section */}
+        {hasData && (
+          <>
+            {/* No manifesto data for selected party */}
+            {!loading && !error && !partyHasData && (
+              <div className="rounded-2xl border border-gray-200 bg-white px-5 py-8 text-center space-y-1">
+                <p className="text-xl">📄</p>
+                <p className="text-sm font-semibold text-gray-700">
+                  {isTA
+                    ? `${selectedParty ? (isTA ? selectedParty.name_ta : selectedParty.name) : selectedPartyId} அறிக்கை தரவு இல்லை`
+                    : `No manifesto data available for ${selectedParty?.name ?? selectedPartyId}`}
+                </p>
+                <p className="text-xs text-gray-400">
+                  {isTA ? "தற்போது DMK மற்றும் AIADMK தரவு மட்டுமே உள்ளது" : "Currently only DMK and AIADMK data is available"}
+                </p>
+              </div>
+            )}
 
-        {/* Legend */}
-        <section className="bg-white rounded-2xl border border-gray-200 p-4 space-y-3">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            {isTA ? "நிலை விளக்கம்" : "Status Legend"}
-          </p>
-          <div className="flex flex-wrap gap-2 text-xs">
-            {[
-              { status: "Fulfilled",  en: "Implemented",          ta: "நிறைவேற்றப்பட்டது",   color: "bg-emerald-100 text-emerald-800" },
-              { status: "Partial",    en: "Partially done",        ta: "பகுதி நிறைவு",         color: "bg-yellow-100 text-yellow-800" },
-              { status: "Proposed",   en: "2026 Promise",          ta: "2026 வாக்குறுதி",      color: "bg-sky-100 text-sky-800" },
-              { status: "Abandoned",  en: "Not implemented",       ta: "கைவிடப்பட்டது",        color: "bg-red-100 text-red-800" },
-              { status: "Historical", en: "Historical reference",  ta: "வரலாற்று குறிப்பு",   color: "bg-gray-100 text-gray-700" },
-            ].map(({ en, ta, color }) => (
-              <span key={en} className={`px-2.5 py-1 rounded-full font-medium ${color}`}>
-                {isTA ? ta : en}
-              </span>
-            ))}
-          </div>
-        </section>
+            {/* Filter by card */}
+            {!loading && !error && partyHasData && (
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 space-y-4">
+                <h3 className="text-base font-black text-gray-900 leading-tight">
+                  {isTA ? "வடிகட்டு" : "Filter by"}
+                </h3>
+
+                {/* Status — hidden for upcoming elections (all promises are Proposed) */}
+                {!isUpcoming && (
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                      {isTA ? "நிலை" : "Status"}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        onClick={() => setActiveStatus("All")}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl cursor-pointer transition-all ${
+                          activeStatus === "All"
+                            ? "bg-gray-900 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        <span className="text-lg font-black leading-none">
+                          {Object.values(statusCounts).reduce((a, b) => (a ?? 0) + (b ?? 0), 0)}
+                        </span>
+                        <span className="text-xs font-semibold">
+                          {isTA ? "அனைத்தும்" : "All"}
+                        </span>
+                      </button>
+                      {(["Fulfilled", "Partial", "Abandoned"] as PromiseStatus[]).map((s) => {
+                        const meta = STATUS_META[s];
+                        const count = statusCounts[s] ?? 0;
+                        const isActive = activeStatus === s;
+                        return (
+                          <button
+                            key={s}
+                            onClick={() => setActiveStatus(s as StatusFilter)}
+                            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl cursor-pointer transition-all ${
+                              isActive ? "bg-gray-900 text-white" : `${meta.bg} hover:opacity-80`
+                            }`}
+                          >
+                            <span className={`text-lg font-black leading-none ${isActive ? "text-white" : meta.text}`}>
+                              {count}
+                            </span>
+                            <span className={`text-xs font-semibold ${isActive ? "text-white" : meta.text}`}>
+                              {isTA ? meta.label_ta : meta.label_en}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Categories */}
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                    {isTA ? "வகைகள்" : "Categories"}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {/* All categories button */}
+                    <button
+                      onClick={() => setActivePillar("All")}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold cursor-pointer transition-all border ${
+                        activePillar === "All"
+                          ? "bg-gray-900 text-white border-gray-900"
+                          : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
+                      }`}
+                    >
+                      <span>{isTA ? "அனைத்தும்" : "All"}</span>
+                      <span className={`text-[10px] font-bold px-1 rounded-full ${activePillar === "All" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
+                        {Object.values(promiseCounts).reduce((a, b) => (a ?? 0) + (b ?? 0), 0)}
+                      </span>
+                    </button>
+                    {PILLARS.map((pillar) => {
+                      const meta = PILLAR_META[pillar];
+                      const count = promiseCounts[pillar] ?? 0;
+                      const isActive = activePillar === pillar;
+                      return (
+                        <button
+                          key={pillar}
+                          onClick={() => setActivePillar(pillar)}
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold cursor-pointer transition-all border ${
+                            isActive
+                              ? "bg-gray-900 text-white border-gray-900"
+                              : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
+                          }`}
+                        >
+                          <span>{meta.icon}</span>
+                          <span>{isTA ? meta.tamil : pillar}</span>
+                          <span className={`text-[10px] font-bold px-1 rounded-full ${isActive ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
+                            {count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Error */}
+            {error && (
+              <div className="rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
+                {isTA ? "தரவு ஏற்றுவதில் பிழை." : `Failed to load: ${error}`}
+              </div>
+            )}
+
+            {/* Promise list */}
+            {loading ? (
+              <ComparisonSkeleton rows={4} />
+            ) : partyHasData ? (
+              <div className="space-y-3">
+                {visiblePromises.length === 0 ? (
+                  <div className="text-center py-8 text-sm text-gray-400">
+                    {isTA ? "இந்த தூணில் வாக்குறுதிகள் இல்லை" : "No promises in this pillar"}
+                  </div>
+                ) : (
+                  visiblePromises.map((p) => (
+                    <PromiseCard key={p.doc_id} promise={p} lang={lang} />
+                  ))
+                )}
+              </div>
+            ) : null}
+          </>
+        )}
 
         <footer className="text-center text-xs text-gray-400 pb-8">
           {isTA
-            ? "அரசியல்ஆய்வு · தமிழ்நாடு தேர்தல் விழிப்புணர்வு · தரவு: கட்சி வலைத்தளங்கள் மற்றும் அதிகாரப்பூர்வ அறிக்கைகள்"
-            : "ArasiyalAayvu · Tamil Nadu Election Awareness · Data: Official party manifestos & government records"}
+            ? "அரசியல்ஆய்வு · தரவு: கட்சி வலைத்தளங்கள் மற்றும் அதிகாரப்பூர்வ அரசாணைகள்"
+            : "ArasiyalAayvu · Data: Official party manifestos & government orders"}
         </footer>
       </div>
     </main>

@@ -456,6 +456,85 @@ export const VIBE_META: Record<StanceVibe, { label: string; bg: string; text: st
   "Farmer-focused":      { label: "விவசாயி கவனம்",   bg: "bg-green-100",  text: "text-green-800" },
 };
 
+// ---------------------------------------------------------------------------
+// Term coalition config — ruling / opposition / also contested per term
+// ---------------------------------------------------------------------------
+
+export interface CoalitionParty {
+  id: string;
+  name: string;
+  name_ta: string;
+  bg: string;        // unselected bg (pastel)
+  text: string;      // unselected text
+  bg_active: string; // selected bg (solid, white text assumed)
+}
+
+export interface TermCoalition {
+  ruling_label_en: string;
+  ruling_label_ta: string;
+  ruling: CoalitionParty[];      // first = main ruling party (default selection)
+  opposition: CoalitionParty[];  // first = main opposition party
+  others?: CoalitionParty[];     // other parties that contested
+  // For upcoming elections where no winner is known yet — use flat party list instead
+  is_upcoming?: boolean;
+  contesting?: CoalitionParty[]; // all parties on equal footing; first = default selection
+}
+
+const _cp = (
+  id: string, name: string, name_ta: string,
+  bg: string, text: string, bg_active: string
+): CoalitionParty => ({ id, name, name_ta, bg, text, bg_active });
+
+const _DMK  = _cp("dmk",    "DMK",    "திமுக",                    "bg-red-100",    "text-red-800",    "bg-red-600");
+const _ADMK = _cp("aiadmk", "AIADMK", "அதிமுக",                   "bg-green-100",  "text-green-800",  "bg-green-700");
+const _INC  = _cp("inc",    "INC",    "காங்கிரஸ்",                "bg-blue-100",   "text-blue-800",   "bg-blue-600");
+const _BJP  = _cp("bjp",    "BJP",    "பாஜக",                     "bg-orange-100", "text-orange-800", "bg-orange-500");
+const _PMK  = _cp("pmk",    "PMK",    "பாமக",                     "bg-yellow-100", "text-yellow-800", "bg-yellow-500");
+const _CPI  = _cp("cpi",    "CPI",    "CPI",                      "bg-rose-100",   "text-rose-800",   "bg-rose-600");
+const _CPIM = _cp("cpim",   "CPI(M)", "CPI(M)",                   "bg-rose-100",   "text-rose-800",   "bg-rose-700");
+const _VCK  = _cp("vck",    "VCK",    "விடுதலைச் சிறுத்தைகள்",  "bg-purple-100", "text-purple-800", "bg-purple-600");
+const _DMDK = _cp("dmdk",   "DMDK",   "DMDK",                     "bg-slate-100",  "text-slate-700",  "bg-slate-500");
+const _MDMK = _cp("mdmk",   "MDMK",   "MDMK",                     "bg-teal-100",   "text-teal-700",   "bg-teal-600");
+const _NTK  = _cp("ntk",    "NTK",    "நாம் தமிழர்",             "bg-yellow-100", "text-yellow-800", "bg-yellow-600");
+
+export const TERM_COALITIONS: Record<number, TermCoalition> = {
+  2006: {
+    ruling_label_en: "Secular Progressive Alliance (DMK-led)",
+    ruling_label_ta: "மதச்சார்பற்ற முற்போக்கு கூட்டணி (திமுக தலைமை)",
+    ruling:     [_DMK, _INC, _CPI, _CPIM, _PMK, _VCK],
+    opposition: [_ADMK],
+    others:     [_BJP],
+  },
+  2011: {
+    ruling_label_en: "AIADMK-led Alliance",
+    ruling_label_ta: "அதிமுக தலைமை கூட்டணி",
+    ruling:     [_ADMK, _DMDK],
+    opposition: [_DMK, _INC, _VCK, _PMK, _CPI, _CPIM],
+    others:     [_BJP],
+  },
+  2016: {
+    ruling_label_en: "AIADMK (contested alone)",
+    ruling_label_ta: "அதிமுக (தனியாக போட்டியிட்டது)",
+    ruling:     [_ADMK],
+    opposition: [_DMK, _INC, _VCK, _CPI, _CPIM, _MDMK],
+    others:     [_BJP, _PMK, _DMDK],
+  },
+  2021: {
+    ruling_label_en: "Secular Progressive Alliance (DMK-led)",
+    ruling_label_ta: "மதச்சார்பற்ற முற்போக்கு கூட்டணி (திமுக தலைமை)",
+    ruling:     [_DMK, _INC, _CPI, _CPIM, _VCK, _MDMK],
+    opposition: [_ADMK, _BJP, _PMK, _DMDK],
+  },
+  2026: {
+    ruling_label_en: "Tamil Nadu Assembly Elections 2026",
+    ruling_label_ta: "தமிழ்நாடு சட்டமன்றத் தேர்தல் 2026",
+    ruling:     [],
+    opposition: [],
+    is_upcoming: true,
+    contesting: [_DMK, _ADMK, _NTK, _BJP, _PMK, _INC, _CPI, _CPIM, _VCK, _MDMK],
+  },
+};
+
 export const STATUS_META: Record<PromiseStatus, { label_en: string; label_ta: string; bg: string; text: string }> = {
   Proposed:    { label_en: "Proposed",    label_ta: "முன்மொழிவு",   bg: "bg-sky-100",    text: "text-sky-800" },
   Fulfilled:   { label_en: "Fulfilled",   label_ta: "நிறைவேற்றப்பட்டது", bg: "bg-emerald-100", text: "text-emerald-800" },

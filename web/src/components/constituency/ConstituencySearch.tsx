@@ -129,7 +129,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
           onFocus={() => setOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
-          className="w-full pl-9 pr-4 py-2.5 text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white placeholder:text-gray-400"
+          className="w-full pl-9 pr-4 py-2.5 text-sm text-gray-900 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 bg-white placeholder:text-gray-400"
         />
         {/* Spinner for pincode loading state */}
         {pincodeStatus === "loading" && (
