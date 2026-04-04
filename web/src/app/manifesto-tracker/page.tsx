@@ -25,6 +25,21 @@ type StatusFilter = (typeof FILTER_STATUSES)[number];
 // ---------------------------------------------------------------------------
 // Party chip — clickable, active/inactive visual states
 // ---------------------------------------------------------------------------
+const PARTY_FULL_NAME: Record<string, { en: string; ta: string }> = {
+  dmk:    { en: "Dravida Munnetra Kazhagam",          ta: "திராவிட முன்னேற்றக் கழகம்" },
+  aiadmk: { en: "All India Anna Dravida Munnetra Kazhagam", ta: "அனைத்திந்திய அண்ணா திராவிட முன்னேற்றக் கழகம்" },
+  bjp:    { en: "Bharatiya Janata Party",              ta: "பாரதிய ஜனதா கட்சி" },
+  inc:    { en: "Indian National Congress",            ta: "இந்திய தேசிய காங்கிரஸ்" },
+  pmk:    { en: "Pattali Makkal Katchi",               ta: "பட்டாளி மக்கள் கட்சி" },
+  cpi:    { en: "Communist Party of India",            ta: "இந்திய கம்யூனிஸ்ட் கட்சி" },
+  cpim:   { en: "Communist Party of India (Marxist)",  ta: "இந்திய கம்யூனிஸ்ட் கட்சி (மார்க்சிஸ்ட்)" },
+  vck:    { en: "Viduthalai Chiruthaigal Katchi",      ta: "விடுதலைச் சிறுத்தைகள் கட்சி" },
+  dmdk:   { en: "Desiya Murpokku Dravida Kazhagam",    ta: "தேசிய முற்போக்கு திராவிட கழகம்" },
+  mdmk:   { en: "Marumalarchi Dravida Munnetra Kazhagam", ta: "மறுமலர்ச்சி திராவிட முன்னேற்றக் கழகம்" },
+  ntk:    { en: "Naam Tamilar Katchi",                 ta: "நாம் தமிழர் கட்சி" },
+};
+
+// ---------------------------------------------------------------------------
 function PartyChip({
   p, lang, isActive, onClick,
 }: {
@@ -33,9 +48,13 @@ function PartyChip({
   isActive: boolean;
   onClick: () => void;
 }) {
+  const fullName = PARTY_FULL_NAME[p.id];
+  const tooltip = fullName ? (lang === "ta" ? fullName.ta : fullName.en) : p.name;
+
   return (
     <button
       onClick={onClick}
+      title={tooltip}
       className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full transition-all cursor-pointer ${
         isActive
           ? `${p.bg_active} text-white shadow-sm ring-2 ring-offset-1 ring-current`
@@ -257,16 +276,22 @@ export default function ManifestoTrackerPage() {
 
         {/* Selected party indicator */}
         {coalition && selectedParty && (
-          <div className="flex items-center gap-2 px-1">
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-              {isTA ? "காண்பிக்கப்படுவது:" : "Viewing:"}
-            </span>
-            <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full text-white ${selectedParty.bg_active}`}>
-              {isTA ? selectedParty.name_ta : selectedParty.name}
-            </span>
-            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-              {isTA ? "அறிக்கை" : "Manifesto"}
-            </span>
+          <div className="flex items-center gap-3">
+            <div className="flex-1 h-px bg-gray-200" />
+            <div className="text-center">
+              <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-widest mb-1">
+                {isTA ? "காண்பிக்கப்படுவது" : "Viewing Manifesto"}
+              </p>
+              <p className="text-xl font-black text-gray-900 leading-tight">
+                {PARTY_FULL_NAME[selectedParty.id]
+                  ? (isTA ? PARTY_FULL_NAME[selectedParty.id].ta : PARTY_FULL_NAME[selectedParty.id].en)
+                  : (isTA ? selectedParty.name_ta : selectedParty.name)}
+                <span className="text-base font-bold text-gray-500 ml-1.5">
+                  ({selectedParty.name})
+                </span>
+              </p>
+            </div>
+            <div className="flex-1 h-px bg-gray-200" />
           </div>
         )}
 
