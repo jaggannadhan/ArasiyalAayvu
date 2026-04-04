@@ -57,10 +57,18 @@ PILLAR_ORDER = {
 
 app = FastAPI(title=API_TITLE, version="1.0.0")
 
-# Public-read API — POST allowed for view-counter increments.
+# CORS: allow_origins defaults to * for local dev.
+# Set ALLOWED_ORIGINS env var (comma-separated) in Cloud Run to lock down to Vercel domain.
+_raw_origins = os.getenv("ALLOWED_ORIGINS", "*")
+_allow_origins: list[str] = (
+    ["*"] if _raw_origins.strip() == "*"
+    else [o.strip() for o in _raw_origins.split(",") if o.strip()]
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_allow_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=False,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
