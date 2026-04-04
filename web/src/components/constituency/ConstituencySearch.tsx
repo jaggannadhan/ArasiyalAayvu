@@ -84,7 +84,8 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
         setPincodeStatus("ambiguous");
       }
     } catch (err: unknown) {
-      setPincodeStatus(err instanceof Error && err.message.includes("404") ? "not_found" : "error");
+      const status = (err as { status?: number }).status;
+      setPincodeStatus(status === 404 ? "not_found" : "error");
     }
   }
 

@@ -29,7 +29,10 @@ export async function apiGet<T>(
   });
 
   if (!response.ok) {
-    throw new Error(await parseError(response));
+    const detail = await parseError(response);
+    const err = new Error(detail) as Error & { status: number };
+    err.status = response.status;
+    throw err;
   }
 
   return (await response.json()) as T;
