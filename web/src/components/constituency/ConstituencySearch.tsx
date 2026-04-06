@@ -48,7 +48,10 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
           c.district.toLowerCase().includes(query.toLowerCase())
       ).slice(0, 8);
 
-  const showDropdown = open && nameResults.length > 0;
+  const showDropdown =
+    open &&
+    (nameResults.length > 0 ||
+      (pincodeStatus === "ambiguous" && !!pincodeResult));
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -96,13 +99,16 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const v = e.target.value;
-    // If currently in pin mode, strip non-digits and cap at 6
     const next = IS_PINCODE(v) || v === "" ? v.replace(/\D/g, "").slice(0, 6) : v;
     setQuery(next);
     setOpen(true);
     if (pincodeStatus !== "idle") {
       setPincodeStatus("idle");
       setPincodeResult(null);
+    }
+    // Auto-trigger lookup when exactly 6 digits entered
+    if (IS_PINCODE(next) && next.length === 6) {
+      handlePincodeLookup(next);
     }
   }
 
@@ -140,9 +146,10 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
         )}
       </div>
 
-      {/* Name-search dropdown */}
+      {/* Unified dropdown: name-search results OR pincode ambiguous picker */}
       {showDropdown && (
         <div className="absolute z-30 top-full mt-1 w-full bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+          {/* Name-search results */}
           {nameResults.map((c) => (
             <button
               key={c.slug}
@@ -155,32 +162,31 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
               <span className="text-xs text-gray-400 shrink-0">{c.district}</span>
             </button>
           ))}
-        </div>
-      )}
 
-      {/* Pincode: ambiguous picker (inline, below input) */}
-      {pincodeStatus === "ambiguous" && pincodeResult && (
-        <div className="mt-2 space-y-1.5">
-          <p className="text-xs text-gray-500 text-center">
-            {isTA ? "உங்கள் பகுதி எது?" : "Which area is yours?"}
-          </p>
-          {pincodeResult.constituencies.map((c) => (
-            <button
-              key={c.slug}
-              onClick={() => handlePincodeSelect(c.slug)}
-              className="w-full text-left px-4 py-2.5 rounded-xl border border-gray-200 bg-white hover:border-gray-400 hover:bg-gray-50 flex items-center justify-between gap-3 transition-all"
-            >
-              <span className="text-sm font-semibold text-gray-900">
-                {isTA ? c.name_ta : c.name}
-              </span>
-              <span className="text-xs text-gray-400">
-                {isTA ? c.name : c.name_ta}
-              </span>
-            </button>
-          ))}
-          <p className="text-xs text-gray-400 text-center">
-            {isTA ? "உங்கள் தேர்வு நினைவில் வைக்கப்படும்" : "Your choice will be remembered"}
-          </p>
+          {/* Pincode ambiguous picker */}
+          {pincodeStatus === "ambiguous" && pincodeResult && (
+            <>
+              <div className="px-4 py-1.5 border-b border-gray-100">
+                <p className="text-xs text-gray-400">
+                  {isTA ? "உங்கள் பகுதி எது?" : "Which area is yours?"}
+                </p>
+              </div>
+              {pincodeResult.constituencies.map((c) => (
+                <button
+                  key={c.slug}
+                  onClick={() => handlePincodeSelect(c.slug)}
+                  className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors"
+                >
+                  <span className="font-medium text-gray-900 truncate">
+                    {isTA ? c.name_ta : c.name}
+                  </span>
+                  <span className="text-xs text-gray-400 shrink-0">
+                    {isTA ? c.name : c.name_ta}
+                  </span>
+                </button>
+              ))}
+            </>
+          )}
         </div>
       )}
 

@@ -36,11 +36,11 @@ import json
 import os
 import re
 import sys
-import time
 from pathlib import Path
 from typing import Any
 
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 MAP_PATH = ROOT_DIR / "web" / "src" / "lib" / "constituency-map.json"
@@ -191,23 +191,33 @@ def fetch_pincode(pin: int) -> dict | None:
         return None
 
 
-def discover_pincodes(output_path: Path) -> list[dict]:
-    """Scan all TN pincode ranges and save raw data."""
-    results = []
+def discover_pincodes(output_path: Path, max_workers: int = 10) -> list[dict]:
+    """Scan all TN pincode ranges and save raw data (concurrent)."""
     total = len(TN_RANGES)
-    print(f"Scanning {total} potential TN pincodes…")
+    print(f"Scanning {total} potential TN pincodes with {max_workers} workers…")
 
-    for i, pin in enumerate(TN_RANGES):
-        result = fetch_pincode(pin)
-        if result:
-            results.append(result)
-            print(f"  [{i+1}/{total}] {pin} → {result['district']}")
-        else:
-            print(f"  [{i+1}/{total}] {pin} → (not found)", end="\r")
+    results_map: dict[int, dict] = {}
+    found = 0
 
-        # Polite rate limit
-        time.sleep(0.25)
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_pin = {executor.submit(fetch_pincode, pin): pin for pin in TN_RANGES}
+        completed = 0
+        for future in as_completed(future_to_pin):
+            pin = future_to_pin[future]
+            completed += 1
+            try:
+                result = future.result()
+            except Exception:
+                result = None
+            if result:
+                results_map[pin] = result
+                found += 1
+                print(f"  [{completed}/{total}] {pin} → {result['district']} ({found} found)")
+            elif completed % 500 == 0:
+                print(f"  [{completed}/{total}] scanned… ({found} found so far)")
 
+    # Sort by pincode order
+    results = [results_map[pin] for pin in TN_RANGES if pin in results_map]
     print(f"\nFound {len(results)} valid TN pincodes")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:

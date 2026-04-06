@@ -12,6 +12,12 @@ interface MlaCardProps {
   lang?: "en" | "ta";
 }
 
+const PARTY_FLAG_EXT: Record<string, string> = {
+  dmk: "svg", aiadmk: "svg", bjp: "svg", inc: "svg", pmk: "svg",
+  cpi: "svg", cpim: "png", vck: "png", dmdk: "png", mdmk: "svg",
+  ntk: "gif", tvk: "jpeg",
+};
+
 const SEVERITY_META = {
   CLEAN:    { label_en: "Clean Record",   label_ta: "தூய்மையான பதிவு", color: "bg-emerald-100 text-emerald-800 border-emerald-200" },
   MINOR:    { label_en: "Minor Cases",    label_ta: "சிறிய வழக்குகள்",  color: "bg-yellow-100 text-yellow-800 border-yellow-200" },
@@ -52,37 +58,39 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
-      {/* Title row */}
-      <div className="flex items-start gap-4">
-        {/* Avatar */}
-        {mla.photo_url ? (
-          <Image
-            src={mla.photo_url}
-            alt={`${mla.mla_name} profile`}
-            width={56}
-            height={56}
-            unoptimized
-            sizes="56px"
-            className="shrink-0 w-14 h-14 rounded-full object-cover border border-gray-200"
-          />
-        ) : (
-          <div className={`shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-black ${partyMeta?.color ?? "bg-gray-400"}`}>
-            {initials}
-          </div>
-        )}
+      {/* Title row: [photo] [name + constituency] [party flag] */}
+      <div className="flex items-center gap-4">
+        {/* MLA photo */}
+        <Image
+          src={mla.photo_url ?? "/default-mla.svg"}
+          alt={mla.photo_url ? `${mla.mla_name} profile` : "MLA placeholder"}
+          width={64}
+          height={80}
+          unoptimized
+          sizes="64px"
+          className="shrink-0 w-16 h-20 rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50"
+        />
 
+        {/* Name + constituency */}
         <div className="flex-1 min-w-0">
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
             {isTA ? "சட்டமன்ற உறுப்பினர்" : "Elected MLA"}
           </p>
-          <h2 className="text-lg font-black text-gray-900 leading-tight truncate">{mla.mla_name}</h2>
-          <div className="flex flex-wrap items-center gap-2 mt-1">
-            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full text-white ${partyMeta?.color ?? "bg-gray-500"}`}>
-              {isTA ? (partyMeta?.tamil_name ?? mla.party) : mla.party}
-            </span>
-            <span className="text-xs text-gray-500">{district} {isTA ? "மாவட்டம்" : "District"}</span>
-          </div>
+          <h2 className="text-lg font-black text-gray-900 leading-tight">{mla.mla_name}</h2>
+          <p className="text-xs text-gray-500 mt-0.5">{district} {isTA ? "மாவட்டம்" : "District"}</p>
         </div>
+
+        {/* Party flag — far right */}
+        {PARTY_FLAG_EXT[partyId] && (
+          <div className="shrink-0 flex flex-col items-center gap-1">
+            <img
+              src={`/party-flags/${partyId}.${PARTY_FLAG_EXT[partyId]}`}
+              alt={mla.party}
+              className="h-14 w-auto object-contain rounded-sm"
+            />
+            <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide">{mla.party}</span>
+          </div>
+        )}
       </div>
 
       {/* Stats row */}

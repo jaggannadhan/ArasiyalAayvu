@@ -25,6 +25,12 @@ type StatusFilter = (typeof FILTER_STATUSES)[number];
 // ---------------------------------------------------------------------------
 // Party chip — clickable, active/inactive visual states
 // ---------------------------------------------------------------------------
+const PARTY_FLAG_EXT: Record<string, string> = {
+  dmk: "svg", aiadmk: "svg", bjp: "svg", inc: "svg", pmk: "svg",
+  cpi: "svg", cpim: "png", vck: "png", dmdk: "png", mdmk: "svg",
+  ntk: "gif", tvk: "jpeg",
+};
+
 const PARTY_FULL_NAME: Record<string, { en: string; ta: string }> = {
   dmk:    { en: "Dravida Munnetra Kazhagam",          ta: "திராவிட முன்னேற்றக் கழகம்" },
   aiadmk: { en: "All India Anna Dravida Munnetra Kazhagam", ta: "அனைத்திந்திய அண்ணா திராவிட முன்னேற்றக் கழகம்" },
@@ -37,6 +43,7 @@ const PARTY_FULL_NAME: Record<string, { en: string; ta: string }> = {
   dmdk:   { en: "Desiya Murpokku Dravida Kazhagam",    ta: "தேசிய முற்போக்கு திராவிட கழகம்" },
   mdmk:   { en: "Marumalarchi Dravida Munnetra Kazhagam", ta: "மறுமலர்ச்சி திராவிட முன்னேற்றக் கழகம்" },
   ntk:    { en: "Naam Tamilar Katchi",                 ta: "நாம் தமிழர் கட்சி" },
+  tvk:    { en: "Tamilaga Vettri Kazhagam",            ta: "தமிழக வெற்றி கழகம்" },
 };
 
 // ---------------------------------------------------------------------------
@@ -50,18 +57,28 @@ function PartyChip({
 }) {
   const fullName = PARTY_FULL_NAME[p.id];
   const tooltip = fullName ? (lang === "ta" ? fullName.ta : fullName.en) : p.name;
+  const ext = PARTY_FLAG_EXT[p.id];
 
   return (
     <button
       onClick={onClick}
       title={tooltip}
-      className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+      style={ext ? {
+        backgroundImage: `url(/party-flags/${p.id}.${ext})`,
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      } : undefined}
+      className={`relative overflow-hidden inline-flex items-center justify-center text-[11px] font-black px-3 py-1.5 rounded-lg transition-all cursor-pointer min-w-[52px] ${
         isActive
-          ? `${p.bg_active} text-white shadow-sm ring-2 ring-offset-1 ring-current`
-          : `${p.bg} ${p.text} hover:opacity-80`
+          ? "shadow-md ring-2 ring-offset-1 ring-gray-600"
+          : "hover:scale-105"
       }`}
     >
-      {lang === "ta" ? p.name_ta : p.name}
+      <span className={`absolute inset-0 transition-colors ${isActive ? "bg-black/20" : "bg-white/40"}`} />
+      <span className={`relative z-10 tracking-wide ${isActive ? "text-white drop-shadow" : "text-gray-900"}`}>
+        {lang === "ta" ? p.name_ta : p.name}
+      </span>
     </button>
   );
 }
@@ -275,25 +292,34 @@ export default function ManifestoTrackerPage() {
         )}
 
         {/* Selected party indicator */}
-        {coalition && selectedParty && (
-          <div className="flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-200" />
-            <div className="text-center">
-              <p className="text-[10px] font-semibold text-gray-700 uppercase tracking-widest mb-1">
-                {isTA ? "காண்பிக்கப்படுவது" : "Viewing Manifesto"}
-              </p>
-              <p className="text-xl font-black text-gray-900 leading-tight">
-                {PARTY_FULL_NAME[selectedParty.id]
-                  ? (isTA ? PARTY_FULL_NAME[selectedParty.id].ta : PARTY_FULL_NAME[selectedParty.id].en)
-                  : (isTA ? selectedParty.name_ta : selectedParty.name)}
-                <span className="text-base font-bold text-gray-500 ml-1.5">
-                  ({selectedParty.name})
-                </span>
-              </p>
+        {coalition && selectedParty && (() => {
+          const ext = PARTY_FLAG_EXT[selectedParty.id];
+          return (
+            <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-stretch min-h-40">
+              {ext && (
+                <img
+                  src={`/party-flags/${selectedParty.id}.${ext}`}
+                  alt=""
+                  aria-hidden
+                  className="flex-shrink-0 w-[200px] object-cover self-stretch pointer-events-none select-none"
+                />
+              )}
+              <div className="flex-1 flex flex-col items-center justify-center text-center px-6 py-5">
+                <p className="text-[10px] font-semibold text-gray-600 uppercase tracking-widest mb-1">
+                  {isTA ? "காண்பிக்கப்படுவது" : "Viewing Manifesto"}
+                </p>
+                <p className="text-xl font-black text-gray-900 leading-tight">
+                  {PARTY_FULL_NAME[selectedParty.id]
+                    ? (isTA ? PARTY_FULL_NAME[selectedParty.id].ta : PARTY_FULL_NAME[selectedParty.id].en)
+                    : (isTA ? selectedParty.name_ta : selectedParty.name)}
+                  <span className="text-base font-bold text-gray-500 ml-1.5">
+                    ({selectedParty.name})
+                  </span>
+                </p>
+              </div>
             </div>
-            <div className="flex-1 h-px bg-gray-200" />
-          </div>
-        )}
+          );
+        })()}
 
         {/* No data for this term */}
         {!hasData && (

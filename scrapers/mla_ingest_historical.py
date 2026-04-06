@@ -58,6 +58,14 @@ YEAR_CONFIG: Dict[int, Dict[str, Any]] = {
         "base_url":  "https://myneta.info/tamilnadu2011",
         "project_id": "naatunadappu",
     },
+    2016: {
+        "base_url":  "https://myneta.info/tamilnadu2016",
+        "project_id": "naatunadappu",
+    },
+    2021: {
+        "base_url":  "https://myneta.info/tamilnadu2021",
+        "project_id": "naatunadappu",
+    },
 }
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -354,7 +362,7 @@ def run(
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Ingest historical TN MLA winners (2006, 2011)")
-    ap.add_argument("--year",       type=int, required=True, choices=[2006, 2011],
+    ap.add_argument("--year",       type=int, required=True, choices=[2006, 2011, 2016, 2021],
                     help="Election year to ingest")
     ap.add_argument("--dry-run",    action="store_true")
     ap.add_argument("--limit",      type=int, default=None)

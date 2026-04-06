@@ -496,6 +496,7 @@ const _VCK  = _cp("vck",    "VCK",    "விடுதலைச் சிறு�
 const _DMDK = _cp("dmdk",   "DMDK",   "DMDK",                     "bg-slate-100",  "text-slate-700",  "bg-slate-500");
 const _MDMK = _cp("mdmk",   "MDMK",   "MDMK",                     "bg-teal-100",   "text-teal-700",   "bg-teal-600");
 const _NTK  = _cp("ntk",    "NTK",    "நாம் தமிழர்",             "bg-yellow-100", "text-yellow-800", "bg-yellow-600");
+const _TVK  = _cp("tvk",    "TVK",    "தமிழக வெற்றி கழகம்",     "bg-sky-100",    "text-sky-800",    "bg-sky-600");
 
 export const TERM_COALITIONS: Record<number, TermCoalition> = {
   2006: {
@@ -531,7 +532,7 @@ export const TERM_COALITIONS: Record<number, TermCoalition> = {
     ruling:     [],
     opposition: [],
     is_upcoming: true,
-    contesting: [_DMK, _ADMK, _NTK, _BJP, _PMK, _INC, _CPI, _CPIM, _VCK, _MDMK],
+    contesting: [_DMK, _ADMK, _TVK, _NTK, _BJP, _PMK, _INC, _CPI, _CPIM, _VCK, _MDMK],
   },
 };
 

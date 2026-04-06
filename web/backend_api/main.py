@@ -4,7 +4,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple  # noqa: UP035
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.encoders import jsonable_encoder
@@ -29,6 +29,47 @@ METRIC_HIGHER_IS_BETTER: Dict[str, bool] = {
     "industrial_corridors_district_coverage": True,
     "nfhs5_anaemia_women":                   False,
     "nfhs5_stunting_under5":                 False,
+}
+
+# Slug alias map: (election_year, map_slug) -> orphan_doc_slug_in_firestore
+# Handles transliteration variants between MyNeta spelling and our constituency-map.json
+MLA_SLUG_ALIASES: Dict[Tuple[int, str], str] = {
+    (2011, "aruppukottai"):     "aruppukkottai",
+    (2011, "bodinayakkanur"):   "bodinayakanur",
+    (2011, "gandarvakottai_sc"):"gandharvakottai",
+    (2011, "madhavaram"):       "madavaram",
+    (2011, "madhuravoyal"):     "maduravoyal",
+    (2011, "mettupalayam"):     "mettuppalayam",
+    (2011, "palacode"):         "palacodu",
+    (2011, "pappireddipatti"):  "pappireddippatti",
+    (2011, "paramathivelur"):   "paramathi_velur",
+    (2011, "poonamallee_sc"):   "poonmallae",
+    (2011, "sholinganallur"):   "shozhinganallur",
+    (2011, "sholinghur"):       "sholingur",
+    (2011, "thally"):           "thalli",
+    (2011, "thiruvaur"):        "thiruvarur",
+    (2011, "thoothukudi"):      "thoothukkudi",
+    (2011, "tiruppathur"):      "tiruppattur",
+    (2011, "vedharanyam"):      "vedaranyam",
+    (2011, "vridhachalam"):     "vriddhachalam",
+    (2016, "aruppukottai"):     "aruppukkottai",
+    (2016, "bodinayakkanur"):   "bodinayakanur",
+    (2016, "gandarvakottai_sc"):"gandharvakottai",
+    (2016, "madhavaram"):       "madavaram",
+    (2016, "madhuravoyal"):     "maduravoyal",
+    (2016, "mettupalayam"):     "mettuppalayam",
+    (2016, "mudukulathur"):     "mudhukulathur",
+    (2016, "palacode"):         "palacodu",
+    (2016, "pappireddipatti"):  "pappireddippatti",
+    (2016, "paramathivelur"):   "paramathi_velur",
+    (2016, "poonamallee_sc"):   "poonmallae",
+    (2016, "sholinganallur"):   "shozhinganallur",
+    (2016, "sholinghur"):       "sholingur",
+    (2016, "thally"):           "thalli",
+    (2016, "thiruvaur"):        "thiruvarur",
+    (2016, "thoothukudi"):      "thoothukkudi",
+    (2016, "vedharanyam"):      "vedaranyam",
+    (2016, "vridhachalam"):     "vriddhachalam",
 }
 
 KEY_METRIC_IDS = {
@@ -170,6 +211,14 @@ def _fetch_mla_by_constituency(
         if base_fallback.exists:
             return _doc_to_dict(base_fallback)
 
+    # Transliteration alias fallback: MyNeta spells some names differently from our map.
+    # e.g. map="aruppukottai" but doc stored as "2016_aruppukkottai".
+    alias_slug = MLA_SLUG_ALIASES.get((election_year, constituency_slug))
+    if alias_slug:
+        alias_doc = col.document(f"{election_year}_{alias_slug}").get()
+        if alias_doc.exists:
+            return _doc_to_dict(alias_doc)
+
     # 2021 fallback: SC/ST constituencies were loaded with a "dirty" slug
     # (e.g. "HARUR (SC)" → "harur__sc_") which differs from the clean map slug.
     if election_year == 2021 and constituency_name:
@@ -308,6 +357,20 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
 
         constituency_name = district_meta.get("constituency_name", "") if district_meta else ""
         mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name, election_year=term)
+
+        # Enrich MLA with photo_url from mla_profiles (2021 only — profiles cover 16th assembly)
+        if mla and term == 2021:
+            for pdoc in _db.collection("mla_profiles").stream():
+                pdata = pdoc.to_dict() or {}
+                for party_entry in pdata.get("parties", []):
+                    if party_entry.get("constituency_slug") == slug:
+                        photo_url = pdata.get("photo_url")
+                        if photo_url:
+                            mla["photo_url"] = photo_url
+                        break
+                if mla.get("photo_url"):
+                    break
+
         metrics, metrics_scope = _fetch_socio_metrics_for_district(district_slug)
 
         promises: List[Dict[str, Any]] = []
