@@ -17,10 +17,66 @@ interface ConstituencyOption {
   district: string;
 }
 
-const ALL_CONSTITUENCIES: ConstituencyOption[] = Object.entries(
+// ---------------------------------------------------------------------------
+// Search helpers
+// ---------------------------------------------------------------------------
+
+/** Collapse common Tamil transliteration variants so alternate spellings match.
+ *  Applied to both the query and the stored names before comparison.
+ *  Examples:
+ *    "Thiruvallur" → "tiruvallur"  (th→t)
+ *    "Tiruttani"   → "tirutani"    (tt→t)
+ *    "Tiruthani"   → "tirutani"    (th→t, then nothing else to collapse)
+ *    "Thoothukudi" → "tutukudi"    (th→t, oo→u)
+ */
+function normalize(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/th/g, "t")
+    .replace(/dh/g, "d")
+    .replace(/zh/g, "l")
+    .replace(/ee/g, "i")
+    .replace(/oo/g, "u")
+    .replace(/([bcdfghjklmnpqrstvwxyz])\1/g, "$1"); // collapse double consonants
+}
+
+/** English common names that normalization alone can't bridge. */
+const ALIASES: Record<string, string> = {
+  madras:    "chennai",
+  trichy:    "tiruchirappalli",
+  tiruchy:   "tiruchirappalli",
+  tuticorin: "thoothukudi",
+  tuticorn:  "thoothukudi",
+  tanjore:   "thanjavur",
+  ooty:      "nilgiris",
+  nellai:    "tirunelveli",
+  kovai:     "coimbatore",
+};
+
+/** Normalize a user query, substituting known aliases at word boundaries. */
+function normalizeQuery(q: string): string {
+  let s = q.toLowerCase().trim();
+  for (const [alias, canonical] of Object.entries(ALIASES)) {
+    s = s.replace(new RegExp(`\\b${alias}\\b`, "g"), canonical);
+  }
+  return normalize(s);
+}
+
+interface ConstituencyOptionNorm extends ConstituencyOption {
+  normName: string;
+  normDistrict: string;
+}
+
+const ALL_CONSTITUENCIES: ConstituencyOptionNorm[] = Object.entries(
   constituencyMap as Record<string, { name: string; district: string }>
 )
-  .map(([slug, meta]) => ({ slug, name: meta.name, district: meta.district }))
+  .map(([slug, meta]) => ({
+    slug,
+    name:         meta.name,
+    district:     meta.district,
+    normName:     normalize(meta.name),
+    normDistrict: normalize(meta.district),
+  }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
 const IS_PINCODE = (v: string) => /^\d+$/.test(v);
@@ -40,12 +96,11 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
   const isPinMode = IS_PINCODE(query);
 
   // Name-search results (only when not in pin mode)
+  const normQ = normalizeQuery(query);
   const nameResults = isPinMode || query.trim().length < 1
     ? []
     : ALL_CONSTITUENCIES.filter(
-        (c) =>
-          c.name.toLowerCase().includes(query.toLowerCase()) ||
-          c.district.toLowerCase().includes(query.toLowerCase())
+        (c) => c.normName.includes(normQ) || c.normDistrict.includes(normQ)
       ).slice(0, 8);
 
   const showDropdown =
@@ -74,18 +129,23 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
     if (pin.length !== 6) return;
 
     const saved = localStorage.getItem(STORAGE_KEY(pin));
-    if (saved) { navigate(saved); return; }
+    if (saved) {
+      // Show cached result in dropdown rather than auto-navigating
+      const match = ALL_CONSTITUENCIES.find((c) => c.slug === saved);
+      if (match) {
+        setPincodeResult({ pincode: pin, district: match.district, is_ambiguous: false, constituencies: [{ slug: match.slug, name: match.name, name_ta: match.name }] });
+        setPincodeStatus("ambiguous");
+        return;
+      }
+    }
 
     setPincodeStatus("loading");
     setPincodeResult(null);
     try {
       const data = await apiGet<PincodeResult>(`/api/lookup-pincode?code=${pin}`);
-      if (!data.is_ambiguous && data.constituencies.length === 1) {
-        navigate(data.constituencies[0].slug);
-      } else {
-        setPincodeResult(data);
-        setPincodeStatus("ambiguous");
-      }
+      // Always show dropdown — never auto-navigate
+      setPincodeResult(data);
+      setPincodeStatus("ambiguous");
     } catch (err: unknown) {
       const status = (err as { status?: number }).status;
       setPincodeStatus(status === 404 ? "not_found" : "error");
@@ -148,13 +208,13 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
 
       {/* Unified dropdown: name-search results OR pincode ambiguous picker */}
       {showDropdown && (
-        <div className="absolute z-30 top-full mt-1 w-full bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+        <div className="absolute z-30 top-full mt-1 w-full bg-white rounded-xl border border-gray-200 shadow-lg overflow-y-auto max-h-64">
           {/* Name-search results */}
           {nameResults.map((c) => (
             <button
               key={c.slug}
               onClick={() => navigate(c.slug)}
-              className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors ${
+              className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer ${
                 c.slug === currentSlug ? "bg-gray-100 font-semibold" : ""
               }`}
             >
@@ -175,7 +235,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
                 <button
                   key={c.slug}
                   onClick={() => handlePincodeSelect(c.slug)}
-                  className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors"
+                  className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer"
                 >
                   <span className="font-medium text-gray-900 truncate">
                     {isTA ? c.name_ta : c.name}

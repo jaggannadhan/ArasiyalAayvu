@@ -6,6 +6,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "assembly.tn.gov.in",
       },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        pathname: "/naatunadappu-media/**",
+      },
     ],
   },
 };
