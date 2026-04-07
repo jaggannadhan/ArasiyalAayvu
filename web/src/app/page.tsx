@@ -127,9 +127,16 @@ export default function Home() {
         </div>
 
         <p className="text-center text-xs text-gray-400 pb-4">
-          {isTA
-            ? "தரவு: MyNeta/ADR, NFHS-5, ASER 2024, கட்சி தேர்தல் அறிக்கைகள்"
-            : "Data: MyNeta/ADR, NFHS-5, ASER 2024, Official party manifestos"}
+          {isTA ? "தரவு: " : "Data: "}
+          <a href="https://www.myneta.info/TamilNadu2021/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">MyNeta</a>
+          {" / "}
+          <a href="https://adrindia.org" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ADR</a>
+          {", "}
+          <a href="https://rchiips.org/nfhs/NFHS-5Reports/TN.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">NFHS-5</a>
+          {", "}
+          <a href="https://asercentre.org/aser-2024/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ASER 2024</a>
+          {", "}
+          {isTA ? "கட்சி தேர்தல் அறிக்கைகள்" : "Official party manifestos"}
         </p>
       </div>
     </main>

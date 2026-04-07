@@ -516,6 +516,18 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
 
+@app.get("/api/candidates/2026/{slug}")
+def candidates_2026(slug: str) -> Dict[str, Any]:
+    """Return 2026 election candidates for a constituency."""
+    try:
+        doc = _db.collection("candidates_2026").document(slug).get()
+        if not doc.exists:
+            raise HTTPException(status_code=404, detail=f"No 2026 candidate data for: {slug}")
+        return jsonable_encoder(_doc_to_dict(doc))
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
 @app.post("/api/constituency/{slug}/view")
 def record_view(slug: str) -> Dict[str, Any]:
     """Atomically increment the view counter for a constituency.

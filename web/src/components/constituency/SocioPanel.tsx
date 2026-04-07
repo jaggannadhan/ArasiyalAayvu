@@ -196,8 +196,11 @@ export function SocioPanel({
       {/* Footer */}
       <p className="text-[10px] text-gray-400 border-t border-gray-100 pt-3 leading-relaxed">
         {isTA
-          ? "தரவு மாவட்ட அளவில் மாநில திட்டமிடல் ஆணையம் வழிகாட்டுதலின்படி வழங்கப்படுகிறது. ஆதாரம்: NFHS-5 (2019-21), ASER 2024"
-          : "Data reported at District level per State Planning Commission standards. Sources: NFHS-5 (2019-21), ASER 2024"}
+          ? "தரவு மாவட்ட அளவில் மாநில திட்டமிடல் ஆணையம் வழிகாட்டுதலின்படி வழங்கப்படுகிறது. ஆதாரம்: "
+          : "Data reported at District level per State Planning Commission standards. Sources: "}
+        <a href="https://rchiips.org/nfhs/NFHS-5Reports/TN.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">NFHS-5 (2019-21)</a>
+        {", "}
+        <a href="https://asercentre.org/aser-2024/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ASER 2024</a>
       </p>
     </div>
   );

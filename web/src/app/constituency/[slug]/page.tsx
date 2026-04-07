@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { MlaCard } from "@/components/constituency/MlaCard";
+import { CandidatesPanel } from "@/components/constituency/CandidatesPanel";
 import { WardPanel } from "@/components/constituency/WardPanel";
 import { DistrictPanel } from "@/components/constituency/DistrictPanel";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
@@ -63,7 +64,7 @@ export default function ConstituencyPage() {
   const slug = typeof params.slug === "string" ? params.slug : "";
 
   const [lang, setLang] = useState<"en" | "ta">("en");
-  const [selectedTerm, setSelectedTerm] = useState(2021);
+  const [selectedTerm, setSelectedTerm] = useState(2026);
   const [data, setData] = useState<ConstituencyDrillData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorState | null>(null);
@@ -79,7 +80,7 @@ export default function ConstituencyPage() {
 
   // Fetch constituency data (re-fetches when slug or term changes)
   useEffect(() => {
-    if (!slug || !currentTermMeta.hasDrillData) return;
+    if (!slug || !currentTermMeta.hasDrillData) { setLoading(false); return; }
     setLoading(true);
     setError(null);
     setData(null);
@@ -187,8 +188,13 @@ export default function ConstituencyPage() {
           </div>
         )}
 
-        {/* Term not yet available */}
-        {!loading && !currentTermMeta.hasDrillData && (
+        {/* 2026 upcoming election — show candidates panel */}
+        {!loading && selectedTerm === 2026 && meta && (
+          <CandidatesPanel slug={slug} lang={lang} />
+        )}
+
+        {/* Term not yet available (non-2026 terms without drill data) */}
+        {!loading && !currentTermMeta.hasDrillData && selectedTerm !== 2026 && (
           <div className="rounded-2xl border border-gray-200 bg-white px-5 py-10 text-center space-y-1">
             <p className="text-2xl">🗓</p>
             <p className="text-sm font-semibold text-gray-700">
@@ -243,9 +249,18 @@ export default function ConstituencyPage() {
 
             {/* Data attribution */}
             <p className="text-xs text-center text-gray-400 pb-8">
-              {isTA
-                ? "ஆதாரம்: MyNeta/ADR 2021, NFHS-5, ASER 2024, LGD GoI · அரசியல்ஆய்வு"
-                : "Sources: MyNeta/ADR 2021, NFHS-5, ASER 2024, LGD GoI · ArasiyalAayvu"}
+              {isTA ? "ஆதாரம்: " : "Sources: "}
+              <a href={data.mla?.source_url ?? "https://www.myneta.info/TamilNadu2021/"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">MyNeta</a>
+              {" / "}
+              <a href="https://adrindia.org" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ADR 2021</a>
+              {", "}
+              <a href="https://rchiips.org/nfhs/NFHS-5Reports/TN.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">NFHS-5</a>
+              {", "}
+              <a href="https://asercentre.org/aser-2024/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ASER 2024</a>
+              {", "}
+              <a href="https://lgdirectory.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">LGD GoI</a>
+              {" · "}
+              {isTA ? "அரசியல்ஆய்வு" : "ArasiyalAayvu"}
             </p>
           </>
         )}

@@ -5,6 +5,7 @@ interface Term {
   label: string;          // "2021–2026"
   assembly: string;       // "16th Assembly"
   hasDrillData: boolean;
+  isUpcoming?: boolean;
 }
 
 const TERMS: Term[] = [
@@ -12,7 +13,7 @@ const TERMS: Term[] = [
   { electionYear: 2011, label: "2011–2016", assembly: "13th Assembly", hasDrillData: true  },
   { electionYear: 2016, label: "2016–2021", assembly: "14th Assembly", hasDrillData: true  },
   { electionYear: 2021, label: "2021–2026", assembly: "15th Assembly", hasDrillData: true  },
-  { electionYear: 2026, label: "2026–2031", assembly: "16th Assembly", hasDrillData: false },
+  { electionYear: 2026, label: "2026–2031", assembly: "16th Assembly", hasDrillData: false, isUpcoming: true },
 ];
 
 interface TenureNavigatorProps {
@@ -42,7 +43,14 @@ export function TenureNavigator({ selectedYear, onChange, lang = "en" }: TenureN
 
       {/* Current term */}
       <div className="text-center">
-        <p className="text-sm font-black text-gray-900 leading-none">{current.label}</p>
+        <p className="text-sm font-black text-gray-900 leading-none">
+          {current.label}
+          {current.isUpcoming && (
+            <span className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 uppercase tracking-wide align-middle">
+              {isTA ? "தேர்தல்" : "Election"}
+            </span>
+          )}
+        </p>
         <p className="text-[10px] text-gray-400 mt-0.5">
           {isTA ? "சட்டமன்றக் காலம்" : current.assembly}
         </p>

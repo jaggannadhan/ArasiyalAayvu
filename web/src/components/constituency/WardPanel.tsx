@@ -212,8 +212,16 @@ export function WardPanel({
 
           {expanded && (
             <div className="mt-2">
-              {councilNote && (
-                <p className="text-[10px] text-gray-400 italic px-1 mb-2">{councilNote}</p>
+              {councilYear && (
+                <p className="text-[10px] text-gray-400 italic px-1 mb-2">
+                  {councilYear === 2022
+                    ? (lang === "ta" ? "2022 தேர்தல் முடிவுகள் · " : "2022 election results · ")
+                    : (lang === "ta" ? "2011 GCC தேர்தல் · " : "2011 GCC election · ")}
+                  <a href="https://opencity.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">OpenCity</a>
+                  {" / "}
+                  <a href="https://lgdirectory.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">LGD</a>
+                  {councilYear === 2011 && (lang === "ta" ? " · பெயர்கள் மட்டும் (கட்சி தரவு இல்லை)" : " · Names only (party data not in source)")}
+                </p>
               )}
               <div className="rounded-xl border border-gray-100 overflow-hidden">
                 {sortedCouncillors.map((c, i) => (
@@ -262,9 +270,9 @@ export function WardPanel({
           {expanded && (
             <div className="mt-2 space-y-3">
               <p className="text-[10px] text-gray-400 italic px-1">
-                {lang === "ta"
-                  ? "வார்டு எண்கள் LGD தரவிலிருந்து · தேர்தல் முடிவுகள் கிடைக்கவில்லை"
-                  : "Ward numbers from LGD · Election results not available"}
+                {lang === "ta" ? "வார்டு எண்கள் " : "Ward numbers from "}
+                <a href="https://lgdirectory.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">LGD</a>
+                {lang === "ta" ? " தரவிலிருந்து · தேர்தல் முடிவுகள் கிடைக்கவில்லை" : " · Election results not available"}
               </p>
               {wardMapping.local_bodies.map((lb) => {
                 const nums = lb.ward_numbers ?? [];
@@ -296,7 +304,9 @@ export function WardPanel({
 
       {/* ── Footer ── */}
       <p className="text-[10px] text-gray-400 border-t border-gray-100 pt-3">
-        {t.sourceNote} · {wardMapping.data_date ? t.dataDate(wardMapping.data_date) : ""} · {t.urbanOnly}
+        {lang === "ta" ? "ஆதாரம்: " : "Source: "}
+        <a href="https://lgdirectory.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">LGD — GoI</a>
+        {wardMapping.data_date ? ` · ${t.dataDate(wardMapping.data_date)}` : ""} · {t.urbanOnly}
       </p>
     </div>
   );

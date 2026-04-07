@@ -128,7 +128,10 @@ export function TenurePulse({ districtName, waterRisk, crimeIndex, roadSafety, l
               {isTA ? "நீர் ஆபத்து நிலை" : "Water Risk Level"}
             </p>
             <p className="text-xs text-gray-400 mt-0.5">
-              {isTA ? "மூல: மாவட்ட நீர் வள அறிக்கை" : "Source: District Water Risk Report"}
+              {isTA ? "மூல: " : "Source: "}
+              <a href="https://www.wri.org/aqueduct" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">
+                {isTA ? "மாவட்ட நீர் வள அறிக்கை" : "WRI Aqueduct"}
+              </a>
             </p>
           </div>
           <div className="shrink-0 text-right">
@@ -157,7 +160,11 @@ export function TenurePulse({ districtName, waterRisk, crimeIndex, roadSafety, l
                 {isTA ? "குற்ற குறியீடு" : "Crime Index"}
               </p>
               <p className="text-xs text-gray-400 mt-0.5">
-                {isTA ? "ஆதாரம்: SCRB / OpenCity 2021" : "Source: SCRB / OpenCity 2021"}
+                {isTA ? "ஆதாரம்: " : "Source: "}
+                <a href={crimeIndex?.source_url ?? "https://scrb.gov.in"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">SCRB</a>
+                {" / "}
+                <a href="https://opencity.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">OpenCity</a>
+                {" 2021"}
               </p>
             </div>
             <div className="shrink-0 text-right flex items-start gap-2">
@@ -216,9 +223,11 @@ export function TenurePulse({ districtName, waterRisk, crimeIndex, roadSafety, l
               {/* Baseline note */}
               <div className="px-3 py-2 bg-white border-t border-gray-100">
                 <p className="text-[11px] text-gray-400">
+                  {"📊 "}
+                  <a href={crimeIndex?.source_url ?? "https://scrb.gov.in"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">SCRB 2021</a>
                   {isTA
-                    ? "📊 SCRB 2021 தரவு · 2026 SCRB அறிக்கை வெளியீட்டிற்கு பின் போக்கு கணக்கீடு புதுப்பிக்கப்படும்"
-                    : "📊 SCRB 2021 baseline · Trend comparison will update after the 2026 SCRB report"}
+                    ? " தரவு · 2026 SCRB அறிக்கை வெளியீட்டிற்கு பின் போக்கு கணக்கீடு புதுப்பிக்கப்படும்"
+                    : " baseline · Trend comparison will update after the 2026 SCRB report"}
                 </p>
               </div>
             </div>
@@ -232,7 +241,10 @@ export function TenurePulse({ districtName, waterRisk, crimeIndex, roadSafety, l
               {isTA ? "சாலை பாதுகாப்பு" : "Road Safety"}
             </p>
             <p className="text-xs text-gray-400 mt-0.5">
-              {isTA ? "ஆதாரம்: TN போலீஸ் விபத்து அறிக்கை 2021-23" : "Source: TN Police Road Accidents 2021-23"}
+              {isTA ? "ஆதாரம்: " : "Source: "}
+              <a href={roadSafety?.source_url ?? "https://morth.nic.in/road-accident-in-india"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">
+                {isTA ? "TN போலீஸ் விபத்து அறிக்கை 2021-23" : "TN Police Road Accidents 2021-23"}
+              </a>
             </p>
           </div>
           <div className="shrink-0 text-right">

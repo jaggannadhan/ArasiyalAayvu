@@ -68,7 +68,7 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
           height={80}
           unoptimized
           sizes="64px"
-          className="shrink-0 w-16 h-20 rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50"
+          className="shrink-0 w-16 h-20 rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50 flex-none"
         />
 
         {/* Name + constituency */}
@@ -86,7 +86,7 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
             <img
               src={`/party-flags/${partyId}.${PARTY_FLAG_EXT[partyId]}`}
               alt={mla.party}
-              className="h-14 w-auto object-contain rounded-sm"
+              className="w-12 h-8 object-contain rounded-sm"
             />
             <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide">{mla.party}</span>
           </div>

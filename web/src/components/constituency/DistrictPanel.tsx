@@ -392,7 +392,10 @@ export function DistrictPanel({
       ))}
       <div className="px-3 py-2 bg-white">
         <p className="text-[11px] text-gray-400">
-          {isTA ? "📊 SCRB 2021 தரவு" : "📊 SCRB 2021 baseline"}
+          {"📊 "}
+          <a href={crimeIndex?.source_url ?? "https://scrb.gov.in"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">
+            {isTA ? "SCRB 2021 தரவு" : "SCRB 2021 baseline"}
+          </a>
         </p>
       </div>
     </div>
@@ -516,9 +519,16 @@ export function DistrictPanel({
 
       {/* ── Footer ── */}
       <p className="text-[10px] text-gray-400 border-t border-gray-100 pt-3 leading-relaxed">
-        {isTA
-          ? "தரவு மாவட்ட அளவில் வழங்கப்படுகிறது. ஆதாரம்: NFHS-5 (2019-21), ASER 2024, SCRB 2021, WRI Aqueduct"
-          : "Data reported at District level. Sources: NFHS-5 (2019-21), ASER 2024, SCRB 2021, WRI Aqueduct"}
+        {isTA ? "ஆதாரம்: " : "Sources: "}
+        <a href="https://rchiips.org/nfhs/NFHS-5Reports/TN.pdf" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">NFHS-5 (2019-21)</a>
+        {", "}
+        <a href="https://asercentre.org/aser-2024/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ASER 2024</a>
+        {", "}
+        <a href={crimeIndex?.source_url ?? "https://scrb.gov.in"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">SCRB 2021</a>
+        {", "}
+        <a href={roadSafety?.source_url ?? "https://morth.nic.in/road-accident-in-india"} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">{isTA ? "சாலை விபத்து அறிக்கை" : "Road Accident Report"}</a>
+        {", "}
+        <a href="https://www.wri.org/aqueduct" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">WRI Aqueduct</a>
       </p>
     </div>
   );

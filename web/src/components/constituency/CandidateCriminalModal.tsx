@@ -334,7 +334,26 @@ export function CandidateCriminalModal({
 
         {/* ── Footer ── */}
         <div className="px-5 py-3 border-t border-gray-100 flex items-center justify-between gap-3 bg-gray-50/60">
-          <p className="text-[11px] text-gray-400">{t.dataNote}</p>
+          <p className="text-[11px] text-gray-400">
+            {lang === "ta" ? "ஆதாரம்: ECI படிவம் 26A · " : "Source: ECI Form 26A · "}
+            <a
+              href={mla.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-gray-600 transition-colors"
+            >
+              MyNeta
+            </a>
+            {" / "}
+            <a
+              href="https://adrindia.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-gray-600 transition-colors"
+            >
+              ADR
+            </a>
+          </p>
           {mla.source_pdf && (
             <a
               href={mla.source_pdf}
