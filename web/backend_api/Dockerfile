@@ -10,8 +10,9 @@ RUN pip install --no-cache-dir -r backend_api/requirements.txt
 COPY backend_api/ ./backend_api/
 
 # Copy map files that main.py reads via ROOT_DIR/src/lib/
-COPY src/lib/constituency-map.json ./src/lib/constituency-map.json
-COPY src/lib/ls-constituency-map.json ./src/lib/ls-constituency-map.json
+# Sourced from backend_api/ to avoid gcloudignore src/ exclusion
+COPY backend_api/constituency-map.json ./src/lib/constituency-map.json
+COPY backend_api/ls-constituency-map.json ./src/lib/ls-constituency-map.json
 
 ENV PORT=8080
 
