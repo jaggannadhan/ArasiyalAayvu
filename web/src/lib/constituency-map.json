@@ -3,1380 +3,1410 @@
     "name": "ARIYALUR",
     "district": "ARIYALUR",
     "district_slug": "ariyalur",
-    "constituency_id": 1
+    "constituency_id": 149
   },
   "jayankondam": {
     "name": "JAYANKONDAM",
     "district": "ARIYALUR",
     "district_slug": "ariyalur",
-    "constituency_id": 2
+    "constituency_id": 150
   },
   "royapuram": {
     "name": "ROYAPURAM",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 3
+    "constituency_id": 17
   },
   "velachery": {
     "name": "VELACHERY",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 4
+    "constituency_id": 26
   },
   "perambur": {
     "name": "PERAMBUR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 5
+    "constituency_id": 12
   },
   "kolathur": {
     "name": "KOLATHUR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 6
+    "constituency_id": 13
   },
   "villivakkam": {
     "name": "VILLIVAKKAM",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 7
+    "constituency_id": 14
   },
   "thiru_vi_ka_nagar_sc": {
     "name": "THIRU-VI-KA-NAGAR (SC)",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 8
+    "constituency_id": 15
   },
   "egmore_sc": {
     "name": "EGMORE (SC)",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 9
+    "constituency_id": 16
   },
   "dr_radhakrishnan_nagar": {
     "name": "DR.RADHAKRISHNAN NAGAR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 10
+    "constituency_id": 11
   },
   "harbour": {
     "name": "HARBOUR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 11
+    "constituency_id": 18
   },
   "chepauk_thiruvallikeni": {
     "name": "CHEPAUK-THIRUVALLIKENI",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 12
+    "constituency_id": 19
   },
   "thousand_lights": {
     "name": "THOUSAND LIGHTS",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 13
+    "constituency_id": 20
   },
   "anna_nagar": {
     "name": "ANNA NAGAR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 14
+    "constituency_id": 21
   },
   "virugampakkam": {
     "name": "VIRUGAMPAKKAM",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 15
+    "constituency_id": 22
   },
   "saidapet": {
     "name": "SAIDAPET",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 16
+    "constituency_id": 23
   },
   "thiyagarayanagar": {
     "name": "THIYAGARAYANAGAR",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 18
+    "constituency_id": 24
   },
   "mylapore": {
     "name": "MYLAPORE",
     "district": "CHENNAI",
     "district_slug": "chennai",
-    "constituency_id": 19
+    "constituency_id": 25
   },
   "sholinganallur": {
-    "name": "SHOLINGANALLUR",
+    "name": "SHOZHINGANALLUR",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 20
+    "constituency_id": 27
   },
   "pallavaram": {
     "name": "PALLAVARAM",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 21
+    "constituency_id": 30
   },
   "tambaram": {
     "name": "TAMBARAM",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 22
+    "constituency_id": 31
   },
   "chengalpattu": {
     "name": "CHENGALPATTU",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 23
+    "constituency_id": 32
   },
   "thiruporur": {
     "name": "THIRUPORUR",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 24
+    "constituency_id": 33
   },
   "cheyyur_sc": {
     "name": "CHEYYUR (SC)",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 25
+    "constituency_id": 34
   },
   "madurantakam_sc": {
     "name": "MADURANTAKAM (SC)",
     "district": "CHENGALPATTU",
     "district_slug": "chengalpattu",
-    "constituency_id": 26
+    "constituency_id": 35
   },
   "coimbatore_north": {
     "name": "COIMBATORE NORTH",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 27
+    "constituency_id": 118
   },
   "coimbatore_south": {
     "name": "COIMBATORE SOUTH",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 28
+    "constituency_id": 120
   },
   "kavundampalayam": {
     "name": "KAVUNDAMPALAYAM",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 29
+    "constituency_id": 117
   },
   "kinathukadavu": {
     "name": "KINATHUKADAVU",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 30
+    "constituency_id": 122
   },
   "mettupalayam": {
     "name": "METTUPALAYAM",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 31
+    "constituency_id": 111
   },
   "pollachi": {
     "name": "POLLACHI",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 32
+    "constituency_id": 123
   },
   "singanallur": {
     "name": "SINGANALLUR",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 33
+    "constituency_id": 121
   },
   "sulur": {
     "name": "SULUR",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 34
+    "constituency_id": 116
   },
   "thondamuthur": {
     "name": "THONDAMUTHUR",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 35
+    "constituency_id": 119
   },
   "valparai_sc": {
     "name": "VALPARAI (SC)",
     "district": "COIMBATORE",
     "district_slug": "coimbatore",
-    "constituency_id": 36
+    "constituency_id": 124
   },
   "tittakudi_sc": {
     "name": "TITTAKUDI (SC)",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 38
+    "constituency_id": 151
   },
   "vridhachalam": {
-    "name": "VRIDHACHALAM",
+    "name": "VRIDDHACHALAM",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 39
+    "constituency_id": 152
   },
   "neyveli": {
     "name": "NEYVELI",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 40
+    "constituency_id": 153
   },
   "panruti": {
     "name": "PANRUTI",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 41
+    "constituency_id": 154
   },
   "cuddalore": {
     "name": "CUDDALORE",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 42
+    "constituency_id": 155
   },
   "kurinjipadi": {
     "name": "KURINJIPADI",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 43
+    "constituency_id": 156
   },
   "bhuvanagiri": {
     "name": "BHUVANAGIRI",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 44
+    "constituency_id": 157
   },
   "chidambaram": {
     "name": "CHIDAMBARAM",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 45
+    "constituency_id": 158
   },
   "kattumannarkoil_sc": {
     "name": "KATTUMANNARKOIL (SC)",
     "district": "CUDDALORE",
     "district_slug": "cuddalore",
-    "constituency_id": 46
+    "constituency_id": 159
   },
   "palacode": {
     "name": "PALACODE",
     "district": "DHARMAPURI",
     "district_slug": "dharmapuri",
-    "constituency_id": 47
+    "constituency_id": 57
   },
   "pennagaram": {
     "name": "PENNAGARAM",
     "district": "DHARMAPURI",
     "district_slug": "dharmapuri",
-    "constituency_id": 48
+    "constituency_id": 58
   },
   "dharmapuri": {
     "name": "DHARMAPURI",
     "district": "DHARMAPURI",
     "district_slug": "dharmapuri",
-    "constituency_id": 49
+    "constituency_id": 59
   },
   "pappireddipatti": {
     "name": "PAPPIREDDIPATTI",
     "district": "DHARMAPURI",
     "district_slug": "dharmapuri",
-    "constituency_id": 50
+    "constituency_id": 60
   },
   "harur_sc": {
     "name": "HARUR (SC)",
     "district": "DHARMAPURI",
     "district_slug": "dharmapuri",
-    "constituency_id": 51
+    "constituency_id": 61
   },
   "palani": {
     "name": "PALANI",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 52
+    "constituency_id": 127
   },
   "oddanchatram": {
     "name": "ODDANCHATRAM",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 53
+    "constituency_id": 128
   },
   "athoor": {
     "name": "ATHOOR",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 54
+    "constituency_id": 129
   },
   "nilakkottai_sc": {
     "name": "NILAKKOTTAI (SC)",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 55
+    "constituency_id": 130
   },
   "natham": {
     "name": "NATHAM",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 56
+    "constituency_id": 131
   },
   "dindigul": {
     "name": "DINDIGUL",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 57
+    "constituency_id": 132
   },
   "vedasandur": {
     "name": "VEDASANDUR",
     "district": "DINDIGUL",
     "district_slug": "dindigul",
-    "constituency_id": 58
+    "constituency_id": 133
   },
   "erode_west": {
     "name": "ERODE WEST",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 60
+    "constituency_id": 99
   },
   "modakkurichi": {
     "name": "MODAKKURICHI",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 61
+    "constituency_id": 100
   },
   "perundurai": {
     "name": "PERUNDURAI",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 62
+    "constituency_id": 103
   },
   "bhavani": {
     "name": "BHAVANI",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 63
+    "constituency_id": 104
   },
   "anthiyur": {
     "name": "ANTHIYUR",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 64
+    "constituency_id": 105
   },
   "gobichettipalayam": {
     "name": "GOBICHETTIPALAYAM",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 65
+    "constituency_id": 106
   },
   "bhavanisagar_sc": {
     "name": "BHAVANISAGAR (SC)",
     "district": "ERODE",
     "district_slug": "erode",
-    "constituency_id": 66
+    "constituency_id": 107
   },
   "ulundurpettai": {
     "name": "ULUNDURPETTAI",
     "district": "KALLAKURICHI",
     "district_slug": "kallakurichi",
-    "constituency_id": 67
+    "constituency_id": 77
   },
   "rishivandiyam": {
     "name": "RISHIVANDIYAM",
     "district": "KALLAKURICHI",
     "district_slug": "kallakurichi",
-    "constituency_id": 68
+    "constituency_id": 78
   },
   "sankarapuram": {
     "name": "SANKARAPURAM",
     "district": "KALLAKURICHI",
     "district_slug": "kallakurichi",
-    "constituency_id": 69
+    "constituency_id": 79
   },
   "kallakurichi_sc": {
     "name": "KALLAKURICHI (SC)",
     "district": "KALLAKURICHI",
     "district_slug": "kallakurichi",
-    "constituency_id": 70
+    "constituency_id": 80
   },
   "alandur": {
     "name": "ALANDUR",
     "district": "KANCHEEPURAM",
     "district_slug": "kancheepuram",
-    "constituency_id": 71
+    "constituency_id": 28
   },
   "kancheepuram": {
     "name": "KANCHEEPURAM",
     "district": "KANCHEEPURAM",
     "district_slug": "kancheepuram",
-    "constituency_id": 72
+    "constituency_id": 37
   },
   "sriperumbudur_sc": {
     "name": "SRIPERUMBUDUR (SC)",
     "district": "KANCHEEPURAM",
     "district_slug": "kancheepuram",
-    "constituency_id": 73
+    "constituency_id": 29
   },
   "uthiramerur": {
     "name": "UTHIRAMERUR",
     "district": "KANCHEEPURAM",
     "district_slug": "kancheepuram",
-    "constituency_id": 74
+    "constituency_id": 36
   },
   "kanniyakumari": {
     "name": "KANNIYAKUMARI",
     "district": "KANNIYAKUMARI",
     "district_slug": "kanniyakumari",
-    "constituency_id": 75
+    "constituency_id": 229
   },
   "nagercoil": {
     "name": "NAGERCOIL",
     "district": "KANNIYAKUMARI",
     "district_slug": "kanniyakumari",
-    "constituency_id": 76
+    "constituency_id": 230
   },
   "colachal": {
     "name": "COLACHAL",
     "district": "KANNIYAKUMARI",
     "district_slug": "kanniyakumari",
-    "constituency_id": 77
+    "constituency_id": 231
   },
   "padmanabhapuram": {
     "name": "PADMANABHAPURAM",
     "district": "KANNIYAKUMARI",
     "district_slug": "kanniyakumari",
-    "constituency_id": 78
+    "constituency_id": 232
   },
   "killiyoor": {
     "name": "KILLIYOOR",
     "district": "KANNIYAKUMARI",
     "district_slug": "kanniyakumari",
-    "constituency_id": 80
+    "constituency_id": 234
   },
   "aravakurichi": {
     "name": "ARAVAKURICHI",
     "district": "KARUR",
     "district_slug": "karur",
-    "constituency_id": 81
+    "constituency_id": 134
   },
   "karur": {
     "name": "KARUR",
     "district": "KARUR",
     "district_slug": "karur",
-    "constituency_id": 82
+    "constituency_id": 135
   },
   "krishnarayapuram_sc": {
     "name": "KRISHNARAYAPURAM (SC)",
     "district": "KARUR",
     "district_slug": "karur",
-    "constituency_id": 83
+    "constituency_id": 136
   },
   "kulithalai": {
     "name": "KULITHALAI",
     "district": "KARUR",
     "district_slug": "karur",
-    "constituency_id": 84
+    "constituency_id": 137
   },
   "uthangarai_sc": {
     "name": "UTHANGARAI (SC)",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 85
+    "constituency_id": 51
   },
   "bargur": {
     "name": "BARGUR",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 86
+    "constituency_id": 52
   },
   "krishnagiri": {
     "name": "KRISHNAGIRI",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 87
+    "constituency_id": 53
   },
   "veppanahalli": {
     "name": "VEPPANAHALLI",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 88
+    "constituency_id": 54
   },
   "hosur": {
     "name": "HOSUR",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 89
+    "constituency_id": 55
   },
   "thally": {
     "name": "THALLY",
     "district": "KRISHNAGIRI",
     "district_slug": "krishnagiri",
-    "constituency_id": 90
+    "constituency_id": 56
   },
   "melur": {
     "name": "MELUR",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 91
+    "constituency_id": 188
   },
   "madurai_east": {
     "name": "MADURAI EAST",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 92
+    "constituency_id": 189
   },
   "sholavandan_sc": {
     "name": "SHOLAVANDAN (SC)",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 93
+    "constituency_id": 190
   },
   "madurai_north": {
     "name": "MADURAI NORTH",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 94
+    "constituency_id": 191
   },
   "madurai_south": {
     "name": "MADURAI SOUTH",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 95
+    "constituency_id": 192
   },
   "madurai_central": {
     "name": "MADURAI CENTRAL",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 96
+    "constituency_id": 193
   },
   "madurai_west": {
     "name": "MADURAI WEST",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 97
+    "constituency_id": 194
   },
   "thiruparankundram": {
     "name": "THIRUPARANKUNDRAM",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 98
+    "constituency_id": 195
   },
   "thirumangalam": {
     "name": "THIRUMANGALAM",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 99
+    "constituency_id": 196
   },
   "usilampatti": {
     "name": "USILAMPATTI",
     "district": "MADURAI",
     "district_slug": "madurai",
-    "constituency_id": 100
+    "constituency_id": 197
   },
   "sirkazhi_sc": {
     "name": "SIRKAZHI (SC)",
-    "district": "NAGAPATTINAM",
-    "district_slug": "nagapattinam",
-    "constituency_id": 102
+    "district": "MAYILADUTHURAI",
+    "district_slug": "mayiladuthurai",
+    "constituency_id": 160,
+    "district_pre_2021": "NAGAPATTINAM",
+    "district_slug_pre_2021": "nagapattinam"
   },
   "mayiladuthurai": {
     "name": "MAYILADUTHURAI",
-    "district": "NAGAPATTINAM",
-    "district_slug": "nagapattinam",
-    "constituency_id": 103
+    "district": "MAYILADUTHURAI",
+    "district_slug": "mayiladuthurai",
+    "constituency_id": 161,
+    "district_pre_2021": "NAGAPATTINAM",
+    "district_slug_pre_2021": "nagapattinam"
   },
   "poompuhar": {
     "name": "POOMPUHAR",
-    "district": "NAGAPATTINAM",
-    "district_slug": "nagapattinam",
-    "constituency_id": 104
+    "district": "MAYILADUTHURAI",
+    "district_slug": "mayiladuthurai",
+    "constituency_id": 162,
+    "district_pre_2021": "NAGAPATTINAM",
+    "district_slug_pre_2021": "nagapattinam"
   },
   "nagapattinam": {
     "name": "NAGAPATTINAM",
     "district": "NAGAPATTINAM",
     "district_slug": "nagapattinam",
-    "constituency_id": 105
+    "constituency_id": 163
   },
   "kilvelur": {
     "name": "KILVELUR",
     "district": "NAGAPATTINAM",
     "district_slug": "nagapattinam",
-    "constituency_id": 106
+    "constituency_id": 164
   },
   "vedharanyam": {
-    "name": "VEDHARANYAM",
+    "name": "VEDARANYAM",
     "district": "NAGAPATTINAM",
     "district_slug": "nagapattinam",
-    "constituency_id": 107
+    "constituency_id": 165
   },
   "rasipuram_sc": {
     "name": "RASIPURAM(SC)",
     "district": "NAMAKKAL",
     "district_slug": "namakkal",
-    "constituency_id": 108
+    "constituency_id": 92
   },
   "senthamangalam_st": {
     "name": "SENTHAMANGALAM(ST)",
     "district": "NAMAKKAL",
     "district_slug": "namakkal",
-    "constituency_id": 109
+    "constituency_id": 93
   },
   "namakkal": {
     "name": "NAMAKKAL",
     "district": "NAMAKKAL",
     "district_slug": "namakkal",
-    "constituency_id": 110
+    "constituency_id": 94
   },
   "paramathivelur": {
-    "name": "PARAMATHIVELUR",
+    "name": "PARAMATHI-VELUR",
     "district": "NAMAKKAL",
     "district_slug": "namakkal",
-    "constituency_id": 111
+    "constituency_id": 95
   },
   "tiruchengodu": {
     "name": "TIRUCHENGODU",
     "district": "NAMAKKAL",
     "district_slug": "namakkal",
-    "constituency_id": 112
+    "constituency_id": 96
   },
   "perambalur_sc": {
     "name": "PERAMBALUR (SC)",
     "district": "PERAMBALUR",
     "district_slug": "perambalur",
-    "constituency_id": 114
+    "constituency_id": 147
   },
   "kunnam": {
     "name": "KUNNAM",
     "district": "PERAMBALUR",
     "district_slug": "perambalur",
-    "constituency_id": 115
+    "constituency_id": 148
   },
   "gandarvakottai_sc": {
-    "name": "GANDARVAKOTTAI (SC)",
+    "name": "GANDARVAKKOTTAI (SC)",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 116
+    "constituency_id": 178
   },
   "viralimalai": {
     "name": "VIRALIMALAI",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 117
+    "constituency_id": 179
   },
   "pudukkottai": {
     "name": "PUDUKKOTTAI",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 118
+    "constituency_id": 180
   },
   "thirumayam": {
     "name": "THIRUMAYAM",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 119
+    "constituency_id": 181
   },
   "alangudi": {
     "name": "ALANGUDI",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 120
+    "constituency_id": 182
   },
   "aranthangi": {
     "name": "ARANTHANGI",
     "district": "PUDUKKOTTAI",
     "district_slug": "pudukkottai",
-    "constituency_id": 121
+    "constituency_id": 183
   },
   "paramakudi_sc": {
     "name": "PARAMAKUDI (SC)",
     "district": "RAMANATHAPURAM",
     "district_slug": "ramanathapuram",
-    "constituency_id": 122
+    "constituency_id": 209
   },
   "tiruvadanai": {
     "name": "TIRUVADANAI",
     "district": "RAMANATHAPURAM",
     "district_slug": "ramanathapuram",
-    "constituency_id": 123
+    "constituency_id": 210
   },
   "ramanathapuram": {
     "name": "RAMANATHAPURAM",
     "district": "RAMANATHAPURAM",
     "district_slug": "ramanathapuram",
-    "constituency_id": 124
+    "constituency_id": 211
   },
   "mudukulathur": {
-    "name": "MUDUKULATHUR",
+    "name": "MUDHUKULATHUR",
     "district": "RAMANATHAPURAM",
     "district_slug": "ramanathapuram",
-    "constituency_id": 125
+    "constituency_id": 212
   },
   "arakkonam_sc": {
     "name": "ARAKKONAM (SC)",
     "district": "RANIPET",
     "district_slug": "ranipet",
-    "constituency_id": 126
+    "constituency_id": 38
   },
   "sholinghur": {
     "name": "SHOLINGHUR",
     "district": "RANIPET",
     "district_slug": "ranipet",
-    "constituency_id": 127
+    "constituency_id": 39
   },
   "ranipet": {
     "name": "RANIPET",
     "district": "RANIPET",
     "district_slug": "ranipet",
-    "constituency_id": 128
+    "constituency_id": 41
   },
   "arcot": {
     "name": "ARCOT",
     "district": "RANIPET",
     "district_slug": "ranipet",
-    "constituency_id": 129
+    "constituency_id": 42
   },
   "gangavalli_sc": {
     "name": "GANGAVALLI (SC)",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 130
+    "constituency_id": 81
   },
   "attur_sc": {
     "name": "ATTUR (SC)",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 131
+    "constituency_id": 82
   },
   "yercaud_st": {
     "name": "YERCAUD (ST)",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 132
+    "constituency_id": 83
   },
   "omalur": {
     "name": "OMALUR",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 133
+    "constituency_id": 84
   },
   "mettur": {
     "name": "METTUR",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 134
+    "constituency_id": 85
   },
   "edappadi": {
     "name": "EDAPPADI",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 135
+    "constituency_id": 86
   },
   "sankari": {
     "name": "SANKARI",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 136
+    "constituency_id": 87
   },
   "salem_west": {
     "name": "SALEM WEST",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 137
+    "constituency_id": 88
   },
   "salem_north": {
     "name": "SALEM NORTH",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 138
+    "constituency_id": 89
   },
   "salem_south": {
     "name": "SALEM SOUTH",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 139
+    "constituency_id": 90
   },
   "veerapandi": {
     "name": "VEERAPANDI",
     "district": "SALEM",
     "district_slug": "salem",
-    "constituency_id": 140
+    "constituency_id": 91
   },
   "karaikudi": {
     "name": "KARAIKUDI",
     "district": "SIVAGANGA",
     "district_slug": "sivaganga",
-    "constituency_id": 142
+    "constituency_id": 184
   },
   "tiruppathur": {
     "name": "TIRUPPATHUR",
     "district": "SIVAGANGA",
     "district_slug": "sivaganga",
-    "constituency_id": 143
+    "constituency_id": 185
   },
   "sivaganga": {
     "name": "SIVAGANGA",
     "district": "SIVAGANGA",
     "district_slug": "sivaganga",
-    "constituency_id": 144
+    "constituency_id": 186
   },
   "manamadurai_sc": {
     "name": "MANAMADURAI (SC)",
     "district": "SIVAGANGA",
     "district_slug": "sivaganga",
-    "constituency_id": 145
+    "constituency_id": 187
   },
   "alangulam": {
     "name": "ALANGULAM",
     "district": "TENKASI",
     "district_slug": "tenkasi",
-    "constituency_id": 146
+    "constituency_id": 223
   },
   "kadayanallur": {
     "name": "KADAYANALLUR",
     "district": "TENKASI",
     "district_slug": "tenkasi",
-    "constituency_id": 147
+    "constituency_id": 221
   },
   "sankarankovil_sc": {
     "name": "SANKARANKOVIL (SC)",
     "district": "TENKASI",
     "district_slug": "tenkasi",
-    "constituency_id": 148
+    "constituency_id": 219
   },
   "tenkasi": {
     "name": "TENKASI",
     "district": "TENKASI",
     "district_slug": "tenkasi",
-    "constituency_id": 149
+    "constituency_id": 222
   },
   "vasudevanallur_sc": {
     "name": "VASUDEVANALLUR (SC)",
     "district": "TENKASI",
     "district_slug": "tenkasi",
-    "constituency_id": 150
+    "constituency_id": 220
   },
   "thiruvidaimarudur_sc": {
     "name": "THIRUVIDAIMARUDUR (SC)",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 151
+    "constituency_id": 170
   },
   "kumbakonam": {
     "name": "KUMBAKONAM",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 152
+    "constituency_id": 171
   },
   "papanasam": {
     "name": "PAPANASAM",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 153
+    "constituency_id": 172
   },
   "thiruvaiyaru": {
     "name": "THIRUVAIYARU",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 154
+    "constituency_id": 173
   },
   "thanjavur": {
     "name": "THANJAVUR",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 155
+    "constituency_id": 174
   },
   "orathanadu": {
     "name": "ORATHANADU",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 156
+    "constituency_id": 175
   },
   "pattukkottai": {
     "name": "PATTUKKOTTAI",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 157
+    "constituency_id": 176
   },
   "peravurani": {
     "name": "PERAVURANI",
     "district": "THANJAVUR",
     "district_slug": "thanjavur",
-    "constituency_id": 158
+    "constituency_id": 177
   },
   "udhagamandalam": {
     "name": "UDHAGAMANDALAM",
     "district": "THE NILGIRIS",
     "district_slug": "the_nilgiris",
-    "constituency_id": 159
+    "constituency_id": 108
   },
   "gudalur_sc": {
     "name": "GUDALUR (SC)",
     "district": "THE NILGIRIS",
     "district_slug": "the_nilgiris",
-    "constituency_id": 160
+    "constituency_id": 109
   },
   "coonoor": {
     "name": "COONOOR",
     "district": "THE NILGIRIS",
     "district_slug": "the_nilgiris",
-    "constituency_id": 161
+    "constituency_id": 110
   },
   "andipatti": {
     "name": "ANDIPATTI",
     "district": "THENI",
     "district_slug": "theni",
-    "constituency_id": 162
+    "constituency_id": 198
   },
   "periyakulam_sc": {
     "name": "PERIYAKULAM (SC)",
     "district": "THENI",
     "district_slug": "theni",
-    "constituency_id": 163
+    "constituency_id": 199
   },
   "bodinayakkanur": {
-    "name": "BODINAYAKKANUR",
+    "name": "BODINAYAKANUR",
     "district": "THENI",
     "district_slug": "theni",
-    "constituency_id": 164
+    "constituency_id": 200
   },
   "cumbum": {
     "name": "CUMBUM",
     "district": "THENI",
     "district_slug": "theni",
-    "constituency_id": 165
+    "constituency_id": 201
   },
   "vaniyambadi": {
     "name": "VANIYAMBADI",
     "district": "TIRUPATHUR",
     "district_slug": "tirupathur",
-    "constituency_id": 166
+    "constituency_id": 47
   },
   "ambur": {
     "name": "AMBUR",
     "district": "TIRUPATHUR",
     "district_slug": "tirupathur",
-    "constituency_id": 167
+    "constituency_id": 48
   },
   "jolarpet": {
     "name": "JOLARPET",
     "district": "TIRUPATHUR",
     "district_slug": "tirupathur",
-    "constituency_id": 168
+    "constituency_id": 49
   },
   "tirupattur": {
     "name": "TIRUPATTUR",
     "district": "TIRUPATHUR",
     "district_slug": "tirupathur",
-    "constituency_id": 169
+    "constituency_id": 50
   },
   "gummidipoondi": {
     "name": "GUMMIDIPOONDI",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 170
+    "constituency_id": 1
   },
   "ponneri_sc": {
     "name": "PONNERI (SC)",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 171
+    "constituency_id": 2
   },
   "tiruttani": {
     "name": "TIRUTTANI",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 172
+    "constituency_id": 3
   },
   "thiruvallur": {
     "name": "THIRUVALLUR",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 173
+    "constituency_id": 4
   },
   "poonamallee_sc": {
     "name": "POONAMALLEE (SC)",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 174
+    "constituency_id": 5
   },
   "avadi": {
     "name": "AVADI",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 175
-  },
-  "madhuravoyal": {
-    "name": "MADHURAVOYAL",
-    "district": "THIRUVALLUR",
-    "district_slug": "thiruvallur",
-    "constituency_id": 176
+    "constituency_id": 6
   },
   "ambattur": {
     "name": "AMBATTUR",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 177
+    "constituency_id": 8
   },
   "madhavaram": {
-    "name": "MADHAVARAM",
+    "name": "MADAVARAM",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 178
+    "constituency_id": 9
   },
   "thiruvottiyur": {
     "name": "THIRUVOTTIYUR",
     "district": "THIRUVALLUR",
     "district_slug": "thiruvallur",
-    "constituency_id": 179
+    "constituency_id": 10
   },
   "thiruthuraipoondi_sc": {
     "name": "THIRUTHURAIPOONDI (SC)",
     "district": "THIRUVARUR",
     "district_slug": "thiruvarur",
-    "constituency_id": 181
+    "constituency_id": 166
   },
   "mannargudi": {
     "name": "MANNARGUDI",
     "district": "THIRUVARUR",
     "district_slug": "thiruvarur",
-    "constituency_id": 182
+    "constituency_id": 167
   },
   "thiruvaur": {
-    "name": "THIRUVAUR",
+    "name": "THIRUVARUR",
     "district": "THIRUVARUR",
     "district_slug": "thiruvarur",
-    "constituency_id": 183
+    "constituency_id": 168
   },
   "nannilam": {
     "name": "NANNILAM",
     "district": "THIRUVARUR",
     "district_slug": "thiruvarur",
-    "constituency_id": 184
+    "constituency_id": 169
   },
   "vilathikulam": {
     "name": "VILATHIKULAM",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 185
+    "constituency_id": 213
   },
   "thoothukudi": {
     "name": "THOOTHUKUDI",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 186
+    "constituency_id": 214
   },
   "tiruchendur": {
     "name": "TIRUCHENDUR",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 187
+    "constituency_id": 215
   },
   "srivaikuntam": {
     "name": "SRIVAIKUNTAM",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 188
+    "constituency_id": 216
   },
   "ottapidaram_sc": {
     "name": "OTTAPIDARAM (SC)",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 189
+    "constituency_id": 217
   },
   "kovilpatti": {
     "name": "KOVILPATTI",
     "district": "THOOTHUKUDI",
     "district_slug": "thoothukudi",
-    "constituency_id": 190
+    "constituency_id": 218
   },
   "manapparai": {
     "name": "MANAPPARAI",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 191
+    "constituency_id": 138
   },
   "srirangam": {
     "name": "SRIRANGAM",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 192
+    "constituency_id": 139
   },
   "tiruchirappalli_west": {
     "name": "TIRUCHIRAPPALLI WEST",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 193
+    "constituency_id": 140
   },
   "tiruchirappalli_east": {
     "name": "TIRUCHIRAPPALLI EAST",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 194
+    "constituency_id": 141
   },
   "thiruverumbur": {
     "name": "THIRUVERUMBUR",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 195
+    "constituency_id": 142
   },
   "lalgudi": {
     "name": "LALGUDI",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 196
+    "constituency_id": 143
   },
   "manachanallur": {
     "name": "MANACHANALLUR",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 197
+    "constituency_id": 144
   },
   "musiri": {
     "name": "MUSIRI",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 198
+    "constituency_id": 145
   },
   "thuraiyur_sc": {
     "name": "THURAIYUR (SC)",
     "district": "TIRUCHIRAPPALLI",
     "district_slug": "tiruchirappalli",
-    "constituency_id": 199
+    "constituency_id": 146
   },
   "ambasamudram": {
     "name": "AMBASAMUDRAM",
     "district": "TIRUNELVELI",
     "district_slug": "tirunelveli",
-    "constituency_id": 200
+    "constituency_id": 225
   },
   "nanguneri": {
     "name": "NANGUNERI",
     "district": "TIRUNELVELI",
     "district_slug": "tirunelveli",
-    "constituency_id": 201
+    "constituency_id": 227
   },
   "palayamkottai": {
     "name": "PALAYAMKOTTAI",
     "district": "TIRUNELVELI",
     "district_slug": "tirunelveli",
-    "constituency_id": 202
+    "constituency_id": 226
   },
   "radhapuram": {
     "name": "RADHAPURAM",
     "district": "TIRUNELVELI",
     "district_slug": "tirunelveli",
-    "constituency_id": 203
+    "constituency_id": 228
   },
   "tirunelveli": {
     "name": "TIRUNELVELI",
     "district": "TIRUNELVELI",
     "district_slug": "tirunelveli",
-    "constituency_id": 204
+    "constituency_id": 224
   },
   "avanashi_sc": {
     "name": "AVANASHI (SC)",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 205
+    "constituency_id": 112
   },
   "dharapuram_sc": {
     "name": "DHARAPURAM (SC)",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 206
+    "constituency_id": 101
   },
   "kangayam": {
     "name": "KANGAYAM",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 207
+    "constituency_id": 102
   },
   "madathukulam": {
     "name": "MADATHUKULAM",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 208
+    "constituency_id": 126
   },
   "palladam": {
     "name": "PALLADAM",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 209
+    "constituency_id": 115
   },
   "tiruppur_north": {
     "name": "TIRUPPUR NORTH",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 210
+    "constituency_id": 113
   },
   "tiruppur_south": {
     "name": "TIRUPPUR SOUTH",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 211
+    "constituency_id": 114
   },
   "udumalaipettai": {
     "name": "UDUMALAIPETTAI",
     "district": "TIRUPPUR",
     "district_slug": "tiruppur",
-    "constituency_id": 212
+    "constituency_id": 125
   },
   "chengam_sc": {
     "name": "CHENGAM (SC)",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 213
+    "constituency_id": 62
   },
   "tiruvannamalai": {
     "name": "TIRUVANNAMALAI",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 214
+    "constituency_id": 63
   },
   "kilpennathur": {
     "name": "KILPENNATHUR",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 215
+    "constituency_id": 64
   },
   "kalasapakkam": {
     "name": "KALASAPAKKAM",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 216
+    "constituency_id": 65
   },
   "polur": {
     "name": "POLUR",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 217
+    "constituency_id": 66
   },
   "arani": {
     "name": "ARANI",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 218
+    "constituency_id": 67
   },
   "cheyyar": {
     "name": "CHEYYAR",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 219
+    "constituency_id": 68
   },
   "vandavasi_sc": {
     "name": "VANDAVASI (SC)",
     "district": "TIRUVANNAMALAI",
     "district_slug": "tiruvannamalai",
-    "constituency_id": 220
+    "constituency_id": 69
   },
   "katpadi": {
     "name": "KATPADI",
     "district": "VELLORE",
     "district_slug": "vellore",
-    "constituency_id": 221
+    "constituency_id": 40
   },
   "vellore": {
     "name": "VELLORE",
     "district": "VELLORE",
     "district_slug": "vellore",
-    "constituency_id": 222
+    "constituency_id": 43
   },
   "anaikattu": {
     "name": "ANAIKATTU",
     "district": "VELLORE",
     "district_slug": "vellore",
-    "constituency_id": 223
+    "constituency_id": 44
   },
   "kilvaithinankuppam_sc": {
     "name": "KILVAITHINANKUPPAM (SC)",
     "district": "VELLORE",
     "district_slug": "vellore",
-    "constituency_id": 224
+    "constituency_id": 45
   },
   "gudiyattam_sc": {
     "name": "GUDIYATTAM (SC)",
     "district": "VELLORE",
     "district_slug": "vellore",
-    "constituency_id": 225
+    "constituency_id": 46
   },
   "gingee": {
     "name": "GINGEE",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 226
+    "constituency_id": 70
   },
   "mailam": {
     "name": "MAILAM",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 227
+    "constituency_id": 71
   },
   "tindivanam_sc": {
     "name": "TINDIVANAM (SC)",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 228
+    "constituency_id": 72
   },
   "vanur_sc": {
     "name": "VANUR (SC)",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 229
+    "constituency_id": 73
   },
   "villupuram": {
     "name": "VILLUPURAM",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 230
+    "constituency_id": 74
   },
   "tirukkoyilur": {
     "name": "TIRUKKOYILUR",
     "district": "VILLUPPURAM",
     "district_slug": "villuppuram",
-    "constituency_id": 232
+    "constituency_id": 76
   },
   "rajapalayam": {
     "name": "RAJAPALAYAM",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 233
+    "constituency_id": 202
   },
   "srivilliputhur_sc": {
     "name": "SRIVILLIPUTHUR (SC)",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 234
+    "constituency_id": 203
   },
   "sattur": {
     "name": "SATTUR",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 235
+    "constituency_id": 204
   },
   "sivakasi": {
     "name": "SIVAKASI",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 236
+    "constituency_id": 205
   },
   "virudhunagar": {
     "name": "VIRUDHUNAGAR",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 237
+    "constituency_id": 206
   },
   "aruppukottai": {
-    "name": "ARUPPUKOTTAI",
+    "name": "ARUPPUKKOTTAI",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 238
+    "constituency_id": 207
   },
   "tiruchuli": {
     "name": "TIRUCHULI",
     "district": "VIRUDHUNAGAR",
     "district_slug": "virudhunagar",
-    "constituency_id": 239
+    "constituency_id": 208
+  },
+  "maduravoyal": {
+    "name": "MADURAVOYAL",
+    "district": "THIRUVALLUR",
+    "district_slug": "thiruvallur",
+    "constituency_id": 7
+  },
+  "erode_east": {
+    "name": "ERODE EAST",
+    "district": "ERODE",
+    "district_slug": "erode",
+    "constituency_id": 98
+  },
+  "vilavancode": {
+    "name": "VILAVANCODE",
+    "district": "KANNIYAKUMARI",
+    "district_slug": "kanniyakumari",
+    "constituency_id": 233
+  },
+  "kumarapalayam": {
+    "name": "KUMARAPALAYAM",
+    "district": "NAMAKKAL",
+    "district_slug": "namakkal",
+    "constituency_id": 97
+  },
+  "vikravandi": {
+    "name": "VIKRAVANDI",
+    "district": "VILLUPPURAM",
+    "district_slug": "villuppuram",
+    "constituency_id": 75
   }
 }

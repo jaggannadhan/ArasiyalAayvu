@@ -2,16 +2,32 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { normalizeName } from "@/lib/formatters";
 
 const PARTY_FLAG_EXT: Record<string, string> = {
   dmk: "svg", aiadmk: "svg", bjp: "svg", inc: "svg", pmk: "svg",
   cpi: "svg", cpim: "png", vck: "png", dmdk: "png", mdmk: "svg",
   ntk: "gif", tvk: "jpeg",
+  bsp: "svg", tamizhaga_vaazhv: "png", naam_indiar_part: "svg", veerath_thiyagi_: "svg",
+};
+
+const PARTY_ABBR: Record<string, string> = {
+  ind: "IND", naam_indiar_part: "NIP", veerath_thiyagi_: "VTVTK",
 };
 
 const GENDER_ICON: Record<string, string> = {
   Male: "♂", Female: "♀", "Third Gender": "⚧",
 };
+
+function CandidatePhoto({ url, gender, name, className }: {
+  url: string | null | undefined; gender: string; name: string; className: string;
+}) {
+  const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
+  if (url?.includes("suvidha.eci.gov.in")) {
+    return <img src={url} alt={name} className={className} />;
+  }
+  return <Image src={url ?? def} alt={name} width={80} height={100} sizes="80px" className={className} />;
+}
 
 export interface Candidate2026 {
   name: string;
@@ -69,7 +85,7 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
               {isTA ? "2026 தேர்தல் · வேட்பாளர்" : "Election 2026 · Candidate"}
             </p>
             <h2 className="text-base font-black text-gray-900 leading-tight mt-0.5">
-              {candidate.name}
+              {normalizeName(candidate.name)}
             </h2>
           </div>
           <button
@@ -86,13 +102,10 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
 
           {/* Photo + identity */}
           <div className="flex items-center gap-4">
-            <Image
-              src={candidate.photo_url ?? (candidate.gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg")}
-              alt={candidate.name}
-              width={80}
-              height={100}
-              unoptimized
-              sizes="80px"
+            <CandidatePhoto
+              url={candidate.photo_url}
+              gender={candidate.gender}
+              name={candidate.name}
               className="shrink-0 w-20 h-[100px] rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50 flex-none"
             />
             <div className="flex-1 min-w-0 space-y-1">
@@ -116,7 +129,7 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
                 )}
                 <div>
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    {candidate.party_id === "ind" ? "IND" : candidate.party_id.toUpperCase()}
+                    {PARTY_ABBR[candidate.party_id] ?? candidate.party_id.toUpperCase()}
                   </p>
                   <p className="text-xs text-gray-700 font-medium leading-tight">{candidate.party}</p>
                 </div>

@@ -24,8 +24,15 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import time
 import unicodedata
+from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parent.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+from scrapers.name_utils import name_variants, canonical_name  # noqa: E402
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -602,6 +609,8 @@ def build_document(row: CandidateListRow, ipc_sections: list[str]) -> dict:
         "election_year": row.election_year,
         "constituency": row.constituency,
         "candidate_name": row.candidate_name,
+        "canonical_name": canonical_name(row.candidate_name),
+        "alias_names": name_variants(row.candidate_name),
         "party": row.party,
         "candidate_id": row.candidate_id,
         "education": {

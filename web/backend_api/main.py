@@ -5,7 +5,9 @@ import os
 import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple  # noqa: UP035
+from urllib.parse import quote_plus, urlparse, parse_qs, unquote
 
+import httpx
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,6 +15,7 @@ from google.api_core.exceptions import GoogleAPICallError, RetryError
 from google.cloud import firestore
 from google.cloud.firestore_v1.base_query import FieldFilter
 from google.cloud.firestore_v1 import Increment
+from pydantic import BaseModel
 
 PROJECT_ID = os.getenv("GOOGLE_CLOUD_PROJECT", "naatunadappu")
 API_TITLE = "ArasiyalAayvu Backend API"
@@ -70,6 +73,12 @@ MLA_SLUG_ALIASES: Dict[Tuple[int, str], str] = {
     (2016, "thoothukudi"):      "thoothukkudi",
     (2016, "vedharanyam"):      "vedaranyam",
     (2016, "vridhachalam"):     "vriddhachalam",
+}
+
+# Slug aliases for 2026 candidates collection
+# Maps canonical map slug → alternate Firestore doc slug (if scraper used a different spelling)
+CANDIDATE_2026_SLUG_ALIASES: Dict[str, str] = {
+    "madhuravoyal": "maduravoyal",  # historical typo; canonical map slug is maduravoyal
 }
 
 KEY_METRIC_IDS = {
@@ -358,16 +367,27 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
         constituency_name = district_meta.get("constituency_name", "") if district_meta else ""
         mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name, election_year=term)
 
-        # Enrich MLA with photo_url from mla_profiles (2021 only — profiles cover 16th assembly)
-        if mla and term == 2021:
+        # Enrich MLA with photo_url from mla_profiles (2011 + 2016 + 2021)
+        if mla and term in {2011, 2016, 2021}:
             for pdoc in _db.collection("mla_profiles").stream():
                 pdata = pdoc.to_dict() or {}
                 for party_entry in pdata.get("parties", []):
-                    if party_entry.get("constituency_slug") == slug:
-                        photo_url = pdata.get("photo_url")
-                        if photo_url:
-                            mla["photo_url"] = photo_url
-                        break
+                    if party_entry.get("constituency_slug") != slug:
+                        continue
+                    # Match tenure start year: "2016–2021" → 2016 must equal term
+                    tenure = party_entry.get("tenure", "")
+                    if "–" in tenure or "-" in tenure:
+                        sep = "–" if "–" in tenure else "-"
+                        try:
+                            tenure_start = int(tenure.split(sep)[0].strip())
+                        except ValueError:
+                            tenure_start = None
+                        if tenure_start and tenure_start != term:
+                            continue
+                    photo_url = pdata.get("photo_url")
+                    if photo_url:
+                        mla["photo_url"] = photo_url
+                    break
                 if mla.get("photo_url"):
                     break
 
@@ -518,12 +538,26 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
 
 @app.get("/api/candidates/2026/{slug}")
 def candidates_2026(slug: str) -> Dict[str, Any]:
-    """Return 2026 election candidates for a constituency."""
+    """Return 2026 election candidates for a constituency (deduplicated by name+party)."""
     try:
-        doc = _db.collection("candidates_2026").document(slug).get()
+        # Resolve alias: if slug has a known alternate Firestore key, try that too
+        lookup = CANDIDATE_2026_SLUG_ALIASES.get(slug, slug)
+        doc = _db.collection("candidates_2026").document(lookup).get()
+        if not doc.exists and lookup != slug:
+            doc = _db.collection("candidates_2026").document(slug).get()
         if not doc.exists:
             raise HTTPException(status_code=404, detail=f"No 2026 candidate data for: {slug}")
-        return jsonable_encoder(_doc_to_dict(doc))
+        data = _doc_to_dict(doc)
+        seen: set[tuple[str, str]] = set()
+        unique: list = []
+        for c in data.get("candidates", []):
+            key = (c.get("name", "").strip().upper(), c.get("party", "").strip().upper())
+            if key not in seen:
+                seen.add(key)
+                unique.append(c)
+        data["candidates"] = unique
+        data["total_candidates"] = len(unique)
+        return jsonable_encoder(data)
     except (GoogleAPICallError, RetryError) as exc:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
@@ -578,6 +612,272 @@ def frequently_browsed(limit: int = Query(6, ge=1, le=20)) -> List[Dict[str, Any
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Pincode resolve helpers
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Domains we trust as govt or mainstream news sources
+_TRUSTED_DOMAINS = {
+    "tn.gov.in", "elections.tn.gov.in", "ceotn.in", "indiapost.gov.in",
+    "pib.gov.in", "eci.gov.in", "myneta.info", "lgdirectory.gov.in",
+    "wikipedia.org", "thehindu.com", "indianexpress.com",
+    "timesofindia.com", "ndtv.com", "newindianexpress.com",
+    "deccanherald.com", "scroll.in", "thewire.in", "hindustantimes.com",
+}
+
+# India Post API sometimes uses alternate spellings; normalize to our map names
+_DISTRICT_ALIASES: Dict[str, str] = {
+    "KANCHIPURAM": "KANCHEEPURAM",
+    "TUTICORIN": "THOOTHUKUDI",
+    "TIRUVALLUR": "THIRUVALLUR",
+    "NILGIRIS": "THE NILGIRIS",
+    "PUDUKKOTTAI": "PUDUKKOTTAI",
+    "PUDUKOTTAI": "PUDUKKOTTAI",
+    "TIRUPUR": "TIRUPPUR",
+}
+
+
+def _normalize_district(raw: str) -> str:
+    u = raw.upper().strip()
+    return _DISTRICT_ALIASES.get(u, u)
+
+
+def _is_trusted(url: str) -> bool:
+    try:
+        host = urlparse(url).netloc.lower().lstrip("www.")
+        return any(host == d or host.endswith("." + d) for d in _TRUSTED_DOMAINS)
+    except Exception:
+        return False
+
+
+async def _ddg_search(query: str) -> List[Dict[str, Any]]:
+    """Fetch DuckDuckGo Lite results; return list of {title, url, snippet, is_trusted}."""
+    url = f"https://lite.duckduckgo.com/lite/?q={quote_plus(query)}"
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; ArasiyalAayvu/1.0)"}
+    try:
+        async with httpx.AsyncClient(headers=headers, timeout=10, follow_redirects=True) as client:
+            resp = await client.get(url)
+            html = resp.text
+    except Exception:
+        return []
+
+    # DDG Lite: links are anchors with href like /l/?uddg=<encodedURL>
+    link_re = re.compile(r'href="(/l/\?[^"]+)"[^>]*>\s*([^<]+?)\s*</a>', re.IGNORECASE)
+    snippet_re = re.compile(r'class="result-snippet"[^>]*>(.*?)</td>', re.DOTALL | re.IGNORECASE)
+
+    raw_links = link_re.findall(html)
+    raw_snippets = snippet_re.findall(html)
+
+    results: List[Dict[str, Any]] = []
+    for i, (href, title) in enumerate(raw_links[:20]):
+        try:
+            qs = parse_qs(urlparse("https://lite.duckduckgo.com" + href).query)
+            actual_url = unquote(qs.get("uddg", [href])[0])
+        except Exception:
+            actual_url = href
+
+        snippet = re.sub(r"<[^>]+>", " ", raw_snippets[i] if i < len(raw_snippets) else "").strip()
+        results.append({
+            "title": title.strip(),
+            "url": actual_url,
+            "snippet": snippet,
+            "is_trusted": _is_trusted(actual_url),
+        })
+
+    trusted = [r for r in results if r["is_trusted"]]
+    others = [r for r in results if not r["is_trusted"]]
+    return trusted + others[:3]
+
+
+def _match_constituencies(
+    postal: Optional[Dict[str, Any]],
+    search_results: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    suggestions: Dict[str, Dict[str, Any]] = {}
+    conf_order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
+
+    def upsert(slug: str, confidence: str, reason: str) -> None:
+        meta = CONSTITUENCY_MAP.get(slug)
+        if not meta:
+            return
+        if slug not in suggestions:
+            suggestions[slug] = {
+                "slug": slug,
+                "name": meta["name"],
+                "district": meta.get("district", ""),
+                "confidence": confidence,
+                "reasons": [reason],
+            }
+        else:
+            suggestions[slug]["reasons"].append(reason)
+            if conf_order.get(confidence, 9) < conf_order.get(suggestions[slug]["confidence"], 9):
+                suggestions[slug]["confidence"] = confidence
+
+    if postal:
+        ip_district = _normalize_district(postal.get("district", ""))
+        ip_taluk = postal.get("taluk", "").upper().strip()
+
+        for slug, meta in CONSTITUENCY_MAP.items():
+            con_district = meta.get("district", "").upper()
+            con_name = re.sub(r"\s*\([^)]+\)", "", meta.get("name", "")).upper().strip()
+
+            if not ip_district or con_district != ip_district:
+                continue
+
+            # Taluk matches constituency name → HIGH confidence
+            taluk_clean = re.sub(r"\s+", " ", ip_taluk)
+            if taluk_clean and (taluk_clean in con_name or con_name in taluk_clean):
+                upsert(slug, "HIGH", f"District+Taluk: {ip_district}/{ip_taluk}")
+            else:
+                upsert(slug, "MEDIUM", f"District: {ip_district}")
+
+    # Scan trusted search snippets for known constituency names
+    trusted_text = " ".join(
+        r.get("title", "") + " " + r.get("snippet", "")
+        for r in search_results if r.get("is_trusted")
+    ).upper()
+
+    if trusted_text.strip():
+        for slug, meta in CONSTITUENCY_MAP.items():
+            name = re.sub(r"\s*\([^)]+\)", "", meta.get("name", "")).upper().strip()
+            if name and len(name) > 4 and name in trusted_text:
+                upsert(slug, "MEDIUM", f"Mentioned in trusted search results")
+
+    result = sorted(
+        suggestions.values(),
+        key=lambda s: (conf_order.get(s["confidence"], 9), s["name"]),
+    )[:10]
+
+    # Enrich each suggestion with its parent Lok Sabha constituency
+    for s in result:
+        ls = ASSEMBLY_TO_LS.get(s["slug"])
+        if ls:
+            s["ls_name"] = ls["ls_name"]
+            s["ls_slug"] = ls["ls_slug"]
+
+    return result
+
+
+class PincodePatch(BaseModel):
+    slug: str
+    is_ambiguous: bool = False
+    ls_slug: Optional[str] = None
+
+
+@app.get("/api/pincode/{code}/resolve")
+async def resolve_pincode(code: str) -> Dict[str, Any]:
+    """Search govt + news sources and suggest constituency mapping for a pincode."""
+    if not code.isdigit() or len(code) != 6:
+        raise HTTPException(status_code=400, detail="Pincode must be 6 digits")
+
+    postal: Optional[Dict[str, Any]] = None
+    search_results: List[Dict[str, Any]] = []
+
+    # 1. India Post unofficial API (authoritative for district/taluk)
+    try:
+        async with httpx.AsyncClient(
+            timeout=12,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; ArasiyalAayvu/1.0)"},
+            follow_redirects=True,
+        ) as client:
+            resp = await client.get(f"https://api.postalpincode.in/{code}")
+            if resp.status_code == 200:
+                data = resp.json()
+                if data and data[0].get("Status") == "Success":
+                    offices = data[0].get("PostOffice", [])
+                    if offices:
+                        first = offices[0]
+                        # India Post API returns taluk as "Block" (e.g. "Purasawalkam Taluk")
+                        block = first.get("Block", "")
+                        taluk = re.sub(r"\s+[Tt]aluk$", "", block).strip()
+                        postal = {
+                            "district": first.get("District", ""),
+                            "taluk": taluk,
+                            "division": first.get("Division", ""),
+                            "state": first.get("State", ""),
+                            "post_offices": [o.get("Name", "") for o in offices[:8]],
+                        }
+    except Exception:
+        pass
+
+    # 2. DuckDuckGo search filtered to govt/news sources
+    query = (
+        f"For this pincode {code} give me the following: "
+        "State Assembly Constituency Name, "
+        "Lok Sabha Constituency Name (If available), "
+        "District Name, "
+        "Taluk "
+        "Key localities. "
+        "Give me the results from only legit sources."
+    )
+    try:
+        search_results = await _ddg_search(query)
+    except Exception:
+        pass
+
+    suggestions = _match_constituencies(postal, search_results)
+
+    # Build a slug→ls_info lookup for all known assembly→LS mappings (for frontend enrichment)
+    assembly_ls_map = {
+        slug: {"ls_slug": info["ls_slug"], "ls_name": info["ls_name"]}
+        for slug, info in ASSEMBLY_TO_LS.items()
+    }
+
+    return jsonable_encoder({
+        "pincode": code,
+        "postal": postal,
+        "search_results": [r for r in search_results if r["is_trusted"]][:8],
+        "assembly_ls_map": assembly_ls_map,
+        "suggestions": suggestions,
+        "google_url": f"https://www.google.com/search?q={quote_plus(query)}",
+    })
+
+
+@app.post("/api/pincode/{code}/patch")
+def patch_pincode(code: str, body: PincodePatch) -> Dict[str, Any]:
+    """Apply a resolved constituency mapping directly to Firestore."""
+    if not code.isdigit() or len(code) != 6:
+        raise HTTPException(status_code=400, detail="Pincode must be 6 digits")
+
+    meta = CONSTITUENCY_MAP.get(body.slug)
+    if not meta:
+        raise HTTPException(status_code=400, detail=f"Unknown constituency: {body.slug}")
+
+    doc: Dict[str, Any] = {
+        "pincode": code,
+        "district": meta.get("district", ""),
+        "is_ambiguous": body.is_ambiguous,
+        "constituencies": [{
+            "slug": body.slug,
+            "name": meta.get("name", body.slug),
+            "name_ta": meta.get("tamil_name", ""),
+            "type": "assembly",
+        }],
+        "ground_truth_confidence": "HIGH",
+        "_schema_version": "2.0",
+        "_manually_resolved": True,
+    }
+
+    # Also store parent Lok Sabha constituency if provided
+    ls_slug = body.ls_slug or (ASSEMBLY_TO_LS.get(body.slug) or {}).get("ls_slug")
+    if ls_slug:
+        ls_meta = next(
+            (v for v in ASSEMBLY_TO_LS.values() if v.get("ls_slug") == ls_slug), None
+        )
+        if ls_meta:
+            doc["ls_constituency"] = {
+                "slug": ls_slug,
+                "name": ls_meta.get("ls_name", ls_slug),
+                "type": "lok_sabha",
+            }
+
+    try:
+        _db.collection("pincode_mapping").document(code).set(doc)
+        return {"ok": True, "pincode": code, "slug": body.slug}
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
 @app.get("/api/lookup-pincode")
 def lookup_pincode(code: str = Query(..., min_length=6, max_length=6)) -> Dict[str, Any]:
     """Resolve a 6-digit pincode to one or more Assembly Constituencies.
@@ -593,7 +893,16 @@ def lookup_pincode(code: str = Query(..., min_length=6, max_length=6)) -> Dict[s
         doc = _db.collection("pincode_mapping").document(code).get()
         if not doc.exists:
             raise HTTPException(status_code=404, detail=f"Pincode {code} not found in mapping")
-        return jsonable_encoder(doc.to_dict())
+        data = doc.to_dict()
+        # Drop low-confidence entries (>3 constituencies = district-level fallback)
+        if len(data.get("constituencies", [])) > 3:
+            raise HTTPException(status_code=404, detail=f"Pincode {code} not found in mapping")
+        # Enrich each constituency with its district from the constituency map
+        for c in data.get("constituencies", []):
+            meta = CONSTITUENCY_MAP.get(c.get("slug", ""), {})
+            if meta.get("district"):
+                c["district"] = meta["district"].title()
+        return jsonable_encoder(data)
     except (GoogleAPICallError, RetryError) as exc:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 

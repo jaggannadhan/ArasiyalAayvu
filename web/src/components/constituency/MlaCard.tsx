@@ -5,11 +5,14 @@ import Image from "next/image";
 import type { MlaRecord } from "@/lib/types";
 import { PARTIES } from "@/lib/types";
 import { CandidateCriminalModal } from "./CandidateCriminalModal";
+import { normalizeName } from "@/lib/formatters";
 
 interface MlaCardProps {
   mla: MlaRecord;
   district: string;
   lang?: "en" | "ta";
+  winnerVotes?: number;
+  winnerPct?: number;
 }
 
 const PARTY_FLAG_EXT: Record<string, string> = {
@@ -35,11 +38,11 @@ function partyIdFromName(name: string): string {
   return n.toLowerCase().replace(/[^a-z0-9]/g, "_");
 }
 
-export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
+export function MlaCard({ mla, district, lang = "en", winnerVotes, winnerPct }: MlaCardProps) {
   const isTA = lang === "ta";
   const partyId = mla.party_id ?? partyIdFromName(mla.party);
   const partyMeta = PARTIES[partyId];
-  const severity = SEVERITY_META[mla.criminal_severity];
+  const severity = SEVERITY_META[mla.criminal_severity as keyof typeof SEVERITY_META] ?? SEVERITY_META.CLEAN;
   const [modalOpen, setModalOpen] = useState(false);
   const [assetsExpanded, setAssetsExpanded] = useState(false);
   const hasAssetBreakdown = mla.movable_assets_cr != null || mla.immovable_assets_cr != null;
@@ -66,8 +69,8 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
           alt={mla.photo_url ? `${mla.mla_name} profile` : "MLA placeholder"}
           width={64}
           height={80}
-          unoptimized
           sizes="64px"
+          priority
           className="shrink-0 w-16 h-20 rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50 flex-none"
         />
 
@@ -76,8 +79,15 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
             {isTA ? "சட்டமன்ற உறுப்பினர்" : "Elected MLA"}
           </p>
-          <h2 className="text-lg font-black text-gray-900 leading-tight">{mla.mla_name}</h2>
+          <h2 className="text-lg font-black text-gray-900 leading-tight">{normalizeName(mla.mla_name)}</h2>
           <p className="text-xs text-gray-500 mt-0.5">{district} {isTA ? "மாவட்டம்" : "District"}</p>
+          {winnerVotes != null && (
+            <p className="text-xs text-indigo-600 font-semibold mt-1">
+              {isTA ? "பெற்ற வாக்குகள்:" : "Secured"}{" "}
+              {winnerVotes.toLocaleString("en-IN")} {isTA ? "" : "votes"}
+              {winnerPct != null && <span className="text-gray-400 font-normal"> · {winnerPct}%</span>}
+            </p>
+          )}
         </div>
 
         {/* Party flag — far right */}
@@ -102,7 +112,7 @@ export function MlaCard({ mla, district, lang = "en" }: MlaCardProps) {
             onClick={() => setModalOpen(true)}
             className={`text-xs font-semibold px-2 py-1 rounded-lg border text-center transition-opacity hover:opacity-80 ${severity.color}`}
           >
-            {caseCount === 0
+            {!caseCount
               ? (isTA ? severity.label_ta : severity.label_en)
               : `${caseCount} ${isTA ? severity.label_ta : severity.label_en}`}
           </button>

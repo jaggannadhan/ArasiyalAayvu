@@ -1,5 +1,63 @@
 import type { CriminalCase, CriminalCaseStatus } from "./types";
 
+/**
+ * Normalize a politician's name to consistent title-case with initials first.
+ *
+ * Rules:
+ *  - Trailing single-letter initials are moved to the front and fused to the name.
+ *    "Perarivalan V." → "V.Perarivalan"
+ *  - Leading single-letter initials are fused to the following name word.
+ *    "V SENTHILBALAJI" → "V.Senthilbalaji"
+ *  - Fused initial+name tokens are kept together, normalised.
+ *    "K.arjunan" / "K.ARJUNAN" → "K.Arjunan"
+ *  - Regular name words → Title-case.
+ *    "Vanathi Srinivasan" → "Vanathi Srinivasan"
+ */
+export function normalizeName(name: string): string {
+  if (!name) return name;
+
+  const isSingleInitial = (s: string) => /^[A-Za-z]\.?$/.test(s);
+
+  const tokens = name.trim().split(/\s+/);
+
+  // Peel leading and trailing standalone initials
+  const leading: string[] = [];
+  const trailing: string[] = [];
+  let lo = 0;
+  let hi = tokens.length - 1;
+
+  while (lo <= hi && isSingleInitial(tokens[lo])) {
+    leading.push(tokens[lo][0].toUpperCase() + ".");
+    lo++;
+  }
+  while (hi >= lo && isSingleInitial(tokens[hi])) {
+    trailing.unshift(tokens[hi][0].toUpperCase() + ".");
+    hi--;
+  }
+
+  // Normalize the middle (non-initial) tokens
+  const middle = tokens.slice(lo, hi + 1).map((part) => {
+    // "K.arjunan" / "K.ARJUNAN" — initial(s) fused with name
+    const fused = part.match(/^((?:[A-Za-z]\.)+)([A-Za-z].+)$/);
+    if (fused) {
+      const [, initials, rest] = fused;
+      return initials.toUpperCase() + rest[0].toUpperCase() + rest.slice(1).toLowerCase();
+    }
+    return part[0].toUpperCase() + part.slice(1).toLowerCase();
+  });
+
+  // All initials go first (leading then trailing), fused directly onto the first name
+  const allInitials = [...leading, ...trailing].join("");
+
+  if (allInitials && middle.length > 0) {
+    middle[0] = allInitials + middle[0];
+  } else if (allInitials) {
+    return allInitials.replace(/\.$/, ""); // only initials, no name
+  }
+
+  return middle.join(" ");
+}
+
 // ---------------------------------------------------------------------------
 // ADR-defined "Serious IPC" sections (max punishment ≥ 5 years or
 // explicitly flagged by ADR/MHA as heinous offences).

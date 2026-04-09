@@ -1,0 +1,6936 @@
+{
+  "alandur": {
+    "name": "ALANDUR",
+    "district": "KANCHEEPURAM",
+    "pincodes": [
+      "600016",
+      "600043",
+      "600044",
+      "600049",
+      "600061",
+      "600064",
+      "600070",
+      "600074",
+      "600075",
+      "600078",
+      "600079",
+      "600088",
+      "600089",
+      "600117",
+      "600132"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "alangudi": {
+    "name": "ALANGUDI",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "614624",
+      "614629",
+      "614902",
+      "621305",
+      "621308",
+      "621312",
+      "622301",
+      "622302",
+      "622303",
+      "622304"
+    ],
+    "taluks": [
+      "Alangudi Taluk"
+    ],
+    "localities": [
+      "Alangudi town",
+      "Rasiyamangalam",
+      "Rasiyamangalam",
+      "Pachikkottai",
+      "Pudukkottaividuthi",
+      "Ayippatti",
+      "Kovilur Devasthanam",
+      "V. Kottai",
+      "Manjanviduthi",
+      "Kotthakottai",
+      "Kayampatti",
+      "Veppangudi",
+      "Immanampatti",
+      "Thiruvarangulam",
+      "Thirukattalai",
+      "Kaikkurichi",
+      "Vijayaregunathapuram",
+      "Settivayal",
+      "Poovarasakudi",
+      "Manaiyambalam"
+    ],
+    "lok_sabha": "Sivaganga"
+  },
+  "alangulam": {
+    "name": "ALANGULAM",
+    "district": "TENKASI",
+    "pincodes": [
+      "627851"
+    ],
+    "taluks": [
+      "Alangulam"
+    ],
+    "localities": [
+      "Alangulam town",
+      "Keelapavoor",
+      "Nettur",
+      "Pudupatti",
+      "Vengadampatti"
+    ],
+    "lok_sabha": "Tirunelveli"
+  },
+  "ambasamudram": {
+    "name": "AMBASAMUDRAM",
+    "district": "TIRUNELVELI",
+    "pincodes": [
+      "627002",
+      "627115",
+      "627401",
+      "627412",
+      "627413",
+      "627414",
+      "627415",
+      "627416",
+      "627417",
+      "627418",
+      "627420",
+      "627421",
+      "627422",
+      "627423",
+      "627424",
+      "627425",
+      "627426",
+      "627427",
+      "627428",
+      "627451",
+      "627452",
+      "627453",
+      "627601",
+      "627602",
+      "627603",
+      "627808"
+    ],
+    "taluks": [
+      "Ambasamudram taluk",
+      "Portions of Cheranmahadevi taluk"
+    ],
+    "localities": [
+      "Ambasamudram town",
+      "Papanasam",
+      "Manjolai Hills",
+      "Agricultural villages along the Thamirabarani river basin",
+      "Kallidaikurichi",
+      "Vagaikulam",
+      "Sattupathu",
+      "Vairavikulam",
+      "Rengasamudram",
+      "Athalanallur"
+    ],
+    "lok_sabha": "Tirunelveli"
+  },
+  "ambattur": {
+    "name": "AMBATTUR",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600019",
+      "600036",
+      "600037",
+      "600052",
+      "600053",
+      "600055",
+      "600056",
+      "600058",
+      "600062",
+      "600065",
+      "600073",
+      "600082",
+      "600087",
+      "600098",
+      "600099",
+      "600101",
+      "600103",
+      "600110",
+      "600116"
+    ],
+    "taluks": [
+      "Ambattur"
+    ],
+    "localities": [],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "ambur": {
+    "name": "AMBUR",
+    "district": "TIRUPATHUR",
+    "pincodes": [
+      "635802"
+    ],
+    "taluks": [
+      "Ambur",
+      "Portions of Vellore",
+      "Portions of Vaniyambadi"
+    ],
+    "localities": [
+      "Ambur municipality",
+      "Ambur town",
+      "Adjacent rural areas",
+      "Areas associated with the leather tanning industry",
+      "Mordhana Dam",
+      "Kurumalai Mountain View Point"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "anaikattu": {
+    "name": "ANAIKATTU",
+    "district": "VELLORE",
+    "pincodes": [
+      "632002",
+      "632101",
+      "632104",
+      "635803",
+      "635809"
+    ],
+    "taluks": [
+      "Anaicut Taluk",
+      "Vellore Taluk"
+    ],
+    "localities": [
+      "Anaikattu",
+      "Pallikonda",
+      "Odugathur",
+      "Erayangadu",
+      "Appukkal",
+      "Athikuppam",
+      "Bramanamangalam",
+      "Devichettikuppam",
+      "Elavambadi",
+      "Genganallur",
+      "Jarthankollai",
+      "Kandaneri",
+      "Unai",
+      "Kalanipakkam",
+      "Chinna Govindampadi",
+      "Vettuvanam"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "andipatti": {
+    "name": "ANDIPATTI",
+    "district": "THENI",
+    "pincodes": [
+      "625512",
+      "625517",
+      "625536",
+      "625579"
+    ],
+    "taluks": [
+      "Andipatti"
+    ],
+    "localities": [
+      "Andipatti town",
+      "Pitchampatti",
+      "Shanmugasundarapuram",
+      "Kothaluthu",
+      "Bodithasanpatti",
+      "Thimmarasanayakkanur",
+      "Kovilpatti",
+      "Kuriammalpuram",
+      "Muthukrishnapuram",
+      "Lakshmipuram",
+      "Jakkampatti",
+      "Andipatti Bit -1",
+      "Kadamalaikundu",
+      "Kunnur",
+      "Marikkundu",
+      "Megamalai",
+      "Mottanuthu",
+      "Palakombai",
+      "Palayakottai",
+      "Pulimancombai"
+    ],
+    "lok_sabha": "Theni"
+  },
+  "anna_nagar": {
+    "name": "ANNA NAGAR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600010",
+      "600023",
+      "600032",
+      "600034",
+      "600040",
+      "600044",
+      "600064",
+      "600088"
+    ],
+    "taluks": [
+      "Aminjikarai"
+    ],
+    "localities": [
+      "Kilpauk",
+      "Kilpauk Medical College area",
+      "Medavakkam Tank Road",
+      "New Avadi Road",
+      "Ormes Road",
+      "Balfour Road",
+      "Halls Road"
+    ],
+    "lok_sabha": "Chennai Central"
+  },
+  "anthiyur": {
+    "name": "ANTHIYUR",
+    "district": "ERODE",
+    "pincodes": [
+      "638311",
+      "638314",
+      "638501",
+      "638502",
+      "638503",
+      "638504"
+    ],
+    "taluks": [],
+    "localities": [
+      "Anthiyur",
+      "Athani",
+      "Burgur",
+      "Ammapet",
+      "Appakudal",
+      "Ennamangalam",
+      "Brammadesam",
+      "Michaelpalayam",
+      "Chinnathambipalayam",
+      "Mettupalayam",
+      "Thavasipalayam"
+    ],
+    "lok_sabha": "Tiruppur"
+  },
+  "arakkonam_sc": {
+    "name": "ARAKKONAM (SC)",
+    "district": "RANIPET",
+    "pincodes": [
+      "631001"
+    ],
+    "taluks": [
+      "Arakkonam",
+      "Nemili",
+      "Kaveripakkam"
+    ],
+    "localities": [
+      "Arakkonam municipal town",
+      "Arakkonam North",
+      "Arakkonam South",
+      "Pallur",
+      "Paranji",
+      "Kaveripakkam",
+      "Panapakkam",
+      "Puliyamangalam",
+      "Kavanoor",
+      "Kainoor",
+      "Melpakkam",
+      "Seyyur"
+    ],
+    "lok_sabha": "Arakkonam"
+  },
+  "arani": {
+    "name": "ARANI",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "632301",
+      "632313",
+      "632314",
+      "632315",
+      "632317",
+      "632326",
+      "632512"
+    ],
+    "taluks": [
+      "Arani",
+      "West Arani"
+    ],
+    "localities": [
+      "Arani",
+      "Arani Cantonment",
+      "Mullipattu",
+      "Saidapet",
+      "Satyavijayanagaram",
+      "Kalambur",
+      "Kannamangalam",
+      "Sevur",
+      "Onnupuram",
+      "Ladavaram",
+      "Agaram"
+    ],
+    "lok_sabha": "Arani"
+  },
+  "aranthangi": {
+    "name": "ARANTHANGI",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "614616",
+      "614617",
+      "614618",
+      "614619",
+      "614622",
+      "614624",
+      "614629",
+      "614630",
+      "614801",
+      "614805",
+      "622202",
+      "622204"
+    ],
+    "taluks": [
+      "Aranthangi"
+    ],
+    "localities": [
+      "Aranthangi",
+      "Aranthangi Fort",
+      "Aliyanilai",
+      "Edaiyathur",
+      "Ammapattinam",
+      "Amaradakki",
+      "Arasarkulam",
+      "Keeramangalam",
+      "Attani",
+      "Kattumavadi"
+    ],
+    "lok_sabha": "Tiruvarur"
+  },
+  "aravakurichi": {
+    "name": "ARAVAKURICHI",
+    "district": "KARUR",
+    "pincodes": [
+      "639002",
+      "639109",
+      "639111",
+      "639136",
+      "639201",
+      "639203",
+      "639205",
+      "639206",
+      "639207"
+    ],
+    "taluks": [
+      "Aravakurichi"
+    ],
+    "localities": [
+      "Aravakurichi town",
+      "Pallapatti",
+      "Paramathi",
+      "Velayuthampalayam",
+      "Punjaipugalur",
+      "Punjai Thottakurichi"
+    ],
+    "lok_sabha": "Karur"
+  },
+  "arcot": {
+    "name": "ARCOT",
+    "district": "RANIPET",
+    "pincodes": [
+      "632503",
+      "632504",
+      "632506",
+      "632507",
+      "632511",
+      "632512",
+      "632521"
+    ],
+    "taluks": [
+      "Arcot"
+    ],
+    "localities": [
+      "Arcot market streets",
+      "Residential town wards",
+      "Irrigation-fed village clusters",
+      "Weekly shandies and transport nodes",
+      "Cultural landmarks like the Arcot Fort with its Delhi Gate"
+    ],
+    "lok_sabha": "Arakkonam"
+  },
+  "ariyalur": {
+    "name": "ARIYALUR",
+    "district": "ARIYALUR",
+    "pincodes": [
+      "621218",
+      "621701",
+      "621704",
+      "621705",
+      "621707",
+      "621709",
+      "621710",
+      "621713",
+      "621714",
+      "621715",
+      "621718",
+      "621719",
+      "621729"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Chidambaram"
+  },
+  "aruppukottai": {
+    "name": "ARUPPUKKOTTAI",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626004",
+      "626101",
+      "626105",
+      "626107",
+      "626109",
+      "626112",
+      "626113",
+      "626114",
+      "626118",
+      "626134"
+    ],
+    "taluks": [
+      "Aruppukottai"
+    ],
+    "localities": [
+      "Aruppukottai",
+      "Bazzar",
+      "Court",
+      "East",
+      "West",
+      "Nehru Maidanam",
+      "Amanakkunatham",
+      "Palayampatti",
+      "Melapandalgudi",
+      "Paralachi",
+      "Mandapasalai",
+      "Kallurani",
+      "Kattangudi",
+      "Villipathiri",
+      "Chettikurichi"
+    ],
+    "lok_sabha": "Virudhunagar"
+  },
+  "athoor": {
+    "name": "ATHOOR",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624002",
+      "624301",
+      "624622",
+      "624701",
+      "624703",
+      "624705",
+      "624707",
+      "624708",
+      "624711"
+    ],
+    "taluks": [
+      "Athoor and Dindigul West"
+    ],
+    "localities": [],
+    "lok_sabha": "Dindigul"
+  },
+  "attur_sc": {
+    "name": "ATTUR (SC)",
+    "district": "SALEM",
+    "pincodes": [
+      "636101",
+      "636102",
+      "636107",
+      "636108",
+      "636109",
+      "636112",
+      "636113",
+      "636114",
+      "636115",
+      "636117",
+      "636119",
+      "636121",
+      "636141",
+      "636142"
+    ],
+    "taluks": [
+      "Attur and Pethanaickenpalayam"
+    ],
+    "localities": [],
+    "lok_sabha": "Kallakurichi"
+  },
+  "avadi": {
+    "name": "AVADI",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600035",
+      "600038",
+      "600053",
+      "600054",
+      "600055",
+      "600062",
+      "600071",
+      "600072",
+      "600073",
+      "600083",
+      "600095",
+      "600109"
+    ],
+    "taluks": [
+      "Avadi"
+    ],
+    "localities": [],
+    "lok_sabha": "Thiruvallur"
+  },
+  "avanashi_sc": {
+    "name": "AVANASHI (SC)",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "638103",
+      "638459",
+      "638460",
+      "641604",
+      "641652",
+      "641654",
+      "641655",
+      "641663"
+    ],
+    "taluks": [
+      "Annur"
+    ],
+    "localities": [
+      "Avanashi",
+      "Annur",
+      "Sevur",
+      "Kunnathur",
+      "Kanur",
+      "Thalakkarai",
+      "Ramanathapuram",
+      "Velayudampalayam",
+      "Puliampatti",
+      "Karumathampatti"
+    ],
+    "lok_sabha": "Nilgiris (SC)"
+  },
+  "bargur": {
+    "name": "BARGUR",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635104",
+      "635106",
+      "635108",
+      "635120",
+      "635203",
+      "635204"
+    ],
+    "taluks": [
+      "Krishnagiri",
+      "Pochampalli"
+    ],
+    "localities": [
+      "Bargur",
+      "Jagadevi",
+      "Kandhikuppam",
+      "Varattanapalli",
+      "Guruvinayanapalli",
+      "Orappam",
+      "Achamangalam",
+      "Mallapadi",
+      "Sigaralapalli",
+      "Pochampalli",
+      "Balethottam",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Krishnagiri"
+  },
+  "bhavani": {
+    "name": "BHAVANI",
+    "district": "ERODE",
+    "pincodes": [
+      "638301",
+      "638311",
+      "638312",
+      "638314",
+      "638315",
+      "638316",
+      "638455",
+      "638501",
+      "638502",
+      "638504",
+      "638506"
+    ],
+    "taluks": [
+      "Bhavani"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruppur"
+  },
+  "bhavanisagar_sc": {
+    "name": "BHAVANISAGAR (SC)",
+    "district": "ERODE",
+    "pincodes": [
+      "638401",
+      "638402",
+      "638451",
+      "638452"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": null
+  },
+  "bhuvanagiri": {
+    "name": "BHUVANAGIRI",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "608102",
+      "608201",
+      "608501",
+      "608601",
+      "608602",
+      "608704"
+    ],
+    "taluks": [
+      "Chidambaram",
+      "Kurinjipadi"
+    ],
+    "localities": [
+      "Bhuvanagiri",
+      "Parangipettai",
+      "Sethiathoppu",
+      "Melamanakudi",
+      "Marudur",
+      "Lalpet",
+      "Elleri",
+      "Vadakkuthailam",
+      "Keelamanakudi",
+      "Pinnalur",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Chidambaram (SC)"
+  },
+  "bodinayakkanur": {
+    "name": "BODINAYAKANUR",
+    "district": "THENI",
+    "pincodes": [
+      "625513",
+      "625515",
+      "625528",
+      "625534",
+      "625582"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": null
+  },
+  "chengalpattu": {
+    "name": "CHENGALPATTU",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "603001",
+      "603002",
+      "603003",
+      "603101",
+      "603104",
+      "603105",
+      "603106",
+      "603107",
+      "603108",
+      "603109",
+      "603110",
+      "603111",
+      "603202",
+      "603203",
+      "603204",
+      "603209",
+      "603210",
+      "603301",
+      "603303",
+      "603305",
+      "603307",
+      "603308",
+      "603310",
+      "603319"
+    ],
+    "taluks": [
+      "Chengalpattu and Thiruporur"
+    ],
+    "localities": [],
+    "lok_sabha": "Kancheepuram (SC)"
+  },
+  "chengam_sc": {
+    "name": "CHENGAM (SC)",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "606701",
+      "606703",
+      "606704",
+      "606705",
+      "606707",
+      "606708",
+      "606753",
+      "606754",
+      "635703"
+    ],
+    "taluks": [
+      "Chengam, Thandarampattu"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "chepauk_thiruvallikeni": {
+    "name": "CHEPAUK-THIRUVALLIKENI",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600001",
+      "600002",
+      "600005",
+      "600011",
+      "600014"
+    ],
+    "taluks": [
+      "Triplicane, Mylapore"
+    ],
+    "localities": [],
+    "lok_sabha": "Chennai Central"
+  },
+  "cheyyar": {
+    "name": "CHEYYAR",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "604401",
+      "604402",
+      "604407",
+      "604408",
+      "604409",
+      "604410",
+      "631701",
+      "631702"
+    ],
+    "taluks": [
+      "Cheyyar"
+    ],
+    "localities": [],
+    "lok_sabha": "Arani"
+  },
+  "cheyyur_sc": {
+    "name": "CHEYYUR (SC)",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "603301",
+      "603302",
+      "603304",
+      "603305",
+      "603309",
+      "603310",
+      "603311",
+      "603312",
+      "603313",
+      "603319",
+      "603401"
+    ],
+    "taluks": [
+      "Cheyyur and Maduranthakam"
+    ],
+    "localities": [],
+    "lok_sabha": "Kancheepuram (SC)"
+  },
+  "chidambaram": {
+    "name": "CHIDAMBARAM",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "608001",
+      "608002",
+      "608102",
+      "608201",
+      "608302",
+      "608303",
+      "608401",
+      "608501",
+      "608502",
+      "608601",
+      "608602"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": null
+  },
+  "coimbatore_north": {
+    "name": "COIMBATORE NORTH",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641001",
+      "641002",
+      "641005",
+      "641006",
+      "641007",
+      "641010",
+      "641012",
+      "641016",
+      "641017",
+      "641019",
+      "641020",
+      "641022",
+      "641026",
+      "641027",
+      "641029",
+      "641030",
+      "641031",
+      "641034",
+      "641035",
+      "641038",
+      "641043",
+      "641044",
+      "641046",
+      "641047",
+      "641048",
+      "641049",
+      "641050",
+      "641101",
+      "641107",
+      "641108",
+      "641109",
+      "641110",
+      "641114",
+      "642111"
+    ],
+    "taluks": [
+      "Coimbatore North"
+    ],
+    "localities": [],
+    "lok_sabha": "Coimbatore"
+  },
+  "coimbatore_south": {
+    "name": "COIMBATORE SOUTH",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641001",
+      "641002",
+      "641003",
+      "641004",
+      "641005",
+      "641008",
+      "641009",
+      "641010",
+      "641011",
+      "641012",
+      "641013",
+      "641015",
+      "641016",
+      "641018",
+      "641021",
+      "641023",
+      "641024",
+      "641026",
+      "641032",
+      "641033",
+      "641036",
+      "641037",
+      "641039",
+      "641042",
+      "641044",
+      "641045",
+      "641048",
+      "641050",
+      "641062",
+      "641101",
+      "641105",
+      "641107",
+      "641108",
+      "641109",
+      "641110",
+      "641111",
+      "641112",
+      "641114",
+      "642111"
+    ],
+    "taluks": [
+      "Coimbatore South"
+    ],
+    "localities": [],
+    "lok_sabha": "Coimbatore"
+  },
+  "colachal": {
+    "name": "COLACHAL",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629161",
+      "629251",
+      "629252",
+      "629253",
+      "629801",
+      "629802"
+    ],
+    "taluks": [
+      "Kalkulam"
+    ],
+    "localities": [
+      "Colachel",
+      "Eraniel",
+      "Reethapuram",
+      "Villukuri",
+      "Kallukoottam",
+      "Thingalnagar",
+      "Neyyoor",
+      "Kurumpanai",
+      "Vaniyakudi",
+      "Kodimunai",
+      "Simon Colony",
+      "Mandaikadu"
+    ],
+    "lok_sabha": "Kanniyakumari"
+  },
+  "coonoor": {
+    "name": "COONOOR",
+    "district": "THE NILGIRIS",
+    "pincodes": [
+      "643101",
+      "643102",
+      "643103",
+      "643105",
+      "643201",
+      "643202",
+      "643203",
+      "643204",
+      "643209",
+      "643213",
+      "643214",
+      "643215",
+      "643216",
+      "643217",
+      "643218",
+      "643219",
+      "643221",
+      "643231",
+      "643233",
+      "643236",
+      "643238",
+      "643239",
+      "643242"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": null
+  },
+  "cuddalore": {
+    "name": "CUDDALORE",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "605007",
+      "605106",
+      "607001",
+      "607002",
+      "607003",
+      "607004",
+      "607005",
+      "607006",
+      "607105",
+      "607109",
+      "607301",
+      "607302",
+      "607308",
+      "607401",
+      "607402"
+    ],
+    "taluks": [
+      "Cuddalore"
+    ],
+    "localities": [],
+    "lok_sabha": "Cuddalore"
+  },
+  "cumbum": {
+    "name": "CUMBUM",
+    "district": "THENI",
+    "pincodes": [
+      "625516",
+      "625518",
+      "625521",
+      "625525",
+      "625533"
+    ],
+    "taluks": [
+      "Uthamapalayam"
+    ],
+    "localities": [],
+    "lok_sabha": "Theni"
+  },
+  "dharapuram_sc": {
+    "name": "DHARAPURAM (SC)",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "638106",
+      "638656",
+      "638657",
+      "638660",
+      "638661",
+      "638672",
+      "638673",
+      "638702"
+    ],
+    "taluks": [
+      "Madathukulam"
+    ],
+    "localities": [
+      "Dharapuram",
+      "Kundadam",
+      "Dalavoypattinam",
+      "Kolathupalayam",
+      "Rudravathi",
+      "Kannivadi",
+      "Mulanur",
+      "Alangiyam",
+      "Nallampalayam",
+      "Manakadavu"
+    ],
+    "lok_sabha": "Erode"
+  },
+  "dharmapuri": {
+    "name": "DHARMAPURI",
+    "district": "DHARMAPURI",
+    "pincodes": [
+      "635201",
+      "635202",
+      "635205",
+      "635301",
+      "635302",
+      "636352",
+      "636701",
+      "636702",
+      "636703",
+      "636704",
+      "636705",
+      "636803",
+      "636804",
+      "636807",
+      "636808"
+    ],
+    "taluks": [
+      "Dharmapuri and Nallampalli"
+    ],
+    "localities": [],
+    "lok_sabha": "Dharmapuri"
+  },
+  "dindigul": {
+    "name": "DINDIGUL",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624001",
+      "624003",
+      "624004",
+      "624005",
+      "624101",
+      "624103",
+      "624202",
+      "624204",
+      "624206",
+      "624208",
+      "624210",
+      "624211",
+      "624212",
+      "624215",
+      "624216",
+      "624219",
+      "624220",
+      "624301",
+      "624302",
+      "624303",
+      "624304",
+      "624306",
+      "624307",
+      "624308",
+      "624401",
+      "624402",
+      "624403",
+      "624601",
+      "624610",
+      "624612",
+      "624613",
+      "624614",
+      "624615",
+      "624616",
+      "624617",
+      "624618",
+      "624619",
+      "624620",
+      "624621",
+      "624622",
+      "624701",
+      "624702",
+      "624703",
+      "624704",
+      "624705",
+      "624706",
+      "624707",
+      "624708",
+      "624709"
+    ],
+    "taluks": [
+      "Dindigul"
+    ],
+    "localities": [
+      "Dindigul",
+      "Kodaikanal area",
+      "Oddanchatram",
+      "Palani area"
+    ],
+    "lok_sabha": "Dindigul"
+  },
+  "dr_radhakrishnan_nagar": {
+    "name": "DR.RADHAKRISHNAN NAGAR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600019",
+      "600021",
+      "600081"
+    ],
+    "taluks": [
+      "Tondiarpet"
+    ],
+    "localities": [
+      "Tondiarpet",
+      "Korukkupet",
+      "Old Washermanpet",
+      "New Washermanpet",
+      "Desiya Nagar",
+      "Stanley Nagar",
+      "VOC Nagar",
+      "Jeeva Nagar",
+      "Cherian Nagar",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Chennai North"
+  },
+  "edappadi": {
+    "name": "EDAPPADI",
+    "district": "SALEM",
+    "pincodes": [
+      "636009",
+      "636105",
+      "637101",
+      "637102",
+      "637105",
+      "637107"
+    ],
+    "taluks": [
+      "Edappadi"
+    ],
+    "localities": [
+      "Idappadi",
+      "Alachampalayam",
+      "Chittoor",
+      "Iruppali",
+      "Chettimankurichi",
+      "Kachuppalli",
+      "Dadapuram",
+      "Vembaneri",
+      "Kurumbapatti",
+      "Nedunkulam",
+      "Anaiyampatti"
+    ],
+    "lok_sabha": "Salem"
+  },
+  "egmore_sc": {
+    "name": "EGMORE (SC)",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600003",
+      "600006",
+      "600007",
+      "600008",
+      "600030",
+      "600040",
+      "600084",
+      "600102",
+      "600112"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Chennai Central"
+  },
+  "erode_east": {
+    "name": "ERODE EAST",
+    "district": "ERODE",
+    "pincodes": [
+      "638001",
+      "638002",
+      "638003",
+      "638004",
+      "638005",
+      "638007",
+      "638009",
+      "638012",
+      "638051",
+      "638052",
+      "638054",
+      "638055",
+      "638056",
+      "638057",
+      "638101",
+      "638102",
+      "638103",
+      "638104",
+      "638107",
+      "638109",
+      "638112",
+      "638115",
+      "638151",
+      "638152",
+      "638153",
+      "638154",
+      "638301",
+      "638311",
+      "638312",
+      "638313",
+      "638314",
+      "638316",
+      "638452",
+      "638453",
+      "638454",
+      "638455",
+      "638456",
+      "638457",
+      "638458",
+      "638462",
+      "638476",
+      "638502",
+      "638503",
+      "638504",
+      "638505",
+      "638506",
+      "638751",
+      "638752"
+    ],
+    "taluks": [
+      "Erode"
+    ],
+    "localities": [
+      "P. Agraharam",
+      "Karungalpalayam",
+      "Erode Fort",
+      "Erode Market",
+      "Krishna Palayam",
+      "Marapalam"
+    ],
+    "lok_sabha": "Erode"
+  },
+  "erode_west": {
+    "name": "ERODE WEST",
+    "district": "ERODE",
+    "pincodes": [
+      "638002",
+      "638003",
+      "638004",
+      "638005",
+      "638007",
+      "638009",
+      "638011",
+      "638012",
+      "638051",
+      "638052",
+      "638054",
+      "638055",
+      "638056",
+      "638057",
+      "638101",
+      "638102",
+      "638103",
+      "638104",
+      "638107",
+      "638109",
+      "638112",
+      "638115",
+      "638151",
+      "638152",
+      "638153",
+      "638154",
+      "638301",
+      "638311",
+      "638312",
+      "638313",
+      "638314",
+      "638316",
+      "638452",
+      "638453",
+      "638454",
+      "638455",
+      "638456",
+      "638457",
+      "638458",
+      "638462",
+      "638476",
+      "638502",
+      "638503",
+      "638504",
+      "638505",
+      "638506",
+      "638751",
+      "638752"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": null
+  },
+  "gandarvakottai_sc": {
+    "name": "GANDARVAKKOTTAI (SC)",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "613301",
+      "614902",
+      "622203",
+      "622502",
+      "622504"
+    ],
+    "taluks": [
+      "Gandarvakkottai",
+      "Kulathur"
+    ],
+    "localities": [
+      "Gandarvakkottai",
+      "Kunnandarkoil",
+      "Keeranur",
+      "Adhanakkottai",
+      "Thachankurichi",
+      "Vellalaviduthi"
+    ],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "gangavalli_sc": {
+    "name": "GANGAVALLI (SC)",
+    "district": "SALEM",
+    "pincodes": [
+      "636105",
+      "636110",
+      "636112",
+      "636113",
+      "636116",
+      "636121"
+    ],
+    "taluks": [
+      "Gangavalli",
+      "Attur"
+    ],
+    "localities": [
+      "Gangavalli",
+      "Thammampatti",
+      "Sentharapatti",
+      "Thedavur",
+      "Veeraganur",
+      "Siruvachur",
+      "Naduvalur",
+      "Puthur",
+      "Kadambur"
+    ],
+    "lok_sabha": "Kallakurichi"
+  },
+  "gingee": {
+    "name": "GINGEE",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "604151",
+      "604152",
+      "604153",
+      "604201",
+      "604202",
+      "604204",
+      "604205",
+      "604206",
+      "604208",
+      "604210"
+    ],
+    "taluks": [
+      "Gingee",
+      "Melmalayanur"
+    ],
+    "localities": [
+      "Gingee",
+      "Melmalayanur",
+      "Ananthapuram",
+      "Alampoondi",
+      "Vallam",
+      "Sathyamangalam",
+      "Devadanapatti",
+      "Avalurpet"
+    ],
+    "lok_sabha": "Arani"
+  },
+  "gobichettipalayam": {
+    "name": "GOBICHETTIPALAYAM",
+    "district": "ERODE",
+    "pincodes": [
+      "638313",
+      "638452",
+      "638453",
+      "638454",
+      "638455",
+      "638456",
+      "638457",
+      "638458",
+      "638459",
+      "638462",
+      "638476",
+      "638503",
+      "638505",
+      "638506"
+    ],
+    "taluks": [
+      "Gobichettipalayam",
+      "Nambiyur"
+    ],
+    "localities": [
+      "Gobichettipalayam",
+      "Kasipalayam",
+      "Lakkampatti",
+      "Kolappalur",
+      "Nambiyur",
+      "Periyakodiveri",
+      "Vaniputhur",
+      "Elathur",
+      "Kuhalur",
+      "Modachur"
+    ],
+    "lok_sabha": "Tiruppur"
+  },
+  "gudalur_sc": {
+    "name": "GUDALUR (SC)",
+    "district": "THE NILGIRIS",
+    "pincodes": [
+      "643201",
+      "643205",
+      "643207",
+      "643209",
+      "643211",
+      "643212",
+      "643216",
+      "643217",
+      "643220",
+      "643224",
+      "643225",
+      "643226",
+      "643228",
+      "643233",
+      "643236",
+      "643239",
+      "643240",
+      "643241",
+      "643242"
+    ],
+    "taluks": [
+      "Gudalur",
+      "Pandalur"
+    ],
+    "localities": [
+      "Gudalur",
+      "Pandalur",
+      "Nelliyalam",
+      "Devarshola",
+      "O'Valley",
+      "Nadugani",
+      "Mudumalai",
+      "Cherambadi",
+      "Thorapalli"
+    ],
+    "lok_sabha": "Nilgiris"
+  },
+  "gudiyattam_sc": {
+    "name": "GUDIYATTAM (SC)",
+    "district": "VELLORE",
+    "pincodes": [
+      "632601",
+      "632602",
+      "632603",
+      "632604",
+      "635803",
+      "635805",
+      "635806",
+      "635808",
+      "635810",
+      "635811",
+      "635813"
+    ],
+    "taluks": [
+      "Gudiyattam",
+      "Pernambut"
+    ],
+    "localities": [
+      "Gudiyattam",
+      "Pernambut",
+      "Valathur",
+      "Kondasamudram",
+      "Bathalapalli",
+      "Karkur",
+      "Nellorepettai",
+      "Olakasi",
+      "Melpatti"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "gummidipoondi": {
+    "name": "GUMMIDIPOONDI",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600103",
+      "601201",
+      "601202",
+      "601206",
+      "602021",
+      "602026"
+    ],
+    "taluks": [
+      "Gummidipoondi",
+      "Uthukkottai"
+    ],
+    "localities": [
+      "Gummidipoondi",
+      "Uthukkottai",
+      "Arambakkam",
+      "Elavur",
+      "Kavarapettai",
+      "Pathapalayam",
+      "Madarpakkam",
+      "Egumadurai"
+    ],
+    "lok_sabha": "Thiruvallur"
+  },
+  "harbour": {
+    "name": "HARBOUR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600001",
+      "600003",
+      "600011",
+      "600014",
+      "600079"
+    ],
+    "taluks": [
+      "Purasaiwalkam"
+    ],
+    "localities": [
+      "George Town",
+      "Sowcarpet",
+      "Park Town",
+      "Chennai Port",
+      "Broadway",
+      "Mannady",
+      "Elephant Gate",
+      "Kondithope"
+    ],
+    "lok_sabha": "Chennai Central"
+  },
+  "harur_sc": {
+    "name": "HARUR (SC)",
+    "district": "DHARMAPURI",
+    "pincodes": [
+      "635202",
+      "635302",
+      "635303",
+      "635305",
+      "636803",
+      "636902",
+      "636903",
+      "636905",
+      "636906"
+    ],
+    "taluks": [
+      "Harur",
+      "Morappur"
+    ],
+    "localities": [
+      "Harur",
+      "Morappur",
+      "Kambainallur",
+      "Kadathur",
+      "Theerthamalai",
+      "Sitteri",
+      "Kottapatti",
+      "Naripalli"
+    ],
+    "lok_sabha": "Dharmapuri"
+  },
+  "hosur": {
+    "name": "HOSUR",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635101",
+      "635103",
+      "635105",
+      "635109",
+      "635110",
+      "635114",
+      "635117",
+      "635119",
+      "635124",
+      "635126",
+      "635130"
+    ],
+    "taluks": [
+      "Hosur"
+    ],
+    "localities": [
+      "Hosur",
+      "Mathigiri",
+      "Zuzuvadi",
+      "Mookandapalli",
+      "Avalapalli",
+      "Chennathur",
+      "Onnalvadi",
+      "Poonapalli",
+      "Beghepalli"
+    ],
+    "lok_sabha": "Krishnagiri"
+  },
+  "jayankondam": {
+    "name": "JAYANKONDAM",
+    "district": "ARIYALUR",
+    "pincodes": [
+      "612901",
+      "612902",
+      "612903",
+      "612904",
+      "621218",
+      "621701",
+      "621706",
+      "621710",
+      "621802",
+      "621803",
+      "621805",
+      "621806"
+    ],
+    "taluks": [
+      "Jayankondam",
+      "Andimadam",
+      "Sendurai"
+    ],
+    "localities": [
+      "Jayankondam",
+      "Andimadam",
+      "Udayarpalayam",
+      "Varadarajanpettai",
+      "Gangaikonda Cholapuram",
+      "Meensurutti",
+      "Palur",
+      "Kundaveli",
+      "Kuvagam"
+    ],
+    "lok_sabha": "Chidambaram"
+  },
+  "jolarpet": {
+    "name": "JOLARPET",
+    "district": "TIRUPATHUR",
+    "pincodes": [
+      "635601",
+      "635602",
+      "635651",
+      "635851"
+    ],
+    "taluks": [
+      "Natrampalli",
+      "Tirupathur",
+      "Vaniyambadi"
+    ],
+    "localities": [
+      "Jolarpet",
+      "Natrampalli",
+      "Yelagiri Hills",
+      "Kodiyur",
+      "Vakkanampatti",
+      "Mandalavadi",
+      "Somanaickenpatti",
+      "Ponneri"
+    ],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "kadayanallur": {
+    "name": "KADAYANALLUR",
+    "district": "TENKASI",
+    "pincodes": [
+      "627751",
+      "627759",
+      "627801",
+      "627807",
+      "627808",
+      "627811"
+    ],
+    "taluks": [
+      "Kadayanallur",
+      "Shenkottai"
+    ],
+    "localities": [
+      "Kadayanallur",
+      "Shenkottai",
+      "Achampudur",
+      "Aygudi",
+      "Elathur",
+      "Panpoli",
+      "Pudur",
+      "Sambavar Vadagarai",
+      "Vadakarai Keezhpadugai",
+      "Krishnapuram"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kalasapakkam": {
+    "name": "KALASAPAKKAM",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "606701",
+      "606708",
+      "606709",
+      "606751",
+      "606758",
+      "606803"
+    ],
+    "taluks": [
+      "Polur",
+      "Chengam"
+    ],
+    "localities": [
+      "Kalasapakkam",
+      "Pudupalayam",
+      "Polur",
+      "Melpalur",
+      "Ladavaram",
+      "Pathiyavadi",
+      "Thenpallipattu",
+      "Singaravadi",
+      "Poondi",
+      "Siruvallur",
+      "Veeralur"
+    ],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "kallakurichi_sc": {
+    "name": "KALLAKURICHI (SC)",
+    "district": "KALLAKURICHI",
+    "pincodes": [
+      "606201",
+      "606202",
+      "606203",
+      "606213"
+    ],
+    "taluks": [
+      "Kallakurichi",
+      "Chinnasalem"
+    ],
+    "localities": [
+      "Kallakurichi",
+      "Chinnasalem",
+      "Neelamangalam",
+      "Vadakanandal",
+      "Thatchur",
+      "Melur",
+      "Somandargudi",
+      "Agarakottalam"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kancheepuram": {
+    "name": "KANCHEEPURAM",
+    "district": "KANCHEEPURAM",
+    "pincodes": [
+      "600115",
+      "601102",
+      "603112",
+      "631501",
+      "631502",
+      "631503",
+      "631551",
+      "631552",
+      "631561",
+      "631601",
+      "631603",
+      "631605",
+      "631606"
+    ],
+    "taluks": [
+      "Kancheepuram"
+    ],
+    "localities": [
+      "Kancheepuram",
+      "Sevilimedu",
+      "Nathapettai",
+      "Little Kanchipuram",
+      "Pillayarpalayam",
+      "Thenambakkam",
+      "Orikkai",
+      "Konerikuppam"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kangayam": {
+    "name": "KANGAYAM",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "638101",
+      "638111",
+      "638701",
+      "638703",
+      "638706",
+      "638751"
+    ],
+    "taluks": [
+      "Perundurai"
+    ],
+    "localities": [
+      "Kangayam",
+      "Vellakoil",
+      "Muthur",
+      "Chennimalai",
+      "Sivanmalai",
+      "Padiyur",
+      "Nathakattuvalasu",
+      "Olapalayam",
+      "Kangeyampalayam",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Erode"
+  },
+  "kanniyakumari": {
+    "name": "KANNIYAKUMARI",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629002",
+      "629401",
+      "629701",
+      "629702",
+      "629703",
+      "629704",
+      "629852"
+    ],
+    "taluks": [
+      "Agastheeswaram",
+      "Thovalai"
+    ],
+    "localities": [
+      "Kanniyakumari",
+      "Agastheeswaram",
+      "Suchindrum",
+      "Thovalai",
+      "Boothapandy",
+      "Marungoor",
+      "Kottaram",
+      "Anjugramam",
+      "Thamaraikulam",
+      "Mylaudy"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "karaikudi": {
+    "name": "KARAIKUDI",
+    "district": "SIVAGANGA",
+    "pincodes": [
+      "623101",
+      "630001",
+      "630002",
+      "630003",
+      "630004",
+      "630006",
+      "630101",
+      "630102",
+      "630103",
+      "630104",
+      "630105",
+      "630106",
+      "630107",
+      "630108",
+      "630202",
+      "630208",
+      "630305",
+      "630307",
+      "630313",
+      "630321"
+    ],
+    "taluks": [
+      "Karaikudi",
+      "Sakkottai"
+    ],
+    "localities": [
+      "Karaikudi",
+      "Puduvayal",
+      "Kottaiyur",
+      "Kandanoor",
+      "Kanadukathan",
+      "Pallathur",
+      "Ariyakudi",
+      "Sakkottai",
+      "Kalanivasal",
+      "Sekkalai"
+    ],
+    "lok_sabha": "Sivaganga"
+  },
+  "karur": {
+    "name": "KARUR",
+    "district": "KARUR",
+    "pincodes": [
+      "639001",
+      "639002",
+      "639003",
+      "639004",
+      "639005",
+      "639006",
+      "639007",
+      "639008",
+      "639108",
+      "639109",
+      "639113",
+      "639114",
+      "639116",
+      "639117",
+      "639118",
+      "639136"
+    ],
+    "taluks": [
+      "Karur"
+    ],
+    "localities": [
+      "Karur",
+      "Thanthoni",
+      "Vengamedu",
+      "Sanapiratti",
+      "Andankoil",
+      "Gandhigramam",
+      "N. Samudram",
+      "Inam Karur"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "katpadi": {
+    "name": "KATPADI",
+    "district": "VELLORE",
+    "pincodes": [
+      "632006",
+      "632007",
+      "632014",
+      "632106",
+      "632115",
+      "632201",
+      "632202",
+      "632203",
+      "632204",
+      "632209",
+      "632514",
+      "632515",
+      "632516",
+      "632519",
+      "632520",
+      "635809"
+    ],
+    "taluks": [
+      "Katpadi",
+      "Vellore",
+      "Walajah"
+    ],
+    "localities": [
+      "Katpadi",
+      "Thiruvalam",
+      "Dharapadavedu",
+      "Gandhi Nagar",
+      "Kangeyanallur",
+      "Kalinjur",
+      "Senur",
+      "Vallimalai",
+      "Melpadi",
+      "Serkadu"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kattumannarkoil_sc": {
+    "name": "KATTUMANNARKOIL (SC)",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "608301",
+      "608302",
+      "608303",
+      "608304",
+      "608305",
+      "608306",
+      "608701",
+      "608702",
+      "608703"
+    ],
+    "taluks": [
+      "Kattumannarkoil",
+      "Srimushnam"
+    ],
+    "localities": [
+      "Kattumannarkoil",
+      "Lalpet",
+      "Srimushnam",
+      "Ayangudi",
+      "Komaratchi",
+      "Palanchanallur",
+      "Udayargudi",
+      "Chettithangal",
+      "Karunakaranallur",
+      "Elleri"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kavundampalayam": {
+    "name": "KAVUNDAMPALAYAM",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641006",
+      "641007",
+      "641017",
+      "641022",
+      "641029",
+      "641030",
+      "641031",
+      "641034",
+      "641035",
+      "641041",
+      "641045",
+      "641047"
+    ],
+    "taluks": [
+      "Coimbatore North",
+      "Perur"
+    ],
+    "localities": [
+      "Kavundampalayam",
+      "Thudiyalur",
+      "Saravanampatti",
+      "Vadavalli",
+      "Kalapatti",
+      "Veerakeralam",
+      "Chinnavedampatti",
+      "Narasimhanaikenpalayam",
+      "Idigarai",
+      "Vellakinar"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "killiyoor": {
+    "name": "KILLIYOOR",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629157",
+      "629160",
+      "629170",
+      "629171",
+      "629173",
+      "629178"
+    ],
+    "taluks": [
+      "Vilavancode"
+    ],
+    "localities": [
+      "Killiyoor",
+      "Karungal",
+      "Palapallam",
+      "Ezhudesam",
+      "Kollancode",
+      "Puthukkadai",
+      "Keezhkulam",
+      "Enayam",
+      "Midalam",
+      "Painkulam",
+      "Methukummal"
+    ],
+    "lok_sabha": "Kanniyakumari"
+  },
+  "kilpennathur": {
+    "name": "KILPENNATHUR",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "604601",
+      "606611",
+      "606752",
+      "606753",
+      "606755",
+      "606802"
+    ],
+    "taluks": [
+      "Tiruvannamalai"
+    ],
+    "localities": [
+      "Kilpennathur",
+      "Vettavalam",
+      "Mekkalur",
+      "Sathanur",
+      "Kallayi",
+      "Kolathur",
+      "Konalur",
+      "Valavetti",
+      "Karungalikuppam",
+      "Kattumalayanur",
+      "Erumpoondi"
+    ],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "kilvaithinankuppam_sc": {
+    "name": "KILVAITHINANKUPPAM (SC)",
+    "district": "VELLORE",
+    "pincodes": [
+      "632201",
+      "632202",
+      "632203",
+      "632204",
+      "632209",
+      "632512",
+      "632520"
+    ],
+    "taluks": [
+      "Katpadi",
+      "Gudiyatham"
+    ],
+    "localities": [
+      "V. Kuppam",
+      "Vaduganthangal",
+      "Latheri",
+      "Kavanur",
+      "Pasumathur",
+      "Machampattu",
+      "Melmayil",
+      "Senur",
+      "Ammanankuppam",
+      "Bomminayakkanpalayam",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "kilvelur": {
+    "name": "KILVELUR",
+    "district": "NAGAPATTINAM",
+    "pincodes": [
+      "610207",
+      "611002",
+      "611102",
+      "611103",
+      "611104",
+      "611105",
+      "611109",
+      "611110",
+      "611111"
+    ],
+    "taluks": [
+      "Kilvelur",
+      "Thirukkuvalai",
+      "Nagapattinam"
+    ],
+    "localities": [
+      "Kilvelur",
+      "Velankanni",
+      "Keezhayur",
+      "Thirukkuvalai",
+      "Sikkal",
+      "Ettukudi",
+      "Prathabaramapuram",
+      "Valivalam",
+      "Karapidagai",
+      "Venmani"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kinathukadavu": {
+    "name": "KINATHUKADAVU",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641008",
+      "641021",
+      "641023",
+      "641024",
+      "641028",
+      "641032",
+      "642109",
+      "642120"
+    ],
+    "taluks": [
+      "Kinathukadavu",
+      "Madukkarai",
+      "Coimbatore South"
+    ],
+    "localities": [
+      "Kinathukadavu",
+      "Kurichi",
+      "Madukkarai",
+      "Ettimadai",
+      "Othakalmandapam",
+      "Malumichampatti",
+      "Chettipalayam",
+      "Eachanari",
+      "Bodipalayam",
+      "Arasampalayam"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kolathur": {
+    "name": "KOLATHUR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600013",
+      "600029",
+      "600042",
+      "600099",
+      "600111",
+      "631207"
+    ],
+    "taluks": [
+      "Kolathur"
+    ],
+    "localities": [],
+    "lok_sabha": "Chennai North"
+  },
+  "kovilpatti": {
+    "name": "KOVILPATTI",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628501",
+      "628502",
+      "628503",
+      "628552",
+      "628714",
+      "628716",
+      "628720",
+      "628721",
+      "628722",
+      "628902",
+      "628903",
+      "628907",
+      "628952"
+    ],
+    "taluks": [
+      "Kovilpatti",
+      "Kayathar"
+    ],
+    "localities": [
+      "Kovilpatti",
+      "Kayathar",
+      "Kalugumalai",
+      "Kappalingampatti",
+      "Illuppaiyurani",
+      "Pandavarmangalam",
+      "Thittangulam",
+      "Nalattinputhur",
+      "Mandithoppu",
+      "Inam Maniyachi"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "krishnagiri": {
+    "name": "KRISHNAGIRI",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635001",
+      "635002",
+      "635101",
+      "635104",
+      "635106",
+      "635108",
+      "635112",
+      "635115",
+      "635120",
+      "635121",
+      "635122",
+      "635123",
+      "635203",
+      "635206",
+      "635306"
+    ],
+    "taluks": [
+      "Krishnagiri",
+      "Kaveripattinam"
+    ],
+    "localities": [
+      "Krishnagiri",
+      "Kaveripattinam",
+      "Kattinayanapalli",
+      "Polupalli",
+      "Alapatti",
+      "Gangaleri",
+      "Boganapalli",
+      "Pethathalapalli",
+      "Sembadamuthur",
+      "Gundarapalli"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "krishnarayapuram_sc": {
+    "name": "KRISHNARAYAPURAM (SC)",
+    "district": "KARUR",
+    "pincodes": [
+      "639102",
+      "639105",
+      "639107",
+      "639108",
+      "639110",
+      "639119",
+      "639120"
+    ],
+    "taluks": [
+      "Krishnarayapuram",
+      "Kadavur"
+    ],
+    "localities": [
+      "Krishnarayapuram",
+      "Lalapet",
+      "Mayanur",
+      "Nungavaram",
+      "Palayajeyankondam",
+      "Tharagampatti",
+      "Mahadhanapuram",
+      "Panjapatti",
+      "Manavasi",
+      "Kattalai"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kulithalai": {
+    "name": "KULITHALAI",
+    "district": "KARUR",
+    "pincodes": [
+      "621301",
+      "621311",
+      "621313",
+      "639103",
+      "639104",
+      "639105",
+      "639107",
+      "639110",
+      "639118",
+      "639119",
+      "639120"
+    ],
+    "taluks": [
+      "Kulithalai",
+      "Thogaimalai"
+    ],
+    "localities": [
+      "Kulithalai",
+      "Marudur",
+      "Thogaimalai",
+      "Nangavaram",
+      "Neidhalur",
+      "Hiranyamangalam",
+      "Inungur",
+      "Vaiganallur",
+      "Sathyamangalam",
+      "Valayappatty"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kumarapalayam": {
+    "name": "KUMARAPALAYAM",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "637209",
+      "638006",
+      "638008",
+      "638183"
+    ],
+    "taluks": [
+      "Kumarapalayam",
+      "Tiruchengode"
+    ],
+    "localities": [
+      "Komarapalayam",
+      "Pallipalayam",
+      "Alampalayam",
+      "Padaiveedu",
+      "Kadachanallur",
+      "Kokkarayanpettai",
+      "Odapalli",
+      "Pappampalayam",
+      "Sowdapuram",
+      "Samayasangili"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "kumbakonam": {
+    "name": "KUMBAKONAM",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "612001",
+      "612002",
+      "612101",
+      "612103",
+      "612202",
+      "612204",
+      "612301",
+      "612302",
+      "612303",
+      "612401",
+      "612402",
+      "612501",
+      "612602",
+      "612702",
+      "612703",
+      "614208"
+    ],
+    "taluks": [
+      "Kumbakonam"
+    ],
+    "localities": [
+      "Kumbakonam",
+      "Darasuram",
+      "Swamimalai",
+      "Sakkottai",
+      "Ullur",
+      "Palanthandalam",
+      "Valayapettai",
+      "Thiruvalanjuli",
+      "Asoor",
+      "Ariyapadaiveedu"
+    ],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "kunnam": {
+    "name": "KUNNAM",
+    "district": "PERAMBALUR",
+    "pincodes": [
+      "621102",
+      "621103",
+      "621104",
+      "621108",
+      "621109",
+      "621110",
+      "621113",
+      "621114",
+      "621115",
+      "621116",
+      "621117",
+      "621118",
+      "621708",
+      "621713",
+      "621716",
+      "621717"
+    ],
+    "taluks": [
+      "Kunnam",
+      "Veppur",
+      "Alathur"
+    ],
+    "localities": [
+      "Kunnam",
+      "Labbaikudikadu",
+      "Veppur",
+      "Thirumandurai",
+      "Pennakonam",
+      "Andikurichi",
+      "Adhanur",
+      "Agaramseekur",
+      "Varagur",
+      "Murukkangudi"
+    ],
+    "lok_sabha": "Chidambaram (SC)"
+  },
+  "kurinjipadi": {
+    "name": "KURINJIPADI",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "607301",
+      "607302",
+      "607303",
+      "607805",
+      "608801"
+    ],
+    "taluks": [
+      "Cuddalore"
+    ],
+    "localities": [
+      "Kurinjipadi",
+      "Vadalur",
+      "Kullanchavadi",
+      "Thiruvanthipuram",
+      "Kayalpattu",
+      "Karunguzhi",
+      "Alapakkam",
+      "Perperiyankuppam",
+      "Venkatampettai",
+      "Marudur"
+    ],
+    "lok_sabha": "Cuddalore"
+  },
+  "lalgudi": {
+    "name": "LALGUDI",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "621105",
+      "621111",
+      "621112",
+      "621218",
+      "621601",
+      "621651",
+      "621652",
+      "621653",
+      "621702",
+      "621703",
+      "621706",
+      "621711",
+      "621712",
+      "621722"
+    ],
+    "taluks": [
+      "Lalgudi",
+      "Pullambadi"
+    ],
+    "localities": [
+      "Lalgudi",
+      "Pullambadi",
+      "Kallakudi",
+      "Poovalur",
+      "Dalmiapuram",
+      "Anbil",
+      "Valadi",
+      "Jangamarajapuram",
+      "Esanai",
+      "Mandurai"
+    ],
+    "lok_sabha": "Perambalur"
+  },
+  "madathukulam": {
+    "name": "MADATHUKULAM",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "642105",
+      "642113",
+      "642120",
+      "642126",
+      "642128",
+      "642154",
+      "642203",
+      "642204"
+    ],
+    "taluks": [
+      "Udumalaipettai"
+    ],
+    "localities": [
+      "Madathukulam",
+      "Kaniyur",
+      "Komaralingam",
+      "Sankaramanallur",
+      "Dhali",
+      "Myvadi",
+      "Vedapatti",
+      "Papankulam",
+      "Kadathur",
+      "Jotampatti",
+      "Thungavi",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Pollachi"
+  },
+  "madhavaram": {
+    "name": "MADAVARAM",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600041",
+      "600051",
+      "600052",
+      "600060",
+      "600066",
+      "600069",
+      "600070",
+      "600099",
+      "600118"
+    ],
+    "taluks": [
+      "Madhavaram",
+      "Ponneri"
+    ],
+    "localities": [
+      "Madhavaram",
+      "Puzhal",
+      "Naravarikuppam",
+      "Madhavaram Milk Colony",
+      "Mathur",
+      "Kathirvedu",
+      "Surapet",
+      "Ponniammanmedu",
+      "Red Hills",
+      "Sholavaram"
+    ],
+    "lok_sabha": "Thiruvallur (SC)"
+  },
+  "madurai_central": {
+    "name": "MADURAI CENTRAL",
+    "district": "MADURAI",
+    "pincodes": [
+      "625001",
+      "625002",
+      "625003",
+      "625009",
+      "625010",
+      "625016",
+      "625020"
+    ],
+    "taluks": [
+      "Madurai South"
+    ],
+    "localities": [
+      "Madurai Corporation Wards 1",
+      "21 to 38"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "madurai_east": {
+    "name": "MADURAI EAST",
+    "district": "MADURAI",
+    "pincodes": [
+      "625002",
+      "625007",
+      "625009",
+      "625014",
+      "625016",
+      "625020",
+      "625104",
+      "625107"
+    ],
+    "taluks": [
+      "Madurai East",
+      "Madurai North"
+    ],
+    "localities": [
+      "Pudur",
+      "Uthangudi",
+      "Vandiyur",
+      "Othakadai",
+      "Appantirupathi",
+      "Kallandhiri",
+      "Karuppayurani",
+      "Varichiyur",
+      "Yanamalai",
+      "Kodikulam"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "madurai_north": {
+    "name": "MADURAI NORTH",
+    "district": "MADURAI",
+    "pincodes": [
+      "625002",
+      "625007",
+      "625009",
+      "625014",
+      "625016",
+      "625017",
+      "625018",
+      "625020",
+      "625023"
+    ],
+    "taluks": [
+      "Madurai North",
+      "Madurai South"
+    ],
+    "localities": [
+      "Madurai Corporation Wards 2 to 8",
+      "11 to 15"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "madurai_south": {
+    "name": "MADURAI SOUTH",
+    "district": "MADURAI",
+    "pincodes": [
+      "625001",
+      "625003",
+      "625004",
+      "625005",
+      "625006",
+      "625009",
+      "625010",
+      "625011",
+      "625012",
+      "625015",
+      "625021",
+      "625201"
+    ],
+    "taluks": [
+      "Madurai South"
+    ],
+    "localities": [
+      "Madurai Corporation Wards 9"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "madurai_west": {
+    "name": "MADURAI WEST",
+    "district": "MADURAI",
+    "pincodes": [
+      "625001",
+      "625003",
+      "625007",
+      "625010",
+      "625016",
+      "625018",
+      "625019"
+    ],
+    "taluks": [
+      "Madurai North",
+      "Madurai South"
+    ],
+    "localities": [
+      "Madurai Corporation Wards 60 to 72",
+      "Paravai",
+      "Vilangudi",
+      "Koilpappakudi",
+      "Thuvariman",
+      "Achampattu",
+      "Madakkulam",
+      "Arappalayam",
+      "Ponnagaram",
+      "Pudukulam"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "madurantakam_sc": {
+    "name": "MADURANTAKAM (SC)",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "603107",
+      "603111",
+      "603201",
+      "603301",
+      "603303",
+      "603304",
+      "603305",
+      "603306",
+      "603307",
+      "603308",
+      "603310",
+      "603311",
+      "603313",
+      "603314",
+      "603319"
+    ],
+    "taluks": [
+      "Madurantakam",
+      "Cheyyur"
+    ],
+    "localities": [
+      "Madurantakam",
+      "Acharapakkam",
+      "Karunguzhi",
+      "Melmaruvathur",
+      "Soonambedu",
+      "Zamin Endathur",
+      "Orathy",
+      "Padalam",
+      "Mamandur",
+      "Vaiyavoor"
+    ],
+    "lok_sabha": "Kancheepuram (SC)"
+  },
+  "maduravoyal": {
+    "name": "MADURAVOYAL",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600087",
+      "600095",
+      "600102",
+      "600107",
+      "600116"
+    ],
+    "taluks": [
+      "Ambattur",
+      "Poonamallee"
+    ],
+    "localities": [
+      "Maduravoyal",
+      "Nerkundram",
+      "Nolambur",
+      "Vanagaram",
+      "Alapakkam",
+      "Porur",
+      "Valasaravakkam",
+      "Ayanambakkam",
+      "Ramasamy Nagar"
+    ],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "mailam": {
+    "name": "MAILAM",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "604151",
+      "604202",
+      "604203",
+      "604204",
+      "604208",
+      "604210",
+      "604301",
+      "604304"
+    ],
+    "taluks": [
+      "Tindivanam",
+      "Gingee"
+    ],
+    "localities": [
+      "Mailam",
+      "Vallam",
+      "Olakkur",
+      "Kooteripattu",
+      "Gingee",
+      "Valliampakkam",
+      "Brammadesam",
+      "Rettanai",
+      "Perani",
+      "Karai",
+      "Thaludali",
+      "Thiruvakkarai",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Arani"
+  },
+  "manachanallur": {
+    "name": "MANACHANALLUR",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "621005",
+      "621007",
+      "621009",
+      "621105",
+      "621112",
+      "621204",
+      "621211",
+      "621213",
+      "621216"
+    ],
+    "taluks": [
+      "Manachanallur"
+    ],
+    "localities": [
+      "Manachanallur",
+      "Samayapuram",
+      "Kannanur",
+      "Bikshandarkoil",
+      "Nochiyam",
+      "Pichandarkovil",
+      "Siruganur",
+      "Vengangudi",
+      "Kariya Manickam",
+      "Thirupanjali"
+    ],
+    "lok_sabha": "Perambalur"
+  },
+  "manamadurai_sc": {
+    "name": "MANAMADURAI (SC)",
+    "district": "SIVAGANGA",
+    "pincodes": [
+      "630559",
+      "630602",
+      "630606",
+      "630609",
+      "630610",
+      "630611",
+      "630612",
+      "630702",
+      "630709"
+    ],
+    "taluks": [
+      "Manamadurai",
+      "Ilayangudi",
+      "Thiruppuvanam"
+    ],
+    "localities": [
+      "Manamadurai",
+      "Ilayangudi",
+      "Thiruppuvanam",
+      "Kirungakottai",
+      "Salaigramam",
+      "Muthanendal",
+      "Thiruppachethi",
+      "Kattikulam",
+      "Annavasal",
+      "Soorakulam"
+    ],
+    "lok_sabha": "Sivaganga"
+  },
+  "manapparai": {
+    "name": "MANAPPARAI",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "621302",
+      "621305",
+      "621306",
+      "621307",
+      "621308",
+      "621310",
+      "621312",
+      "621314",
+      "621315"
+    ],
+    "taluks": [
+      "Manapparai",
+      "Marungapuri"
+    ],
+    "localities": [
+      "Manapparai",
+      "Ponnampatti",
+      "Marungapuri",
+      "Vaiyampatti",
+      "Thuvarankurichi",
+      "Kannudaiyanpatti",
+      "Periyapatti",
+      "Chathirapatti",
+      "Manjampatti",
+      "Valanadu"
+    ],
+    "lok_sabha": "Karur"
+  },
+  "mannargudi": {
+    "name": "MANNARGUDI",
+    "district": "THIRUVARUR",
+    "pincodes": [
+      "610203",
+      "610205",
+      "610206",
+      "612803",
+      "614001",
+      "614013",
+      "614014",
+      "614016",
+      "614017",
+      "614018",
+      "614019",
+      "614020",
+      "614101",
+      "614102",
+      "614701",
+      "614702",
+      "614705",
+      "614708",
+      "614710",
+      "614717"
+    ],
+    "taluks": [
+      "Mannargudi",
+      "Needamangalam"
+    ],
+    "localities": [
+      "Mannargudi",
+      "Needamangalam",
+      "Vaduvoor",
+      "Ullikottai",
+      "Thalayamangalam",
+      "Ashesham",
+      "Pamani",
+      "Edaiyur",
+      "Savalakkaran",
+      "Moovarkottai"
+    ],
+    "lok_sabha": "Thanjavur"
+  },
+  "mayiladuthurai": {
+    "name": "MAYILADUTHURAI",
+    "district": "MAYILADUTHURAI",
+    "pincodes": [
+      "609001",
+      "609003",
+      "609103",
+      "609112",
+      "609117",
+      "609118",
+      "609201",
+      "609202",
+      "609203",
+      "609204",
+      "609205",
+      "609305",
+      "609314",
+      "609401",
+      "609403",
+      "609404",
+      "609501",
+      "609802",
+      "609805",
+      "609806",
+      "609808",
+      "612201",
+      "612203"
+    ],
+    "taluks": [
+      "Mayiladuthurai",
+      "Kuthalam"
+    ],
+    "localities": [
+      "Mayiladuthurai",
+      "Manalmedu",
+      "Koranad",
+      "Dharmapuram",
+      "Sitharkadu",
+      "Nallathukudi",
+      "Tiruvilandur",
+      "Mannampandal",
+      "Pattamangalam",
+      "Komal"
+    ],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "melur": {
+    "name": "MELUR",
+    "district": "MADURAI",
+    "pincodes": [
+      "625101",
+      "625102",
+      "625103",
+      "625105",
+      "625106",
+      "625108",
+      "625109",
+      "625122"
+    ],
+    "taluks": [
+      "Melur"
+    ],
+    "localities": [
+      "Melur",
+      "Vallalapatti",
+      "Kottampatti",
+      "Karungalakudi",
+      "Vellalur",
+      "Arittapatti",
+      "Pathinettangudi",
+      "Thiruvathavur",
+      "Navinipatti",
+      "Kallampatti"
+    ],
+    "lok_sabha": "Madurai"
+  },
+  "mettupalayam": {
+    "name": "METTUPALAYAM",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641019",
+      "641020",
+      "641041",
+      "641103",
+      "641104",
+      "641113",
+      "641301",
+      "641302"
+    ],
+    "taluks": [
+      "Mettupalayam",
+      "Annur"
+    ],
+    "localities": [
+      "Mettupalayam",
+      "Sirumugai",
+      "Karamadai",
+      "Periyanaickenpalayam",
+      "4 Veerapandi",
+      "Narasimhanaickenpalayam",
+      "Marudur",
+      "Thekkampatti",
+      "Odanthurai",
+      "Jadayampalayam"
+    ],
+    "lok_sabha": "Nilgiris"
+  },
+  "mettur": {
+    "name": "METTUR",
+    "district": "SALEM",
+    "pincodes": [
+      "636303",
+      "636401",
+      "636402",
+      "636403",
+      "636404",
+      "636406",
+      "636410",
+      "636451",
+      "636452",
+      "636453",
+      "636454",
+      "636456",
+      "636457",
+      "636458",
+      "636501"
+    ],
+    "taluks": [
+      "Mettur"
+    ],
+    "localities": [
+      "Mettur",
+      "Mecheri",
+      "Kolathur",
+      "N. Patti",
+      "Veerakkalpudur",
+      "Mettur Dam",
+      "Mettur Thermal Project",
+      "Salem Steel Plant area",
+      "Kaveri Cross",
+      "Kuttapatti"
+    ],
+    "lok_sabha": "Dharmapuri"
+  },
+  "modakkurichi": {
+    "name": "MODAKKURICHI",
+    "district": "ERODE",
+    "pincodes": [
+      "638002",
+      "638101",
+      "638104",
+      "638115",
+      "638151"
+    ],
+    "taluks": [
+      "Erode"
+    ],
+    "localities": [
+      "Modakkurichi",
+      "Kodumudi",
+      "Sivagiri",
+      "Pasur",
+      "Arachalur",
+      "Kilampadi",
+      "Kollankoil",
+      "Unjalur",
+      "Kangayampalayam",
+      "Ganapathipalayam",
+      "Elumathur",
+      "Nanjai Uttukuli"
+    ],
+    "lok_sabha": "Erode"
+  },
+  "mudukulathur": {
+    "name": "MUDHUKULATHUR",
+    "district": "RAMANATHAPURAM",
+    "pincodes": [
+      "623120",
+      "623601",
+      "623603",
+      "623703",
+      "623704",
+      "623708",
+      "623711",
+      "623712"
+    ],
+    "taluks": [
+      "Mudukulathur",
+      "Kadaladi",
+      "Kamuthi"
+    ],
+    "localities": [
+      "Mudukulathur",
+      "Kamuthi",
+      "Sayalgudi",
+      "Abiramam",
+      "Kadaladi",
+      "Peraiyur",
+      "Sikkal",
+      "Theriruveli",
+      "Pasumpon",
+      "Melaselvanur"
+    ],
+    "lok_sabha": "Ramanathapuram"
+  },
+  "musiri": {
+    "name": "MUSIRI",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "621004",
+      "621006",
+      "621007",
+      "621009",
+      "621202",
+      "621203",
+      "621204",
+      "621205",
+      "621208",
+      "621210",
+      "621211",
+      "621214",
+      "621217"
+    ],
+    "taluks": [
+      "Musiri",
+      "Thuraiyur"
+    ],
+    "localities": [
+      "Musiri",
+      "Thathaiyangarpet",
+      "Gunaseelam",
+      "Pulivalam",
+      "Moovanur",
+      "Kottathur",
+      "Ayyampalayam",
+      "Mettupatti",
+      "Thiruthalaiyur",
+      "Puthanampatti"
+    ],
+    "lok_sabha": "Perambalur"
+  },
+  "mylapore": {
+    "name": "MYLAPORE",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600002",
+      "600004",
+      "600005",
+      "600018",
+      "600020",
+      "600027",
+      "600028"
+    ],
+    "taluks": [],
+    "localities": [
+      "Mylapore",
+      "Alwarpet",
+      "Raja Annamalaipuram",
+      "Mandaveli",
+      "Santhome",
+      "Foreshore Estate",
+      "Teynampet",
+      "Abhiramapuram",
+      "Kurinji Nagar"
+    ],
+    "lok_sabha": "Chennai South"
+  },
+  "nagapattinam": {
+    "name": "NAGAPATTINAM",
+    "district": "NAGAPATTINAM",
+    "pincodes": [
+      "609105",
+      "609301",
+      "609314",
+      "609402",
+      "609604",
+      "609701",
+      "609702",
+      "609703",
+      "609704",
+      "611001",
+      "611002",
+      "611003",
+      "611102",
+      "611106",
+      "611108",
+      "611109"
+    ],
+    "taluks": [],
+    "localities": [
+      "Nagapattinam",
+      "Nagore",
+      "Velankanni",
+      "Thittacherry",
+      "Thirumarugal",
+      "Enangudi",
+      "Akkaraipettai",
+      "Sikkal",
+      "Orathur",
+      "Nagore Dargah area"
+    ],
+    "lok_sabha": "Nagapattinam (SC)"
+  },
+  "nagercoil": {
+    "name": "NAGERCOIL",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629001",
+      "629002",
+      "629003",
+      "629004",
+      "629158"
+    ],
+    "taluks": [
+      "Agastheeswaram"
+    ],
+    "localities": [
+      "Nagercoil",
+      "Asaripallam",
+      "Vadasery",
+      "Kottar",
+      "Vadiveeswaram",
+      "Krishnancoil",
+      "Putheri",
+      "Konam",
+      "Beemanagari",
+      "Peruvilai"
+    ],
+    "lok_sabha": "Kanniyakumari"
+  },
+  "namakkal": {
+    "name": "NAMAKKAL",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "637001",
+      "637002",
+      "637003",
+      "637013",
+      "637014",
+      "637015",
+      "637017",
+      "637018",
+      "637019",
+      "637020",
+      "637021",
+      "637207",
+      "637212",
+      "637402",
+      "637404",
+      "637405",
+      "637409",
+      "637411",
+      "638006",
+      "638182"
+    ],
+    "taluks": [
+      "Namakkal",
+      "Mohanur"
+    ],
+    "localities": [
+      "Namakkal",
+      "Mohanur",
+      "Nallipalayam",
+      "Thillaipuram",
+      "Ramapuram Pudur",
+      "Santhaipettaipudur",
+      "Mudalaipatti",
+      "Veesanam",
+      "Kondichettipatti",
+      "Valayapatti"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "nanguneri": {
+    "name": "NANGUNERI",
+    "district": "TIRUNELVELI",
+    "pincodes": [
+      "627011",
+      "627101",
+      "627102",
+      "627103",
+      "627105",
+      "627106",
+      "627107",
+      "627108",
+      "627109",
+      "627110",
+      "627115",
+      "627118",
+      "627119",
+      "627151",
+      "627152",
+      "627354",
+      "627355",
+      "627501",
+      "627502",
+      "627652"
+    ],
+    "taluks": [
+      "Palayamkottai"
+    ],
+    "localities": [
+      "Nanguneri",
+      "Kalakad",
+      "Eruvadi",
+      "Thirukarungudi",
+      "Moolakaraipatti",
+      "Reddiarpatti",
+      "Iraippuvari",
+      "Kannanallur",
+      "Shenbagaramanallur",
+      "Dalapathisamudram"
+    ],
+    "lok_sabha": "Tirunelveli"
+  },
+  "nannilam": {
+    "name": "NANNILAM",
+    "district": "THIRUVARUR",
+    "pincodes": [
+      "609405",
+      "609502",
+      "609503",
+      "609504",
+      "609603",
+      "609608",
+      "610101",
+      "610105",
+      "612601",
+      "612604",
+      "613703"
+    ],
+    "taluks": [
+      "Nannilam",
+      "Kudavasal"
+    ],
+    "localities": [
+      "Nannilam",
+      "Kudavasal",
+      "Poonthottam",
+      "Srivanjiyam",
+      "Achuthamangalam",
+      "Adambar",
+      "Anaikuppam",
+      "Mappilaikuppam",
+      "Nemmeli",
+      "Salipperi"
+    ],
+    "lok_sabha": "Nagapattinam (SC)"
+  },
+  "natham": {
+    "name": "NATHAM",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624301",
+      "624306",
+      "624401",
+      "624402",
+      "624403",
+      "625103"
+    ],
+    "taluks": [],
+    "localities": [
+      "Natham",
+      "Shanarpatti",
+      "Sendurai",
+      "Gopalpatti",
+      "Sirumalai",
+      "Ullupakudi",
+      "Lingavadi",
+      "Mulaiyur",
+      "Kosanur",
+      "Vellode"
+    ],
+    "lok_sabha": "Dindigul"
+  },
+  "neyveli": {
+    "name": "NEYVELI",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "607301",
+      "607302",
+      "607801",
+      "607802",
+      "607803",
+      "607807"
+    ],
+    "taluks": [
+      "Mandarakuppam",
+      "Marungur",
+      "Vadalur",
+      "Gangaikondan",
+      "Uthamasolapuram",
+      "Melnilaikuppam",
+      "Periyakurichi",
+      "Ammeri"
+    ],
+    "localities": [],
+    "lok_sabha": "Cuddalore"
+  },
+  "nilakkottai_sc": {
+    "name": "NILAKKOTTAI (SC)",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624201",
+      "624202",
+      "624206",
+      "624208",
+      "624211",
+      "624215",
+      "624220",
+      "624707",
+      "624708"
+    ],
+    "taluks": [
+      "Nilakkottai"
+    ],
+    "localities": [
+      "Nilakkottai",
+      "Batlagundu",
+      "Ammayanaickanur",
+      "Sevugampatti",
+      "Silukkuvarpatti",
+      "Ethilodu",
+      "Sithargalnatham",
+      "Vattalagundu",
+      "Viralipatti",
+      "Kunnuvarankottai"
+    ],
+    "lok_sabha": "Dindigul"
+  },
+  "oddanchatram": {
+    "name": "ODDANCHATRAM",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624612",
+      "624614",
+      "624616",
+      "624617",
+      "624619",
+      "624621",
+      "624704",
+      "624706"
+    ],
+    "taluks": [
+      "Oddanchatram"
+    ],
+    "localities": [
+      "Oddanchatram",
+      "Kallimandayam",
+      "Kethaiyarumbu",
+      "Veriyappur",
+      "Arasappapillaipatti",
+      "Athikombai",
+      "Kalanjipatti",
+      "Palakkanuthu",
+      "Puduchatram",
+      "Vadagadu"
+    ],
+    "lok_sabha": "Dindigul"
+  },
+  "omalur": {
+    "name": "OMALUR",
+    "district": "SALEM",
+    "pincodes": [
+      "636004",
+      "636012",
+      "636305",
+      "636306",
+      "636309",
+      "636451",
+      "636455"
+    ],
+    "taluks": [
+      "Omalur",
+      "Kadayampatti"
+    ],
+    "localities": [
+      "Omalur",
+      "Kadayampatti",
+      "Karuppur",
+      "Deevattipatti",
+      "Poosaripatti",
+      "Pachanampatti",
+      "Kamalapuram",
+      "Tholasampatti",
+      "Mettupatti",
+      "Olaipatti"
+    ],
+    "lok_sabha": "Salem"
+  },
+  "orathanadu": {
+    "name": "ORATHANADU",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "613005",
+      "614019",
+      "614614",
+      "614625",
+      "614626",
+      "614628",
+      "614901",
+      "614902"
+    ],
+    "taluks": [],
+    "localities": [
+      "Orathanadu",
+      "Thiruvonam",
+      "Vadasery",
+      "Ambalapattu",
+      "Okkanadukeelaiyur",
+      "Karamanyikottai",
+      "Pannayakottai",
+      "Neivashal",
+      "Ponnapur",
+      "Ullur"
+    ],
+    "lok_sabha": "Thanjavur"
+  },
+  "ottapidaram_sc": {
+    "name": "OTTAPIDARAM (SC)",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628002",
+      "628008",
+      "628105",
+      "628301",
+      "628302",
+      "628303",
+      "628401",
+      "628402",
+      "628712",
+      "628714",
+      "628718",
+      "628722"
+    ],
+    "taluks": [
+      "Ottapidaram",
+      "Thoothukkudi",
+      "Srivaikuntam"
+    ],
+    "localities": [
+      "Ottapidaram",
+      "Puthiyamputhur",
+      "Tharuvaikulam",
+      "Panchalankurichi",
+      "Korampallam",
+      "Ottanatham",
+      "Pasuvanthanai",
+      "Sillanatham",
+      "Kollankinar",
+      "Parivillikottai"
+    ],
+    "lok_sabha": "Thoothukkudi"
+  },
+  "padmanabhapuram": {
+    "name": "PADMANABHAPURAM",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629101",
+      "629151",
+      "629155",
+      "629161",
+      "629164",
+      "629175",
+      "629180"
+    ],
+    "taluks": [
+      "Kalkulam"
+    ],
+    "localities": [
+      "Padmanabhapuram",
+      "Thuckalay",
+      "Kumarapuram",
+      "Kothinallur",
+      "Villukuri",
+      "Atoor",
+      "Thiruvithamcode",
+      "Mulachel",
+      "Puliyurkurichi",
+      "Mettukadai"
+    ],
+    "lok_sabha": "Kanniyakumari"
+  },
+  "palacode": {
+    "name": "PALACODE",
+    "district": "DHARMAPURI",
+    "pincodes": [
+      "635111",
+      "636801",
+      "636805",
+      "636806",
+      "636808",
+      "636809",
+      "636812"
+    ],
+    "taluks": [
+      "Palacode"
+    ],
+    "localities": [
+      "Palacode",
+      "Marandahalli",
+      "Begarahalli",
+      "Belarahalli",
+      "Dandukaranahalli",
+      "Hanumanthapuram",
+      "Jertalav",
+      "Kattampatti",
+      "Pulikarai",
+      "Thirumalvadi"
+    ],
+    "lok_sabha": "Dharmapuri"
+  },
+  "palani": {
+    "name": "PALANI",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624601",
+      "624613",
+      "624615",
+      "624617",
+      "624618",
+      "624621",
+      "624622"
+    ],
+    "taluks": [
+      "Palani"
+    ],
+    "localities": [
+      "Palani",
+      "Balasamudram",
+      "Ayakkudi",
+      "Neikarapatti",
+      "Sivagiripatti",
+      "Pappampatti",
+      "Kiranur",
+      "Ayyampalayam",
+      "Kovilammapatti",
+      "Thalaiyuthu"
+    ],
+    "lok_sabha": "Dindigul"
+  },
+  "palayamkottai": {
+    "name": "PALAYAMKOTTAI",
+    "district": "TIRUNELVELI",
+    "pincodes": [
+      "627002",
+      "627003",
+      "627005",
+      "627007",
+      "627009",
+      "627011",
+      "627012",
+      "627152",
+      "627351",
+      "627353",
+      "627356"
+    ],
+    "taluks": [
+      "Palayamkottai"
+    ],
+    "localities": [
+      "Palayamkottai",
+      "High Grounds",
+      "KTC Nagar",
+      "Maharajangar",
+      "Perumalpuram",
+      "Santhinagar",
+      "Samadanapuram",
+      "Kulavanickerpuram",
+      "Rahmath Nagar",
+      "M. Chatram"
+    ],
+    "lok_sabha": "Tirunelveli"
+  },
+  "palladam": {
+    "name": "PALLADAM",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "641605",
+      "641607",
+      "641658",
+      "641660",
+      "641662",
+      "641663",
+      "641664",
+      "641668"
+    ],
+    "taluks": [],
+    "localities": [
+      "Palladam",
+      "Arulpuram",
+      "Koduvai",
+      "Pongalur",
+      "Karanampettai",
+      "Kamanaickenpalayam",
+      "Karaipudur",
+      "Manickapuram",
+      "Vadugapalayam",
+      "Poomalur"
+    ],
+    "lok_sabha": "Coimbatore"
+  },
+  "pallavaram": {
+    "name": "PALLAVARAM",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "600027",
+      "600043",
+      "600044",
+      "600045",
+      "600049",
+      "600068",
+      "600074",
+      "600075",
+      "600117"
+    ],
+    "taluks": [
+      "Pallavaram",
+      "Tambaram",
+      "Thomas Mount"
+    ],
+    "localities": [
+      "Pallavaram",
+      "Chromepet",
+      "Hasthinapuram",
+      "Nemilicherry",
+      "Keelkattalai",
+      "Pozhichalur",
+      "Tirusulam",
+      "Thiruneermalai",
+      "Meenambakkam",
+      "Anakaputhur"
+    ],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "panruti": {
+    "name": "PANRUTI",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "607101",
+      "607102",
+      "607103",
+      "607104",
+      "607105",
+      "607106",
+      "607108",
+      "607112",
+      "607205",
+      "607301",
+      "607303",
+      "607802",
+      "607805"
+    ],
+    "taluks": [
+      "Panruti"
+    ],
+    "localities": [
+      "Panruti",
+      "Nellikuppam",
+      "Melpattampakkam",
+      "Thorapadi",
+      "Anguchettipalayam",
+      "Semmedu",
+      "Kilmampattu",
+      "Tiruvamur",
+      "Sathipattu",
+      "Lakshminarayanapuram"
+    ],
+    "lok_sabha": "Cuddalore"
+  },
+  "papanasam": {
+    "name": "PAPANASAM",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "612301",
+      "613204",
+      "613501",
+      "613502",
+      "613503",
+      "613504",
+      "614201",
+      "614202",
+      "614203",
+      "614204",
+      "614205",
+      "614206",
+      "614207",
+      "614210",
+      "614211",
+      "614301",
+      "614302",
+      "614303",
+      "614401",
+      "614402"
+    ],
+    "taluks": [
+      "Papanasam",
+      "Kumbakonam"
+    ],
+    "localities": [
+      "Papanasam",
+      "Ayyampettai",
+      "Ammapettai",
+      "Melattur",
+      "Swamimalai",
+      "Kabisthalam",
+      "Ganapathi Agraharam",
+      "Umayalpuram",
+      "Valuthoor",
+      "Thiruvaikavur"
+    ],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "pappireddipatti": {
+    "name": "PAPPIREDDIPATTI",
+    "district": "DHARMAPURI",
+    "pincodes": [
+      "635301",
+      "635302",
+      "635303",
+      "636902",
+      "636903",
+      "636905",
+      "636906"
+    ],
+    "taluks": [
+      "Pappireddipatti",
+      "Dharmapuri"
+    ],
+    "localities": [
+      "Pappireddipatti",
+      "Kadathur",
+      "Mallapuram",
+      "Bommidi",
+      "Bairnatham",
+      "Adikarapatti",
+      "Tenkaraikottai",
+      "Menisi",
+      "Alapuram",
+      "Morappur"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "paramakudi_sc": {
+    "name": "PARAMAKUDI (SC)",
+    "district": "RAMANATHAPURAM",
+    "pincodes": [
+      "623115",
+      "623527",
+      "623601",
+      "623608",
+      "623701",
+      "623705",
+      "623706",
+      "623707",
+      "623712"
+    ],
+    "taluks": [
+      "Kadaladi"
+    ],
+    "localities": [
+      "Paramakudi",
+      "Abiramam",
+      "Parthibanur",
+      "Nainarkoil",
+      "Kamuthakudi",
+      "Emaneswaram",
+      "Melaparthibanur",
+      "Bogalur",
+      "Soodiyur",
+      "Vallaikulam"
+    ],
+    "lok_sabha": "Ramanathapuram"
+  },
+  "paramathivelur": {
+    "name": "PARAMATHI-VELUR",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "637201",
+      "637203",
+      "637204",
+      "637206",
+      "637207",
+      "637208",
+      "637210",
+      "637213",
+      "638181",
+      "638182"
+    ],
+    "taluks": [
+      "Paramathi-Velur",
+      "Tiruchengodu",
+      "Namakkal"
+    ],
+    "localities": [
+      "Paramathi",
+      "Velur",
+      "Pandamangalam",
+      "Venkarai",
+      "Pothanur",
+      "Kabilarmalai",
+      "Jedarpalayam",
+      "Keerambur",
+      "Konur",
+      "Nanjai Edayar"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "pattukkottai": {
+    "name": "PATTUKKOTTAI",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "614601",
+      "614602",
+      "614613",
+      "614614",
+      "614615",
+      "614621",
+      "614628",
+      "614701",
+      "614723",
+      "614903"
+    ],
+    "taluks": [
+      "Pattukkottai"
+    ],
+    "localities": [
+      "Pattukkottai",
+      "Adirampattinam",
+      "Madukkur",
+      "Thamarankottai",
+      "Nadiyambal Puram",
+      "Kailasanathapuram",
+      "Maharajasamudram",
+      "Alathur",
+      "Parakkalakottai",
+      "Eriyodu"
+    ],
+    "lok_sabha": "Thanjavur"
+  },
+  "pennagaram": {
+    "name": "PENNAGARAM",
+    "district": "DHARMAPURI",
+    "pincodes": [
+      "636704",
+      "636803",
+      "636805",
+      "636808",
+      "636809",
+      "636810",
+      "636811",
+      "636813"
+    ],
+    "taluks": [
+      "Pennagaram",
+      "Palacode",
+      "Nallampalli"
+    ],
+    "localities": [
+      "Pennagaram",
+      "Hogenakkal",
+      "Perumbalai",
+      "Eriyur",
+      "Nagamarai",
+      "Ajjanahalli",
+      "Koothapadi",
+      "Donnakuttahalli",
+      "Pikkili",
+      "Manjarahalli"
+    ],
+    "lok_sabha": "Dharmapuri"
+  },
+  "perambalur_sc": {
+    "name": "PERAMBALUR (SC)",
+    "district": "PERAMBALUR",
+    "pincodes": [
+      "621101",
+      "621102",
+      "621103",
+      "621104",
+      "621106",
+      "621107",
+      "621109",
+      "621110",
+      "621113",
+      "621115",
+      "621116",
+      "621117",
+      "621118",
+      "621133",
+      "621211",
+      "621212",
+      "621219",
+      "621220",
+      "621716",
+      "621717"
+    ],
+    "taluks": [
+      "Perambalur",
+      "Veppanthattai",
+      "Alathur"
+    ],
+    "localities": [
+      "Perambalur",
+      "Thuraimangalam",
+      "Kurumbalur",
+      "Arumbavur",
+      "Poolambadi",
+      "Elambalur",
+      "Esanai",
+      "Aranarai",
+      "Nochiam",
+      "Koneripalayam"
+    ],
+    "lok_sabha": "Perambalur"
+  },
+  "perambur": {
+    "name": "PERAMBUR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600007",
+      "600008",
+      "600011",
+      "600012",
+      "600031",
+      "600039",
+      "600082",
+      "600084",
+      "600102",
+      "600118"
+    ],
+    "taluks": [
+      "Perambur",
+      "Purasawalkam"
+    ],
+    "localities": [
+      "Perambur",
+      "Vyasarpadi",
+      "Kodungaiyur",
+      "Sembiam",
+      "MKB Nagar",
+      "Puliyanthope",
+      "Moolakadai",
+      "Kaviarasu Kannadhasan Nagar",
+      "Erukanchery",
+      "Ganesapuram"
+    ],
+    "lok_sabha": "Chennai North"
+  },
+  "peravurani": {
+    "name": "PERAVURANI",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "614612",
+      "614614",
+      "614623",
+      "614802",
+      "614803",
+      "614804"
+    ],
+    "taluks": [],
+    "localities": [
+      "Peravurani",
+      "Perumagalur",
+      "Sethubavachatram",
+      "Kuruvikkarambai",
+      "Ottankadu",
+      "Thiruchitrambalam",
+      "Kalathur",
+      "Mudachikadu",
+      "Kalagam",
+      "Mallipattinam"
+    ],
+    "lok_sabha": "Thanjavur"
+  },
+  "periyakulam_sc": {
+    "name": "PERIYAKULAM (SC)",
+    "district": "THENI",
+    "pincodes": [
+      "625203",
+      "625520",
+      "625523",
+      "625562",
+      "625601",
+      "625602",
+      "625603",
+      "625604",
+      "625605"
+    ],
+    "taluks": [
+      "Periyakulam"
+    ],
+    "localities": [],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "perundurai": {
+    "name": "PERUNDURAI",
+    "district": "ERODE",
+    "pincodes": [
+      "638011",
+      "638052",
+      "638053",
+      "638055",
+      "638056",
+      "638057",
+      "638103",
+      "638112",
+      "638115",
+      "638116",
+      "638751",
+      "638752"
+    ],
+    "taluks": [
+      "Chennimalai",
+      "Karumandisellipalayam",
+      "Kanjikoil",
+      "Nasiyanur",
+      "Pallapalayam",
+      "Ingur",
+      "Seenapuram",
+      "SIPCOT Industrial Estate"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruppur"
+  },
+  "pollachi": {
+    "name": "POLLACHI",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641035",
+      "642001",
+      "642002",
+      "642003",
+      "642004",
+      "642005",
+      "642006",
+      "642007",
+      "642101",
+      "642103",
+      "642104",
+      "642107",
+      "642109",
+      "642110",
+      "642114",
+      "642120",
+      "642123",
+      "642127",
+      "642129",
+      "642133",
+      "642134",
+      "642154",
+      "642202",
+      "642205"
+    ],
+    "taluks": [
+      "Pollachi",
+      "Kinathukadavu"
+    ],
+    "localities": [
+      "Pollachi",
+      "Suleeswaranpatti",
+      "Periya Negamam",
+      "Zamin Uthukuli",
+      "Unjavelampatti",
+      "Vadugapalayam",
+      "Pattinam",
+      "Vadachithur",
+      "Kothavadi",
+      "Nallattipalayam"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "polur": {
+    "name": "POLUR",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "606801",
+      "606803",
+      "606902",
+      "606903",
+      "606907",
+      "606908",
+      "632326",
+      "635703"
+    ],
+    "taluks": [
+      "Polur",
+      "Chetpet",
+      "Kalasapakkam",
+      "Jawadhu Hills"
+    ],
+    "localities": [
+      "Polur",
+      "Chetpet",
+      "Kalambur",
+      "Pernamallur",
+      "Santhavasal",
+      "Athimoor",
+      "Kalvasal",
+      "Mambattu",
+      "Sengunam",
+      "Sanikkavadi"
+    ],
+    "lok_sabha": "Arani"
+  },
+  "ponneri_sc": {
+    "name": "PONNERI (SC)",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600051",
+      "600057",
+      "600067",
+      "600103",
+      "601101",
+      "601201",
+      "601203",
+      "601204",
+      "601205",
+      "601206"
+    ],
+    "taluks": [
+      "Ponneri"
+    ],
+    "localities": [
+      "Ponneri",
+      "Minjur",
+      "Athipattu",
+      "Arani",
+      "Kattupalli",
+      "Panjetti",
+      "Medur",
+      "Anuppampattu",
+      "Perumbedu",
+      "Aladu"
+    ],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "poompuhar": {
+    "name": "POOMPUHAR",
+    "district": "MAYILADUTHURAI",
+    "pincodes": [
+      "609101",
+      "609105",
+      "609107",
+      "609117",
+      "609202",
+      "609307",
+      "609309",
+      "609801"
+    ],
+    "taluks": [
+      "Sirkali",
+      "Tharangambadi",
+      "Kuthalam"
+    ],
+    "localities": [
+      "Poompuhar",
+      "Sembanarkoil",
+      "Tharangambadi",
+      "Akkur",
+      "Melaiyur",
+      "Sankaranpanthal",
+      "Madappuram",
+      "Manigramam",
+      "Thiruvakaddu",
+      "Kanjanoor",
+      "Kidangal"
+    ],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "poonamallee_sc": {
+    "name": "POONAMALLEE (SC)",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600055",
+      "600056",
+      "600069",
+      "600077",
+      "600123",
+      "600124",
+      "602107"
+    ],
+    "taluks": [
+      "Poonamallee",
+      "Kundrathur"
+    ],
+    "localities": [],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "pudukkottai": {
+    "name": "PUDUKKOTTAI",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "614805",
+      "622001",
+      "622002",
+      "622003",
+      "622004",
+      "622005",
+      "622203",
+      "622504"
+    ],
+    "taluks": [
+      "Pudukkottai"
+    ],
+    "localities": [
+      "Pudukkottai",
+      "Machuvadi",
+      "Rajagopalapuram",
+      "Pudumanai",
+      "Ganesh Nagar",
+      "Kalyanaramapuram",
+      "Nizam Colony",
+      "Perungalur",
+      "Mullur",
+      "Vagavasal"
+    ],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "radhapuram": {
+    "name": "RADHAPURAM",
+    "district": "TIRUNELVELI",
+    "pincodes": [
+      "627101",
+      "627104",
+      "627105",
+      "627106",
+      "627107",
+      "627109",
+      "627110",
+      "627111",
+      "627112",
+      "627113",
+      "627114",
+      "627116",
+      "627117",
+      "627118",
+      "627120",
+      "627127",
+      "627131",
+      "627133",
+      "627651",
+      "627652",
+      "627654",
+      "627657",
+      "627659"
+    ],
+    "taluks": [
+      "Valliyoor",
+      "Panagudi",
+      "Koodankulam",
+      "Tisayanvilai",
+      "Pazhavoor",
+      "Levengipuram",
+      "Uvari",
+      "Chettikulam"
+    ],
+    "localities": [],
+    "lok_sabha": "Tirunelveli"
+  },
+  "rajapalayam": {
+    "name": "RAJAPALAYAM",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626102",
+      "626108",
+      "626110",
+      "626111",
+      "626117",
+      "626121",
+      "626122",
+      "626136",
+      "626139",
+      "626142",
+      "626188"
+    ],
+    "taluks": [
+      "Rajapalayam"
+    ],
+    "localities": [],
+    "lok_sabha": "Tenkasi (SC)"
+  },
+  "ramanathapuram": {
+    "name": "RAMANATHAPURAM",
+    "district": "RAMANATHAPURAM",
+    "pincodes": [
+      "623501",
+      "623502",
+      "623503",
+      "623504",
+      "623512",
+      "623513",
+      "623514",
+      "623516",
+      "623517",
+      "623518",
+      "623519",
+      "623520",
+      "623521",
+      "623522",
+      "623523",
+      "623524",
+      "623528",
+      "623530",
+      "623532",
+      "623533",
+      "623534",
+      "623536",
+      "623703",
+      "623704",
+      "623705",
+      "623708",
+      "623711",
+      "623806"
+    ],
+    "taluks": [
+      "Keelakarai"
+    ],
+    "localities": [
+      "Ramanathapuram",
+      "Keelakarai",
+      "Mandapam",
+      "Devipattinam",
+      "Pattanamkathan",
+      "Sakkarakottai",
+      "Kenikarai",
+      "Perunkulam",
+      "Achundanvayal",
+      "Uchipuli"
+    ],
+    "lok_sabha": "Ramanathapuram"
+  },
+  "ranipet": {
+    "name": "RANIPET",
+    "district": "RANIPET",
+    "pincodes": [
+      "632401",
+      "632403",
+      "632404",
+      "632501",
+      "632513",
+      "632517"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Arakkonam"
+  },
+  "rasipuram_sc": {
+    "name": "RASIPURAM(SC)",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "636118",
+      "636202",
+      "636301",
+      "637401",
+      "637403",
+      "637406",
+      "637407",
+      "637408",
+      "637411",
+      "637412",
+      "637503"
+    ],
+    "taluks": [],
+    "localities": [
+      "Rasipuram"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "rishivandiyam": {
+    "name": "RISHIVANDIYAM",
+    "district": "KALLAKURICHI",
+    "pincodes": [
+      "605701",
+      "605751",
+      "606201",
+      "606205",
+      "606213"
+    ],
+    "taluks": [
+      "Manalurpet",
+      "Komalur",
+      "Pasar",
+      "Mandagapadi",
+      "La-Gudalur",
+      "Munivalai",
+      "Sathaputhur",
+      "Seedevi"
+    ],
+    "localities": [],
+    "lok_sabha": "Kallakurichi"
+  },
+  "royapuram": {
+    "name": "ROYAPURAM",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600001",
+      "600003",
+      "600012",
+      "600013",
+      "600015",
+      "600021",
+      "600081"
+    ],
+    "taluks": [
+      "Egmore-Nungambakkam",
+      "Purasawalkam"
+    ],
+    "localities": [
+      "Royapuram",
+      "Old Washermanpet",
+      "Kalmandapam",
+      "Stanley Hospital Area",
+      "Robinson Park",
+      "C. Road",
+      "A. Road",
+      "Fishing Harbour",
+      "Kasiimedu",
+      "Maniyakkaranchatram"
+    ],
+    "lok_sabha": "Chennai North"
+  },
+  "saidapet": {
+    "name": "SAIDAPET",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600002",
+      "600004",
+      "600015",
+      "600017",
+      "600018",
+      "600020",
+      "600032",
+      "600033",
+      "600035",
+      "600079",
+      "600085"
+    ],
+    "taluks": [
+      "Guindy",
+      "Mambalam"
+    ],
+    "localities": [
+      "Saidapet",
+      "Guindy",
+      "Kotturpuram",
+      "Ekkattuthangal",
+      "Little Mount",
+      "Jafferkhanpet",
+      "I.T. Nagar",
+      "Nandanam",
+      "Maduvankarai",
+      "Anna University / IIT Madras Area"
+    ],
+    "lok_sabha": "Chennai South"
+  },
+  "salem_north": {
+    "name": "SALEM NORTH",
+    "district": "SALEM",
+    "pincodes": [
+      "636001",
+      "636003",
+      "636004",
+      "636006",
+      "636007",
+      "636008",
+      "636010",
+      "636013",
+      "636014",
+      "636015",
+      "636016",
+      "636030",
+      "636103",
+      "636106",
+      "636115",
+      "636116",
+      "636122",
+      "636138",
+      "636139",
+      "636140",
+      "636201",
+      "636204",
+      "636302",
+      "636307",
+      "637501",
+      "637502",
+      "637504"
+    ],
+    "taluks": [
+      "Kannankurichi",
+      "Fairlands",
+      "Alagapuram",
+      "Maravaneri",
+      "Peramanur",
+      "Salem Extension",
+      "Mulluvadi",
+      "Gorimedu"
+    ],
+    "localities": [],
+    "lok_sabha": "Salem"
+  },
+  "salem_south": {
+    "name": "SALEM SOUTH",
+    "district": "SALEM",
+    "pincodes": [
+      "636002",
+      "636003",
+      "636006",
+      "636007",
+      "636008",
+      "636010",
+      "636013",
+      "636014",
+      "636015",
+      "636016",
+      "636030",
+      "636103",
+      "636106",
+      "636115",
+      "636116",
+      "636122",
+      "636138",
+      "636139",
+      "636140",
+      "636201",
+      "636204",
+      "636302",
+      "636307",
+      "637501",
+      "637502",
+      "637504"
+    ],
+    "taluks": [],
+    "localities": [
+      "Gugai",
+      "Dadagapatti",
+      "Kondalampatti",
+      "Kitchipalayam",
+      "Seelanaickenpatti",
+      "Karungalpatti",
+      "Sanjeevarayanpettai",
+      "Annathanapatti",
+      "Linemedu",
+      "Ammapet"
+    ],
+    "lok_sabha": "Salem"
+  },
+  "salem_west": {
+    "name": "SALEM WEST",
+    "district": "SALEM",
+    "pincodes": [
+      "636001",
+      "636002",
+      "636003",
+      "636004",
+      "636005",
+      "636006",
+      "636007",
+      "636008",
+      "636009",
+      "636010",
+      "636011",
+      "636012",
+      "636013",
+      "636014",
+      "636015",
+      "636016",
+      "636030",
+      "636103",
+      "636106",
+      "636115",
+      "636116",
+      "636122",
+      "636138",
+      "636139",
+      "636140",
+      "636201",
+      "636204",
+      "636302",
+      "636307",
+      "637501",
+      "637502",
+      "637504"
+    ],
+    "taluks": [
+      "Salem",
+      "Omalur"
+    ],
+    "localities": [],
+    "lok_sabha": "<!-- end list -->"
+  },
+  "sankarankovil_sc": {
+    "name": "SANKARANKOVIL (SC)",
+    "district": "TENKASI",
+    "pincodes": [
+      "627751",
+      "627753",
+      "627754",
+      "627756",
+      "627760",
+      "627862",
+      "627953"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Tenkasi (SC)"
+  },
+  "sankarapuram": {
+    "name": "SANKARAPURAM",
+    "district": "KALLAKURICHI",
+    "pincodes": [
+      "606201",
+      "606202",
+      "606208",
+      "606401",
+      "606402"
+    ],
+    "taluks": [
+      "Moongilthuraipattu",
+      "Vadapalani",
+      "Pootai",
+      "Devapandalam",
+      "Ravathanallur",
+      "Arasampattu",
+      "Mottaiyanur",
+      "Serapattu"
+    ],
+    "localities": [],
+    "lok_sabha": "Kallakurichi"
+  },
+  "sankari": {
+    "name": "SANKARI",
+    "district": "SALEM",
+    "pincodes": [
+      "637102",
+      "637103",
+      "637104",
+      "637301",
+      "637302",
+      "637303"
+    ],
+    "taluks": [
+      "Sankari",
+      "Omalur"
+    ],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "sattur": {
+    "name": "SATTUR",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626102",
+      "626130",
+      "626131",
+      "626132",
+      "626134",
+      "626140",
+      "626201",
+      "626202",
+      "626203",
+      "626204",
+      "626205"
+    ],
+    "taluks": [
+      "Sattur",
+      "Vembakottai"
+    ],
+    "localities": [
+      "Sattur"
+    ],
+    "lok_sabha": "Virudhunagar"
+  },
+  "senthamangalam_st": {
+    "name": "SENTHAMANGALAM(ST)",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "636113",
+      "637013",
+      "637015",
+      "637403",
+      "637404",
+      "637407",
+      "637409",
+      "637411"
+    ],
+    "taluks": [
+      "Rasipuram",
+      "Namakkal"
+    ],
+    "localities": [
+      "Senthamangalam",
+      "Erumaipatti",
+      "Kalappanaickenpatti",
+      "Namagiripettai",
+      "Seerapalli",
+      "Kolli Hills",
+      "Belukurichi",
+      "Pottanam",
+      "Akkiampatti",
+      "Valavanthi Nadu",
+      "Muttanchetti"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "sholavandan_sc": {
+    "name": "SHOLAVANDAN (SC)",
+    "district": "MADURAI",
+    "pincodes": [
+      "625018",
+      "625201",
+      "625214",
+      "625402",
+      "625501",
+      "625503"
+    ],
+    "taluks": [
+      "Vadipatti",
+      "Madurai West"
+    ],
+    "localities": [],
+    "lok_sabha": "Theni"
+  },
+  "sholinganallur": {
+    "name": "SHOZHINGANALLUR",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "600016",
+      "600041",
+      "600054",
+      "600060",
+      "600062",
+      "600076",
+      "600097",
+      "600100",
+      "600105",
+      "600115",
+      "600119",
+      "600129",
+      "600130"
+    ],
+    "taluks": [
+      "Sholinganallur",
+      "Tambaram"
+    ],
+    "localities": [
+      "Sholinganallur",
+      "Madipakkam",
+      "Ullagaram-Puzhuthivakkam",
+      "Pallikaranai",
+      "Perungudi",
+      "Kottivakkam",
+      "Palavakkam",
+      "Neelankarai",
+      "Injambakkam",
+      "Okkiyam Thoraipakkam",
+      "Semmancheri"
+    ],
+    "lok_sabha": "Chennai South"
+  },
+  "sholinghur": {
+    "name": "SHOLINGHUR",
+    "district": "RANIPET",
+    "pincodes": [
+      "631001",
+      "631101",
+      "631102",
+      "631103",
+      "632505",
+      "632513"
+    ],
+    "taluks": [
+      "Sholinghur",
+      "Walajah",
+      "Arakkonam"
+    ],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Arakkonam"
+  },
+  "singanallur": {
+    "name": "SINGANALLUR",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641003",
+      "641004",
+      "641005",
+      "641006",
+      "641014",
+      "641015",
+      "641018",
+      "641033"
+    ],
+    "taluks": [
+      "Coimbatore South",
+      "Coimbatore North"
+    ],
+    "localities": [
+      "Singanallur",
+      "industrial hub) Ondipudur Peelamedu"
+    ],
+    "lok_sabha": "Coimbatore"
+  },
+  "sirkazhi_sc": {
+    "name": "SIRKAZHI (SC)",
+    "district": "MAYILADUTHURAI",
+    "pincodes": [
+      "609101",
+      "609102",
+      "609104",
+      "609105",
+      "609106",
+      "609107",
+      "609108",
+      "609109",
+      "609110",
+      "609111",
+      "609112",
+      "609113",
+      "609114",
+      "609115",
+      "609116",
+      "609117",
+      "609201",
+      "609205"
+    ],
+    "taluks": [],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "sivaganga": {
+    "name": "SIVAGANGA",
+    "district": "SIVAGANGA",
+    "pincodes": [
+      "630105",
+      "630210",
+      "630306",
+      "630551",
+      "630552",
+      "630553",
+      "630554",
+      "630555",
+      "630556",
+      "630557",
+      "630558",
+      "630559",
+      "630560",
+      "630561",
+      "630562",
+      "630606"
+    ],
+    "taluks": [
+      "Sivaganga",
+      "Kalaiyarkoil"
+    ],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Sivaganga"
+  },
+  "sivakasi": {
+    "name": "SIVAKASI",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626101",
+      "626103",
+      "626123",
+      "626124",
+      "626127",
+      "626128",
+      "626130",
+      "626131",
+      "626138",
+      "626140",
+      "626141",
+      "626189",
+      "626201"
+    ],
+    "taluks": [
+      "Sivakasi",
+      "Watrap"
+    ],
+    "localities": [],
+    "lok_sabha": "Virudhunagar"
+  },
+  "sriperumbudur_sc": {
+    "name": "SRIPERUMBUDUR (SC)",
+    "district": "KANCHEEPURAM",
+    "pincodes": [
+      "600069",
+      "600122",
+      "601301",
+      "602101",
+      "602105",
+      "602109",
+      "602117",
+      "603104",
+      "631402",
+      "631553",
+      "631604"
+    ],
+    "taluks": [
+      "Sriperumbudur",
+      "Kundrathur"
+    ],
+    "localities": [],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "srirangam": {
+    "name": "SRIRANGAM",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "620003",
+      "620005",
+      "620006",
+      "620021",
+      "620027",
+      "620102",
+      "621101",
+      "621115",
+      "639103",
+      "639112",
+      "639115"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "srivaikuntam": {
+    "name": "SRIVAIKUNTAM",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628102",
+      "628104",
+      "628152",
+      "628251",
+      "628252",
+      "628601",
+      "628612",
+      "628614",
+      "628615",
+      "628619",
+      "628620",
+      "628621",
+      "628622",
+      "628751",
+      "628753",
+      "628801",
+      "628802",
+      "628809",
+      "628851"
+    ],
+    "taluks": [
+      "Srivaikuntam",
+      "Eral",
+      "Sathankulam"
+    ],
+    "localities": [],
+    "lok_sabha": "Thoothukkudi"
+  },
+  "srivilliputhur_sc": {
+    "name": "SRIVILLIPUTHUR (SC)",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626110",
+      "626116",
+      "626125",
+      "626126",
+      "626132",
+      "626133",
+      "626135",
+      "626137",
+      "626138",
+      "626141",
+      "626149"
+    ],
+    "taluks": [
+      "Srivilliputhur",
+      "Watrap"
+    ],
+    "localities": [],
+    "lok_sabha": "Tenkasi (SC)"
+  },
+  "sulur": {
+    "name": "SULUR",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641016",
+      "641401",
+      "641402",
+      "641407",
+      "641659",
+      "641663",
+      "641668"
+    ],
+    "taluks": [
+      "Palladam"
+    ],
+    "localities": [
+      "Sulur",
+      "Irugur",
+      "Kannampalayam",
+      "Pallapalayam",
+      "Mopperipalayam",
+      "Samalapuram",
+      "Karumathampatti",
+      "Sultanpet",
+      "Somanur",
+      "Kadirampatti",
+      "Appanaickenpatti",
+      "Muthugoundenpudur",
+      "Rasipalayam"
+    ],
+    "lok_sabha": "Coimbatore"
+  },
+  "tambaram": {
+    "name": "TAMBARAM",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "600045",
+      "600046",
+      "600047",
+      "600048",
+      "600050",
+      "600059",
+      "600063",
+      "600066",
+      "600070",
+      "600071",
+      "600072",
+      "600073",
+      "600074",
+      "600091",
+      "600100",
+      "600117",
+      "600119",
+      "600126"
+    ],
+    "taluks": [
+      "Tambaram",
+      "Vandalur"
+    ],
+    "localities": [
+      "Tambaram",
+      "West / Major railway"
+    ],
+    "lok_sabha": "Sriperumbudur"
+  },
+  "tenkasi": {
+    "name": "TENKASI",
+    "district": "TENKASI",
+    "pincodes": [
+      "627802",
+      "627803",
+      "627805",
+      "627811",
+      "627814",
+      "627815",
+      "627818",
+      "627852"
+    ],
+    "taluks": [
+      "Tenkasi",
+      "Shenkottai"
+    ],
+    "localities": [],
+    "lok_sabha": "Tenkasi (SC)"
+  },
+  "thally": {
+    "name": "THALLY",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635107",
+      "635113",
+      "635114",
+      "635118",
+      "635124"
+    ],
+    "taluks": [
+      "Anchetty"
+    ],
+    "localities": [],
+    "lok_sabha": "Krishnagiri"
+  },
+  "thanjavur": {
+    "name": "THANJAVUR",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "613001",
+      "613002",
+      "613003",
+      "613004",
+      "613005",
+      "613006",
+      "613007",
+      "613008",
+      "613009",
+      "613010",
+      "613102",
+      "613303",
+      "613401",
+      "613402",
+      "613403",
+      "613501",
+      "613601",
+      "613602",
+      "614019",
+      "614206"
+    ],
+    "taluks": [
+      "Thanjavur"
+    ],
+    "localities": [],
+    "lok_sabha": "Thanjavur"
+  },
+  "thiru_vi_ka_nagar_sc": {
+    "name": "THIRU-VI-KA-NAGAR (SC)",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600007",
+      "600011",
+      "600012",
+      "600023",
+      "600039",
+      "600084",
+      "600102"
+    ],
+    "taluks": [
+      "Perambur",
+      "Ayanavaram",
+      "Purasaiwalkam"
+    ],
+    "localities": [
+      "Otteri",
+      "Pulianthope",
+      "Pattalam",
+      "Ayanavaram",
+      "Perambur",
+      "Jamalia",
+      "Mangalapuram",
+      "Rajiv Gandhi Nagar",
+      "O.C. Nagar",
+      "S. Puram"
+    ],
+    "lok_sabha": "Chennai North"
+  },
+  "thirumangalam": {
+    "name": "THIRUMANGALAM",
+    "district": "MADURAI",
+    "pincodes": [
+      "625207",
+      "625527",
+      "625701",
+      "625702",
+      "625704",
+      "625706",
+      "625707"
+    ],
+    "taluks": [
+      "Kallupatti",
+      "Urappanur",
+      "Koodakovil",
+      "Maravankulam",
+      "Kokkulam",
+      "Maittanpatti",
+      "Alappalacheri",
+      "Sources"
+    ],
+    "localities": [
+      "Toll Plaza hub)"
+    ],
+    "lok_sabha": "Virudhunagar"
+  },
+  "thirumayam": {
+    "name": "THIRUMAYAM",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "621308",
+      "622002",
+      "622201",
+      "622202",
+      "622209",
+      "622401",
+      "622402",
+      "622403",
+      "622404",
+      "622407",
+      "622408",
+      "622409",
+      "622411",
+      "622412",
+      "622422",
+      "622503",
+      "622505",
+      "622506",
+      "622507"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Sivaganga"
+  },
+  "thiruparankundram": {
+    "name": "THIRUPARANKUNDRAM",
+    "district": "MADURAI",
+    "pincodes": [
+      "625005",
+      "625006",
+      "625008",
+      "625011",
+      "625015",
+      "625022"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Madurai"
+  },
+  "thiruporur": {
+    "name": "THIRUPORUR",
+    "district": "CHENGALPATTU",
+    "pincodes": [
+      "603001",
+      "603103",
+      "603105",
+      "603108",
+      "603110",
+      "603112"
+    ],
+    "taluks": [
+      "Thiruporur",
+      "Chengalpattu"
+    ],
+    "localities": [
+      "surfing) Muttukadu"
+    ],
+    "lok_sabha": "Kancheepuram (SC)"
+  },
+  "thiruthuraipoondi_sc": {
+    "name": "THIRUTHURAIPOONDI (SC)",
+    "district": "THIRUVARUR",
+    "pincodes": [
+      "610201",
+      "610203",
+      "614702",
+      "614703",
+      "614704",
+      "614706",
+      "614710",
+      "614711",
+      "614713",
+      "614715",
+      "614716",
+      "614738"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Nagapattinam (SC)"
+  },
+  "thiruvaiyaru": {
+    "name": "THIRUVAIYARU",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "613003",
+      "613101",
+      "613102",
+      "613103",
+      "613104",
+      "613105",
+      "613201",
+      "613202",
+      "613203",
+      "613204",
+      "613205",
+      "613601",
+      "613602",
+      "614202",
+      "614203"
+    ],
+    "taluks": [
+      "Thiruvaiyaru",
+      "Budalur",
+      "Papanasam"
+    ],
+    "localities": [
+      "engineering site) Sengipatti Kalyanapuram"
+    ],
+    "lok_sabha": "Thanjavur"
+  },
+  "thiruvallur": {
+    "name": "THIRUVALLUR",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "601103",
+      "602001",
+      "602002",
+      "602003",
+      "602021",
+      "602023",
+      "602024",
+      "602025",
+      "602026",
+      "602108",
+      "631203"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Thiruvallur (SC)"
+  },
+  "thiruvaur": {
+    "name": "THIRUVARUR",
+    "district": "THIRUVARUR",
+    "pincodes": [
+      "610001",
+      "610002",
+      "610003",
+      "611101",
+      "612601",
+      "613701",
+      "613702",
+      "613703",
+      "613705"
+    ],
+    "taluks": [
+      "Koradacherry",
+      "Kodavasal"
+    ],
+    "localities": [
+      "Thiruvarur",
+      "Koradacherry",
+      "Ammayappan",
+      "Adiakkamangalam",
+      "Vijayapuram",
+      "Kattur",
+      "Pulivalam",
+      "Kidarankondan",
+      "Odambokki",
+      "Vilamal",
+      "Kamalapuram"
+    ],
+    "lok_sabha": "Nagapattinam (SC)"
+  },
+  "thiruverumbur": {
+    "name": "THIRUVERUMBUR",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "620010",
+      "620013",
+      "620014",
+      "620015",
+      "620019",
+      "620025"
+    ],
+    "taluks": [
+      "Thiruverumbur"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "thiruvidaimarudur_sc": {
+    "name": "THIRUVIDAIMARUDUR (SC)",
+    "district": "THANJAVUR",
+    "pincodes": [
+      "609807",
+      "612101",
+      "612102",
+      "612103",
+      "612104",
+      "612105",
+      "612106",
+      "612502",
+      "612503",
+      "612504"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Mayiladuthurai"
+  },
+  "thiruvottiyur": {
+    "name": "THIRUVOTTIYUR",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "600019",
+      "600021",
+      "600057",
+      "600058",
+      "600068",
+      "600081",
+      "600103"
+    ],
+    "taluks": [
+      "Thiruvottiyur",
+      "Tondiarpet",
+      "Madhavaram"
+    ],
+    "localities": [
+      "Thiruvottiyur",
+      "thermal power hub) Kathivakkam Manali"
+    ],
+    "lok_sabha": "Chennai North"
+  },
+  "thiyagarayanagar": {
+    "name": "THIYAGARAYANAGAR",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600017",
+      "600024",
+      "600026",
+      "600033",
+      "600078",
+      "600083"
+    ],
+    "taluks": [
+      "Mambalam",
+      "Guindy"
+    ],
+    "localities": [
+      "film studios) Kodambakkam"
+    ],
+    "lok_sabha": "Chennai Central"
+  },
+  "thondamuthur": {
+    "name": "THONDAMUTHUR",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "641002",
+      "641008",
+      "641010",
+      "641025",
+      "641026",
+      "641042",
+      "641109"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Pollachi"
+  },
+  "thoothukudi": {
+    "name": "THOOTHUKUDI",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628001",
+      "628002",
+      "628003",
+      "628004",
+      "628005",
+      "628006",
+      "628007",
+      "628008",
+      "628101"
+    ],
+    "taluks": [
+      "Thoothukudi"
+    ],
+    "localities": [
+      "Thoothukudi City",
+      "port hub) Polpettai",
+      "logistics point) Sankaraperi Athimarapatti"
+    ],
+    "lok_sabha": "Thoothukudi"
+  },
+  "thousand_lights": {
+    "name": "THOUSAND LIGHTS",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600006",
+      "600017",
+      "600024",
+      "600030",
+      "600031",
+      "600034",
+      "600040",
+      "600086",
+      "600094"
+    ],
+    "taluks": [
+      "Egmore",
+      "Mambalam",
+      "Guindy"
+    ],
+    "localities": [
+      "Thousand Lights",
+      "major corporate offices) Nungambakkam",
+      "ground analysis of the urban growth"
+    ],
+    "lok_sabha": "Chennai Central"
+  },
+  "thuraiyur_sc": {
+    "name": "THURAIYUR (SC)",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "621001",
+      "621002",
+      "621003",
+      "621004",
+      "621008",
+      "621010",
+      "621011",
+      "621012",
+      "621014",
+      "621206"
+    ],
+    "taluks": [],
+    "localities": [],
+    "lok_sabha": "Perambalur"
+  },
+  "tindivanam_sc": {
+    "name": "TINDIVANAM (SC)",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "604001",
+      "604002",
+      "604101",
+      "604102",
+      "604151",
+      "604152",
+      "604153",
+      "604154",
+      "604201",
+      "604202",
+      "604203",
+      "604204",
+      "604205",
+      "604206",
+      "604207",
+      "604208",
+      "604210",
+      "604301",
+      "604302",
+      "604303",
+      "604304",
+      "604305",
+      "604306",
+      "604307",
+      "605109",
+      "605652"
+    ],
+    "taluks": [
+      "Kaveripakkam",
+      "Gidangal",
+      "Marakkanam Road area",
+      "Pangalathur",
+      "Andapattu",
+      "Padiri",
+      "Roshanai",
+      "Sources"
+    ],
+    "localities": [
+      "Tindivanam",
+      "rail junction connecting Chennai",
+      "Trichy",
+      "the Mailam Bommapura Aadheenam)"
+    ],
+    "lok_sabha": "Viluppuram (SC)"
+  },
+  "tiruchendur": {
+    "name": "TIRUCHENDUR",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628008",
+      "628103",
+      "628151",
+      "628152",
+      "628201",
+      "628202",
+      "628203",
+      "628204",
+      "628205",
+      "628206",
+      "628207",
+      "628208",
+      "628209",
+      "628210",
+      "628211",
+      "628212",
+      "628213",
+      "628215",
+      "628216",
+      "628217",
+      "628218",
+      "628219",
+      "628229",
+      "628612",
+      "628614",
+      "628616",
+      "628623"
+    ],
+    "taluks": [
+      "Tiruchendur",
+      "Eral",
+      "Srivaikundam"
+    ],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Thoothukudi"
+  },
+  "tiruchengodu": {
+    "name": "TIRUCHENGODU",
+    "district": "NAMAKKAL",
+    "pincodes": [
+      "637201",
+      "637202",
+      "637205",
+      "637206",
+      "637209",
+      "637210",
+      "637211",
+      "637212",
+      "637214",
+      "637215",
+      "637304",
+      "637410",
+      "637503",
+      "638008",
+      "638183"
+    ],
+    "taluks": [
+      "Tiruchengode"
+    ],
+    "localities": [
+      "AIADMK",
+      "NTK. As a major center for the rig-building",
+      "textile industries",
+      "local issues often center on industrial power tariffs",
+      "urban infrastructure"
+    ],
+    "lok_sabha": "Namakkal"
+  },
+  "tiruchirappalli_east": {
+    "name": "TIRUCHIRAPPALLI EAST",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "620001",
+      "620002",
+      "620004",
+      "620007",
+      "620008",
+      "620009",
+      "620010",
+      "620011",
+      "620012",
+      "620013",
+      "620014",
+      "620015",
+      "620016",
+      "620017",
+      "620019",
+      "620020",
+      "620021",
+      "620022",
+      "620023",
+      "620024",
+      "621203",
+      "639101",
+      "639103",
+      "639112",
+      "639115"
+    ],
+    "taluks": [
+      "Tiruchirappalli East"
+    ],
+    "localities": [
+      "Rock Fort / Teppakulam",
+      "residential zone) Sangiliyandapuram"
+    ],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "tiruchirappalli_west": {
+    "name": "TIRUCHIRAPPALLI WEST",
+    "district": "TIRUCHIRAPPALLI",
+    "pincodes": [
+      "620001",
+      "620002",
+      "620003",
+      "620004",
+      "620005",
+      "620007",
+      "620008",
+      "620009",
+      "620010",
+      "620011",
+      "620012",
+      "620013",
+      "620014",
+      "620015",
+      "620016",
+      "620017",
+      "620018",
+      "620019",
+      "620020",
+      "620021",
+      "620022",
+      "620023",
+      "620024",
+      "620102",
+      "621203",
+      "639101",
+      "639103",
+      "639112",
+      "639115"
+    ],
+    "taluks": [
+      "Tiruchirappalli West"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruchirappalli"
+  },
+  "tiruchuli": {
+    "name": "TIRUCHULI",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626101",
+      "626106",
+      "626114",
+      "626118",
+      "626129",
+      "626607"
+    ],
+    "taluks": [
+      "Veerachozhan",
+      "Mandapasalai",
+      "Paralachi",
+      "Mallankinaru",
+      "Tamilpadi",
+      "Mukkulam",
+      "Thoppalakarai",
+      "Sources"
+    ],
+    "localities": [
+      "educational center on the Madurai-Aruppukkottai highway)"
+    ],
+    "lok_sabha": "Ramanathapuram"
+  },
+  "tirukkoyilur": {
+    "name": "TIRUKKOYILUR",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "605752",
+      "605754",
+      "605757",
+      "605759",
+      "605766",
+      "607203",
+      "607209"
+    ],
+    "taluks": [
+      "Tirukkoyilur",
+      "Kandachipuram",
+      "Thiruvennainallur"
+    ],
+    "localities": [],
+    "lok_sabha": "Viluppuram (SC)"
+  },
+  "tirunelveli": {
+    "name": "TIRUNELVELI",
+    "district": "TIRUNELVELI",
+    "pincodes": [
+      "627001",
+      "627002",
+      "627004",
+      "627006",
+      "627008",
+      "627010",
+      "627012",
+      "627201",
+      "627202",
+      "627352",
+      "627357",
+      "627358",
+      "627359",
+      "627604",
+      "627757",
+      "627803",
+      "627812",
+      "627853",
+      "627854",
+      "627855"
+    ],
+    "taluks": [
+      "Tirunelveli"
+    ],
+    "localities": [
+      "transport hub) Thachanallur",
+      "industrial zone) Pettai"
+    ],
+    "lok_sabha": "Tirunelveli"
+  },
+  "tirupattur": {
+    "name": "TIRUPATTUR",
+    "district": "TIRUPATHUR",
+    "pincodes": [
+      "635601",
+      "635602",
+      "635651",
+      "635652",
+      "635653",
+      "635654",
+      "635851"
+    ],
+    "taluks": [
+      "Andiyappanur",
+      "Asiriyar Nagar",
+      "Pudupet",
+      "Kodumampalli",
+      "Kachuvazhi",
+      "Yelagiri Foothills",
+      "Gandhipet"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "tiruppathur": {
+    "name": "TIRUPPATHUR",
+    "district": "SIVAGANGA",
+    "pincodes": [
+      "630201",
+      "630204",
+      "630210",
+      "630211",
+      "630309",
+      "630501"
+    ],
+    "taluks": [
+      "Kottaiyiruppu",
+      "Alampatti",
+      "SSKottai",
+      "Kallal",
+      "Ayyapatti"
+    ],
+    "localities": [],
+    "lok_sabha": "Sivaganga"
+  },
+  "tiruppur_north": {
+    "name": "TIRUPPUR NORTH",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "641601",
+      "641602",
+      "641603",
+      "641604",
+      "641607",
+      "641652",
+      "641666"
+    ],
+    "taluks": [
+      "Tiruppur North",
+      "Avinashi"
+    ],
+    "localities": [
+      "15-Velampalayam",
+      "Ravi Subramanian",
+      "with V. Sathyabama",
+      "urban traffic management along PN Road"
+    ],
+    "lok_sabha": "Tiruppur"
+  },
+  "tiruppur_south": {
+    "name": "TIRUPPUR SOUTH",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "641601",
+      "641604",
+      "641605",
+      "641606",
+      "641608",
+      "641664"
+    ],
+    "taluks": [
+      "Tiruppur South"
+    ],
+    "localities": [
+      "residential suburb) Veerapandi",
+      "S. Thangaraj",
+      "Veerapandi industrial belts. +1"
+    ],
+    "lok_sabha": "Tiruppur"
+  },
+  "tiruttani": {
+    "name": "TIRUTTANI",
+    "district": "THIRUVALLUR",
+    "pincodes": [
+      "602001",
+      "631201",
+      "631202",
+      "631204",
+      "631205",
+      "631206",
+      "631207",
+      "631208",
+      "631209",
+      "631210",
+      "631211",
+      "631212",
+      "631213",
+      "631301",
+      "631304"
+    ],
+    "taluks": [
+      "Podaturpet",
+      "Ammaiyarkuppam",
+      "Velanjeri",
+      "Athimanjeri",
+      "Poonimangadu",
+      "Thiruvalangadu",
+      "Suryanagaram"
+    ],
+    "localities": [
+      "weaving communities)"
+    ],
+    "lok_sabha": "Arakkonam"
+  },
+  "tiruvadanai": {
+    "name": "TIRUVADANAI",
+    "district": "RAMANATHAPURAM",
+    "pincodes": [
+      "623308",
+      "623309",
+      "623315",
+      "623401",
+      "623402",
+      "623403",
+      "623404",
+      "623406",
+      "623407",
+      "623409",
+      "623525",
+      "623531",
+      "623537",
+      "623538"
+    ],
+    "taluks": [],
+    "localities": [
+      "2026",
+      "Keerthika Muniyasamy",
+      "V. K. Raji",
+      "improving water storage in the R. S. Mangalam tank system"
+    ],
+    "lok_sabha": "Ramanathapuram"
+  },
+  "tiruvannamalai": {
+    "name": "TIRUVANNAMALAI",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "606601",
+      "606603",
+      "606604",
+      "606753",
+      "606755",
+      "606802",
+      "631701",
+      "632313"
+    ],
+    "taluks": [
+      "Naidunmangalam",
+      "Pavithiram"
+    ],
+    "localities": [],
+    "lok_sabha": "Tiruvannamalai"
+  },
+  "tittakudi_sc": {
+    "name": "TITTAKUDI (SC)",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "606105",
+      "606106",
+      "606111",
+      "606303",
+      "606304"
+    ],
+    "taluks": [
+      "Kachimayilur",
+      "Akkanur",
+      "Kilacheruvoi",
+      "Asalur",
+      "Thozhudur"
+    ],
+    "localities": [],
+    "lok_sabha": "Cuddalore"
+  },
+  "udhagamandalam": {
+    "name": "UDHAGAMANDALAM",
+    "district": "THE NILGIRIS",
+    "pincodes": [
+      "643001",
+      "643002",
+      "643003",
+      "643004",
+      "643005",
+      "643006",
+      "643007",
+      "643201",
+      "643204",
+      "643206",
+      "643209",
+      "643211",
+      "643214",
+      "643215",
+      "643216",
+      "643217",
+      "643223",
+      "643224",
+      "643233",
+      "643237",
+      "643239",
+      "643242",
+      "643243"
+    ],
+    "taluks": [
+      "Udhagamandalam",
+      "Kundah",
+      "Pandalur"
+    ],
+    "localities": [
+      "2026",
+      "M. Bhojarajan",
+      "with R. Ibrahim",
+      "tea sector challenges",
+      "the renovation of the Ooty Market"
+    ],
+    "lok_sabha": "Nilgiris (SC)"
+  },
+  "udumalaipettai": {
+    "name": "UDUMALAIPETTAI",
+    "district": "TIRUPPUR",
+    "pincodes": [
+      "642102",
+      "642112",
+      "642126",
+      "642128",
+      "642132",
+      "642154",
+      "642202",
+      "642205"
+    ],
+    "taluks": [],
+    "localities": [
+      "Udumalaipettai",
+      "Dhali",
+      "Thirumoorthy Nagar",
+      "Amaravathi Nagar",
+      "Periyakottai",
+      "Venjamadai",
+      "Kozhumam",
+      "Eripalayam",
+      "Kanakkampalayam",
+      "Kurichikottai",
+      "Thungavi",
+      "Bodipatti"
+    ],
+    "lok_sabha": "Pollachi"
+  },
+  "ulundurpettai": {
+    "name": "ULUNDURPETTAI",
+    "district": "KALLAKURICHI",
+    "pincodes": [
+      "606102",
+      "606104",
+      "606107",
+      "606201",
+      "607201",
+      "607204"
+    ],
+    "taluks": [
+      "Ulundurpettai"
+    ],
+    "localities": [
+      "2026",
+      "R. Kumaraguru",
+      "with M. Sudhakar"
+    ],
+    "lok_sabha": "Viluppuram (SC)"
+  },
+  "usilampatti": {
+    "name": "USILAMPATTI",
+    "district": "MADURAI",
+    "pincodes": [
+      "625020",
+      "625514",
+      "625527",
+      "625529",
+      "625532",
+      "625535",
+      "625537",
+      "625702",
+      "625705"
+    ],
+    "taluks": [
+      "Valandur",
+      "Nattamangalam",
+      "Doddappanayakanur",
+      "Vellalapatti",
+      "Pothampatti",
+      "Vagurani",
+      "Sources"
+    ],
+    "localities": [
+      "Kerala) Elumalai"
+    ],
+    "lok_sabha": "Theni"
+  },
+  "uthangarai_sc": {
+    "name": "UTHANGARAI (SC)",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635203",
+      "635207",
+      "635304",
+      "635306",
+      "635307"
+    ],
+    "taluks": [
+      "Anandur",
+      "Kunnathur",
+      "Pavakkal",
+      "Hanumantheertham",
+      "Pochampalli",
+      "Vanipatti"
+    ],
+    "localities": [
+      "commercial hub)"
+    ],
+    "lok_sabha": "Krishnagiri"
+  },
+  "uthiramerur": {
+    "name": "UTHIRAMERUR",
+    "district": "KANCHEEPURAM",
+    "pincodes": [
+      "603106",
+      "603107",
+      "603314",
+      "603402",
+      "603403",
+      "603406",
+      "631501",
+      "631603"
+    ],
+    "taluks": [
+      "Uthiramerur",
+      "Kancheepuram"
+    ],
+    "localities": [
+      "J. Munirathinam"
+    ],
+    "lok_sabha": "Kancheepuram (SC)"
+  },
+  "valparai_sc": {
+    "name": "VALPARAI (SC)",
+    "district": "COIMBATORE",
+    "pincodes": [
+      "642101",
+      "642103",
+      "642105",
+      "642106",
+      "642108",
+      "642117",
+      "642125",
+      "642127",
+      "642130"
+    ],
+    "taluks": [
+      "Valparai",
+      "Anaimalai"
+    ],
+    "localities": [
+      "Valparai",
+      "2026",
+      "D. Lakshmana Singh",
+      "permanent solutions for human-wildlife conflict"
+    ],
+    "lok_sabha": "Pollachi"
+  },
+  "vandavasi_sc": {
+    "name": "VANDAVASI (SC)",
+    "district": "TIRUVANNAMALAI",
+    "pincodes": [
+      "604401",
+      "604402",
+      "604403",
+      "604404",
+      "604405",
+      "604406",
+      "604408",
+      "604505",
+      "631701",
+      "632313"
+    ],
+    "taluks": [
+      "Desur",
+      "Ponnur",
+      "Salavedu",
+      "Kiledaiyalam",
+      "Mummuni",
+      "Sennavaram",
+      "Kilkodungalore",
+      "Karam"
+    ],
+    "localities": [],
+    "lok_sabha": "Arani"
+  },
+  "vaniyambadi": {
+    "name": "VANIYAMBADI",
+    "district": "TIRUPATHUR",
+    "pincodes": [
+      "635751",
+      "635752",
+      "635754",
+      "635801"
+    ],
+    "taluks": [],
+    "localities": [
+      "2026",
+      "Sayyed Farooq",
+      "Pattasu Velu",
+      "the demand for improved rail connectivity"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "vanur_sc": {
+    "name": "VANUR (SC)",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "604102",
+      "604154",
+      "605014",
+      "605101",
+      "605109",
+      "605110",
+      "605111",
+      "605501"
+    ],
+    "taluks": [
+      "Vanur",
+      "Vikravandi"
+    ],
+    "localities": [
+      "2026",
+      "science college in Vanur"
+    ],
+    "lok_sabha": "Viluppuram (SC)"
+  },
+  "vasudevanallur_sc": {
+    "name": "VASUDEVANALLUR (SC)",
+    "district": "TENKASI",
+    "pincodes": [
+      "627753",
+      "627755",
+      "627757",
+      "627758",
+      "627760"
+    ],
+    "taluks": [
+      "Sivagiri",
+      "Thiruvengadam"
+    ],
+    "localities": [
+      "2026",
+      "Ananthan Ayyasamy",
+      "R. Amudha Rani",
+      "export center in Puliyangudi"
+    ],
+    "lok_sabha": "Tenkasi (SC)"
+  },
+  "vedasandur": {
+    "name": "VEDASANDUR",
+    "district": "DINDIGUL",
+    "pincodes": [
+      "624005",
+      "624620",
+      "624702",
+      "624703",
+      "624706",
+      "624710",
+      "624711",
+      "624801"
+    ],
+    "taluks": [
+      "Vedasandur",
+      "Guziliamparai"
+    ],
+    "localities": [
+      "2026",
+      "V. P. B. Paramasivam",
+      "N. Nagajothi",
+      "ginning industries. +1"
+    ],
+    "lok_sabha": "Karur"
+  },
+  "vedharanyam": {
+    "name": "VEDARANYAM",
+    "district": "NAGAPATTINAM",
+    "pincodes": [
+      "614711",
+      "614712",
+      "614714",
+      "614806",
+      "614808",
+      "614809",
+      "614810",
+      "614812"
+    ],
+    "taluks": [],
+    "localities": [
+      "2026",
+      "A. Kingsley Gerald",
+      "modernization of the fishing harbor at Arcottuthurai",
+      "strengthening coastal embankments against seasonal storms"
+    ],
+    "lok_sabha": "Nagapattinam (SC)"
+  },
+  "veerapandi": {
+    "name": "VEERAPANDI",
+    "district": "SALEM",
+    "pincodes": [
+      "636010",
+      "636201",
+      "636202",
+      "636203",
+      "636307",
+      "636308",
+      "637501"
+    ],
+    "taluks": [
+      "Salem South",
+      "Salem"
+    ],
+    "localities": [
+      "Veerapandi",
+      "Attaiyampatti",
+      "Elampillai",
+      "Mallur",
+      "Panamarathupatti",
+      "Kondalampatti",
+      "Neykkarapatti",
+      "Andipatti",
+      "Murungapatti",
+      "Siddhanur",
+      "Vattamuthampatti",
+      "Maramangalathupatti"
+    ],
+    "lok_sabha": "Salem"
+  },
+  "velachery": {
+    "name": "VELACHERY",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600016",
+      "600020",
+      "600041",
+      "600042",
+      "600048",
+      "600054",
+      "600076",
+      "600088",
+      "600090",
+      "600113"
+    ],
+    "taluks": [
+      "Velachery",
+      "Guindy",
+      "Mylapore"
+    ],
+    "localities": [
+      "Velachery",
+      "commercial hub; includes TNHB Colony",
+      "100 Feet Road) Besant Nagar",
+      "the start of the IT corridor) Tharamani",
+      "IT hub containing Tidel Park",
+      "Indra Nagar",
+      "2026",
+      "R. Kumar",
+      "permanent solutions for monsoon flooding in south Chennai",
+      "the expansion of the MRTS rail link"
+    ],
+    "lok_sabha": "Chennai South"
+  },
+  "vellore": {
+    "name": "VELLORE",
+    "district": "VELLORE",
+    "pincodes": [
+      "632001",
+      "632002",
+      "632004",
+      "632006",
+      "632007",
+      "632008",
+      "632009",
+      "632010",
+      "632011",
+      "632012",
+      "632013",
+      "632014",
+      "632055",
+      "632057",
+      "632058",
+      "632059",
+      "632101",
+      "632102",
+      "632103",
+      "632104",
+      "632105",
+      "632106",
+      "632107",
+      "632113",
+      "632114",
+      "632204",
+      "632312",
+      "632319",
+      "632519"
+    ],
+    "taluks": [
+      "Sainathapuram",
+      "Allapuram",
+      "Salavanpet",
+      "Saidapet",
+      "Sources"
+    ],
+    "localities": [
+      "Vellore Fort Area",
+      "site of the Central Prison)"
+    ],
+    "lok_sabha": "Vellore"
+  },
+  "veppanahalli": {
+    "name": "VEPPANAHALLI",
+    "district": "KRISHNAGIRI",
+    "pincodes": [
+      "635101",
+      "635105",
+      "635115",
+      "635117",
+      "635121"
+    ],
+    "taluks": [
+      "Shoolagiri",
+      "Krishnagiri",
+      "Hosur"
+    ],
+    "localities": [
+      "Tamil Nadu",
+      "India  •  Update location"
+    ],
+    "lok_sabha": "Krishnagiri"
+  },
+  "vikravandi": {
+    "name": "VIKRAVANDI",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "605108",
+      "605203",
+      "605501",
+      "605502",
+      "605651",
+      "605652"
+    ],
+    "taluks": [
+      "Villuppuram"
+    ],
+    "localities": [
+      "Vikravandi",
+      "Anniyur",
+      "Radhapuram",
+      "Panayapuram",
+      "Mundiyampakkam",
+      "Kanai",
+      "Sathanur",
+      "Ennayiram",
+      "Brahmadesam",
+      "Nemur",
+      "Kappiyampuliyur",
+      "Thumbur",
+      "Chennai, Tamil Nadu, India  •  Update location"
+    ],
+    "lok_sabha": "Villuppuram"
+  },
+  "vilathikulam": {
+    "name": "VILATHIKULAM",
+    "district": "THOOTHUKUDI",
+    "pincodes": [
+      "628718",
+      "628901",
+      "628903",
+      "628904",
+      "628905",
+      "628906",
+      "628907"
+    ],
+    "taluks": [],
+    "localities": [
+      "historic village) Pasuvandane",
+      "salt-producing center)"
+    ],
+    "lok_sabha": "Thoothukkudi"
+  },
+  "vilavancode": {
+    "name": "VILAVANCODE",
+    "district": "KANNIYAKUMARI",
+    "pincodes": [
+      "629101",
+      "629151",
+      "629152",
+      "629153",
+      "629154",
+      "629155",
+      "629156",
+      "629157",
+      "629160",
+      "629161",
+      "629162",
+      "629163",
+      "629165",
+      "629168",
+      "629170",
+      "629171",
+      "629172",
+      "629173",
+      "629176",
+      "629177",
+      "629178",
+      "629179",
+      "629193"
+    ],
+    "taluks": [],
+    "localities": [
+      "ancient administrative center)"
+    ],
+    "lok_sabha": "Kanniyakumari"
+  },
+  "villivakkam": {
+    "name": "VILLIVAKKAM",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600012",
+      "600013",
+      "600021",
+      "600023",
+      "600038",
+      "600042",
+      "600043",
+      "600044",
+      "600049",
+      "600099",
+      "600101"
+    ],
+    "taluks": [
+      "Ayanavaram",
+      "Ambattur",
+      "Aminjikarai"
+    ],
+    "localities": [
+      "2026",
+      "the modernization of the aging sewer network in Ayanavaram",
+      "the persistent stray cattle menace on Mada streets. +1"
+    ],
+    "lok_sabha": "Chennai Central"
+  },
+  "villupuram": {
+    "name": "VILLUPURAM",
+    "district": "VILLUPPURAM",
+    "pincodes": [
+      "604102",
+      "604301",
+      "605014",
+      "605102",
+      "605103",
+      "605105",
+      "605107",
+      "605108",
+      "605111",
+      "605301",
+      "605401",
+      "605601",
+      "605602",
+      "607201"
+    ],
+    "taluks": [
+      "Sathuvachari",
+      "Keezhperumbakkam",
+      "Valudareddi",
+      "Panampattu",
+      "Mambalapattu",
+      "Kandamanadi",
+      "Salamedu",
+      "Marudur"
+    ],
+    "localities": [
+      "Villupuram Municipality",
+      "a major railway junction)"
+    ],
+    "lok_sabha": "Viluppuram (SC)"
+  },
+  "viralimalai": {
+    "name": "VIRALIMALAI",
+    "district": "PUDUKKOTTAI",
+    "pincodes": [
+      "621306",
+      "621316",
+      "622101",
+      "622511",
+      "622515"
+    ],
+    "taluks": [
+      "Illuppur",
+      "Kulathur",
+      "Manapparai"
+    ],
+    "localities": [
+      "2026",
+      "P. Murugesan",
+      "infrastructure upgrades for the Mathur industrial estate"
+    ],
+    "lok_sabha": "Karur"
+  },
+  "virudhunagar": {
+    "name": "VIRUDHUNAGAR",
+    "district": "VIRUDHUNAGAR",
+    "pincodes": [
+      "626001",
+      "626002",
+      "626003",
+      "626004",
+      "626005",
+      "626101",
+      "626102",
+      "626103",
+      "626109",
+      "626119",
+      "626130",
+      "626204"
+    ],
+    "taluks": [
+      "Virudhunagar"
+    ],
+    "localities": [
+      "known for wholesale trade in oils",
+      "spices) Allampatti",
+      "2026",
+      "Lakshmanan",
+      "S. P. Selvam"
+    ],
+    "lok_sabha": "Virudhunagar"
+  },
+  "virugampakkam": {
+    "name": "VIRUGAMPAKKAM",
+    "district": "CHENNAI",
+    "pincodes": [
+      "600078",
+      "600083",
+      "600092",
+      "600093",
+      "600107"
+    ],
+    "taluks": [
+      "Virugampakkam",
+      "Mambalam",
+      "Egmore"
+    ],
+    "localities": [
+      "2026",
+      "Nesapakkam"
+    ],
+    "lok_sabha": "Chennai South"
+  },
+  "vridhachalam": {
+    "name": "VRIDDHACHALAM",
+    "district": "CUDDALORE",
+    "pincodes": [
+      "606001",
+      "606003",
+      "606103",
+      "606110",
+      "606115",
+      "606305",
+      "607804"
+    ],
+    "taluks": [
+      "Vriddhachalam"
+    ],
+    "localities": [
+      "2026",
+      "supported by the SPA/DMK alliance) has filed her nomination",
+      "aiming to reclaim the seat her husband",
+      "the late \"Captain\" Vijayakant"
+    ],
+    "lok_sabha": "Cuddalore"
+  },
+  "yercaud_st": {
+    "name": "YERCAUD (ST)",
+    "district": "SALEM",
+    "pincodes": [
+      "636106",
+      "636118",
+      "636122",
+      "636601",
+      "636602"
+    ],
+    "taluks": [
+      "Yercaud",
+      "Vazhapadi",
+      "Salem",
+      "Attur"
+    ],
+    "localities": [
+      "orange groves) Puthur Election 2026 Context: As of April 8",
+      "2026",
+      "P. Usharani",
+      "J. Lakshmi"
+    ],
+    "lok_sabha": "Kallakurichi"
+  },
+  "madavaram": {
+    "name": "MADAVARAM",
+    "district": "CHENNAI",
+    "lok_sabha": "Chennai North",
+    "pincodes": [],
+    "taluks": [
+      "Madavaram"
+    ],
+    "localities": []
+  }
+}

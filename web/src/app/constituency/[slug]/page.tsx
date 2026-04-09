@@ -10,12 +10,14 @@ import { DistrictPanel } from "@/components/constituency/DistrictPanel";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
 import { ConstituencySkeleton } from "@/components/constituency/ConstituencySkeleton";
 import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
+import { ElectorateCard } from "@/components/constituency/ElectorateCard";
 import {
   fetchConstituencyData,
   type ConstituencyDrillData,
 } from "@/lib/constituency-fetcher";
 import { apiGet } from "@/lib/api-client";
 import constituencyMap from "@/lib/constituency-map.json";
+import electorateData2021 from "@/lib/constituency-electorate-2021.json";
 
 type MapEntry = {
   name: string;
@@ -23,6 +25,9 @@ type MapEntry = {
   district: string;
   district_slug: string;
   constituency_id: number;
+  // For constituencies whose district changed mid-history (e.g. Mayiladuthurai split Oct 2020)
+  district_pre_2021?: string;
+  district_slug_pre_2021?: string;
 };
 
 type ErrorState = {
@@ -78,6 +83,19 @@ export default function ConstituencyPage() {
     ? `${constituencyName} / ${meta.tamil_name}`
     : constituencyName;
 
+  // For constituencies whose district was bifurcated mid-history,
+  // show the district that was in effect for the selected term.
+  // e.g. Mayiladuthurai was carved from Nagapattinam in Oct 2020;
+  // 2021 elections (Apr 2021) were already in the new district.
+  const effectiveDistrict =
+    selectedTerm < 2021 && meta?.district_pre_2021
+      ? meta.district_pre_2021
+      : (meta?.district ?? "");
+  const effectiveDistrictSlug =
+    selectedTerm < 2021 && meta?.district_slug_pre_2021
+      ? meta.district_slug_pre_2021
+      : (meta?.district_slug ?? "");
+
   // Fetch constituency data (re-fetches when slug or term changes)
   useEffect(() => {
     if (!slug || !currentTermMeta.hasDrillData) { setLoading(false); return; }
@@ -130,7 +148,7 @@ export default function ConstituencyPage() {
                     ? `தமிழ்நாடு › ${data.parent_ls.ls_name_ta} (ம.தொ.) › ${constituencyName}`
                     : `Tamil Nadu › ${data.parent_ls.ls_name} (LS) › ${constituencyName}`
                   : meta
-                  ? `${meta.district} ${isTA ? "மாவட்டம்" : "District"}`
+                  ? `${effectiveDistrict} ${isTA ? "மாவட்டம்" : "District"}`
                   : "Tamil Nadu"}
               </p>
             </div>
@@ -164,6 +182,11 @@ export default function ConstituencyPage() {
             onChange={setSelectedTerm}
             lang={lang}
           />
+        )}
+
+        {/* Electorate stats — 2016, 2021 and 2026 terms */}
+        {meta && (selectedTerm === 2006 || selectedTerm === 2011 || selectedTerm === 2016 || selectedTerm === 2021 || selectedTerm === 2026) && (
+          <ElectorateCard slug={slug} year={selectedTerm as 2006 | 2011 | 2016 | 2021 | 2026} lang={lang} />
         )}
 
         {/* Loading skeleton */}
@@ -223,9 +246,20 @@ export default function ConstituencyPage() {
             )}
 
             {/* MLA card */}
-            {data.mla && (
-              <MlaCard mla={data.mla} district={meta?.district ?? ""} lang={lang} />
-            )}
+            {data.mla && (() => {
+              const e2021 = (electorateData2021 as Record<string, { winner_votes?: number; winner_pct?: number }>)[slug];
+              const winnerVotes = selectedTerm === 2021 ? e2021?.winner_votes : undefined;
+              const winnerPct   = selectedTerm === 2021 ? e2021?.winner_pct   : undefined;
+              return (
+                <MlaCard
+                  mla={data.mla!}
+                  district={effectiveDistrict}
+                  lang={lang}
+                  winnerVotes={winnerVotes}
+                  winnerPct={winnerPct}
+                />
+              );
+            })()}
 
             {/* Ward & Local Body mapping + councillors */}
             <WardPanel
@@ -242,7 +276,7 @@ export default function ConstituencyPage() {
               waterRisk={data.district_water_risk}
               crimeIndex={data.district_crime_index}
               roadSafety={data.district_road_safety}
-              districtName={meta?.district ?? ""}
+              districtName={effectiveDistrict}
               metricsScope={data.metrics_scope}
               lang={lang}
             />
@@ -259,6 +293,8 @@ export default function ConstituencyPage() {
               <a href="https://asercentre.org/aser-2024/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ASER 2024</a>
               {", "}
               <a href="https://lgdirectory.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">LGD GoI</a>
+              {", "}
+              <a href="https://elections.tn.gov.in/Form20.aspx" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-600">ECI TN 2016</a>
               {" · "}
               {isTA ? "அரசியல்ஆய்வு" : "ArasiyalAayvu"}
             </p>

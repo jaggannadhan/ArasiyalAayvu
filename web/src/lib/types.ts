@@ -18,6 +18,7 @@ export interface PincodeConstituency {
   slug: string;
   name: string;       // "Mylapore"
   name_ta: string;    // "மயிலாப்பூர்"
+  district?: string;  // "CHENNAI"
 }
 
 export interface PincodeResult {

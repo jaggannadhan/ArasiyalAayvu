@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days — photos are immutable once on GCS
     remotePatterns: [
       {
         protocol: "https",

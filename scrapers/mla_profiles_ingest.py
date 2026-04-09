@@ -44,6 +44,8 @@ try:
 except ImportError:
     firestore = None  # type: ignore[assignment]
 
+from name_utils import name_variants, canonical_name  # noqa: E402
+
 # ---------------------------------------------------------------------------
 COLLECTION   = "mla_profiles"
 BASE_URL     = "https://assembly.tn.gov.in/16thassembly"
@@ -115,22 +117,15 @@ def _parse_phones(raw: str) -> list[str]:
 
 def _name_variants(name: str) -> list[str]:
     """
-    Generate alias name variants:
-      'Mohan, M.K.' → ['Mohan, M.K.', 'M.K. Mohan', 'MK Mohan']
+    Generate alias name variants using name_utils.name_variants().
+    Handles comma-separated "Surname, Initials" format first.
     """
-    variants: list[str] = [name]
-    # If name contains a comma → "Surname, Initials" → also "Initials Surname"
+    # Normalise "Mohan, M.K." → "M.K. Mohan" before generating variants
     if ',' in name:
         parts = [p.strip() for p in name.split(',', 1)]
         if len(parts) == 2:
-            flipped = f"{parts[1]} {parts[0]}"
-            if flipped not in variants:
-                variants.append(flipped)
-            # Also without dots in initials
-            no_dots = re.sub(r'\.', '', flipped)
-            if no_dots != flipped and no_dots not in variants:
-                variants.append(no_dots)
-    return variants
+            name = f"{parts[1]} {parts[0]}"
+    return name_variants(name)
 
 
 def _constituency_slug_from_map(constituency_name: str) -> str | None:
@@ -193,6 +188,7 @@ def scrape_members() -> list[dict[str, Any]]:
         members.append({
             "doc_id":          doc_id,
             "person_name":     name,
+            "canonical_name":  canonical_name(name),
             "alias_names":     aliases,
             "parties": [
                 {

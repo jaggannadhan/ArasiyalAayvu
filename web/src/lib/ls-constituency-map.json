@@ -20,11 +20,11 @@
     "confidence": "HIGH",
     "assembly_slugs": [
       "thiruvottiyur",
-      "madhavaram",
-      "madhuravoyal",
+      "dr_radhakrishnan_nagar",
+      "royapuram",
       "perambur",
       "kolathur",
-      "villivakkam"
+      "thiru_vi_ka_nagar_sc"
     ]
   },
   "chennai_south": {
@@ -33,12 +33,12 @@
     "ls_id": 3,
     "confidence": "HIGH",
     "assembly_slugs": [
-      "royapuram",
-      "harbour",
-      "egmore_sc",
-      "chepauk_thiruvallikeni",
-      "thousand_lights",
-      "anna_nagar"
+      "virugampakkam",
+      "saidapet",
+      "thiyagarayanagar",
+      "mylapore",
+      "velachery",
+      "sholinganallur"
     ]
   },
   "chennai_central": {
@@ -47,12 +47,12 @@
     "ls_id": 4,
     "confidence": "HIGH",
     "assembly_slugs": [
-      "thiru_vi_ka_nagar_sc",
-      "dr_radhakrishnan_nagar",
-      "virugampakkam",
-      "saidapet",
-      "mylapore",
-      "velachery"
+      "villivakkam",
+      "egmore_sc",
+      "harbour",
+      "chepauk_thiruvallikeni",
+      "thousand_lights",
+      "anna_nagar"
     ]
   },
   "kancheepuram_sc": {
@@ -147,7 +147,6 @@
     "assembly_slugs": [
       "arani",
       "cheyyar",
-      "sholinganallur",
       "thiruporur",
       "cheyyur_sc",
       "madurantakam_sc"

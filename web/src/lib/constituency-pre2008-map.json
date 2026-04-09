@@ -1,0 +1,1406 @@
+{
+  "royapuram": {
+    "name": "ROYAPURAM",
+    "ac_no": 1,
+    "category": "GEN",
+    "slug": "royapuram"
+  },
+  "harbour": {
+    "name": "HARBOUR",
+    "ac_no": 2,
+    "category": "GEN",
+    "slug": "harbour"
+  },
+  "dr_radhakrishnan_nagar": {
+    "name": "DR. RADHAKRISHNAN NAGAR",
+    "ac_no": 3,
+    "category": "GEN",
+    "slug": "dr_radhakrishnan_nagar"
+  },
+  "park_town": {
+    "name": "PARK TOWN",
+    "ac_no": 4,
+    "category": "GEN",
+    "slug": "park_town"
+  },
+  "perambur": {
+    "name": "PERAMBUR",
+    "ac_no": 5,
+    "category": "SC",
+    "slug": "perambur"
+  },
+  "purasawalkam": {
+    "name": "PURASAWALKAM",
+    "ac_no": 6,
+    "category": "GEN",
+    "slug": "purasawalkam"
+  },
+  "egmore": {
+    "name": "EGMORE",
+    "ac_no": 7,
+    "category": "SC",
+    "slug": "egmore"
+  },
+  "anna_nagar": {
+    "name": "ANNA NAGAR",
+    "ac_no": 8,
+    "category": "GEN",
+    "slug": "anna_nagar"
+  },
+  "theagaraya_nagar": {
+    "name": "THEAGARAYA NAGAR",
+    "ac_no": 9,
+    "category": "GEN",
+    "slug": "theagaraya_nagar"
+  },
+  "thousand_lights": {
+    "name": "THOUSAND LIGHTS",
+    "ac_no": 10,
+    "category": "GEN",
+    "slug": "thousand_lights"
+  },
+  "chepauk": {
+    "name": "CHEPAUK",
+    "ac_no": 11,
+    "category": "GEN",
+    "slug": "chepauk"
+  },
+  "triplicane": {
+    "name": "TRIPLICANE",
+    "ac_no": 12,
+    "category": "GEN",
+    "slug": "triplicane"
+  },
+  "mylapore": {
+    "name": "MYLAPORE",
+    "ac_no": 13,
+    "category": "GEN",
+    "slug": "mylapore"
+  },
+  "saidapet": {
+    "name": "SAIDAPET",
+    "ac_no": 14,
+    "category": "GEN",
+    "slug": "saidapet"
+  },
+  "gummidipundi": {
+    "name": "GUMMIDIPUNDI",
+    "ac_no": 15,
+    "category": "GEN",
+    "slug": "gummidipundi"
+  },
+  "ponneri": {
+    "name": "PONNERI",
+    "ac_no": 16,
+    "category": "SC",
+    "slug": "ponneri"
+  },
+  "thiruvottiyur": {
+    "name": "THIRUVOTTIYUR",
+    "ac_no": 17,
+    "category": "GEN",
+    "slug": "thiruvottiyur"
+  },
+  "villivakkam": {
+    "name": "VILLIVAKKAM",
+    "ac_no": 18,
+    "category": "GEN",
+    "slug": "villivakkam"
+  },
+  "alandur": {
+    "name": "ALANDUR",
+    "ac_no": 19,
+    "category": "GEN",
+    "slug": "alandur"
+  },
+  "tambaram": {
+    "name": "TAMBARAM",
+    "ac_no": 20,
+    "category": "GEN",
+    "slug": "tambaram"
+  },
+  "tirupporur": {
+    "name": "TIRUPPORUR",
+    "ac_no": 21,
+    "category": "SC",
+    "slug": "tirupporur"
+  },
+  "chengalpattu": {
+    "name": "CHENGALPATTU",
+    "ac_no": 22,
+    "category": "GEN",
+    "slug": "chengalpattu"
+  },
+  "maduranthakam": {
+    "name": "MADURANTHAKAM",
+    "ac_no": 23,
+    "category": "GEN",
+    "slug": "maduranthakam"
+  },
+  "acharapakkam": {
+    "name": "ACHARAPAKKAM",
+    "ac_no": 24,
+    "category": "SC",
+    "slug": "acharapakkam"
+  },
+  "uthiramerur": {
+    "name": "UTHIRAMERUR",
+    "ac_no": 25,
+    "category": "GEN",
+    "slug": "uthiramerur"
+  },
+  "kancheepuram": {
+    "name": "KANCHEEPURAM",
+    "ac_no": 26,
+    "category": "GEN",
+    "slug": "kancheepuram"
+  },
+  "sriperumbudur": {
+    "name": "SRIPERUMBUDUR",
+    "ac_no": 27,
+    "category": "SC",
+    "slug": "sriperumbudur"
+  },
+  "poonamallee": {
+    "name": "POONAMALLEE",
+    "ac_no": 28,
+    "category": "GEN",
+    "slug": "poonamallee"
+  },
+  "tiruvallur": {
+    "name": "TIRUVALLUR",
+    "ac_no": 29,
+    "category": "GEN",
+    "slug": "tiruvallur"
+  },
+  "tiruttani": {
+    "name": "TIRUTTANI",
+    "ac_no": 30,
+    "category": "GEN",
+    "slug": "tiruttani"
+  },
+  "pallipet": {
+    "name": "PALLIPET",
+    "ac_no": 31,
+    "category": "GEN",
+    "slug": "pallipet"
+  },
+  "arkonam": {
+    "name": "ARKONAM",
+    "ac_no": 32,
+    "category": "SC",
+    "slug": "arkonam"
+  },
+  "sholinghur": {
+    "name": "SHOLINGHUR",
+    "ac_no": 33,
+    "category": "GEN",
+    "slug": "sholinghur"
+  },
+  "ranipet": {
+    "name": "RANIPET",
+    "ac_no": 34,
+    "category": "GEN",
+    "slug": "ranipet"
+  },
+  "arcot": {
+    "name": "ARCOT",
+    "ac_no": 35,
+    "category": "GEN",
+    "slug": "arcot"
+  },
+  "katpadi": {
+    "name": "KATPADI",
+    "ac_no": 36,
+    "category": "GEN",
+    "slug": "katpadi"
+  },
+  "gudiyatham": {
+    "name": "GUDIYATHAM",
+    "ac_no": 37,
+    "category": "GEN",
+    "slug": "gudiyatham"
+  },
+  "pernambut": {
+    "name": "PERNAMBUT",
+    "ac_no": 38,
+    "category": "SC",
+    "slug": "pernambut"
+  },
+  "vaniayambadi": {
+    "name": "VANIAYAMBADI",
+    "ac_no": 39,
+    "category": "GEN",
+    "slug": "vaniayambadi"
+  },
+  "natrampalli": {
+    "name": "NATRAMPALLI",
+    "ac_no": 40,
+    "category": "GEN",
+    "slug": "natrampalli"
+  },
+  "chengam": {
+    "name": "CHENGAM",
+    "ac_no": 42,
+    "category": "SC",
+    "slug": "chengam"
+  },
+  "thandarambattu": {
+    "name": "THANDARAMBATTU",
+    "ac_no": 43,
+    "category": "GEN",
+    "slug": "thandarambattu"
+  },
+  "tiruvannamalai": {
+    "name": "TIRUVANNAMALAI",
+    "ac_no": 44,
+    "category": "GEN",
+    "slug": "tiruvannamalai"
+  },
+  "kalasapakkam": {
+    "name": "KALASAPAKKAM",
+    "ac_no": 45,
+    "category": "GEN",
+    "slug": "kalasapakkam"
+  },
+  "polur": {
+    "name": "POLUR",
+    "ac_no": 46,
+    "category": "GEN",
+    "slug": "polur"
+  },
+  "anaicut": {
+    "name": "ANAICUT",
+    "ac_no": 47,
+    "category": "GEN",
+    "slug": "anaicut"
+  },
+  "vellore": {
+    "name": "VELLORE",
+    "ac_no": 48,
+    "category": "GEN",
+    "slug": "vellore"
+  },
+  "arni": {
+    "name": "ARNI",
+    "ac_no": 49,
+    "category": "GEN",
+    "slug": "arni"
+  },
+  "cheyyar": {
+    "name": "CHEYYAR",
+    "ac_no": 50,
+    "category": "GEN",
+    "slug": "cheyyar"
+  },
+  "vandavasi": {
+    "name": "VANDAVASI",
+    "ac_no": 51,
+    "category": "SC",
+    "slug": "vandavasi"
+  },
+  "peranamallur": {
+    "name": "PERANAMALLUR",
+    "ac_no": 52,
+    "category": "GEN",
+    "slug": "peranamallur"
+  },
+  "melmalayanur": {
+    "name": "MELMALAYANUR",
+    "ac_no": 53,
+    "category": "GEN",
+    "slug": "melmalayanur"
+  },
+  "gingee": {
+    "name": "GINGEE",
+    "ac_no": 54,
+    "category": "GEN",
+    "slug": "gingee"
+  },
+  "tindivanam": {
+    "name": "TINDIVANAM",
+    "ac_no": 55,
+    "category": "GEN",
+    "slug": "tindivanam"
+  },
+  "vanur": {
+    "name": "VANUR",
+    "ac_no": 56,
+    "category": "SC",
+    "slug": "vanur"
+  },
+  "kandamangalam": {
+    "name": "KANDAMANGALAM",
+    "ac_no": 57,
+    "category": "SC",
+    "slug": "kandamangalam"
+  },
+  "villupuram": {
+    "name": "VILLUPURAM",
+    "ac_no": 58,
+    "category": "GEN",
+    "slug": "villupuram"
+  },
+  "mugaiyur": {
+    "name": "MUGAIYUR",
+    "ac_no": 59,
+    "category": "GEN",
+    "slug": "mugaiyur"
+  },
+  "thirunavalur": {
+    "name": "THIRUNAVALUR",
+    "ac_no": 60,
+    "category": "GEN",
+    "slug": "thirunavalur"
+  },
+  "ulundurpet": {
+    "name": "ULUNDURPET",
+    "ac_no": 61,
+    "category": "SC",
+    "slug": "ulundurpet"
+  },
+  "nellikuppam": {
+    "name": "NELLIKUPPAM",
+    "ac_no": 62,
+    "category": "GEN",
+    "slug": "nellikuppam"
+  },
+  "cuddalore": {
+    "name": "CUDDALORE",
+    "ac_no": 63,
+    "category": "GEN",
+    "slug": "cuddalore"
+  },
+  "panruti": {
+    "name": "PANRUTI",
+    "ac_no": 64,
+    "category": "GEN",
+    "slug": "panruti"
+  },
+  "kurinjipadi": {
+    "name": "KURINJIPADI",
+    "ac_no": 65,
+    "category": "GEN",
+    "slug": "kurinjipadi"
+  },
+  "bhuvanagiri": {
+    "name": "BHUVANAGIRI",
+    "ac_no": 66,
+    "category": "GEN",
+    "slug": "bhuvanagiri"
+  },
+  "kattumannarkoil": {
+    "name": "KATTUMANNARKOIL",
+    "ac_no": 67,
+    "category": "SC",
+    "slug": "kattumannarkoil"
+  },
+  "chidambaram": {
+    "name": "CHIDAMBARAM",
+    "ac_no": 68,
+    "category": "GEN",
+    "slug": "chidambaram"
+  },
+  "vridhachalam": {
+    "name": "VRIDHACHALAM",
+    "ac_no": 69,
+    "category": "GEN",
+    "slug": "vridhachalam"
+  },
+  "mangalore": {
+    "name": "MANGALORE",
+    "ac_no": 70,
+    "category": "SC",
+    "slug": "mangalore"
+  },
+  "rishivandiam": {
+    "name": "RISHIVANDIAM",
+    "ac_no": 71,
+    "category": "GEN",
+    "slug": "rishivandiam"
+  },
+  "chinnasalem": {
+    "name": "CHINNASALEM",
+    "ac_no": 72,
+    "category": "GEN",
+    "slug": "chinnasalem"
+  },
+  "sankarapuram": {
+    "name": "SANKARAPURAM",
+    "ac_no": 73,
+    "category": "GEN",
+    "slug": "sankarapuram"
+  },
+  "hosur": {
+    "name": "HOSUR",
+    "ac_no": 74,
+    "category": "GEN",
+    "slug": "hosur"
+  },
+  "thalli": {
+    "name": "THALLI",
+    "ac_no": 75,
+    "category": "GEN",
+    "slug": "thalli"
+  },
+  "kaveripattinam": {
+    "name": "KAVERIPATTINAM",
+    "ac_no": 76,
+    "category": "GEN",
+    "slug": "kaveripattinam"
+  },
+  "krishnagiri": {
+    "name": "KRISHNAGIRI",
+    "ac_no": 77,
+    "category": "GEN",
+    "slug": "krishnagiri"
+  },
+  "bargur": {
+    "name": "BARGUR",
+    "ac_no": 78,
+    "category": "GEN",
+    "slug": "bargur"
+  },
+  "harur": {
+    "name": "HARUR",
+    "ac_no": 79,
+    "category": "SC",
+    "slug": "harur"
+  },
+  "morappur": {
+    "name": "MORAPPUR",
+    "ac_no": 80,
+    "category": "GEN",
+    "slug": "morappur"
+  },
+  "palacode": {
+    "name": "PALACODE",
+    "ac_no": 81,
+    "category": "GEN",
+    "slug": "palacode"
+  },
+  "dharmapuri": {
+    "name": "DHARMAPURI",
+    "ac_no": 82,
+    "category": "GEN",
+    "slug": "dharmapuri"
+  },
+  "pennagaram": {
+    "name": "PENNAGARAM",
+    "ac_no": 83,
+    "category": "GEN",
+    "slug": "pennagaram"
+  },
+  "mettur": {
+    "name": "METTUR",
+    "ac_no": 84,
+    "category": "GEN",
+    "slug": "mettur"
+  },
+  "taramangalam": {
+    "name": "TARAMANGALAM",
+    "ac_no": 85,
+    "category": "GEN",
+    "slug": "taramangalam"
+  },
+  "omalur": {
+    "name": "OMALUR",
+    "ac_no": 86,
+    "category": "GEN",
+    "slug": "omalur"
+  },
+  "yercaud": {
+    "name": "YERCAUD",
+    "ac_no": 87,
+    "category": "ST",
+    "slug": "yercaud"
+  },
+  "salem_i": {
+    "name": "SALEM-I",
+    "ac_no": 88,
+    "category": "GEN",
+    "slug": "salem_i"
+  },
+  "salem_ii": {
+    "name": "SALEM-II",
+    "ac_no": 89,
+    "category": "GEN",
+    "slug": "salem_ii"
+  },
+  "veerapandi": {
+    "name": "VEERAPANDI",
+    "ac_no": 90,
+    "category": "GEN",
+    "slug": "veerapandi"
+  },
+  "panamarathupatty": {
+    "name": "PANAMARATHUPATTY",
+    "ac_no": 91,
+    "category": "GEN",
+    "slug": "panamarathupatty"
+  },
+  "attur": {
+    "name": "ATTUR",
+    "ac_no": 92,
+    "category": "GEN",
+    "slug": "attur"
+  },
+  "talavasal": {
+    "name": "TALAVASAL",
+    "ac_no": 93,
+    "category": "SC",
+    "slug": "talavasal"
+  },
+  "rasipuram": {
+    "name": "RASIPURAM",
+    "ac_no": 94,
+    "category": "GEN",
+    "slug": "rasipuram"
+  },
+  "sendamangalam": {
+    "name": "SENDAMANGALAM",
+    "ac_no": 95,
+    "category": "ST",
+    "slug": "sendamangalam"
+  },
+  "namakkal": {
+    "name": "NAMAKKAL",
+    "ac_no": 96,
+    "category": "SC",
+    "slug": "namakkal"
+  },
+  "kapilamalai": {
+    "name": "KAPILAMALAI",
+    "ac_no": 97,
+    "category": "GEN",
+    "slug": "kapilamalai"
+  },
+  "tiruchengode": {
+    "name": "TIRUCHENGODE",
+    "ac_no": 98,
+    "category": "GEN",
+    "slug": "tiruchengode"
+  },
+  "sankari": {
+    "name": "SANKARI",
+    "ac_no": 99,
+    "category": "SC",
+    "slug": "sankari"
+  },
+  "edapadi": {
+    "name": "EDAPADI",
+    "ac_no": 100,
+    "category": "GEN",
+    "slug": "edapadi"
+  },
+  "mettupalayam": {
+    "name": "METTUPALAYAM",
+    "ac_no": 101,
+    "category": "GEN",
+    "slug": "mettupalayam"
+  },
+  "avanashi": {
+    "name": "AVANASHI",
+    "ac_no": 102,
+    "category": "SC",
+    "slug": "avanashi"
+  },
+  "thondamuthur": {
+    "name": "THONDAMUTHUR",
+    "ac_no": 103,
+    "category": "GEN",
+    "slug": "thondamuthur"
+  },
+  "singanallur": {
+    "name": "SINGANALLUR",
+    "ac_no": 104,
+    "category": "GEN",
+    "slug": "singanallur"
+  },
+  "coimbatore_west": {
+    "name": "COIMBATORE WEST",
+    "ac_no": 105,
+    "category": "GEN",
+    "slug": "coimbatore_west"
+  },
+  "coimbatore_east": {
+    "name": "COIMBATORE EAST",
+    "ac_no": 106,
+    "category": "GEN",
+    "slug": "coimbatore_east"
+  },
+  "perur": {
+    "name": "PERUR",
+    "ac_no": 107,
+    "category": "GEN",
+    "slug": "perur"
+  },
+  "kinathukkadavu": {
+    "name": "KINATHUKKADAVU",
+    "ac_no": 108,
+    "category": "GEN",
+    "slug": "kinathukkadavu"
+  },
+  "pollachi": {
+    "name": "POLLACHI",
+    "ac_no": 109,
+    "category": "GEN",
+    "slug": "pollachi"
+  },
+  "valparai": {
+    "name": "VALPARAI",
+    "ac_no": 110,
+    "category": "SC",
+    "slug": "valparai"
+  },
+  "udumalpet": {
+    "name": "UDUMALPET",
+    "ac_no": 111,
+    "category": "GEN",
+    "slug": "udumalpet"
+  },
+  "dharapuram": {
+    "name": "DHARAPURAM",
+    "ac_no": 112,
+    "category": "SC",
+    "slug": "dharapuram"
+  },
+  "vellakoil": {
+    "name": "VELLAKOIL",
+    "ac_no": 113,
+    "category": "GEN",
+    "slug": "vellakoil"
+  },
+  "pongalur": {
+    "name": "PONGALUR",
+    "ac_no": 114,
+    "category": "GEN",
+    "slug": "pongalur"
+  },
+  "palladam": {
+    "name": "PALLADAM",
+    "ac_no": 115,
+    "category": "GEN",
+    "slug": "palladam"
+  },
+  "tiruppur": {
+    "name": "TIRUPPUR",
+    "ac_no": 116,
+    "category": "GEN",
+    "slug": "tiruppur"
+  },
+  "kangayam": {
+    "name": "KANGAYAM",
+    "ac_no": 117,
+    "category": "GEN",
+    "slug": "kangayam"
+  },
+  "modakurichi": {
+    "name": "MODAKURICHI",
+    "ac_no": 118,
+    "category": "GEN",
+    "slug": "modakurichi"
+  },
+  "perundurai": {
+    "name": "PERUNDURAI",
+    "ac_no": 119,
+    "category": "GEN",
+    "slug": "perundurai"
+  },
+  "erode": {
+    "name": "ERODE",
+    "ac_no": 120,
+    "category": "GEN",
+    "slug": "erode"
+  },
+  "bhavani": {
+    "name": "BHAVANI",
+    "ac_no": 121,
+    "category": "GEN",
+    "slug": "bhavani"
+  },
+  "andhiyur": {
+    "name": "ANDHIYUR",
+    "ac_no": 122,
+    "category": "SC",
+    "slug": "andhiyur"
+  },
+  "gobichettipalayam": {
+    "name": "GOBICHETTIPALAYAM",
+    "ac_no": 123,
+    "category": "GEN",
+    "slug": "gobichettipalayam"
+  },
+  "bhavanisagar": {
+    "name": "BHAVANISAGAR",
+    "ac_no": 124,
+    "category": "GEN",
+    "slug": "bhavanisagar"
+  },
+  "sathyamangalam": {
+    "name": "SATHYAMANGALAM",
+    "ac_no": 125,
+    "category": "GEN",
+    "slug": "sathyamangalam"
+  },
+  "coonoor": {
+    "name": "COONOOR",
+    "ac_no": 126,
+    "category": "SC",
+    "slug": "coonoor"
+  },
+  "ootacamund": {
+    "name": "OOTACAMUND",
+    "ac_no": 127,
+    "category": "GEN",
+    "slug": "ootacamund"
+  },
+  "gudalur": {
+    "name": "GUDALUR",
+    "ac_no": 128,
+    "category": "GEN",
+    "slug": "gudalur"
+  },
+  "palani": {
+    "name": "PALANI",
+    "ac_no": 129,
+    "category": "SC",
+    "slug": "palani"
+  },
+  "oddanchatram": {
+    "name": "ODDANCHATRAM",
+    "ac_no": 130,
+    "category": "GEN",
+    "slug": "oddanchatram"
+  },
+  "periyakulam": {
+    "name": "PERIYAKULAM",
+    "ac_no": 131,
+    "category": "GEN",
+    "slug": "periyakulam"
+  },
+  "theni": {
+    "name": "THENI",
+    "ac_no": 132,
+    "category": "GEN",
+    "slug": "theni"
+  },
+  "bodinayakkanur": {
+    "name": "BODINAYAKKANUR",
+    "ac_no": 133,
+    "category": "GEN",
+    "slug": "bodinayakkanur"
+  },
+  "cumbum": {
+    "name": "CUMBUM",
+    "ac_no": 134,
+    "category": "GEN",
+    "slug": "cumbum"
+  },
+  "andipatti": {
+    "name": "ANDIPATTI",
+    "ac_no": 135,
+    "category": "GEN",
+    "slug": "andipatti"
+  },
+  "sedapatti": {
+    "name": "SEDAPATTI",
+    "ac_no": 136,
+    "category": "GEN",
+    "slug": "sedapatti"
+  },
+  "thirumangalam": {
+    "name": "THIRUMANGALAM",
+    "ac_no": 137,
+    "category": "GEN",
+    "slug": "thirumangalam"
+  },
+  "usilampatti": {
+    "name": "USILAMPATTI",
+    "ac_no": 138,
+    "category": "GEN",
+    "slug": "usilampatti"
+  },
+  "nilakottai": {
+    "name": "NILAKOTTAI",
+    "ac_no": 139,
+    "category": "SC",
+    "slug": "nilakottai"
+  },
+  "sholavandan": {
+    "name": "SHOLAVANDAN",
+    "ac_no": 140,
+    "category": "GEN",
+    "slug": "sholavandan"
+  },
+  "tirupparankundram": {
+    "name": "TIRUPPARANKUNDRAM",
+    "ac_no": 141,
+    "category": "GEN",
+    "slug": "tirupparankundram"
+  },
+  "madurai_west": {
+    "name": "MADURAI WEST",
+    "ac_no": 142,
+    "category": "GEN",
+    "slug": "madurai_west"
+  },
+  "madurai_central": {
+    "name": "MADURAI CENTRAL",
+    "ac_no": 143,
+    "category": "GEN",
+    "slug": "madurai_central"
+  },
+  "madurai_east": {
+    "name": "MADURAI EAST",
+    "ac_no": 144,
+    "category": "GEN",
+    "slug": "madurai_east"
+  },
+  "samayanallur": {
+    "name": "SAMAYANALLUR",
+    "ac_no": 145,
+    "category": "SC",
+    "slug": "samayanallur"
+  },
+  "melur": {
+    "name": "MELUR",
+    "ac_no": 146,
+    "category": "GEN",
+    "slug": "melur"
+  },
+  "natham": {
+    "name": "NATHAM",
+    "ac_no": 147,
+    "category": "GEN",
+    "slug": "natham"
+  },
+  "dindigul": {
+    "name": "DINDIGUL",
+    "ac_no": 148,
+    "category": "GEN",
+    "slug": "dindigul"
+  },
+  "athoor": {
+    "name": "ATHOOR",
+    "ac_no": 149,
+    "category": "GEN",
+    "slug": "athoor"
+  },
+  "vedasandur": {
+    "name": "VEDASANDUR",
+    "ac_no": 150,
+    "category": "GEN",
+    "slug": "vedasandur"
+  },
+  "aravakurichi": {
+    "name": "ARAVAKURICHI",
+    "ac_no": 151,
+    "category": "GEN",
+    "slug": "aravakurichi"
+  },
+  "karur": {
+    "name": "KARUR",
+    "ac_no": 152,
+    "category": "GEN",
+    "slug": "karur"
+  },
+  "krishnarayapuram": {
+    "name": "KRISHNARAYAPURAM",
+    "ac_no": 153,
+    "category": "SC",
+    "slug": "krishnarayapuram"
+  },
+  "marungapuri": {
+    "name": "MARUNGAPURI",
+    "ac_no": 154,
+    "category": "GEN",
+    "slug": "marungapuri"
+  },
+  "kulithalai": {
+    "name": "KULITHALAI",
+    "ac_no": 155,
+    "category": "GEN",
+    "slug": "kulithalai"
+  },
+  "thottiam": {
+    "name": "THOTTIAM",
+    "ac_no": 156,
+    "category": "GEN",
+    "slug": "thottiam"
+  },
+  "uppiliapuram": {
+    "name": "UPPILIAPURAM",
+    "ac_no": 157,
+    "category": "ST",
+    "slug": "uppiliapuram"
+  },
+  "musiri": {
+    "name": "MUSIRI",
+    "ac_no": 158,
+    "category": "GEN",
+    "slug": "musiri"
+  },
+  "lalgudi": {
+    "name": "LALGUDI",
+    "ac_no": 159,
+    "category": "GEN",
+    "slug": "lalgudi"
+  },
+  "perambalur": {
+    "name": "PERAMBALUR",
+    "ac_no": 160,
+    "category": "SC",
+    "slug": "perambalur"
+  },
+  "varahur": {
+    "name": "VARAHUR",
+    "ac_no": 161,
+    "category": "SC",
+    "slug": "varahur"
+  },
+  "ariyalur": {
+    "name": "ARIYALUR",
+    "ac_no": 162,
+    "category": "GEN",
+    "slug": "ariyalur"
+  },
+  "andimadam": {
+    "name": "ANDIMADAM",
+    "ac_no": 163,
+    "category": "GEN",
+    "slug": "andimadam"
+  },
+  "jayankondam": {
+    "name": "JAYANKONDAM",
+    "ac_no": 164,
+    "category": "GEN",
+    "slug": "jayankondam"
+  },
+  "srirangam": {
+    "name": "SRIRANGAM",
+    "ac_no": 165,
+    "category": "GEN",
+    "slug": "srirangam"
+  },
+  "tiruchirapalli_i": {
+    "name": "TIRUCHIRAPALLI-I",
+    "ac_no": 166,
+    "category": "GEN",
+    "slug": "tiruchirapalli_i"
+  },
+  "tiruchirapalli_ii": {
+    "name": "TIRUCHIRAPALLI-II",
+    "ac_no": 167,
+    "category": "GEN",
+    "slug": "tiruchirapalli_ii"
+  },
+  "thiruverambur": {
+    "name": "THIRUVERAMBUR",
+    "ac_no": 168,
+    "category": "GEN",
+    "slug": "thiruverambur"
+  },
+  "sirkali": {
+    "name": "SIRKALI",
+    "ac_no": 169,
+    "category": "SC",
+    "slug": "sirkali"
+  },
+  "poompuhar": {
+    "name": "POOMPUHAR",
+    "ac_no": 170,
+    "category": "GEN",
+    "slug": "poompuhar"
+  },
+  "mayuram": {
+    "name": "MAYURAM",
+    "ac_no": 171,
+    "category": "GEN",
+    "slug": "mayuram"
+  },
+  "kuttalam": {
+    "name": "KUTTALAM",
+    "ac_no": 172,
+    "category": "GEN",
+    "slug": "kuttalam"
+  },
+  "nannilam": {
+    "name": "NANNILAM",
+    "ac_no": 173,
+    "category": "SC",
+    "slug": "nannilam"
+  },
+  "tiruvarur": {
+    "name": "TIRUVARUR",
+    "ac_no": 174,
+    "category": "SC",
+    "slug": "tiruvarur"
+  },
+  "nagapattinam": {
+    "name": "NAGAPATTINAM",
+    "ac_no": 175,
+    "category": "GEN",
+    "slug": "nagapattinam"
+  },
+  "vedaranyam": {
+    "name": "VEDARANYAM",
+    "ac_no": 176,
+    "category": "GEN",
+    "slug": "vedaranyam"
+  },
+  "tiruthuraipundi": {
+    "name": "TIRUTHURAIPUNDI",
+    "ac_no": 177,
+    "category": "SC",
+    "slug": "tiruthuraipundi"
+  },
+  "mannargudi": {
+    "name": "MANNARGUDI",
+    "ac_no": 178,
+    "category": "GEN",
+    "slug": "mannargudi"
+  },
+  "pattukkottai": {
+    "name": "PATTUKKOTTAI",
+    "ac_no": 179,
+    "category": "GEN",
+    "slug": "pattukkottai"
+  },
+  "peravurani": {
+    "name": "PERAVURANI",
+    "ac_no": 180,
+    "category": "GEN",
+    "slug": "peravurani"
+  },
+  "orathanad": {
+    "name": "ORATHANAD",
+    "ac_no": 181,
+    "category": "GEN",
+    "slug": "orathanad"
+  },
+  "thiruvonam": {
+    "name": "THIRUVONAM",
+    "ac_no": 182,
+    "category": "GEN",
+    "slug": "thiruvonam"
+  },
+  "thanjavur": {
+    "name": "THANJAVUR",
+    "ac_no": 183,
+    "category": "GEN",
+    "slug": "thanjavur"
+  },
+  "tiruvaiyaru": {
+    "name": "TIRUVAIYARU",
+    "ac_no": 184,
+    "category": "GEN",
+    "slug": "tiruvaiyaru"
+  },
+  "papanasam": {
+    "name": "PAPANASAM",
+    "ac_no": 185,
+    "category": "GEN",
+    "slug": "papanasam"
+  },
+  "valangiman": {
+    "name": "VALANGIMAN",
+    "ac_no": 186,
+    "category": "SC",
+    "slug": "valangiman"
+  },
+  "kumbakonam": {
+    "name": "KUMBAKONAM",
+    "ac_no": 187,
+    "category": "GEN",
+    "slug": "kumbakonam"
+  },
+  "thiruvidamarudur": {
+    "name": "THIRUVIDAMARUDUR",
+    "ac_no": 188,
+    "category": "GEN",
+    "slug": "thiruvidamarudur"
+  },
+  "thirumayam": {
+    "name": "THIRUMAYAM",
+    "ac_no": 189,
+    "category": "GEN",
+    "slug": "thirumayam"
+  },
+  "kolathur": {
+    "name": "KOLATHUR",
+    "ac_no": 190,
+    "category": "SC",
+    "slug": "kolathur"
+  },
+  "pudukkottai": {
+    "name": "PUDUKKOTTAI",
+    "ac_no": 191,
+    "category": "GEN",
+    "slug": "pudukkottai"
+  },
+  "alangudi": {
+    "name": "ALANGUDI",
+    "ac_no": 192,
+    "category": "GEN",
+    "slug": "alangudi"
+  },
+  "arantangi": {
+    "name": "ARANTANGI",
+    "ac_no": 193,
+    "category": "GEN",
+    "slug": "arantangi"
+  },
+  "tiruppattur_41": {
+    "name": "TIRUPPATTUR",
+    "ac_no": 41,
+    "category": "GEN",
+    "slug": "tiruppattur_41"
+  },
+  "tiruppattur_194": {
+    "name": "TIRUPPATTUR",
+    "ac_no": 194,
+    "category": "GEN",
+    "slug": "tiruppattur_194"
+  },
+  "karaikudi": {
+    "name": "KARAIKUDI",
+    "ac_no": 195,
+    "category": "GEN",
+    "slug": "karaikudi"
+  },
+  "tiruvadanai": {
+    "name": "TIRUVADANAI",
+    "ac_no": 196,
+    "category": "GEN",
+    "slug": "tiruvadanai"
+  },
+  "ilayangudi": {
+    "name": "ILAYANGUDI",
+    "ac_no": 197,
+    "category": "GEN",
+    "slug": "ilayangudi"
+  },
+  "sivaganga": {
+    "name": "SIVAGANGA",
+    "ac_no": 198,
+    "category": "GEN",
+    "slug": "sivaganga"
+  },
+  "manamadurai": {
+    "name": "MANAMADURAI",
+    "ac_no": 199,
+    "category": "SC",
+    "slug": "manamadurai"
+  },
+  "paramakudi": {
+    "name": "PARAMAKUDI",
+    "ac_no": 200,
+    "category": "SC",
+    "slug": "paramakudi"
+  },
+  "ramanathapuram": {
+    "name": "RAMANATHAPURAM",
+    "ac_no": 201,
+    "category": "GEN",
+    "slug": "ramanathapuram"
+  },
+  "kadaladi": {
+    "name": "KADALADI",
+    "ac_no": 202,
+    "category": "GEN",
+    "slug": "kadaladi"
+  },
+  "mudukulathur": {
+    "name": "MUDUKULATHUR",
+    "ac_no": 203,
+    "category": "GEN",
+    "slug": "mudukulathur"
+  },
+  "aruppukottai": {
+    "name": "ARUPPUKOTTAI",
+    "ac_no": 204,
+    "category": "GEN",
+    "slug": "aruppukottai"
+  },
+  "sattur": {
+    "name": "SATTUR",
+    "ac_no": 205,
+    "category": "GEN",
+    "slug": "sattur"
+  },
+  "virudhunagar": {
+    "name": "VIRUDHUNAGAR",
+    "ac_no": 206,
+    "category": "GEN",
+    "slug": "virudhunagar"
+  },
+  "sivakasi": {
+    "name": "SIVAKASI",
+    "ac_no": 207,
+    "category": "GEN",
+    "slug": "sivakasi"
+  },
+  "srivilliputhur": {
+    "name": "SRIVILLIPUTHUR",
+    "ac_no": 208,
+    "category": "GEN",
+    "slug": "srivilliputhur"
+  },
+  "rajapalayam": {
+    "name": "RAJAPALAYAM",
+    "ac_no": 209,
+    "category": "SC",
+    "slug": "rajapalayam"
+  },
+  "vilathikulam": {
+    "name": "VILATHIKULAM",
+    "ac_no": 210,
+    "category": "GEN",
+    "slug": "vilathikulam"
+  },
+  "pottapidaram": {
+    "name": "POTTAPIDARAM",
+    "ac_no": 211,
+    "category": "SC",
+    "slug": "pottapidaram"
+  },
+  "koilpatti": {
+    "name": "KOILPATTI",
+    "ac_no": 212,
+    "category": "GEN",
+    "slug": "koilpatti"
+  },
+  "sankaranayanarkoil": {
+    "name": "SANKARANAYANARKOIL",
+    "ac_no": 213,
+    "category": "SC",
+    "slug": "sankaranayanarkoil"
+  },
+  "vasudevanallur": {
+    "name": "VASUDEVANALLUR",
+    "ac_no": 214,
+    "category": "SC",
+    "slug": "vasudevanallur"
+  },
+  "kadayanallur": {
+    "name": "KADAYANALLUR",
+    "ac_no": 215,
+    "category": "GEN",
+    "slug": "kadayanallur"
+  },
+  "tenkasi": {
+    "name": "TENKASI",
+    "ac_no": 216,
+    "category": "GEN",
+    "slug": "tenkasi"
+  },
+  "alangulam": {
+    "name": "ALANGULAM",
+    "ac_no": 217,
+    "category": "GEN",
+    "slug": "alangulam"
+  },
+  "tirunelveli": {
+    "name": "TIRUNELVELI",
+    "ac_no": 218,
+    "category": "GEN",
+    "slug": "tirunelveli"
+  },
+  "palayamcottai": {
+    "name": "PALAYAMCOTTAI",
+    "ac_no": 219,
+    "category": "GEN",
+    "slug": "palayamcottai"
+  },
+  "cheranmahadevi": {
+    "name": "CHERANMAHADEVI",
+    "ac_no": 220,
+    "category": "GEN",
+    "slug": "cheranmahadevi"
+  },
+  "ambasamudram": {
+    "name": "AMBASAMUDRAM",
+    "ac_no": 221,
+    "category": "GEN",
+    "slug": "ambasamudram"
+  },
+  "nanguneri": {
+    "name": "NANGUNERI",
+    "ac_no": 222,
+    "category": "GEN",
+    "slug": "nanguneri"
+  },
+  "radhapuram": {
+    "name": "RADHAPURAM",
+    "ac_no": 223,
+    "category": "GEN",
+    "slug": "radhapuram"
+  },
+  "sattangulam": {
+    "name": "SATTANGULAM",
+    "ac_no": 224,
+    "category": "GEN",
+    "slug": "sattangulam"
+  },
+  "tiruchendur": {
+    "name": "TIRUCHENDUR",
+    "ac_no": 225,
+    "category": "GEN",
+    "slug": "tiruchendur"
+  },
+  "srivaikuntam": {
+    "name": "SRIVAIKUNTAM",
+    "ac_no": 226,
+    "category": "GEN",
+    "slug": "srivaikuntam"
+  },
+  "tuticorin": {
+    "name": "TUTICORIN",
+    "ac_no": 227,
+    "category": "GEN",
+    "slug": "tuticorin"
+  },
+  "kanniyakumari": {
+    "name": "KANNIYAKUMARI",
+    "ac_no": 228,
+    "category": "GEN",
+    "slug": "kanniyakumari"
+  },
+  "nagercoil": {
+    "name": "NAGERCOIL",
+    "ac_no": 229,
+    "category": "GEN",
+    "slug": "nagercoil"
+  },
+  "colachel": {
+    "name": "COLACHEL",
+    "ac_no": 230,
+    "category": "GEN",
+    "slug": "colachel"
+  },
+  "padmanabhapuram": {
+    "name": "PADMANABHAPURAM",
+    "ac_no": 231,
+    "category": "GEN",
+    "slug": "padmanabhapuram"
+  },
+  "thiruvattar": {
+    "name": "THIRUVATTAR",
+    "ac_no": 232,
+    "category": "GEN",
+    "slug": "thiruvattar"
+  },
+  "vilavancode": {
+    "name": "VILAVANCODE",
+    "ac_no": 233,
+    "category": "GEN",
+    "slug": "vilavancode"
+  },
+  "killiyoor": {
+    "name": "KILLIYOOR",
+    "ac_no": 234,
+    "category": "GEN",
+    "slug": "killiyoor"
+  }
+}

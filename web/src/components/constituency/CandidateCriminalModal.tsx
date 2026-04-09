@@ -154,7 +154,8 @@ export function CandidateCriminalModal({
   // Use parsed case count as authoritative display count.
   // criminal_cases_total is what the candidate declared; cases.length is what
   // we could parse from the ECI affidavit text. Show whichever is available.
-  const displayTotal = hasCaseDetail ? cases.length : mla.criminal_cases_total;
+  const displayTotal = hasCaseDetail ? cases.length : (mla.criminal_cases_total ?? 0);
+  const severity = (mla.criminal_severity ?? "CLEAN") as keyof typeof SEVERITY_STYLE;
 
   return (
     <div
@@ -175,8 +176,8 @@ export function CandidateCriminalModal({
           </div>
           {/* Severity badge */}
           <div className="flex items-start gap-2 shrink-0">
-            <span className={`text-xs font-semibold px-2 py-1 rounded-lg border ${SEVERITY_STYLE[mla.criminal_severity]}`}>
-              {t.severityLabel[mla.criminal_severity]}
+            <span className={`text-xs font-semibold px-2 py-1 rounded-lg border ${SEVERITY_STYLE[severity]}`}>
+              {t.severityLabel[severity]}
             </span>
             <button
               onClick={onClose}
@@ -301,7 +302,7 @@ export function CandidateCriminalModal({
             /* Empty state — case details not yet ingested */
             <div className="px-5 py-8 space-y-4">
               {/* Aggregate summary pills */}
-              {mla.criminal_cases_total > 0 && (
+              {(mla.criminal_cases_total ?? 0) > 0 && (
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-50 border border-amber-200">
                   <span className="text-2xl">⚠</span>
                   <div>
@@ -310,13 +311,13 @@ export function CandidateCriminalModal({
                     </p>
                     <p className="text-xs text-amber-700 mt-0.5">
                       {lang === "ta"
-                        ? `தீவிரம்: ${T.ta.severityLabel[mla.criminal_severity]}`
-                        : `Severity classification: ${T.en.severityLabel[mla.criminal_severity]}`}
+                        ? `தீவிரம்: ${T.ta.severityLabel[severity]}`
+                        : `Severity classification: ${T.en.severityLabel[severity]}`}
                     </p>
                   </div>
                 </div>
               )}
-              {mla.criminal_cases_total === 0 && (
+              {(mla.criminal_cases_total ?? 0) === 0 && (
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-50 border border-emerald-200">
                   <span className="text-2xl">✓</span>
                   <p className="text-sm font-bold text-emerald-900">

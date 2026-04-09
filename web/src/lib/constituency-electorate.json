@@ -1,0 +1,2342 @@
+{
+  "gummidipoondi": {
+    "male": 127756,
+    "female": 131407,
+    "third_gender": 31,
+    "total": 259194,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 214348,
+    "poll_pct": 82.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ponneri_sc": {
+    "male": 122602,
+    "female": 124768,
+    "third_gender": 60,
+    "total": 247430,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 197648,
+    "poll_pct": 78.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruttani": {
+    "male": 135217,
+    "female": 138638,
+    "third_gender": 32,
+    "total": 273887,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 222409,
+    "poll_pct": 80.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruvallur": {
+    "male": 125393,
+    "female": 128944,
+    "third_gender": 22,
+    "total": 254359,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 206244,
+    "poll_pct": 80.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "poonamallee_sc": {
+    "male": 154104,
+    "female": 154937,
+    "third_gender": 42,
+    "total": 309083,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 239987,
+    "poll_pct": 76.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "avadi": {
+    "male": 195387,
+    "female": 191799,
+    "third_gender": 75,
+    "total": 387261,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 270732,
+    "poll_pct": 67.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "maduravoyal": {
+    "male": 199463,
+    "female": 192121,
+    "third_gender": 109,
+    "total": 391693,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 248597,
+    "poll_pct": 61.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ambattur": {
+    "male": 179372,
+    "female": 174045,
+    "third_gender": 101,
+    "total": 353518,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 229632,
+    "poll_pct": 63.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madhavaram": {
+    "male": 199588,
+    "female": 197596,
+    "third_gender": 81,
+    "total": 397265,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 268718,
+    "poll_pct": 68.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruvottiyur": {
+    "male": 143737,
+    "female": 143069,
+    "third_gender": 66,
+    "total": 286872,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 190061,
+    "poll_pct": 66.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "dr_radhakrishnan_nagar": {
+    "male": 125881,
+    "female": 129229,
+    "third_gender": 88,
+    "total": 255198,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 174015,
+    "poll_pct": 68.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "perambur": {
+    "male": 143844,
+    "female": 145019,
+    "third_gender": 38,
+    "total": 288901,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188681,
+    "poll_pct": 65.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kolathur": {
+    "male": 129587,
+    "female": 132273,
+    "third_gender": 53,
+    "total": 261913,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 168308,
+    "poll_pct": 64.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "villivakkam": {
+    "male": 124897,
+    "female": 127337,
+    "third_gender": 58,
+    "total": 252292,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 150084,
+    "poll_pct": 59.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiru_vi_ka_nagar_sc": {
+    "male": 105514,
+    "female": 109575,
+    "third_gender": 31,
+    "total": 215120,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 136450,
+    "poll_pct": 63.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "egmore_sc": {
+    "male": 94933,
+    "female": 95983,
+    "third_gender": 33,
+    "total": 190949,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 120635,
+    "poll_pct": 63.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "royapuram": {
+    "male": 91952,
+    "female": 94394,
+    "third_gender": 40,
+    "total": 186386,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 122117,
+    "poll_pct": 63.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "harbour": {
+    "male": 96017,
+    "female": 86751,
+    "third_gender": 52,
+    "total": 182820,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 104238,
+    "poll_pct": 55.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "chepauk_thiruvallikeni": {
+    "male": 111748,
+    "female": 114152,
+    "third_gender": 20,
+    "total": 225920,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 143665,
+    "poll_pct": 62.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thousand_lights": {
+    "male": 119944,
+    "female": 123364,
+    "third_gender": 78,
+    "total": 243386,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 142403,
+    "poll_pct": 60.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "anna_nagar": {
+    "male": 141481,
+    "female": 143634,
+    "third_gender": 50,
+    "total": 285165,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170281,
+    "poll_pct": 60.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "virugampakkam": {
+    "male": 144327,
+    "female": 141652,
+    "third_gender": 67,
+    "total": 286046,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171339,
+    "poll_pct": 58.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "saidapet": {
+    "male": 138982,
+    "female": 140160,
+    "third_gender": 65,
+    "total": 279207,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 168018,
+    "poll_pct": 59.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiyagarayanagar": {
+    "male": 119860,
+    "female": 120447,
+    "third_gender": 45,
+    "total": 240352,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 141982,
+    "poll_pct": 57.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mylapore": {
+    "male": 125305,
+    "female": 131697,
+    "third_gender": 30,
+    "total": 257032,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 156132,
+    "poll_pct": 59.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "velachery": {
+    "male": 148142,
+    "female": 148099,
+    "third_gender": 88,
+    "total": 296329,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175522,
+    "poll_pct": 58.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sholinganallur": {
+    "male": 291909,
+    "female": 283819,
+    "third_gender": 45,
+    "total": 575773,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 345697,
+    "poll_pct": 57.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "alandur": {
+    "male": 171127,
+    "female": 170475,
+    "third_gender": 21,
+    "total": 341623,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 216997,
+    "poll_pct": 61.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sriperumbudur_sc": {
+    "male": 148593,
+    "female": 151509,
+    "third_gender": 18,
+    "total": 300120,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 236142,
+    "poll_pct": 77.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pallavaram": {
+    "male": 202558,
+    "female": 201214,
+    "third_gender": 15,
+    "total": 403787,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 251204,
+    "poll_pct": 61.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tambaram": {
+    "male": 187337,
+    "female": 185520,
+    "third_gender": 26,
+    "total": 372883,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 235355,
+    "poll_pct": 61.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "chengalpattu": {
+    "male": 183064,
+    "female": 183238,
+    "third_gender": 43,
+    "total": 366345,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 249774,
+    "poll_pct": 67.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruporur": {
+    "male": 124994,
+    "female": 125039,
+    "third_gender": 17,
+    "total": 250050,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 201141,
+    "poll_pct": 79.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "cheyyur_sc": {
+    "male": 105633,
+    "female": 105477,
+    "third_gender": 25,
+    "total": 211135,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 169134,
+    "poll_pct": 80.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurantakam_sc": {
+    "male": 108266,
+    "female": 111642,
+    "third_gender": 20,
+    "total": 219928,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 177879,
+    "poll_pct": 81.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "uthiramerur": {
+    "male": 118391,
+    "female": 124171,
+    "third_gender": 10,
+    "total": 242572,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 198773,
+    "poll_pct": 83.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kancheepuram": {
+    "male": 144829,
+    "female": 151914,
+    "third_gender": 8,
+    "total": 296751,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 224112,
+    "poll_pct": 75.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "arakkonam_sc": {
+    "male": 106921,
+    "female": 110461,
+    "third_gender": 8,
+    "total": 217390,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 165441,
+    "poll_pct": 75.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sholinghur": {
+    "male": 126169,
+    "female": 128356,
+    "third_gender": 0,
+    "total": 254525,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 211064,
+    "poll_pct": 82.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "katpadi": {
+    "male": 111183,
+    "female": 116051,
+    "third_gender": 16,
+    "total": 227250,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 177870,
+    "poll_pct": 77.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ranipet": {
+    "male": 120480,
+    "female": 125830,
+    "third_gender": 0,
+    "total": 246310,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 190742,
+    "poll_pct": 77.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "arcot": {
+    "male": 119576,
+    "female": 124550,
+    "third_gender": 1,
+    "total": 244127,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 203392,
+    "poll_pct": 82.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vellore": {
+    "male": 121292,
+    "female": 126322,
+    "third_gender": 14,
+    "total": 247628,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171279,
+    "poll_pct": 68.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "anaikattu": {
+    "male": 112424,
+    "female": 115824,
+    "third_gender": 1,
+    "total": 228249,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 181622,
+    "poll_pct": 78.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kilvaithinankuppam_sc": {
+    "male": 101558,
+    "female": 102732,
+    "third_gender": 8,
+    "total": 204298,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 165226,
+    "poll_pct": 80.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gudiyattam_sc": {
+    "male": 128632,
+    "female": 131980,
+    "third_gender": 0,
+    "total": 260612,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 194988,
+    "poll_pct": 74.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vaniyambadi": {
+    "male": 112441,
+    "female": 111438,
+    "third_gender": 4,
+    "total": 223883,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 172638,
+    "poll_pct": 77.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ambur": {
+    "male": 103489,
+    "female": 106942,
+    "third_gender": 2,
+    "total": 210433,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 161075,
+    "poll_pct": 75.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "jolarpet": {
+    "male": 110839,
+    "female": 111306,
+    "third_gender": 1,
+    "total": 222146,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 181084,
+    "poll_pct": 81.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tirupattur": {
+    "male": 113244,
+    "female": 112925,
+    "third_gender": 10,
+    "total": 226179,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 177843,
+    "poll_pct": 79.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "uthangarai_sc": {
+    "male": 110361,
+    "female": 107409,
+    "third_gender": 22,
+    "total": 217792,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 180616,
+    "poll_pct": 82.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "bargur": {
+    "male": 113613,
+    "female": 112976,
+    "third_gender": 14,
+    "total": 226603,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188056,
+    "poll_pct": 82.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "krishnagiri": {
+    "male": 120646,
+    "female": 123814,
+    "third_gender": 27,
+    "total": 244487,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 200092,
+    "poll_pct": 80.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "veppanahalli": {
+    "male": 116414,
+    "female": 110513,
+    "third_gender": 10,
+    "total": 226937,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 193325,
+    "poll_pct": 84.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "hosur": {
+    "male": 153794,
+    "female": 142934,
+    "third_gender": 51,
+    "total": 296779,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 215231,
+    "poll_pct": 71.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thally": {
+    "male": 118401,
+    "female": 110104,
+    "third_gender": 7,
+    "total": 228512,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189350,
+    "poll_pct": 82.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "palacode": {
+    "male": 108694,
+    "female": 102652,
+    "third_gender": 9,
+    "total": 211355,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188767,
+    "poll_pct": 88.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pennagaram": {
+    "male": 117529,
+    "female": 108720,
+    "third_gender": 5,
+    "total": 226254,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 199635,
+    "poll_pct": 88.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "dharmapuri": {
+    "male": 126909,
+    "female": 123357,
+    "third_gender": 67,
+    "total": 250333,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 207476,
+    "poll_pct": 82.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pappireddipatti": {
+    "male": 123283,
+    "female": 119854,
+    "third_gender": 3,
+    "total": 243140,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 208754,
+    "poll_pct": 85.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "harur_sc": {
+    "male": 114452,
+    "female": 110773,
+    "third_gender": 6,
+    "total": 225231,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 190134,
+    "poll_pct": 84.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "chengam_sc": {
+    "male": 124497,
+    "female": 123644,
+    "third_gender": 2,
+    "total": 248143,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 210403,
+    "poll_pct": 84.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruvannamalai": {
+    "male": 125018,
+    "female": 130321,
+    "third_gender": 14,
+    "total": 255353,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 203825,
+    "poll_pct": 79.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kilpennathur": {
+    "male": 116161,
+    "female": 117941,
+    "third_gender": 2,
+    "total": 234104,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 197287,
+    "poll_pct": 84.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kalasapakkam": {
+    "male": 108803,
+    "female": 109756,
+    "third_gender": 6,
+    "total": 218565,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 185859,
+    "poll_pct": 84.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "polur": {
+    "male": 112050,
+    "female": 113516,
+    "third_gender": 0,
+    "total": 225566,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 195714,
+    "poll_pct": 85.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "arani": {
+    "male": 125181,
+    "female": 130570,
+    "third_gender": 1,
+    "total": 255752,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 209545,
+    "poll_pct": 81.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "cheyyar": {
+    "male": 120246,
+    "female": 123460,
+    "third_gender": 3,
+    "total": 243709,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 205813,
+    "poll_pct": 84.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vandavasi_sc": {
+    "male": 112069,
+    "female": 111168,
+    "third_gender": 4,
+    "total": 223241,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 181476,
+    "poll_pct": 81.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gingee": {
+    "male": 124198,
+    "female": 125963,
+    "third_gender": 30,
+    "total": 250191,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 201024,
+    "poll_pct": 80.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mailam": {
+    "male": 105780,
+    "female": 105156,
+    "third_gender": 14,
+    "total": 210950,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171211,
+    "poll_pct": 81.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tindivanam_sc": {
+    "male": 109231,
+    "female": 111275,
+    "third_gender": 4,
+    "total": 220510,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175150,
+    "poll_pct": 78.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vanur_sc": {
+    "male": 109247,
+    "female": 111031,
+    "third_gender": 15,
+    "total": 220293,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 174428,
+    "poll_pct": 78.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "villupuram": {
+    "male": 120863,
+    "female": 124205,
+    "third_gender": 42,
+    "total": 245110,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188964,
+    "poll_pct": 76.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vikravandi": {
+    "male": 108834,
+    "female": 108318,
+    "third_gender": 22,
+    "total": 217174,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 178637,
+    "poll_pct": 81.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tirukkoyilur": {
+    "male": 120927,
+    "female": 117358,
+    "third_gender": 33,
+    "total": 238318,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188438,
+    "poll_pct": 78.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ulundurpettai": {
+    "male": 138048,
+    "female": 134479,
+    "third_gender": 42,
+    "total": 272569,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 227476,
+    "poll_pct": 82.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "rishivandiyam": {
+    "male": 126403,
+    "female": 120689,
+    "third_gender": 60,
+    "total": 247152,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 196697,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sankarapuram": {
+    "male": 126444,
+    "female": 125491,
+    "third_gender": 36,
+    "total": 251971,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 203295,
+    "poll_pct": 81.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kallakurichi_sc": {
+    "male": 132742,
+    "female": 131649,
+    "third_gender": 22,
+    "total": 264413,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 213719,
+    "poll_pct": 80.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gangavalli_sc": {
+    "male": 106868,
+    "female": 110705,
+    "third_gender": 22,
+    "total": 217595,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175981,
+    "poll_pct": 80.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "attur_sc": {
+    "male": 113790,
+    "female": 118880,
+    "third_gender": 11,
+    "total": 232681,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186788,
+    "poll_pct": 79.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "yercaud_st": {
+    "male": 128036,
+    "female": 130708,
+    "third_gender": 14,
+    "total": 258758,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 222566,
+    "poll_pct": 85.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "omalur": {
+    "male": 138074,
+    "female": 128071,
+    "third_gender": 19,
+    "total": 266164,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 227295,
+    "poll_pct": 85.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mettur": {
+    "male": 134788,
+    "female": 128045,
+    "third_gender": 16,
+    "total": 262849,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 207574,
+    "poll_pct": 78.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "edappadi": {
+    "male": 134495,
+    "female": 127192,
+    "third_gender": 25,
+    "total": 261712,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 225644,
+    "poll_pct": 86.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sankari": {
+    "male": 130894,
+    "female": 125540,
+    "third_gender": 37,
+    "total": 256471,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 215863,
+    "poll_pct": 84.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "salem_west": {
+    "male": 136343,
+    "female": 134270,
+    "third_gender": 28,
+    "total": 270641,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 202478,
+    "poll_pct": 74.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "salem_north": {
+    "male": 132117,
+    "female": 135467,
+    "third_gender": 40,
+    "total": 267624,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 191820,
+    "poll_pct": 72.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "salem_south": {
+    "male": 130200,
+    "female": 133718,
+    "third_gender": 39,
+    "total": 263957,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 197889,
+    "poll_pct": 75.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "veerapandi": {
+    "male": 120787,
+    "female": 117725,
+    "third_gender": 20,
+    "total": 238532,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 206718,
+    "poll_pct": 86.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "rasipuram_sc": {
+    "male": 110150,
+    "female": 112500,
+    "third_gender": 0,
+    "total": 222650,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186869,
+    "poll_pct": 84.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "senthamangalam_st": {
+    "male": 114890,
+    "female": 118018,
+    "third_gender": 8,
+    "total": 232916,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189917,
+    "poll_pct": 82.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "namakkal": {
+    "male": 119351,
+    "female": 124508,
+    "third_gender": 33,
+    "total": 243892,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 194441,
+    "poll_pct": 80.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "paramathivelur": {
+    "male": 102578,
+    "female": 108252,
+    "third_gender": 5,
+    "total": 210835,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175306,
+    "poll_pct": 84.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruchengodu": {
+    "male": 107411,
+    "female": 110683,
+    "third_gender": 33,
+    "total": 218127,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 176564,
+    "poll_pct": 81.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kumarapalayam": {
+    "male": 115517,
+    "female": 116875,
+    "third_gender": 22,
+    "total": 232414,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186652,
+    "poll_pct": 80.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "erode_east": {
+    "male": 105868,
+    "female": 108722,
+    "third_gender": 2,
+    "total": 214592,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 148018,
+    "poll_pct": 69.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "erode_west": {
+    "male": 126659,
+    "female": 128300,
+    "third_gender": 44,
+    "total": 255003,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189367,
+    "poll_pct": 73.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "modakkurichi": {
+    "male": 107951,
+    "female": 113984,
+    "third_gender": 22,
+    "total": 221957,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 176676,
+    "poll_pct": 79.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "perundurai": {
+    "male": 103624,
+    "female": 107247,
+    "third_gender": 0,
+    "total": 210871,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 182263,
+    "poll_pct": 85.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "bhavani": {
+    "male": 112925,
+    "female": 113015,
+    "third_gender": 5,
+    "total": 225945,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188950,
+    "poll_pct": 82.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "anthiyur": {
+    "male": 102914,
+    "female": 102857,
+    "third_gender": 17,
+    "total": 205788,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 169581,
+    "poll_pct": 81.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gobichettipalayam": {
+    "male": 118087,
+    "female": 123105,
+    "third_gender": 6,
+    "total": 241198,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 204628,
+    "poll_pct": 84.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "bhavanisagar_sc": {
+    "male": 118032,
+    "female": 119552,
+    "third_gender": 16,
+    "total": 237600,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 196551,
+    "poll_pct": 82.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "dharapuram_sc": {
+    "male": 117235,
+    "female": 119582,
+    "third_gender": 6,
+    "total": 236823,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 182911,
+    "poll_pct": 76.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kangayam": {
+    "male": 114236,
+    "female": 117489,
+    "third_gender": 17,
+    "total": 231742,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 184428,
+    "poll_pct": 78.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "avanashi_sc": {
+    "male": 123174,
+    "female": 125527,
+    "third_gender": 18,
+    "total": 248719,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 194062,
+    "poll_pct": 77.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruppur_north": {
+    "male": 168637,
+    "female": 157585,
+    "third_gender": 55,
+    "total": 326277,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 219761,
+    "poll_pct": 66.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruppur_south": {
+    "male": 126409,
+    "female": 120105,
+    "third_gender": 27,
+    "total": 246541,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 164166,
+    "poll_pct": 66.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "palladam": {
+    "male": 164970,
+    "female": 160244,
+    "third_gender": 24,
+    "total": 325238,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 237966,
+    "poll_pct": 71.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "udumalaipettai": {
+    "male": 122940,
+    "female": 127589,
+    "third_gender": 18,
+    "total": 250547,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 182917,
+    "poll_pct": 73.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madathukulam": {
+    "male": 111428,
+    "female": 113009,
+    "third_gender": 10,
+    "total": 224447,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171544,
+    "poll_pct": 76.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "udhagamandalam": {
+    "male": 97290,
+    "female": 102848,
+    "third_gender": 0,
+    "total": 200138,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 140155,
+    "poll_pct": 69.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gudalur_sc": {
+    "male": 87933,
+    "female": 90209,
+    "third_gender": 0,
+    "total": 178142,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 131095,
+    "poll_pct": 72.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "coonoor": {
+    "male": 89637,
+    "female": 95937,
+    "third_gender": 0,
+    "total": 185574,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 134870,
+    "poll_pct": 71.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mettupalayam": {
+    "male": 135008,
+    "female": 138698,
+    "third_gender": 22,
+    "total": 273728,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 210761,
+    "poll_pct": 75.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sulur": {
+    "male": 138701,
+    "female": 140989,
+    "third_gender": 32,
+    "total": 279722,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 213121,
+    "poll_pct": 75.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kavundampalayam": {
+    "male": 203959,
+    "female": 202351,
+    "third_gender": 39,
+    "total": 406349,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 272400,
+    "poll_pct": 66.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "coimbatore_north": {
+    "male": 152754,
+    "female": 149586,
+    "third_gender": 13,
+    "total": 302353,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188882,
+    "poll_pct": 62.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thondamuthur": {
+    "male": 146179,
+    "female": 145552,
+    "third_gender": 38,
+    "total": 291769,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 199100,
+    "poll_pct": 67.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "coimbatore_south": {
+    "male": 121563,
+    "female": 121272,
+    "third_gender": 34,
+    "total": 242869,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 153533,
+    "poll_pct": 62.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "singanallur": {
+    "male": 153073,
+    "female": 151494,
+    "third_gender": 24,
+    "total": 304591,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188531,
+    "poll_pct": 61.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kinathukadavu": {
+    "male": 145595,
+    "female": 147819,
+    "third_gender": 18,
+    "total": 293432,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 207989,
+    "poll_pct": 70.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pollachi": {
+    "male": 105497,
+    "female": 110587,
+    "third_gender": 13,
+    "total": 216097,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 168616,
+    "poll_pct": 77.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "valparai_sc": {
+    "male": 95609,
+    "female": 100161,
+    "third_gender": 10,
+    "total": 195780,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 143743,
+    "poll_pct": 73.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "palani": {
+    "male": 128051,
+    "female": 129467,
+    "third_gender": 28,
+    "total": 257546,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 197474,
+    "poll_pct": 76.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "oddanchatram": {
+    "male": 110979,
+    "female": 112643,
+    "third_gender": 6,
+    "total": 223628,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189414,
+    "poll_pct": 84.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "athoor": {
+    "male": 131878,
+    "female": 138054,
+    "third_gender": 16,
+    "total": 269948,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 229252,
+    "poll_pct": 85.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "nilakkottai_sc": {
+    "male": 107641,
+    "female": 108698,
+    "third_gender": 5,
+    "total": 216344,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 174541,
+    "poll_pct": 79.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "natham": {
+    "male": 127879,
+    "female": 130553,
+    "third_gender": 40,
+    "total": 258472,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 207011,
+    "poll_pct": 80.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "dindigul": {
+    "male": 121402,
+    "female": 125796,
+    "third_gender": 40,
+    "total": 247238,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 185419,
+    "poll_pct": 74.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vedasandur": {
+    "male": 122090,
+    "female": 124801,
+    "third_gender": 5,
+    "total": 246896,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 198558,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "aravakurichi": {
+    "male": 96481,
+    "female": 101953,
+    "third_gender": 0,
+    "total": 198434,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 164945,
+    "poll_pct": 96.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "karur": {
+    "male": 110871,
+    "female": 120336,
+    "third_gender": 2,
+    "total": 231209,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186813,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "krishnarayapuram_sc": {
+    "male": 99901,
+    "female": 102986,
+    "third_gender": 26,
+    "total": 202913,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 168559,
+    "poll_pct": 83.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kulithalai": {
+    "male": 102649,
+    "female": 105141,
+    "third_gender": 2,
+    "total": 207792,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 184076,
+    "poll_pct": 88.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "manapparai": {
+    "male": 129744,
+    "female": 132107,
+    "third_gender": 5,
+    "total": 261856,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 205956,
+    "poll_pct": 78.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "srirangam": {
+    "male": 137331,
+    "female": 143713,
+    "third_gender": 19,
+    "total": 281063,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 225389,
+    "poll_pct": 79.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruchirappalli_west": {
+    "male": 123373,
+    "female": 130172,
+    "third_gender": 6,
+    "total": 253551,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 179423,
+    "poll_pct": 70.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruchirappalli_east": {
+    "male": 117721,
+    "female": 123015,
+    "third_gender": 31,
+    "total": 240767,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 166985,
+    "poll_pct": 68.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruverumbur": {
+    "male": 132904,
+    "female": 134584,
+    "third_gender": 39,
+    "total": 267527,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 182968,
+    "poll_pct": 68.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "lalgudi": {
+    "male": 98619,
+    "female": 102605,
+    "third_gender": 12,
+    "total": 201236,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 166554,
+    "poll_pct": 81.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "manachanallur": {
+    "male": 106340,
+    "female": 110830,
+    "third_gender": 8,
+    "total": 217178,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 179968,
+    "poll_pct": 82.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "musiri": {
+    "male": 104245,
+    "female": 107267,
+    "third_gender": 0,
+    "total": 211512,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170909,
+    "poll_pct": 80.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thuraiyur_sc": {
+    "male": 102648,
+    "female": 107863,
+    "third_gender": 0,
+    "total": 210511,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 169329,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "perambalur_sc": {
+    "male": 135127,
+    "female": 140792,
+    "third_gender": 13,
+    "total": 275932,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 223273,
+    "poll_pct": 80.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kunnam": {
+    "male": 126996,
+    "female": 127889,
+    "third_gender": 11,
+    "total": 254896,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 205044,
+    "poll_pct": 80.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ariyalur": {
+    "male": 123253,
+    "female": 124222,
+    "third_gender": 0,
+    "total": 247475,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 211078,
+    "poll_pct": 84.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "jayankondam": {
+    "male": 123751,
+    "female": 126508,
+    "third_gender": 0,
+    "total": 250259,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 204038,
+    "poll_pct": 81.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tittakudi_sc": {
+    "male": 102778,
+    "female": 104126,
+    "third_gender": 5,
+    "total": 206909,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 160176,
+    "poll_pct": 77.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vridhachalam": {
+    "male": 117662,
+    "female": 114859,
+    "third_gender": 10,
+    "total": 232531,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 185125,
+    "poll_pct": 79.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "neyveli": {
+    "male": 101484,
+    "female": 98768,
+    "third_gender": 8,
+    "total": 200260,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 159241,
+    "poll_pct": 79.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "panruti": {
+    "male": 111968,
+    "female": 114612,
+    "third_gender": 10,
+    "total": 226590,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 185465,
+    "poll_pct": 82.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "cuddalore": {
+    "male": 111492,
+    "female": 117024,
+    "third_gender": 22,
+    "total": 228538,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 172688,
+    "poll_pct": 74.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kurinjipadi": {
+    "male": 111020,
+    "female": 110844,
+    "third_gender": 4,
+    "total": 221868,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188205,
+    "poll_pct": 84.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "bhuvanagiri": {
+    "male": 120411,
+    "female": 118387,
+    "third_gender": 0,
+    "total": 238798,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 190854,
+    "poll_pct": 79.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "chidambaram": {
+    "male": 113307,
+    "female": 114852,
+    "third_gender": 7,
+    "total": 228166,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170619,
+    "poll_pct": 74.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kattumannarkoil_sc": {
+    "male": 107251,
+    "female": 103431,
+    "third_gender": 5,
+    "total": 210687,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 165186,
+    "poll_pct": 77.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sirkazhi_sc": {
+    "male": 114991,
+    "female": 116847,
+    "third_gender": 4,
+    "total": 231842,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 177685,
+    "poll_pct": 76.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mayiladuthurai": {
+    "male": 117288,
+    "female": 116789,
+    "third_gender": 2,
+    "total": 234079,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 168856,
+    "poll_pct": 72.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "poompuhar": {
+    "male": 128434,
+    "female": 128277,
+    "third_gender": 2,
+    "total": 256713,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 192758,
+    "poll_pct": 75.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "nagapattinam": {
+    "male": 90714,
+    "female": 93466,
+    "third_gender": 1,
+    "total": 184181,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 134439,
+    "poll_pct": 73.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kilvelur": {
+    "male": 81038,
+    "female": 82151,
+    "third_gender": 0,
+    "total": 163189,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 137929,
+    "poll_pct": 84.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vedharanyam": {
+    "male": 89893,
+    "female": 91893,
+    "third_gender": 1,
+    "total": 181787,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 146803,
+    "poll_pct": 81.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruthuraipoondi_sc": {
+    "male": 110978,
+    "female": 111401,
+    "third_gender": 1,
+    "total": 222380,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175620,
+    "poll_pct": 78.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mannargudi": {
+    "male": 119176,
+    "female": 121721,
+    "third_gender": 2,
+    "total": 240899,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 187110,
+    "poll_pct": 77.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruvaur": {
+    "male": 125424,
+    "female": 127029,
+    "third_gender": 13,
+    "total": 252466,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 196795,
+    "poll_pct": 77.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "nannilam": {
+    "male": 128719,
+    "female": 124376,
+    "third_gender": 1,
+    "total": 253096,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 204154,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruvidaimarudur_sc": {
+    "male": 118104,
+    "female": 115412,
+    "third_gender": 3,
+    "total": 233519,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 184929,
+    "poll_pct": 79.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kumbakonam": {
+    "male": 122254,
+    "female": 123817,
+    "third_gender": 0,
+    "total": 246071,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188827,
+    "poll_pct": 76.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "papanasam": {
+    "male": 118172,
+    "female": 119943,
+    "third_gender": 4,
+    "total": 238119,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 182548,
+    "poll_pct": 76.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruvaiyaru": {
+    "male": 122613,
+    "female": 125575,
+    "third_gender": 0,
+    "total": 248188,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 203030,
+    "poll_pct": 81.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thanjavur": {
+    "male": 129579,
+    "female": 136659,
+    "third_gender": 5,
+    "total": 266243,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186444,
+    "poll_pct": 69.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "orathanadu": {
+    "male": 111531,
+    "female": 114569,
+    "third_gender": 4,
+    "total": 226104,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 180023,
+    "poll_pct": 79.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pattukkottai": {
+    "male": 109221,
+    "female": 117279,
+    "third_gender": 18,
+    "total": 226518,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 165890,
+    "poll_pct": 73.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "peravurani": {
+    "male": 101317,
+    "female": 103085,
+    "third_gender": 5,
+    "total": 204407,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 161897,
+    "poll_pct": 78.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "gandarvakottai_sc": {
+    "male": 94053,
+    "female": 90516,
+    "third_gender": 7,
+    "total": 184576,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 146090,
+    "poll_pct": 78.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "viralimalai": {
+    "male": 100114,
+    "female": 98986,
+    "third_gender": 3,
+    "total": 199103,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170448,
+    "poll_pct": 84.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "pudukkottai": {
+    "male": 111636,
+    "female": 114386,
+    "third_gender": 7,
+    "total": 226029,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170282,
+    "poll_pct": 74.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thirumayam": {
+    "male": 101468,
+    "female": 104038,
+    "third_gender": 0,
+    "total": 205506,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 158768,
+    "poll_pct": 76.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "alangudi": {
+    "male": 98130,
+    "female": 98369,
+    "third_gender": 3,
+    "total": 196502,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 158096,
+    "poll_pct": 79.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "aranthangi": {
+    "male": 106286,
+    "female": 105178,
+    "third_gender": 3,
+    "total": 211467,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 154597,
+    "poll_pct": 72.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "karaikudi": {
+    "male": 140223,
+    "female": 142228,
+    "third_gender": 9,
+    "total": 282460,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 201355,
+    "poll_pct": 70.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruppathur": {
+    "male": 131982,
+    "female": 133930,
+    "third_gender": 3,
+    "total": 265915,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 198690,
+    "poll_pct": 74.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sivaganga": {
+    "male": 134446,
+    "female": 136662,
+    "third_gender": 0,
+    "total": 271108,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189342,
+    "poll_pct": 69.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "manamadurai_sc": {
+    "male": 126074,
+    "female": 127611,
+    "third_gender": 3,
+    "total": 253688,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 185522,
+    "poll_pct": 72.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "melur": {
+    "male": 116060,
+    "female": 118069,
+    "third_gender": 0,
+    "total": 234129,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 172501,
+    "poll_pct": 74.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurai_east": {
+    "male": 141689,
+    "female": 144500,
+    "third_gender": 22,
+    "total": 286211,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 214473,
+    "poll_pct": 74.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sholavandan_sc": {
+    "male": 102066,
+    "female": 104709,
+    "third_gender": 2,
+    "total": 206777,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 166324,
+    "poll_pct": 80.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurai_north": {
+    "male": 114962,
+    "female": 118698,
+    "third_gender": 17,
+    "total": 233677,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 154368,
+    "poll_pct": 66.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurai_south": {
+    "male": 109320,
+    "female": 110934,
+    "third_gender": 5,
+    "total": 220259,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 146611,
+    "poll_pct": 66.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurai_central": {
+    "male": 115615,
+    "female": 118891,
+    "third_gender": 5,
+    "total": 234511,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 151982,
+    "poll_pct": 65.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "madurai_west": {
+    "male": 139491,
+    "female": 139933,
+    "third_gender": 0,
+    "total": 279424,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 184180,
+    "poll_pct": 65.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thiruparankundram": {
+    "male": 139832,
+    "female": 139445,
+    "third_gender": 22,
+    "total": 279299,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 197480,
+    "poll_pct": 70.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thirumangalam": {
+    "male": 127962,
+    "female": 133187,
+    "third_gender": 4,
+    "total": 261153,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 204004,
+    "poll_pct": 78.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "usilampatti": {
+    "male": 135313,
+    "female": 133787,
+    "third_gender": 3,
+    "total": 269103,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 201126,
+    "poll_pct": 74.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "andipatti": {
+    "male": 126270,
+    "female": 126462,
+    "third_gender": 15,
+    "total": 252747,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 198609,
+    "poll_pct": 78.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "periyakulam_sc": {
+    "male": 127937,
+    "female": 130131,
+    "third_gender": 77,
+    "total": 258145,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 193010,
+    "poll_pct": 74.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "bodinayakkanur": {
+    "male": 127706,
+    "female": 129381,
+    "third_gender": 11,
+    "total": 257098,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 201579,
+    "poll_pct": 78.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "cumbum": {
+    "male": 129304,
+    "female": 132818,
+    "third_gender": 25,
+    "total": 262147,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 194082,
+    "poll_pct": 73.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "rajapalayam": {
+    "male": 109280,
+    "female": 112487,
+    "third_gender": 21,
+    "total": 221788,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 170688,
+    "poll_pct": 76.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "srivilliputhur_sc": {
+    "male": 113641,
+    "female": 116700,
+    "third_gender": 27,
+    "total": 230368,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 178630,
+    "poll_pct": 76.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sattur": {
+    "male": 109369,
+    "female": 112889,
+    "third_gender": 13,
+    "total": 222271,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175939,
+    "poll_pct": 78.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sivakasi": {
+    "male": 115320,
+    "female": 119093,
+    "third_gender": 19,
+    "total": 234432,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 175702,
+    "poll_pct": 73.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "virudhunagar": {
+    "male": 102060,
+    "female": 103792,
+    "third_gender": 35,
+    "total": 205887,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 153347,
+    "poll_pct": 73.6,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "aruppukottai": {
+    "male": 100543,
+    "female": 104421,
+    "third_gender": 12,
+    "total": 204976,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 164909,
+    "poll_pct": 79.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruchuli": {
+    "male": 101517,
+    "female": 103796,
+    "third_gender": 5,
+    "total": 205318,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 167742,
+    "poll_pct": 81.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "paramakudi_sc": {
+    "male": 122894,
+    "female": 123252,
+    "third_gender": 20,
+    "total": 246166,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 169009,
+    "poll_pct": 68.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruvadanai": {
+    "male": 137351,
+    "female": 134583,
+    "third_gender": 28,
+    "total": 271962,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 186649,
+    "poll_pct": 68.2,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ramanathapuram": {
+    "male": 141031,
+    "female": 140514,
+    "third_gender": 18,
+    "total": 281563,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 193002,
+    "poll_pct": 67.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "mudukulathur": {
+    "male": 149918,
+    "female": 147566,
+    "third_gender": 8,
+    "total": 297492,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 203276,
+    "poll_pct": 68.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vilathikulam": {
+    "male": 101366,
+    "female": 102934,
+    "third_gender": 2,
+    "total": 204302,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 152795,
+    "poll_pct": 74.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "thoothukudi": {
+    "male": 135978,
+    "female": 139211,
+    "third_gender": 29,
+    "total": 275218,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189488,
+    "poll_pct": 69.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tiruchendur": {
+    "male": 109797,
+    "female": 114163,
+    "third_gender": 13,
+    "total": 223973,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 166808,
+    "poll_pct": 73.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "srivaikuntam": {
+    "male": 101819,
+    "female": 102992,
+    "third_gender": 4,
+    "total": 204815,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 155366,
+    "poll_pct": 74.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ottapidaram_sc": {
+    "male": 107973,
+    "female": 109244,
+    "third_gender": 7,
+    "total": 217224,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 160395,
+    "poll_pct": 72.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kovilpatti": {
+    "male": 121311,
+    "female": 123134,
+    "third_gender": 3,
+    "total": 244448,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 165607,
+    "poll_pct": 66.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "sankarankovil_sc": {
+    "male": 113785,
+    "female": 118411,
+    "third_gender": 5,
+    "total": 232201,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 177510,
+    "poll_pct": 76.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vasudevanallur_sc": {
+    "male": 108766,
+    "female": 110727,
+    "third_gender": 4,
+    "total": 219497,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 164007,
+    "poll_pct": 74.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kadayanallur": {
+    "male": 131786,
+    "female": 131337,
+    "third_gender": 5,
+    "total": 263128,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 188737,
+    "poll_pct": 71.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tenkasi": {
+    "male": 129338,
+    "female": 132163,
+    "third_gender": 3,
+    "total": 261504,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 202775,
+    "poll_pct": 76.9,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "alangulam": {
+    "male": 118789,
+    "female": 124267,
+    "third_gender": 0,
+    "total": 243056,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 193326,
+    "poll_pct": 79.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "tirunelveli": {
+    "male": 131887,
+    "female": 135633,
+    "third_gender": 20,
+    "total": 267540,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 189576,
+    "poll_pct": 70.5,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "ambasamudram": {
+    "male": 114215,
+    "female": 119660,
+    "third_gender": 1,
+    "total": 233876,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171528,
+    "poll_pct": 73.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "palayamkottai": {
+    "male": 125312,
+    "female": 128955,
+    "third_gender": 17,
+    "total": 254284,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 154648,
+    "poll_pct": 61.0,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "nanguneri": {
+    "male": 118859,
+    "female": 120073,
+    "third_gender": 5,
+    "total": 238937,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 172470,
+    "poll_pct": 71.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "radhapuram": {
+    "male": 117790,
+    "female": 119853,
+    "third_gender": 0,
+    "total": 237643,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 171337,
+    "poll_pct": 71.4,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "kanniyakumari": {
+    "male": 140291,
+    "female": 140934,
+    "third_gender": 37,
+    "total": 281262,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 209924,
+    "poll_pct": 75.1,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "nagercoil": {
+    "male": 130100,
+    "female": 132994,
+    "third_gender": 12,
+    "total": 263106,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 173324,
+    "poll_pct": 65.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "colachal": {
+    "male": 132311,
+    "female": 128281,
+    "third_gender": 15,
+    "total": 260607,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 167205,
+    "poll_pct": 63.8,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "padmanabhapuram": {
+    "male": 118270,
+    "female": 115449,
+    "third_gender": 17,
+    "total": 233736,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 161560,
+    "poll_pct": 68.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "vilavancode": {
+    "male": 118335,
+    "female": 122192,
+    "third_gender": 20,
+    "total": 240547,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 162139,
+    "poll_pct": 66.3,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  },
+  "killiyoor": {
+    "male": 125120,
+    "female": 124120,
+    "third_gender": 18,
+    "total": 249258,
+    "source": "ECI Electoral Roll, 20 Jan 2016",
+    "total_votes": 153273,
+    "poll_pct": 60.7,
+    "source_url": "https://www.indiavotes.com/vidhan-sabha/2016/tamil-nadu/250/40"
+  }
+}

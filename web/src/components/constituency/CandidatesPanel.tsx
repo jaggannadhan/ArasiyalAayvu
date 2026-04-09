@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { apiGet } from "@/lib/api-client";
+import { normalizeName } from "@/lib/formatters";
 import { Candidate2026ProfileModal, type Candidate2026 } from "./Candidate2026ProfileModal";
 
 type Candidate = Candidate2026;
@@ -20,11 +21,27 @@ const PARTY_FLAG_EXT: Record<string, string> = {
   dmk: "svg", aiadmk: "svg", bjp: "svg", inc: "svg", pmk: "svg",
   cpi: "svg", cpim: "png", vck: "png", dmdk: "png", mdmk: "svg",
   ntk: "gif", tvk: "jpeg",
+  bsp: "svg", tamizhaga_vaazhv: "png", naam_indiar_part: "svg", veerath_thiyagi_: "svg",
+};
+
+const PARTY_ABBR: Record<string, string> = {
+  ind: "IND", naam_indiar_part: "NIP", veerath_thiyagi_: "VTVTK",
 };
 
 const GENDER_ICON: Record<string, string> = {
   Male: "♂", Female: "♀", "Third Gender": "⚧",
 };
+
+function CandidatePhoto({ url, gender, name, className }: {
+  url: string | null | undefined; gender: string; name: string; className: string;
+}) {
+  const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
+  // ECI URLs are blocked by Next.js optimizer (WAF) — render as plain <img> so browser fetches directly
+  if (url?.includes("suvidha.eci.gov.in")) {
+    return <img src={url} alt={name} className={className} />;
+  }
+  return <Image src={url ?? def} alt={name} width={64} height={80} sizes="64px" className={className} />;
+}
 
 interface Props {
   slug: string;
@@ -123,13 +140,10 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
               className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-gray-50 transition-colors"
             >
               {/* Photo */}
-              <Image
-                src={c.photo_url ?? (c.gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg")}
-                alt={c.name}
-                width={64}
-                height={80}
-                unoptimized
-                sizes="64px"
+              <CandidatePhoto
+                url={c.photo_url}
+                gender={c.gender}
+                name={c.name}
                 className="shrink-0 w-16 h-20 flex-none rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50"
               />
 
@@ -138,7 +152,7 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
                   {GENDER_ICON[c.gender] ?? ""} {c.gender}
                 </p>
-                <h3 className="text-base font-black text-gray-900 leading-tight">{c.name}</h3>
+                <h3 className="text-base font-black text-gray-900 leading-tight">{normalizeName(c.name)}</h3>
                 <p className="text-xs text-gray-500 mt-0.5">{c.party}</p>
               </div>
 
@@ -158,7 +172,7 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
                   </div>
                 )}
                 <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide">
-                  {c.party_id === "ind" ? "IND" : c.party_id.toUpperCase()}
+                  {PARTY_ABBR[c.party_id] ?? c.party_id.toUpperCase()}
                 </span>
               </div>
             </button>

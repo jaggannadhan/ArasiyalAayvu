@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80">
+  <rect width="120" height="80" fill="#CC0000"/>
+  <rect y="27" width="120" height="26" fill="#000000"/>
+  <rect y="53" width="120" height="27" fill="#CC0000"/>
+  <text x="60" y="40" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">VTVTK</text>
+</svg>

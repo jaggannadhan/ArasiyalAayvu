@@ -124,6 +124,18 @@ export default function Home() {
               {isTA ? "விரைவில் வருகிறது" : "Coming soon"}
             </p>
           </div>
+          <Link
+            href="/pincode-map"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <p className="text-lg mb-1">🗺️</p>
+            <p className="text-sm font-bold text-gray-900">
+              {isTA ? "தொகுதி வரைபடம்" : "Constituency Map"}
+            </p>
+            <p className="text-xs text-gray-500">
+              {isTA ? "பின்கோடு → தொகுதி → மாவட்டம்" : "Pincode → Constituency → District"}
+            </p>
+          </Link>
         </div>
 
         <p className="text-center text-xs text-gray-400 pb-4">

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import constituencyMap from "@/lib/constituency-map.json";
+import constituencyPincodes from "@/lib/constituency-pincodes.json";
 import { apiGet } from "@/lib/api-client";
 import type { PincodeResult } from "@/lib/types";
 
@@ -179,7 +180,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
   const icon = isPinMode ? "📮" : "🔍";
   const placeholder = isTA
     ? "தொகுதி பெயர் அல்லது பின்கோடு (எ.கா. Harur அல்லது 600023)"
-    : "Constituency name or pincode (e.g. Harur or 600023)";
+    : "Constituency, District, PinCode, Locality";
 
   return (
     <div ref={containerRef} className="relative w-full max-w-sm">
@@ -210,18 +211,30 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
       {showDropdown && (
         <div className="absolute z-30 top-full mt-1 w-full bg-white rounded-xl border border-gray-200 shadow-lg overflow-y-auto max-h-64">
           {/* Name-search results */}
-          {nameResults.map((c) => (
-            <button
-              key={c.slug}
-              onClick={() => navigate(c.slug)}
-              className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer ${
-                c.slug === currentSlug ? "bg-gray-100 font-semibold" : ""
-              }`}
-            >
-              <span className="font-medium text-gray-900 truncate">{c.name}</span>
-              <span className="text-xs text-gray-400 shrink-0">{c.district}</span>
-            </button>
-          ))}
+          {nameResults.map((c) => {
+            const pcData = (constituencyPincodes as Record<string, { pincodes: string[]; ambiguous_pincodes: string[] }>)[c.slug];
+            const pinCount = pcData ? pcData.pincodes.length + pcData.ambiguous_pincodes.length : 0;
+            return (
+              <button
+                key={c.slug}
+                onClick={() => navigate(c.slug)}
+                className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer ${
+                  c.slug === currentSlug ? "bg-gray-100 font-semibold" : ""
+                }`}
+              >
+                <span className="font-medium text-gray-900 truncate">{c.name}</span>
+                <span className="text-xs text-gray-400 shrink-0 flex items-center gap-1.5">
+                  <span>{c.district}</span>
+                  {pinCount > 0 && (
+                    <span className="text-gray-300">·</span>
+                  )}
+                  {pinCount > 0 && (
+                    <span>{pinCount} PINs</span>
+                  )}
+                </span>
+              </button>
+            );
+          })}
 
           {/* Pincode ambiguous picker */}
           {pincodeStatus === "ambiguous" && pincodeResult && (
@@ -231,20 +244,23 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
                   {isTA ? "உங்கள் பகுதி எது?" : "Which area is yours?"}
                 </p>
               </div>
-              {pincodeResult.constituencies.map((c) => (
-                <button
-                  key={c.slug}
-                  onClick={() => handlePincodeSelect(c.slug)}
-                  className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer"
-                >
-                  <span className="font-medium text-gray-900 truncate">
-                    {isTA ? c.name_ta : c.name}
-                  </span>
-                  <span className="text-xs text-gray-400 shrink-0">
-                    {isTA ? c.name : c.name_ta}
-                  </span>
-                </button>
-              ))}
+              {pincodeResult.constituencies.map((c) => {
+                const district = c.district ?? pincodeResult.district;
+                return (
+                  <button
+                    key={c.slug}
+                    onClick={() => handlePincodeSelect(c.slug)}
+                    className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer"
+                  >
+                    <span className="font-medium text-gray-900 truncate">
+                      {isTA && c.name_ta ? c.name_ta : c.name}
+                    </span>
+                    <span className="text-xs text-gray-400 shrink-0">
+                      {district ? district.charAt(0) + district.slice(1).toLowerCase() : ""}
+                    </span>
+                  </button>
+                );
+              })}
             </>
           )}
         </div>

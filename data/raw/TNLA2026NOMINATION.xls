@@ -1,0 +1,475 @@
+<style> .textmode { mso-number-format:\@; } </style><div>
+	<table cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">SLNO</th><th scope="col">NAME OF THE ASSEMBLY</th><th scope="col">MALE</th><th scope="col">FEMALE</th><th scope="col">THIRDGENDER</th><th scope="col">TOTAL NO. OF NOMINATION</th>
+		</tr><tr class="textmode">
+			<td>1</td><td>Gummidipoondi</td><td>30</td><td>4</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>2</td><td>Ponneri (SC)</td><td>22</td><td>5</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>3</td><td>Tiruttani</td><td>31</td><td>2</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>4</td><td>Thiruvallur</td><td>26</td><td>2</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>5</td><td>Poonamallee (SC)</td><td>16</td><td>4</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>6</td><td>Avadi</td><td>37</td><td>10</td><td>0</td><td>47</td>
+		</tr><tr class="textmode">
+			<td>7</td><td>Maduravoyal</td><td>35</td><td>10</td><td>0</td><td>45</td>
+		</tr><tr class="textmode">
+			<td>8</td><td>Ambattur</td><td>34</td><td>6</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>9</td><td>Madavaram</td><td>27</td><td>6</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>10</td><td>Thiruvottiyur</td><td>23</td><td>8</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>11</td><td>Dr.Radhakrishnan Nagar</td><td>41</td><td>6</td><td>0</td><td>47</td>
+		</tr><tr class="textmode">
+			<td>12</td><td>Perambur</td><td>56</td><td>10</td><td>0</td><td>66</td>
+		</tr><tr class="textmode">
+			<td>13</td><td>Kolathur</td><td>50</td><td>6</td><td>0</td><td>56</td>
+		</tr><tr class="textmode">
+			<td>14</td><td>Villivakkam</td><td>32</td><td>6</td><td>2</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>15</td><td>Thiru-Vi-Ka-Nagar (SC)</td><td>26</td><td>7</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>16</td><td>Egmore (SC)</td><td>24</td><td>3</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>17</td><td>Royapuram</td><td>36</td><td>6</td><td>0</td><td>42</td>
+		</tr><tr class="textmode">
+			<td>18</td><td>Harbour</td><td>34</td><td>0</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>19</td><td>Chepauk-Thiruvallikeni</td><td>38</td><td>3</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>20</td><td>Thousand Lights</td><td>24</td><td>6</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>21</td><td>Anna Nagar</td><td>34</td><td>5</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>22</td><td>Virugampakkam</td><td>43</td><td>0</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>23</td><td>Saidapet</td><td>27</td><td>3</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>24</td><td>Thiyagarayanagar</td><td>32</td><td>7</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>25</td><td>Mylapore</td><td>21</td><td>4</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>26</td><td>Velachery</td><td>29</td><td>7</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>27</td><td>Shozhinganallur</td><td>44</td><td>3</td><td>0</td><td>47</td>
+		</tr><tr class="textmode">
+			<td>28</td><td>Alandur</td><td>34</td><td>6</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>29</td><td>Sriperumbudur (SC)</td><td>13</td><td>6</td><td>0</td><td>19</td>
+		</tr><tr class="textmode">
+			<td>30</td><td>Pallavaram</td><td>36</td><td>6</td><td>0</td><td>42</td>
+		</tr><tr class="textmode">
+			<td>31</td><td>Tambaram</td><td>27</td><td>10</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>32</td><td>Chengalpattu</td><td>30</td><td>9</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>33</td><td>Thiruporur</td><td>30</td><td>1</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>34</td><td>Cheyyur (SC)</td><td>19</td><td>9</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>35</td><td>Madurantakam (SC)</td><td>12</td><td>5</td><td>0</td><td>17</td>
+		</tr><tr class="textmode">
+			<td>36</td><td>Uthiramerur</td><td>30</td><td>5</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>37</td><td>Kancheepuram</td><td>24</td><td>7</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>38</td><td>Arakkonam (SC)</td><td>21</td><td>3</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>39</td><td>Sholinghur</td><td>34</td><td>1</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>40</td><td>Katpadi</td><td>22</td><td>3</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>41</td><td>Ranipet</td><td>21</td><td>10</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>42</td><td>Arcot</td><td>16</td><td>7</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>43</td><td>Vellore</td><td>19</td><td>8</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>44</td><td>Anaikattu</td><td>22</td><td>1</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>45</td><td>Kilvaithinankuppam (SC)</td><td>13</td><td>7</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>46</td><td>Gudiyattam (SC)</td><td>15</td><td>6</td><td>0</td><td>21</td>
+		</tr><tr class="textmode">
+			<td>47</td><td>Vaniyambadi</td><td>25</td><td>3</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>48</td><td>Ambur</td><td>20</td><td>8</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>49</td><td>Jolarpet</td><td>21</td><td>12</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>50</td><td>Tirupattur</td><td>38</td><td>3</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>51</td><td>Uthangarai (SC)</td><td>17</td><td>11</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>52</td><td>Bargur</td><td>32</td><td>6</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>53</td><td>Krishnagiri</td><td>23</td><td>10</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>54</td><td>Veppanahalli</td><td>26</td><td>4</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>55</td><td>Hosur</td><td>27</td><td>1</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>56</td><td>Thalli</td><td>22</td><td>3</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>57</td><td>Palacodu</td><td>27</td><td>4</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>58</td><td>Pennagaram</td><td>26</td><td>6</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>59</td><td>Dharmapuri</td><td>27</td><td>9</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>60</td><td>Pappireddipatti</td><td>17</td><td>6</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>61</td><td>Harur (SC)</td><td>14</td><td>8</td><td>0</td><td>22</td>
+		</tr><tr class="textmode">
+			<td>62</td><td>Chengam(SC)</td><td>26</td><td>10</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>63</td><td>Tiruvannamalai</td><td>41</td><td>2</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>64</td><td>Kilpennathur</td><td>34</td><td>3</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>65</td><td>Kalasapakkam</td><td>33</td><td>7</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>66</td><td>Polur</td><td>30</td><td>5</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>67</td><td>Arani</td><td>24</td><td>13</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>68</td><td>Cheyyar</td><td>27</td><td>2</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>69</td><td>Vandavasi (SC)</td><td>23</td><td>8</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>70</td><td>Gingee</td><td>32</td><td>6</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>71</td><td>Mailam</td><td>31</td><td>3</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>72</td><td>Tindivanam (SC)</td><td>19</td><td>2</td><td>0</td><td>21</td>
+		</tr><tr class="textmode">
+			<td>73</td><td>Vanur (SC)</td><td>24</td><td>2</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>74</td><td>Viluppuram</td><td>27</td><td>10</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>75</td><td>Vikravandi</td><td>26</td><td>8</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>76</td><td>Tirukkoyilur</td><td>25</td><td>3</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>77</td><td>Ulundurpettai</td><td>27</td><td>8</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>78</td><td>Rishivandiyam</td><td>33</td><td>7</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>79</td><td>Sankarapuram</td><td>31</td><td>5</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>80</td><td>Kallakurichi (SC)</td><td>15</td><td>9</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>81</td><td>Gangavalli (SC)</td><td>16</td><td>4</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>82</td><td>Attur (SC)</td><td>13</td><td>7</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>83</td><td>Yercaud (ST)</td><td>13</td><td>9</td><td>0</td><td>22</td>
+		</tr><tr class="textmode">
+			<td>84</td><td>Omalur</td><td>24</td><td>3</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>85</td><td>Mettur</td><td>24</td><td>6</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>86</td><td>Edappadi</td><td>28</td><td>8</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>87</td><td>Sankari</td><td>26</td><td>8</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>88</td><td>Salem (West)</td><td>54</td><td>5</td><td>0</td><td>59</td>
+		</tr><tr class="textmode">
+			<td>89</td><td>Salem (North)</td><td>28</td><td>9</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>90</td><td>Salem (South)</td><td>30</td><td>10</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>91</td><td>Veerapandi</td><td>27</td><td>3</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>92</td><td>Rasipuram (SC)</td><td>25</td><td>6</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>93</td><td>Senthamangalam (ST)</td><td>16</td><td>7</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>94</td><td>Namakkal</td><td>37</td><td>11</td><td>0</td><td>48</td>
+		</tr><tr class="textmode">
+			<td>95</td><td>Paramathi-Velur</td><td>43</td><td>9</td><td>0</td><td>52</td>
+		</tr><tr class="textmode">
+			<td>96</td><td>Tiruchengodu</td><td>36</td><td>2</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>97</td><td>Kumarapalayam</td><td>26</td><td>10</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>98</td><td>Erode (East)</td><td>31</td><td>4</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>99</td><td>Erode (West)</td><td>26</td><td>5</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>100</td><td>Modakkurichi</td><td>22</td><td>6</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>101</td><td>Dharapuram (SC)</td><td>6</td><td>17</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>102</td><td>Kangayam</td><td>30</td><td>2</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>103</td><td>Perundurai</td><td>30</td><td>3</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>104</td><td>Bhavani</td><td>21</td><td>5</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>105</td><td>Anthiyur</td><td>27</td><td>7</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>106</td><td>Gobichettipalayam</td><td>30</td><td>14</td><td>0</td><td>44</td>
+		</tr><tr class="textmode">
+			<td>107</td><td>Bhavanisagar (SC)</td><td>19</td><td>9</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>108</td><td>Udhagamandalam</td><td>11</td><td>2</td><td>0</td><td>13</td>
+		</tr><tr class="textmode">
+			<td>109</td><td>Gudalur (SC)</td><td>14</td><td>0</td><td>0</td><td>14</td>
+		</tr><tr class="textmode">
+			<td>110</td><td>Coonoor</td><td>14</td><td>3</td><td>0</td><td>17</td>
+		</tr><tr class="textmode">
+			<td>111</td><td>Mettuppalayam</td><td>38</td><td>10</td><td>0</td><td>48</td>
+		</tr><tr class="textmode">
+			<td>112</td><td>Avanashi (SC)</td><td>12</td><td>14</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>113</td><td>Tiruppur (North)</td><td>30</td><td>7</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>114</td><td>Tiruppur (South)</td><td>33</td><td>10</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>115</td><td>Palladam</td><td>32</td><td>7</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>116</td><td>Sulur</td><td>28</td><td>4</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>117</td><td>Kavundampalayam</td><td>24</td><td>9</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>118</td><td>Coimbatore (North)</td><td>36</td><td>13</td><td>0</td><td>49</td>
+		</tr><tr class="textmode">
+			<td>119</td><td>Thondamuthur</td><td>63</td><td>14</td><td>0</td><td>77</td>
+		</tr><tr class="textmode">
+			<td>120</td><td>Coimbatore (South)</td><td>56</td><td>5</td><td>0</td><td>61</td>
+		</tr><tr class="textmode">
+			<td>121</td><td>Singanallur</td><td>31</td><td>13</td><td>0</td><td>44</td>
+		</tr><tr class="textmode">
+			<td>122</td><td>Kinathukadavu</td><td>31</td><td>12</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>123</td><td>Pollachi</td><td>31</td><td>3</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>124</td><td>Valparai (SC)</td><td>17</td><td>12</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>125</td><td>Udumalaipettai</td><td>24</td><td>6</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>126</td><td>Madathukulam</td><td>20</td><td>6</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>127</td><td>Palani</td><td>28</td><td>5</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>128</td><td>Oddanchatram</td><td>26</td><td>1</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>129</td><td>Athoor</td><td>25</td><td>1</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>130</td><td>Nilakkottai (SC)</td><td>16</td><td>12</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>131</td><td>Natham</td><td>35</td><td>6</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>132</td><td>Dindigul</td><td>30</td><td>5</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>133</td><td>Vedasandur</td><td>27</td><td>3</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>134</td><td>Aravakurichi</td><td>38</td><td>7</td><td>0</td><td>45</td>
+		</tr><tr class="textmode">
+			<td>135</td><td>Karur</td><td>98</td><td>10</td><td>0</td><td>108</td>
+		</tr><tr class="textmode">
+			<td>136</td><td>Krishnarayapuram (SC)</td><td>24</td><td>15</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>137</td><td>Kulithalai</td><td>36</td><td>6</td><td>0</td><td>42</td>
+		</tr><tr class="textmode">
+			<td>138</td><td>Manapparai</td><td>19</td><td>4</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>139</td><td>Srirangam</td><td>33</td><td>3</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>140</td><td>Tiruchirappalli (West)</td><td>26</td><td>4</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>141</td><td>Tiruchirappalli (East)</td><td>38</td><td>1</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>142</td><td>Thiruverumbur</td><td>35</td><td>3</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>143</td><td>Lalgudi</td><td>26</td><td>4</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>144</td><td>Manachanallur</td><td>27</td><td>10</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>145</td><td>Musiri</td><td>17</td><td>4</td><td>0</td><td>21</td>
+		</tr><tr class="textmode">
+			<td>146</td><td>Thuraiyur (SC)</td><td>15</td><td>8</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>147</td><td>Perambalur (SC)</td><td>15</td><td>8</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>148</td><td>Kunnam</td><td>31</td><td>4</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>149</td><td>Ariyalur</td><td>25</td><td>1</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>150</td><td>Jayankondam</td><td>24</td><td>5</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>151</td><td>Tittakudi (SC)</td><td>31</td><td>8</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>152</td><td>Vriddhachalam</td><td>30</td><td>11</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>153</td><td>Neyveli</td><td>29</td><td>3</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>154</td><td>Panruti</td><td>10</td><td>7</td><td>0</td><td>17</td>
+		</tr><tr class="textmode">
+			<td>155</td><td>Cuddalore</td><td>25</td><td>8</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>156</td><td>Kurinjipadi</td><td>13</td><td>6</td><td>0</td><td>19</td>
+		</tr><tr class="textmode">
+			<td>157</td><td>Bhuvanagiri</td><td>20</td><td>5</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>158</td><td>Chidambaram</td><td>25</td><td>4</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>159</td><td>Kattumannarkoil (SC)</td><td>21</td><td>4</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>160</td><td>Sirkazhi (SC)</td><td>20</td><td>5</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>161</td><td>Mayiladuthurai</td><td>31</td><td>2</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>162</td><td>Poompuhar</td><td>23</td><td>2</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>163</td><td>Nagapattinam</td><td>18</td><td>5</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>164</td><td>Kilvelur (SC)</td><td>9</td><td>9</td><td>0</td><td>18</td>
+		</tr><tr class="textmode">
+			<td>165</td><td>Vedaranyam</td><td>19</td><td>3</td><td>0</td><td>22</td>
+		</tr><tr class="textmode">
+			<td>166</td><td>Thiruthuraipoondi (SC)</td><td>16</td><td>6</td><td>0</td><td>22</td>
+		</tr><tr class="textmode">
+			<td>167</td><td>Mannargudi</td><td>28</td><td>1</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>168</td><td>Thiruvarur</td><td>14</td><td>3</td><td>0</td><td>17</td>
+		</tr><tr class="textmode">
+			<td>169</td><td>Nannilam</td><td>30</td><td>4</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>170</td><td>Thiruvidaimarudur (SC)</td><td>16</td><td>9</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>171</td><td>Kumbakonam</td><td>28</td><td>1</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>172</td><td>Papanasam</td><td>18</td><td>9</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>173</td><td>Thiruvaiyaru</td><td>20</td><td>4</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>174</td><td>Thanjavur</td><td>38</td><td>5</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>175</td><td>Orathanadu</td><td>21</td><td>2</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>176</td><td>Pattukkottai</td><td>19</td><td>1</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>177</td><td>Peravurani</td><td>16</td><td>7</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>178</td><td>Gandarvakkottai (SC)</td><td>13</td><td>6</td><td>0</td><td>19</td>
+		</tr><tr class="textmode">
+			<td>179</td><td>Viralimalai</td><td>37</td><td>4</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>180</td><td>Pudukkottai</td><td>32</td><td>8</td><td>0</td><td>40</td>
+		</tr><tr class="textmode">
+			<td>181</td><td>Thirumayam</td><td>22</td><td>9</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>182</td><td>Alangudi</td><td>24</td><td>2</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>183</td><td>Aranthangi</td><td>18</td><td>6</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>184</td><td>Karaikudi</td><td>31</td><td>8</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>185</td><td>Tiruppattur</td><td>24</td><td>8</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>186</td><td>Sivaganga</td><td>22</td><td>9</td><td>0</td><td>31</td>
+		</tr><tr class="textmode">
+			<td>187</td><td>Manamadurai (SC)</td><td>18</td><td>9</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>188</td><td>Melur</td><td>23</td><td>1</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>189</td><td>Madurai East</td><td>24</td><td>2</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>190</td><td>Sholavandan (SC)</td><td>20</td><td>5</td><td>0</td><td>25</td>
+		</tr><tr class="textmode">
+			<td>191</td><td>Madurai North</td><td>25</td><td>2</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>192</td><td>Madurai South</td><td>10</td><td>5</td><td>0</td><td>15</td>
+		</tr><tr class="textmode">
+			<td>193</td><td>Madurai Central</td><td>26</td><td>1</td><td>0</td><td>27</td>
+		</tr><tr class="textmode">
+			<td>194</td><td>Madurai West</td><td>24</td><td>4</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>195</td><td>Thiruparankundram</td><td>31</td><td>11</td><td>0</td><td>42</td>
+		</tr><tr class="textmode">
+			<td>196</td><td>Thirumangalam</td><td>22</td><td>8</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>197</td><td>Usilampatti</td><td>14</td><td>8</td><td>0</td><td>22</td>
+		</tr><tr class="textmode">
+			<td>198</td><td>Andipatti</td><td>25</td><td>7</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>199</td><td>Periyakulam (SC)</td><td>18</td><td>6</td><td>0</td><td>24</td>
+		</tr><tr class="textmode">
+			<td>200</td><td>Bodinayakanur</td><td>34</td><td>1</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>201</td><td>Cumbum</td><td>26</td><td>6</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>202</td><td>Rajapalayam</td><td>25</td><td>14</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>203</td><td>Srivilliputhur (SC)</td><td>21</td><td>5</td><td>0</td><td>26</td>
+		</tr><tr class="textmode">
+			<td>204</td><td>Sattur</td><td>34</td><td>5</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>205</td><td>Sivakasi</td><td>25</td><td>11</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>206</td><td>Virudhunagar</td><td>27</td><td>2</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>207</td><td>Aruppukkottai</td><td>38</td><td>5</td><td>0</td><td>43</td>
+		</tr><tr class="textmode">
+			<td>208</td><td>Tiruchuli</td><td>33</td><td>5</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>209</td><td>Paramakudi (SC)</td><td>19</td><td>11</td><td>0</td><td>30</td>
+		</tr><tr class="textmode">
+			<td>210</td><td>Tiruvadanai</td><td>34</td><td>3</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>211</td><td>Ramanathapuram</td><td>38</td><td>3</td><td>0</td><td>41</td>
+		</tr><tr class="textmode">
+			<td>212</td><td>Mudhukulathur</td><td>26</td><td>9</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>213</td><td>Vilathikulam</td><td>25</td><td>3</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>214</td><td>Thoothukkudi</td><td>27</td><td>6</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>215</td><td>Tiruchendur</td><td>27</td><td>8</td><td>0</td><td>35</td>
+		</tr><tr class="textmode">
+			<td>216</td><td>Srivaikuntam</td><td>25</td><td>3</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>217</td><td>Ottapidaram (SC)</td><td>20</td><td>8</td><td>0</td><td>28</td>
+		</tr><tr class="textmode">
+			<td>218</td><td>Kovilpatti</td><td>29</td><td>7</td><td>0</td><td>36</td>
+		</tr><tr class="textmode">
+			<td>219</td><td>Sankarankovil (SC)</td><td>25</td><td>7</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>220</td><td>Vasudevanallur (SC)</td><td>27</td><td>6</td><td>0</td><td>33</td>
+		</tr><tr class="textmode">
+			<td>221</td><td>Kadayanallur</td><td>32</td><td>7</td><td>0</td><td>39</td>
+		</tr><tr class="textmode">
+			<td>222</td><td>Tenkasi</td><td>41</td><td>6</td><td>0</td><td>47</td>
+		</tr><tr class="textmode">
+			<td>223</td><td>Alangulam</td><td>26</td><td>3</td><td>0</td><td>29</td>
+		</tr><tr class="textmode">
+			<td>224</td><td>Tirunelveli</td><td>33</td><td>4</td><td>0</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>225</td><td>Ambasamudram</td><td>35</td><td>3</td><td>0</td><td>38</td>
+		</tr><tr class="textmode">
+			<td>226</td><td>Palayamkottai</td><td>31</td><td>1</td><td>0</td><td>32</td>
+		</tr><tr class="textmode">
+			<td>227</td><td>Nanguneri</td><td>34</td><td>10</td><td>0</td><td>44</td>
+		</tr><tr class="textmode">
+			<td>228</td><td>Radhapuram</td><td>27</td><td>9</td><td>1</td><td>37</td>
+		</tr><tr class="textmode">
+			<td>229</td><td>Kanniyakumari</td><td>19</td><td>4</td><td>0</td><td>23</td>
+		</tr><tr class="textmode">
+			<td>230</td><td>Nagercoil</td><td>32</td><td>2</td><td>0</td><td>34</td>
+		</tr><tr class="textmode">
+			<td>231</td><td>Colachal</td><td>14</td><td>6</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>232</td><td>Padmanabhapuram</td><td>18</td><td>1</td><td>0</td><td>19</td>
+		</tr><tr class="textmode">
+			<td>233</td><td>Vilavancode</td><td>14</td><td>6</td><td>0</td><td>20</td>
+		</tr><tr class="textmode">
+			<td>234</td><td>Killiyoor</td><td>17</td><td>2</td><td>0</td><td>19</td>
+		</tr>
+	</table>
+</div>
