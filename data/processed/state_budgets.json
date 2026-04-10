@@ -41,7 +41,7 @@
     },
     "source": "CAG Finance Accounts Volume I",
     "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=88",
-    "_ingested_at": "2026-04-10T03:53:33.253194+00:00"
+    "_ingested_at": "2026-04-10T04:01:50.765224+00:00"
   },
   {
     "doc_id": "TN_2023-24",
@@ -86,6 +86,96 @@
     "source": "CAG Accounts at a Glance 2024-25 (5-year trend tables); PRS Tamil Nadu Budget Analysis 2025-26 (Tables 3, 5, 7). Original Finance Accounts 2023-24 PDF is scanned/image-only.",
     "source_url": "https://cag.gov.in/uploads/state_accounts_report/account-report-Accounts-at-a-glance-Eng-2024-25-0699be10d0cf539-36906021.pdf",
     "_manual_entry": true,
-    "_ingested_at": "2026-04-10T03:53:33.253698+00:00"
+    "_ingested_at": "2026-04-10T04:01:50.765340+00:00"
+  },
+  {
+    "doc_id": "TN_2022-23",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2022-23",
+    "fiscal_year_label": "April 2022 \u2013 March 2023",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 150223.0,
+      "non_tax_revenue_cr": 17061.0,
+      "central_devolution_cr": 38731.0,
+      "central_grants_cr": 37734.0,
+      "total_revenue_receipts_cr": 243749.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 279964.0,
+      "capital_exp_cr": 39530.0,
+      "total_exp_cr": 319494.0
+    },
+    "committed": {
+      "salaries_cr": 68588.0,
+      "pensions_cr": 32177.0,
+      "interest_cr": 46911.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 147676.0,
+      "discretionary_cr": 132288.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 81886.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 243749.0,
+      "total_rev_exp_cr": 279964.0,
+      "committed_cr": 147676.0,
+      "discretionary_cr": 132288.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 9.1e-05
+    },
+    "source": "CAG Accounts at a Glance 2024-25 (5-year trend tables); PRS Tamil Nadu Budget Analysis 2024-25 (Tables 2, 3, 5). Original Finance Accounts 2022-23 PDF is scanned/image-only.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2024/Tamil_Nadu_Budget_Analysis_2024-25.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-04-10T04:01:50.765351+00:00"
+  },
+  {
+    "doc_id": "TN_2021-22",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2021-22",
+    "fiscal_year_label": "April 2021 \u2013 March 2022",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 122866.0,
+      "non_tax_revenue_cr": 12117.0,
+      "central_devolution_cr": 37459.0,
+      "central_grants_cr": 35051.0,
+      "total_revenue_receipts_cr": 207492.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 254030.0,
+      "capital_exp_cr": 37011.0,
+      "total_exp_cr": 291041.0
+    },
+    "committed": {
+      "salaries_cr": 60625.0,
+      "pensions_cr": 26250.0,
+      "interest_cr": 41564.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 128439.0,
+      "discretionary_cr": 125591.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 73739.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 207492.0,
+      "total_rev_exp_cr": 254030.0,
+      "committed_cr": 128439.0,
+      "discretionary_cr": 125591.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 9.6e-05
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2023-24 (Tables 2, 3, 5, 7 \u2014 2021-22 Actuals column). Original Finance Accounts 2021-22 PDF is scanned/image-only.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2023/TN_Budget_Analysis_2023-24.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-04-10T04:01:50.765357+00:00"
   }
 ]

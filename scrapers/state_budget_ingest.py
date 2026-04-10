@@ -135,6 +135,108 @@ PIB_NAME_MAP: dict[str, str] = {
 #             URL: https://cag.gov.in/uploads/state_accounts_report/account-report-Accounts-at-a-glance-Eng-2024-25-0699be10d0cf539-36906021.pdf
 #             URL: https://prsindia.org/files/budget/budget_state/tamil-nadu/2025/TN_Budget_Analysis_2025-26.pdf
 MANUAL_RECORDS: dict[str, dict] = {
+    # TN 2022-23: CAG "Accounts at a Glance 2024-25" (5-year trend tables)
+    #             + PRS "Tamil Nadu Budget Analysis 2024-25" (Tables 2, 3, 5)
+    #             + PRS "Tamil Nadu Budget Analysis 2025-26" (Table 7 cross-check)
+    "TN_2022-23": {
+        "doc_id":            "TN_2022-23",
+        "state_code":        "TN",
+        "state_name":        "Tamil Nadu",
+        "fiscal_year":       "2022-23",
+        "fiscal_year_label": "April 2022 – March 2023",
+        "data_type":         "Actuals",
+        "revenue": {
+            "own_tax_revenue_cr":        150223.0,   # 1,50,223 crore (PRS 2024-25 Table 5)
+            "non_tax_revenue_cr":         17061.0,   # 17,061 crore (CAG trend / PRS 2024-25 Table 5)
+            "central_devolution_cr":      38731.0,   # 38,731 crore
+            "central_grants_cr":          37734.0,   # 37,734 crore
+            "total_revenue_receipts_cr": 243749.0,   # 2,43,749 crore
+        },
+        "expenditure": {
+            "revenue_exp_cr":  279964.0,   # 2,79,964 crore (PRS 2024-25 Table 2)
+            "capital_exp_cr":   39530.0,   # 39,530 crore (PRS 2024-25 Table 2)
+            "total_exp_cr":    319494.0,
+        },
+        "committed": {
+            "salaries_cr":        68588.0,   # 68,588 crore (PRS 2024-25 Table 3)
+            "pensions_cr":        32177.0,   # 32,177 crore
+            "interest_cr":        46911.0,   # 46,911 crore
+            "subsidies_cr":        None,
+            "grants_in_aid_cr":    None,
+            "total_committed_cr": 147676.0,  # 1,47,676 crore (PRS 2024-25 Table 3)
+            "discretionary_cr":  132288.0,   # revenue_exp - total_committed
+        },
+        "fiscal": {
+            "fiscal_deficit_cr":       81886.0,   # 81,886 crore (PRS 2024-25 Table 1)
+            "closing_cash_balance_cr":   None,
+        },
+        "feasibility": {
+            "total_revenue_cr":    243749.0,
+            "total_rev_exp_cr":    279964.0,
+            "committed_cr":        147676.0,
+            "discretionary_cr":    132288.0,
+            "cost_per_rupee_per_lakh_pop_cr": 0.12,
+            "pct_discretionary_per_rupee_lakh": round(0.12 / 132288.0 * 100, 6),
+        },
+        "source": (
+            "CAG Accounts at a Glance 2024-25 (5-year trend tables); "
+            "PRS Tamil Nadu Budget Analysis 2024-25 (Tables 2, 3, 5). "
+            "Original Finance Accounts 2022-23 PDF is scanned/image-only."
+        ),
+        "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2024/Tamil_Nadu_Budget_Analysis_2024-25.pdf",
+        "_manual_entry": True,
+    },
+
+    # TN 2021-22: PRS "Tamil Nadu Budget Analysis 2023-24" (Tables 2, 3, 5, 7)
+    #             URL: https://prsindia.org/files/budget/budget_state/tamil-nadu/2023/TN_Budget_Analysis_2023-24.pdf
+    "TN_2021-22": {
+        "doc_id":            "TN_2021-22",
+        "state_code":        "TN",
+        "state_name":        "Tamil Nadu",
+        "fiscal_year":       "2021-22",
+        "fiscal_year_label": "April 2021 – March 2022",
+        "data_type":         "Actuals",
+        "revenue": {
+            "own_tax_revenue_cr":        122866.0,   # 1,22,866 crore (PRS 2023-24 Table 5 / Table 7)
+            "non_tax_revenue_cr":         12117.0,   # 12,117 crore
+            "central_devolution_cr":      37459.0,   # 37,459 crore
+            "central_grants_cr":          35051.0,   # 35,051 crore
+            "total_revenue_receipts_cr": 207492.0,   # 2,07,492 crore
+        },
+        "expenditure": {
+            "revenue_exp_cr":  254030.0,   # 2,54,030 crore (PRS 2023-24 Table 2)
+            "capital_exp_cr":   37011.0,   # 37,011 crore
+            "total_exp_cr":    291041.0,
+        },
+        "committed": {
+            "salaries_cr":        60625.0,   # 60,625 crore (PRS 2023-24 Table 3)
+            "pensions_cr":        26250.0,   # 26,250 crore
+            "interest_cr":        41564.0,   # 41,564 crore
+            "subsidies_cr":        None,
+            "grants_in_aid_cr":    None,
+            "total_committed_cr": 128439.0,  # 1,28,439 crore (PRS 2023-24 Table 3)
+            "discretionary_cr":  125591.0,   # revenue_exp - total_committed
+        },
+        "fiscal": {
+            "fiscal_deficit_cr":       73739.0,   # 73,739 crore (PRS 2023-24 Table 1)
+            "closing_cash_balance_cr":   None,
+        },
+        "feasibility": {
+            "total_revenue_cr":    207492.0,
+            "total_rev_exp_cr":    254030.0,
+            "committed_cr":        128439.0,
+            "discretionary_cr":    125591.0,
+            "cost_per_rupee_per_lakh_pop_cr": 0.12,
+            "pct_discretionary_per_rupee_lakh": round(0.12 / 125591.0 * 100, 6),
+        },
+        "source": (
+            "PRS Tamil Nadu Budget Analysis 2023-24 (Tables 2, 3, 5, 7 — 2021-22 Actuals column). "
+            "Original Finance Accounts 2021-22 PDF is scanned/image-only."
+        ),
+        "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2023/TN_Budget_Analysis_2023-24.pdf",
+        "_manual_entry": True,
+    },
+
     "TN_2023-24": {
         "doc_id":            "TN_2023-24",
         "state_code":        "TN",
@@ -811,6 +913,18 @@ def process_state_cag(
             _print_summary(record)
         else:
             print(f"  [parse] Failed to parse {dest.name}")
+
+    # Inject any manual records for this state that weren't covered by CAG links
+    covered_fys = {r["fiscal_year"] for r in records}
+    for key, manual_rec in MANUAL_RECORDS.items():
+        if manual_rec["state_code"] == state_code and manual_rec["fiscal_year"] not in covered_fys:
+            if latest_only:
+                continue  # skip historical manual records when --latest-only
+            rec = dict(manual_rec)
+            rec["_ingested_at"] = datetime.now(timezone.utc).isoformat()
+            print(f"  [manual] Injecting {key} (not on CAG page)")
+            records.append(rec)
+            _print_summary(rec)
 
     if records:
         upload_records(records, "state_budgets", project_id, dry_run)

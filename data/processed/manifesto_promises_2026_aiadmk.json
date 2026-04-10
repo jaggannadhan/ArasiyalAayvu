@@ -18,7 +18,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Direct income transfer doubles monthly cash assistance to below-poverty-line households, increasing purchasing power for food and essential goods.",
+    "first_order_effect": "~1.2 crore BPL households receive an additional ₹1,000/month (₹12,000/year), totaling ₹14,400 crore annual fiscal outlay at full implementation.",
+    "second_order_effect": "Increased household consumption generates demand for staple goods and local services; improved nutrition intake reduces healthcare expenditure for preventable diseases; reduced financial stress improves school attendance and labour force participation.",
+    "third_order_effect": "Sustained income floor reduces intergenerational poverty transmission; improved maternal and child health outcomes accumulate into higher human capital; localized demand stimulates informal sector employment.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_001",
@@ -39,7 +45,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Seat reservation removes financial barrier to secondary education by guaranteeing free access to quality public schooling for economically disadvantaged students regardless of caste.",
+    "first_order_effect": "~7.5% of ~25 lakh government school seats annually (~1.88 lakh seats) become reserved for EDS; no direct fiscal cost if seats already exist, but requires enforcement and capacity utilization mechanisms.",
+    "second_order_effect": "Increased enrolment and completion rates among EDS cohorts improve literacy and numeracy outcomes; delayed entry into wage labour extends human capital accumulation period; female EDS students gain agency through education access.",
+    "third_order_effect": "Higher secondary completion rates feed into skill training eligibility; reduced child labour supply increases parental income pressure, pushing families toward better-paying employment; intergenerational earnings mobility improves.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_001",
@@ -60,7 +72,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Comprehensive agricultural support scheme addresses input costs and market access barriers through subsidies, technology provision, and guaranteed procurement mechanisms targeting small/marginal farmers.",
+    "first_order_effect": "~80 lakh small and marginal farmers (SMF) enrolled in Puzhuvirumaippu receive subsidized seeds, fertiliser, implements, and/or procurement guarantees; cost depends on subsidy depth (estimate ₹8,000-15,000 per SMF annually = ₹6,400-12,000 cr/year).",
+    "second_order_effect": "Reduced input costs and price certainty improve farm-gate profitability; increased net income reduces distress sales and debt-driven asset losses; improved liquidity enables reinvestment in soil health and minor irrigation.",
+    "third_order_effect": "Multi-year income stability reduces debt burden and indebted migration; improved farm productivity per hectare enables specialisation; aggregated SMF income gains stimulate rural non-farm services and reduce suicide rates.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_001",
@@ -81,7 +99,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Establishment of dedicated agricultural university creates institutional capacity for localised research, extension, and skilled workforce development aligned to TN agro-ecological conditions.",
+    "first_order_effect": "New university infrastructure (land, buildings, faculty recruitment) requires ₹300-500 cr capital cost and ₹30-40 cr annual revenue cost; initial cohort of ~500-1,000 undergraduates and researchers enrolled within 3-5 years.",
+    "second_order_effect": "Localized research outputs improve crop varieties, pest management protocols, and soil conservation practices; trained extension personnel disseminate innovations to farming communities; higher agricultural science enrolment attracts talent into food systems.",
+    "third_order_effect": "Sustained agricultural productivity growth supports food security and export competitiveness; university research bridges SMF access gap for climate-adaptive technologies; reduced extension gaps lower adoption friction for soil and water conservation.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_002",
@@ -102,7 +126,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Infrastructure provision (processing centers, breed management, modern facilities) reduces post-harvest losses and input costs for dairy producers, improving value capture per litre of milk.",
+    "first_order_effect": "Dairy processing centers established in 15-20 districts; estimated 50,000-100,000 smallholder dairy farmers gain access to cold storage, chilling, and value-added processing; requires ₹500-800 cr capital investment.",
+    "second_order_effect": "Reduced spoilage (currently 10-15% loss) and improved milk quality increase farmgate prices by 8-12%; improved breed genetics increase per-animal yield by 15-25%; farmers shift from informal to formal supply chains.",
+    "third_order_effect": "Higher dairy farm income reduces seasonal migration; improved productivity enables dairy intensification on smaller land holdings; aggregated output supports downstream dairy industry expansion and export growth.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_003",
@@ -123,7 +153,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "State-branded dairy cooperative brand creates direct-to-consumer distribution channel and premium pricing mechanism that captures middleman margins for producer benefit.",
+    "first_order_effect": "Nayam brand launched with estimated 10,000-20,000 retail points; initial volumes ~50,000-100,000 litres/day; requires ₹200-400 cr branding, distribution, and processing infrastructure investment; captures ~5-10% retail markup.",
+    "second_order_effect": "Producer-brand margins improve farmgate prices by 5-8% relative to unbranded sales; improved price predictability incentivises production expansion and quality improvements; brand reputation drives consumer trust and repeat purchases.",
+    "third_order_effect": "Sustained brand loyalty translates into stable, growing demand that justifies on-farm investment in herd quality; dairy cooperative revenue enables reinvestment in member services (feed, veterinary); brand equity allows portfolio expansion into value-added products.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_agri_004",
@@ -144,7 +180,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Targeted expansion of extension services and veterinary capacity in dairy-deficit districts removes knowledge and health-service barriers that constrain milk productivity.",
+    "first_order_effect": "New extension centers and veterinary clinics established in ~8-12 low-dairy districts; ~30,000-50,000 dairy farmers in underserved areas gain regular access to technical advice and animal healthcare; requires ₹80-150 cr capital + ₹20-30 cr annual operating cost.",
+    "second_order_effect": "Improved disease management reduces animal mortality and morbidity by 10-15%; technical advice on feed, breed selection, and milking hygiene increases per-animal yield by 12-18%; improved herd health reduces veterinary cost burden on small producers.",
+    "third_order_effect": "Higher productivity and lower cost of production improve dairy farmer profitability; increased output in deficit districts rebalances regional dairy production; extension networks become conduit for breed upgrades and climate-adaptive practices.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_005",
@@ -165,7 +207,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Formalised employment rules and subsidised input access (fish feed) reduce income volatility and input cost burden for cooperative dairy producers, improving economic stability.",
+    "first_order_effect": "Service rules established for ~50,000-100,000 cooperative dairy producers; subsidised fish feed provision reduces aquaculture input costs by 20-30%; estimated fiscal cost ₹50-100 cr annually for full subsidy coverage.",
+    "second_order_effect": "Formalised employment rules enable credit access (collateral-free loans via cooperative membership); reduced feed costs improve aquaculture net margins by 15-25%; increased profitability reduces seasonal debt-driven distress sales.",
+    "third_order_effect": "Stable cooperative employment attracts new entrants into dairy-integrated livelihoods; improved aquaculture profitability enables specialisation and farm intensification; cooperative networks strengthen as members accumulate capital for reinvestment.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_006",
@@ -186,7 +234,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Direct income transfer to elderly fishermen aged 65+ provides a guaranteed monthly income floor, reducing dependence on precarious fishing labor.",
+    "first_order_effect": "~2-3 lakh elderly fishermen aged 65+ receive ₹2,500/month (~₹30,000 annually), equivalent to ~10% of average fishermen household income.",
+    "second_order_effect": "Reduced financial pressure on elderly to continue physically dangerous fishing work; increased household consumption spending and reduced poverty headcount among beneficiary households.",
+    "third_order_effect": "Intergenerational transfer of labor: younger family members can pursue education or skill training instead of subsistence fishing, gradually reducing fisheries sector dependency.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_002",
@@ -207,7 +261,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Ex-post lump-sum compensation to bereaved families provides debt relief and income stabilization following catastrophic loss of primary earner.",
+    "first_order_effect": "Families of ~500-1,500 fishermen who die annually (estimated from occupational mortality data) receive ₹25 lakh compensation, reducing acute financial shock.",
+    "second_order_effect": "Reduced distress borrowing and sale of assets by widow-headed households; preserved school enrollment for dependent children; improved widow economic agency.",
+    "third_order_effect": "Reduced intergenerational poverty trap where children leave school to replace lost parental income; improved long-term human capital accumulation in fishing communities.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_infra_002",
@@ -228,7 +288,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Infrastructure provision (harbors with storage, ice plants, auction facilities, repair yards) reduces transaction costs, post-harvest losses, and market friction for coastal fishermen.",
+    "first_order_effect": "~5-8 integrated harbors developed across TN coastal districts (Chengalpattu, Kancheepuram, Villupuram, Tirunelveli, Ramanathapuram); fishermen gain access to cold chain and direct sale markets.",
+    "second_order_effect": "Reduced fish spoilage (currently 20-30% loss), shortened supply chain, direct price realization (+15-25% higher per kg); increased market participation by small-scale fishermen.",
+    "third_order_effect": "Improved profitability enables reinvestment in better gear; fisher collective bargaining power increases; reduced middleman exploitation; shift toward value-added processing employment.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_007",
@@ -249,7 +315,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Input subsidy (nets) lowers capital barrier to fishing; monthly allowance (₹4,000) bridges gap between catch seasons and guarantees minimum income irrespective of catch.",
+    "first_order_effect": "~3-5 lakh individual fishermen receive ₹500 net subsidy + ₹4,000 monthly allowance (~₹48,000 annually); effective income floor of ₹4,000/month for participating fishermen.",
+    "second_order_effect": "Increased fishing days (reduced idling due to broken nets); higher catch volumes; stabilized income reduces informal debt accumulation; improved household food security.",
+    "third_order_effect": "Shift from debt-financed fishing to owned-asset-based production; increased savings capacity; potential for cooperative formation; improved bargaining with traders.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_008",
@@ -270,7 +342,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Cooperative structure + subsidized inputs (feed, nets) reduces individual fisher's market exposure, lowers input costs, and enables collective asset ownership and shared equipment.",
+    "first_order_effect": "~500-1,000 fisheries cooperatives formed; ~2-3 lakh fishermen enrolled; average input cost reduction of 25-30% per fisher through bulk purchasing.",
+    "second_order_effect": "Improved cash flow due to lower working capital requirement; increased catch volume per fisher; improved quality control; collective negotiating power against traders.",
+    "third_order_effect": "Gradual shift from subsistence to semi-commercial fishing; emergence of women fisher collectives; formalization of fisher labor market; potential backward integration into fish processing.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_009",
@@ -291,7 +369,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Equipment support + technical training for inland pond/tank fisheries expands production base beyond marine fishing, reducing occupational concentration risk.",
+    "first_order_effect": "~1-2 lakh inland fishermen across 5,000+ ponds/tanks receive equipment (nets, aerators, fingerlings); inland production increases by ~15-20% per beneficiary unit.",
+    "second_order_effect": "Diversified livelihood portfolio: inland fishery can sustain during monsoon when marine fishing is restricted; income stabilization across seasons; reduced seasonal migration.",
+    "third_order_effect": "Reduced occupational concentration; improved aquaculture productivity in agrarian regions; complementary income for farmers in tank-intensive districts (Chengalpattu, Ramanathapuram); potential employment for landless laborers.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_010",
@@ -312,7 +396,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Subsidized health insurance removes cost barrier to healthcare access for fishermen families, reducing catastrophic health expenditure and enabling early intervention.",
+    "first_order_effect": "~5-8 lakh fishermen family members enrolled in zero-premium health insurance; coverage for hospitalization (~₹5-10 lakh per policy) at point of care.",
+    "second_order_effect": "Reduced out-of-pocket health spending; lower debt accumulation from medical shocks; improved school attendance (children not pulled for wage labor due to parent illness); better maternal/child health outcomes.",
+    "third_order_effect": "Reduced household financial volatility; improved productivity due to better health status; accumulated health capital enables participation in higher-skill occupations; break in poverty-disease feedback loop.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_003",
@@ -333,7 +423,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Monsoon harbor maintenance ensures infrastructure availability during peak weather risk season, guaranteeing fishermen access to facilities when occupational vulnerability is highest.",
+    "first_order_effect": "All existing fishing harbors across TN coast maintained year-round; fishermen retain market access and equipment repair capacity during 4-6 month monsoon season (June-November).",
+    "second_order_effect": "Reduced fishing days lost to monsoon (alternative income preserved); maintained catch volume; reduced debt accumulation due to income interruption; improved safety (harbors available for emergency shelter).",
+    "third_order_effect": "Stabilized annual income despite seasonal climate volatility; reduced seasonal migration; improved school enrollment stability; potential for monsoon-season inland fishery expansion as complement.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_agri_011",
@@ -354,7 +450,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Infrastructure provision for perishable goods preservation and equipment safety reduces post-harvest losses and theft, extending marketable shelf-life for fishing catch.",
+    "first_order_effect": "Cold storage and net repositories operational at fishing harbours/landing centers; fishers gain secure storage for nets (reducing seasonal replacement costs) and ability to store catch 2-5 days longer, capturing higher-price windows.",
+    "second_order_effect": "Reduced spoilage increases effective farm-gate revenue per catch (~10-15% yield improvement); fishers shift from distress sales to price-timed sales, improving income stability and reducing debt-driven distress borrowing.",
+    "third_order_effect": "Improved fisher household cash flow enables reinvestment in fishing gear, reduced reliance on exploitative moneylenders, and potential surplus for diversified livelihoods; strengthens cooperative marketing if linked to procurement systems.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_002",
@@ -375,7 +477,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Reservation increase from 7.5% to 10% expands merit-based access to government medical seats, lowering entry barriers for government school students from economically disadvantaged backgrounds.",
+    "first_order_effect": "~250-350 additional annual MBBS/BDS seats allocated to government school students (based on TN's ~3,500 total medical seats); reduces competition intensity for this cohort and lowers coaching dependency.",
+    "second_order_effect": "More affordable medical degree attainment for lower-income families (reduces education debt burden); increases diversity in medical profession from vernacular/government schooling backgrounds; creates role models in underrepresented communities.",
+    "third_order_effect": "Over 10-15 years, physician workforce composition shifts toward underserved rural areas (medical school graduates often return to home regions); potential improvement in rural healthcare access and culturally concordant care.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_003",
@@ -396,7 +504,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Quality improvement through curriculum design, teacher training, and STEM centers enhances foundational learning outcomes (literacy/numeracy), addressing systemic learning deficit in government schools.",
+    "first_order_effect": "STEM learning centers established at block/taluk level; teacher professional development programs rolled out; ~4-6 crore students in grades 1-10 exposed to improved pedagogy; math/language proficiency measured via state assessments.",
+    "second_order_effect": "Improved foundational skills reduce grade repetition and dropout rates; students entering secondary school with stronger reading/numeracy base, improving transition to higher secondary; higher learning readiness correlates with better board exam performance.",
+    "third_order_effect": "Enhanced human capital trajectory: cohorts with improved foundational learning exhibit higher tertiary enrollment, better job market outcomes, and intergenerational learning spillovers (educated parents invest more in children's education).",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_004",
@@ -417,7 +531,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Curriculum integration of data science and practical science (grades 6-10) builds 21st-century technical competencies early, aligning learning with emerging job market demand.",
+    "first_order_effect": "Data science and practical science modules incorporated into state board curriculum; ~3.5 crore students in grades 6-10 gain exposure to coding, data analysis, and applied scientific thinking; new teacher training required.",
+    "second_order_effect": "Students develop problem-solving mindset and technical literacy earlier; improved aptitude for STEM-track choices in higher secondary; reduced fear of technology and math anxiety in traditionally underrepresented groups (girls, rural students).",
+    "third_order_effect": "Increased pipeline of students eligible for tech/engineering careers; better alignment between school learning and employer skill demand; potential improvement in youth employment in high-skill sectors by 2035-40.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_edu_005",
@@ -438,7 +558,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Curriculum deficiency remediation and linguistic rights preservation maintain educational continuity and reduce learning loss from implementation failures, while protecting mother-tongue instruction access.",
+    "first_order_effect": "Curriculum gaps in current implementation identified and corrected; bilingual framework (Tamil + English) maintained without dilution; transitional stress from new curriculum rollout mitigated; ~4-6 crore students continue in familiar linguistic medium.",
+    "second_order_effect": "Reduced student confusion and dropout from curriculum disruption; preserved literacy development in mother-tongue supports better conceptual understanding; avoids alienation of Tamil-medium students from sudden English-heavy transition.",
+    "third_order_effect": "Sustained enrollment in government schools and maintained learning progression; bilingual competency (Tamil + English) develops more naturally, supporting both cultural identity and market-relevant skill; reduces private school migration.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_edu_006",
@@ -459,7 +585,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Teacher recruitment fills existing vacancies and reduces student-teacher ratios, improving classroom attention and personalized learning support.",
+    "first_order_effect": "~20,000-30,000 teaching positions filled (based on chronic TN vacancy rates of 5-8%); student-teacher ratio improves from current ~35:1 to closer to policy norm of 30:1; class sizes moderately decline.",
+    "second_order_effect": "Teachers have increased capacity for individual student attention, assignment checking, and remedial support; reduced teacher absenteeism pressure (fewer multi-class cover assignments); improved classroom order and learning time.",
+    "third_order_effect": "Over 3-5 years, cohort learning outcomes (board exam scores, learning level assessments) improve incrementally; reduced dropout rates in affected schools; improved teacher job satisfaction reduces recruitment churn.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_007",
@@ -480,7 +612,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Climate change curriculum integration builds environmental literacy and decision-making competency, preparing students for climate-aware citizenship and career pathways.",
+    "first_order_effect": "Climate topics (mitigation, adaptation, local ecology) integrated into science and social studies curriculum (grades 6-12); ~4 crore students gain structured climate knowledge; teacher training on climate pedagogy conducted.",
+    "second_order_effect": "Students develop understanding of climate-livelihood nexus (agriculture, fisheries, water, urban heat); increased awareness of personal/household-level adaptation practices (water conservation, renewable energy awareness); potential behavioral shift toward sustainability.",
+    "third_order_effect": "Generational shift in climate awareness and action orientation; long-term household resilience to climate shocks improves; potential reduction in maladaptive practices (e.g., overexploitation of groundwater); support for green job economy.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_edu_008",
@@ -501,7 +639,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Free textbook provision removes direct material cost barrier to learning, ensuring all students possess required math resources regardless of household income.",
+    "first_order_effect": "Approximately 4-5 crore government and government-aided school students receive free mathematics textbooks annually; eliminates ₹150-300 per-student per-year textbook cost for poor households; 100% of enrolled students have physical math resources.",
+    "second_order_effect": "Reduced household education expense enables reallocation to nutrition/nutrition or other essential inputs; removes school absence due to book shortage; improved homework completion rates when all students have identical textbook access.",
+    "third_order_effect": "Cumulative effect on learning outcomes is modest but additive; combined with teacher quality improvements, equitable resource access supports reduction in achievement gaps between rich/poor and urban/rural students.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_edu_009",
@@ -522,7 +666,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Access to higher education expansion in native language reduces migration burden and enables rural students to pursue tertiary education locally.",
+    "first_order_effect": "~25 new Tamil medium colleges established across districts, estimated to accommodate 50,000–75,000 additional undergraduate enrollments, primarily benefiting rural and vernacular-stream students.",
+    "second_order_effect": "Increased tertiary attainment among vernacular cohorts raises labor market entry wages and expands pool of Tamil-educated graduates for state-level government and private sector recruitment.",
+    "third_order_effect": "Higher educational attainment correlates with delayed fertility, improved intergenerational mobility, and sustained demand for skilled employment in Tamil-medium professions (law, social sciences, humanities), reducing outmigration.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_010",
@@ -543,7 +693,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "International-standard partnerships in Tamil medium colleges signal prestige and quality assurance, attracting high-performing students and potentially enabling credit transfers and research collaboration.",
+    "first_order_effect": "~10 elite Tamil medium colleges established with Harvard/MIT/Stanford partnerships; estimated 3,000–5,000 high-performing students gain access to international curricula and faculty exchange; brand recognition increases Tamil medium credibility in global academic networks.",
+    "second_order_effect": "Graduates from these colleges attract higher-wage employment (tech, finance, academia) in both domestic and international labor markets; partnership institutions gain access to Tamil-speaking talent pool, potentially creating reciprocal funding and scholarship pipelines.",
+    "third_order_effect": "Tamil medium education becomes competitive with English-medium in global labor market perception; diaspora investment in TN education sector increases; talent retention in state improves as graduates see Tamil-medium pathways to international careers.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_004",
@@ -564,7 +720,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Conversion of private medical college capacity to government ownership removes financial barriers to medical education and increases affordable doctor supply for public health system.",
+    "first_order_effect": "Estimated 5–10 private medical colleges converted to government control; immediate increase of 500–1,000 government-funded MBBS seats; elimination of ₹50–80 lakh tuition barriers for aspiring physicians from non-elite backgrounds.",
+    "second_order_effect": "Cohort of economically diverse doctors enters public health system with no debt burden; likelihood of rural posting acceptance increases; government hospitals gain recruitment flexibility and reduce reliance on contract doctors.",
+    "third_order_effect": "Sustained pipeline of publicly funded physicians reduces doctor-to-population ratio gaps in rural TN; medical workforce becomes socioeconomically representative of population served, improving cultural competency and trust in public health.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_005",
@@ -585,7 +747,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Distributed PHC infrastructure reduces distance-to-care barriers and enables early diagnosis and preventive health intervention at village level.",
+    "first_order_effect": "2,000 new PHCs established with advanced diagnostic equipment (ultrasound, ECG, lab capacity); estimated ~40 million rural residents gain PHC access within 5 km; ~3,000–4,000 primary healthcare workers (ANM, ASHAs) hired.",
+    "second_order_effect": "Early-stage disease detection increases, reducing hospital admissions for preventable conditions; maternal mortality and neonatal mortality decline as antenatal care penetration rises; communicable disease surveillance improves, enabling rapid outbreak response.",
+    "third_order_effect": "Preventive care norm establishment reduces catastrophic health expenditure for poor households by ~15–20%; rural health-seeking behavior shifts from tertiary to primary care, reducing public hospital congestion and enabling better resource allocation.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_006",
@@ -606,7 +774,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Removal of out-of-pocket payment barriers at point of care enables poor and excluded families to seek timely treatment without financial distress.",
+    "first_order_effect": "Free medical treatment policy implemented in all government hospitals for BPL/EWS households (~1.2 crore HoH + families, ~4–5 crore individuals); estimated elimination of ₹15,000–40,000 average annual out-of-pocket medical expense for target group.",
+    "second_order_effect": "Hospital utilization among poorest quintile increases by 30–50%; medical debt-driven rural indebtedness declines; household savings available for food security and education instead of health crises.",
+    "third_order_effect": "Reduced catastrophic health expenditure breaks debt cycles for marginal rural households; improved financial stability enables productive investment (livestock, tools) and child education continuation; intergenerational poverty persistence weakens.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_007",
@@ -627,7 +801,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Addition of doctors and dentists to government hospitals reduces patient-to-provider ratios, improves service quality, and reduces waiting times for consultations.",
+    "first_order_effect": "Estimated 2,000–3,500 doctor positions and 500–1,000 dentist positions recruited across government hospitals state-wide; patient-to-doctor ratio improves from current 1:1,200–1,500 toward WHO standard of 1:1,000; average consultation waiting time reduced from 4–6 hours to 1–2 hours.",
+    "second_order_effect": "Higher-quality diagnostics and treatment outcomes increase; patient satisfaction and trust in government hospitals rises; staff burnout and absenteeism decline, improving service consistency.",
+    "third_order_effect": "Government hospital preference increases among middle-income groups, reducing private sector burden and expanding tax-financed care capacity; workforce retention improves, reducing recruitment and training cycles.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_infra_008",
@@ -648,7 +828,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Job security and benefits protection for long-service healthcare workers stabilizes workforce, reduces turnover, and improves organizational morale and retention.",
+    "first_order_effect": "Estimated 30,000–50,000 healthcare workers with 10+ years of service (nurses, lab technicians, ASHA supervisors, male health workers) granted permanent/tenure status or benefit guarantees; permanent contract conversion or equivalent pension security implemented.",
+    "second_order_effect": "Voluntary attrition among mid-career healthcare workers declines; institutional knowledge retention improves; mentorship capacity within hospitals increases as experienced staff remain; wage expectations for remaining contract workers may rise.",
+    "third_order_effect": "Healthcare workforce stability enables transition to long-term service delivery planning; training and specialization within retained cohort improves; however, creates two-tier wage/benefit system that may discourage new entrant recruitment unless entry-level benefits also improve.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_infra_009",
@@ -669,7 +855,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Distribution of cancer radiotherapy (LINAC) units to all district hospitals removes geographic access barriers and enables timely curative treatment for locally-advanced cancers.",
+    "first_order_effect": "~38 district-level LINAC units established (one per district); estimated 20,000–30,000 annually treated cancer patients gain access to government-funded radiotherapy (vs. current ~5,000); elimination of ₹8–15 lakh radiotherapy costs for poor households.",
+    "second_order_effect": "Cancer mortality rates decline by ~10–15% in poor populations due to earlier/curative-stage treatment; rural-urban cancer survival gap narrows; catastrophic expenditure for cancer families eliminated, preventing debt-driven asset sales.",
+    "third_order_effect": "Long-term cancer burden reduction (morbidity + mortality) improves life expectancy in poor cohorts by ~0.5–1 year; household economic stability improves; health system gains fiscal space as fewer late-stage emergency admissions occur.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_010",
@@ -690,7 +882,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Infrastructure provision enables geographic access to specialist oncology and radiotherapy services, eliminating travel burden and reducing treatment delays for district-level cancer patients.",
+    "first_order_effect": "Cancer treatment centers with oncology and radiotherapy units established in all 38 TN districts; estimated 2-3 lakh cancer patients annually gain local access to services previously available only in tier-1 cities.",
+    "second_order_effect": "Earlier-stage diagnosis and treatment initiation due to reduced travel friction; improved treatment completion rates and survival outcomes; reduced catastrophic out-of-pocket spending for patient families.",
+    "third_order_effect": "Systemic shift from curative to preventive oncology; district hospitals develop specialized workforce; decentralized cancer epidemiology data improves public health targeting.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_011",
@@ -711,7 +909,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Free IVF provision removes financial barrier to fertility treatment, enabling access for economically disadvantaged couples with infertility.",
+    "first_order_effect": "Estimated 50,000–100,000 couples (primarily BPL/EWS households) access IVF services annually; per-cycle cost (₹1–2 lakh) eliminated; government healthcare system absorbs recurrent operational costs.",
+    "second_order_effect": "Increased IVF cycle uptake increases success rates only if quality control, trained embryologists, and laboratory standards are maintained; without this, repeat cycles cascade cost burden to state; fertility outcomes dependent on underlying reproductive pathology, not price alone.",
+    "third_order_effect": "Normalization of assisted reproductive technology in public healthcare; potential demographic impact in fertility-constrained households; equity gap in fertility outcomes narrows only if service quality matches private sector.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_edu_011",
@@ -732,7 +936,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Language policy shift in administration increases accessibility of government services and documentation for Tamil-monolingual citizens by removing English-language intermediation.",
+    "first_order_effect": "Tamil becomes mandatory in state administration filings, notices, and inter-departmental communications; ~60–70% of rural and 40% of urban TN population (Tamil-monolingual cohort) gains direct comprehension of government processes without translation brokers.",
+    "second_order_effect": "Reduced transaction costs for citizens; increased direct access to government services; potential slowdown in administrative efficiency during transition phase (recruitment, retraining, documentation conversion); institutional knowledge loss if English-proficient staff attrition occurs.",
+    "third_order_effect": "Long-term shift in administrative culture toward vernacular governance; potential reduction in English-language professional skill acquisition among youth; legal/constitutional challenges if central government communications remain English-medium.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_012",
@@ -753,7 +963,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Recruitment exam availability in Tamil language removes language-based access barrier, enabling Tamil-medium education graduates to compete for government jobs on equal terms.",
+    "first_order_effect": "Estimated 3–5 lakh Tamil-medium candidates annually become eligible for state civil service, police, and technical recruitment exams; first-time pass rates for Tamil-medium cohort increase as language barrier is eliminated.",
+    "second_order_effect": "Shift in recruitment pool composition toward Tamil-medium graduates; potential skill/English-proficiency gap in recruited officers if exam content doesn't account for role-specific language needs; increased administrative capacity in Tamil-speaking regions if recruitment geography shifts.",
+    "third_order_effect": "Systemic change in state bureaucracy composition and language-of-work; institutional English-language institutional knowledge erosion if not paralleled by bilingual upskilling; long-term alignment between administrative workforce linguistic profile and citizen base.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_012",
@@ -774,7 +990,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Tamil-medium college courses with scholarships remove language and financial barriers, enabling rural/vernacular education graduates to access higher education without English-medium gatekeeping.",
+    "first_order_effect": "Estimated 1.5–2.5 lakh Tamil-medium students annually enroll in college-level Tamil-medium courses with scholarship coverage; college attendance rates among rural Tamil-monolingual cohort increase; scholarship cost ~₹5,000–8,000 per student annually.",
+    "second_order_effect": "Increased educational attainment in Tamil-medium pathway; employers' perception of Tamil-medium degree value becomes critical factor—without employer acceptance, labor market returns stagnate; potential wage gap between English-medium and Tamil-medium graduates persists or widens.",
+    "third_order_effect": "Structural shift in higher education accessibility; economic returns to Tamil-medium education improve only if job market rewards Tamil-medium credentials equally; risk of creating parallel, unequally-valued education track if employer demand doesn't shift.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_003",
@@ -795,7 +1017,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Per-unit production subsidy (₹10/unit) directly reduces enterprise cost of goods sold, improving profit margins for women SHG members without cash transfer intermediation.",
+    "first_order_effect": "Estimated 2–3 lakh women SHG members (across ~25,000 active SHGs in TN) receive ₹10 subsidy per unit produced; monthly subsidy benefit ranges ₹500–2,000 per member depending on production volume; annual state cost ₹50–75 crore (within discretionary budget envelope).",
+    "second_order_effect": "Improved unit economics incentivize production scaling; however, subsidy effect is price support only—if demand is constrained or quality issues persist, production won't scale; subsidy becomes rent rather than investment unless paired with market access or skill intervention.",
+    "third_order_effect": "Subsidy dependency risk; without complementary market-linkage or competitive positioning, SHGs remain subsidy-reliant, not commercially viable; potential for subsidy inefficiency (deadweight loss) if marginal units are produced solely for subsidy capture.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_004",
@@ -816,7 +1044,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Cluster-based enterprise establishment provides productive asset (small/medium business entity) to women SHGs, transitioning members from informal micro-production to registered commercial enterprise.",
+    "first_order_effect": "Estimated 1,500–2,500 small/medium enterprises established across TN clusters (1 enterprise per cluster, 5-year timeline); ~10,000–15,000 women SHG members directly employed; estimated capital cost ₹5–10 lakh per enterprise = ₹75–250 crore total outlay over 5 years (requires dedicated fund allocation).",
+    "second_order_effect": "Formalization of SHG production into registered entities; access to bank credit, government contracts, and supply chains improves; however, enterprise sustainability depends on management capacity, market demand, and ongoing working capital—high failure rate (~30–40%) if post-establishment support is absent.",
+    "third_order_effect": "Structural shift from survivalist SHG microenterprises to scaled commercial entities; potential job creation multiplier (2–3x direct employment); risk of asset stranding if market conditions deteriorate or management capacity gaps persist post-launch.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_005",
@@ -837,7 +1071,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Rebranding and institutional recognition of SHGs as economic centers legitimizes them as formal financial and production nodes, enabling institutional credit access and supply chain integration.",
+    "first_order_effect": "SHG institutional status upgraded in government records; estimated 25,000 active SHGs across TN gain formal designation as economic centers; bank eligibility for group lending improves; per-group credit access potential increases from ₹5–10 lakh to ₹10–25 lakh.",
+    "second_order_effect": "Increased credit availability and supply chain participation; however, without concurrent skill-building (accounting, quality, production management), SHGs may over-leverage or misallocate credit; loan repayment stress increases if enterprise productivity doesn't match credit quantum.",
+    "third_order_effect": "Long-term institutional integration of SHGs into formal financial ecosystem; potential for scale if government procurement prioritizes SHG-produced goods; risk of debt-trap deepening if productivity gains don't materialize.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_006",
@@ -858,7 +1098,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Direct cash transfer at critical maternal health milestones reduces financial barrier to institutional delivery and reduces out-of-pocket expenditure during pregnancy-postpartum period.",
+    "first_order_effect": "~1.37 crore women HoH and eligible pregnant women receive strengthened maternity assistance (current scheme ~₹12,000 per birth; expansion scope unclear without amount specified).",
+    "second_order_effect": "Increased institutional delivery rates reduce maternal mortality and neonatal complications, enabling women to resume income-generating activities sooner post-delivery.",
+    "third_order_effect": "Reduced health shocks in poorest households break inter-generational poverty cycle; improved child survival rates increase school enrollment demand.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_007",
@@ -879,7 +1125,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Doubling assistance from ₹50,000 to ₹1,00,000 increases financial cushion for vulnerable children in institutional care, addressing acute shortfall in per-child annual expenditure.",
+    "first_order_effect": "~2-3 lakh children in state-run homes and child protection institutions receive 100% increase in per-child assistance; reduces malnutrition and healthcare gaps in institutional care.",
+    "second_order_effect": "Improved nutrition and healthcare enable higher school attendance and concentration; reduced institutional abuse risk due to better staff-to-child ratios with enhanced funding.",
+    "third_order_effect": "Children who age out of institutions have improved foundational health and literacy, increasing employability and reducing recidivism into poverty.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_008",
@@ -900,7 +1152,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Safe shelters + legal aid + livelihood support provide immediate exit route and economic independence pathway for women escaping domestic violence, addressing access-to-safety gap.",
+    "first_order_effect": "Urban women facing domestic violence gain access to shelters, legal redressal, and transitional income support under 'Kalaigal Sei Engal Ezhil'; scale uncertain but targets urban violence hotspots.",
+    "second_order_effect": "Women who leave abusive homes avoid further injury/mortality and can pursue education or employment; children exposed to violence break trauma cycle.",
+    "third_order_effect": "Normalization of leaving abusive relationships shifts social perception; reduced multi-generational trauma enables higher female workforce participation.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_013",
@@ -921,7 +1179,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Ubiquitous CCTV coverage increases perpetrator apprehension risk and acts as deterrent to street-level sexual assault and harassment in public spaces.",
+    "first_order_effect": "All TN cities deploy expanded CCTV networks; immediate effect on reporting rates and investigative closure rates for street crimes against women (no baseline data on current coverage % or incident reduction targets).",
+    "second_order_effect": "Reduced assault risk increases female public mobility and after-dark movement; higher likelihood of women walking to work, markets, or transit hubs without safety escort.",
+    "third_order_effect": "Increased female labor force participation in time-bound jobs (retail, services, night shifts); long-term income and economic autonomy gains.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_009",
@@ -942,7 +1206,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Dedicated transit corridors with female-only or monitored safe compartments remove commute safety risk barrier to rural girls accessing urban education and employment.",
+    "first_order_effect": "Rural girls commuting to urban schools/colleges gain access to safe transit facilities; removes last-mile safety blockage currently preventing ~10-15% of eligible rural girls from enrolling in urban institutions.",
+    "second_order_effect": "Higher enrollment in urban vocational/higher education; increased skill acquisition and access to better-wage urban job markets.",
+    "third_order_effect": "Generational shift in female human capital accumulation in rural families; reduced inter-generational poverty and increased tax base in urban labor markets.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_agri_012",
@@ -963,7 +1233,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Structural economic growth through agricultural productivity gains and agro-processing value-addition creates widespread income growth across the rural-to-urban production chain.",
+    "first_order_effect": "TN economy scales to $1 trillion nominal GDP (2024 baseline ~$445B; requires ~8% CAGR), with agricultural sector contributing ~20-25% of growth via yield improvements and processing hubs.",
+    "second_order_effect": "Higher agricultural output increases farm incomes for ~1.2 crore landowning/tenant farmers; agro-processing creates ~5-10 lakh new non-farm rural jobs.",
+    "third_order_effect": "Sustained income growth enables private investment in rural health/education; reduced migration pressure; fiscal capacity for public services expansion.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_010",
@@ -984,7 +1260,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Modern veterinary infrastructure + enforcement removes animal disease and reproductive health bottlenecks for livestock-dependent households, protecting income from livestock assets.",
+    "first_order_effect": "Every district and municipality gains animal husbandry centre + veterinary hospital with diagnostic and breeding services; ~2.5-3 crore livestock-owning households gain proximity-based access to animal healthcare.",
+    "second_order_effect": "Reduced livestock mortality and reproductive failure increases milk/meat output per animal; farmers shift from distressed informal loans to productivity gains for debt repayment.",
+    "third_order_effect": "Increased milk production feeds cooperative networks and private dairies; rural incomes stabilize, reducing seasonal distress migration.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_014",
@@ -1005,7 +1287,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Enforcement of stray animal control + penalty system reduces injury incidents, protecting vulnerable populations from health shocks while creating accountability in animal management.",
+    "first_order_effect": "Stray dog/cattle incidents decline via population control and care programs; strict penalties deter negligent animal keeping; documented reduction in injury-related hospital visits and income loss days.",
+    "second_order_effect": "Lower injury rates reduce out-of-pocket healthcare expenditure and lost work days; children feel safer playing outdoors, increasing school attendance.",
+    "third_order_effect": "Improved public health metrics reduce disease burden; societal attitude shift toward animal welfare and consumer safety norms.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_011",
@@ -1026,7 +1314,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Income subsidy to milk producers reduces effective production cost and increases take-home price per litre, directly raising dairy farming income.",
+    "first_order_effect": "Milk producers (predominantly women in cooperative societies, ~8-10 lakh dairy farmers in TN) receive higher milk prices at collection points; collection infrastructure density increases, reducing transport burden and spoilage.",
+    "second_order_effect": "Higher dairy income incentivizes continued milk production and larger herd maintenance; women's household contribution to family income rises, shifting household bargaining power and investment in children's education.",
+    "third_order_effect": "Sustained dairy income stabilizes rural household consumption, enables reinvestment in animal health and genetics, and reduces seasonal migration pressure during monsoon shortfalls.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_012",
@@ -1047,7 +1341,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Increased purchase subsidy lowers the capital barrier to acquiring dairy animals, enabling landless and marginal households to enter dairying as income source.",
+    "first_order_effect": "~2-3 lakh additional dairy animals purchased by subsidy-eligible households (primarily women, landless labourers); buffalo dairy scheme uptake increases due to buffalo's lower feed/water requirement and higher milk fat yield in TN's semi-arid zones.",
+    "second_order_effect": "New entrants begin milk production within 6-12 months; household labour deployment shifts from wage labour (₹294/day MGNREGS baseline) to milk production (₹400-600/day equivalent income if managed in family enterprise model).",
+    "third_order_effect": "Dairy production capacity scales; competitive pressure on market prices may flatten unless demand-side stimulus (school milk scheme, industrial demand) grows proportionally; risk of subsidy dependency and moral hazard if tied to income checks.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_013",
@@ -1068,7 +1368,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Land allocation removes spatial barrier to milk collection infrastructure, enabling decentralized milk aggregation and reducing transaction costs and spoilage.",
+    "first_order_effect": "Collection centres established within 5-10 km radius of producer clusters; ~500-800 new centres created (assuming current coverage gap); producers save 1-2 hours daily transport time and 5-8% milk value loss from spoilage.",
+    "second_order_effect": "Reduced collection friction accelerates milk supply to cooperative/private processing; women producers gain time for household work or secondary income; aggregation scale improves producer bargaining power with processors.",
+    "third_order_effect": "Local milk marketing becomes viable independent of state cooperative monopoly; private player entry increases; quality standards and cold-chain adoption improve at producer end.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_014",
@@ -1089,7 +1395,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Undefined promise; unable to assess specific mechanism without policy details (livelihood insurance, wage floors, safety equipment, legal enforcement, etc.).",
+    "first_order_effect": "If interpreted as wage floor / MGNREGS expansion: agricultural labourers (predominantly women, ~3.5 crore in TN) receive income stabilization. If interpreted as occupational health: access to safety gear / medical facilities. Without specification, no quantifiable direct outcome.",
+    "second_order_effect": "Contingent on mechanism chosen; wage floor could reduce child labour in agriculture; health protection could reduce hospitalization costs and work-loss days.",
+    "third_order_effect": "If wage floor: structural shift in agricultural production cost and labour supply; if health protection: lower intergenerational poverty transmission via improved parental health.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_015",
@@ -1110,7 +1422,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "In-kind transfer (ration kits) and wage increase provide direct income support to shepherds, reducing caloric deficit and freeing cash for non-food needs.",
+    "first_order_effect": "~1.5-2 lakh shepherds (largely Scheduled Caste, predominantly male but female shepherds included) receive ration kits (~₹2,000-3,000/month equivalent) and wage increase (baseline not stated; assume 10-15% hike); household food security improves.",
+    "second_order_effect": "Reduced malnutrition in shepherd households; freed cash enables healthcare access, children's schooling fees, and petty livestock investment; shepherd participation in public scheme awareness improves.",
+    "third_order_effect": "Improved shepherd household human capital (health, education) may enable occupational mobility for next generation; however, ration dependency creates path-lock if tied to continued shepherding, discouraging skill diversification.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_infra_015",
@@ -1131,7 +1449,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Government takeover of harbour/marketing infrastructure transfers ownership from private/cooperative hands to public control, enabling direct price support and working capital access for small-scale fishers.",
+    "first_order_effect": "~80-120 traditional harbours and fish marketing centres brought under TN government administration; small fishers (predominantly artisanal, ~12 lakh household units) gain guaranteed landing and marketing access; private rent-extraction (commission, forced-sales) reduced.",
+    "second_order_effect": "Operating costs rise sharply (maintenance, labour, administration); if tariffs remain static, fiscal burden on TN budget (~₹50-150 cr annually, unbudgeted); fishers' net income gain depends on tariff design and operational efficiency.",
+    "third_order_effect": "If efficient: sustained fisher income enables fleet modernization and child schooling; if operated at loss: eventual under-maintenance, service degradation, and reversion to private management.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_016",
@@ -1152,7 +1476,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Global-standard processing infrastructure and free fish feed lower value-chain costs and enable value-addition, increasing fisher net income and market access.",
+    "first_order_effect": "~50-100 processing/marketing units established in coastal blocks; ~3-5 lakh fishers (including women fish traders) gain access to cold-storage, processing, and export-grade marketing; fresh-fish spoilage (currently 20-30% of catch) reduced to <5%.",
+    "second_order_effect": "Fishers shift from spot-market sales (₹60-80/kg live weight) to processed product sales (₹200-300/kg dried/processed); women traders gain employment in processing (currently 40% of fish retail workforce).",
+    "third_order_effect": "Export demand creation stabilizes fisher income, attracting youth retention in fisheries; global health standards compliance opens EU/Japan markets, diversifying revenue beyond domestic demand; risk of oversupply if production scales faster than export demand.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_016",
@@ -1173,7 +1503,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Permanent secretariat ensures institutional continuity and policy bandwidth for fisheries development, reducing fragmentation and enabling coordinated fisher support.",
+    "first_order_effect": "Tamil Nadu Fisheries Development Corporation (TNFDC) gains dedicated administrative office in Chennai; policy formulation, fisher subsidy processing, and inter-department coordination accelerate; response time to fisher grievances improves from 6-12 months to 2-3 months.",
+    "second_order_effect": "Fishers' awareness of entitlements (subsidies, insurance, training) increases via centralized communication; TNFDC loan processing for fleet modernization speeds up; non-performing loan recovery improves via centralized oversight.",
+    "third_order_effect": "TNFDC profitability and debt servicing improve; credibility for future bond issuance increases; fisher confidence in government support strengthens, enabling longer-term investment planning.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_017",
@@ -1194,7 +1530,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Dual citizenship grants Tamil diaspora legal recognition and voting/property rights in TN, enabling financial and political participation in their state of origin.",
+    "first_order_effect": "Tamil diaspora (estimated 20-30 lakh globally) gain dual citizenship status, allowing property ownership, voting rights, and formal economic participation in TN.",
+    "second_order_effect": "Increased remittance flows and diaspora-led FDI into TN; property demand in urban/peri-urban areas rises, potentially inflating land prices for non-diaspora residents.",
+    "third_order_effect": "Long-term: TN becomes a hub for diaspora-anchored capital flows and knowledge transfer, but dual citizenship may create two-tier property ownership norms and political representation tensions.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_018",
@@ -1215,7 +1557,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Income transfer to pension beneficiaries (widows, disabled, elderly) via increased monthly pension amount raises household consumption floor for ~1.5-2.0 crore eligible persons.",
+    "first_order_effect": "~1.5-2.0 crore pension beneficiaries receive higher monthly stipends (exact quantum unspecified); household income increases by 10-30% depending on current pension level.",
+    "second_order_effect": "Increased purchasing power drives rural/semi-urban demand for basic goods; reduced household debt servicing for medical/subsistence needs; lower malnutrition and school dropout rates among dependent children.",
+    "third_order_effect": "Sustained consumption boost creates multiplier effects in informal retail; lower emergency health-seeking debt cycles break, enabling intergenerational human capital accumulation.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_017",
@@ -1236,7 +1584,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Pension scheme extension to Tamil widows abroad provides income floor irrespective of geographic location, enabling financial autonomy without family/spousal support.",
+    "first_order_effect": "Tamil widows in foreign countries (estimated 50,000-150,000) become eligible for government pension; requires bilateral agreements and overseas payment infrastructure.",
+    "second_order_effect": "Widows gain independent income security; diaspora remittance pressure eases; reduced psychological/economic dependence on adult children or family networks.",
+    "third_order_effect": "Normalization of independent widow income security across diaspora communities; potential reverse remittance flows to TN; reputational soft power for TN governance model.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_018",
@@ -1257,7 +1611,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Digital census replaces manual enumeration with real-time data capture, enabling granular, error-corrected population/demography tracking for evidence-based resource allocation.",
+    "first_order_effect": "Census 2025 conducted digitally; data on population, occupation, literacy, caste/religion, housing collected with higher accuracy; results available 12-18 months faster than manual process.",
+    "second_order_effect": "Bureaucrats access real-time demographic data for welfare targeting (PDS, MGNREGS, school-health allocation); duplicate/fake beneficiary records detected; resource leakage reduced.",
+    "third_order_effect": "Systemic shift: welfare becomes demand-driven (data-responsive) rather than supply-driven (discretionary); equity in public goods distribution improves; fiscal multiplier on welfare spending increases.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_infra_019",
@@ -1278,7 +1638,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Review committee on Reservoir Release (RR) Policy addresses water scarcity caused by erratic/insufficient coal supply to power plants, indirectly restoring irrigation reliability.",
+    "first_order_effect": "Committee formed; RR policy reviewed; NLC coal supply constraints identified; no immediate action guaranteed; political/inter-state wrangling likely.",
+    "second_order_effect": "If coal supply increases: power generation stabilizes; pump-sets run reliably; water release patterns predictable for irrigation scheduling; farmer income volatility decreases.",
+    "third_order_effect": "Sustained agricultural productivity; reduced farmer debt from failed irrigation seasons; soil health stabilization; long-term food security and rural labor retention.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_women_019",
@@ -1299,7 +1665,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Pension increase for EPS-95 beneficiaries via state subsidy or employer mandate raises retirement income for private-sector employees, reducing old-age poverty.",
+    "first_order_effect": "EPS-95 beneficiaries in TN (~5-10 lakh retirees) receive higher monthly pension; state may contribute to gap between EPS-95 payout and promised indexed amount.",
+    "second_order_effect": "Improved consumption security for private-sector retirees; reduced pressure on adult children for financial support; healthcare-seeking behavior normalizes; family savings increase.",
+    "third_order_effect": "Private-sector pension adequacy becomes competitive with public-sector norms; labor supply quality improves (workers less desperate for informal/hazardous work); informal economy loses cost-advantage labor.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "aiadmk_2026_edu_013",
@@ -1320,7 +1692,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Reserved college admission slots for freedom fighters' children provides educational access without merit-filtering, enabling intergenerational mobility for historically recognized families.",
+    "first_order_effect": "1% of annual arts/science college seats (~200-400 seats across TN) reserved; estimated 200-400 children of freedom fighters gain direct college admission per year.",
+    "second_order_effect": "College completion rates increase for this cohort; graduate-level employment opportunities expand; household income rises; social status improves within recognized communities.",
+    "third_order_effect": "Institutionalization of freedom-fighter lineage as educational privilege; potential for elite capture (elite freedom-fighter families dominating reserved seats); limited systemic reach (~0.01% of annual college admissions).",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "aiadmk_2026_women_020",
@@ -1341,6 +1719,12 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:26:15.838654+00:00"
+    "_extracted_at": "2026-04-03T04:26:15.838654+00:00",
+    "impact_mechanism": "Employment assistance program provides job placement/skill training for families of freedom fighters, converting historical identity into income-earning opportunity.",
+    "first_order_effect": "Employment assistance scheme established; economically disadvantaged family members (~5,000-20,000 estimated) access skill training or job placement support; recruitment preference in government/PSU roles possible.",
+    "second_order_effect": "Household income rises via formal employment; social safety net stabilizes; education/health spending increases; intergenerational poverty cycle weakens within eligible families.",
+    "third_order_effect": "Limited: affects only historically recognized families (~0.01-0.05% of TN population); normalizes identity-based rather than need-based employment justice; parallel labor market tier emerges.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   }
 ]

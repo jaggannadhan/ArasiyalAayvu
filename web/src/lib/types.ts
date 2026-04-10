@@ -327,6 +327,10 @@ export type StanceVibe =
   | "Women-focused"
   | "Farmer-focused";
 
+export type BeneficiaryCoverage = "universal" | "broad_majority" | "targeted_poor" | "specific_group";
+export type ImpactDepth        = "transformative" | "substantive" | "supplemental" | "symbolic";
+export type FiscalViability    = "feasible" | "stressed" | "central_dependent" | "uncosted";
+
 export interface ManifestoPromise {
   doc_id: string;
   party_id: string;           // "dmk" | "aiadmk" | "bjp" | "pmk" etc.
@@ -344,6 +348,19 @@ export interface ManifestoPromise {
   manifesto_pdf_page?: number;
   source_notes?: string;
   ground_truth_confidence: "HIGH" | "MEDIUM" | "LOW";
+  // Welfare assessment — level 1 (populated by manifesto_ingest.py, 2026+ only)
+  beneficiary_coverage?: BeneficiaryCoverage | null;
+  impact_depth?: ImpactDepth | null;
+  fiscal_viability?: FiscalViability | null;
+  standalone_sufficient?: boolean | null;
+  coverage_gap_note?: string | null;
+  // Deep analysis — levels 2-3 (causal chain, delivery risk)
+  impact_mechanism?: string | null;
+  first_order_effect?: string | null;
+  second_order_effect?: string | null;
+  third_order_effect?: string | null;
+  implementation_risk?: "low" | "medium" | "high" | null;
+  root_cause_addressed?: boolean | null;
   _uploaded_at?: string;  // ISO timestamp — set by Firestore loader; absent in seed data
 }
 

@@ -6,7 +6,7 @@ import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigato
 import { PillarTabs } from "@/components/manifesto/PillarTabs";
 import { PromiseCard } from "@/components/manifesto/PromiseCard";
 import { ComparisonSkeleton } from "@/components/manifesto/PromiseSkeleton";
-import { SDGAlignment } from "@/components/manifesto/SDGAlignment";
+import { SDGAlignment, type SdgJumpTarget } from "@/components/manifesto/SDGAlignment";
 import { useManifestos } from "@/hooks/useManifestos";
 import {
   PILLARS,
@@ -124,6 +124,7 @@ export default function ManifestoTrackerPage() {
   const [activePillar, setActivePillar] = useState<Pillar | "All">("All");
   const [activeStatus, setActiveStatus] = useState<StatusFilter>("All");
   const [view, setView] = useState<"promises" | "sdg">("promises");
+  const [sdgFilter, setSdgFilter] = useState<SdgJumpTarget | null>(null);
 
   // selectedPartyId and activeStatus reset when term changes
   const [partyOverride, setPartyOverride] = useState<string | null>(null);
@@ -132,6 +133,8 @@ export default function ManifestoTrackerPage() {
     setLastTerm(selectedTerm);
     setPartyOverride(null);
     setActiveStatus("All");
+    setActivePillar("All");
+    setSdgFilter(null);
     setView("promises");
   }
 
@@ -189,11 +192,13 @@ export default function ManifestoTrackerPage() {
     return promises
       .filter((p) =>
         p.party_id === selectedPartyId &&
-        (activePillar === "All" || p.category === activePillar) &&
+        (sdgFilter
+          ? sdgFilter.highlighted_doc_ids.includes(p.doc_id)
+          : activePillar === "All" || p.category === activePillar) &&
         (activeStatus === "All" || p.status === activeStatus)
       )
       .sort((a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status));
-  }, [promises, selectedPartyId, activePillar, activeStatus]);
+  }, [promises, selectedPartyId, activePillar, activeStatus, sdgFilter]);
 
   // All promises for the selected party — used for SDG alignment (no pillar/status filter)
   const partyPromises = useMemo(
@@ -204,6 +209,8 @@ export default function ManifestoTrackerPage() {
   function handlePartySelect(id: string) {
     setPartyOverride(id);
     setActiveStatus("All");
+    setActivePillar("All");
+    setSdgFilter(null);
     setView("promises");
   }
 
@@ -368,6 +375,11 @@ export default function ManifestoTrackerPage() {
               PARTY_FULL_NAME[selectedParty.id]?.ta ?? selectedParty.name_ta
             }
             lang={lang}
+            onJumpToPromises={(target) => {
+              setSdgFilter(target);
+              setActivePillar("All");
+              setView("promises");
+            }}
           />
         )}
 
@@ -466,26 +478,28 @@ export default function ManifestoTrackerPage() {
                   <div className="flex flex-wrap gap-2">
                     {/* All categories button */}
                     <button
-                      onClick={() => setActivePillar("All")}
+                      onClick={() => { setSdgFilter(null); setActivePillar("All"); }}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold cursor-pointer transition-all border ${
-                        activePillar === "All"
+                        !sdgFilter && activePillar === "All"
                           ? "bg-gray-900 text-white border-gray-900"
                           : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
                       }`}
                     >
                       <span>{isTA ? "அனைத்தும்" : "All"}</span>
-                      <span className={`text-[10px] font-bold px-1 rounded-full ${activePillar === "All" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
+                      <span className={`text-[10px] font-bold px-1 rounded-full ${!sdgFilter && activePillar === "All" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
                         {Object.values(promiseCounts).reduce((a, b) => (a ?? 0) + (b ?? 0), 0)}
                       </span>
                     </button>
                     {PILLARS.map((pillar) => {
                       const meta = PILLAR_META[pillar];
                       const count = promiseCounts[pillar] ?? 0;
-                      const isActive = activePillar === pillar;
+                      const isActive = sdgFilter
+                        ? sdgFilter.pillars.includes(pillar)
+                        : activePillar === pillar;
                       return (
                         <button
                           key={pillar}
-                          onClick={() => setActivePillar(pillar)}
+                          onClick={() => { setSdgFilter(null); setActivePillar(pillar); }}
                           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold cursor-pointer transition-all border ${
                             isActive
                               ? "bg-gray-900 text-white border-gray-900"
@@ -501,6 +515,25 @@ export default function ManifestoTrackerPage() {
                       );
                     })}
                   </div>
+
+                  {/* SDG filter chip — shown when arriving from SDG tab */}
+                  {sdgFilter && (
+                    <div className="flex items-center gap-2 pt-1">
+                      <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide">
+                        {isTA ? "வடிகட்டி" : "Filter"}:
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold bg-indigo-50 border border-indigo-200 text-indigo-800 px-2.5 py-1 rounded-full">
+                        SDG {sdgFilter.sdg_id} · {isTA ? sdgFilter.sdg_name_ta : sdgFilter.sdg_name}
+                        <button
+                          onClick={() => { setSdgFilter(null); setActivePillar("All"); }}
+                          aria-label="Clear SDG filter"
+                          className="ml-0.5 text-indigo-400 hover:text-indigo-700 font-black leading-none transition-colors"
+                        >
+                          ✕
+                        </button>
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -521,6 +554,34 @@ export default function ManifestoTrackerPage() {
                   <div className="text-center py-8 text-sm text-gray-400">
                     {isTA ? "இந்த தூணில் வாக்குறுதிகள் இல்லை" : "No promises in this pillar"}
                   </div>
+                ) : sdgFilter ? (
+                  // SDG mode — group by each contributing pillar
+                  sdgFilter.pillars.map((pillar) => {
+                    const group = visiblePromises.filter((p) => p.category === pillar);
+                    if (group.length === 0) return null;
+                    const meta = PILLAR_META[pillar];
+                    return (
+                      <div key={pillar} className="space-y-2">
+                        <div className="flex items-center gap-2 px-1 pt-1">
+                          <span className="text-sm">{meta.icon}</span>
+                          <p className="text-xs font-bold text-gray-700 uppercase tracking-wide">
+                            {isTA ? meta.tamil : pillar}
+                          </p>
+                          <span className="text-[10px] font-semibold text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded-full">
+                            {group.length}
+                          </span>
+                        </div>
+                        {group.map((p) => (
+                          <PromiseCard
+                            key={p.doc_id}
+                            promise={p}
+                            lang={lang}
+                            highlighted={sdgFilter.highlighted_doc_ids.includes(p.doc_id)}
+                          />
+                        ))}
+                      </div>
+                    );
+                  })
                 ) : (
                   visiblePromises.map((p) => (
                     <PromiseCard key={p.doc_id} promise={p} lang={lang} />

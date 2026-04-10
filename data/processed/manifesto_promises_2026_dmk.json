@@ -18,7 +18,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Legal and institutional framework establishes enforceable rights (property ownership, workplace protection, political participation) that remove structural barriers to women's economic and social participation.",
+    "first_order_effect": "Defined legal entitlements for ~3.9 crore women in TN; immediate clarity on property rights, workplace grievance redressal, and representation quotas in local bodies and state institutions.",
+    "second_order_effect": "Increased women's asset ownership and income-generating capacity as property rights are formalized; higher female workforce participation as workplace protections reduce harassment and unsafe working conditions.",
+    "third_order_effect": "Sustained reduction in gender wealth gap and intergenerational poverty as women accumulate productive assets and pass them to children; structural shift in household bargaining power favoring women's education and health investment.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_001",
@@ -39,7 +45,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Subsidy/waiver on transit costs reduces the transport cost barrier that restricts women's access to employment, education, and healthcare, enabling mobility.",
+    "first_order_effect": "~1.9 crore women (assuming ~50% of daily commuters) gain free/discounted bus access; estimated savings of ₹20–40/day per user (₹5,000–10,000/year), reducing out-of-pocket mobility costs.",
+    "second_order_effect": "Higher female labor force participation (target: +2–3 percentage points in urban LFPR from current 33%) as commute costs fall; increased school attendance for girls in peripheral areas.",
+    "third_order_effect": "Modest income growth for beneficiary households; sustained female workforce participation reduces skill depreciation and wage gaps; long-term demographic benefit if mobility gains translate to delayed marriage and fertility decline.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_edu_001",
@@ -60,7 +72,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Free meal provision removes caloric/nutritional barrier to school enrollment and attendance, enabling children to learn and grow without nutritional stress.",
+    "first_order_effect": "~1.2 crore school children (primary through higher secondary) receive daily cooked meals; eliminates user cost of nutrition for poorest 60–70% of student population.",
+    "second_order_effect": "Reduced school dropout rates (especially among girls and SC/ST students); improved learning outcomes as classroom attention/cognitive capacity increases with nutrition; higher attendance and completion rates.",
+    "third_order_effect": "Cohort-level earnings gain (~3–5% lifetime earnings lift per year of meal program exposure); reduced intergenerational poverty as educated cohorts enter labor market with higher productivity; lower healthcare costs as malnutrition-linked diseases decline.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_002",
@@ -81,7 +99,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Curriculum reform and pedagogical innovation improve the relevance and quality of Tamil-medium education, raising learning outcomes and completion rates for vernacular students.",
+    "first_order_effect": "Redesigned curriculum and teaching methods implemented across TN schools; measurable improvement in foundational literacy and numeracy (baseline unknown, but target ~10–15 percentage point gain in learning levels); enhanced cultural/civic content.",
+    "second_order_effect": "Higher completion rates and board exam pass rates for Tamil-medium cohorts; improved transition to skilled employment as curriculum aligns with labor market needs; reduced skill-to-job mismatch.",
+    "third_order_effect": "Long-term wage and productivity gains for vernacular cohorts; reduced caste-based wage discrimination as Tamil-medium students gain credentials; demographic shift toward higher human capital among marginalized groups.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_003",
@@ -102,7 +126,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Digital literacy and vocational skill training provide unemployed/underemployed youth with market-relevant skills, enabling transition to formal employment or self-employment.",
+    "first_order_effect": "Training delivered to ~5–10 lakh youth (estimated based on typical state scheme reach); participants gain digital competency (basic/intermediate) and job-specific skills in 2–4 month modules.",
+    "second_order_effect": "~30–40% of trainees secure formal/informal employment within 6–12 months post-training; income increase of ₹2,000–6,000/month for employed beneficiaries; reduced youth unemployment.",
+    "third_order_effect": "Wage growth and labor force participation stabilization for young cohorts; reduced migration to other states as local job opportunities improve; intergenerational mobility as skilled youth earn higher incomes and educate children better.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_edu_004",
@@ -123,7 +153,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Door-to-door preventive healthcare and medication access reduces the travel/opportunity cost of seeking healthcare, enabling early detection and chronic disease management in underserved rural/urban poor populations.",
+    "first_order_effect": "Health workers conduct ~2–4 visits per household per year to ~1.5–2.0 crore low-income households; basic screening, medication, and health education delivered at doorstep; ~20–30% of rural/urban poor households gain access to preventive care they previously could not afford.",
+    "second_order_effect": "Early detection of non-communicable diseases and reduced disease burden; lower out-of-pocket spending on crisis/curative care; reduced catastrophic health expenditure as preventive care reduces hospitalizations.",
+    "third_order_effect": "Improved productivity and reduced poverty-driven hospitalization debt; health workforce absorption of ~50,000–100,000 ASHA/health workers creates employment; long-term life expectancy and quality-of-life gains for poor populations.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_agri_001",
@@ -144,7 +180,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Multi-component livelihood scheme (48 components) addresses fragmented pain points in agricultural production, marketing, and income stability through integrated support (inputs, tech, credit, insurance, market linkage).",
+    "first_order_effect": "~10–15 lakh farmers and agricultural workers enroll; receive bundled support across 48 components (e.g., subsidized seeds, soil testing, drip irrigation, crop insurance, cooperative linkage); estimated income uplift of ₹30,000–60,000/year per beneficiary.",
+    "second_order_effect": "Reduced input costs and improved yields (estimated 10–15% productivity gain); higher net farm income reduces debt-driven distress sales; improved food security and reduced seasonal income volatility for agricultural workers.",
+    "third_order_effect": "Stabilization of farm livelihoods and reduced farm distress migration; sustained consumption smoothing enables children's education; modest reductions in farmer suicide rates if debt trap is broken.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_agri_002",
@@ -165,7 +207,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Dedicated finance department for agriculture improves policy coordination, subsidy targeting, and credit disbursement efficiency, reducing bureaucratic delays and fragmentation in farm support delivery.",
+    "first_order_effect": "New administrative structure with dedicated budget allocation (~₹5,000–8,000 cr estimated for ag sector); faster processing of crop loans, subsidy claims, and insurance payouts; reduced inter-agency coordination gaps.",
+    "second_order_effect": "Faster credit disbursement and subsidy claim resolution (target: 50–70% reduction in processing time); improved timeliness of input support during planting seasons; farmer satisfaction with scheme accessibility rises.",
+    "third_order_effect": "Sustained farmer participation in government schemes as trust in delivery improves; modest productivity gains as timely inputs reduce missed sowing windows; reduced informal debt as formal credit flows more reliably.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_women_002",
@@ -186,7 +234,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Direct income or skill-building transfer to women, expanding economic agency and reducing dependency on male household members.",
+    "first_order_effect": "Women in TN (target likely 10-20 lakh based on comparable schemes) receive cash stipends, vocational training, or entrepreneurship support, increasing household income or earning capacity.",
+    "second_order_effect": "Increased female labor force participation and household bargaining power reduce fertility rates and improve child health outcomes through maternal decision-making authority.",
+    "third_order_effect": "Over 10+ years, higher female education and workforce participation create a persistent demographic dividend and reduced dependency on social safety nets.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_women_003",
@@ -207,7 +261,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Marriage subsidy or financial incentive reduces upfront wedding costs for poor households, eliminating a major debt trigger and reducing bride dowry pressure.",
+    "first_order_effect": "~3-5 lakh marriages (estimated from BPL households) receive direct cash assistance (₹50K-1L per couple), avoiding informal debt or dowry transactions.",
+    "second_order_effect": "Reduced marriage-related indebtedness in poor households increases consumption capacity for food/health; dowry reduction lowers physical/emotional abuse risk for brides.",
+    "third_order_effect": "Normalization of government-funded marriage breaks dowry-debt cycle across generations, but effect limited if scheme does not simultaneously criminalize/enforce dowry laws.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_edu_005",
@@ -228,7 +288,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "In-kind nutrition transfer (meals) at school or community level removes malnutrition as a barrier to attendance and cognitive development.",
+    "first_order_effect": "~2-3 crore school children and vulnerable adults receive daily nutritious meals, immediately improving caloric intake and reducing stunting/wasting prevalence.",
+    "second_order_effect": "Better-nourished children show improved school attendance and learning outcomes; reduced disease burden decreases healthcare costs for poor households.",
+    "third_order_effect": "Sustained nutrition support over 5+ years raises human capital formation; early childhood investments compound into higher earnings and reduced non-communicable disease burden in adulthood.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_006",
@@ -249,7 +315,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Residential subsidized housing for students removes the cost barrier to mother-tongue education, enabling enrollment in regional language programs.",
+    "first_order_effect": "~10K-50K students (estimated from mother-tongue learner pool) access hostels, enabling attendance at Tamil/regional language schools without family relocation.",
+    "second_order_effect": "Increased enrollment in Tamil-medium schools preserves linguistic identity and expands regional-language workforce; hostel students face lower dropout due to reduced family financial stress.",
+    "third_order_effect": "Stronger Tamil-language proficiency and cultural continuity in workforce; marginal employment premium for mother-tongue education if linked to skill certification.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_women_004",
@@ -270,7 +342,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Reservation-backed employment guarantee provides income-stable public sector jobs to persons with disabilities, removing earnings volatility and labor-market discrimination.",
+    "first_order_effect": "~1000-5000 differently-abled persons are appointed to local government bodies (panchayats, municipalities) with stable wages, health insurance, and pension eligibility.",
+    "second_order_effect": "Improved household income stability reduces poverty risk; direct representation in governance creates accountability for disability-inclusive policy and infrastructure design.",
+    "third_order_effect": "Normalized disabled participation in public service creates cultural shift toward inclusion; local bodies design barrier-free infrastructure, improving mobility and economic access for all disabled persons.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_002",
@@ -291,7 +369,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Subsidized or free housing provision removes shelter insecurity and eliminates monthly rent burden, freeing income for food and healthcare.",
+    "first_order_effect": "~1-2 lakh vulnerable households (elderly, widows, marginalized groups targeted) receive housing units or housing subsidies, securing tenure and reducing homelessness.",
+    "second_order_effect": "Reduced housing cost burden improves household food security and health spending; secure housing tenure increases collateral availability and enables micro-credit uptake.",
+    "third_order_effect": "Over 10+ years, intergenerational asset accumulation (owned housing as inheritance) reduces wealth inequality; stable housing improves child enrollment and learning outcomes.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_003",
@@ -312,7 +396,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Subsidized or free housing for economically weaker sections eliminates shelter cost as a poverty perpetuator, enabling reallocation of income to education and health.",
+    "first_order_effect": "~2-5 lakh EWS households receive constructed housing or land grants, reducing housing cost from ~30-40% of income to near-zero.",
+    "second_order_effect": "Released household income flows to child education and preventive healthcare; asset ownership (housing) improves social dignity and credit access for microenterprises.",
+    "third_order_effect": "Generational wealth accumulation through owned housing; improved child enrollment and learning outcomes reduce inter-generational poverty transmission.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_007",
@@ -333,7 +423,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Housing provision for education sector workers (teachers, staff) stabilizes their income utilization and improves residence proximity to schools, reducing commute burden.",
+    "first_order_effect": "~10K-50K education sector employees (teachers, support staff) receive housing units, reducing monthly rent expense and stabilizing residential security.",
+    "second_order_effect": "Improved teacher housing stability and reduced commute time may increase classroom presence and teaching quality; direct benefit primarily to workforce, not students.",
+    "third_order_effect": "Marginal improvement in teacher retention and morale if housing is near worksite; limited systemic impact on educational outcomes unless combined with pedagogy/curriculum reform.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_edu_008",
@@ -354,7 +450,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "On-campus housing provision reduces out-of-pocket accommodation costs for college students from economically disadvantaged backgrounds, enabling sustained enrollment and academic focus.",
+    "first_order_effect": "College students from poor/lower-middle-income households gain subsidized/free hostel access, reducing dropout pressure from housing unaffordability.",
+    "second_order_effect": "Improved course completion rates and academic performance among beneficiaries increase employability and wage earnings post-graduation, particularly in non-agricultural professional roles.",
+    "third_order_effect": "Intergenerational mobility strengthens as educated workforce reduces household dependence on low-skill agriculture/informal work; fiscal gains from higher tax base offset initial housing capex over 10-15 years.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_009",
@@ -375,7 +477,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Targeted credit/capital access and business training for backward class entrepreneurs removes financing barrier that historically excludes this group from formal self-employment pathways.",
+    "first_order_effect": "Estimated 5,000–15,000 BC entrepreneurs receive loans, training, or subsidy for business startup/expansion; microenterprises and small retail/services businesses established.",
+    "second_order_effect": "New micro/small enterprises create local employment (1–3 employees per unit), generating household income for employees and retention of consumption within rural/semi-urban areas.",
+    "third_order_effect": "Over 5+ years, if scheme reaches critical scale (50,000+ units), contributes to decentralized job creation, reducing rural–urban migration pressure and building non-farm income base in villages.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_004",
@@ -396,7 +504,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Welfare and honor program for Thiruvalluvar (likely targeting elderly poor or specific marginalized castes) provides direct income transfer and social recognition, reducing destitution.",
+    "first_order_effect": "Beneficiaries (scale unclear; estimate 2–10 lakh based on typical honor schemes) receive monthly pension or lump-sum benefit; symbolic recognition improves social status.",
+    "second_order_effect": "Increased purchasing power among elderly/vulnerable beneficiaries boosts local consumption in rural areas; reduced acute poverty stress enables better nutrition and minor health access.",
+    "third_order_effect": "Systemic effect limited: income transfer is non-contributory and non-productive, so no structural asset creation or labor market reintegration occurs; benefits are consumptive and time-bound.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_infra_005",
@@ -417,7 +531,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Rural housing subsidy or direct house-building removes the shelter deprivation barrier, improving living conditions and enabling productive time use in adequate/safe housing.",
+    "first_order_effect": "Estimated 10–20 lakh rural BPL/EWS households receive new/upgraded houses; housing deficit in rural TN (est. ~5–8 lakh units) partially addressed.",
+    "second_order_effect": "Safe, pucca housing reduces health shocks (water-borne disease, respiratory illness) and improves school attendance for children; housing asset builds household collateral for future credit access.",
+    "third_order_effect": "Over 10+ years, improved health and education outcomes translate to higher lifetime earnings; housing assets enable productive investments (small business, animal husbandry) and intergenerational wealth accumulation.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_edu_010",
@@ -438,7 +558,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Digital device access (laptop) provision removes technology access barrier for college students, enabling skill building, assignment completion, and digital literacy for entry into tech/knowledge work.",
+    "first_order_effect": "Estimated 3–5 lakh college students (majority from BPL/SC/ST/BC backgrounds) receive laptops; device ownership rises, reducing digital divide among undergraduate cohorts.",
+    "second_order_effect": "Increased coding/digital skill development and online course completion improve employment prospects in IT, BPO, and digital services sectors; wage premiums for digital-skilled workers 20–30% higher.",
+    "third_order_effect": "If sustained over 5–10 years, pipeline of digitally skilled workforce from TN colleges raises state's tech employment and startup ecosystem; productivity gains benefit formal sector employers.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_006",
@@ -459,7 +585,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Free agricultural electricity connections eliminate recurring power cost burden (₹1,500–3,000 annually per farmer), increasing net farm income and irrigation adoption capacity.",
+    "first_order_effect": "2 lakh farmers (likely marginal/smallholder with 0.5–2 ha holdings) gain free or heavily subsidized power connections; effective farm-level electricity cost falls by 80–100%.",
+    "second_order_effect": "Reduced electricity cost incentivizes year-round irrigation adoption, increasing cropping intensity from 1.0–1.2 to 1.5–1.8 cycles/year; farm productivity and marketable surplus increase 15–25%.",
+    "third_order_effect": "Higher yields and income reduce dependence on distress borrowing for seed/inputs; debt-to-income ratio improves, freeing capital for asset investments (pumps, fertilizer) and enabling demand-pull employment in agro-allied services.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_women_005",
@@ -480,7 +612,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Direct monthly income transfer to women (₹5,000/month = ₹60,000/year) provides unconditional cash floor, reducing extreme poverty and expanding women's agency in household spending and asset decisions.",
+    "first_order_effect": "1.31 crore women (approx. all female HoH + eligible poor/widowed women) receive ₹5,000/month via bank transfer; monthly household consumption floor rises by ₹5,000–7,500 (assuming 1.5–2 dependents per beneficiary).",
+    "second_order_effect": "Increased purchasing power drives up demand for food, healthcare, education for children; informal sector (petty retail, domestic labor) sees wage pressure upward; school enrollment and attendance improve among beneficiary households.",
+    "third_order_effect": "Over 5+ years, improved early childhood nutrition and maternal health reduce stunting/wasting; higher school attendance translates to better educational outcomes, raising lifetime earnings and intergenerational mobility for next cohort.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_women_006",
@@ -501,7 +639,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Pension contribution backfill for government employees eliminates 22-year gap in contributions, ensuring full pension entitlement and income security for retiring government workforce.",
+    "first_order_effect": "Estimated 1.5–2.5 lakh government employees (majority women teachers, health workers, ASHA/Anganwadi staff) receive backfilled contributions; pension liability on state budget increases by ₹2,500–4,000 cr annually (one-time + recurring).",
+    "second_order_effect": "Secure pension income for employees reduces precarity and enables household consumption/savings; recipient morale and retention improve; reduced turnover saves recruitment costs.",
+    "third_order_effect": "Systemic effect limited: scheme corrects a fiscal/contractual error but does not expand productive capacity or create new employment; long-term fiscal burden (actuarial liability) strains discretionary budget, potentially crowding out new program investment.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_003",
@@ -522,7 +666,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Capital subsidy for agricultural mechanization reduces energy costs and operational barriers to irrigation, increasing cultivable acreage and cropping intensity for smallholder farmers.",
+    "first_order_effect": "~20 million farmers receive electric pump sets matched to their water sources; energy cost per irrigation cycle drops from kerosene/diesel baseline (~₹200-300/hour) to near-zero operational cost.",
+    "second_order_effect": "Farmers intensify irrigation frequency and cultivated area, shifting from rainfed to assured irrigation; aggregate water demand from agricultural sector increases significantly, straining groundwater recharge cycles.",
+    "third_order_effect": "Without coordinated groundwater replenishment policy, aquifer depletion accelerates in overexploited blocks; long-term farm viability reverts to water scarcity unless paired with watershed or recharge mandates.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_004",
@@ -543,7 +693,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Procurement price floor above market rates transfers income directly to rice-cultivating farmers, raising per-quintal revenue by ~15-25% depending on current market conditions.",
+    "first_order_effect": "~10-12 lakh rice farmers (TN cultivates ~6-7 lakh hectares) receive ₹3,500/quintal; assuming 50 quintals/hectare, net income increases ~₹1.5-1.75 lakh/hectare/season.",
+    "second_order_effect": "Higher procurement prices increase procurement expenditure; TN Public Distribution System (PDS) cost per kg of rice rises, compressing fiscal space for other food security instruments or forcing upward revision of ration prices for end consumers.",
+    "third_order_effect": "If PDS ration prices are not raised, subsidy burden grows; fiscal deficit deepens, crowding out investment in crop insurance, seed distribution, or soil health programs that address productivity constraints.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_005",
@@ -564,7 +720,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Procurement price floor for sugarcane raises per-tonne revenue, offsetting volatile global sugar prices and reducing farmer debt stress in sugarcane-dependent districts (Cuddalore, Villupuram, Tiruvannamalai).",
+    "first_order_effect": "~2.5-3 lakh sugarcane farmers receive ₹4,500/ton (vs. typical ₹3,200-3,800); gross revenue per hectare increases ~₹45,000-90,000/season for average yields (45-50 tons/hectare).",
+    "second_order_effect": "Higher cane prices incentivize expanded cultivation in water-stressed regions; sugarcane's high irrigation demand (60-75 acre-feet/hectare) accelerates groundwater decline in already-stressed taluks.",
+    "third_order_effect": "Increased water competition with rice and cotton reduces overall agricultural productivity per unit of water; unsustainable extraction leads to crop failure cycles and debt trap re-emergence despite price support.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_006",
@@ -585,7 +747,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Disaster compensation indexed to crop type and duration replaces ad-hoc relief with predictable income replacement, reducing post-flood debt accumulation for affected farmers.",
+    "first_order_effect": "Farmers experiencing flood loss in monsoon receive ₹25k-27k/ha (short/long duration) or ₹12k/ha (perennial); assuming 10-15% of cultivated area affected in flood years, ~40-60 lakh hectares qualify; total payout ₹1,200-1,620 crores/flood event.",
+    "second_order_effect": "Timely cash compensation enables farmers to replant and resume cultivation within same season; debt accumulation is arrested, but without crop insurance or structural flood mitigation, farmers remain exposed to repeated losses.",
+    "third_order_effect": "Repeated compensation cycles without underlying hydrological management entrench fiscal dependency; no incentive for farmers to shift to flood-tolerant cultivars or adopt water-harvesting infrastructure.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_007",
@@ -606,7 +774,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Expansion of net cultivable area increases total agricultural production capacity and income-generating land availability for landless/marginal farmers if coupled with land redistribution.",
+    "first_order_effect": "Net cultivable area expands from current ~35 lakh hectares to 50 lakh hectares (~43% increase); requires reclamation of wastelands, tank-bottom lands, and encroached common lands, benefiting ~15 lakh additional farm households if redistributed.",
+    "second_order_effect": "Expansion requires irrigation infrastructure (canals, lift schemes) and soil remediation capex (~₹1-2 lakhs/hectare typical); fiscal commitment of ₹1,500-3,000 crores; increased water demand reduces per-hectare groundwater availability across TN.",
+    "third_order_effect": "Unless tied to precision-irrigation policy (drip/sprinkler) and cropping pattern reorientation, expanded cultivable area amplifies water stress; productivity gains are offset by increased competition for scarce water.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_agri_008",
@@ -627,7 +801,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Infrastructure for paddy storage reduces post-harvest losses (currently 8-12%) and enables farmers to defer sales when prices are favorable, improving farm-gate realization.",
+    "first_order_effect": "Permanent granaries with modern storage facilities constructed at ~400-500 procurement centers across TN; reduces spoilage and pest losses by ~5-8 percentage points; ~1.2 crore quintals of paddy benefit annually (current TN rice production ~1.5 crore quintals).",
+    "second_order_effect": "Improved storage infrastructure strengthens government procurement capacity; allows FCI/TN Civil Supplies to absorb larger volumes without loss, stabilizing PDS grain supply; shifts risk from farmer to institution.",
+    "third_order_effect": "Reduced post-harvest loss incentivizes farmer participation in government procurement; strengthens procurement marketing chain, but storage infrastructure alone does not address underlying demand-side constraints (population demand for rice is inelastic).",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_edu_011",
@@ -648,7 +828,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Research funding for Tamil-language AI tools addresses structural underrepresentation of Tamil in digital technology, enabling non-English speakers to access AI-driven services and content.",
+    "first_order_effect": "Tamil-AI Fellowship attracts ~50-100 researchers/developers annually; Tamil-language NLP models, chatbots, and educational tools developed within 3-5 years; accessibility barrier for ~4 crore Tamil-first speakers (urban/rural) begins to lower.",
+    "second_order_effect": "Availability of Tamil AI tools incentivizes digital adoption in rural education, governance, and healthcare; reduces English-language gatekeeping in access to government e-services, but uptake depends on device availability and digital literacy.",
+    "third_order_effect": "Over 10+ years, Tamil-language digital ecosystem matures; non-English speakers gain equitable access to AI-driven financial services, healthcare diagnostics, and skill training; structural digital exclusion weakens, but only if complemented by broadband and device distribution.",
+    "implementation_risk": "low",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_007",
@@ -669,7 +855,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Heritage library infrastructure provides physical access to Tamil and world history knowledge, partially mitigating educational gaps in a district with limited digital infrastructure.",
+    "first_order_effect": "Modern library facility constructed in Kanyakumari with advanced digital catalog, archives, and exhibition space; serves ~10,000-15,000 annual visitors (estimate based on Kanyakumari population ~2 lakh); low-cost knowledge access for school/college students and general public.",
+    "second_order_effect": "Library becomes local knowledge hub, supporting school history curriculum and cultural research; may marginally improve school-level history and Tamil learning outcomes if actively integrated into pedagogy, but impact limited to Kanyakumari district.",
+    "third_order_effect": "Localized cultural knowledge infrastructure does not scale statewide; impact on systemic educational equity remains minimal unless replicated across 38 districts; primarily symbolic/soft-power benefit rather than structural educational reform.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_infra_008",
@@ -690,7 +882,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Infrastructure provision of scientific research capability attracts heritage tourism revenue and establishes Tamil Nadu as a regional archaeology hub, generating employment in research and tourism sectors.",
+    "first_order_effect": "A state-of-the-art archaeological research center operational in Chennai with AMS carbon dating, soil and pollen analysis labs; attracts researchers and students nationally; positions TN as a center of archaeological excellence.",
+    "second_order_effect": "Increased heritage tourism footfall to Tamil Nadu archaeological sites (Adichanallur, Porunai Valley, Keezhadi); revenue streams from research contracts and heritage tourism feed into state coffers and local hospitality employment.",
+    "third_order_effect": "Tamil heritage narratives gain scientific credibility globally; diaspora and international visitors increase, strengthening cultural soft power and long-term tourism-dependent economies in heritage-rich districts.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_women_007",
@@ -711,7 +909,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Income transfer and financial protection via compensation/family economic support mechanisms insulates migrant worker families from loss of primary earner income, reducing vulnerability to debt and destitution.",
+    "first_order_effect": "Migrant worker families (estimated ~8-12 lakh households) receive direct compensation in case of death/disability abroad and ongoing economic protection; employment assistance reduces re-migration unemployment gaps.",
+    "second_order_effect": "Reduced distress borrowing and asset liquidation by migrant families during income shocks; increased school continuity for dependents; stabilized household consumption in source villages and small towns.",
+    "third_order_effect": "Migrant remittance flows become more stable and voluntary rather than crisis-driven; rural credit markets experience reduced default risk; improved human capital investment in next generation of migrant families.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_009",
@@ -732,7 +936,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Information access improvement: NRT personnel at airports provide real-time dissemination of government welfare schemes to diaspora, reducing information asymmetry and increasing uptake of entitlements.",
+    "first_order_effect": "NRT assistance staff deployed at Chennai International, Coimbatore, Trichy, and Madurai airports; diaspora visitors and returning migrants receive direct briefing on TN welfare schemes (pensions, healthcare, ration cards, education subsidies).",
+    "second_order_effect": "Increased enrolment of diaspora-linked beneficiaries into existing welfare schemes; higher remittance-to-welfare coordination; improved awareness of TN government services reduces information costs for vulnerable returnees.",
+    "third_order_effect": "Diaspora becomes better integrated into TN welfare ecosystem; return migration is less risky; information spillback effects reach source communities via returning migrants, amplifying scheme uptake.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_women_008",
@@ -753,7 +963,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Institutional representation expansion: increasing Overseas Tamil Welfare Board membership allows broader stakeholder voice, potentially improving policy design and advocacy for migrant welfare issues.",
+    "first_order_effect": "Overseas Tamil Welfare Board expands from current membership to include additional representatives (diaspora organizations, migrant advocacy groups, women's groups); more diverse interests represented in welfare policy formulation.",
+    "second_order_effect": "Board deliberations incorporate more localized migrant grievances and gender-specific concerns; policy recommendations become more granular and responsive to real-world migrant vulnerabilities.",
+    "third_order_effect": "Welfare schemes designed with better understanding of diaspora pain points; accountability mechanisms improve; migrant women's issues gain dedicated advocacy space.",
+    "implementation_risk": "low",
+    "root_cause_addressed": false
   },
   {
     "doc_id": "dmk_2026_infra_010",
@@ -774,7 +990,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Access to justice improvement: upgraded and newly constructed courts with basic facilities for disadvantaged litigants reduces case pendency, increases legal finality, and improves access to dispute resolution for low-income groups.",
+    "first_order_effect": "~10,000 existing courts upgraded with accessibility facilities (ramps, waiting areas, legal aid counters); new courts established in underserved areas; estimated coverage expansion to ~5 crore additional population with reasonable court access.",
+    "second_order_effect": "Case pendency decreases; poor litigants face lower transaction costs (travel, waiting time); faster resolution increases trust in formal justice; reduced time-to-judgment improves debt recovery and property dispute outcomes.",
+    "third_order_effect": "Improved legal certainty encourages informal creditors to transition to formal contracts; land and asset markets become more liquid; women's property disputes resolve faster, improving asset inheritance security.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_011",
@@ -795,7 +1017,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Infrastructure convergence: simultaneous provision of roads, transport, housing, water, education, and healthcare in backward districts targets multiple constraints simultaneously, enabling multi-sector human capital and economic growth.",
+    "first_order_effect": "Identified backward districts (likely Villupuram, Tirupathur, Ariyalur, Perambalur, Karur) receive integrated development packages; basic infrastructure parity with state average; estimated ~1.5-2 crore population in these districts gain improved service access by 2030.",
+    "second_order_effect": "Reduced rural-urban migration pressure via improved local livelihood conditions; manufacturing and agricultural productivity increase due to better transport and utilities; female LFPR rises due to school proximity and water-time savings.",
+    "third_order_effect": "Long-term regional convergence: backward districts move toward income parity with state average; reduced spatial inequality; decentralized economic growth reduces pressure on metro-centric development models.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_012",
@@ -816,7 +1044,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Sector-specific industrial and agricultural infrastructure provision: ₹20,000 crore in manufacturing parks, agro-processing, ports, and export facilities directly lowers entry costs for firms and farmers, triggering private investment multipliers.",
+    "first_order_effect": "Infrastructure operational: electronics/auto spare parts parks, textile/footwear parks, agro-processing units, IT parks, dry port at Trichy, Cauvery cleanup infrastructure, coastal development zones, SME clusters, tourism facilities; estimated 3-5 lakh jobs created directly.",
+    "second_order_effect": "Private sector invests additional ₹30,000-50,000 crore in plant/equipment within these zones; agricultural export value chains shorten via warehouse/transport improvements; SMEs achieve scale and export linkages previously unaffordable.",
+    "third_order_effect": "TN transition from low-value commodity production to export-oriented manufacturing and value-added agriculture; state GDP growth accelerates 1-2 percentage points; tax base expands, improving fiscal sustainability.",
+    "implementation_risk": "high",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_agri_009",
@@ -837,7 +1071,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Export infrastructure and value-chain development: warehouses, roads, transport, and SME/tourism facilities reduce post-harvest losses and transaction costs for agricultural producers and service providers, improving farm-gate prices.",
+    "first_order_effect": "Agricultural export warehouses and roads constructed in major producing districts; public transport expanded in rural/coastal areas; SME clusters and tourism facilities operational; estimated 8-10 lakh farmers and 2-3 lakh SME workers gain better market access.",
+    "second_order_effect": "Agricultural export volume and value increase 15-25%; post-harvest losses decline; farmer net returns improve; SMEs achieve scale economies and quality standards for export markets; coastal tourism employment multiplies.",
+    "third_order_effect": "Agricultural income becomes less seasonal and rainfall-dependent; rural non-farm income diversification accelerates; women in coastal and agro-processing clusters gain wage employment opportunities, raising household incomes.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_013",
@@ -858,7 +1098,13 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Capital investment in skill infrastructure and industrial clusters reduces barriers to technology adoption and formal employment access for semi-skilled and aspiring workers across textiles, food processing, and district-based manufacturing.",
+    "first_order_effect": "₹2,000 crore deployed across skill centers, textile modernization, SME clusters, and food processing units; estimated ~15,000–25,000 direct jobs in construction and operations; ~50,000–80,000 indirect skill seats created within 3 years.",
+    "second_order_effect": "Skill-trained workers transition to higher-wage formal sector roles; textile and agri-equipment clusters achieve economies of scale, lowering production costs and improving export competitiveness; district SMEs gain access to shared infrastructure, reducing individual capex burden.",
+    "third_order_effect": "Sustained productivity growth in textile and food processing sectors increases state GST revenue and private investment inflow; rural-to-formal employment pipeline reduces agrarian distress and diversifies rural livelihoods beyond agriculture; district-level industrial hubs decentralize manufacturing, reducing pressure on metro labor markets.",
+    "implementation_risk": "medium",
+    "root_cause_addressed": true
   },
   {
     "doc_id": "dmk_2026_infra_014",
@@ -879,6 +1125,12 @@
     "ground_truth_confidence": "MEDIUM",
     "is_joint_manifesto": false,
     "track_fulfillment": true,
-    "_extracted_at": "2026-04-03T04:19:06.657143+00:00"
+    "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
+    "impact_mechanism": "Debt management and cost efficiency optimization increases available discretionary budget to fund existing and new welfare schemes without additional taxation or borrowing.",
+    "first_order_effect": "No direct immediate beneficiary impact; impact contingent on execution: IF central fund recovery succeeds and wasteful expenditure is identified and cut, ~₹15,000–₹25,000 crore could theoretically be freed; however, absent specific recovery targets or cost-audit findings, first-order effect is largely indeterminate.",
+    "second_order_effect": "IF resources are freed, expanded financial allocation to health, education, and social welfare schemes improves service delivery depth (e.g., higher honoraria for ASHA/ANM, expanded nutrition programs, or increased scholarship amounts); risk of reallocation to committed debt obligations instead.",
+    "third_order_effect": "Long-term systemic effect depends entirely on reallocation discipline: IF freed resources are systematically reinvested in human capital and social infrastructure, improved educational and health outcomes reduce inter-generational poverty; IF absorbed into fiscal consolidation without spending reorientation, no structural change occurs.",
+    "implementation_risk": "high",
+    "root_cause_addressed": false
   }
 ]

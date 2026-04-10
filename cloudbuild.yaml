@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    dir: 'web'
+    args:
+      - build
+      - -t
+      - gcr.io/naatunadappu/arasiyalaayvu-be
+      - -f
+      - backend_api/Dockerfile
+      - .
+images:
+  - gcr.io/naatunadappu/arasiyalaayvu-be

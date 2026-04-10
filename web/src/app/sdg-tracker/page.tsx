@@ -367,7 +367,7 @@ export default function SDGTrackerPage() {
         {/* Who We're Behind */}
         <div className="space-y-3">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            {isTA ? "யார் முன்னிலையில் உள்ளனர்?" : "Who's ahead of TN"}
+            {isTA ? "யார் முன்னிலையில் உள்ளனர்?" : "Who's ahead of Tamil Nadu"}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {TOP_STATES_AHEAD.map((state) => (

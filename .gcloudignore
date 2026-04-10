@@ -1,0 +1,22 @@
+.gcloudignore
+.git
+.gitignore
+
+# Node / Next.js — not needed in Docker build context
+web/node_modules/
+web/.next/
+web/public/
+web/src/
+web/*.config.*
+web/package*.json
+web/tsconfig*
+web/*.md
+
+# Python / scraper artifacts — not needed for backend image
+scrapers/
+data/
+.venv/
+
+# Misc
+*.md
+Makefile
