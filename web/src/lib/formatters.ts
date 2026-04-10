@@ -18,7 +18,7 @@ export function normalizeName(name: string): string {
 
   const isSingleInitial = (s: string) => /^[A-Za-z]\.?$/.test(s);
 
-  const tokens = name.trim().split(/\s+/);
+  const tokens = name.trim().replace(/,/g, "").split(/\s+/);
 
   // Peel leading and trailing standalone initials
   const leading: string[] = [];

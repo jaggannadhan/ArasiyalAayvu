@@ -6,6 +6,7 @@ import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigato
 import { PillarTabs } from "@/components/manifesto/PillarTabs";
 import { PromiseCard } from "@/components/manifesto/PromiseCard";
 import { ComparisonSkeleton } from "@/components/manifesto/PromiseSkeleton";
+import { SDGAlignment } from "@/components/manifesto/SDGAlignment";
 import { useManifestos } from "@/hooks/useManifestos";
 import {
   PILLARS,
@@ -122,6 +123,7 @@ export default function ManifestoTrackerPage() {
   const [selectedTerm, setSelectedTerm] = useState(TERMS[TERMS.length - 1].electionYear);
   const [activePillar, setActivePillar] = useState<Pillar | "All">("All");
   const [activeStatus, setActiveStatus] = useState<StatusFilter>("All");
+  const [view, setView] = useState<"promises" | "sdg">("promises");
 
   // selectedPartyId and activeStatus reset when term changes
   const [partyOverride, setPartyOverride] = useState<string | null>(null);
@@ -130,6 +132,7 @@ export default function ManifestoTrackerPage() {
     setLastTerm(selectedTerm);
     setPartyOverride(null);
     setActiveStatus("All");
+    setView("promises");
   }
 
   const isTA = lang === "ta";
@@ -192,9 +195,16 @@ export default function ManifestoTrackerPage() {
       .sort((a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status));
   }, [promises, selectedPartyId, activePillar, activeStatus]);
 
+  // All promises for the selected party — used for SDG alignment (no pillar/status filter)
+  const partyPromises = useMemo(
+    () => promises.filter((p) => p.party_id === selectedPartyId),
+    [promises, selectedPartyId]
+  );
+
   function handlePartySelect(id: string) {
     setPartyOverride(id);
     setActiveStatus("All");
+    setView("promises");
   }
 
   function handleTermChange(year: number) {
@@ -321,6 +331,46 @@ export default function ManifestoTrackerPage() {
           );
         })()}
 
+        {/* View toggle — only for 2026 when party has data */}
+        {hasData && isUpcoming && partyHasData && !loading && !error && (
+          <div className="flex rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
+            <button
+              onClick={() => setView("promises")}
+              className={`flex-1 py-2.5 text-xs font-bold transition-colors ${
+                view === "promises"
+                  ? "bg-gray-900 text-white"
+                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+              }`}
+            >
+              📜 {isTA ? "வாக்குறுதிகள்" : "Promises"}
+            </button>
+            <button
+              onClick={() => setView("sdg")}
+              className={`flex-1 py-2.5 text-xs font-bold transition-colors border-l border-gray-200 ${
+                view === "sdg"
+                  ? "bg-gray-900 text-white"
+                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+              }`}
+            >
+              🌍 {isTA ? "SDG ஒப்படைவு" : "SDG Alignment"}
+            </button>
+          </div>
+        )}
+
+        {/* SDG Alignment view */}
+        {hasData && isUpcoming && view === "sdg" && partyHasData && selectedParty && (
+          <SDGAlignment
+            promises={partyPromises}
+            partyName={
+              PARTY_FULL_NAME[selectedParty.id]?.en ?? selectedParty.name
+            }
+            partyNameTa={
+              PARTY_FULL_NAME[selectedParty.id]?.ta ?? selectedParty.name_ta
+            }
+            lang={lang}
+          />
+        )}
+
         {/* No data for this term */}
         {!hasData && (
           <div className="rounded-2xl border border-gray-200 bg-white px-5 py-10 text-center space-y-1">
@@ -336,8 +386,8 @@ export default function ManifestoTrackerPage() {
           </div>
         )}
 
-        {/* Data section */}
-        {hasData && (
+        {/* Data section — hidden when SDG view is active */}
+        {hasData && view === "promises" && (
           <>
             {/* No manifesto data for selected party */}
             {!loading && !error && !partyHasData && (

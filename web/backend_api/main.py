@@ -391,6 +391,22 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
                 if mla.get("photo_url"):
                     break
 
+        # Fallback: if still no photo, check candidates_2026 for same constituency
+        # (candidate is contesting again so ECI has a recent photo)
+        if mla and not mla.get("photo_url"):
+            c26_doc = _db.collection("candidates_2026").document(slug).get()
+            if c26_doc.exists:
+                c26_data = c26_doc.to_dict() or {}
+                import re as _re
+                def _name_tokens(s: str) -> frozenset:
+                    # Split into alpha tokens only, lowercase — order/punctuation agnostic
+                    return frozenset(t for t in _re.findall(r"[a-z]+", s.lower()) if len(t) > 1)
+                mla_tokens = _name_tokens(str(mla.get("mla_name", "")))
+                for cand in c26_data.get("candidates", []):
+                    if cand.get("photo_url") and _name_tokens(str(cand.get("name", ""))) == mla_tokens:
+                        mla["photo_url"] = cand["photo_url"]
+                        break
+
         metrics, metrics_scope = _fetch_socio_metrics_for_district(district_slug)
 
         promises: List[Dict[str, Any]] = []

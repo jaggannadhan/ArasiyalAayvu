@@ -138,9 +138,16 @@ export default function ConstituencyPage() {
               ←
             </Link>
             <div className="min-w-0">
-              <h1 className="text-sm font-black text-gray-900 leading-tight truncate">
-                {constituencyBilingual}
-              </h1>
+              <div className="flex items-center gap-1.5 leading-tight">
+                <h1 className="text-sm font-black text-gray-900 truncate">
+                  {constituencyBilingual}
+                </h1>
+                {meta?.constituency_id != null && (
+                  <span className="shrink-0 text-[10px] font-bold text-gray-400 bg-gray-100 rounded px-1 py-0.5 tracking-widest font-mono">
+                    {String(meta.constituency_id).padStart(3, "0")}
+                  </span>
+                )}
+              </div>
               {/* Breadcrumb: Tamil Nadu > LS Constituency > Assembly */}
               <p className="text-xs text-gray-500 truncate">
                 {data?.parent_ls

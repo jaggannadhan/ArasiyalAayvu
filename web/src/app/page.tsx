@@ -125,6 +125,28 @@ export default function Home() {
             </p>
           </div>
           <Link
+            href="/sdg-tracker"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-lg mb-1">🌍</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {isTA ? "நிலையான வளர்ச்சி இலக்குகள் (SDG)" : "Sustainable Development Goals"}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {isTA
+                    ? "தமிழ்நாடு SDG மதிப்பெண் · இந்தியாவில் 3வது இடம்"
+                    : "TN's SDG Score vs. National Average · 17 Goals · Key Metrics"}
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-right">
+                <p className="text-2xl font-black text-blue-800">78</p>
+                <p className="text-[10px] text-gray-400 font-semibold">#3 in India</p>
+              </div>
+            </div>
+          </Link>
+          <Link
             href="/pincode-map"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
           >

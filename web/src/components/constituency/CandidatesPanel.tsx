@@ -26,6 +26,7 @@ const PARTY_FLAG_EXT: Record<string, string> = {
 
 const PARTY_ABBR: Record<string, string> = {
   ind: "IND", naam_indiar_part: "NIP", veerath_thiyagi_: "VTVTK",
+  all_india_puratc: "AIPTMMK",
 };
 
 const GENDER_ICON: Record<string, string> = {

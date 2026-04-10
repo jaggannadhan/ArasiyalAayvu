@@ -13,6 +13,7 @@ const PARTY_FLAG_EXT: Record<string, string> = {
 
 const PARTY_ABBR: Record<string, string> = {
   ind: "IND", naam_indiar_part: "NIP", veerath_thiyagi_: "VTVTK",
+  all_india_puratc: "AIPTMMK",
 };
 
 const GENDER_ICON: Record<string, string> = {
@@ -34,11 +35,11 @@ export interface Candidate2026 {
   party: string;
   party_id: string;
   gender: string;
-  nomination_number: string;
-  nomination_date: string;
+  age?: number | null;
+  nomination_date?: string | null;
   photo_url?: string | null;
   affidavit_url?: string | null;
-  eci_candidate_id?: string | null;
+  show_profile_url?: string | null;
 }
 
 interface Props {
@@ -91,7 +92,7 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
           <button
             onClick={onClose}
             aria-label={isTA ? "மூடு" : "Close"}
-            className="text-gray-400 hover:text-gray-700 text-xl leading-none p-1 shrink-0"
+            className="text-gray-400 hover:text-gray-700 text-xl leading-none p-1 shrink-0 cursor-pointer"
           >
             ×
           </button>
@@ -140,12 +141,12 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
           {/* Nomination details */}
           <div className="rounded-xl bg-gray-50 border border-gray-100 px-4 py-3 space-y-2">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
-              {isTA ? "வேட்புமனு விவரங்கள்" : "Nomination Details"}
+              {isTA ? "வேட்பாளர் விவரங்கள்" : "Candidate Details"}
             </p>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <p className="text-xs text-gray-500">{isTA ? "வேட்புமனு எண்" : "Nomination No."}</p>
-                <p className="text-sm font-bold text-gray-900">{candidate.nomination_number || "—"}</p>
+                <p className="text-xs text-gray-500">{isTA ? "வயது" : "Age"}</p>
+                <p className="text-sm font-bold text-gray-900">{candidate.age ?? "—"}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500">{isTA ? "தாக்கல் தேதி" : "Filed On"}</p>
@@ -154,10 +155,10 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
             </div>
           </div>
 
-          {/* Affidavit — link if available, otherwise pending notice */}
-          {candidate.affidavit_url ? (
+          {/* Affidavit — link to show_profile_url or affidavit_url */}
+          {(candidate.affidavit_url || candidate.show_profile_url) ? (
             <a
-              href={candidate.affidavit_url}
+              href={(candidate.affidavit_url || candidate.show_profile_url)!}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 hover:bg-gray-100 transition-colors"

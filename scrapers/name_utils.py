@@ -46,7 +46,7 @@ def _parse(raw: str) -> _ParsedName:
       "Amman K.Arjunan" → initials=["K"],       words=["Arjunan"],       prefix="Amman"
       "Vanathi Srinivasan" → initials=[],       words=["Vanathi","Srinivasan"], prefix=""
     """
-    tokens = raw.strip().split()
+    tokens = raw.strip().replace(",", "").split()
     if not tokens:
         return _ParsedName([], [], "")
 
@@ -98,7 +98,7 @@ def name_variants(raw: str) -> list[str]:
     Return a sorted, deduplicated list of all common name variants for *raw*.
     Always includes the original string.
     """
-    raw = (raw or "").strip()
+    raw = (raw or "").strip().replace(",", "")
     if not raw:
         return []
 
