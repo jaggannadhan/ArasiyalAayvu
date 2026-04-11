@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "dataset": "hces",
+    "source": "MoSPI Factsheet on HCES 2023-24",
+    "url": "https://www.mospi.gov.in/sites/default/files/publication_reports/HCES%20FactSheet%202023-24.pdf",
+    "survey_period": "August 2023 – July 2024",
+    "note": "MPCE = Monthly Per Capita Consumption Expenditure. 'Without free items' = out-of-pocket spending only. 'With free items' = includes imputed value of PDS, govt welfare in-kind transfers.",
+    "last_updated": "2026-04-11"
+  },
+  "entities": {
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 5327,
+            "urban": 7182
+          },
+          "mpce_with_free_items": {
+            "rural": 5539,
+            "urban": 7341
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 212,
+            "urban_uplift_rs": 159,
+            "rural_uplift_pct": 4.0,
+            "urban_uplift_pct": 2.2
+          },
+          "gap_vs_all_india_with_free": {
+            "rural": 1292,
+            "urban": 263
+          },
+          "sample_size": {
+            "sample_rural": 6306,
+            "sample_urban": 4159,
+            "est_rural_00": 94687,
+            "est_urban_00": 45156
+          }
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 4903,
+            "urban": 8076
+          },
+          "mpce_with_free_items": {
+            "rural": 5068,
+            "urban": 8169
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 165,
+            "urban_uplift_rs": 93,
+            "rural_uplift_pct": 3.4,
+            "urban_uplift_pct": 1.2
+          },
+          "gap_vs_all_india_with_free": {
+            "rural": 821,
+            "urban": 1091
+          },
+          "sample_size": {
+            "sample_rural": 6728,
+            "sample_urban": 5805,
+            "est_rural_00": 93006,
+            "est_urban_00": 68807
+          }
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 6611,
+            "urban": 7783
+          },
+          "mpce_with_free_items": {
+            "rural": 6673,
+            "urban": 7834
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 62,
+            "urban_uplift_rs": 51,
+            "rural_uplift_pct": 0.9,
+            "urban_uplift_pct": 0.7
+          },
+          "gap_vs_all_india_with_free": {
+            "rural": 2426,
+            "urban": 756
+          },
+          "sample_size": {
+            "sample_rural": 3883,
+            "sample_urban": 3517,
+            "est_rural_00": 48864,
+            "est_urban_00": 49251
+          }
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 5701,
+            "urban": 8165
+          },
+          "mpce_with_free_items": {
+            "rural": 5872,
+            "urban": 8325
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 171,
+            "urban_uplift_rs": 160,
+            "rural_uplift_pct": 3.0,
+            "urban_uplift_pct": 2.0
+          },
+          "gap_vs_all_india_with_free": {
+            "rural": 1625,
+            "urban": 1247
+          },
+          "sample_size": {
+            "sample_rural": 7484,
+            "sample_urban": 7008,
+            "est_rural_00": 111770,
+            "est_urban_00": 106862
+          }
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 5435,
+            "urban": 8978
+          },
+          "mpce_with_free_items": {
+            "rural": 5675,
+            "urban": 9131
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 240,
+            "urban_uplift_rs": 153,
+            "rural_uplift_pct": 4.4,
+            "urban_uplift_pct": 1.7
+          },
+          "gap_vs_all_india_with_free": {
+            "rural": 1428,
+            "urban": 2053
+          },
+          "sample_size": {
+            "sample_rural": 3571,
+            "sample_urban": 3215,
+            "est_rural_00": 56897,
+            "est_urban_00": 54075
+          }
+        }
+      }
+    },
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2023-24",
+          "mpce_without_free_items": {
+            "rural": 4122,
+            "urban": 6996
+          },
+          "mpce_with_free_items": {
+            "rural": 4247,
+            "urban": 7078
+          },
+          "welfare_uplift": {
+            "rural_uplift_rs": 125,
+            "urban_uplift_rs": 82,
+            "rural_uplift_pct": 3.0,
+            "urban_uplift_pct": 1.2
+          },
+          "gini_trend": {
+            "2011-12": {
+              "rural": 0.283,
+              "urban": 0.363
+            },
+            "2022-23": {
+              "rural": 0.266,
+              "urban": 0.314
+            },
+            "2023-24": {
+              "rural": 0.237,
+              "urban": 0.284
+            }
+          },
+          "food_share": {
+            "rural": {
+              "food_avg_mpce": 2057,
+              "food_share_pct": 48.43,
+              "nonfood_avg_mpce": 2190,
+              "nonfood_share_pct": 51.57,
+              "total_avg_mpce": 4247
+            },
+            "urban": {
+              "food_avg_mpce": 2853,
+              "food_share_pct": 40.31,
+              "nonfood_avg_mpce": 4225,
+              "nonfood_share_pct": 59.69,
+              "total_avg_mpce": 7078
+            }
+          }
+        }
+      }
+    }
+  }
+}
