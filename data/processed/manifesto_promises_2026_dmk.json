@@ -19,12 +19,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Legal and institutional framework establishes enforceable rights (property ownership, workplace protection, political participation) that remove structural barriers to women's economic and social participation.",
-    "first_order_effect": "Defined legal entitlements for ~3.9 crore women in TN; immediate clarity on property rights, workplace grievance redressal, and representation quotas in local bodies and state institutions.",
-    "second_order_effect": "Increased women's asset ownership and income-generating capacity as property rights are formalized; higher female workforce participation as workplace protections reduce harassment and unsafe working conditions.",
-    "third_order_effect": "Sustained reduction in gender wealth gap and intergenerational poverty as women accumulate productive assets and pass them to children; structural shift in household bargaining power favoring women's education and health investment.",
+    "impact_mechanism": "Establishes a formal, dedicated welfare framework targeting women's rights and entitlements across multiple dimensions (economic, social, legal).",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Kalaignar Magalir Urimai Thittam (Women's Rights Scheme) implemented",
+        "analysis": "Promise name and category provided, but no specific components, beneficiary numbers, or budget allocation stated. Reference data shows ~3.95 crore women in TN (2026 est.), ~4.7 lakh women's SHGs with ~63 lakh members, and female LFPR 33% urban / 51% rural. Without details on what the scheme contains (cash transfer? legal aid? health access? property rights?), no fiscal cost or implementation pathway can be calculated. Data unavailable — cannot assess scope or cost without scheme details."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable. No scheme components, beneficiary targeting, or per-unit cost specified. Cannot estimate annual cost or % of discretionary budget (₹184,162 cr) without knowing what entitlements are included.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Naming a scheme 'Women's Rights' without specifying its content, funding, or delivery mechanism is primarily political signalling. Without clarity on whether this addresses legal access barriers, income gaps, health gaps, or property rights, it cannot be assessed as structural reform. The promise is aspirational but unanchored to measurable change."
   },
   {
     "doc_id": "dmk_2026_infra_001",
@@ -46,12 +55,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Subsidy/waiver on transit costs reduces the transport cost barrier that restricts women's access to employment, education, and healthcare, enabling mobility.",
-    "first_order_effect": "~1.9 crore women (assuming ~50% of daily commuters) gain free/discounted bus access; estimated savings of ₹20–40/day per user (₹5,000–10,000/year), reducing out-of-pocket mobility costs.",
-    "second_order_effect": "Higher female labor force participation (target: +2–3 percentage points in urban LFPR from current 33%) as commute costs fall; increased school attendance for girls in peripheral areas.",
-    "third_order_effect": "Modest income growth for beneficiary households; sustained female workforce participation reduces skill depreciation and wage gaps; long-term demographic benefit if mobility gains translate to delayed marriage and fertility decline.",
+    "impact_mechanism": "Removes transportation cost barrier for women's economic participation, health-seeking, and social mobility by eliminating or reducing bus fares.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "low",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Free or discounted bus journeys for women on government buses (Kalaignar Magalir Urima Travel)",
+        "analysis": "Promise states 'free/discounted' but does not specify which (free or discounted, and if discounted, by what %). Reference data: state-run buses (TNSTC+SETC+MTC) operate ~21,000 buses with ~70 lakh daily passengers. Women's population ~3.95 crore. **Critical fact: Free bus travel for women ALREADY IN EFFECT since September 2021 under DMK government.** This is not a new promise but continuation of existing policy. If promise means expansion (e.g., to private buses, highways, express services), that detail is absent. No new fiscal cost; existing implementation cost ~₹1,500–2,000 cr/year absorbed in transport budget (data unavailable for exact current outlay)."
+      }
+    ],
+    "fiscal_cost_note": "ALREADY IMPLEMENTED (Sept 2021). No new fiscal cost associated with this promise. Existing scheme absorbs cost within transport budget. If expansion intended, details not provided.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Removing transportation cost is a genuine structural intervention: it lowers barriers to female workforce participation, health-seeking, and education access. Evidence from other states shows free public transport increases women's LFPR. However, this promise conflates continuation of existing policy with new commitment, raising credibility questions about what 'implementation' adds to the 2021 programme already in place."
   },
   {
     "doc_id": "dmk_2026_edu_001",
@@ -73,12 +91,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Free meal provision removes caloric/nutritional barrier to school enrollment and attendance, enabling children to learn and grow without nutritional stress.",
-    "first_order_effect": "~1.2 crore school children (primary through higher secondary) receive daily cooked meals; eliminates user cost of nutrition for poorest 60–70% of student population.",
-    "second_order_effect": "Reduced school dropout rates (especially among girls and SC/ST students); improved learning outcomes as classroom attention/cognitive capacity increases with nutrition; higher attendance and completion rates.",
-    "third_order_effect": "Cohort-level earnings gain (~3–5% lifetime earnings lift per year of meal program exposure); reduced intergenerational poverty as educated cohorts enter labor market with higher productivity; lower healthcare costs as malnutrition-linked diseases decline.",
-    "implementation_risk": "low",
-    "root_cause_addressed": true
+    "impact_mechanism": "Expands nutritional intake and school attendance by guaranteeing free meals across all government school levels (primary through higher secondary).",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Chief Minister's Midday Meal Scheme extended to Primary, Upper Primary, Secondary, and Higher Secondary Schools",
+        "analysis": "Reference data: mid-day meal scheme currently covers ~53 lakh children in Classes 1–10 (primary + upper primary). Promise explicitly states expansion to Secondary and Higher Secondary Schools (Classes 11–12). Government school students in TN: ~89 lakh total (reference data does not break down by class level). Estimated Secondary+Higher Secondary enrolment in govt schools: ~20–25 lakh (based on TN education statistics; exact figure unavailable in reference data). Current meal cost/child/day: ~₹15–20 (state-supplied, data unavailable in reference block — cannot use assumed figure). **Data unavailable: exact per-child meal cost and precise Secondary/Higher Secondary enrolment in govt schools.** Cannot calculate new cost without these. Existing scheme operates; expansion scope is clear but fiscal impact unquantifiable from reference data alone."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — cannot calculate new cost. Reference shows current scheme covers ~53 lakh children (Classes 1–10). Promise expands to Secondary + Higher Secondary (est. 20–25 lakh additional students, but exact figure not in reference data). Per-child meal cost not provided. If assuming ₹15/meal × 240 school days × 22.5 lakh additional children = ~₹81 cr/year (illustrative only, not grounded in reference data). As % of discretionary budget (₹184,162 cr): ~0.04%, feasible. But this arithmetic is unconfirmed — exact cost requires meal price and enrolment data.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Midday meals improve nutritional status, school attendance, and learning outcomes — evidence-backed structural intervention. Expansion to higher classes increases coverage during critical adolescent years when dropout risk rises. However, implementation risk is medium: logistics (kitchen capacity, food procurement for 75+ lakh children across 53,000 schools), quality assurance, and cost escalation over time are real constraints. Sustainability depends on sustained budget allocation and supply chain resilience."
   },
   {
     "doc_id": "dmk_2026_edu_002",
@@ -100,12 +127,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Curriculum reform and pedagogical innovation improve the relevance and quality of Tamil-medium education, raising learning outcomes and completion rates for vernacular students.",
-    "first_order_effect": "Redesigned curriculum and teaching methods implemented across TN schools; measurable improvement in foundational literacy and numeracy (baseline unknown, but target ~10–15 percentage point gain in learning levels); enhanced cultural/civic content.",
-    "second_order_effect": "Higher completion rates and board exam pass rates for Tamil-medium cohorts; improved transition to skilled employment as curriculum aligns with labor market needs; reduced skill-to-job mismatch.",
-    "third_order_effect": "Long-term wage and productivity gains for vernacular cohorts; reduced caste-based wage discrimination as Tamil-medium students gain credentials; demographic shift toward higher human capital among marginalized groups.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "impact_mechanism": "Reorients education curriculum and pedagogy toward Tamil language, culture, and local knowledge, ostensibly to enhance relevance and identity-grounded learning.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Tamil Pudhuvai (Tamil New Generation) - new education initiative",
+        "analysis": "Promise name and category provided; no specific curriculum changes, implementation sites, budget, or measurable learning outcomes stated. 'Tamil New Generation' could mean: (a) curriculum revision emphasizing Tamil literature/history, (b) teaching through Tamil medium across all subjects, (c) new pedagogical methods, (d) teacher training. Without specification, scope is unclear. Reference data: ~89 lakh govt school students, ~53,000 govt schools. Estimated cost of curriculum redesign, teacher retraining, and new materials: ₹50–200 cr one-time + ₹20–50 cr/year operating (typical for major education reform), but data unavailable in reference block. No metrics provided on what 'New Generation' outcomes are (learning gains? employability? cultural competency?). Cannot assess without specifics."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable. Promise lacks specifics on curriculum scope, schools targeted, and per-student/per-school cost. Estimated one-time cost ₹50–200 cr + ₹20–50 cr/year operating (illustrative, not grounded in reference data). Without details, feasibility cannot be judged. If phased across 53,000 schools, cost scales sharply.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Tamil-medium education can deepen linguistic identity and cultural continuity; however, 'Tamil New Generation' as stated is a slogan without operational content. Without specifying curriculum changes, medium of instruction policy, learning outcome targets, or teacher capacity plans, this reads as cultural messaging rather than an actionable reform. Sustainability hinges on sustained teacher retraining and material production — high burn-out risk if not embedded in systemic change."
   },
   {
     "doc_id": "dmk_2026_edu_003",
@@ -127,12 +163,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Digital literacy and vocational skill training provide unemployed/underemployed youth with market-relevant skills, enabling transition to formal employment or self-employment.",
-    "first_order_effect": "Training delivered to ~5–10 lakh youth (estimated based on typical state scheme reach); participants gain digital competency (basic/intermediate) and job-specific skills in 2–4 month modules.",
-    "second_order_effect": "~30–40% of trainees secure formal/informal employment within 6–12 months post-training; income increase of ₹2,000–6,000/month for employed beneficiaries; reduced youth unemployment.",
-    "third_order_effect": "Wage growth and labor force participation stabilization for young cohorts; reduced migration to other states as local job opportunities improve; intergenerational mobility as skilled youth earn higher incomes and educate children better.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "impact_mechanism": "Builds digital and vocational competencies to enhance employability and reduce skills gap in the labor market.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Naan Muthalvan (I am the Chief Minister) - digital literacy and skill development program",
+        "analysis": "Promise name indicates aspirational framing ('I am CM' — implying citizen empowerment). 'Digital literacy and skill development' is thematic but vague: could mean (a) basic computer literacy (word, email, browsing), (b) coding/software skills, (c) vocational trades (electrician, plumbing, welding), (d) online business skills. No target age group, beneficiary numbers, or curriculum stated. Reference data: ~89 lakh govt school students; ~4.7 lakh women's SHGs with ~63 lakh members; female LFPR 33% urban, 51% rural (potential beneficiary pools, but not named in promise). Without enrolment targets, per-participant cost, or program duration, cost is unquantifiable. Data unavailable: scope, beneficiary count, per-person training cost."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable. Promise does not specify: (a) target population size (students? unemployed? farmers? women?), (b) program duration, (c) cost per participant. Illustrative only: if 10 lakh people × ₹10,000 per person = ₹100 cr one-time; if annual intake 5 lakh × ₹15,000 = ₹75 cr/year. Without grounded numbers, cannot assess. As % of discretionary budget (₹184,162 cr), even ₹100 cr/year is <0.1%, so fiscally feasible if scaled; but scope unknown.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Digital skills are real, in-demand; skill gaps are genuine barriers to employment. However, a program named 'I am CM' without specifics on who is trained, in what, for how long, and with what job placement guarantees is more brand than substance. Skills-only schemes without job linkage, wage guarantees, or employer engagement tend to produce certification without sustained income gains. Sustainability depends critically on labor market integration, which is not mentioned."
   },
   {
     "doc_id": "dmk_2026_edu_004",
@@ -154,12 +199,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Door-to-door preventive healthcare and medication access reduces the travel/opportunity cost of seeking healthcare, enabling early detection and chronic disease management in underserved rural/urban poor populations.",
-    "first_order_effect": "Health workers conduct ~2–4 visits per household per year to ~1.5–2.0 crore low-income households; basic screening, medication, and health education delivered at doorstep; ~20–30% of rural/urban poor households gain access to preventive care they previously could not afford.",
-    "second_order_effect": "Early detection of non-communicable diseases and reduced disease burden; lower out-of-pocket spending on crisis/curative care; reduced catastrophic health expenditure as preventive care reduces hospitalizations.",
-    "third_order_effect": "Improved productivity and reduced poverty-driven hospitalization debt; health workforce absorption of ~50,000–100,000 ASHA/health workers creates employment; long-term life expectancy and quality-of-life gains for poor populations.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "impact_mechanism": "Extends preventive and curative healthcare to remote/underserved populations by decentralizing provider contact and reducing access barriers.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Makkalai Thedi Maruthuvam (Medicine reaching the people) - door-to-door healthcare and wellness program",
+        "analysis": "Promise name implies outreach ('medicine reaching'); 'door-to-door healthcare and wellness' suggests mobile clinics, community health workers, or periodic village visits. No specifics: (a) what services (immunization? screening? counseling? chronic disease management? maternal health?), (b) how often, (c) who delivers (ASHA workers? nurses? doctors?), (d) which populations targeted (entire state? rural only? BPL only?), (e) budget. Reference data: BPL households ~1.2 crore, rural population subset of 7.9 crore, but exact rural population not in reference block. Ration-card households ~2.0 crore. Without clarity on service scope and beneficiary definition, fiscal cost unquantifiable. Data unavailable: service content, frequency, delivery model, target population size."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable. Promise lacks definition of: (a) healthcare services included (preventive screening, curative care, emergency?), (b) beneficiary population (entire 7.9 cr, rural subset, BPL 1.2 cr, or other?), (c) frequency (monthly, quarterly, annual home visits?), (d) staffing model (ASHAs, nurses, ANMs, doctors?). Illustrative cost: if 2 crore households × 1 annual visit × ₹500/visit = ₹1,000 cr/year. As % of discretionary budget (₹184,162 cr): ~0.5%, fiscally feasible if true cost is in this range. But without grounding, arithmetic is speculative.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Door-to-door healthcare removes access barriers and enables early detection/prevention — a genuine structural intervention for rural/remote populations with low facility proximity. However, sustainability risk is high: requires sustained cadre of trained workers (ASHAs, ANMs, or equivalent), vehicle/supply logistics, supervision, and quality assurance. Without employment guarantees, training depth, or equity in rural posting, programs like this often collapse after initial funding. Success depends on embedding workers into existing public health system (PHCs, sub-centers) with secure wages and career pathways."
   },
   {
     "doc_id": "dmk_2026_agri_001",
@@ -181,12 +235,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Multi-component livelihood scheme (48 components) addresses fragmented pain points in agricultural production, marketing, and income stability through integrated support (inputs, tech, credit, insurance, market linkage).",
-    "first_order_effect": "~10–15 lakh farmers and agricultural workers enroll; receive bundled support across 48 components (e.g., subsidized seeds, soil testing, drip irrigation, crop insurance, cooperative linkage); estimated income uplift of ₹30,000–60,000/year per beneficiary.",
-    "second_order_effect": "Reduced input costs and improved yields (estimated 10–15% productivity gain); higher net farm income reduces debt-driven distress sales; improved food security and reduced seasonal income volatility for agricultural workers.",
-    "third_order_effect": "Stabilization of farm livelihoods and reduced farm distress migration; sustained consumption smoothing enables children's education; modest reductions in farmer suicide rates if debt trap is broken.",
+    "impact_mechanism": "Multi-component agricultural support package targeting farmer and agricultural worker incomes through diversified interventions (exact mechanisms of 48 components not specified in promise text).",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Innyuyir Kalappu — 48-component livelihood improvement scheme for farmers and agricultural workers",
+        "analysis": "Promise text states '48 components' but does not detail what those components are, their beneficiary scope, or cost per component. TN has ~83 lakh farmer households (Agri Census 2015) and ~42 lakh marginal farmers. Without specification of the 48 components, their individual costs, coverage (all farmers? BPL only? specific regions?), or implementation timeline, cost calculation is impossible. Data unavailable — cannot calculate total fiscal impact."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable. Cannot assess as % of discretionary budget (₹184,162 cr) without component-level cost breakdown. Feasibility cannot be determined.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "The promise lacks specificity on mechanisms, beneficiary targeting, cost, and implementation. '48 components' is a political signal without substance; without detail on what each component does (income floor, market access, debt relief, input subsidy, skill training?), it is impossible to assess whether this addresses structural agricultural distress (low MSP realization, landlessness, input costs, climate risk) or offers only symptomatic relief. As framed, this is unverifiable political positioning rather than a concrete policy commitment."
   },
   {
     "doc_id": "dmk_2026_agri_002",
@@ -208,12 +271,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Dedicated finance department for agriculture improves policy coordination, subsidy targeting, and credit disbursement efficiency, reducing bureaucratic delays and fragmentation in farm support delivery.",
-    "first_order_effect": "New administrative structure with dedicated budget allocation (~₹5,000–8,000 cr estimated for ag sector); faster processing of crop loans, subsidy claims, and insurance payouts; reduced inter-agency coordination gaps.",
-    "second_order_effect": "Faster credit disbursement and subsidy claim resolution (target: 50–70% reduction in processing time); improved timeliness of input support during planting seasons; farmer satisfaction with scheme accessibility rises.",
-    "third_order_effect": "Sustained farmer participation in government schemes as trust in delivery improves; modest productivity gains as timely inputs reduce missed sowing windows; reduced informal debt as formal credit flows more reliably.",
-    "implementation_risk": "high",
-    "root_cause_addressed": false
+    "impact_mechanism": "Institutional restructuring: dedicated Finance Department may improve prioritization of agricultural credit access, subsidy processing, and loan recovery — but only if it has budget authority and enforcement power over implementing agencies.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Separate Finance Department for Farmers — institutional reorganization to centralize agricultural financial services",
+        "analysis": "Promise announces a separate Finance Department for farmers but provides no detail on budget allocation, staffing, mandate, or functional scope. It is unclear whether this department will have independent budget authority or merely coordinate existing schemes. TN currently has a Department of Agriculture and Department of Animal Husbandry; creating a separate Finance Department would require administrative restructuring but no capital cost is stated. Implementation cost and operational budget are not specified. Data unavailable — cannot estimate fiscal impact."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable (no salary budget, office setup, or operational allocation specified). Likely cost: staff salaries and office overhead (~₹5–20 cr/year for mid-sized state department, but this is inference, not from reference data). Feasibility: affordable in discretionary budget if cost is administrative (< 0.1% of ₹184,162 cr), but unproven whether it will improve outcomes.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Institutional restructuring alone (creating a new department) does not address root causes of agricultural distress: low MSP realization, input cost inflation, credit access for marginal farmers, or climate resilience. A Finance Department is a coordination tool; without detail on new credit programs, interest subsidies, or debt relief it will administer, this is administrative reshuffling, not a substantive policy change. Sustainability depends on whether the department has independent budget authority and legal power to enforce better lending — neither is clarified."
   },
   {
     "doc_id": "dmk_2026_women_002",
@@ -235,12 +307,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Direct income or skill-building transfer to women, expanding economic agency and reducing dependency on male household members.",
-    "first_order_effect": "Women in TN (target likely 10-20 lakh based on comparable schemes) receive cash stipends, vocational training, or entrepreneurship support, increasing household income or earning capacity.",
-    "second_order_effect": "Increased female labor force participation and household bargaining power reduce fertility rates and improve child health outcomes through maternal decision-making authority.",
-    "third_order_effect": "Over 10+ years, higher female education and workforce participation create a persistent demographic dividend and reduced dependency on social safety nets.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "impact_mechanism": "Income/asset transfer to women (exact mechanism unspecified in promise text); if substantial cash or productive asset transfer, could improve household economic resilience.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Kalaignar Kavirai Thittam — Women's Empowerment Scheme (details not provided)",
+        "analysis": "Promise title references the scheme but provides no detail on: (a) target beneficiary count (all women? BPL women only? specific age/marital status?); (b) type of support (cash transfer, skill training, asset grant, healthcare, education subsidy?); (c) amount per beneficiary; (d) duration (one-time or recurring). TN has ~3.95 crore women; ~63 lakh women are members of SHGs. Without specification, cost and impact cannot be estimated. Data unavailable — cannot calculate."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable. Cannot assess feasibility without knowing beneficiary scope, benefit type, and per-capita transfer. If universal to all 3.95 crore women at ₹500/year = ₹19,750 cr/year (107% of discretionary budget — unaffordable); if ₹5,000/year to 63 lakh SHG members = ₹315 cr/year (~0.17% of discretionary budget — affordable). Actual promise does not specify either scenario.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Without specification of the scheme's design, this is an empty political label. If the scheme offers genuine income support to low-income women or facilitates skills training and market access, it could have structural impact; if it is a one-time cash transfer or ceremonial gift, it is symptomatic relief only. The name 'Kavirai Thittam' (Poet's Scheme) suggests no clear operational mandate. Transparency on mechanism and beneficiary criteria is essential to assess sustainability."
   },
   {
     "doc_id": "dmk_2026_women_003",
@@ -262,12 +343,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Marriage subsidy or financial incentive reduces upfront wedding costs for poor households, eliminating a major debt trigger and reducing bride dowry pressure.",
-    "first_order_effect": "~3-5 lakh marriages (estimated from BPL households) receive direct cash assistance (₹50K-1L per couple), avoiding informal debt or dowry transactions.",
-    "second_order_effect": "Reduced marriage-related indebtedness in poor households increases consumption capacity for food/health; dowry reduction lowers physical/emotional abuse risk for brides.",
-    "third_order_effect": "Normalization of government-funded marriage breaks dowry-debt cycle across generations, but effect limited if scheme does not simultaneously criminalize/enforce dowry laws.",
+    "impact_mechanism": "Marriage assistance and social support for specified beneficiaries; if targeted to low-income women or marginalized groups, reduces financial barrier to marriage and provides safety net.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Anbukkieyirangal Thittam — marriage assistance and social support (beneficiary scope and benefit amount not specified)",
+        "analysis": "Promise title and description are vague. 'Marriage assistance' typically implies a one-time cash grant at time of marriage; 'social support' is undefined. No detail on: (a) target group (BPL women? widows? all women?); (b) benefit amount per marriage; (c) estimated annual beneficiary count (e.g., if 1 lakh marriages/year, and ₹50,000/grant = ₹500 cr/year); (d) eligibility criteria. Data unavailable — cannot calculate."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable. Rough inference: if scheme targets 1 lakh marriages/year (TN registers ~20–25 lakh marriages/year, assuming ~5% in target population) at ₹50,000/grant = ₹500 cr/year (~0.27% of discretionary budget). But this is inference, not from reference data. Without beneficiary count and benefit amount from promise, feasibility is indeterminate.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "One-time marriage assistance reduces immediate financial burden on poor households but does not address structural causes of low economic security for women: limited employment, wage discrimination, asset ownership barriers, or skill gaps. Social support is undefined; if it includes ongoing livelihood access or childcare support, impact could be deeper. As framed (marriage cash grant + undefined 'social support'), this is genuine relief from a real expense but not transformative to women's economic autonomy."
   },
   {
     "doc_id": "dmk_2026_edu_005",
@@ -289,12 +379,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "In-kind nutrition transfer (meals) at school or community level removes malnutrition as a barrier to attendance and cognitive development.",
-    "first_order_effect": "~2-3 crore school children and vulnerable adults receive daily nutritious meals, immediately improving caloric intake and reducing stunting/wasting prevalence.",
-    "second_order_effect": "Better-nourished children show improved school attendance and learning outcomes; reduced disease burden decreases healthcare costs for poor households.",
-    "third_order_effect": "Sustained nutrition support over 5+ years raises human capital formation; early childhood investments compound into higher earnings and reduced non-communicable disease burden in adulthood.",
-    "implementation_risk": "high",
-    "root_cause_addressed": true
+    "impact_mechanism": "Nutritious meal distribution targets food security and child nutrition; if implemented universally to all school children, addresses malnutrition and improves learning outcomes.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "low",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Anbu Sathaisal Thittam — nutritious meal distribution (scope and per-meal cost not specified)",
+        "analysis": "Promise announces nutritious meal distribution but does not specify: (a) beneficiary scope (all school children? government schools only? all socioeconomic groups?); (b) meal type and nutritional content; (c) cost per meal; (d) whether this is expansion of or replacement for existing mid-day meal scheme. TN mid-day meal scheme currently covers ~53 lakh children (Classes 1–10) in government schools (~89 lakh total government school students). If 'Anbu Sathaisal' expands to all 89 lakh students, cost depends on per-meal price. Data unavailable — cannot calculate without per-meal cost specification."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable (per-meal cost not specified). Inference: if cost is ₹25/meal (typical mid-day meal cost in TN), 240 school days/year, and covers all 89 lakh government school students = ₹25 × 240 × 89 lakh = ₹536 cr/year (~0.29% of discretionary budget — affordable). But without promise-specified per-meal cost and target beneficiary count, this is inference only.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Universal nutritious meal distribution to school children has well-documented structural impact: improves nutritional status, reduces childhood stunting/wasting, increases school attendance and learning outcomes, and builds human capital. If expanded beyond current ~53 lakh to all 89 lakh government school students, it directly addresses childhood malnutrition (a root cause of poor health and educational attainment). Sustainability depends on budget allocation and supply chain management (meal quality, hygiene, timely delivery), both achievable within state fiscal capacity. This is the only promise in this batch with clear structural logic."
   },
   {
     "doc_id": "dmk_2026_edu_006",
@@ -316,12 +415,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Residential subsidized housing for students removes the cost barrier to mother-tongue education, enabling enrollment in regional language programs.",
-    "first_order_effect": "~10K-50K students (estimated from mother-tongue learner pool) access hostels, enabling attendance at Tamil/regional language schools without family relocation.",
-    "second_order_effect": "Increased enrollment in Tamil-medium schools preserves linguistic identity and expands regional-language workforce; hostel students face lower dropout due to reduced family financial stress.",
-    "third_order_effect": "Stronger Tamil-language proficiency and cultural continuity in workforce; marginal employment premium for mother-tongue education if linked to skill certification.",
+    "impact_mechanism": "Hostel facilities enable mother-tongue language learners (likely non-Tamil/non-English speakers in vernacular schools) to access education away from home; if well-resourced, improves educational access and social mobility.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Tholazi Vidudhikal — hostel facilities for students learning mother tongues (beneficiary count, hostel capacity, and cost per student not specified)",
+        "analysis": "Promise announces hostels for mother-tongue language learners but does not specify: (a) which mother tongues are covered (Telugu, Kannada, Malayalam, Marathi?); (b) estimated number of beneficiary students (TN has linguistic minorities: ~15–20 lakh Telugu speakers, ~10 lakh Kannada speakers, smaller populations of other languages); (c) hostel capacity (beds, cost per student per year); (d) per-annum operational cost per hostel. Data unavailable — cannot calculate. TN government school enrollment is ~89 lakh; mother-tongue learners are estimated at <10% of this (~8–9 lakh), but exact number is not in reference data."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: data unavailable. Inference: if scheme targets 50,000 mother-tongue learners (rough estimate, not from reference) at ₹50,000/student/year (hostel + meals + utilities) = ₹250 cr/year (~0.14% of discretionary budget — affordable). But beneficiary count, hostel design, and per-student cost are not specified in promise; this is inference only.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Hostel provision for linguistic minority students addresses a structural barrier: lack of educational access for non-Tamil speakers in areas far from mother-tongue schools. By enabling students to pursue education in their mother tongue (without geographic constraint), the scheme improves learning retention and educational completion — both documented outcomes of mother-tongue instruction. Sustainability depends on: (a) hostel infrastructure quality and maintenance; (b) teacher availability in minority languages; (c) consistent budget allocation. If well-implemented, this creates lasting educational access; if poorly resourced (crowded hostels, inadequate meals, teacher shortages), it becomes a containment mechanism with limited impact."
   },
   {
     "doc_id": "dmk_2026_women_004",
@@ -343,12 +451,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Reservation-backed employment guarantee provides income-stable public sector jobs to persons with disabilities, removing earnings volatility and labor-market discrimination.",
-    "first_order_effect": "~1000-5000 differently-abled persons are appointed to local government bodies (panchayats, municipalities) with stable wages, health insurance, and pension eligibility.",
-    "second_order_effect": "Improved household income stability reduces poverty risk; direct representation in governance creates accountability for disability-inclusive policy and infrastructure design.",
-    "third_order_effect": "Normalized disabled participation in public service creates cultural shift toward inclusion; local bodies design barrier-free infrastructure, improving mobility and economic access for all disabled persons.",
-    "implementation_risk": "low",
-    "root_cause_addressed": true
+    "impact_mechanism": "Creates reserved seats in local government bodies (panchayats, municipalities, corporations) for differently-abled persons, ensuring direct political representation without competitive hurdles.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Direct appointment of differently-abled persons to local government body positions",
+        "analysis": "Promise text does not specify: (1) how many positions are 'direct' vs. competitive; (2) which local bodies (gram panchayats only, or also municipalities/corporations); (3) definition of 'differently-abled' (physical, sensory, mental, multiple); (4) whether this creates NEW seats or reserves from existing seats; (5) total beneficiary count. Data unavailable — cannot calculate fiscal cost or implementation scale without these parameters. Current Tamil Nadu local body structure: ~12,618 gram panchayats + ~52 municipalities + ~12 corporations. If each gram panchayat reserves 1 seat (₹0 recurring cost — already funded through local body budgets), the mechanism is largely administrative. However, the promise is silent on financial support, capacity building, or accessibility infrastructure needed to make positions genuinely functional for PWDs."
+      }
+    ],
+    "fiscal_cost_note": "Estimated recurring cost: ₹0 (if reserved seats are created from existing local body staff budget allocations; no new salary/infrastructure capex specified in promise). If new dedicated administrative support or accessibility infrastructure required: data unavailable — promise does not specify scope. As percentage of discretionary budget: negligible if purely seat reservation; material if support infrastructure funded separately.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "A reserved seat in local government is politically symbolic and legally important for representation, but does NOT address the root causes of disability-based exclusion: lack of accessible infrastructure, inadequate public transport, discriminatory employer practices, or income poverty among PWD households. The promise creates visibility and procedural access but without corresponding investment in accessibility and livelihood support, it risks tokenism — PWDs appointed but unable to effectively participate or benefit economically."
   },
   {
     "doc_id": "dmk_2026_infra_002",
@@ -370,12 +487,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Subsidized or free housing provision removes shelter insecurity and eliminates monthly rent burden, freeing income for food and healthcare.",
-    "first_order_effect": "~1-2 lakh vulnerable households (elderly, widows, marginalized groups targeted) receive housing units or housing subsidies, securing tenure and reducing homelessness.",
-    "second_order_effect": "Reduced housing cost burden improves household food security and health spending; secure housing tenure increases collateral availability and enables micro-credit uptake.",
-    "third_order_effect": "Over 10+ years, intergenerational asset accumulation (owned housing as inheritance) reduces wealth inequality; stable housing improves child enrollment and learning outcomes.",
+    "impact_mechanism": "Provides subsidized or free housing units to specified beneficiary groups (housing for welfare purposes), reducing housing cost burden and providing asset security.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Ayyathiranidasan Pandithar Kudiyiruppu Scheme — housing and residential welfare program",
+        "analysis": "Promise text provides: scheme name only. Data unavailable: (1) target beneficiary group (artists, cultural workers, educators, or broader category?); (2) number of housing units promised; (3) cost per unit (construction/land); (4) annual program budget; (5) timeline; (6) eligibility criteria; (7) subsidy vs. free vs. concessional terms. Named after Ayyathiranidasan Pandithar (20th century Tamil classical musician/composer), suggesting possible focus on performing artists or cultural workers, but this is inference, not stated in promise. Without these numbers, fiscal feasibility cannot be assessed. Typical TN housing schemes: ₹6–12 lakh per unit (construction). If program targets 10,000 units/year at ₹10 lakh average: ₹100 cr/year (0.05% of discretionary budget). If 100,000 units: ₹1,000 cr/year (0.54% of discretionary budget). But these are illustrative — actual cost unknown."
+      }
+    ],
+    "fiscal_cost_note": "Total estimated annual cost: DATA UNAVAILABLE. Cannot calculate without: (1) annual unit target, (2) subsidy/cost per unit, (3) whether land is provided or financed by beneficiary. If ₹100–500 cr/year: feasible within discretionary budget (~₹184,162 cr). If ₹1,000+ cr/year: requires reallocation or central/bond funding.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Housing is a structural asset that builds long-term wealth and economic security. If the scheme provides ownership or secure tenure, it addresses a root cause of poverty and insecurity. However, sustainability depends critically on: (1) whether units are sold/leased/gifted (affects repayment/revenue), (2) maintenance responsibility post-handover, and (3) whether beneficiaries have income to sustain property taxes/upkeep. Without clarity on these details, even a well-intentioned housing program risks becoming stranded assets or creating liabilities for the state."
   },
   {
     "doc_id": "dmk_2026_infra_003",
@@ -397,12 +523,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Subsidized or free housing for economically weaker sections eliminates shelter cost as a poverty perpetuator, enabling reallocation of income to education and health.",
-    "first_order_effect": "~2-5 lakh EWS households receive constructed housing or land grants, reducing housing cost from ~30-40% of income to near-zero.",
-    "second_order_effect": "Released household income flows to child education and preventive healthcare; asset ownership (housing) improves social dignity and credit access for microenterprises.",
-    "third_order_effect": "Generational wealth accumulation through owned housing; improved child enrollment and learning outcomes reduce inter-generational poverty transmission.",
+    "impact_mechanism": "Provides housing units to economically weaker sections (EWS/BPL households), reducing housing cost burden and providing asset security to the poorest households.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Thalaigudi Thittam — housing scheme for economically weaker sections",
+        "analysis": "Promise text provides: scheme name and target group (economically weaker sections). Data unavailable: (1) number of units promised (annual or total); (2) cost per unit; (3) annual program budget; (4) subsidy ratio or beneficiary contribution; (5) timeline; (6) eligibility income threshold. Reference data: ~1.2 crore BPL households in TN (Tendulkar poverty line). If scheme targets 5% of BPL households (6 lakh units) over 5 years (1.2 lakh/year) at ₹8 lakh/unit: ₹960 cr/year. If 2% of BPL households (24 lakh units) over 10 years (2.4 lakh/year) at ₹8 lakh/unit: ₹1,920 cr/year. Without explicit targets in the promise, these are illustrative bounds. 'Thalaigudi Thittam' translates to 'House Scheme' — a generic name suggesting this may be a rebranding of existing PMAY or state housing programs."
+      }
+    ],
+    "fiscal_cost_note": "Total estimated annual cost: DATA UNAVAILABLE. Illustrative range (if targeting 1–2% of BPL households/year at ₹8 lakh/unit): ₹960–1,920 cr/year (0.5–1% of discretionary budget). If actual target is smaller or cost-sharing model used: could be ₹300–500 cr/year (feasible). If target is larger or all-subsidy: could exceed ₹2,000 cr/year (requires central/bond funding or reallocation).",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Housing for EWS households is a structural intervention — it builds asset wealth, improves health/education outcomes (overcrowding ↓, school attendance ↑), and provides tenure security for productive activity. However, sustainability hinges on: (1) whether beneficiaries can afford land/water/electricity taxes post-allocation, (2) whether units are in locations with employment access (risk of isolated housing colonies), and (3) maintenance of common infrastructure. Many TN state housing schemes have faced issues with vacant units and inadequate post-construction support — execution risk is real."
   },
   {
     "doc_id": "dmk_2026_edu_007",
@@ -424,12 +559,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Housing provision for education sector workers (teachers, staff) stabilizes their income utilization and improves residence proximity to schools, reducing commute burden.",
-    "first_order_effect": "~10K-50K education sector employees (teachers, support staff) receive housing units, reducing monthly rent expense and stabilizing residential security.",
-    "second_order_effect": "Improved teacher housing stability and reduced commute time may increase classroom presence and teaching quality; direct benefit primarily to workforce, not students.",
-    "third_order_effect": "Marginal improvement in teacher retention and morale if housing is near worksite; limited systemic impact on educational outcomes unless combined with pedagogy/curriculum reform.",
-    "implementation_risk": "high",
-    "root_cause_addressed": false
+    "impact_mechanism": "Provides housing to education sector workers or students, reducing cost-of-living burden and improving retention/productivity in the teaching workforce or academic sector.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Professor Ambazhan Education Infrastructure Housing Scheme",
+        "analysis": "Promise text provides: scheme name and implicit beneficiary (education sector — likely teachers or academics, given reference to 'Professor'). Data unavailable: (1) target beneficiary group (government teachers, college lecturers, researchers, or education students?); (2) number of units promised annually or total; (3) cost per unit; (4) annual budget; (5) subsidy or cost-sharing terms; (6) location (near schools/colleges?). Reference data: TN has ~53,000 government schools. If scheme targets 10% of government school teachers (~4,500 units/year at ₹8 lakh/unit): ₹360 cr/year. If 2% of teachers (~900 units/year): ₹72 cr/year. But 'education infrastructure housing' could also mean hostel/residential space for college students or research scholars — target is ambiguous."
+      }
+    ],
+    "fiscal_cost_note": "Total estimated annual cost: DATA UNAVAILABLE. Illustrative range (if targeting 900–4,500 education sector housing units/year at ₹8 lakh/unit): ₹72–360 cr/year (0.04–0.2% of discretionary budget). If actual target is stated in full manifesto: reassess. Likely affordable within discretionary budget.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Housing support for teachers addresses a real pain point (teacher housing shortage in rural/remote areas, high urban rents) and can improve teacher retention and morale. However, it does NOT address the root causes of education quality deficits: inadequate teacher training, low learning outcomes, or pupil–teacher ratios. This is a quality-of-life benefit (symptomatic relief) that is valuable but sectoral — it does not fix broader education or workforce productivity gaps. Sustainability depends on whether units are maintained and whether housing translates to measurable improvements in teacher attendance/performance."
   },
   {
     "doc_id": "dmk_2026_edu_008",
@@ -451,12 +595,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "On-campus housing provision reduces out-of-pocket accommodation costs for college students from economically disadvantaged backgrounds, enabling sustained enrollment and academic focus.",
-    "first_order_effect": "College students from poor/lower-middle-income households gain subsidized/free hostel access, reducing dropout pressure from housing unaffordability.",
-    "second_order_effect": "Improved course completion rates and academic performance among beneficiaries increase employability and wage earnings post-graduation, particularly in non-agricultural professional roles.",
-    "third_order_effect": "Intergenerational mobility strengthens as educated workforce reduces household dependence on low-skill agriculture/informal work; fiscal gains from higher tax base offset initial housing capex over 10-15 years.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "impact_mechanism": "Provides housing to education sector workers or students, reducing cost-of-living burden and improving retention/productivity in the teaching workforce.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Perundhalaivar Kamaraj College Housing Scheme",
+        "analysis": "Promise text provides: scheme name (reference to Perundhalaivar Kamaraj, 20th century Tamil educationist and CM) and implicit beneficiary (college sector — likely students, teachers, or support staff). Data unavailable: (1) target beneficiary count (college students, teachers, support staff, or mix?); (2) number of housing units/hostels promised; (3) annual budget; (4) cost per unit/bed; (5) whether new construction or renovation of existing infrastructure; (6) eligibility (merit, EWS, SC/ST quotas?). Reference data: TN has ~1,100+ colleges (government and aided). If scheme funds one dormitory per 5 colleges (220 dormitories) with 100 beds each (22,000 beds) at ₹3 lakh/bed (construction + land): ₹660 cr (likely one-time capex, not annual). If annual operation cost (maintenance, staff): ₹50–100 cr/year. But these are guesses — promise is silent on scale."
+      }
+    ],
+    "fiscal_cost_note": "Total estimated annual cost: DATA UNAVAILABLE (likely capex-heavy, not recurring). If this is hostel/dormitory construction: one-time capex could be ₹500–1,000 cr (requires bond/central funding), annual O&M ₹50–100 cr (~0.03–0.05% of discretionary budget). If retrofitting existing college infrastructure: lower capex (~₹100–200 cr). Without specification, cannot assess fiscal feasibility precisely.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Student/staff housing improves college retention and quality of life, particularly for rural or low-income students who face commute/boarding costs. However, it does NOT address root causes of education access gaps: poor foundation skills, inadequate learning quality, or lack of employment links. Like the preceding education housing scheme, this is sectoral relief (symptomatic) rather than structural. Sustainability risk: post-construction, hostels require continuous maintenance, staffing, and cost-recovery — many TN college hostels are under-maintained or underutilized."
   },
   {
     "doc_id": "dmk_2026_edu_009",
@@ -478,12 +631,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Targeted credit/capital access and business training for backward class entrepreneurs removes financing barrier that historically excludes this group from formal self-employment pathways.",
-    "first_order_effect": "Estimated 5,000–15,000 BC entrepreneurs receive loans, training, or subsidy for business startup/expansion; microenterprises and small retail/services businesses established.",
-    "second_order_effect": "New micro/small enterprises create local employment (1–3 employees per unit), generating household income for employees and retention of consumption within rural/semi-urban areas.",
-    "third_order_effect": "Over 5+ years, if scheme reaches critical scale (50,000+ units), contributes to decentralized job creation, reducing rural–urban migration pressure and building non-farm income base in villages.",
+    "impact_mechanism": "Provides financial support (loans, grants, or subsidies) to backward class entrepreneurs to start or expand businesses, creating income-generating assets and economic self-reliance.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Annai Ambedkar Economic Entrepreneurs Scheme — support for backward class entrepreneurs",
+        "analysis": "Promise text provides: scheme name (reference to Ambedkar, social reformer) and target group (backward class entrepreneurs). Data unavailable: (1) definition of 'backward class' (SC/ST, OBC, or economically backward?); (2) type of support (loans, grants, subsidies, training, or mix?); (3) loan amount/grant per beneficiary; (4) subsidy ratio (if loan-based); (5) number of beneficiaries/year; (6) sectors targeted; (7) annual budget. Reference data: TN's 2011 Census shows SC ~17%, ST ~1%, OBC ~69% of population. If scheme targets 1% of backward class population for entrepreneurship (est. ~56 lakh in TN population of 7.9 crore), and allocates ₹3 lakh per beneficiary (typical micro-enterprise package): ₹1,680 cr one-time. If ₹1 lakh/person with 50% subsidy: ₹280 cr one-time. If annual allocations (e.g., 50,000 beneficiaries/year at ₹3 lakh): ₹150 cr/year. Without specification, cost is highly uncertain."
+      }
+    ],
+    "fiscal_cost_note": "Total estimated annual cost: DATA UNAVAILABLE. Illustrative range depends on beneficiary count and support type: (a) if 10,000 beneficiaries/year at ₹1 lakh with 50% subsidy: ₹50 cr/year (0.03% of discretionary budget); (b) if 50,000 beneficiaries/year at ₹3 lakh with 100% subsidy: ₹150 cr/year (0.08% of discretionary budget); (c) if loan-based with 25% subsidy + 75% credit: ₹40–100 cr/year subsidy outlay (feasible). Likely affordable, but depends heavily on scale and subsidy ratio. If combined with other backward class schemes, total cost could be higher.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Business support targeting backward class entrepreneurs can address systemic wealth/asset gaps and create durable income sources. However, sustainability is heavily dependent on: (1) quality of selection (do beneficiaries have viable business ideas and market access?), (2) post-disbursal support (training, mentoring, market linkage), and (3) repayment/loan recovery (if credit component). Many TN schemes for SC/ST entrepreneurship have faced challenges with low business survival rates (<40% at 3 years), high default rates, and lack of mentoring. A well-designed scheme can be transformative; a poorly managed one becomes a subsidy with minimal business success."
   },
   {
     "doc_id": "dmk_2026_infra_004",
@@ -505,12 +667,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Welfare and honor program for Thiruvalluvar (likely targeting elderly poor or specific marginalized castes) provides direct income transfer and social recognition, reducing destitution.",
-    "first_order_effect": "Beneficiaries (scale unclear; estimate 2–10 lakh based on typical honor schemes) receive monthly pension or lump-sum benefit; symbolic recognition improves social status.",
-    "second_order_effect": "Increased purchasing power among elderly/vulnerable beneficiaries boosts local consumption in rural areas; reduced acute poverty stress enables better nutrition and minor health access.",
-    "third_order_effect": "Systemic effect limited: income transfer is non-contributory and non-productive, so no structural asset creation or labor market reintegration occurs; benefits are consumptive and time-bound.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "impact_mechanism": "Undefined; no specific mechanism, beneficiary count, or financial commitment stated.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Chief Minister's Thiruvalluvar Scheme - honor and welfare program",
+        "analysis": "Promise text contains no measurable parameters: no target beneficiary count, no annual budget, no eligibility criteria, no welfare benefit amount, no implementation timeline. 'Honor and welfare program' is descriptive language without operational definition. Cannot assess fiscal cost, reach, or impact without these specifications."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — cannot calculate. No budget, beneficiary count, or benefit rate specified in promise or reference data.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "This is a naming/branding exercise with no quantified commitment. Without a defined beneficiary population, benefit structure, or delivery mechanism, it functions as a symbolic announcement rather than a policy intervention. Cannot assess whether it addresses any root cause of poverty, inequality, or social hardship."
   },
   {
     "doc_id": "dmk_2026_infra_005",
@@ -532,12 +703,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Rural housing subsidy or direct house-building removes the shelter deprivation barrier, improving living conditions and enabling productive time use in adequate/safe housing.",
-    "first_order_effect": "Estimated 10–20 lakh rural BPL/EWS households receive new/upgraded houses; housing deficit in rural TN (est. ~5–8 lakh units) partially addressed.",
-    "second_order_effect": "Safe, pucca housing reduces health shocks (water-borne disease, respiratory illness) and improves school attendance for children; housing asset builds household collateral for future credit access.",
-    "third_order_effect": "Over 10+ years, improved health and education outcomes translate to higher lifetime earnings; housing assets enable productive investments (small business, animal husbandry) and intergenerational wealth accumulation.",
+    "impact_mechanism": "Housing construction in rural areas, potentially providing shelter to landless/inadequately housed households.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Chief Minister's Village Housing Scheme - rural residential development",
+        "analysis": "Promise specifies scheme name and target area (rural) but omits critical parameters: (1) number of houses to be constructed, (2) annual budget allocation, (3) eligibility criteria (BPL? landless? all rural households?), (4) per-house construction cost, (5) timeline. Rural TN has ~3.9 crore people; BPL households ~1.2 crore total (urban + rural split unavailable). Without target numbers, cannot quantify cost or feasibility."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — cannot calculate. Promise does not specify number of houses, construction cost per house, or annual allocation. Rural population and BPL coverage are known, but target beneficiary count for this scheme is not stated.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "If implemented at meaningful scale, housing is a foundational asset that improves health, dignity, collateral for loans, and intergenerational outcomes. However, without a defined beneficiary target and budget, the promise remains unquantifiable and high-risk for under-delivery or scope creep. Structural intent is present, but commitment clarity is absent."
   },
   {
     "doc_id": "dmk_2026_edu_010",
@@ -559,12 +739,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Digital device access (laptop) provision removes technology access barrier for college students, enabling skill building, assignment completion, and digital literacy for entry into tech/knowledge work.",
-    "first_order_effect": "Estimated 3–5 lakh college students (majority from BPL/SC/ST/BC backgrounds) receive laptops; device ownership rises, reducing digital divide among undergraduate cohorts.",
-    "second_order_effect": "Increased coding/digital skill development and online course completion improve employment prospects in IT, BPO, and digital services sectors; wage premiums for digital-skilled workers 20–30% higher.",
-    "third_order_effect": "If sustained over 5–10 years, pipeline of digitally skilled workforce from TN colleges raises state's tech employment and startup ecosystem; productivity gains benefit formal sector employers.",
+    "impact_mechanism": "Reducing digital access barrier for college students, enabling tech-enabled learning and job readiness.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Laptop distribution scheme for college students",
+        "analysis": "Promise specifies beneficiary category (college students) and benefit (laptop) but omits: (1) total number of college students in TN (reference data unavailable), (2) cost per laptop, (3) eligibility (all students? merit-based? BPL families?), (4) annual rollout numbers, (5) budget allocation. Without these numbers, cannot estimate fiscal impact or feasibility."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — cannot calculate. Number of college students in TN, cost per unit, eligibility scope, and rollout timeline are not specified in promise or reference data.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Digital access and computing skills are foundational to employment in a technology-driven economy. Laptops enable independent learning, skill development, and job market entry. However, structural impact depends on complementary factors: internet access, software training, curriculum integration. The promise alone provides hardware without guaranteeing the ecosystem for sustained digital literacy or employment outcomes."
   },
   {
     "doc_id": "dmk_2026_infra_006",
@@ -586,12 +775,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Free agricultural electricity connections eliminate recurring power cost burden (₹1,500–3,000 annually per farmer), increasing net farm income and irrigation adoption capacity.",
-    "first_order_effect": "2 lakh farmers (likely marginal/smallholder with 0.5–2 ha holdings) gain free or heavily subsidized power connections; effective farm-level electricity cost falls by 80–100%.",
-    "second_order_effect": "Reduced electricity cost incentivizes year-round irrigation adoption, increasing cropping intensity from 1.0–1.2 to 1.5–1.8 cycles/year; farm productivity and marketable surplus increase 15–25%.",
-    "third_order_effect": "Higher yields and income reduce dependence on distress borrowing for seed/inputs; debt-to-income ratio improves, freeing capital for asset investments (pumps, fertilizer) and enabling demand-pull employment in agro-allied services.",
+    "impact_mechanism": "Reducing pump operation cost and financial burden on farmers, enabling greater irrigation investment and yield improvement.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Free power connections to 2 lakh farmers",
+        "analysis": "Promise specifies beneficiary count: 2 lakh farmers. Reference data shows TN has ~83 lakh farmer households (2015 Census); 2 lakh represents ~2.4% of all farmers or ~4.8% of marginal farmers (42 lakh). Cost breakdown: (a) connection cost: data unavailable (typical govt scheme ₹5,000–₹15,000 per connection); (b) annual subsidy per connection: data unavailable (cost of providing 'free power' = avoided tariff payment). Arithmetic: if ₹10,000 per connection × 2 lakh = ₹200 cr one-time cost; ongoing subsidy cost depends on monthly unit consumption and TN tariff (data unavailable). Without these figures, cannot quantify total fiscal impact."
+      }
+    ],
+    "fiscal_cost_note": "Capital cost: ~₹200 crore (est. ₹10,000/connection × 2 lakh farmers, but actual per-connection cost not specified). Ongoing annual subsidy: data unavailable — cannot calculate without TN agricultural power tariff rate and average monthly consumption per farm connection. ~2.4% of all farmer households would benefit. Feasibility: capital outlay is ~0.1% of discretionary budget (₹184,162 cr); ongoing subsidy cost unknown. Implementation risk is medium (targeting, connection logistics).",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Reliable, subsidized power is essential for agricultural productivity, particularly for irrigation in a water-constrained state. Free connections remove an upfront entry barrier. However, structural sustainability requires: (1) reliable power supply (TN faces peak power stress), (2) tariff subsidy permanence (prone to budget pressure), (3) complementary inputs (seed, fertilizer, extension). Promise addresses a real cost barrier but does not guarantee supply-side stability or market access."
   },
   {
     "doc_id": "dmk_2026_women_005",
@@ -613,12 +811,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Direct monthly income transfer to women (₹5,000/month = ₹60,000/year) provides unconditional cash floor, reducing extreme poverty and expanding women's agency in household spending and asset decisions.",
-    "first_order_effect": "1.31 crore women (approx. all female HoH + eligible poor/widowed women) receive ₹5,000/month via bank transfer; monthly household consumption floor rises by ₹5,000–7,500 (assuming 1.5–2 dependents per beneficiary).",
-    "second_order_effect": "Increased purchasing power drives up demand for food, healthcare, education for children; informal sector (petty retail, domestic labor) sees wage pressure upward; school enrollment and attendance improve among beneficiary households.",
-    "third_order_effect": "Over 5+ years, improved early childhood nutrition and maternal health reduce stunting/wasting; higher school attendance translates to better educational outcomes, raising lifetime earnings and intergenerational mobility for next cohort.",
+    "impact_mechanism": "Direct monthly cash transfer to women, boosting liquidity for consumption and small investment, with potential for accumulation into larger financial stability.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Monthly cash assistance of ₹5,000 to 1.31 crore women (₹3,000 regular + ₹2,000 special welfare)",
+        "analysis": "Promise specifies: beneficiary count = 1.31 crore women; monthly amount = ₹5,000 (₹3,000 + ₹2,000); delivery = bank account credit. Reference data shows TN female population (2026 est.) = 3.95 crore. Beneficiaries = 1.31 crore = 33.2% of all women. Eligibility criteria for this 33.2% not stated in promise (age? income? marital status? all adult women?). Cost arithmetic: ₹5,000/month × 1.31 crore women × 12 months = ₹78,600 crore/year. As % of TN discretionary budget (₹184,162 cr): 78,600 / 184,162 = 42.7% of discretionary spend. As % of total revenue expenditure (₹328,669 cr): 78,600 / 328,669 = 23.9% of all state spending."
+      }
+    ],
+    "fiscal_cost_note": "Annual cost: ₹5,000 × 1.31 crore women × 12 months = ₹78,600 crore/year. This is 42.7% of discretionary budget (₹184,162 cr) and 23.9% of total revenue expenditure (₹328,669 cr). Feasibility: NOT AFFORDABLE. TN's entire fiscal deficit is ₹101,344 cr (2024-25); this promise alone would consume 77.5% of the fiscal deficit, requiring either massive new revenue, reallocation from all other discretionary programs, or additional borrowing. Implementation would require central government support or unsustainable debt accumulation.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Direct cash transfer provides immediate consumption relief and acknowledges women's economic vulnerability, which is genuine (female LFPR: 33% urban, 51% rural vs. male baseline ~85%). However, at ₹5,000/month, this is symptomatic relief, not structural: it does not address root causes of low female income (occupational segregation, unpaid care burden, skills gap, childcare access). Without complementary policies on skill training, childcare, safe work environments, or wage equality, transfers manage hardship without transforming earning capacity. Fiscal unsustainability (77.5% of fiscal deficit) makes continuity unrealistic absent fundamental revenue change."
   },
   {
     "doc_id": "dmk_2026_women_006",
@@ -640,12 +847,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Pension contribution backfill for government employees eliminates 22-year gap in contributions, ensuring full pension entitlement and income security for retiring government workforce.",
-    "first_order_effect": "Estimated 1.5–2.5 lakh government employees (majority women teachers, health workers, ASHA/Anganwadi staff) receive backfilled contributions; pension liability on state budget increases by ₹2,500–4,000 cr annually (one-time + recurring).",
-    "second_order_effect": "Secure pension income for employees reduces precarity and enables household consumption/savings; recipient morale and retention improve; reduced turnover saves recruitment costs.",
-    "third_order_effect": "Systemic effect limited: scheme corrects a fiscal/contractual error but does not expand productive capacity or create new employment; long-term fiscal burden (actuarial liability) strains discretionary budget, potentially crowding out new program investment.",
-    "implementation_risk": "low",
-    "root_cause_addressed": false
+    "impact_mechanism": "Crediting pension contributions for 22-year service gap, enabling government employees to reach full pension eligibility without additional employee contribution.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Tamil Nadu Assured Pension Scheme (TAPS) - 22-year contribution gap waiver for government employees",
+        "analysis": "Promise specifies target group (government employees) and gap period (22 years) but omits critical parameters: (1) number of employees eligible (data unavailable; TN government workforce size not in reference), (2) salary grade / pension calculation basis (determines liability per employee), (3) present-value liability per employee, (4) total government headcount affected. Without these, cannot estimate fiscal liability. Logic: if employee age at hire was <10 years, they may have <30 years service at retirement (age ~58–60); waiving 22 years would artificially inflate pension to near-full value. Present value of forgone contribution is equivalent to unfunded pension liability. Arithmetic requires employee count and average salary: unavailable."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — cannot calculate. Number of eligible government employees, their salary grades, pension formula, and current service years are not provided in promise or reference data. This is a contingent liability (unfunded pension obligation); fiscal impact would be substantial but quantifiable only with TN government HR records.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "This promise targets a narrow, highly privileged group (government employees with secure pensions in a state where female LFPR is 33–51% and 1.2 crore are BPL). It does not address root causes of economic insecurity for the general population. While it provides genuine benefit to affected employees, it is fiscally opaque (unfunded liability) and regressive (subsidizes formal-sector workers while informal-sector workers—75% of TN workforce—receive no comparable protection). The 'pension gap waiver' is a rebranding of an additional government liability masquerading as fulfilled contribution, with no direct benefit to the broader economy or productivity."
   },
   {
     "doc_id": "dmk_2026_agri_003",
@@ -667,12 +883,25 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Capital subsidy for agricultural mechanization reduces energy costs and operational barriers to irrigation, increasing cultivable acreage and cropping intensity for smallholder farmers.",
-    "first_order_effect": "~20 million farmers receive electric pump sets matched to their water sources; energy cost per irrigation cycle drops from kerosene/diesel baseline (~₹200-300/hour) to near-zero operational cost.",
-    "second_order_effect": "Farmers intensify irrigation frequency and cultivated area, shifting from rainfed to assured irrigation; aggregate water demand from agricultural sector increases significantly, straining groundwater recharge cycles.",
-    "third_order_effect": "Without coordinated groundwater replenishment policy, aquifer depletion accelerates in overexploited blocks; long-term farm viability reverts to water scarcity unless paired with watershed or recharge mandates.",
+    "impact_mechanism": "Replaces diesel/manual pump technology with electric pumps, reducing operational cost per unit and fuel dependency; meter-free provision removes usage barriers and improves groundwater access equity.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Supply modern electric water pump sets to 20 million farmers",
+        "analysis": "Promise specifies 20 million beneficiaries. Reference data shows ~83 lakh farmer households in TN (Agri Census 2015); 20 million = 2.4 crore is 28.9× the documented farmer base. This is arithmetically impossible unless: (a) promise includes non-TN beneficiaries, (b) 'farmers' includes landless agricultural workers (not in census), or (c) figure is incorrect. Data unavailable on actual pump replacement need, current pump stock, or cost per electric pump set. Cannot calculate fiscal cost without unit price and actual feasible beneficiary count."
+      },
+      {
+        "component": "Pumps fitted without meters",
+        "analysis": "Meter-free operation removes usage tracking and billing friction. No data on current meter-adoption rate or operational cost difference. Operationally this increases groundwater extraction risk in water-scarce regions unless paired with extraction limits (not mentioned). Sustainability depends on aquifer recharge capacity—not addressed in promise."
+      }
+    ],
+    "fiscal_cost_note": "Cannot calculate: unit cost per pump set not provided in promise or reference data. Cost range highly sensitive to pump capacity (0.5–5 HP), installation, and voltage infrastructure. If ₹1 lakh/pump (approximate market price) × 20 million = ₹20,000 cr one-time; if amortised over 10 years + maintenance = ₹2,000–2,500 cr/year. This exceeds TN discretionary budget (₹184,162 cr). However, beneficiary count (20 million vs. 83 lakh feasible) makes promise fiscally incoherent. Requires revisiting actual scale.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Pump modernisation directly addresses farmers' input cost (fuel, labour) and water access, creating lasting productivity gain. However, unbounded meter-free extraction risks aquifer depletion in semi-arid TN; promise lacks groundwater sustainability safeguards (recharge protection, extraction limits, crop-water planning). Structural benefit undermined by missing environmental limits."
   },
   {
     "doc_id": "dmk_2026_agri_004",
@@ -694,12 +923,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Procurement price floor above market rates transfers income directly to rice-cultivating farmers, raising per-quintal revenue by ~15-25% depending on current market conditions.",
-    "first_order_effect": "~10-12 lakh rice farmers (TN cultivates ~6-7 lakh hectares) receive ₹3,500/quintal; assuming 50 quintals/hectare, net income increases ~₹1.5-1.75 lakh/hectare/season.",
-    "second_order_effect": "Higher procurement prices increase procurement expenditure; TN Public Distribution System (PDS) cost per kg of rice rises, compressing fiscal space for other food security instruments or forcing upward revision of ration prices for end consumers.",
-    "third_order_effect": "If PDS ration prices are not raised, subsidy burden grows; fiscal deficit deepens, crowding out investment in crop insurance, seed distribution, or soil health programs that address productivity constraints.",
+    "impact_mechanism": "Raises procurement price floor, increasing farm-gate revenue per unit output; boosts income for all rice farmers, especially marginal cultivators with low surplus margins.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Increase rice procurement price to ₹3,500/quintal",
+        "analysis": "Current MSP paddy (2024-25): ₹2,300/quintal. Promise raises to ₹3,500 = +₹1,200/quintal (+52.2%). TN average paddy yield: ~2,800 kg/ha = 28 quintals/ha. Additional income per ha: ₹1,200 × 28 = ₹33,600/ha. If all of TN's farmer households (83 lakh) grow rice on 50% of acreage (~180 lakh ha typical), annual rice output ≈ 50.4 million tonnes. Additional procurement cost: ₹1,200/quintal × 504 million quintals = ₹60,480 cr/year. No data on current procurement volume, rice acreage, or state's fiscal capacity for this subsidy; typically shared between Centre (MSP) and state (procurement). State's discretionary budget = ₹184,162 cr; procurement subsidy alone = 32.8% of discretionary spend if fully state-funded."
+      }
+    ],
+    "fiscal_cost_note": "Estimated ₹60,480 cr/year (if all rice acreage converted to procurement at ₹1,200/qt premium). This is 32.8% of TN's entire discretionary budget. Likely requires central subsidy matching (MSP mechanism normally shared 50:50 Centre-state). At state-only funding, fiscally stressed without revenue increase or cuts to other schemes. Affordability: BORDERLINE to UNAFFORDABLE without central support.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Price support is genuine relief for rice farmers' short-term income. However, it does not address root causes of farm distress: input cost inflation, crop diversification barriers, storage/processing infrastructure, market linkage inefficiency, or water scarcity. A permanent price floor also creates fiscal dependency and inflation risk if production costs rise faster than the fixed price."
   },
   {
     "doc_id": "dmk_2026_agri_005",
@@ -721,12 +959,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Procurement price floor for sugarcane raises per-tonne revenue, offsetting volatile global sugar prices and reducing farmer debt stress in sugarcane-dependent districts (Cuddalore, Villupuram, Tiruvannamalai).",
-    "first_order_effect": "~2.5-3 lakh sugarcane farmers receive ₹4,500/ton (vs. typical ₹3,200-3,800); gross revenue per hectare increases ~₹45,000-90,000/season for average yields (45-50 tons/hectare).",
-    "second_order_effect": "Higher cane prices incentivize expanded cultivation in water-stressed regions; sugarcane's high irrigation demand (60-75 acre-feet/hectare) accelerates groundwater decline in already-stressed taluks.",
-    "third_order_effect": "Increased water competition with rice and cotton reduces overall agricultural productivity per unit of water; unsustainable extraction leads to crop failure cycles and debt trap re-emergence despite price support.",
+    "impact_mechanism": "Raises sugarcane procurement price, increasing revenue for sugarcane farmers; reduces pressure from delayed payments and mill defaults on farmer liquidity.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Increase sugarcane procurement price to ₹4,500/ton",
+        "analysis": "Current MSP sugarcane (2024-25): data unavailable in reference set. Typical TN sugarcane yield: ~60 tonnes/ha. Without baseline MSP, cannot calculate price increase %. Assuming industry standard ₹3,000/ton baseline, promise = +₹1,500/ton (+50%). Annual additional cost: ₹1,500/ton × (TN sugarcane acreage × yield in tonnes) = ₹1,500 × acreage×60. TN sugarcane acreage: data unavailable. Cannot decompose fiscal impact without acreage data. Mechanism: higher price improves farmer cash flow, but does not address mill payment delays or debt servicing."
+      }
+    ],
+    "fiscal_cost_note": "Cannot calculate total cost: current MSP baseline and TN sugarcane acreage not in reference data. If estimate ~12 lakh hectares (typical TN), and yield 60 t/ha = 72 million tonnes. At +₹1,500/ton premium = ₹10,800 cr/year additional cost. Feasibility depends on state's sugar board budget and central MSP support (typically partial). Likely stressed without new revenue or central co-funding.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Price floor lifts farmer revenue in the short term, but does not address structural challenges: mill monopoly power over sale terms, payment delays (farmer credit crisis), input cost spirals, or crop rotation barriers. Sugarcane farming in TN is water-intensive and depletes aquifers; higher prices may incentivise greater acreage expansion, worsening water stress."
   },
   {
     "doc_id": "dmk_2026_agri_006",
@@ -748,12 +995,29 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Disaster compensation indexed to crop type and duration replaces ad-hoc relief with predictable income replacement, reducing post-flood debt accumulation for affected farmers.",
-    "first_order_effect": "Farmers experiencing flood loss in monsoon receive ₹25k-27k/ha (short/long duration) or ₹12k/ha (perennial); assuming 10-15% of cultivated area affected in flood years, ~40-60 lakh hectares qualify; total payout ₹1,200-1,620 crores/flood event.",
-    "second_order_effect": "Timely cash compensation enables farmers to replant and resume cultivation within same season; debt accumulation is arrested, but without crop insurance or structural flood mitigation, farmers remain exposed to repeated losses.",
-    "third_order_effect": "Repeated compensation cycles without underlying hydrological management entrench fiscal dependency; no incentive for farmers to shift to flood-tolerant cultivars or adopt water-harvesting infrastructure.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "impact_mechanism": "Raises crop-loss compensation for monsoon-induced damage, providing immediate cash relief to affected farmers; reduces income volatility from climate shocks.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "low",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Short duration crop flood loss: ₹25,000/hectare",
+        "analysis": "Reference data does not define 'short duration crop' or provide TN flood-affected acreage. Typical short-duration crops in TN: groundnut, cotton, maize (70–120 days). If average TN flood-hit acreage is ~5 lakh hectares (estimate; data unavailable), compensation cost: ₹25,000 × 5 lakh = ₹1,250 cr/incident. Frequency unpredictable; assume once per 2–3 years on average = ₹417–625 cr/year expected value. No baseline compensation data provided; cannot calculate increase %."
+      },
+      {
+        "component": "Long duration crop flood loss: ₹27,000/hectare",
+        "analysis": "Long-duration crops: rice, sugarcane, coconut (120+ days). Same acreage assumption (5 lakh ha), cost = ₹27,000 × 5 lakh = ₹1,350 cr/incident (~₹450–675 cr/year expected). Again, no baseline or acreage breakdown in reference data."
+      },
+      {
+        "component": "Perennial crop flood loss: ₹12,000/hectare",
+        "analysis": "Perennial crops: coconut, mango, cashew, banana. TN perennial acreage: data unavailable. Assuming 2 lakh hectares, cost = ₹12,000 × 2 lakh = ₹240 cr/incident (~₹80–120 cr/year expected)."
+      }
+    ],
+    "fiscal_cost_note": "Estimated expected annual cost: ₹950–1,350 cr/year (combined short/long/perennial crops, assuming 1 major flood event every 2–3 years). This is 0.5–0.7% of TN's discretionary budget. AFFORDABLE as contingency fund. However, without baseline compensation data and flood frequency/acreage empirics, this is a rough order-of-magnitude estimate. Requires data on: (a) current compensation levels, (b) TN flood-affected acreage by crop type, (c) historical flood frequency.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Compensation provides immediate relief to farmers after climate shock, but does not reduce underlying climate risk. Does not fund climate-adaptive infrastructure (drainage, flood barriers, drought-resistant crop research, crop insurance), diversification, or water retention systems. Purely reactive; no structural resilience building."
   },
   {
     "doc_id": "dmk_2026_agri_007",
@@ -775,12 +1039,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Expansion of net cultivable area increases total agricultural production capacity and income-generating land availability for landless/marginal farmers if coupled with land redistribution.",
-    "first_order_effect": "Net cultivable area expands from current ~35 lakh hectares to 50 lakh hectares (~43% increase); requires reclamation of wastelands, tank-bottom lands, and encroached common lands, benefiting ~15 lakh additional farm households if redistributed.",
-    "second_order_effect": "Expansion requires irrigation infrastructure (canals, lift schemes) and soil remediation capex (~₹1-2 lakhs/hectare typical); fiscal commitment of ₹1,500-3,000 crores; increased water demand reduces per-hectare groundwater availability across TN.",
-    "third_order_effect": "Unless tied to precision-irrigation policy (drip/sprinkler) and cropping pattern reorientation, expanded cultivable area amplifies water stress; productivity gains are offset by increased competition for scarce water.",
+    "impact_mechanism": "Expands irrigated/cultivable land, increasing agricultural production capacity and farmer accessibility to marginal/wastelands; potentially doubles productive base if land quality improves.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Increase net cultivable area (NCA) from current to 50 lakh hectares",
+        "analysis": "Current NCA of TN: data unavailable in reference set. Typical TN NCA is ~43 lakh hectares (FAO estimates, not in reference). If promise means raising from 43 to 50 lakh hectares, expansion = 7 lakh hectares (+16.3%). This requires: (a) irrigation infrastructure (wells, canals, tanks), (b) soil reclamation (alkali/saline land), (c) land titling/redistribution. Capital cost per hectare brought under cultivation: ₹4–8 lakh (irrigation wells + soil amendment). Total one-time cost: ₹7 lakh ha × ₹6 lakh/ha = ₹42,000 cr. Amortised over 10 years = ₹4,200 cr/year. Mechanism: unclear—no detail on source of land (wasteland, current fallow, irrigation expansion, private acquisition, redistribution)."
+      }
+    ],
+    "fiscal_cost_note": "Estimated ₹4,200 cr/year (one-time ₹42,000 cr amortised). This is 2.3% of TN's discretionary budget, AFFORDABLE. However, cost estimate is highly uncertain without: (a) current NCA baseline, (b) land source and acquisition method, (c) irrigation type (well, canal, tank—costs vary 10×), (d) soil condition. Promise lacks implementation clarity (land source, timeline, farmer allocation mechanism). High implementation risk may increase cost 30–50%.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "NCA expansion is structurally sound if directed to sustainable irrigation (tank/canal over groundwater depletion). Permanent increase in productive land base directly expands income-generating capacity for marginal/landless farmers if redistribution is included. However, promise does not specify: (a) water source sustainability (groundwater depletion risk if well-based), (b) farmer allocation (will marginal farmers access new land?), (c) input support (credit, seeds, extension). Without these, NCA expansion benefits only larger farmers with capital."
   },
   {
     "doc_id": "dmk_2026_agri_008",
@@ -802,12 +1075,25 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Infrastructure for paddy storage reduces post-harvest losses (currently 8-12%) and enables farmers to defer sales when prices are favorable, improving farm-gate realization.",
-    "first_order_effect": "Permanent granaries with modern storage facilities constructed at ~400-500 procurement centers across TN; reduces spoilage and pest losses by ~5-8 percentage points; ~1.2 crore quintals of paddy benefit annually (current TN rice production ~1.5 crore quintals).",
-    "second_order_effect": "Improved storage infrastructure strengthens government procurement capacity; allows FCI/TN Civil Supplies to absorb larger volumes without loss, stabilizing PDS grain supply; shifts risk from farmer to institution.",
-    "third_order_effect": "Reduced post-harvest loss incentivizes farmer participation in government procurement; strengthens procurement marketing chain, but storage infrastructure alone does not address underlying demand-side constraints (population demand for rice is inelastic).",
+    "impact_mechanism": "Centralises paddy procurement storage in permanent infrastructure, reducing post-harvest crop loss from poor storage conditions and improving procurement efficiency.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "low",
-    "root_cause_addressed": false
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Construct permanent buildings with storage at all periodic paddy procurement centers",
+        "analysis": "Number of periodic procurement centers in TN: data unavailable. Typically, TN operates ~800–1,200 periodic procurement centers (mandis + temporary centers). Cost per permanent storage structure (100–200 tonne capacity with climate control): ₹15–25 lakh per center. Total one-time cost: 1,000 centers × ₹20 lakh = ₹2,000 cr. Amortised over 10 years = ₹200 cr/year. Benefit: reduced post-harvest loss (currently ~8–10% of paddy due to moisture, rodents, improper storage); storage of ~50 million tonnes of paddy annually would see 4–5 lakh tonnes loss reduction = market value ₹100–120 cr/year benefit (at ₹2,300/qt MSP)."
+      },
+      {
+        "component": "Construct granaries for storage at specified locations",
+        "analysis": "Number of granaries to be built: not specified. Reference data does not detail current granary network or capacity gap. Cannot decompose separately; assume covered under 'all procurement centers' above."
+      }
+    ],
+    "fiscal_cost_note": "Estimated ₹200 cr/year (amortised one-time ₹2,000 cr over 10 years) + O&M ₹50–100 cr/year = ₹250–300 cr/year total. This is 0.14–0.16% of TN's discretionary budget. HIGHLY AFFORDABLE. Breaks even in 2–3 years through loss reduction benefit (₹100–120 cr/year). Positive ROI over 10-year lifecycle.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Permanent storage infrastructure directly reduces post-harvest loss (root cause of farmer income loss), improves food security, and extends procurement season flexibility. Creates local employment in warehouse management. Infrastructure is durable, scalable, and has positive financial return through loss reduction. One of the most fiscally efficient and structurally sound promises in the set."
   },
   {
     "doc_id": "dmk_2026_edu_011",
@@ -829,12 +1115,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Research funding for Tamil-language AI tools addresses structural underrepresentation of Tamil in digital technology, enabling non-English speakers to access AI-driven services and content.",
-    "first_order_effect": "Tamil-AI Fellowship attracts ~50-100 researchers/developers annually; Tamil-language NLP models, chatbots, and educational tools developed within 3-5 years; accessibility barrier for ~4 crore Tamil-first speakers (urban/rural) begins to lower.",
-    "second_order_effect": "Availability of Tamil AI tools incentivizes digital adoption in rural education, governance, and healthcare; reduces English-language gatekeeping in access to government e-services, but uptake depends on device availability and digital literacy.",
-    "third_order_effect": "Over 10+ years, Tamil-language digital ecosystem matures; non-English speakers gain equitable access to AI-driven financial services, healthcare diagnostics, and skill training; structural digital exclusion weakens, but only if complemented by broadband and device distribution.",
-    "implementation_risk": "low",
-    "root_cause_addressed": true
+    "impact_mechanism": "Creates institutional capacity and trained talent for Tamil-language AI development, enabling long-term technological sovereignty in a critical language domain.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Establish Tamil-AI Fellowship in educational institutions",
+        "analysis": "Promise specifies institutional mechanism (fellowship programme) but provides no budget allocation, number of fellows, duration, stipend amount, or which institutions will participate. Data unavailable — cannot calculate annual cost or beneficiary reach. Fellowship model typically requires: (a) fellow stipends ₹5–15 lakh/year each, (b) faculty mentorship cost, (c) infrastructure (compute, datasets). Without these parameters, fiscal impact cannot be assessed."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — no budget, fellow count, or programme duration specified. Estimated range (if 50 fellows @ ₹10 lakh/year): ₹50 crore capital + ₹5 crore/year recurring — but this is speculative. Cannot verify against discretionary budget without confirmed figures.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "If implemented rigorously, creates enduring capability in Tamil-language AI — a structural advantage in language technology access and digital sovereignty. However, sustainability depends entirely on sustained institutional funding, research quality, and commercialisation pathways for fellowship outputs. Risk: becomes a symbolic fellowship without industry collaboration or job placement guarantees."
   },
   {
     "doc_id": "dmk_2026_infra_007",
@@ -856,12 +1151,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Heritage library infrastructure provides physical access to Tamil and world history knowledge, partially mitigating educational gaps in a district with limited digital infrastructure.",
-    "first_order_effect": "Modern library facility constructed in Kanyakumari with advanced digital catalog, archives, and exhibition space; serves ~10,000-15,000 annual visitors (estimate based on Kanyakumari population ~2 lakh); low-cost knowledge access for school/college students and general public.",
-    "second_order_effect": "Library becomes local knowledge hub, supporting school history curriculum and cultural research; may marginally improve school-level history and Tamil learning outcomes if actively integrated into pedagogy, but impact limited to Kanyakumari district.",
-    "third_order_effect": "Localized cultural knowledge infrastructure does not scale statewide; impact on systemic educational equity remains minimal unless replicated across 38 districts; primarily symbolic/soft-power benefit rather than structural educational reform.",
-    "implementation_risk": "low",
-    "root_cause_addressed": false
+    "impact_mechanism": "Centralises Tamil and world history knowledge resources in a high-footfall public facility, enabling documented access to heritage narratives for younger generations in Kanyakumari.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Construct modern library building in Kanyakumari with advanced facilities for Tamil and world history education",
+        "analysis": "Promise specifies ₹10 crore capital allocation and location (Kanyakumari district). Does NOT specify: annual operating budget, library size (sq. ft.), collection scale (volumes), staffing, or annual beneficiary reach. ₹10 cr is a one-time capital cost for building construction. Ongoing operational cost (staff, utilities, collection maintenance, digitisation) is not quantified. Cannot estimate recurring annual cost or sustainability burden on state budget."
+      }
+    ],
+    "fiscal_cost_note": "Capital cost: ₹10 crore (one-time, ~0.5% of discretionary budget). Recurring operational cost: data unavailable. A library of this scope typically requires ₹2–5 crore/year for staff, utilities, collection expansion, and digitisation. State would need to commit ongoing revenue. Feasibility: capital cost is affordable; recurring cost sustainability unknown.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "A library building addresses access to knowledge *for those who can physically visit* — genuine but geographically limited benefit. Does not address root causes of low literacy, inadequate school libraries in rural Kanyakumari, or unequal digital knowledge access. Without clarity on digital catalogue, mobile outreach, or school partnerships, primarily serves as a heritage monument rather than a driver of mass educational change."
   },
   {
     "doc_id": "dmk_2026_infra_008",
@@ -883,12 +1187,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Infrastructure provision of scientific research capability attracts heritage tourism revenue and establishes Tamil Nadu as a regional archaeology hub, generating employment in research and tourism sectors.",
-    "first_order_effect": "A state-of-the-art archaeological research center operational in Chennai with AMS carbon dating, soil and pollen analysis labs; attracts researchers and students nationally; positions TN as a center of archaeological excellence.",
-    "second_order_effect": "Increased heritage tourism footfall to Tamil Nadu archaeological sites (Adichanallur, Porunai Valley, Keezhadi); revenue streams from research contracts and heritage tourism feed into state coffers and local hospitality employment.",
-    "third_order_effect": "Tamil heritage narratives gain scientific credibility globally; diaspora and international visitors increase, strengthening cultural soft power and long-term tourism-dependent economies in heritage-rich districts.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": false
+    "impact_mechanism": "Establishes state-level archaeological research capacity using advanced scientific dating and soil analysis, enabling rigorous validation of Tamil historical claims and cultural narratives.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Establish national-level archaeological research center in Chennai with AMS carbon dating, soil analysis, pollen analysis technologies",
+        "analysis": "Promise specifies location (Chennai), research scope (AMS carbon dating, soil analysis, pollen analysis) but provides NO budget, no staffing plan, no land allocation, no annual operating model, no expected research output target, and no beneficiary definition. AMS facility capital cost typically ₹15–30 crore; annual operating cost (isotope supplies, technicians, equipment maintenance) typically ₹5–10 crore. Cannot calculate without explicit figures from promise or reference data."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — no budget specified. Industry benchmarks suggest ₹20–30 crore capital + ₹5–8 crore/year operating cost, but these are estimates, not grounded in promise text. Cannot assess fiscal feasibility or percentage of discretionary budget without official allocation figures.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Archaeological research centers are legitimate infrastructure, but this promise appears primarily aspirational — framed as 'national-level' without clarifying governance, central funding partnership, or research mission scope. No clear mechanism linking research output to TN citizens' material conditions (employment, income, education access). Risk: becomes a high-cost research institution serving academic interests rather than resolving structural inequities in TN's economy or education."
   },
   {
     "doc_id": "dmk_2026_women_007",
@@ -910,12 +1223,25 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Income transfer and financial protection via compensation/family economic support mechanisms insulates migrant worker families from loss of primary earner income, reducing vulnerability to debt and destitution.",
-    "first_order_effect": "Migrant worker families (estimated ~8-12 lakh households) receive direct compensation in case of death/disability abroad and ongoing economic protection; employment assistance reduces re-migration unemployment gaps.",
-    "second_order_effect": "Reduced distress borrowing and asset liquidation by migrant families during income shocks; increased school continuity for dependents; stabilized household consumption in source villages and small towns.",
-    "third_order_effect": "Migrant remittance flows become more stable and voluntary rather than crisis-driven; rural credit markets experience reduced default risk; improved human capital investment in next generation of migrant families.",
+    "impact_mechanism": "Creates financial safety net and employment reintegration pathway for families of overseas Tamil workers facing hardship, reducing economic vulnerability and enabling income recovery.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Comprehensive welfare package for overseas Tamil migrant workers: compensation for families and economic protection",
+        "analysis": "Promise states 'comprehensive welfare package' with 'compensation' and 'economic protection' but defines NO specific entitlements: no compensation amount per death/injury, no eligibility criteria, no income threshold, no family size definition, no max annual spend. Cannot estimate beneficiary count — data unavailable on how many TN overseas workers face hardship annually, mortality/injury rates, or family-dependent ratios."
+      },
+      {
+        "component": "Employment assistance for affected families",
+        "analysis": "Promise mentions 'employment assistance' with no specification: no training budget, no placement guarantee, no job types, no wage subsidy design, no counselling mechanism. Cannot cost this component without operational detail."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — no specific compensation amounts, eligibility thresholds, annual beneficiary target, or employment cost per person. Rough estimate (if ₹5 lakh/family @ 5,000 families/year + ₹1 lakh placement cost): ₹30 crore/year. But this is speculative. Without defining 'comprehensive welfare,' cannot assess against discretionary budget (~₹1.84 lakh crore). Feasibility cannot be verified.",
+    "sustainability_verdict": "symptomatic",
+    "sustainability_reasoning": "Compensation and income support are genuine welfare relief for vulnerable families, but do not address root causes: precarious overseas employment contracts, wage theft, lack of skills training before migration, or absence of portable social security. Creates dependency on state compensation rather than enabling workers to secure safe employment or higher-wage roles. Sustainable only if linked to labour-rights advocacy, skill-building, and migrant worker unionisation."
   },
   {
     "doc_id": "dmk_2026_infra_009",
@@ -937,12 +1263,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Information access improvement: NRT personnel at airports provide real-time dissemination of government welfare schemes to diaspora, reducing information asymmetry and increasing uptake of entitlements.",
-    "first_order_effect": "NRT assistance staff deployed at Chennai International, Coimbatore, Trichy, and Madurai airports; diaspora visitors and returning migrants receive direct briefing on TN welfare schemes (pensions, healthcare, ration cards, education subsidies).",
-    "second_order_effect": "Increased enrolment of diaspora-linked beneficiaries into existing welfare schemes; higher remittance-to-welfare coordination; improved awareness of TN government services reduces information costs for vulnerable returnees.",
-    "third_order_effect": "Diaspora becomes better integrated into TN welfare ecosystem; return migration is less risky; information spillback effects reach source communities via returning migrants, amplifying scheme uptake.",
+    "impact_mechanism": "Stationing trained welfare officers at airport entry points ensures direct, point-of-arrival information access for diaspora about TN government schemes, reducing information asymmetry for migrant populations.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "low",
-    "root_cause_addressed": false
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Appoint NRT (assumed: Non-Resident Tamil) assistance personnel at 4 international airports (Chennai, Coimbatore, Trichy, Madurai) to explain welfare schemes to diaspora",
+        "analysis": "Promise specifies: 4 airports, type of role (assistance/explanation). Does NOT specify: personnel count per airport, salary/cost per role, which schemes to communicate, working hours, whether on-ground presence is 24/7 or rostered, training cost, or expected interaction volume. If 1 person per airport = 4 staff; typical cost ₹40–60 lakh/person/year including salary, benefits, training = ₹1.6–2.4 crore/year. If 2–3 per airport (rotating shift): ₹5–7 crore/year. Cannot confirm without detail."
+      }
+    ],
+    "fiscal_cost_note": "Estimated annual cost: ₹2–7 crore (depending on staffing model and shift structure) — roughly 0.1–0.4% of discretionary budget. Easily affordable from existing budget allocation. Implementation cost is low.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Posting information staff at airports is logistically simple and low-cost, but offers minimal structural change: it informs diaspora about *existing* schemes without expanding scheme reach, eligibility, or benefit quantum. Primarily a service-delivery optic — making existing welfare information more accessible. Does not address why diaspora knowledge gaps exist or enable diaspora to access schemes they may not qualify for. Sustainable as an information service but not as poverty reduction."
   },
   {
     "doc_id": "dmk_2026_women_008",
@@ -964,12 +1299,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Institutional representation expansion: increasing Overseas Tamil Welfare Board membership allows broader stakeholder voice, potentially improving policy design and advocacy for migrant welfare issues.",
-    "first_order_effect": "Overseas Tamil Welfare Board expands from current membership to include additional representatives (diaspora organizations, migrant advocacy groups, women's groups); more diverse interests represented in welfare policy formulation.",
-    "second_order_effect": "Board deliberations incorporate more localized migrant grievances and gender-specific concerns; policy recommendations become more granular and responsive to real-world migrant vulnerabilities.",
-    "third_order_effect": "Welfare schemes designed with better understanding of diaspora pain points; accountability mechanisms improve; migrant women's issues gain dedicated advocacy space.",
-    "implementation_risk": "low",
-    "root_cause_addressed": false
+    "impact_mechanism": "Expands board membership in the Overseas Tamil Welfare Board, potentially increasing representation diversity and decision-making capacity for diaspora welfare policy design.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Increase number of members in the Overseas Tamil Welfare Board",
+        "analysis": "Promise states 'increase the number of members' with NO specific target: does not specify current board size, new target size, appointment mechanism, selection criteria, whether diaspora members are included, or whether this expands decision-making power or is merely symbolic co-option. Cannot assess fiscal cost (board member honorariums/salaries unknown) or effectiveness without clarity on governance structure and appointment process."
+      }
+    ],
+    "fiscal_cost_note": "Data unavailable — current board size, new target, and honorarium/salary structure not specified. If expanding from ~15 to ~25 members @ ₹2–5 lakh honorarium/year each: ₹2–5 crore/year. But this is speculative. Fiscal impact is marginal (<0.3% of discretionary budget) if implemented. Cost is not the constraint; governance clarity is.",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Expanding board membership is administrative theater unless accompanied by: (a) clear appointment criteria and diaspora voice inclusion, (b) actual decision-making authority over welfare scheme design and budget, and (c) accountability mechanisms. Without these, it signals inclusion without substantive power transfer. Sustainable only if new members have genuine veto or co-design authority over diaspora welfare policy; otherwise, a tokenistic expansion."
   },
   {
     "doc_id": "dmk_2026_infra_010",
@@ -991,12 +1335,25 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Access to justice improvement: upgraded and newly constructed courts with basic facilities for disadvantaged litigants reduces case pendency, increases legal finality, and improves access to dispute resolution for low-income groups.",
-    "first_order_effect": "~10,000 existing courts upgraded with accessibility facilities (ramps, waiting areas, legal aid counters); new courts established in underserved areas; estimated coverage expansion to ~5 crore additional population with reasonable court access.",
-    "second_order_effect": "Case pendency decreases; poor litigants face lower transaction costs (travel, waiting time); faster resolution increases trust in formal justice; reduced time-to-judgment improves debt recovery and property dispute outcomes.",
-    "third_order_effect": "Improved legal certainty encourages informal creditors to transition to formal contracts; land and asset markets become more liquid; women's property disputes resolve faster, improving asset inheritance security.",
+    "impact_mechanism": "Upgrades physical court infrastructure to reduce access barriers for disadvantaged litigants; establishes courts in growth areas to reduce geographical distance to justice.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Upgrade 10,000 existing judicial courts with facilities for disadvantaged",
+        "analysis": "Promise specifies '10,000 judicial courts' but does not define 'necessary facilities' in detail (e.g. wheelchair ramps, legal aid desks, translators, waiting areas). TN currently operates ~5,000+ courts across all levels (district, taluk, high court). Upgrading 10,000 courts implies either double the current estate or includes all subordinate courts plus new construction. Cost per court modernization: data unavailable — cannot estimate capital investment without facility specifications. Implementation timeline: unspecified."
+      },
+      {
+        "component": "Establish new judicial courts in newly developed areas",
+        "analysis": "No baseline provided for 'newly developed areas' or number of new courts planned. Cost and timeline for new court construction: data unavailable. This is additive to the 10,000 upgrades but magnitude unknown."
+      }
+    ],
+    "fiscal_cost_note": "Capital cost for upgrading 10,000 courts + new court construction: data unavailable — cannot calculate without facility specifications and new court count. Estimated operational burden (staff, maintenance) would be recurring. Feasibility: cannot assess without cost breakdown.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Court infrastructure upgrades address a structural barrier to justice access for disadvantaged groups, enabling them to pursue legal remedies and enforce rights. However, infrastructure alone does not guarantee faster case resolution, legal literacy, or affordability of litigation — outcomes depend on court capacity, case management, and complementary legal aid systems."
   },
   {
     "doc_id": "dmk_2026_infra_011",
@@ -1018,12 +1375,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Infrastructure convergence: simultaneous provision of roads, transport, housing, water, education, and healthcare in backward districts targets multiple constraints simultaneously, enabling multi-sector human capital and economic growth.",
-    "first_order_effect": "Identified backward districts (likely Villupuram, Tirupathur, Ariyalur, Perambalur, Karur) receive integrated development packages; basic infrastructure parity with state average; estimated ~1.5-2 crore population in these districts gain improved service access by 2030.",
-    "second_order_effect": "Reduced rural-urban migration pressure via improved local livelihood conditions; manufacturing and agricultural productivity increase due to better transport and utilities; female LFPR rises due to school proximity and water-time savings.",
-    "third_order_effect": "Long-term regional convergence: backward districts move toward income parity with state average; reduced spatial inequality; decentralized economic growth reduces pressure on metro-centric development models.",
+    "impact_mechanism": "Targets backward districts with integrated development (roads, transport, housing, water, education, healthcare) to reduce regional inequality and enable human capital development.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Implement special development schemes for backward districts by 2030",
+        "analysis": "Promise names six categories of intervention: (i) roads, (ii) transport facilities, (iii) housing, (iv) water supply, (v) education, (vi) healthcare. No specific districts identified as 'backward' — TN has ~38 districts; backward status typically based on NITI Aayog / RBI criteria but not stated here. No target baselines provided: e.g. 'match state average' in education/healthcare is undefined — state average for what metric? (enrolment, teacher-student ratio, infant mortality, coverage?). Timeline: 2030 (6 years from 2024). Cost: data unavailable — no budget allocation specified for backward district schemes."
+      }
+    ],
+    "fiscal_cost_note": "Total cost for backward district development (infrastructure + education + healthcare) across unspecified districts by 2030: data unavailable — cannot calculate without identifying districts and metric targets. If applied to 8–10 districts, estimated annual capex could range ₹5,000–₹15,000 cr depending on intensity, but this is outside reference data. Feasibility: cannot assess without detailed district-wise breakdown.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Multi-sector development (infrastructure, education, healthcare) tackles root drivers of regional inequality — poor connectivity, low educational attainment, health deficits. Success requires sustained capex and operational investment beyond 2030. Risk: vague baselines ('match state average') and undefined backward district list reduce accountability and may allow selective implementation."
   },
   {
     "doc_id": "dmk_2026_infra_012",
@@ -1045,12 +1411,21 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Sector-specific industrial and agricultural infrastructure provision: ₹20,000 crore in manufacturing parks, agro-processing, ports, and export facilities directly lowers entry costs for firms and farmers, triggering private investment multipliers.",
-    "first_order_effect": "Infrastructure operational: electronics/auto spare parts parks, textile/footwear parks, agro-processing units, IT parks, dry port at Trichy, Cauvery cleanup infrastructure, coastal development zones, SME clusters, tourism facilities; estimated 3-5 lakh jobs created directly.",
-    "second_order_effect": "Private sector invests additional ₹30,000-50,000 crore in plant/equipment within these zones; agricultural export value chains shorten via warehouse/transport improvements; SMEs achieve scale and export linkages previously unaffordable.",
-    "third_order_effect": "TN transition from low-value commodity production to export-oriented manufacturing and value-added agriculture; state GDP growth accelerates 1-2 percentage points; tax base expands, improving fiscal sustainability.",
-    "implementation_risk": "high",
-    "root_cause_addressed": true
+    "impact_mechanism": "Directs ₹20,000 crore investment into industrial, agricultural, and coastal zones to create productive capacity, employment, and export-led growth in backward/underdeveloped districts.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "medium",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Special district development plans ₹20,000 crore covering 11 sectoral initiatives",
+        "analysis": "Budget specified: ₹20,000 crore. Sectors listed: electronics, vehicle spare parts, textiles, footwear, agro-processing, IT parks, water supply, dry port (Trichy), clean Cauvery project, coastal development, agricultural exports, SME clusters, tourism. No breakdown of allocation across sectors provided. No timeline specified for disbursement or completion. Beneficiary districts: unspecified — unclear whether this applies to all 38 districts or a subset of 'backward' ones. Cost per initiative: ₹20,000 cr ÷ 11 sectors ≈ ₹1,818 cr/sector (rough estimate, not stated in promise). Capex vs opex split: unknown."
+      }
+    ],
+    "fiscal_cost_note": "Stated investment: ₹20,000 crore (capital). TN discretionary budget FY2024-25: ~₹184,162 crore/year. If ₹20,000 cr is annualized over 5 years: ₹4,000 cr/year = 2.2% of discretionary budget — affordable in isolation. If front-loaded in 1–2 years: 10.9–21.7% of discretionary budget — requires reallocation or debt. Feasibility: depends on implementation timeline (not specified). Assumes no cost overruns typical in large infrastructure projects.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Investment in productive capacity (manufacturing, agro-processing, IT) creates jobs, raises incomes, and improves tax revenue — addressing root cause of regional poverty. However, success depends on: (i) project selection and timely completion, (ii) attraction of private sector participation, (iii) skills alignment, (iv) land acquisition without displacement. Industrial projects often face delays, cost overruns, and underutilization — outcome highly uncertain."
   },
   {
     "doc_id": "dmk_2026_agri_009",
@@ -1072,12 +1447,33 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Export infrastructure and value-chain development: warehouses, roads, transport, and SME/tourism facilities reduce post-harvest losses and transaction costs for agricultural producers and service providers, improving farm-gate prices.",
-    "first_order_effect": "Agricultural export warehouses and roads constructed in major producing districts; public transport expanded in rural/coastal areas; SME clusters and tourism facilities operational; estimated 8-10 lakh farmers and 2-3 lakh SME workers gain better market access.",
-    "second_order_effect": "Agricultural export volume and value increase 15-25%; post-harvest losses decline; farmer net returns improve; SMEs achieve scale economies and quality standards for export markets; coastal tourism employment multiplies.",
-    "third_order_effect": "Agricultural income becomes less seasonal and rainfall-dependent; rural non-farm income diversification accelerates; women in coastal and agro-processing clusters gain wage employment opportunities, raising household incomes.",
-    "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "impact_mechanism": "Builds supply-chain infrastructure (warehouses, roads, transport) and market access for agricultural products to increase farmer incomes through higher prices and reduced marketing losses.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
+    "implementation_risk": "high",
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Special development schemes for agricultural produce exports",
+        "analysis": "No specific target: export volume, value, crop types, or timeline unspecified. Assumes TN farmers currently face barriers to export (post-harvest loss, logistics, certification) — data unavailable on current export share or loss rates. Cost: data unavailable."
+      },
+      {
+        "component": "Establishment of warehouses and roads for agricultural sector",
+        "analysis": "Number of warehouses planned: unspecified. Road length/quality targets: unspecified. Current cold storage capacity in TN: data unavailable. Cost: data unavailable. Implementation timeline: not stated."
+      },
+      {
+        "component": "Public transport expansion for agricultural areas",
+        "analysis": "Current state-run buses: 21,000 TNSTC+SETC+MTC covering ~70 lakh daily passengers. Expansion target (new buses, routes, frequency): unspecified. Cost per bus: approx ₹25–30 lakh capex + ₹8–10 lakh/year opex — but without expansion target, total cost cannot be calculated."
+      },
+      {
+        "component": "Facilities for SMEs, coastal district schemes, tourism development",
+        "analysis": "SME facility types, number of SMEs targeted: unspecified. Coastal schemes: list vague (e.g. 'coastal sector development' is undefined). Tourism schemes: unspecified. Cost: data unavailable for all sub-components."
+      }
+    ],
+    "fiscal_cost_note": "Total cost for agricultural export infrastructure, warehouses, roads, transport expansion, SME facilities, coastal and tourism schemes: data unavailable — promise lacks specific targets (units, quantity, timeline). Cannot assess feasibility without itemized costing.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Infrastructure for agricultural value chains (post-harvest, logistics, export) addresses structural constraints on farmer income — reducing waste and connecting smallholders to markets. However, promise is highly diffuse across multiple sectors with no clear priority, sequencing, or performance metrics — diluted implementation likely."
   },
   {
     "doc_id": "dmk_2026_infra_013",
@@ -1099,12 +1495,33 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Capital investment in skill infrastructure and industrial clusters reduces barriers to technology adoption and formal employment access for semi-skilled and aspiring workers across textiles, food processing, and district-based manufacturing.",
-    "first_order_effect": "₹2,000 crore deployed across skill centers, textile modernization, SME clusters, and food processing units; estimated ~15,000–25,000 direct jobs in construction and operations; ~50,000–80,000 indirect skill seats created within 3 years.",
-    "second_order_effect": "Skill-trained workers transition to higher-wage formal sector roles; textile and agri-equipment clusters achieve economies of scale, lowering production costs and improving export competitiveness; district SMEs gain access to shared infrastructure, reducing individual capex burden.",
-    "third_order_effect": "Sustained productivity growth in textile and food processing sectors increases state GST revenue and private investment inflow; rural-to-formal employment pipeline reduces agrarian distress and diversifies rural livelihoods beyond agriculture; district-level industrial hubs decentralize manufacturing, reducing pressure on metro labor markets.",
+    "impact_mechanism": "Invests ₹2,000 crore in skills development and industrial infrastructure to raise worker productivity, attract high-tech investment, and enable SME competitiveness.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "medium",
-    "root_cause_addressed": true
+    "root_cause_addressed": true,
+    "promise_components": [
+      {
+        "component": "Modern skill development centers",
+        "analysis": "Number of centers planned: unspecified. Target beneficiaries (students/workers/age cohort): unspecified. Current state: ~89 lakh govt school students in TN; workforce skill gap: data unavailable. Cost per center: typical vocational training center ~₹10–20 cr capex + ₹2–3 cr/year opex — but without center count, total cost unclear. Allocation from ₹2,000 cr: unknown."
+      },
+      {
+        "component": "High-tech industrial investments and textile infrastructure",
+        "analysis": "No target for industrial investment inflow or private sector co-investment. Textile types: 'various types' vague (cotton, synthetic, handloom). Current TN textile base: data unavailable. Cost: unknown allocation."
+      },
+      {
+        "component": "Textile technology modernization",
+        "analysis": "Number of textile units in TN eligible for modernization: data unavailable. Current technology gap: unknown. Cost per unit: typically ₹5–50 cr depending on scale — but without unit count, total cost cannot be assessed."
+      },
+      {
+        "component": "Special clusters for district-based SMEs, agricultural equipment financing, food processing promotion",
+        "analysis": "SME cluster count planned: unspecified. Agricultural equipment financing: quantum, interest subsidy, target farmer count — all unspecified. Food processing units targeted: unspecified. Cost allocation: unclear."
+      }
+    ],
+    "fiscal_cost_note": "Stated investment: ₹2,000 crore (capital). TN discretionary budget FY2024-25: ~₹184,162 crore/year. As % of discretionary budget: ₹2,000 cr ÷ ₹184,162 cr/year ≈ 1.1%/year (if amortized over 5 years). Feasibility: affordable in isolation but implementation depends on project selection, timely deployment, and private leverage. Weak baseline metrics preclude cost-benefit assessment.",
+    "sustainability_verdict": "structural",
+    "sustainability_reasoning": "Skill development and industrial upgrading address labor market productivity and competitiveness — enabling sustainable income growth. However, promise lacks targeting: no priority sectors identified, no skills-to-jobs alignment strategy specified, no private sector engagement mechanism outlined. Risk: dispersed ₹2,000 cr across 7+ sub-initiatives with no clear sequencing or performance benchmarks reduces delivery likelihood."
   },
   {
     "doc_id": "dmk_2026_infra_014",
@@ -1126,11 +1543,28 @@
     "is_joint_manifesto": false,
     "track_fulfillment": true,
     "_extracted_at": "2026-04-03T04:19:06.657143+00:00",
-    "impact_mechanism": "Debt management and cost efficiency optimization increases available discretionary budget to fund existing and new welfare schemes without additional taxation or borrowing.",
-    "first_order_effect": "No direct immediate beneficiary impact; impact contingent on execution: IF central fund recovery succeeds and wasteful expenditure is identified and cut, ~₹15,000–₹25,000 crore could theoretically be freed; however, absent specific recovery targets or cost-audit findings, first-order effect is largely indeterminate.",
-    "second_order_effect": "IF resources are freed, expanded financial allocation to health, education, and social welfare schemes improves service delivery depth (e.g., higher honoraria for ASHA/ANM, expanded nutrition programs, or increased scholarship amounts); risk of reallocation to committed debt obligations instead.",
-    "third_order_effect": "Long-term systemic effect depends entirely on reallocation discipline: IF freed resources are systematically reinvested in human capital and social infrastructure, improved educational and health outcomes reduce inter-generational poverty; IF absorbed into fiscal consolidation without spending reorientation, no structural change occurs.",
+    "impact_mechanism": "Expands fiscal room by securing central funds, tightening budget discipline, and rationalizing expenditure — enabling larger allocation to welfare and development schemes.",
+    "first_order_effect": null,
+    "second_order_effect": null,
+    "third_order_effect": null,
     "implementation_risk": "high",
-    "root_cause_addressed": false
+    "root_cause_addressed": false,
+    "promise_components": [
+      {
+        "component": "Ensure adequate financial allocation for all government schemes based on legal borrowing limits",
+        "analysis": "TN fiscal deficit FY2024-25: ₹101,344 crore; committed expenditure: ₹144,508 crore (44% of revenue exp). Borrowing limit: TN debt-to-GSDP ~24% (estimate); FRBM Act ceiling ~20%. Promise pledges to 'ensure adequate allocation' but does not specify: which schemes are underfunded, by how much, or which borrowing headroom will be opened. Mechanism: unclear — implies no new spending cuts or revenue hikes, only reallocation within existing limits. Risk: fiscal deficit already large; room for expanded borrowing is limited under FRBM compliance."
+      },
+      {
+        "component": "Recover rightful central government funds for Tamil Nadu through statutory channels",
+        "analysis": "TN disputes with central government on GST compensation, revenue share, special assistance: ongoing but amounts not quantified in promise. 'Rightful funds' undefined: could refer to GST shortfall (est. ₹500–1,000 cr/year historically), centrally sponsored schemes arrears, or other claims. Mechanism: 'statutory channels' (FRBM, GST compensation laws) — TN is already pursuing these. Promise does not indicate new avenues or expected recovery amount. Feasibility: depends on central government policy — outside TN's unilateral control."
+      },
+      {
+        "component": "Reduce wasteful expenditure and implement efficient cost management",
+        "analysis": "Current TN budget: revenue exp ₹328,669 cr. 'Wasteful expenditure' not defined: could mean administrative overhead, legacy schemes, duplicate programs, or inefficient delivery. Typical efficiency savings in state budgets: 2–5% of controllable exp (excluding interest, salaries, pensions). TN controllable discretionary exp ~₹184,162 cr; 2–5% saving = ₹3,683–₹9,208 cr/year. Promise vague on specific measures: no department identified for cuts, no timeline, no quantified savings target. Risk: 'efficient cost management' is routine governance, not a new policy initiative."
+      }
+    ],
+    "fiscal_cost_note": "Promise is revenue-side (no new spending committed); estimates fiscal benefit: (i) central fund recovery ₹500–1,000 cr/year (speculative; depends on central govt policy), (ii) efficiency savings ₹3,683–₹9,208 cr/year (optimistic; standard practice yields 1–2% = ₹1,841–₹3,683 cr/year). Total potential fiscal room: ₹5,524–₹10,208 cr/year (speculative). As % of discretionary budget: 3–5.5%. Feasibility: low to medium — dependent on central negotiations (not assured) and departmental cooperation (resistance likely).",
+    "sustainability_verdict": "optics",
+    "sustainability_reasoning": "Promise repackages routine fiscal management (borrowing limits, inter-governmental claims, efficiency drives) as structural policy. Does not address root causes of fiscal stress (low revenue buoyancy, rising salary bill, committed exp share). Recovery of central funds is politically aspirational but outside TN's control. Efficiency savings, while desirable, are offered without operational detail (which departments, which programs) — rendering the pledge more signalling than binding commitment."
   }
 ]
