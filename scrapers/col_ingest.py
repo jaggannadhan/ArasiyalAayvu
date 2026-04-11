@@ -1,0 +1,541 @@
+"""
+Tamil Nadu Cost of Living (CoL) — ingestor / data compiler
+All values manually curated from authoritative public sources.
+Sources cited per field — update this file when prices change.
+
+Run:
+    python scrapers/col_ingest.py
+    python scrapers/col_ingest.py --upload   # also writes to Firestore
+
+Output: data/processed/tn_cost_of_living.json
+"""
+
+import json
+import os
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent.parent
+
+sys.path.insert(0, str(Path(__file__).parent))
+from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore
+
+# ---------------------------------------------------------------------------
+# DATA BLOCK — update individual fields as prices change; source + date REQUIRED
+# ---------------------------------------------------------------------------
+COL_DATA = {
+    "meta": {
+        "state": "Tamil Nadu",
+        "city_reference": "Chennai",
+        "as_of": "April 2026",
+        "currency": "INR",
+        "note": "All prices are retail/consumer prices unless marked as 'subsidised'. "
+                "'govt' = zero or near-zero cost at government facility. "
+                "Blank source = needs verification.",
+    },
+
+    # ── FUEL ────────────────────────────────────────────────────────────────
+    "fuel": {
+        "lpg_14kg_domestic": {
+            "price": 928.50,
+            "unit": "per 14.2 kg cylinder",
+            "type": "market",
+            "source": "Goodreturns / IOCL",
+            "as_of": "Apr 2026",
+            "notes": "Price unchanged since Mar 2026; up ₹60 from May 2025",
+        },
+        "lpg_14kg_ujjwala_subsidy": {
+            "price": -300.00,
+            "unit": "subsidy per cylinder (up to 12/year)",
+            "type": "subsidy",
+            "source": "PMUY / IOCL",
+            "as_of": "Apr 2026",
+            "notes": "₹300 credited directly to beneficiary bank account; "
+                     "effective cost for Ujjwala household = ₹628.50/cylinder",
+        },
+        "lpg_5kg_domestic": {
+            "price": 323.00,
+            "unit": "per 5 kg cylinder",
+            "type": "market",
+            "source": "IOCL / Goodreturns",
+            "as_of": "Apr 2026",
+        },
+        "lpg_19kg_commercial": {
+            "price": 2043.50,
+            "unit": "per 19 kg cylinder",
+            "type": "market",
+            "source": "IOCL",
+            "as_of": "Apr 2026",
+        },
+        "petrol": {
+            "price": 101.23,
+            "unit": "per litre",
+            "type": "market",
+            "source": "Goodreturns / IOCL",
+            "as_of": "Apr 2026 (daily revision)",
+        },
+        "diesel": {
+            "price": 92.49,
+            "unit": "per litre",
+            "type": "market",
+            "source": "Goodreturns / IOCL",
+            "as_of": "Apr 2026 (daily revision)",
+        },
+        "kerosene_pds": {
+            "price": 36.00,
+            "unit": "per litre",
+            "type": "subsidised",
+            "source": "PetrolDieselPrice.com / TNCSC",
+            "as_of": "2025",
+            "notes": "PDS supply only for card holders without LPG or with 1-cylinder LPG. "
+                     "Allocation: 3 litres/month (LPG holders), 3–15 litres/month (non-LPG, by area)",
+        },
+    },
+
+    # ── ELECTRICITY (TANGEDCO) ───────────────────────────────────────────────
+    "electricity": {
+        "billing_type": "non_telescopic",
+        "billing_type_note": "Non-telescopic: the applicable slab rate applies to ALL units consumed, "
+                             "not just units above the threshold.",
+        "effective_from": "01.07.2025",
+        "order_ref": "TNERC Order SMT.No.6 of 2025",
+        "source": "tnebbillcalculator.info / Tristar Energy / TNERC Order SMT.No.6 of 2025",
+        "fca_per_unit": 0.20,
+        "fca_note": "Fuel Cost Adjustment — revised quarterly by TNERC",
+        "billing_note": "Telescopic billing for most slabs; if total consumption exceeds 500 units, "
+                        "lower-slab subsidies (101–400) are reduced or removed per TNERC order.",
+        "slabs": [
+            {
+                "range_units": "0–100",
+                "gross_rate_per_unit": 4.95,
+                "net_rate_after_subsidy": 0.00,
+                "note": "FREE — government subsidy covers full tariff",
+            },
+            {
+                "range_units": "101–200",
+                "gross_rate_per_unit": 4.95,
+                "net_rate_after_subsidy": 2.35,
+            },
+            {
+                "range_units": "201–400",
+                "gross_rate_per_unit": None,
+                "net_rate_after_subsidy": 4.70,
+                "source": "tnebbillcalculator.info",
+            },
+            {
+                "range_units": "401–500",
+                "gross_rate_per_unit": 6.65,
+                "net_rate_after_subsidy": 6.30,
+            },
+            {
+                "range_units": "501–600",
+                "gross_rate_per_unit": 8.80,
+                "net_rate_after_subsidy": 8.40,
+            },
+            {
+                "range_units": "601–800",
+                "gross_rate_per_unit": 9.95,
+                "net_rate_after_subsidy": 9.45,
+            },
+            {
+                "range_units": "801–1000",
+                "gross_rate_per_unit": 11.05,
+                "net_rate_after_subsidy": 10.50,
+            },
+            {
+                "range_units": "1001+",
+                "gross_rate_per_unit": 12.15,
+                "net_rate_after_subsidy": 11.55,
+            },
+        ],
+        "typical_household_monthly_estimate": {
+            "low_consumption_100_units": {"units": 100, "bill": 0, "note": "Free"},
+            "medium_150_units": {
+                "units": 150,
+                "bill_approx": 352,
+                "note": "₹2.35 × 150 units (non-telescopic) + FCA",
+            },
+            "high_300_units": {
+                "units": 300,
+                "bill_approx": 1410,
+                "note": "₹4.70 × 300 units (201–400 slab) + FCA — approx",
+            },
+        },
+    },
+
+    # ── FOOD / DAIRY ─────────────────────────────────────────────────────────
+    "food_dairy": {
+        "milk_aavin_toned": {
+            "price": 40,
+            "unit": "per litre",
+            "brand": "Aavin (state dairy)",
+            "type": "retail",
+            "source": "LiveChennai / Aavin official",
+            "as_of": "2025",
+        },
+        "milk_aavin_standardised": {
+            "price": 44,
+            "unit": "per litre",
+            "brand": "Aavin (state dairy)",
+            "type": "retail",
+            "source": "LiveChennai / Aavin official",
+            "as_of": "2025",
+        },
+        "milk_aavin_full_cream": {
+            "price": 60,
+            "unit": "per litre",
+            "brand": "Aavin (state dairy)",
+            "type": "retail",
+            "source": "DairyDimension / Aavin official",
+            "as_of": "2025",
+            "notes": "Aavin cardholders: ₹48/litre",
+        },
+        "milk_private_toned": {
+            "price": 49,
+            "unit": "per litre",
+            "brand": "Private (Amul / Heritage / Tirumala)",
+            "type": "retail",
+            "source": "LiveChennai",
+            "as_of": "2025",
+        },
+        "milk_private_full_cream": {
+            "price": 65,
+            "unit": "per litre",
+            "brand": "Private (Amul / Heritage)",
+            "type": "retail",
+            "source": "LiveChennai",
+            "as_of": "2025",
+        },
+    },
+
+    # ── PDS INFRASTRUCTURE ──────────────────────────────────────────────────
+    "pds_infrastructure": {
+        "source": "TNPDS — tnpds.gov.in (e-PDS implementation stats)",
+        "as_of": "Apr 2026",
+        "e_pds_coverage": {
+            "districts":        39,
+            "taluks_circles":   318,
+            "godowns":          268,
+            "fair_price_shops": 34916,
+            "kerosene_bunkers": 274,
+            "total_locations":  35190,
+        },
+        "family_cards": {
+            "total_cards":          22813052,
+            "total_beneficiaries":  70233860,
+            "aadhaar_registered":   69704979,
+            "aadhaar_coverage_pct": round(69704979 / 70233860 * 100, 1),  # 99.2%
+            "mobile_registered":    22810656,
+        },
+        "card_types": {
+            "AAY":     {"full_name": "Antyodaya Anna Yojana",   "target": "Poorest of the poor"},
+            "PHH":     {"full_name": "Priority Household",       "target": "Priority beneficiaries under NFSA"},
+            "NPHH":    {"full_name": "Non-Priority Household",   "target": "Above poverty line, still eligible"},
+            "NPHH_S":  {"full_name": "Non-Priority Household Special", "target": "Access up to 5 kg sugar/month"},
+            "NPHH_NC": {"full_name": "Non-Priority Household Not Connected", "target": "No commodity entitlement"},
+        },
+        "district_sample_ramanathapuram_nov2022": {
+            "total_cards": 398665,
+            "phh_aay":     40636,
+            "phh":         200167,
+            "nphh":        157862,
+        },
+        "monthly_distribution_scale": {
+            "sugar_mt_per_month":  32000,
+            "wheat_mt_per_month":  13485,
+            "note": "Wheat allocation by GoI under NFSA (since Nov 2016). "
+                    "Sugar ~32,000 MT/month consumed across all card holders.",
+        },
+        "fps_density": {
+            "avg_fps_per_district":      round(34916 / 39),
+            "avg_beneficiaries_per_fps": round(70233860 / 34916),
+            "note": "~895 FPS per district; ~2,012 beneficiaries per FPS on average",
+        },
+    },
+
+    # ── PDS RATION ──────────────────────────────────────────────────────────
+    "ration_pds": {
+        "source": "RCS Tamil Nadu — rcs.tn.gov.in/pds_cooperative.php (Cooperative Fair Price Shops)",
+        "as_of": "2025-26",
+        "note": "Entitlements are per family card per month unless stated per-person. "
+                "FPS outlets also sell non-controlled items: Arasu Salt, Ooty Tea, Palm Jaggery, Minor Millets, "
+                "5 kg / 2 kg FTL LPG cylinders.",
+        "commodities": {
+            "rice": {
+                "price": 0,
+                "unit": "per kg",
+                "type": "free",
+                "free_since": "01.06.2011",
+                "allocation": {
+                    "standard_card": "12–20 kg/family/month (based on household size, max 20 kg)",
+                    "antyodaya_aay": "35 kg/family/month",
+                    "oap_rice": "4 kg/card (Old Age Pension beneficiaries)",
+                    "anp_rice": "10 kg/card (Annapurna — destitute elderly)",
+                },
+                "notes": "Free under NFSA + TN state scheme via fair price shops. "
+                         "NFSA mandates 5 kg/person/month for PHH; TN tops up through state scheme.",
+            },
+            "wheat": {
+                "price": 0,
+                "unit": "per kg",
+                "type": "free",
+                "free_since": "02.02.2017",
+                "allocation": {
+                    "rural": "5 kg/card/month",
+                    "urban": "10 kg/card/month",
+                },
+            },
+            "sugar": {
+                "unit": "per kg",
+                "type": "subsidised",
+                "allocation": "0.5 kg/unit/month (max 2 kg/card); up to 5 kg for NPHH-S cards",
+                "prices": {
+                    "standard_phh": {"price": 25, "unit": "per kg"},
+                    "aay_card":     {"price": 13.50, "unit": "per kg", "note": "From 01.11.2017"},
+                },
+            },
+            "toor_dhal": {
+                "price": 30,
+                "unit": "per kg",
+                "type": "subsidised",
+                "allocation": "1 kg/card/month",
+                "scheme": "Special PDS",
+                "notes": "TN procures 20,000 MT; combined toor dal + palmolein oil subsidy = ₹3,800 cr for 2024-25",
+            },
+            "palmolein_oil": {
+                "price": 25,
+                "unit": "per litre",
+                "type": "subsidised",
+                "allocation": "1 litre/card/month",
+                "scheme": "Special PDS — packed fortified palmolein",
+                "notes": "TN procures 156 lakh litres/year; combined subsidy with toor dal = ₹3,800 cr/year",
+            },
+            "kerosene": {
+                "unit": "per litre",
+                "type": "subsidised",
+                "allocation": {
+                    "no_lpg_rural":        "up to 15 litres/month",
+                    "no_lpg_urban":        "3–6 litres/month",
+                    "single_lpg_cylinder": "3 litres/month",
+                },
+                "prices": {
+                    "rcs_official_2020": {
+                        "price": 15.75,
+                        "range": "₹15–₹16.50",
+                        "as_of": "04.09.2020",
+                        "source": "rcs.tn.gov.in",
+                    },
+                    "market_estimate_2025": {
+                        "price": 36,
+                        "as_of": "2025",
+                        "source": "PetrolDieselPrice.com",
+                        "note": "Kerosene prices have risen significantly; RCS figure likely outdated",
+                    },
+                },
+                "notes": "Only for households without LPG or with single-cylinder LPG connection",
+            },
+        },
+    },
+
+    # ── TRANSPORT ────────────────────────────────────────────────────────────
+    "transport": {
+        "source": "Arasu Bus / CMRL / MTC / Chennai Metro",
+        "as_of": "2025-26",
+        "tnstc_bus": {
+            "free_for_women": True,
+            "free_since": "September 2021",
+            "fare_structure": "paise per km (non-AC)",
+            "services": {
+                "ordinary":      {"paise_per_km": 58,  "inr_per_km": 0.58},
+                "express":       {"paise_per_km": 75,  "inr_per_km": 0.75},
+                "super_deluxe":  {"paise_per_km": 85,  "inr_per_km": 0.85},
+                "ultra_deluxe":  {"paise_per_km": 100, "inr_per_km": 1.00},
+                "ac_coach":      {"paise_per_km": 130, "inr_per_km": 1.30},
+                "ac_volvo":      {"paise_per_km": 170, "inr_per_km": 1.70},
+            },
+            "setc_flexi": {
+                "ultra_deluxe_with_toilet_mon_thu": {"paise_per_km": 105},
+                "ultra_deluxe_with_toilet_fri_sun": {"paise_per_km": 115},
+                "ac_sleeper_mon_thu":               {"paise_per_km": 180},
+                "ac_sleeper_fri_sun":               {"paise_per_km": 200},
+            },
+            "ghat_road_surcharge": "base fare + 20%",
+        },
+        "mtc_chennai": {
+            "free_for_women": True,
+            "monthly_pass": {
+                "price": 2000,
+                "coverage": "unlimited travel on all MTC buses including AC",
+                "launched": "March 2025",
+            },
+        },
+        "chennai_metro": {
+            "source": "CMRL Fare Chart for All Stations (official PDF)",
+            "effective_from": "22.02.2025",
+            "note": "Station-to-station SJT (Single Journey Token) fares. "
+                    "Stored Value Card (SVC) gives 20% discount. "
+                    "Same-station entry+exit within 20 min → minimum fare deducted from SVC.",
+            "sjt_fare_tiers_inr": [10, 20, 30, 40, 50],
+            "svc_discounted_fare_tiers_inr": [8, 16, 24, 32, 40],
+            "fare_examples": {
+                "airport_to_meenambakkam": {"sjt": 10, "svc": 8, "note": "adjacent station"},
+                "airport_to_guindy":       {"sjt": 30, "svc": 24},
+                "airport_to_central":      {"sjt": 40, "svc": 32},
+                "airport_to_washermenpet": {"sjt": 50, "svc": 40, "note": "far end of Blue Line"},
+                "alandur_to_koyambedu":    {"sjt": 30, "svc": 24, "note": "cross-line via interchange"},
+            },
+            "max_fare_sjt": 50,
+            "min_fare_sjt": 10,
+        },
+        "auto_rickshaw_chennai": {
+            "minimum_fare": 25,
+            "minimum_distance_km": 1.8,
+            "additional_per_km": 12,
+            "source": "Chennai Auto Fare Chart",
+            "as_of": "2023 (last revised)",
+            "notes": "Meters rarely used; negotiated fares common in practice",
+        },
+    },
+
+    # ── HEALTHCARE ───────────────────────────────────────────────────────────
+    "healthcare": {
+        "government_hospital": {
+            "opd_consultation": {"price": 0, "type": "free", "notes": "Free at all govt hospitals"},
+            "normal_delivery": {"price": 0, "type": "free", "notes": "Free incl. medicines, stay"},
+            "c_section_delivery": {"price": 0, "type": "free", "notes": "Free at govt hospitals"},
+            "source": "TNCSC / Tamil Nadu Health Dept",
+        },
+        "cmchis": {
+            "scheme": "Chief Minister's Comprehensive Health Insurance Scheme",
+            "eligibility_income_threshold_inr": 120000,
+            "coverage_per_family_per_year_inr": 500000,
+            "procedures_covered": 1090,
+            "empanelled_hospitals": 1700,
+            "source": "Coverfox / Star Health / official CMCHIS",
+            "as_of": "2025",
+            "notes": "Cashless treatment at empanelled private hospitals for eligible families",
+        },
+        "private_hospital_chennai": {
+            "normal_delivery": {
+                "price_range_low": 30000,
+                "price_range_high": 80000,
+                "price_avg": 60000,
+                "unit": "per delivery (package incl. stay, basic meds, routine tests)",
+                "type": "market",
+                "source": "PristynCare / StarHealth / HexaHealth",
+                "as_of": "2025-26",
+            },
+            "c_section_delivery": {
+                "price_range_low": 40500,
+                "price_range_high": 138900,
+                "unit": "per delivery (general ward, package)",
+                "type": "market",
+                "source": "GynaecologistChennai.com / Cloudnine",
+                "as_of": "2025-26",
+                "notes": "Premium private hospitals can exceed ₹2 lakh",
+            },
+        },
+        "public_health_expenditure_context": {
+            "source": "Elango et al. (2021) — Indian Journal of Public Health Research & Development, Vol.12 No.4",
+            "note": "Historical public health expenditure in India and Tamil Nadu (Five-Year Plans 1951–2017). "
+                    "Health spending has been chronically underfunded relative to total plan investment.",
+            "india_health_pct_of_plan_outlay": {
+                "1st_plan_1951_56": 3.3,
+                "4th_plan_1969_74": 3.9,
+                "9th_plan_1997_02": 4.1,
+                "11th_plan_2007_12": 6.5,
+                "12th_plan_2012_17": 1.1,
+            },
+            "tn_plan_outlay_vs_expenditure_cr": {
+                "10th_plan_2002_07": {"approved": 40000, "actual": 43568, "pct": 108.92},
+                "11th_plan_2007_12": {"approved": 85344, "actual": 92655, "pct": 108.57},
+                "12th_plan_2012_17": {"approved": 211250, "actual": 65656, "pct": 31.08,
+                                      "note": "Only 2 years computed (2012-14)"},
+            },
+            "key_finding": "India's public health expenditure was 1.04% of GDP in 2011-12; "
+                           "12th plan target was 1.87% of GDP — never achieved. "
+                           "TN consistently overspends approved outlay (actual > approved) in most plan periods.",
+        },
+    },
+}
+
+
+def upload_to_firestore(ts: dict) -> None:
+    """Upload CoL snapshots to Firestore sub-collection: cost_of_living/{entity_id}/snapshots/{data_period}."""
+    import firebase_admin
+    from firebase_admin import credentials, firestore as fs
+
+    cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(cred_path) if cred_path else credentials.ApplicationDefault()
+        firebase_admin.initialize_app(cred)
+    db = fs.client()
+
+    count = 0
+    for display_name, entity in ts["entities"].items():
+        for data_period, snapshot in entity["snapshots"].items():
+            upload_snapshot_to_firestore(db, "cost_of_living", display_name, data_period, snapshot)
+            count += 1
+    print(f"  Uploaded {count} CoL snapshots to Firestore.")
+
+
+def main():
+    upload = "--upload" in sys.argv
+    out_path = BASE_DIR / "data" / "processed" / "col_ts.json"
+
+    ts = load_timeseries(out_path)
+    meta = {
+        "dataset": "cost_of_living",
+        "city_reference": "Chennai",
+        "currency": "INR",
+        "note": (
+            "Prices are retail/consumer prices unless marked subsidised. "
+            "'govt' = zero or near-zero cost at government facility. "
+            "Cost_of_Living_India = national fuel prices. "
+            "Cost_of_Living_Tamil_Nadu = state/city-specific: electricity, dairy, PDS, transport, healthcare."
+        ),
+    }
+
+    # India-level entity — national fuel prices
+    upsert_snapshot(ts, "Cost_of_Living_India", "2026-04", {
+        "fuel": COL_DATA["fuel"],
+    }, meta=meta)
+
+    # TN entity — state/Chennai-specific prices
+    upsert_snapshot(ts, "Cost_of_Living_Tamil_Nadu", "2026-04", {
+        "electricity": COL_DATA["electricity"],
+        "food_dairy": COL_DATA["food_dairy"],
+        "pds_infrastructure": COL_DATA["pds_infrastructure"],
+        "ration_pds": COL_DATA["ration_pds"],
+        "transport": COL_DATA["transport"],
+        "healthcare": COL_DATA["healthcare"],
+    })
+
+    save_timeseries(ts, out_path)
+    print(f"Wrote {out_path}  ({out_path.stat().st_size // 1024} KB)")
+
+    print("\n── Cost of Living snapshot (Tamil Nadu, Apr 2026) ────────────────")
+    print(f"  LPG 14.2 kg         ₹{COL_DATA['fuel']['lpg_14kg_domestic']['price']:>8.2f}")
+    print(f"  Ujjwala subsidy     ₹{COL_DATA['fuel']['lpg_14kg_ujjwala_subsidy']['price']:>8.2f}  (net: ₹628.50)")
+    print(f"  Petrol              ₹{COL_DATA['fuel']['petrol']['price']:>8.2f}/litre")
+    print(f"  Diesel              ₹{COL_DATA['fuel']['diesel']['price']:>8.2f}/litre")
+    print(f"  Kerosene (PDS)      ₹{COL_DATA['fuel']['kerosene_pds']['price']:>8.2f}/litre")
+    print(f"  Electricity 0–100u  ₹{0:>8.2f}  (FREE)")
+    print(f"  Electricity 101–200 ₹{2.35:>8.2f}/unit (after subsidy)")
+    print(f"  Aavin toned milk    ₹{COL_DATA['food_dairy']['milk_aavin_toned']['price']:>8.2f}/litre")
+    print(f"  Aavin full cream    ₹{COL_DATA['food_dairy']['milk_aavin_full_cream']['price']:>8.2f}/litre")
+    print(f"  PDS rice            ₹{0:>8.2f}  (FREE)")
+    print(f"  TNSTC ordinary bus  ₹{0.58:>8.2f}/km  (FREE for women)")
+    print(f"  Auto min fare       ₹{COL_DATA['transport']['auto_rickshaw_chennai']['minimum_fare']:>8.2f}  (1.8 km)")
+    print(f"  Govt delivery       ₹{0:>8.2f}  (FREE)")
+    print(f"  Private normal del  ₹{COL_DATA['healthcare']['private_hospital_chennai']['normal_delivery']['price_avg']:>8,.0f}  (avg)")
+    print(f"  Private C-section   ₹{COL_DATA['healthcare']['private_hospital_chennai']['c_section_delivery']['price_range_low']:>8,.0f}–"
+          f"₹{COL_DATA['healthcare']['private_hospital_chennai']['c_section_delivery']['price_range_high']:,.0f}")
+
+    if upload:
+        print("\nUploading to Firestore...")
+        upload_to_firestore(ts)
+
+
+if __name__ == "__main__":
+    main()
