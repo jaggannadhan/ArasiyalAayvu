@@ -343,7 +343,7 @@ export default function ManifestoTrackerPage() {
           <div className="flex rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
             <button
               onClick={() => setView("promises")}
-              className={`flex-1 py-2.5 text-xs font-bold transition-colors ${
+              className={`flex-1 py-2.5 text-xs font-bold transition-colors cursor-pointer ${
                 view === "promises"
                   ? "bg-gray-900 text-white"
                   : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
@@ -353,7 +353,7 @@ export default function ManifestoTrackerPage() {
             </button>
             <button
               onClick={() => setView("sdg")}
-              className={`flex-1 py-2.5 text-xs font-bold transition-colors border-l border-gray-200 ${
+              className={`flex-1 py-2.5 text-xs font-bold transition-colors cursor-pointer border-l border-gray-200 ${
                 view === "sdg"
                   ? "bg-gray-900 text-white"
                   : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"

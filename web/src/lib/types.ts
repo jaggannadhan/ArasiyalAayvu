@@ -331,6 +331,11 @@ export type BeneficiaryCoverage = "universal" | "broad_majority" | "targeted_poo
 export type ImpactDepth        = "transformative" | "substantive" | "supplemental" | "symbolic";
 export type FiscalViability    = "feasible" | "stressed" | "central_dependent" | "uncosted";
 
+export interface PromiseComponent {
+  component: string;   // atomic sub-promise (what is being promised)
+  analysis:  string;   // grounded factual breakdown — numbers from reference data only
+}
+
 export interface ManifestoPromise {
   doc_id: string;
   party_id: string;           // "dmk" | "aiadmk" | "bjp" | "pmk" etc.
@@ -354,13 +359,18 @@ export interface ManifestoPromise {
   fiscal_viability?: FiscalViability | null;
   standalone_sufficient?: boolean | null;
   coverage_gap_note?: string | null;
-  // Deep analysis — levels 2-3 (causal chain, delivery risk)
+  // Deep analysis — structured breakdown (populated by manifesto_deep_enrich.py)
   impact_mechanism?: string | null;
+  promise_components?: PromiseComponent[] | null;
+  fiscal_cost_note?: string | null;
+  implementation_risk?: "low" | "medium" | "high" | null;
+  root_cause_addressed?: boolean | null;
+  sustainability_verdict?: "structural" | "symptomatic" | "optics" | null;
+  sustainability_reasoning?: string | null;
+  // Legacy causal chain fields — kept for backward compat, replaced by promise_components
   first_order_effect?: string | null;
   second_order_effect?: string | null;
   third_order_effect?: string | null;
-  implementation_risk?: "low" | "medium" | "high" | null;
-  root_cause_addressed?: boolean | null;
   _uploaded_at?: string;  // ISO timestamp — set by Firestore loader; absent in seed data
 }
 

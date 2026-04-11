@@ -509,51 +509,81 @@ export function SDGAlignment({ promises, partyName, partyNameTa, lang, onJumpToP
                         </div>
                       </div>
 
-                      {/* Causal chain */}
+                      {/* Analysis body */}
                       <div className="px-3 py-2.5 space-y-2.5">
+
+                        {/* Impact mechanism summary */}
                         {p.impact_mechanism && (
                           <div>
                             <p className="text-[10px] font-bold text-indigo-700 uppercase tracking-wide mb-0.5">
-                              {isTA ? "தாக்க வழிமுறை" : "Impact mechanism"}
+                              {isTA ? "தாக்க வழிமுறை" : "How it works"}
                             </p>
                             <p className="text-[11px] text-gray-700 leading-snug">{p.impact_mechanism}</p>
                           </div>
                         )}
 
-                        {(p.first_order_effect || p.second_order_effect || p.third_order_effect) && (
+                        {/* Promise breakdown — grounded component analysis */}
+                        {p.promise_components && p.promise_components.length > 0 && (
                           <div>
                             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mb-1">
-                              {isTA ? "விளைவு சங்கிலி" : "Effect chain"}
+                              {isTA ? "வாக்குறுதி பகுப்பாய்வு" : "Promise breakdown"}
                             </p>
                             <div className="space-y-1.5">
-                              {p.first_order_effect && (
-                                <div className="flex gap-2 items-start">
-                                  <span className="shrink-0 text-[9px] font-black text-emerald-700 bg-emerald-100 border border-emerald-200 px-1.5 py-0.5 rounded mt-0.5">
-                                    {isTA ? "1வது" : "1st"}
-                                  </span>
-                                  <p className="text-[11px] text-gray-700 leading-snug">{p.first_order_effect}</p>
+                              {p.promise_components.map((comp, ci) => (
+                                <div key={ci} className="bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-2">
+                                  <p className="text-[10px] font-bold text-gray-800 mb-0.5">
+                                    {ci + 1}. {comp.component}
+                                  </p>
+                                  <p className="text-[10px] text-gray-600 leading-snug font-mono whitespace-pre-wrap">
+                                    {comp.analysis}
+                                  </p>
                                 </div>
-                              )}
-                              {p.second_order_effect && (
-                                <div className="flex gap-2 items-start">
-                                  <span className="shrink-0 text-[9px] font-black text-blue-700 bg-blue-100 border border-blue-200 px-1.5 py-0.5 rounded mt-0.5">
-                                    {isTA ? "2வது" : "2nd"}
-                                  </span>
-                                  <p className="text-[11px] text-gray-700 leading-snug">{p.second_order_effect}</p>
-                                </div>
-                              )}
-                              {p.third_order_effect && (
-                                <div className="flex gap-2 items-start">
-                                  <span className="shrink-0 text-[9px] font-black text-purple-700 bg-purple-100 border border-purple-200 px-1.5 py-0.5 rounded mt-0.5">
-                                    {isTA ? "3வது" : "3rd"}
-                                  </span>
-                                  <p className="text-[11px] text-gray-700 leading-snug">{p.third_order_effect}</p>
-                                </div>
-                              )}
+                              ))}
                             </div>
                           </div>
                         )}
 
+                        {/* Fiscal cost */}
+                        {p.fiscal_cost_note && (
+                          <div className="bg-blue-50 border border-blue-200 rounded-lg px-2.5 py-2">
+                            <p className="text-[10px] font-bold text-blue-700 mb-0.5">
+                              💰 {isTA ? "நிதி செலவு மதிப்பீடு" : "Fiscal cost estimate"}
+                            </p>
+                            <p className="text-[10px] text-blue-800 leading-snug font-mono whitespace-pre-wrap">
+                              {p.fiscal_cost_note}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Sustainability verdict */}
+                        {p.sustainability_verdict && (
+                          <div className={`rounded-lg px-2.5 py-2 border ${
+                            p.sustainability_verdict === "structural"  ? "bg-emerald-50 border-emerald-200" :
+                            p.sustainability_verdict === "symptomatic" ? "bg-amber-50 border-amber-200" :
+                                                                         "bg-rose-50 border-rose-200"
+                          }`}>
+                            <div className="flex items-center gap-1.5 mb-0.5">
+                              <span className={`text-[9px] font-black px-1.5 py-0.5 rounded-full border ${
+                                p.sustainability_verdict === "structural"  ? "bg-emerald-100 text-emerald-700 border-emerald-300" :
+                                p.sustainability_verdict === "symptomatic" ? "bg-amber-100 text-amber-700 border-amber-300" :
+                                                                             "bg-rose-100 text-rose-700 border-rose-300"
+                              }`}>
+                                {p.sustainability_verdict === "structural"  ? (isTA ? "⬆ கட்டமைப்பு மாற்றம்" : "⬆ Structural change") :
+                                 p.sustainability_verdict === "symptomatic" ? (isTA ? "⚡ அறிகுறி நிவாரணம்" : "⚡ Symptomatic relief") :
+                                                                              (isTA ? "👁 அரசியல் காட்சி"   : "👁 Political optics")}
+                              </span>
+                            </div>
+                            {p.sustainability_reasoning && (
+                              <p className={`text-[10px] leading-snug ${
+                                p.sustainability_verdict === "structural"  ? "text-emerald-800" :
+                                p.sustainability_verdict === "symptomatic" ? "text-amber-800" :
+                                                                             "text-rose-800"
+                              }`}>{p.sustainability_reasoning}</p>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Coverage gap */}
                         {p.coverage_gap_note && (
                           <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-2.5 py-2">
                             <p className="text-[10px] font-bold text-yellow-700 mb-0.5">
@@ -563,11 +593,12 @@ export function SDGAlignment({ promises, partyName, partyNameTa, lang, onJumpToP
                           </div>
                         )}
 
-                        {!p.impact_mechanism && !p.first_order_effect && (
+                        {/* Fallback for seed / pre-enrichment data */}
+                        {!p.impact_mechanism && !p.promise_components && (
                           <p className="text-[10px] text-gray-400 italic">
                             {isTA
-                              ? "இந்த அறிக்கை சீட் தரவிலிருந்து பெறப்பட்டது — ஆழமான பகுப்பாய்வு 2026 பிரித்தெடுத்த தரவுக்கு கிடைக்கும்."
-                              : "Deep analysis available after re-extraction with the updated pipeline (2026 data)."}
+                              ? "ஆழமான பகுப்பாய்வு தரவு இன்னும் கிடைக்கவில்லை."
+                              : "Deep analysis not yet available for this promise."}
                           </p>
                         )}
                       </div>

@@ -42,8 +42,9 @@ OUT_DIR  = ROOT_DIR / "data" / "processed"
 NUMBEO_CACHE_DIR = ROOT_DIR / "data" / "raw" / "numbeo"
 PROGRESS_FILE = Path(__file__).parent / ".manifesto_enrich_progress.json"
 
-ENRICH_BATCH_SIZE = 8   # promises per API call (keeps prompt manageable)
-VALID_IMPLEMENTATION_RISK = {"low", "medium", "high"}
+ENRICH_BATCH_SIZE = 6   # smaller batches — each analysis is now much longer
+VALID_IMPLEMENTATION_RISK  = {"low", "medium", "high"}
+VALID_SUSTAINABILITY_VERDICT = {"structural", "symptomatic", "optics"}
 
 # ---------------------------------------------------------------------------
 # Progress tracking — resume after interruption
@@ -121,58 +122,77 @@ def build_enrich_system_prompt() -> str:
     col_ctx    = _load_col_context()
     budget_ctx = _load_budget_context()
     return f"""\
-You are a Tamil Nadu governance and public policy expert assessing the real-world impact
-of election promises. You will be given a batch of manifesto promises and must provide
-a 2-3 level causal chain analysis for EACH promise.
+You are a Tamil Nadu governance and public policy expert. You assess election promises with
+factual rigour — no political spin, no invented numbers.
 
-━━━ ECONOMIC CONTEXT ━━━
+━━━ BUDGET & COST OF LIVING ━━━
 {budget_ctx}
 
 {col_ctx}
 
-TN Social Baseline: Population ~7.9 crore, ration-card households ~2.0 crore,
-BPL households ~1.2 crore, MGNREGS wage ₹294/day (2024-25), female LFPR 33% urban / 51% rural.
+━━━ REFERENCE DATA — USE ONLY THESE NUMBERS IN YOUR ANALYSIS ━━━
+Population (TN, 2026 est.)          : 7.9 crore total; women ~3.95 crore; men ~3.95 crore
+BPL households (Tendulkar)          : ~1.2 crore
+Ration-card households              : ~2.0 crore
+Farmer households (Agri Census 2015): ~83 lakh; marginal (<1 acre) ~42 lakh
+Government school students          : ~89 lakh
+Women Self-Help Groups              : ~4.7 lakh SHGs; ~63 lakh women members
+MGNREGS daily wage (TN 2024-25)    : ₹294/day
+Female LFPR                         : 33% urban, 51% rural
+LPG 14.2 kg cylinder (Chennai, Apr 2026): ₹928.50
+State-run buses (TNSTC+SETC+MTC)   : ~21,000 buses; ~70 lakh daily passengers
+Free bus travel for women           : ALREADY IN EFFECT since Sept 2021 (DMK govt)
+TN govt schools (primary+secondary) : ~53,000 schools
+Mid-day meal scheme                 : ~53 lakh children covered (Classes 1–10)
+MSP paddy (2024-25)                 : ₹2,300/quintal; average yield TN ~2,800 kg/ha
 
-━━━ TASK ━━━
-For each promise in the input JSON array, provide:
+━━━ ANALYSIS METHODOLOGY — FOLLOW THESE STEPS IN ORDER ━━━
 
-impact_mechanism — one sentence: HOW this promise creates tangible change for its target group.
-  Name the mechanism explicitly (income transfer / debt relief / access to service / skill building /
-  price subsidy / infrastructure provision / legal protection, etc.)
+STEP 1 — DECOMPOSE the promise into atomic components.
+Each component is one specific, measurable commitment.
+Example: "6 free LPG cylinders/year for women + free bus travel"
+  → Component 1: 6 free LPG cylinders/year for all women
+  → Component 2: Free bus travel for all women on government buses
 
-first_order_effect — the immediate, direct outcome if this promise is implemented as stated.
-  Include scale where knowable (e.g. "~10 lakh farmers", "1.37 crore women HoH").
+STEP 2 — ANALYSE each component with GROUNDED numbers.
+STRICT RULE: ONLY use numbers from (a) the promise text itself, or (b) the REFERENCE DATA block above.
+NEVER invent rupee figures, beneficiary counts, or percentages not found in those sources.
+If a required number is not in the reference data, write "data unavailable — cannot calculate" — do NOT guess.
+Always show arithmetic explicitly: "₹928.50 × 6 = ₹5,571/woman/year × 3.95 cr women = ₹22,005 cr/year"
 
-second_order_effect — the downstream consequence that flows from the first-order effect.
-  This must be a CAUSAL consequence, not a restatement.
+STEP 3 — FISCAL FEASIBILITY
+State: estimated annual cost in ₹ crore (with arithmetic), what % of discretionary budget that is,
+and whether this is affordable, stressed, or requires central funds.
+If the promise is already implemented (e.g. free bus travel since 2021), say so explicitly.
 
-third_order_effect — long-term systemic change enabled by second-order effect.
-  Set to null if the causal chain doesn't extend meaningfully this far.
-
-implementation_risk — likelihood this promise is NOT fully delivered within a 5-year term:
-  "low"    → simple administrative action, within TN capacity, no major blockers
-  "medium" → requires inter-department coordination, new legislation, or central alignment
-  "high"   → significant financial barrier, past similar promises failed, or politically contested
-
-root_cause_addressed:
-  true  — promise targets a structural driver of the problem (income floor, land tenure, debt trap,
-          access to education / healthcare at point of need)
-  false — addresses a symptom or provides temporary relief without changing underlying conditions
+STEP 4 — SUSTAINABILITY VERDICT
+"structural"  : targets the root cause; creates lasting change in conditions (land reform, income floor,
+                skill/education access, infrastructure that enables income)
+"symptomatic" : genuine relief from real hardship, but does not fix the underlying cause
+                (cash transfer, one-time subsidy, price cap)
+"optics"      : minimal new material benefit — promise already exists, practically undeliverable,
+                or primarily political signalling with no clear mechanism
 
 ━━━ OUTPUT FORMAT ━━━
-Return ONLY a valid JSON array with one object per input promise, in the SAME ORDER:
+Return ONLY a valid JSON array, one object per promise, SAME ORDER as input:
 [
   {{
-    "index": <integer matching input array index, 0-based>,
-    "impact_mechanism": "<one sentence>",
-    "first_order_effect": "<immediate direct result>",
-    "second_order_effect": "<downstream consequence>",
-    "third_order_effect": "<systemic effect or null>",
+    "index": <0-based integer>,
+    "impact_mechanism": "<one sentence: HOW this creates tangible change — name the mechanism>",
+    "promise_components": [
+      {{
+        "component": "<atomic sub-promise>",
+        "analysis": "<grounded breakdown with arithmetic; 'data unavailable' if numbers not in reference>"
+      }}
+    ],
+    "fiscal_cost_note": "<total estimated annual cost with arithmetic + % of discretionary budget + feasibility>",
     "implementation_risk": "<low|medium|high>",
-    "root_cause_addressed": <true|false>
+    "root_cause_addressed": <true|false>,
+    "sustainability_verdict": "<structural|symptomatic|optics>",
+    "sustainability_reasoning": "<2-3 sentences: honest assessment — does this fix the problem or manage it?>"
   }}
 ]
-No prose, no markdown fences. Return exactly {ENRICH_BATCH_SIZE} objects (or fewer if the batch is smaller).
+No prose, no markdown fences.
 """
 
 
@@ -205,7 +225,7 @@ def enrich_batch(
     try:
         response = client.messages.create(
             model=model,
-            max_tokens=4096,
+            max_tokens=8192,
             system=system_prompt,
             messages=[{"role": "user", "content": user_msg}],
         )
@@ -252,13 +272,36 @@ def _validate_enrich(raw: dict | None) -> dict | None:
     if not isinstance(root, bool):
         root = None
 
+    verdict = raw.get("sustainability_verdict")
+    if verdict not in VALID_SUSTAINABILITY_VERDICT:
+        verdict = None
+
+    # Validate promise_components — must be list of {component, analysis} dicts
+    raw_components = raw.get("promise_components")
+    promise_components = None
+    if isinstance(raw_components, list):
+        validated = []
+        for c in raw_components:
+            if isinstance(c, dict):
+                comp = (c.get("component") or "").strip()
+                anal = (c.get("analysis") or "").strip()
+                if comp and anal:
+                    validated.append({"component": comp, "analysis": anal})
+        if validated:
+            promise_components = validated
+
     return {
-        "impact_mechanism":   _cs("impact_mechanism"),
-        "first_order_effect": _cs("first_order_effect"),
-        "second_order_effect":_cs("second_order_effect"),
-        "third_order_effect": _cs("third_order_effect"),
-        "implementation_risk":risk,
-        "root_cause_addressed": root,
+        "impact_mechanism":      _cs("impact_mechanism"),
+        "promise_components":    promise_components,
+        "fiscal_cost_note":      _cs("fiscal_cost_note"),
+        "implementation_risk":   risk,
+        "root_cause_addressed":  root,
+        "sustainability_verdict":   verdict,
+        "sustainability_reasoning": _cs("sustainability_reasoning"),
+        # null out legacy fields
+        "first_order_effect":  None,
+        "second_order_effect": None,
+        "third_order_effect":  None,
     }
 
 
@@ -283,10 +326,10 @@ def enrich_party(
     with open(json_path, encoding="utf-8") as f:
         promises = json.load(f)
 
-    # Determine which need enrichment
+    # Determine which need enrichment (promise_components = new format; impact_mechanism = old)
     to_enrich = [
         p for p in promises
-        if force or not p.get("impact_mechanism") and p["doc_id"] not in done
+        if force or (not p.get("promise_components") and p["doc_id"] not in done)
     ]
 
     print(f"\n── {party_id.upper()} {year} ─────────────────────────────")
@@ -355,8 +398,11 @@ def upload_enrichment_to_firestore(
         return
 
     DEEP_FIELDS = [
-        "impact_mechanism", "first_order_effect", "second_order_effect",
-        "third_order_effect", "implementation_risk", "root_cause_addressed",
+        "impact_mechanism", "promise_components", "fiscal_cost_note",
+        "implementation_risk", "root_cause_addressed",
+        "sustainability_verdict", "sustainability_reasoning",
+        # null out legacy fields
+        "first_order_effect", "second_order_effect", "third_order_effect",
     ]
 
     try:
