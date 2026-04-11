@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "dataset": "aishe",
+    "source": "AISHE Final Report 2021-22, Ministry of Education, Dept. of Higher Education",
+    "url": "https://cdnbbsr.s3waas.gov.in/s392049debbe566ca5782a3045cf300a3c/uploads/2024/02/20240214825688998.pdf",
+    "note": "2022-23 final report not yet released as of Apr 2026. GER based on 2011 population projections. GPI > 1 means more females enrolled than males.",
+    "last_updated": "2026-04-11"
+  },
+  "entities": {
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 37.7,
+            "female": 35.2,
+            "total": 36.5,
+            "gpi": 0.93
+          },
+          "ger_vs_all_india": 8.1,
+          "ger_trend": {
+            "2017-18": {
+              "male": 33.3,
+              "female": 28.1,
+              "total": 30.8
+            },
+            "2018-19": {
+              "male": 34.3,
+              "female": 30.1,
+              "total": 32.3
+            },
+            "2019-20": {
+              "male": 36.6,
+              "female": 33.5,
+              "total": 35.1
+            },
+            "2020-21": {
+              "male": 38.3,
+              "female": 36.0,
+              "total": 37.2
+            },
+            "2021-22": {
+              "male": 37.7,
+              "female": 35.2,
+              "total": 36.5
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 47,
+            "central": 3,
+            "state_public": 24,
+            "state_private": 5,
+            "other": 4
+          },
+          "colleges": {
+            "private_unaided": 2130,
+            "private_aided": 136,
+            "private_total": 2266,
+            "government": 316,
+            "total": 2582
+          },
+          "enrollment": {
+            "phd": 5583,
+            "mphil": 23,
+            "pg": 184942,
+            "ug": 1569050,
+            "pg_diploma": 1571,
+            "diploma": 156963,
+            "total_approx": 1918132
+          }
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 36.1,
+            "female": 36.3,
+            "total": 36.2,
+            "gpi": 1.01
+          },
+          "ger_vs_all_india": 7.8,
+          "ger_trend": {
+            "2017-18": {
+              "male": 26.9,
+              "female": 29.0,
+              "total": 27.9
+            },
+            "2018-19": {
+              "male": 27.8,
+              "female": 29.9,
+              "total": 28.8
+            },
+            "2019-20": {
+              "male": 30.7,
+              "female": 33.3,
+              "total": 32.0
+            },
+            "2020-21": {
+              "male": 34.8,
+              "female": 37.2,
+              "total": 36.0
+            },
+            "2021-22": {
+              "male": 36.1,
+              "female": 36.3,
+              "total": 36.2
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 75,
+            "central": 1,
+            "state_public": 33,
+            "state_private": 20,
+            "other": 12
+          },
+          "colleges": {
+            "private_unaided": 3087,
+            "private_aided": 492,
+            "private_total": 3579,
+            "government": 704,
+            "total": 4283
+          },
+          "enrollment": {
+            "phd": 11193,
+            "mphil": 227,
+            "pg": 260616,
+            "ug": 1906300,
+            "pg_diploma": 8526,
+            "diploma": 229913,
+            "total_approx": 2416775
+          }
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 34.1,
+            "female": 49.0,
+            "total": 41.3,
+            "gpi": 1.44
+          },
+          "ger_vs_all_india": 12.9,
+          "ger_trend": {
+            "2017-18": {
+              "male": 29.6,
+              "female": 38.7,
+              "total": 34.0
+            },
+            "2018-19": {
+              "male": 28.2,
+              "female": 41.1,
+              "total": 34.5
+            },
+            "2019-20": {
+              "male": 29.8,
+              "female": 42.3,
+              "total": 35.9
+            },
+            "2020-21": {
+              "male": 34.5,
+              "female": 52.3,
+              "total": 43.2
+            },
+            "2021-22": {
+              "male": 34.1,
+              "female": 49.0,
+              "total": 41.3
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 25,
+            "central": 1,
+            "state_public": 14,
+            "state_private": 0,
+            "other": 2
+          },
+          "colleges": {
+            "private_unaided": 830,
+            "private_aided": 222,
+            "private_total": 1052,
+            "government": 280,
+            "total": 1332
+          },
+          "enrollment": {
+            "phd": 9134,
+            "mphil": 356,
+            "pg": 172576,
+            "ug": 1016386,
+            "pg_diploma": 3120,
+            "diploma": 89137,
+            "total_approx": 1290709
+          }
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 46.8,
+            "female": 47.3,
+            "total": 47.0,
+            "gpi": 1.01
+          },
+          "ger_vs_all_india": 18.6,
+          "ger_trend": {
+            "2017-18": {
+              "male": 46.2,
+              "female": 47.7,
+              "total": 46.9
+            },
+            "2018-19": {
+              "male": 46.6,
+              "female": 47.5,
+              "total": 47.0
+            },
+            "2019-20": {
+              "male": 48.1,
+              "female": 49.9,
+              "total": 49.0
+            },
+            "2020-21": {
+              "male": 45.4,
+              "female": 48.6,
+              "total": 46.9
+            },
+            "2021-22": {
+              "male": 46.8,
+              "female": 47.3,
+              "total": 47.0
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 62,
+            "central": 2,
+            "state_public": 21,
+            "state_private": 3,
+            "other": 26
+          },
+          "colleges": {
+            "private_unaided": 2128,
+            "private_aided": 265,
+            "private_total": 2393,
+            "government": 414,
+            "total": 2807
+          },
+          "enrollment": {
+            "phd": 28867,
+            "mphil": 4041,
+            "pg": 464086,
+            "ug": 2491822,
+            "pg_diploma": 14729,
+            "diploma": 262714,
+            "total_approx": 3266259
+          }
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 38.5,
+            "female": 41.6,
+            "total": 40.0,
+            "gpi": 1.08
+          },
+          "ger_vs_all_india": 11.6,
+          "ger_trend": {
+            "2017-18": {
+              "male": 34.7,
+              "female": 34.1,
+              "total": 34.4
+            },
+            "2018-19": {
+              "male": 33.4,
+              "female": 36.5,
+              "total": 34.9
+            },
+            "2019-20": {
+              "male": 32.2,
+              "female": 36.4,
+              "total": 34.3
+            },
+            "2020-21": {
+              "male": 37.4,
+              "female": 40.9,
+              "total": 39.1
+            },
+            "2021-22": {
+              "male": 38.5,
+              "female": 41.6,
+              "total": 40.0
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 31,
+            "central": 3,
+            "state_public": 15,
+            "state_private": 4,
+            "other": 2
+          },
+          "colleges": {
+            "private_unaided": 1548,
+            "private_aided": 109,
+            "private_total": 1657,
+            "government": 283,
+            "total": 1940
+          },
+          "enrollment": {
+            "phd": 6967,
+            "mphil": 100,
+            "pg": 207082,
+            "ug": 1272323,
+            "pg_diploma": 7915,
+            "diploma": 91552,
+            "total_approx": 1585939
+          }
+        }
+      }
+    },
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-11",
+          "data_period": "2021-22",
+          "ger": {
+            "male": 28.3,
+            "female": 28.5,
+            "total": 28.4,
+            "gpi": 1.01
+          },
+          "ger_trend": {
+            "2017-18": {
+              "male": 24.5,
+              "female": 24.6,
+              "total": 24.6
+            },
+            "2018-19": {
+              "male": 24.4,
+              "female": 25.5,
+              "total": 24.9
+            },
+            "2019-20": {
+              "male": 24.8,
+              "female": 26.4,
+              "total": 25.6
+            },
+            "2020-21": {
+              "male": 26.7,
+              "female": 27.9,
+              "total": 27.3
+            },
+            "2021-22": {
+              "male": 28.3,
+              "female": 28.5,
+              "total": 28.4
+            }
+          },
+          "ger_trend_years": [
+            "2017-18",
+            "2018-19",
+            "2019-20",
+            "2020-21",
+            "2021-22"
+          ],
+          "universities": {
+            "total": 1168
+          },
+          "colleges": {
+            "private_unaided": 27956,
+            "private_aided": 5676,
+            "private_total": 33632,
+            "government": 9193,
+            "total": 42825
+          },
+          "enrollment": {
+            "phd": 212568,
+            "mphil": 9520,
+            "pg": 5217753,
+            "ug": 34139233,
+            "pg_diploma": 234783,
+            "diploma": 2916445,
+            "total_approx": 42730302
+          }
+        }
+      }
+    }
+  }
+}
