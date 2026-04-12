@@ -629,6 +629,132 @@ def frequently_browsed(limit: int = Query(6, ge=1, le=20)) -> List[Dict[str, Any
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Knowledge Graph API
+# Collections: plfs, srs, hces, aishe, sdg_index, cost_of_living
+# Firestore structure: {collection}/{entity_slug}/snapshots/{period}
+# ─────────────────────────────────────────────────────────────────────────────
+
+_KG_COLLECTIONS = frozenset({
+    "plfs", "srs", "hces", "aishe", "sdg_index", "cost_of_living",
+})
+
+# States we have KG data for → their Firestore entity slug (matches ts_utils.slugify)
+_KG_STATE_SLUGS = {
+    "tamil_nadu", "kerala", "karnataka", "andhra_pradesh", "telangana",
+}
+
+
+def _kg_latest_snapshot(collection: str, entity_slug: str) -> Optional[Dict[str, Any]]:
+    snaps = list(
+        _db.collection(collection).document(entity_slug).collection("snapshots").stream()
+    )
+    if not snaps:
+        return None
+    latest = max(snaps, key=lambda d: d.id)
+    return {"period": latest.id, **(latest.to_dict() or {})}
+
+
+@app.get("/api/kg/{collection}")
+def kg_list(collection: str) -> List[Dict[str, Any]]:
+    """List all entities in a KG collection with their latest snapshot."""
+    if collection not in _KG_COLLECTIONS:
+        raise HTTPException(status_code=404, detail=f"Unknown KG collection: {collection}")
+    try:
+        entity_docs = list(_db.collection(collection).stream())
+        result = []
+        for doc in entity_docs:
+            meta = doc.to_dict() or {}
+            snap = _kg_latest_snapshot(collection, doc.id)
+            entry: Dict[str, Any] = {**meta}
+            if snap:
+                entry["latest_period"] = snap.pop("period")
+                entry["snapshot"] = snap
+            result.append(entry)
+        return jsonable_encoder(result)
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+@app.get("/api/kg/{collection}/{entity_slug}")
+def kg_entity(collection: str, entity_slug: str) -> Dict[str, Any]:
+    """Get all snapshots for a KG entity (time-series)."""
+    if collection not in _KG_COLLECTIONS:
+        raise HTTPException(status_code=404, detail=f"Unknown KG collection: {collection}")
+    try:
+        entity_ref = _db.collection(collection).document(entity_slug)
+        entity_doc = entity_ref.get()
+        if not entity_doc.exists:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No entity '{entity_slug}' in {collection}",
+            )
+        meta = entity_doc.to_dict() or {}
+        snaps = list(entity_ref.collection("snapshots").stream())
+        snapshots = {d.id: d.to_dict() for d in snaps}
+        return jsonable_encoder({**meta, "snapshots": snapshots})
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+@app.get("/api/kg/{collection}/{entity_slug}/{period}")
+def kg_snapshot(collection: str, entity_slug: str, period: str) -> Dict[str, Any]:
+    """Get a single KG snapshot for an entity + period."""
+    if collection not in _KG_COLLECTIONS:
+        raise HTTPException(status_code=404, detail=f"Unknown KG collection: {collection}")
+    try:
+        snap_doc = (
+            _db.collection(collection)
+            .document(entity_slug)
+            .collection("snapshots")
+            .document(period)
+            .get()
+        )
+        if not snap_doc.exists:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No snapshot '{entity_slug}/{period}' in {collection}",
+            )
+        return jsonable_encoder(snap_doc.to_dict() or {})
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+@app.get("/api/state-report/{state_slug}")
+def state_report(state_slug: str) -> Dict[str, Any]:
+    """
+    Aggregate all KG datasets for a state into one response.
+    Returns the latest snapshot from: plfs, srs, hces, aishe, sdg_index.
+    For Tamil Nadu also includes cost_of_living_tamil_nadu.
+    Always includes cost_of_living_india (fuel prices, national).
+    Includes all_india reference snapshots for plfs, srs, hces.
+    """
+    if state_slug not in _KG_STATE_SLUGS:
+        raise HTTPException(status_code=404, detail=f"No state report for: {state_slug}")
+    try:
+        report: Dict[str, Any] = {"state": state_slug}
+
+        for col in ("plfs", "srs", "hces", "aishe", "sdg_index"):
+            report[col] = _kg_latest_snapshot(col, state_slug)
+
+        report["cost_of_living_india"] = _kg_latest_snapshot(
+            "cost_of_living", "cost_of_living_india"
+        )
+        if state_slug == "tamil_nadu":
+            report["cost_of_living_tn"] = _kg_latest_snapshot(
+                "cost_of_living", "cost_of_living_tamil_nadu"
+            )
+
+        report["all_india"] = {
+            col: _kg_latest_snapshot(col, "all_india")
+            for col in ("plfs", "srs", "hces")
+        }
+
+        return jsonable_encoder(report)
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Pincode resolve helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
