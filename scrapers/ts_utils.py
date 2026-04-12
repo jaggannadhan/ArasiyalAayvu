@@ -95,6 +95,12 @@ def save_timeseries(ts: dict, path: Path) -> None:
         json.dump(ts, f, ensure_ascii=False, indent=2)
 
 
+def get_firestore_client(project: str = "naatunadappu"):
+    """Return a Firestore client using Application Default Credentials."""
+    from google.cloud import firestore
+    return firestore.Client(project=project)
+
+
 def upload_snapshot_to_firestore(
     db,
     collection: str,

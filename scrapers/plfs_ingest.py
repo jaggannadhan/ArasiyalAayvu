@@ -15,14 +15,13 @@ Run:
 """
 
 import json
-import os
 import sys
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
 
 sys.path.insert(0, str(Path(__file__).parent))
-from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore
+from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore, get_firestore_client
 
 # ---------------------------------------------------------------------------
 # Extracted data — Tables 16 (LFPR), 17 (WPR), 18 (UR)
@@ -535,14 +534,7 @@ def build_output(by_state: dict) -> dict:
 
 def upload_to_firestore(ts: dict) -> None:
     """Upload all PLFS snapshots to Firestore sub-collection pattern: plfs/{entity_id}/snapshots/{data_period}."""
-    import firebase_admin
-    from firebase_admin import credentials, firestore as fs
-
-    cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-    if not firebase_admin._apps:
-        cred = credentials.Certificate(cred_path) if cred_path else credentials.ApplicationDefault()
-        firebase_admin.initialize_app(cred)
-    db = fs.client()
+    db = get_firestore_client()
 
     count = 0
     for display_name, entity in ts["entities"].items():

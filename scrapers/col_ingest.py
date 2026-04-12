@@ -11,14 +11,13 @@ Output: data/processed/tn_cost_of_living.json
 """
 
 import json
-import os
 import sys
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
 
 sys.path.insert(0, str(Path(__file__).parent))
-from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore
+from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore, get_firestore_client
 
 # ---------------------------------------------------------------------------
 # DATA BLOCK — update individual fields as prices change; source + date REQUIRED
@@ -462,14 +461,7 @@ COL_DATA = {
 
 def upload_to_firestore(ts: dict) -> None:
     """Upload CoL snapshots to Firestore sub-collection: cost_of_living/{entity_id}/snapshots/{data_period}."""
-    import firebase_admin
-    from firebase_admin import credentials, firestore as fs
-
-    cred_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-    if not firebase_admin._apps:
-        cred = credentials.Certificate(cred_path) if cred_path else credentials.ApplicationDefault()
-        firebase_admin.initialize_app(cred)
-    db = fs.client()
+    db = get_firestore_client()
 
     count = 0
     for display_name, entity in ts["entities"].items():
