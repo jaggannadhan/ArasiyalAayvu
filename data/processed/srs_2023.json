@@ -1,0 +1,580 @@
+{
+  "meta": {
+    "sources": [
+      {
+        "name": "SRS Statistical Report 2023",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/46172/download/50420/SRS_STAT_2023.pdf",
+        "published": "September 2025",
+        "indicators": [
+          "CBR",
+          "CDR",
+          "TFR",
+          "IMR"
+        ],
+        "reference_year": 2023
+      },
+      {
+        "name": "SRS Special Bulletin on Maternal Mortality 2018-20",
+        "url": "https://censusindia.gov.in/nada/index.php/catalog/44379/download/48052/SRS_MMR_Bulletin_2018_2020.pdf",
+        "indicators": [
+          "MMR"
+        ],
+        "reference_period": "2018-2020",
+        "note": "MMR bulletin lags SRS annual report by ~3 years; 2021-23 not yet released"
+      }
+    ],
+    "indicator_notes": {
+      "CBR": "Crude Birth Rate — live births per 1000 population",
+      "CDR": "Crude Death Rate — deaths per 1000 population",
+      "TFR": "Total Fertility Rate — children per woman (replacement level = 2.1)",
+      "IMR": "Infant Mortality Rate — deaths under age 1 per 1000 live births",
+      "MMR": "Maternal Mortality Ratio — maternal deaths per 1 lakh live births"
+    },
+    "focus_states": [
+      "Andhra Pradesh",
+      "Karnataka",
+      "Kerala",
+      "Tamil Nadu",
+      "Telangana"
+    ],
+    "trend_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "notes": [
+      "2021 CDR spike in all states reflects excess COVID mortality",
+      "Kerala CDR (7.2) > TN (6.9) despite better healthcare — Kerala has older age structure",
+      "TFR below 2.1 (replacement) in all 5 focus states; TN lowest at 1.3",
+      "Kerala IMR = 5 — lowest in country, best in focus states"
+    ]
+  },
+  "all_india": {
+    "cbr_2023": {
+      "total": 18.4,
+      "rural": 20.3,
+      "urban": 14.9
+    },
+    "cdr_2023": {
+      "total": 6.4,
+      "rural": 6.8,
+      "urban": 5.7
+    },
+    "tfr_2023": {
+      "total": 1.9,
+      "rural": 2.1,
+      "urban": 1.5
+    },
+    "imr_2023": {
+      "total": {
+        "total": 25,
+        "male": 26,
+        "female": 25
+      },
+      "rural": {
+        "total": 28,
+        "male": 29,
+        "female": 28
+      },
+      "urban": {
+        "total": 18,
+        "male": 18,
+        "female": 18
+      }
+    },
+    "mmr_2018_20": {
+      "mmr": 97,
+      "ci_low": 88,
+      "ci_high": 106
+    },
+    "trend": {
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "cbr_total": [
+        20.0,
+        19.7,
+        19.5,
+        19.3,
+        19.1,
+        18.4
+      ],
+      "cdr_total": [
+        6.2,
+        6.0,
+        6.0,
+        7.5,
+        6.8,
+        6.4
+      ],
+      "imr_total": [
+        32,
+        30,
+        28,
+        27,
+        26,
+        25
+      ],
+      "tfr_total": [
+        2.2,
+        2.1,
+        2.0,
+        2.0,
+        2.0,
+        1.9
+      ]
+    }
+  },
+  "by_state": {
+    "Andhra Pradesh": {
+      "cbr_2023": {
+        "total": 15.0,
+        "rural": 15.6,
+        "urban": 13.9
+      },
+      "cdr_2023": {
+        "total": 6.9,
+        "rural": 7.6,
+        "urban": 5.6
+      },
+      "tfr_2023": {
+        "total": 1.5,
+        "rural": 1.6,
+        "urban": 1.3
+      },
+      "imr_2023": {
+        "total": {
+          "total": 19,
+          "male": 20,
+          "female": 18
+        },
+        "rural": {
+          "total": 21,
+          "male": 22,
+          "female": 20
+        },
+        "urban": {
+          "total": 14,
+          "male": 16,
+          "female": 12
+        }
+      },
+      "mmr_2018_20": {
+        "mmr": 45,
+        "ci_low": 13,
+        "ci_high": 78
+      },
+      "trend": {
+        "years": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "cbr_total": [
+          16.0,
+          15.9,
+          15.7,
+          15.4,
+          15.7,
+          15.0
+        ],
+        "cdr_total": [
+          6.7,
+          6.4,
+          6.3,
+          8.0,
+          7.5,
+          6.9
+        ],
+        "imr_total": [
+          29,
+          25,
+          24,
+          22,
+          20,
+          19
+        ],
+        "tfr_total": [
+          1.6,
+          1.5,
+          1.5,
+          1.5,
+          1.6,
+          1.5
+        ]
+      }
+    },
+    "Karnataka": {
+      "cbr_2023": {
+        "total": 15.2,
+        "rural": 16.1,
+        "urban": 13.9
+      },
+      "cdr_2023": {
+        "total": 6.8,
+        "rural": 7.8,
+        "urban": 5.6
+      },
+      "tfr_2023": {
+        "total": 1.5,
+        "rural": 1.7,
+        "urban": 1.4
+      },
+      "imr_2023": {
+        "total": {
+          "total": 14,
+          "male": 13,
+          "female": 15
+        },
+        "rural": {
+          "total": 16,
+          "male": 16,
+          "female": 16
+        },
+        "urban": {
+          "total": 11,
+          "male": 9,
+          "female": 14
+        }
+      },
+      "mmr_2018_20": {
+        "mmr": 69,
+        "ci_low": 35,
+        "ci_high": 103
+      },
+      "trend": {
+        "years": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "cbr_total": [
+          17.2,
+          16.9,
+          16.5,
+          16.2,
+          15.8,
+          15.2
+        ],
+        "cdr_total": [
+          6.3,
+          6.2,
+          6.2,
+          8.5,
+          7.4,
+          6.8
+        ],
+        "imr_total": [
+          23,
+          21,
+          19,
+          17,
+          15,
+          14
+        ],
+        "tfr_total": [
+          1.7,
+          1.7,
+          1.6,
+          1.6,
+          1.6,
+          1.5
+        ]
+      }
+    },
+    "Kerala": {
+      "cbr_2023": {
+        "total": 12.3,
+        "rural": 12.2,
+        "urban": 12.4
+      },
+      "cdr_2023": {
+        "total": 7.2,
+        "rural": 7.3,
+        "urban": 7.2
+      },
+      "tfr_2023": {
+        "total": 1.5,
+        "rural": 1.5,
+        "urban": 1.5
+      },
+      "imr_2023": {
+        "total": {
+          "total": 5,
+          "male": 9,
+          "female": 2
+        },
+        "rural": {
+          "total": 5,
+          "male": 7,
+          "female": 3
+        },
+        "urban": {
+          "total": 5,
+          "male": 10,
+          "female": 0
+        }
+      },
+      "mmr_2018_20": {
+        "mmr": 19,
+        "ci_low": 0,
+        "ci_high": 42
+      },
+      "trend": {
+        "years": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "cbr_total": [
+          13.9,
+          13.5,
+          13.2,
+          12.9,
+          12.4,
+          12.3
+        ],
+        "cdr_total": [
+          6.9,
+          7.1,
+          7.0,
+          9.0,
+          7.6,
+          7.2
+        ],
+        "imr_total": [
+          7,
+          6,
+          6,
+          6,
+          7,
+          5
+        ],
+        "tfr_total": [
+          1.7,
+          1.6,
+          1.5,
+          1.5,
+          1.5,
+          1.5
+        ]
+      }
+    },
+    "Tamil Nadu": {
+      "cbr_2023": {
+        "total": 12.0,
+        "rural": 12.5,
+        "urban": 11.5
+      },
+      "cdr_2023": {
+        "total": 6.9,
+        "rural": 8.0,
+        "urban": 6.1
+      },
+      "tfr_2023": {
+        "total": 1.3,
+        "rural": 1.3,
+        "urban": 1.3
+      },
+      "imr_2023": {
+        "total": {
+          "total": 12,
+          "male": 10,
+          "female": 13
+        },
+        "rural": {
+          "total": 13,
+          "male": 13,
+          "female": 13
+        },
+        "urban": {
+          "total": 11,
+          "male": 8,
+          "female": 13
+        }
+      },
+      "mmr_2018_20": {
+        "mmr": 54,
+        "ci_low": 24,
+        "ci_high": 85
+      },
+      "trend": {
+        "years": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "cbr_total": [
+          14.7,
+          14.2,
+          13.8,
+          13.4,
+          12.1,
+          12.0
+        ],
+        "cdr_total": [
+          6.5,
+          6.1,
+          6.1,
+          8.3,
+          7.3,
+          6.9
+        ],
+        "imr_total": [
+          15,
+          15,
+          13,
+          12,
+          11,
+          12
+        ],
+        "tfr_total": [
+          1.6,
+          1.5,
+          1.4,
+          1.5,
+          1.3,
+          1.3
+        ]
+      }
+    },
+    "Telangana": {
+      "cbr_2023": {
+        "total": 15.8,
+        "rural": 16.2,
+        "urban": 15.2
+      },
+      "cdr_2023": {
+        "total": 6.3,
+        "rural": 7.1,
+        "urban": 5.3
+      },
+      "tfr_2023": {
+        "total": 1.5,
+        "rural": 1.6,
+        "urban": 1.5
+      },
+      "imr_2023": {
+        "total": {
+          "total": 18,
+          "male": 19,
+          "female": 17
+        },
+        "rural": {
+          "total": 20,
+          "male": 21,
+          "female": 19
+        },
+        "urban": {
+          "total": 15,
+          "male": 15,
+          "female": 14
+        }
+      },
+      "mmr_2018_20": {
+        "mmr": 43,
+        "ci_low": 4,
+        "ci_high": 83
+      },
+      "trend": {
+        "years": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "cbr_total": [
+          16.9,
+          16.7,
+          16.4,
+          16.1,
+          16.5,
+          15.8
+        ],
+        "cdr_total": [
+          6.3,
+          6.1,
+          6.0,
+          6.5,
+          6.6,
+          6.3
+        ],
+        "imr_total": [
+          27,
+          23,
+          21,
+          20,
+          18,
+          18
+        ],
+        "tfr_total": [
+          1.6,
+          1.6,
+          1.5,
+          1.6,
+          1.6,
+          1.5
+        ]
+      }
+    }
+  },
+  "gaps_vs_all_india_2023": {
+    "Andhra Pradesh": {
+      "cbr_vs_india": -3.4,
+      "cdr_vs_india": 0.5,
+      "imr_vs_india": -6,
+      "tfr_vs_india": -0.4,
+      "mmr_2018_20": 45
+    },
+    "Karnataka": {
+      "cbr_vs_india": -3.2,
+      "cdr_vs_india": 0.4,
+      "imr_vs_india": -11,
+      "tfr_vs_india": -0.4,
+      "mmr_2018_20": 69
+    },
+    "Kerala": {
+      "cbr_vs_india": -6.1,
+      "cdr_vs_india": 0.8,
+      "imr_vs_india": -20,
+      "tfr_vs_india": -0.4,
+      "mmr_2018_20": 19
+    },
+    "Tamil Nadu": {
+      "cbr_vs_india": -6.4,
+      "cdr_vs_india": 0.5,
+      "imr_vs_india": -13,
+      "tfr_vs_india": -0.6,
+      "mmr_2018_20": 54
+    },
+    "Telangana": {
+      "cbr_vs_india": -2.6,
+      "cdr_vs_india": -0.1,
+      "imr_vs_india": -7,
+      "tfr_vs_india": -0.4,
+      "mmr_2018_20": 43
+    }
+  }
+}
