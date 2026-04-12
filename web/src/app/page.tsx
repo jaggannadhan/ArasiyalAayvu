@@ -115,15 +115,18 @@ export default function Home() {
               {isTA ? "வாக்குறுதி vs செயல்திறன்" : "Promise vs. Performance"}
             </p>
           </Link>
-          <div className="bg-gray-100 rounded-2xl border border-gray-200 p-4 opacity-60">
+          <Link
+            href="/state-report/tamil_nadu"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all"
+          >
             <p className="text-lg mb-1">📊</p>
-            <p className="text-sm font-bold text-gray-700">
+            <p className="text-sm font-bold text-gray-900">
               {isTA ? "மாநில நலன் குறிகாட்டிகள்" : "State Vitals"}
             </p>
-            <p className="text-xs text-gray-400">
-              {isTA ? "விரைவில் வருகிறது" : "Coming soon"}
+            <p className="text-xs text-gray-500">
+              {isTA ? "தொழிலாளர் · சுகாதாரம் · கல்வி · செலவு" : "Labour · Health · Education · Spending"}
             </p>
-          </div>
+          </Link>
           <Link
             href="/sdg-tracker"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
