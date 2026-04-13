@@ -434,15 +434,19 @@ export default function KnowledgeGraphPage() {
             <button
               key={type}
               onClick={() => toggleType(type)}
-              className={`flex items-center gap-2 w-full text-left px-2 py-1 rounded text-xs transition-colors ${
-                hidden
-                  ? "opacity-40 hover:opacity-60"
-                  : "opacity-100 hover:bg-gray-800"
+              className={`flex items-center gap-2 w-full text-left px-2 py-1 rounded text-xs cursor-pointer hover:bg-gray-800 transition-colors ${
+                hidden ? "opacity-60" : "opacity-100"
               }`}
             >
+              <input
+                type="checkbox"
+                checked={!hidden}
+                readOnly
+                className="w-3 h-3 rounded accent-blue-500 pointer-events-none flex-shrink-0"
+              />
               <span
                 className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: hidden ? "#555" : color }}
+                style={{ backgroundColor: color }}
               />
               <span className="truncate">
                 {NODE_TYPE_LABELS[type] || type}
