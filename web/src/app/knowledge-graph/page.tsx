@@ -441,9 +441,21 @@ export default function KnowledgeGraphPage() {
 
       {/* Node type filters — left panel */}
       <div className="absolute top-12 left-2 z-20 bg-gray-900/90 backdrop-blur-sm rounded-xl border border-gray-800 p-3 max-h-[70vh] overflow-y-auto">
-        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mb-2">
-          Node Types
-        </p>
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">
+            Node Types
+          </p>
+          <button
+            onClick={() => {
+              const allTypes = nodeTypes.map(([t]) => t);
+              const allHidden = allTypes.every((t) => hiddenTypes.has(t));
+              setHiddenTypes(allHidden ? new Set() : new Set(allTypes));
+            }}
+            className="text-[10px] text-blue-400 hover:text-blue-300 cursor-pointer"
+          >
+            {nodeTypes.every(([t]) => !hiddenTypes.has(t)) ? "Deselect All" : "Select All"}
+          </button>
+        </div>
         {nodeTypes.map(([type, count]) => {
           const typeDef = graphData?.nodes.find((n) => n.type === type);
           const color = typeDef?.color || "#999";
