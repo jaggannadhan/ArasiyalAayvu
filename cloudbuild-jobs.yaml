@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -f
+      - jobs/Dockerfile
+      - -t
+      - gcr.io/naatunadappu/kg-jobs
+      - .
+images:
+  - gcr.io/naatunadappu/kg-jobs
