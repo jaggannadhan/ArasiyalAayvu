@@ -455,7 +455,7 @@ export default function KnowledgeGraphPage() {
       </div>
 
       {/* Node type filters — left panel */}
-      <div className="absolute top-12 left-2 z-20 bg-gray-900/90 backdrop-blur-sm rounded-xl border border-gray-800 p-3 max-h-[70vh] overflow-y-auto">
+      <div className="absolute top-10 bottom-0 left-0 z-20 bg-gray-900/90 backdrop-blur-sm border-r border-gray-800 p-3 overflow-y-auto w-48">
         <button
           onClick={() => setLegendCollapsed((p) => !p)}
           className="flex items-center justify-between w-full cursor-pointer mb-1"
