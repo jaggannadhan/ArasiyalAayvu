@@ -260,9 +260,10 @@ export default function KnowledgeGraphPage() {
   };
 
   // Node paint — semantic zoom: labels appear progressively as you zoom in
+  // Node sizes scale inversely with zoom so they stay visually consistent
   const paintNode = useCallback(
     (node: GraphNode, ctx: CanvasRenderingContext2D) => {
-      const baseSize = NODE_SIZE[node.type] || 3;
+      const baseSize = (NODE_SIZE[node.type] || 3) / Math.max(zoomLevel, 0.3);
       const x = node.x || 0;
       const y = node.y || 0;
       const isHighlighted =
@@ -271,9 +272,10 @@ export default function KnowledgeGraphPage() {
       const hexAlpha = alpha < 1 ? Math.round(alpha * 255).toString(16).padStart(2, "0") : "";
 
       // Glow for highlighted important nodes
-      if (isHighlighted && highlightNodes.size > 0 && baseSize >= 8) {
+      const rawSize = NODE_SIZE[node.type] || 3;
+      if (isHighlighted && highlightNodes.size > 0 && rawSize >= 8) {
         ctx.beginPath();
-        ctx.arc(x, y, baseSize + 4, 0, 2 * Math.PI);
+        ctx.arc(x, y, baseSize + 4 / Math.max(zoomLevel, 0.3), 0, 2 * Math.PI);
         ctx.fillStyle = node.color + "30";
         ctx.fill();
       }
@@ -285,7 +287,7 @@ export default function KnowledgeGraphPage() {
       ctx.fill();
 
       // Border for indicator/SDG/state/party nodes
-      if (baseSize >= 8) {
+      if (rawSize >= 8) {
         ctx.strokeStyle = isHighlighted ? "#ffffff40" : "#ffffff10";
         ctx.lineWidth = 1;
         ctx.stroke();
@@ -294,13 +296,13 @@ export default function KnowledgeGraphPage() {
       // Semantic zoom labels — show based on zoom level and node type
       const threshold = LABEL_ZOOM_THRESHOLD[node.type] ?? 3;
       if (zoomLevel >= threshold && isHighlighted) {
-        const fontSize = Math.max(3, Math.min(12, baseSize * 0.7));
+        const fontSize = Math.max(2, Math.min(10, rawSize * 0.7)) / Math.max(zoomLevel, 0.3);
         ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.fillStyle = isHighlighted ? "#e5e7eb" : "#6b728060";
         const maxLen = zoomLevel > 3 ? 40 : 20;
-        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + 2);
+        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + 1);
       }
     },
     [highlightNodes, zoomLevel]
