@@ -320,7 +320,7 @@ def main():
         }
         upsert_snapshot(ts, state, "2023", snapshot, meta=meta if i == 0 else None)
 
-    upsert_snapshot(ts, "India", "2023", {
+    upsert_snapshot(ts, "All India", "2023", {
         "cbr": CBR_2023["India"],
         "cdr": CDR_2023["India"],
         "tfr": TFR_2023["India"],
