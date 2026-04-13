@@ -31,6 +31,9 @@ interface GraphNode {
   criminal_cases?: number;
   state?: string;
   period?: string;
+  // Pre-computed layout positions (fixed)
+  fx?: number;
+  fy?: number;
   // Force graph adds these at runtime
   x?: number;
   y?: number;
@@ -41,6 +44,7 @@ interface GraphEdge {
   target: string | GraphNode;
   verb: string;
   weight: number;
+  period?: number | string;
 }
 
 interface GraphData {
@@ -93,6 +97,9 @@ const LINK_DISTANCE: Record<string, number> = {
   measured_by: 80,
   describes: 60,
   influences: 90,
+  allied_with: 45,
+  won: 35,
+  operates_in: 100,
 };
 
 // Label visibility threshold per node type (zoom level)
@@ -125,6 +132,9 @@ const VERB_COLORS: Record<string, string> = {
   measured_by: "#14b8a6",
   describes: "#6b7280",
   influences: "#ef4444",
+  allied_with: "#f97316",
+  won: "#facc15",
+  operates_in: "#64748b",
 };
 
 // ─── Component ──────────────────────────────────────────────────────────────
@@ -176,19 +186,16 @@ export default function KnowledgeGraphPage() {
     return { nodes: visibleNodes, links: visibleEdges };
   }, [graphData, hiddenTypes]);
 
-  // Configure d3 forces after graph mounts / data changes
+  // Pre-baked layout: nodes have fx/fy from the graph builder.
+  // Only run a brief simulation to settle any floating nodes, then stop.
   useEffect(() => {
     if (!graphRef.current) return;
     const fg = graphRef.current;
-    // Stronger repulsion to spread nodes apart
-    fg.d3Force("charge")?.strength(-120).distanceMax(500);
-    // Center gravity to keep clusters from drifting off screen
-    fg.d3Force("center")?.strength(0.05);
-    // Variable link distance by edge type
+    // Light forces for any nodes without fx/fy
+    fg.d3Force("charge")?.strength(-50);
+    fg.d3Force("center")?.strength(0.02);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fg.d3Force("link")?.distance((link: any) => LINK_DISTANCE[link.verb] || 40);
-    // Reheat simulation
-    fg.d3ReheatSimulation();
   }, [filteredGraph]);
 
   // Search
@@ -589,11 +596,11 @@ export default function KnowledgeGraphPage() {
           enableNodeDrag={true}
           enableZoomInteraction={true}
           enablePanInteraction={true}
-          cooldownTicks={200}
-          warmupTicks={100}
-          d3VelocityDecay={0.4}
-          d3AlphaDecay={0.015}
-          d3AlphaMin={0.001}
+          cooldownTicks={50}
+          warmupTicks={0}
+          d3VelocityDecay={0.6}
+          d3AlphaDecay={0.05}
+          d3AlphaMin={0.01}
           linkDirectionalArrowLength={0}
           backgroundColor="#030712"
           minZoom={0.1}

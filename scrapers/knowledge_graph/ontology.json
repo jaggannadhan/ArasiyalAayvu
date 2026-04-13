@@ -163,6 +163,21 @@
       "label": "influences",
       "type": "causal",
       "description": "One indicator causally influences another (expert-defined)"
+    },
+    "allied_with": {
+      "label": "allied with",
+      "type": "political",
+      "description": "Party is in electoral alliance with another party (temporal — year-specific)"
+    },
+    "won": {
+      "label": "won",
+      "type": "political",
+      "description": "Party won a constituency in a specific election (temporal)"
+    },
+    "operates_in": {
+      "label": "operates in",
+      "type": "structural",
+      "description": "Party contests elections in a state"
     }
   },
 
@@ -195,7 +210,10 @@
     {"from": "indicator_udise", "verb": "influences",   "to": "indicator_plfs",  "note": "education → employability"},
     {"from": "indicator_asi",   "verb": "influences",   "to": "indicator_plfs",  "note": "industrial growth → employment"},
     {"from": "indicator_col",   "verb": "influences",   "to": "indicator_hces",  "note": "cost of living → household spending"},
-    {"from": "indicator_srs",   "verb": "influences",   "to": "indicator_udise", "note": "demographics → school demand"}
+    {"from": "indicator_srs",   "verb": "influences",   "to": "indicator_udise", "note": "demographics → school demand"},
+    {"from": "party",           "verb": "allied_with",  "to": "party"},
+    {"from": "party",           "verb": "won",          "to": "constituency"},
+    {"from": "party",           "verb": "operates_in",  "to": "state"}
   ],
 
   "layers": {

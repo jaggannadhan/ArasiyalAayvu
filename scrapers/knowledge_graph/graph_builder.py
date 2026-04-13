@@ -56,12 +56,24 @@ FOCUS_STATES = {
     "telangana":        "Telangana",
 }
 
-# Manifesto party_id → candidate party full name (for node ID matching)
+# Short party ID → candidate party full name (for node ID matching)
+# Used by manifesto parser + alliance edge builder
 PARTY_ID_TO_FULL: dict[str, str] = {
     "aiadmk": "All India Anna Dravida Munnetra Kazhagam",
     "dmk":    "Dravida Munnetra Kazhagam",
     "ntk":    "Naam Tamilar Katchi",
     "tvk":    "Tamilaga Vettri Kazhagam",
+    "bjp":    "Bharatiya Janata Party",
+    "inc":    "Indian National Congress",
+    "cpi":    "Communist Party of India",
+    "cpim":   "Communist Party of India (Marxist)",
+    "pmk":    "Pattali Makkal Katchi",
+    "dmdk":   "Desiya Murpokku Dravida Kazhagam",
+    "vck":    "Viduthalai Chiruthaigal Katchi",
+    "mdmk":   "Marumalarchi Dravida Munnetra Kazhagam",
+    "mmk":    "Manithaneya Makkal Katchi",
+    "iuml":   "Indian Union Muslim League",
+    "tmc":    "Tamil Maanila Congress (Moopanar)",
 }
 
 # Constituency map for district→constituency structure
@@ -257,6 +269,132 @@ class GraphBuilder:
         pol_count = sum(1 for n in self.nodes if n["layer"] == "political")
         print(f"    {pol_count} political nodes")
 
+    # ── Alliance edges (party ↔ party, temporal) ──
+
+    def build_alliances(self) -> None:
+        print("  Building alliance edges...")
+        count = 0
+        try:
+            docs = list(self.db.collection("alliances").stream())
+            for doc in docs:
+                data = doc.to_dict()
+                year = data.get("year")
+                members = data.get("member_parties", [])
+                anchor = data.get("anchor_party", "")
+                alliance_name = data.get("alliance_name", "")
+
+                if not members or not year:
+                    continue
+
+                # Create edges between all alliance members (anchor → each member)
+                for member in members:
+                    if member == anchor:
+                        continue
+                    # Need to find the party node ID — try matching short IDs
+                    anchor_id = self._find_party_node(anchor)
+                    member_id = self._find_party_node(member)
+                    if anchor_id and member_id:
+                        self._add_edge(anchor_id, member_id, "allied_with",
+                                       weight=0.8, period=year,
+                                       alliance=alliance_name)
+                        count += 1
+        except Exception as e:
+            print(f"    WARNING: Could not read alliances: {e}")
+        print(f"    {count} alliance edges")
+
+    # ── Won-seat edges (party → constituency, temporal) ──
+
+    def build_won_seats(self) -> None:
+        print("  Building won-seat edges...")
+        count = 0
+        try:
+            docs = list(self.db.collection("candidate_accountability").stream())
+            for doc in docs:
+                data = doc.to_dict()
+                party = data.get("party", "")
+                constituency = data.get("constituency", "")
+                # Doc ID format: {year}_{ac_slug}
+                parts = doc.id.split("_", 1)
+                year = int(parts[0]) if parts[0].isdigit() else None
+
+                if not party or not constituency or not year:
+                    continue
+
+                # Normalize constituency to slug — handle mixed case + spaces
+                ac_slug = parts[1] if len(parts) > 1 else constituency.lower().replace(" ", "_")
+                party_id = self._find_party_node_by_name(party)
+                ac_id = f"constituency:{ac_slug}"
+
+                if party_id and ac_id in self._node_ids:
+                    self._add_edge(party_id, ac_id, "won",
+                                   weight=1.0, period=year)
+                    count += 1
+        except Exception as e:
+            print(f"    WARNING: Could not read won seats: {e}")
+        print(f"    {count} won-seat edges")
+
+    # ── Operates-in edges (party → state) ──
+
+    def build_operates_in(self) -> None:
+        """Link every party node to state:tamil_nadu."""
+        print("  Building operates-in edges...")
+        count = 0
+        state_id = "state:tamil_nadu"
+        for node in self.nodes:
+            if node["type"] == "party":
+                self._add_edge(node["id"], state_id, "operates_in", weight=0.3)
+                count += 1
+        print(f"    {count} operates-in edges")
+
+    # ── Party node lookup helpers ──
+
+    def _find_party_node(self, short_id: str) -> str | None:
+        """Find party node ID by short alliance ID (e.g., 'dmk', 'bjp')."""
+        short_lower = short_id.lower().strip()
+        # Try known mappings first
+        full_name = PARTY_ID_TO_FULL.get(short_lower)
+        if full_name:
+            node_id = f"party:{full_name.lower().replace(' ', '_')}"
+            if node_id in self._node_ids:
+                return node_id
+
+        # Fuzzy: check if any party node ID contains the short ID
+        for nid in self._node_ids:
+            if nid.startswith("party:") and short_lower in nid:
+                return nid
+        return None
+
+    def _find_party_node_by_name(self, name: str) -> str | None:
+        """Find party node ID by full name, abbreviation, or partial match."""
+        # Direct full-name match
+        node_id = f"party:{name.lower().replace(' ', '_')}"
+        if node_id in self._node_ids:
+            return node_id
+        # Try PARTY_ID_TO_FULL mapping (handles short IDs like DMK, AIADMK)
+        full = PARTY_ID_TO_FULL.get(name.lower())
+        if full:
+            node_id = f"party:{full.lower().replace(' ', '_')}"
+            if node_id in self._node_ids:
+                return node_id
+        # Common abbreviation → full name for candidate_accountability data
+        _ABBREV = {
+            "CPM": "Communist Party of India (Marxist)",
+            "CPI(M)": "Communist Party of India (Marxist)",
+            "IND": "Independent",
+            "AIFB": "All India Forward Bloc",
+        }
+        mapped = _ABBREV.get(name)
+        if mapped:
+            node_id = f"party:{mapped.lower().replace(' ', '_')}"
+            if node_id in self._node_ids:
+                return node_id
+        # Partial match
+        slug = name.lower().replace(" ", "_")
+        for nid in self._node_ids:
+            if nid.startswith("party:") and slug in nid:
+                return nid
+        return None
+
     # ── Layer 2: Bridge (SDG Goals) ──
 
     def _create_sdg_nodes(self) -> None:
@@ -379,6 +517,9 @@ class GraphBuilder:
         self._create_sdg_nodes()       # SDG nodes first (targets_goal needs them)
         self.build_indicators()        # indicators before SDG edges (measured_by needs them)
         self.build_political()         # parties+candidates+manifesto (promised, targets_goal)
+        self.build_alliances()         # party↔party alliance edges (temporal)
+        self.build_won_seats()         # party→constituency won edges (temporal)
+        self.build_operates_in()       # party→state structural anchoring
         self.build_sdg_bridge()        # measured_by edges (indicators + SDG nodes both exist now)
         self.build_causal_links()
 
@@ -402,9 +543,45 @@ class GraphBuilder:
         }
 
 
+def precompute_layout(graph: dict) -> dict:
+    """
+    Run a spring layout using networkx to compute stable x/y positions.
+    Injects fx/fy (fixed position) into each node so the frontend
+    renders deterministically without simulation jitter.
+    """
+    import networkx as nx
+
+    print("  Pre-computing layout with networkx spring_layout...")
+
+    G = nx.Graph()
+    for n in graph["nodes"]:
+        G.add_node(n["id"])
+    for e in graph["edges"]:
+        src = e["source"] if isinstance(e["source"], str) else e["source"]["id"]
+        tgt = e["target"] if isinstance(e["target"], str) else e["target"]["id"]
+        w = e.get("weight", 1.0)
+        G.add_edge(src, tgt, weight=w)
+
+    # Spring layout — k controls spacing, iterations controls convergence
+    # Higher k = more spread. Scale up to pixel coordinates.
+    pos = nx.spring_layout(G, k=2.5, iterations=150, seed=42, scale=800)
+
+    # Inject fx/fy into nodes (react-force-graph uses fx/fy for fixed positions)
+    pos_map = {nid: (float(xy[0]), float(xy[1])) for nid, xy in pos.items()}
+    for node in graph["nodes"]:
+        xy = pos_map.get(node["id"])
+        if xy:
+            node["fx"] = round(xy[0], 1)
+            node["fy"] = round(xy[1], 1)
+
+    print(f"    Positioned {len(pos_map)} nodes")
+    return graph
+
+
 def main():
     upload = "--upload" in sys.argv
     stats  = "--stats"  in sys.argv
+    no_layout = "--no-layout" in sys.argv
 
     print("Building knowledge graph...")
     db = get_firestore_client()
@@ -425,6 +602,10 @@ def main():
                 print(f"    {v:<25} {c:>5}")
         return
 
+    # Pre-compute deterministic layout
+    if not no_layout:
+        graph = precompute_layout(graph)
+
     # Save full graph locally
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(graph, default=str, ensure_ascii=False))
@@ -433,10 +614,13 @@ def main():
     # Save slim version for API/frontend (smaller payload)
     SLIM_FIELDS = {"id", "type", "label", "layer", "color", "party", "constituency",
                    "slug", "category", "status", "goal_number", "goal_name",
-                   "state", "period", "candidate_count", "assets", "criminal_cases"}
+                   "state", "period", "candidate_count", "assets", "criminal_cases",
+                   "fx", "fy"}
     slim_nodes = [{k: v for k, v in n.items() if k in SLIM_FIELDS} for n in graph["nodes"]]
     slim_edges = [{"source": e["source"], "target": e["target"], "verb": e["verb"],
-                   "weight": e.get("weight", 1.0)} for e in graph["edges"]]
+                   "weight": e.get("weight", 1.0),
+                   **({"period": e["period"]} if "period" in e else {})}
+                  for e in graph["edges"]]
     slim_graph = {"nodes": slim_nodes, "edges": slim_edges, "meta": graph["meta"]}
     slim_path = OUT_PATH.with_name("knowledge_graph_slim.json")
     slim_path.write_text(json.dumps(slim_graph, default=str, ensure_ascii=False))
