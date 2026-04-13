@@ -22,14 +22,14 @@
       "16": "Peace, Justice & Strong Institutions"
     },
     "note": "Score 0-100; blank = data not reported for that state/goal",
-    "last_updated": "2026-04-11"
+    "last_updated": "2026-04-13"
   },
   "entities": {
     "Kerala": {
       "id": "kerala",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 70,
           "rank": 1,
@@ -71,7 +71,7 @@
           }
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 75,
           "rank": 1,
@@ -113,7 +113,7 @@
           }
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 79,
           "rank": 1,
@@ -160,7 +160,7 @@
       "id": "himachal_pradesh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 69,
           "rank": 2,
@@ -185,7 +185,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 74,
           "rank": 2,
@@ -210,7 +210,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 77,
           "rank": 5,
@@ -240,7 +240,7 @@
       "id": "andhra_pradesh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 67,
           "rank": 3,
@@ -282,7 +282,7 @@
           }
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 72,
           "rank": 4,
@@ -324,7 +324,7 @@
           }
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 74,
           "rank": 9,
@@ -371,7 +371,7 @@
       "id": "tamil_nadu",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 67,
           "rank": 4,
@@ -413,7 +413,7 @@
           }
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 74,
           "rank": 3,
@@ -455,7 +455,7 @@
           }
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 78,
           "rank": 3,
@@ -502,7 +502,7 @@
       "id": "telangana",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 67,
           "rank": 5,
@@ -544,7 +544,7 @@
           }
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 69,
           "rank": 11,
@@ -586,7 +586,7 @@
           }
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 74,
           "rank": 11,
@@ -633,7 +633,7 @@
       "id": "karnataka",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 66,
           "rank": 6,
@@ -675,7 +675,7 @@
           }
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 72,
           "rank": 6,
@@ -717,7 +717,7 @@
           }
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 75,
           "rank": 8,
@@ -764,7 +764,7 @@
       "id": "goa",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 65,
           "rank": 7,
@@ -789,7 +789,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 72,
           "rank": 5,
@@ -814,7 +814,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 77,
           "rank": 4,
@@ -844,7 +844,7 @@
       "id": "sikkim",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 65,
           "rank": 8,
@@ -869,7 +869,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 71,
           "rank": 8,
@@ -894,7 +894,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 76,
           "rank": 7,
@@ -924,7 +924,7 @@
       "id": "gujarat",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 64,
           "rank": 9,
@@ -949,7 +949,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 69,
           "rank": 10,
@@ -974,7 +974,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 74,
           "rank": 10,
@@ -1004,7 +1004,7 @@
       "id": "maharashtra",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 64,
           "rank": 10,
@@ -1029,7 +1029,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 70,
           "rank": 9,
@@ -1054,7 +1054,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 73,
           "rank": 12,
@@ -1084,7 +1084,7 @@
       "id": "uttarakhand",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 64,
           "rank": 11,
@@ -1109,7 +1109,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 72,
           "rank": 7,
@@ -1134,7 +1134,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 79,
           "rank": 2,
@@ -1164,7 +1164,7 @@
       "id": "punjab",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 62,
           "rank": 12,
@@ -1189,7 +1189,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 68,
           "rank": 13,
@@ -1214,7 +1214,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 76,
           "rank": 6,
@@ -1244,7 +1244,7 @@
       "id": "manipur",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 60,
           "rank": 13,
@@ -1269,7 +1269,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 64,
           "rank": 16,
@@ -1294,7 +1294,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 72,
           "rank": 14,
@@ -1324,7 +1324,7 @@
       "id": "west_bengal",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 60,
           "rank": 14,
@@ -1349,7 +1349,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 62,
           "rank": 18,
@@ -1374,7 +1374,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 70,
           "rank": 17,
@@ -1404,7 +1404,7 @@
       "id": "jammu_and_kashmir_and_ladakh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 59,
           "rank": 15,
@@ -1434,7 +1434,7 @@
       "id": "madhya_pradesh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 58,
           "rank": 16,
@@ -1459,7 +1459,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 62,
           "rank": 17,
@@ -1484,7 +1484,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 67,
           "rank": 19,
@@ -1514,7 +1514,7 @@
       "id": "odisha",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 58,
           "rank": 17,
@@ -1539,7 +1539,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 61,
           "rank": 21,
@@ -1564,7 +1564,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 66,
           "rank": 22,
@@ -1594,7 +1594,7 @@
       "id": "tripura",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 58,
           "rank": 18,
@@ -1619,7 +1619,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 65,
           "rank": 15,
@@ -1644,7 +1644,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 71,
           "rank": 16,
@@ -1674,7 +1674,7 @@
       "id": "haryana",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 57,
           "rank": 19,
@@ -1699,7 +1699,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 67,
           "rank": 14,
@@ -1724,7 +1724,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 72,
           "rank": 13,
@@ -1754,7 +1754,7 @@
       "id": "nagaland",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 57,
           "rank": 20,
@@ -1779,7 +1779,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 61,
           "rank": 20,
@@ -1804,7 +1804,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 63,
           "rank": 26,
@@ -1834,7 +1834,7 @@
       "id": "rajasthan",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 57,
           "rank": 21,
@@ -1859,7 +1859,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 60,
           "rank": 24,
@@ -1884,7 +1884,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 67,
           "rank": 20,
@@ -1914,7 +1914,7 @@
       "id": "chhattisgarh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 56,
           "rank": 22,
@@ -1939,7 +1939,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 61,
           "rank": 19,
@@ -1964,7 +1964,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 67,
           "rank": 18,
@@ -1994,7 +1994,7 @@
       "id": "mizoram",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 56,
           "rank": 23,
@@ -2019,7 +2019,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 68,
           "rank": 12,
@@ -2044,7 +2044,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 72,
           "rank": 15,
@@ -2074,7 +2074,7 @@
       "id": "assam",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 55,
           "rank": 24,
@@ -2099,7 +2099,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 57,
           "rank": 26,
@@ -2124,7 +2124,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 65,
           "rank": 24,
@@ -2154,7 +2154,7 @@
       "id": "uttar_pradesh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 55,
           "rank": 25,
@@ -2179,7 +2179,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 60,
           "rank": 25,
@@ -2204,7 +2204,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 67,
           "rank": 21,
@@ -2234,7 +2234,7 @@
       "id": "meghalaya",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 54,
           "rank": 26,
@@ -2259,7 +2259,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 60,
           "rank": 23,
@@ -2284,7 +2284,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 63,
           "rank": 25,
@@ -2314,7 +2314,7 @@
       "id": "arunachal_pradesh",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 53,
           "rank": 27,
@@ -2339,7 +2339,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 60,
           "rank": 22,
@@ -2364,7 +2364,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 65,
           "rank": 23,
@@ -2394,7 +2394,7 @@
       "id": "jharkhand",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 53,
           "rank": 28,
@@ -2419,7 +2419,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 56,
           "rank": 27,
@@ -2444,7 +2444,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 62,
           "rank": 27,
@@ -2474,7 +2474,7 @@
       "id": "bihar",
       "snapshots": {
         "2018": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2018",
           "composite": 50,
           "rank": 29,
@@ -2499,7 +2499,7 @@
           "gaps_from_national_best": {}
         },
         "2020-21": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2020-21",
           "composite": 52,
           "rank": 28,
@@ -2524,7 +2524,7 @@
           "gaps_from_national_best": {}
         },
         "2023-24": {
-          "fetched_at": "2026-04-11",
+          "fetched_at": "2026-04-13",
           "data_period": "2023-24",
           "composite": 57,
           "rank": 28,
@@ -2547,6 +2547,86 @@
             "16": 68
           },
           "gaps_from_national_best": {}
+        }
+      }
+    },
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2018": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2018",
+          "composite": 60.2,
+          "rank": null,
+          "goals": {
+            "1": 53,
+            "2": 46,
+            "3": 60,
+            "4": 57,
+            "5": 40,
+            "6": 83,
+            "7": 72,
+            "8": 64,
+            "9": 52,
+            "10": 63,
+            "11": 49,
+            "12": 58,
+            "13": 49,
+            "14": 46,
+            "15": 85,
+            "16": 73
+          },
+          "note": "National average across 29 states/UTs"
+        },
+        "2020-21": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020-21",
+          "composite": 65.5,
+          "rank": null,
+          "goals": {
+            "1": 65,
+            "2": 53,
+            "3": 71,
+            "4": 56,
+            "5": 49,
+            "6": 84,
+            "7": 92,
+            "8": 60,
+            "9": 49,
+            "10": 66,
+            "11": 72,
+            "12": 75,
+            "13": 53,
+            "14": 55,
+            "15": 65,
+            "16": 73
+          },
+          "note": "National average across 28 states/UTs"
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "composite": 70.6,
+          "rank": null,
+          "goals": {
+            "1": 71,
+            "2": 59,
+            "3": 73,
+            "4": 60,
+            "5": 52,
+            "6": 88,
+            "7": 91,
+            "8": 71,
+            "9": 55,
+            "10": 68,
+            "11": 76,
+            "12": 77,
+            "13": 64,
+            "14": 62,
+            "15": 78,
+            "16": 74
+          },
+          "note": "National average across 28 states/UTs"
         }
       }
     }

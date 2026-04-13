@@ -3,8 +3,8 @@
     "dataset": "cost_of_living",
     "city_reference": "Chennai",
     "currency": "INR",
-    "note": "Prices are retail/consumer prices unless marked subsidised. 'govt' = zero or near-zero cost at government facility. Cost_of_Living_India = national fuel prices. Cost_of_Living_Tamil_Nadu = state/city-specific: electricity, dairy, PDS, transport, healthcare.",
-    "last_updated": "2026-04-11"
+    "note": "Cost of living for Tamil Nadu. Fuel prices auto-refreshed monthly.",
+    "last_updated": "2026-04-13"
   },
   "entities": {
     "Cost_of_Living_India": {
@@ -523,6 +523,271 @@
                 }
               },
               "key_finding": "India's public health expenditure was 1.04% of GDP in 2011-12; 12th plan target was 1.87% of GDP — never achieved. TN consistently overspends approved outlay (actual > approved) in most plan periods."
+            }
+          }
+        }
+      }
+    },
+    "cost_of_living_tamil_nadu": {
+      "id": "cost_of_living_tamil_nadu",
+      "snapshots": {
+        "2026-04": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2026-04",
+          "fuel": {
+            "lpg_14kg_domestic": {
+              "price": 928.5,
+              "unit": "per 14.2 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (chennai)",
+              "as_of": "2026-04"
+            },
+            "lpg_14kg_ujjwala_subsidy": {
+              "price": -300.0,
+              "unit": "subsidy per cylinder (up to 12/year)",
+              "type": "subsidy",
+              "source": "PMUY / IOCL",
+              "as_of": "2026-04"
+            },
+            "lpg_5kg_domestic": {
+              "price": 4745.0,
+              "unit": "per 5 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (chennai)",
+              "as_of": "2026-04"
+            },
+            "lpg_19kg_commercial": {
+              "price": 2246.5,
+              "unit": "per 19 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (chennai)",
+              "as_of": "2026-04"
+            },
+            "petrol": {
+              "price": 100.8,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (chennai)",
+              "as_of": "2026-04"
+            },
+            "diesel": {
+              "price": 92.39,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (chennai)",
+              "as_of": "2026-04"
+            }
+          }
+        }
+      }
+    },
+    "cost_of_living_kerala": {
+      "id": "cost_of_living_kerala",
+      "snapshots": {
+        "2026-04": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2026-04",
+          "fuel": {
+            "lpg_14kg_domestic": {
+              "price": 922.0,
+              "unit": "per 14.2 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (kochi)",
+              "as_of": "2026-04"
+            },
+            "lpg_14kg_ujjwala_subsidy": {
+              "price": -300.0,
+              "unit": "subsidy per cylinder (up to 12/year)",
+              "type": "subsidy",
+              "source": "PMUY / IOCL",
+              "as_of": "2026-04"
+            },
+            "lpg_5kg_domestic": {
+              "price": null,
+              "unit": "per 5 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (kochi)",
+              "as_of": "2026-04"
+            },
+            "lpg_19kg_commercial": {
+              "price": 2112.0,
+              "unit": "per 19 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (kochi)",
+              "as_of": "2026-04"
+            },
+            "petrol": {
+              "price": 94.77,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (kochi)",
+              "as_of": "2026-04"
+            },
+            "diesel": {
+              "price": 87.67,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (kochi)",
+              "as_of": "2026-04"
+            }
+          }
+        }
+      }
+    },
+    "cost_of_living_karnataka": {
+      "id": "cost_of_living_karnataka",
+      "snapshots": {
+        "2026-04": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2026-04",
+          "fuel": {
+            "lpg_14kg_domestic": {
+              "price": 915.5,
+              "unit": "per 14.2 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (bengaluru)",
+              "as_of": "2026-04"
+            },
+            "lpg_14kg_ujjwala_subsidy": {
+              "price": -300.0,
+              "unit": "subsidy per cylinder (up to 12/year)",
+              "type": "subsidy",
+              "source": "PMUY / IOCL",
+              "as_of": "2026-04"
+            },
+            "lpg_5kg_domestic": {
+              "price": null,
+              "unit": "per 5 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (bengaluru)",
+              "as_of": "2026-04"
+            },
+            "lpg_19kg_commercial": {
+              "price": 2161.0,
+              "unit": "per 19 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (bengaluru)",
+              "as_of": "2026-04"
+            },
+            "petrol": {
+              "price": 94.77,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (bengaluru)",
+              "as_of": "2026-04"
+            },
+            "diesel": {
+              "price": 87.67,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (bengaluru)",
+              "as_of": "2026-04"
+            }
+          }
+        }
+      }
+    },
+    "cost_of_living_andhra_pradesh": {
+      "id": "cost_of_living_andhra_pradesh",
+      "snapshots": {
+        "2026-04": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2026-04",
+          "fuel": {
+            "lpg_14kg_domestic": {
+              "price": 937.5,
+              "unit": "per 14.2 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (vijayawada)",
+              "as_of": "2026-04"
+            },
+            "lpg_14kg_ujjwala_subsidy": {
+              "price": -300.0,
+              "unit": "subsidy per cylinder (up to 12/year)",
+              "type": "subsidy",
+              "source": "PMUY / IOCL",
+              "as_of": "2026-04"
+            },
+            "lpg_5kg_domestic": {
+              "price": 4743.0,
+              "unit": "per 5 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (vijayawada)",
+              "as_of": "2026-04"
+            },
+            "lpg_19kg_commercial": {
+              "price": 2244.5,
+              "unit": "per 19 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (vijayawada)",
+              "as_of": "2026-04"
+            },
+            "petrol": {
+              "price": 109.32,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (vijayawada)",
+              "as_of": "2026-04"
+            },
+            "diesel": {
+              "price": 97.18,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (vijayawada)",
+              "as_of": "2026-04"
+            }
+          }
+        }
+      }
+    },
+    "cost_of_living_telangana": {
+      "id": "cost_of_living_telangana",
+      "snapshots": {
+        "2026-04": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2026-04",
+          "fuel": {
+            "lpg_14kg_domestic": {
+              "price": 965.0,
+              "unit": "per 14.2 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (hyderabad)",
+              "as_of": "2026-04"
+            },
+            "lpg_14kg_ujjwala_subsidy": {
+              "price": -300.0,
+              "unit": "subsidy per cylinder (up to 12/year)",
+              "type": "subsidy",
+              "source": "PMUY / IOCL",
+              "as_of": "2026-04"
+            },
+            "lpg_5kg_domestic": {
+              "price": 4900.5,
+              "unit": "per 5 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (hyderabad)",
+              "as_of": "2026-04"
+            },
+            "lpg_19kg_commercial": {
+              "price": 2320.5,
+              "unit": "per 19 kg cylinder",
+              "type": "market",
+              "source": "Goodreturns / IOCL (hyderabad)",
+              "as_of": "2026-04"
+            },
+            "petrol": {
+              "price": 107.5,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (hyderabad)",
+              "as_of": "2026-04"
+            },
+            "diesel": {
+              "price": 95.7,
+              "unit": "per litre",
+              "type": "market",
+              "source": "Goodreturns / IOCL (hyderabad)",
+              "as_of": "2026-04"
             }
           }
         }
