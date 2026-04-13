@@ -68,22 +68,22 @@ const LAYER_CONFIG: Record<string, { label: string; order: number }> = {
 };
 
 const NODE_SIZE: Record<string, number> = {
-  state: 18,
-  district: 6,
-  constituency: 3,
-  party: 14,
-  candidate: 2,
-  mla: 6,
-  manifesto_item: 4,
-  sdg_goal: 12,
-  indicator_plfs: 10,
-  indicator_srs: 10,
-  indicator_hces: 10,
-  indicator_udise: 10,
-  indicator_aishe: 10,
-  indicator_ncrb: 10,
-  indicator_asi: 10,
-  indicator_col: 10,
+  state: 8,
+  district: 3,
+  constituency: 2,
+  party: 5,
+  candidate: 1.5,
+  mla: 3,
+  manifesto_item: 2,
+  sdg_goal: 5,
+  indicator_plfs: 4,
+  indicator_srs: 4,
+  indicator_hces: 4,
+  indicator_udise: 4,
+  indicator_aishe: 4,
+  indicator_ncrb: 4,
+  indicator_asi: 4,
+  indicator_col: 4,
 };
 
 // Link distance by verb — spreads clusters apart
@@ -273,7 +273,7 @@ export default function KnowledgeGraphPage() {
 
       // Glow for highlighted important nodes
       const rawSize = NODE_SIZE[node.type] || 3;
-      if (isHighlighted && highlightNodes.size > 0 && rawSize >= 8) {
+      if (isHighlighted && highlightNodes.size > 0 && rawSize >= 4) {
         ctx.beginPath();
         ctx.arc(x, y, baseSize + 4 / Math.max(zoomLevel, 0.3), 0, 2 * Math.PI);
         ctx.fillStyle = node.color + "30";
@@ -287,7 +287,7 @@ export default function KnowledgeGraphPage() {
       ctx.fill();
 
       // Border for indicator/SDG/state/party nodes
-      if (rawSize >= 8) {
+      if (rawSize >= 4) {
         ctx.strokeStyle = isHighlighted ? "#ffffff40" : "#ffffff10";
         ctx.lineWidth = 1;
         ctx.stroke();
