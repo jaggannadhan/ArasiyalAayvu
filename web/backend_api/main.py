@@ -630,12 +630,14 @@ def frequently_browsed(limit: int = Query(6, ge=1, le=20)) -> List[Dict[str, Any
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Knowledge Graph API
-# Collections: plfs, srs, hces, aishe, sdg_index, cost_of_living
+# Collections: plfs, srs, hces, aishe, sdg_index, cost_of_living,
+#              udise, ncrb, asi
 # Firestore structure: {collection}/{entity_slug}/snapshots/{period}
 # ─────────────────────────────────────────────────────────────────────────────
 
 _KG_COLLECTIONS = frozenset({
     "plfs", "srs", "hces", "aishe", "sdg_index", "cost_of_living",
+    "udise", "ncrb", "asi",
 })
 
 # States we have KG data for → their Firestore entity slug (matches ts_utils.slugify)
@@ -723,17 +725,18 @@ def kg_snapshot(collection: str, entity_slug: str, period: str) -> Dict[str, Any
 def state_report(state_slug: str) -> Dict[str, Any]:
     """
     Aggregate all KG datasets for a state into one response.
-    Returns the latest snapshot from: plfs, srs, hces, aishe, sdg_index.
+    Returns the latest snapshot from: plfs, srs, hces, aishe, sdg_index,
+    udise, ncrb, asi.
     For Tamil Nadu also includes cost_of_living_tamil_nadu.
     Always includes cost_of_living_india (fuel prices, national).
-    Includes all_india reference snapshots for plfs, srs, hces.
+    Includes all_india reference snapshots for plfs, srs, hces, udise, asi.
     """
     if state_slug not in _KG_STATE_SLUGS:
         raise HTTPException(status_code=404, detail=f"No state report for: {state_slug}")
     try:
         report: Dict[str, Any] = {"state": state_slug}
 
-        for col in ("plfs", "srs", "hces", "aishe", "sdg_index"):
+        for col in ("plfs", "srs", "hces", "aishe", "sdg_index", "udise", "ncrb", "asi"):
             report[col] = _kg_latest_snapshot(col, state_slug)
 
         report["cost_of_living_india"] = _kg_latest_snapshot(
@@ -746,7 +749,7 @@ def state_report(state_slug: str) -> Dict[str, Any]:
 
         report["all_india"] = {
             col: _kg_latest_snapshot(col, "all_india")
-            for col in ("plfs", "srs", "hces")
+            for col in ("plfs", "srs", "hces", "udise", "asi")
         }
 
         return jsonable_encoder(report)
