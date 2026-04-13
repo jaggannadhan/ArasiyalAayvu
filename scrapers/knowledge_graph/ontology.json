@@ -1,0 +1,207 @@
+{
+  "$schema": "Knowledge Graph Ontology — ArasiyalAayvu",
+  "version": "1.0",
+  "description": "Defines node types, edge verbs, and allowed connections for the political-socioeconomic knowledge graph.",
+
+  "node_types": {
+    "state": {
+      "label": "State",
+      "layer": "foundation",
+      "color": "#1e3a5f",
+      "size_field": "population",
+      "fields": ["name", "slug", "population", "num_districts", "num_constituencies"]
+    },
+    "district": {
+      "label": "District",
+      "layer": "foundation",
+      "color": "#2d5f8a",
+      "size_field": "num_constituencies",
+      "fields": ["name", "slug", "state", "num_constituencies"]
+    },
+    "constituency": {
+      "label": "Constituency",
+      "layer": "foundation",
+      "color": "#4a90d9",
+      "size_field": "electorate",
+      "fields": ["name", "slug", "district", "type", "electorate"]
+    },
+    "party": {
+      "label": "Political Party",
+      "layer": "political",
+      "color": "#e74c3c",
+      "size_field": "seats_2021",
+      "fields": ["name", "abbreviation", "alliance", "seats_2021", "color"]
+    },
+    "candidate": {
+      "label": "Candidate",
+      "layer": "political",
+      "color": "#f39c12",
+      "size_field": null,
+      "fields": ["name", "party", "constituency", "year", "assets", "criminal_cases", "education"]
+    },
+    "mla": {
+      "label": "Sitting MLA",
+      "layer": "political",
+      "color": "#e67e22",
+      "size_field": "assets",
+      "fields": ["name", "party", "constituency", "term", "assets", "criminal_cases"]
+    },
+    "manifesto_item": {
+      "label": "Manifesto Promise",
+      "layer": "political",
+      "color": "#9b59b6",
+      "size_field": null,
+      "fields": ["party", "term", "promise_text", "category", "status", "sdg_goals"]
+    },
+    "sdg_goal": {
+      "label": "SDG Goal",
+      "layer": "bridge",
+      "color": "#27ae60",
+      "size_field": "score",
+      "fields": ["goal_number", "goal_name", "score", "national_avg"]
+    },
+    "indicator_plfs": {
+      "label": "Labour (PLFS)",
+      "layer": "socioeconomic",
+      "color": "#16a085",
+      "size_field": null,
+      "fields": ["unemployment_rate", "lfpr", "worker_population_ratio", "period"]
+    },
+    "indicator_srs": {
+      "label": "Health (SRS)",
+      "layer": "socioeconomic",
+      "color": "#e74c3c",
+      "size_field": null,
+      "fields": ["cbr", "cdr", "imr", "tfr", "mmr", "period"]
+    },
+    "indicator_hces": {
+      "label": "Spending (HCES)",
+      "layer": "socioeconomic",
+      "color": "#f1c40f",
+      "size_field": null,
+      "fields": ["mpce_rural", "mpce_urban", "mpce_combined", "period"]
+    },
+    "indicator_udise": {
+      "label": "School Education (UDISE+)",
+      "layer": "socioeconomic",
+      "color": "#3498db",
+      "size_field": null,
+      "fields": ["ger_primary", "ger_secondary", "dropout_primary", "ptr", "schools_total", "period"]
+    },
+    "indicator_aishe": {
+      "label": "Higher Education (AISHE)",
+      "layer": "socioeconomic",
+      "color": "#2980b9",
+      "size_field": null,
+      "fields": ["ger", "colleges", "faculty", "period"]
+    },
+    "indicator_ncrb": {
+      "label": "Crime (NCRB)",
+      "layer": "socioeconomic",
+      "color": "#c0392b",
+      "size_field": null,
+      "fields": ["total_ipc_crimes", "crimes_against_women", "crimes_against_children", "crimes_against_sc", "crimes_against_st", "period"]
+    },
+    "indicator_asi": {
+      "label": "Industry (ASI)",
+      "layer": "socioeconomic",
+      "color": "#8e44ad",
+      "size_field": null,
+      "fields": ["factories", "gva_cr", "total_output_cr", "nva_cr", "period"]
+    },
+    "indicator_col": {
+      "label": "Cost of Living",
+      "layer": "socioeconomic",
+      "color": "#d35400",
+      "size_field": null,
+      "fields": ["petrol", "diesel", "lpg_14kg", "period"]
+    }
+  },
+
+  "edge_verbs": {
+    "contains": {
+      "label": "contains",
+      "type": "structural",
+      "description": "Geographic containment (state→district→constituency)"
+    },
+    "belongs_to": {
+      "label": "belongs to",
+      "type": "structural",
+      "description": "Membership (candidate→party, constituency→district)"
+    },
+    "contests": {
+      "label": "contests",
+      "type": "political",
+      "description": "Candidate stands for election in constituency"
+    },
+    "represents": {
+      "label": "represents",
+      "type": "political",
+      "description": "Sitting MLA represents constituency"
+    },
+    "promised": {
+      "label": "promised",
+      "type": "policy_to_outcome",
+      "description": "Party made a manifesto commitment"
+    },
+    "targets_goal": {
+      "label": "targets SDG goal",
+      "type": "policy_to_outcome",
+      "description": "Manifesto item maps to an SDG goal"
+    },
+    "measured_by": {
+      "label": "measured by",
+      "type": "policy_to_outcome",
+      "description": "SDG goal's progress is tracked by a socioeconomic indicator"
+    },
+    "describes": {
+      "label": "describes",
+      "type": "contextual",
+      "description": "Socioeconomic indicator measures an aspect of a state"
+    },
+    "influences": {
+      "label": "influences",
+      "type": "causal",
+      "description": "One indicator causally influences another (expert-defined)"
+    }
+  },
+
+  "allowed_connections": [
+    {"from": "state",           "verb": "contains",     "to": "district"},
+    {"from": "district",        "verb": "contains",     "to": "constituency"},
+    {"from": "candidate",       "verb": "belongs_to",   "to": "party"},
+    {"from": "candidate",       "verb": "contests",     "to": "constituency"},
+    {"from": "mla",             "verb": "belongs_to",   "to": "party"},
+    {"from": "mla",             "verb": "represents",   "to": "constituency"},
+    {"from": "party",           "verb": "promised",     "to": "manifesto_item"},
+    {"from": "manifesto_item",  "verb": "targets_goal", "to": "sdg_goal"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_plfs"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_srs"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_hces"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_udise"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_aishe"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_ncrb"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_asi"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_col"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_plfs"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_srs"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_hces"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_udise"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_aishe"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_ncrb"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_asi"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_col"},
+    {"from": "indicator_plfs",  "verb": "influences",   "to": "indicator_ncrb",  "note": "unemployment ↔ crime"},
+    {"from": "indicator_udise", "verb": "influences",   "to": "indicator_plfs",  "note": "education → employability"},
+    {"from": "indicator_asi",   "verb": "influences",   "to": "indicator_plfs",  "note": "industrial growth → employment"},
+    {"from": "indicator_col",   "verb": "influences",   "to": "indicator_hces",  "note": "cost of living → household spending"},
+    {"from": "indicator_srs",   "verb": "influences",   "to": "indicator_udise", "note": "demographics → school demand"}
+  ],
+
+  "layers": {
+    "foundation":    {"label": "Foundation (Static)",     "z_order": 0},
+    "political":     {"label": "Political Incentives",    "z_order": 1},
+    "bridge":        {"label": "Bridge (SDG Goals)",      "z_order": 2},
+    "socioeconomic": {"label": "Social Pulse",            "z_order": 3}
+  }
+}
