@@ -331,15 +331,29 @@ export default function KnowledgeGraphPage() {
 
       // Semantic zoom labels — show based on zoom level and node type
       // Font size stays constant in screen pixels (divide by zoom to counteract canvas scaling)
+      // Labels are offset in different directions based on node ID hash to avoid overlap
       const threshold = LABEL_ZOOM_THRESHOLD[node.type] ?? 3;
       if (zoomLevel >= threshold && isHighlighted) {
         const fontSize = 10 / zoomLevel;
         ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
+
+        // Hash node ID to pick a label direction (8 directions)
+        let hash = 0;
+        for (let i = 0; i < node.id.length; i++) hash = ((hash << 5) - hash + node.id.charCodeAt(i)) | 0;
+        const dir = ((hash % 8) + 8) % 8;
+        const offset = baseSize + fontSize * 0.5;
+        const angles = [0, Math.PI / 4, Math.PI / 2, (3 * Math.PI) / 4, Math.PI, (5 * Math.PI) / 4, (3 * Math.PI) / 2, (7 * Math.PI) / 4];
+        const angle = angles[dir];
+        const lx = x + Math.cos(angle) * offset;
+        const ly = y + Math.sin(angle) * offset;
+
+        // Align text based on direction
+        const cos = Math.cos(angle);
+        ctx.textAlign = cos > 0.3 ? "left" : cos < -0.3 ? "right" : "center";
+        ctx.textBaseline = Math.sin(angle) > 0.3 ? "top" : Math.sin(angle) < -0.3 ? "bottom" : "middle";
         ctx.fillStyle = isHighlighted ? "#e5e7eb" : "#6b728060";
         const maxLen = zoomLevel > 3 ? 40 : 20;
-        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + fontSize * 0.3);
+        ctx.fillText(node.label.slice(0, maxLen), lx, ly);
       }
     },
     [highlightNodes, zoomLevel]
