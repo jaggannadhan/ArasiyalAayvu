@@ -314,15 +314,16 @@ export default function KnowledgeGraphPage() {
       }
 
       // Semantic zoom labels — show based on zoom level and node type
+      // Font size stays constant in screen pixels (divide by zoom to counteract canvas scaling)
       const threshold = LABEL_ZOOM_THRESHOLD[node.type] ?? 3;
       if (zoomLevel >= threshold && isHighlighted) {
-        const fontSize = Math.max(2, Math.min(10, rawSize * 0.7)) / Math.max(zoomLevel, 0.3);
+        const fontSize = 10 / zoomLevel;
         ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.fillStyle = isHighlighted ? "#e5e7eb" : "#6b728060";
         const maxLen = zoomLevel > 3 ? 40 : 20;
-        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + 1);
+        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + fontSize * 0.3);
       }
     },
     [highlightNodes, zoomLevel]
@@ -345,13 +346,14 @@ export default function KnowledgeGraphPage() {
       const isBridge = ["targets_goal", "measured_by", "influences", "promised"].includes(verb);
       const baseWidth = isBridge ? 1.2 : 0.4;
 
+      const zScale = 1 / Math.max(zoomLevel, 0.3);
+
       if (!isHighlighted) {
-        // Dim non-highlighted edges
         ctx.beginPath();
         ctx.moveTo(src.x, src.y);
         ctx.lineTo(tgt.x, tgt.y);
         ctx.strokeStyle = "#ffffff06";
-        ctx.lineWidth = 0.15;
+        ctx.lineWidth = 0.15 * zScale;
         ctx.stroke();
         return;
       }
@@ -360,12 +362,12 @@ export default function KnowledgeGraphPage() {
       ctx.moveTo(src.x, src.y);
       ctx.lineTo(tgt.x, tgt.y);
       ctx.strokeStyle = VERB_COLORS[verb] || "#6b7280";
-      ctx.lineWidth = hasSelection ? baseWidth * 2.5 : baseWidth;
+      ctx.lineWidth = (hasSelection ? baseWidth * 2.5 : baseWidth) * zScale;
       ctx.globalAlpha = hasSelection ? 1 : (isBridge ? 0.6 : 0.25);
       ctx.stroke();
       ctx.globalAlpha = 1;
     },
-    [highlightEdges]
+    [highlightEdges, zoomLevel]
   );
 
   // ─── Render ──────────────────────────────────────────────────────────────
