@@ -739,13 +739,9 @@ def state_report(state_slug: str) -> Dict[str, Any]:
         for col in ("plfs", "srs", "hces", "aishe", "sdg_index", "udise", "ncrb", "asi"):
             report[col] = _kg_latest_snapshot(col, state_slug)
 
-        report["cost_of_living_india"] = _kg_latest_snapshot(
-            "cost_of_living", "cost_of_living_india"
+        report["cost_of_living"] = _kg_latest_snapshot(
+            "cost_of_living", f"cost_of_living_{state_slug}"
         )
-        if state_slug == "tamil_nadu":
-            report["cost_of_living_tn"] = _kg_latest_snapshot(
-                "cost_of_living", "cost_of_living_tamil_nadu"
-            )
 
         report["all_india"] = {
             col: _kg_latest_snapshot(col, "all_india")

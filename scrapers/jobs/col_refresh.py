@@ -1,18 +1,16 @@
 """
-Job: 6-monthly Cost-of-Living refresh (Tamil Nadu non-fuel)
+Job: 6-monthly Cost-of-Living refresh — all 5 focus states
 Schedule: 1st April and 1st October, 07:00 IST
 
-Scrapes what's automatable:
-  - Aavin dairy prices (LiveChennai)
+Runs fuel_refresh first (all 5 states), then adds TN-specific data:
+  - Scrapes Aavin dairy prices (LiveChennai)
+  - Carries forward electricity/PDS/transport/healthcare from previous snapshot
+  - Flags sections requiring manual verification
 
-Flags what requires manual verification:
-  - Electricity slabs (TNERC quarterly orders — check tnebbillcalculator.info)
-  - PDS ration prices (government policy, changes rarely)
-  - Transport fares (TNSTC/MTC/Metro, changes by government order)
-  - Healthcare (private hospital packages, changes annually)
+Other states get fuel-only snapshots (written by fuel_refresh).
 
-Creates a new snapshot in:
-  cost_of_living/cost_of_living_tamil_nadu/snapshots/{YYYY-MM}
+Creates/updates snapshots in:
+  cost_of_living/cost_of_living_{state_slug}/snapshots/{YYYY-MM}
 
 Run:
     .venv/bin/python3 scrapers/jobs/col_refresh.py
@@ -25,6 +23,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -34,13 +33,16 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(ROOT / "scrapers"))
-from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore, get_firestore_client
-import col_ingest  # pull the current hardcoded data blocks
+from ts_utils import (
+    load_timeseries, upsert_snapshot, save_timeseries,
+    upload_snapshot_to_firestore, get_firestore_client,
+)
+import col_ingest  # pull the current hardcoded TN data blocks
 
-TS_PATH = ROOT / "data" / "processed" / "col_ts.json"
-ENTITY  = "Cost_of_Living_Tamil_Nadu"
-HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-TIMEOUT = 20
+TS_PATH   = ROOT / "data" / "processed" / "col_ts.json"
+TN_ENTITY = "cost_of_living_tamil_nadu"
+HEADERS   = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+TIMEOUT   = 20
 
 MANUAL_CHECKS = [
     {
@@ -81,8 +83,6 @@ def fetch_aavin_prices() -> dict:
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # Second table: Aavin Milk Products | Old Price | New Price | Retail Price
-    # Rows: Blue (toned), Green (standardised), Orange (full cream), Magenta
     tables = soup.find_all("table")
     if len(tables) < 2:
         raise RuntimeError("Expected at least 2 tables on LiveChennai Aavin page")
@@ -91,19 +91,17 @@ def fetch_aavin_prices() -> dict:
         "blue":    "toned",
         "green":   "standardised",
         "orange":  "full_cream",
-        "magenta": "full_cream_cardholder",  # Aavin card variant
+        "magenta": "full_cream_cardholder",
     }
 
     prices: dict[str, float] = {}
-    for row in tables[1].find_all("tr")[1:]:  # skip header
+    for row in tables[1].find_all("tr")[1:]:
         cells = [c.get_text(strip=True) for c in row.find_all("td")]
         if len(cells) < 3:
             continue
         colour = cells[0].lower()
         key = colour_to_type.get(colour)
         if key:
-            # columns: colour | old_price | new_price | retail_price
-            # use retail_price (last column) as the definitive price
             price = _parse_inr(cells[-1])
             if price:
                 prices[key] = price
@@ -113,11 +111,8 @@ def fetch_aavin_prices() -> dict:
     return prices
 
 
-def build_snapshot(aavin: dict, prev_snapshot: dict | None) -> dict:
-    """
-    Build the new TN snapshot. For non-scraped sections, carry forward
-    the previous snapshot's values (so history is preserved, not blanked).
-    """
+def build_tn_snapshot(aavin: dict, prev_snapshot: dict | None) -> dict:
+    """Build TN snapshot: fresh dairy + carried-forward non-scraped sections."""
     period = date.today().strftime("%Y-%m")
     prev = prev_snapshot or {}
 
@@ -161,7 +156,7 @@ def build_snapshot(aavin: dict, prev_snapshot: dict | None) -> dict:
         "transport":          prev.get("transport",          col_ingest.COL_DATA["transport"]),
         "healthcare":         prev.get("healthcare",         col_ingest.COL_DATA["healthcare"]),
         "_refresh_note": {
-            "auto_refreshed": ["food_dairy.milk_aavin_*"],
+            "auto_refreshed": ["food_dairy.milk_aavin_*", "fuel (via fuel_refresh.py)"],
             "carried_forward": ["electricity", "pds_infrastructure", "ration_pds", "transport", "healthcare"],
             "manual_checks_pending": [c["field"] for c in MANUAL_CHECKS],
         },
@@ -170,7 +165,7 @@ def build_snapshot(aavin: dict, prev_snapshot: dict | None) -> dict:
 
 def print_manual_checklist():
     print("\n" + "━" * 60)
-    print("  MANUAL VERIFICATION REQUIRED")
+    print("  MANUAL VERIFICATION REQUIRED (Tamil Nadu)")
     print("  The following sections were carried forward from the")
     print("  previous snapshot. Verify before marking as reviewed.")
     print("━" * 60)
@@ -191,40 +186,64 @@ def main():
     args = parser.parse_args()
 
     period = date.today().strftime("%Y-%m")
-    print(f"CoL (non-fuel) refresh — period: {period}")
+    print(f"CoL refresh — period: {period}")
 
-    # Get previous TN snapshot to carry forward non-scraped sections
+    # ── Step 1: Run fuel_refresh for ALL 5 states ──
+    print("\n" + "=" * 60)
+    print("  Step 1: Fuel prices (all 5 states)")
+    print("=" * 60)
+    fuel_args = [sys.executable, str(ROOT / "scrapers" / "jobs" / "fuel_refresh.py")]
+    if args.dry_run:
+        fuel_args.append("--dry-run")
+    result = subprocess.run(fuel_args)
+    if result.returncode != 0:
+        print("  WARNING: fuel_refresh failed, continuing with TN-specific data...")
+
+    # ── Step 2: TN-specific non-fuel data (dairy, electricity, etc.) ──
+    print("\n" + "=" * 60)
+    print("  Step 2: Tamil Nadu non-fuel data")
+    print("=" * 60)
+
     ts = load_timeseries(TS_PATH)
-    entity_snaps = ts.get("entities", {}).get(ENTITY, {}).get("snapshots", {})
+    entity_snaps = ts.get("entities", {}).get(TN_ENTITY, {}).get("snapshots", {})
     prev_period = sorted(entity_snaps.keys())[-1] if entity_snaps else None
     prev_snapshot = entity_snaps.get(prev_period) if prev_period else None
     if prev_period:
-        print(f"  Previous snapshot: {prev_period} — carrying forward non-scraped sections")
+        print(f"  Previous TN snapshot: {prev_period}")
 
     print("  Fetching Aavin milk prices from LiveChennai...")
-    aavin = fetch_aavin_prices()
-    print(f"    Toned           ₹{aavin.get('toned')}/litre")
-    print(f"    Standardised    ₹{aavin.get('standardised')}/litre")
-    print(f"    Full cream      ₹{aavin.get('full_cream')}/litre")
-    print(f"    Full cream card ₹{aavin.get('full_cream_cardholder')}/litre")
+    try:
+        aavin = fetch_aavin_prices()
+        print(f"    Toned           ₹{aavin.get('toned')}/litre")
+        print(f"    Standardised    ₹{aavin.get('standardised')}/litre")
+        print(f"    Full cream      ₹{aavin.get('full_cream')}/litre")
+    except Exception as e:
+        print(f"    ERROR fetching Aavin: {e}")
+        print("    Using previous values...")
+        aavin = {}
 
-    snapshot = build_snapshot(aavin, prev_snapshot)
+    tn_extras = build_tn_snapshot(aavin, prev_snapshot)
 
     if not args.skip_manual_check:
         print_manual_checklist()
 
     if args.dry_run:
-        print("\n[dry-run] Snapshot (not written):")
-        print(json.dumps({"food_dairy": snapshot["food_dairy"], "_refresh_note": snapshot["_refresh_note"]}, indent=2, ensure_ascii=False))
+        print("\n[dry-run] TN extras (not written):")
+        print(json.dumps({"food_dairy": tn_extras["food_dairy"]}, indent=2, ensure_ascii=False))
         return
 
-    upsert_snapshot(ts, ENTITY, period, snapshot)
+    # Merge TN extras into existing snapshot (which already has fuel from Step 1)
+    ts = load_timeseries(TS_PATH)  # reload after fuel_refresh wrote
+    existing = ts.get("entities", {}).get(TN_ENTITY, {}).get("snapshots", {}).get(period, {})
+    snapshot = {**existing, **tn_extras}
+
+    upsert_snapshot(ts, TN_ENTITY, period, snapshot)
     save_timeseries(ts, TS_PATH)
-    print(f"\n  Saved snapshot {ENTITY}/{period} to {TS_PATH}")
+    print(f"\n  Saved TN snapshot {TN_ENTITY}/{period} to {TS_PATH}")
 
     db = get_firestore_client()
-    upload_snapshot_to_firestore(db, "cost_of_living", ENTITY, period, snapshot)
-    print(f"  Uploaded to Firestore: cost_of_living/{ENTITY.lower().replace(' ','_')}/snapshots/{period}")
+    upload_snapshot_to_firestore(db, "cost_of_living", TN_ENTITY, period, snapshot)
+    print(f"  Uploaded to Firestore: cost_of_living/{TN_ENTITY}/snapshots/{period}")
 
 
 if __name__ == "__main__":

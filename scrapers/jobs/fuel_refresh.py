@@ -1,14 +1,22 @@
 """
-Job: Monthly fuel price refresh (Chennai)
+Job: Monthly fuel price refresh — all 5 focus states
 Schedule: 1st of every month, 06:30 IST
 
-Scrapes LPG, petrol, diesel prices from Goodreturns and creates a new
-snapshot in cost_of_living/cost_of_living_india/snapshots/{YYYY-MM}.
+Scrapes LPG, petrol, diesel prices from Goodreturns for each state capital
+and creates/updates snapshots in:
+  cost_of_living/cost_of_living_{state_slug}/snapshots/{YYYY-MM}
 
-Sources (confirmed working, IOCL direct URLs always redirect):
-  LPG   — goodreturns.in/lpg-price-in-chennai.html
-  Petrol — goodreturns.in/petrol-price-in-chennai.html
-  Diesel — goodreturns.in/diesel-price-in-chennai.html
+Cities scraped:
+  Tamil Nadu     → Chennai
+  Kerala         → Kochi
+  Karnataka      → Bengaluru
+  Andhra Pradesh → Vijayawada
+  Telangana      → Hyderabad
+
+Sources (confirmed working):
+  LPG    — goodreturns.in/lpg-price-in-{city}.html
+  Petrol — goodreturns.in/petrol-price-in-{city}.html
+  Diesel — goodreturns.in/diesel-price-in-{city}.html
 
 Run:
     .venv/bin/python3 scrapers/jobs/fuel_refresh.py
@@ -28,14 +36,29 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(ROOT / "scrapers"))
-from ts_utils import load_timeseries, upsert_snapshot, save_timeseries, upload_snapshot_to_firestore, get_firestore_client
+from ts_utils import (
+    load_timeseries, upsert_snapshot, save_timeseries,
+    upload_snapshot_to_firestore, get_firestore_client,
+)
 
-TS_PATH   = ROOT / "data" / "processed" / "col_ts.json"
-ENTITY    = "Cost_of_Living_India"
-HEADERS   = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
-TIMEOUT   = 20
+TS_PATH = ROOT / "data" / "processed" / "col_ts.json"
+HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+TIMEOUT = 20
 
-PMUY_SUBSIDY = -300.00   # ₹300/cylinder, up to 12/year — policy-driven, not scraped
+PMUY_SUBSIDY = -300.00  # ₹300/cylinder, up to 12/year — policy-driven
+
+# (state_display_name, entity_slug, goodreturns_city_slug, lpg_state_name)
+# lpg_state_name: row label in Goodreturns state-wise LPG table (Table 1)
+# Some cities (Chennai, Hyderabad, Vijayawada) have city-specific LPG pages
+# with a direct Type|Price table. Others (Kochi, Bengaluru) only have a
+# state-wise table where we look up by state name.
+STATES: list[tuple[str, str, str, str]] = [
+    ("Tamil Nadu",      "cost_of_living_tamil_nadu",      "chennai",    "Tamil Nadu"),
+    ("Kerala",          "cost_of_living_kerala",          "kochi",      "Kerala"),
+    ("Karnataka",       "cost_of_living_karnataka",       "bengaluru",  "Karnataka"),
+    ("Andhra Pradesh",  "cost_of_living_andhra_pradesh",  "vijayawada", "Andhra Pradesh"),
+    ("Telangana",       "cost_of_living_telangana",       "hyderabad",  "Telangana"),
+]
 
 
 def _parse_inr(text: str) -> float:
@@ -47,112 +70,135 @@ def _parse_inr(text: str) -> float:
     return float(match.group())
 
 
-def fetch_lpg() -> dict:
-    """Scrape LPG 14.2 kg domestic + 5 kg + 19 kg commercial from Goodreturns."""
-    url = "https://www.goodreturns.in/lpg-price-in-chennai.html"
+def fetch_lpg(city: str, state_name: str) -> dict:
+    """Scrape LPG 14.2 kg domestic + 5 kg + 19 kg commercial from Goodreturns.
+
+    Goodreturns has two page layouts:
+      - City-specific (Chennai, Hyderabad): Table 0 = Type|Price|Change
+      - Generic (Kochi, Bengaluru): Table 0 = metro cities, Table 1 = state-wise
+    We try the Type|Price table first, fall back to state-wise lookup.
+    """
+    url = f"https://www.goodreturns.in/lpg-price-in-{city}.html"
     r = httpx.get(url, headers=HEADERS, follow_redirects=True, timeout=TIMEOUT)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 
     tables = soup.find_all("table")
     if not tables:
-        raise RuntimeError("No tables found on LPG page")
+        raise RuntimeError(f"No tables found on LPG page for {city}")
 
-    # First table: Type | Price | Price Change
     prices: dict[str, float] = {}
+
+    # Strategy 1: city-specific page — Table 0 has Type|Price rows (td only, skip th)
     for row in tables[0].find_all("tr"):
-        cells = [c.get_text(strip=True) for c in row.find_all(["th", "td"])]
+        cells = [c.get_text(strip=True) for c in row.find_all("td")]
         if len(cells) < 2:
             continue
         label = cells[0].lower()
-        if "14.2" in label:
-            prices["lpg_14kg_domestic"] = _parse_inr(cells[1])
-        elif re.search(r'\b5\s*kg\b', label):
-            prices["lpg_5kg_domestic"] = _parse_inr(cells[1])
-        elif "19 kg" in label or "19kg" in label:
-            prices["lpg_19kg_commercial"] = _parse_inr(cells[1])
+        try:
+            if "domestic" in label and "14.2" in label:
+                prices["lpg_14kg_domestic"] = _parse_inr(cells[1])
+            elif re.search(r"\b5\s*kg\b", label):
+                prices["lpg_5kg_domestic"] = _parse_inr(cells[1])
+            elif "commercial" in label and "19" in label:
+                prices["lpg_19kg_commercial"] = _parse_inr(cells[1])
+        except ValueError:
+            continue
+
+    if "lpg_14kg_domestic" in prices:
+        return prices
+
+    # Strategy 2: state-wise table (Table 1) — find row matching state_name
+    if len(tables) >= 2:
+        for row in tables[1].find_all("tr"):
+            cells = [c.get_text(strip=True) for c in row.find_all("td")]
+            if len(cells) >= 2 and cells[0].strip().lower() == state_name.lower():
+                try:
+                    prices["lpg_14kg_domestic"] = _parse_inr(cells[1])
+                except ValueError:
+                    pass
+                if len(cells) >= 3:
+                    try:
+                        prices["lpg_19kg_commercial"] = _parse_inr(cells[2])
+                    except ValueError:
+                        pass
+                break
 
     if "lpg_14kg_domestic" not in prices:
-        raise RuntimeError(f"Could not parse LPG 14.2 kg price. Rows: {[r.get_text() for r in tables[0].find_all('tr')[:5]]}")
+        raise RuntimeError(f"Could not parse LPG price for {city} / {state_name}")
 
     return prices
 
 
-def fetch_petrol_diesel() -> dict:
-    """Scrape today's petrol + diesel price in Chennai from Goodreturns."""
+def fetch_petrol_diesel(city: str) -> dict:
+    """Scrape today's petrol + diesel price from Goodreturns for a city."""
     results = {}
-    for fuel, path in [("petrol", "petrol-price-in-chennai"), ("diesel", "diesel-price-in-chennai")]:
-        url = f"https://www.goodreturns.in/{path}.html"
+    for fuel, slug in [("petrol", f"petrol-price-in-{city}"), ("diesel", f"diesel-price-in-{city}")]:
+        url = f"https://www.goodreturns.in/{slug}.html"
         r = httpx.get(url, headers=HEADERS, follow_redirects=True, timeout=TIMEOUT)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, "html.parser")
 
         tables = soup.find_all("table")
         if not tables:
-            raise RuntimeError(f"No tables on {fuel} page")
+            raise RuntimeError(f"No tables on {fuel} page for {city}")
 
-        # First table: Date | Price | Price Change — first data row = today
-        rows = tables[0].find_all("tr")
-        for row in rows[1:]:  # skip header
+        for row in tables[0].find_all("tr")[1:]:
             cells = [c.get_text(strip=True) for c in row.find_all("td")]
             if len(cells) >= 2:
                 results[fuel] = _parse_inr(cells[1])
                 break
 
         if fuel not in results:
-            raise RuntimeError(f"Could not parse {fuel} price")
+            raise RuntimeError(f"Could not parse {fuel} price for {city}")
 
     return results
 
 
-def build_snapshot(lpg: dict, petdsl: dict) -> dict:
-    period = date.today().strftime("%Y-%m")
+def build_fuel_snapshot(lpg: dict, petdsl: dict, city: str, period: str) -> dict:
     return {
-        "fuel": {
-            "lpg_14kg_domestic": {
-                "price": lpg["lpg_14kg_domestic"],
-                "unit": "per 14.2 kg cylinder",
-                "type": "market",
-                "source": "Goodreturns / IOCL",
-                "as_of": period,
-            },
-            "lpg_14kg_ujjwala_subsidy": {
-                "price": PMUY_SUBSIDY,
-                "unit": "subsidy per cylinder (up to 12/year)",
-                "type": "subsidy",
-                "source": "PMUY / IOCL",
-                "as_of": period,
-                "notes": "₹300 credited to beneficiary bank account; effective cost = lpg_14kg_domestic + subsidy",
-            },
-            "lpg_5kg_domestic": {
-                "price": lpg.get("lpg_5kg_domestic"),
-                "unit": "per 5 kg cylinder",
-                "type": "market",
-                "source": "Goodreturns / IOCL",
-                "as_of": period,
-            },
-            "lpg_19kg_commercial": {
-                "price": lpg.get("lpg_19kg_commercial"),
-                "unit": "per 19 kg cylinder",
-                "type": "market",
-                "source": "Goodreturns / IOCL",
-                "as_of": period,
-            },
-            "petrol": {
-                "price": petdsl["petrol"],
-                "unit": "per litre",
-                "type": "market",
-                "source": "Goodreturns / IOCL",
-                "as_of": period,
-            },
-            "diesel": {
-                "price": petdsl["diesel"],
-                "unit": "per litre",
-                "type": "market",
-                "source": "Goodreturns / IOCL",
-                "as_of": period,
-            },
-        }
+        "lpg_14kg_domestic": {
+            "price": lpg["lpg_14kg_domestic"],
+            "unit": "per 14.2 kg cylinder",
+            "type": "market",
+            "source": f"Goodreturns / IOCL ({city})",
+            "as_of": period,
+        },
+        "lpg_14kg_ujjwala_subsidy": {
+            "price": PMUY_SUBSIDY,
+            "unit": "subsidy per cylinder (up to 12/year)",
+            "type": "subsidy",
+            "source": "PMUY / IOCL",
+            "as_of": period,
+        },
+        "lpg_5kg_domestic": {
+            "price": lpg.get("lpg_5kg_domestic"),
+            "unit": "per 5 kg cylinder",
+            "type": "market",
+            "source": f"Goodreturns / IOCL ({city})",
+            "as_of": period,
+        },
+        "lpg_19kg_commercial": {
+            "price": lpg.get("lpg_19kg_commercial"),
+            "unit": "per 19 kg cylinder",
+            "type": "market",
+            "source": f"Goodreturns / IOCL ({city})",
+            "as_of": period,
+        },
+        "petrol": {
+            "price": petdsl["petrol"],
+            "unit": "per litre",
+            "type": "market",
+            "source": f"Goodreturns / IOCL ({city})",
+            "as_of": period,
+        },
+        "diesel": {
+            "price": petdsl["diesel"],
+            "unit": "per litre",
+            "type": "market",
+            "source": f"Goodreturns / IOCL ({city})",
+            "as_of": period,
+        },
     }
 
 
@@ -164,36 +210,48 @@ def main():
     period = date.today().strftime("%Y-%m")
     print(f"Fuel price refresh — period: {period}")
 
-    print("  Fetching LPG prices from Goodreturns...")
-    lpg = fetch_lpg()
-    print(f"    LPG 14.2 kg  ₹{lpg['lpg_14kg_domestic']}")
-    print(f"    LPG 5 kg     ₹{lpg.get('lpg_5kg_domestic', 'N/A')}")
-    print(f"    LPG 19 kg    ₹{lpg.get('lpg_19kg_commercial', 'N/A')}")
-
-    print("  Fetching petrol/diesel prices from Goodreturns...")
-    petdsl = fetch_petrol_diesel()
-    print(f"    Petrol       ₹{petdsl['petrol']}/litre")
-    print(f"    Diesel       ₹{petdsl['diesel']}/litre")
-
-    snapshot = build_snapshot(lpg, petdsl)
-
-    if args.dry_run:
-        import json
-        print("\n[dry-run] Snapshot (not written):")
-        print(json.dumps(snapshot, indent=2, ensure_ascii=False))
-        return
-
     ts = load_timeseries(TS_PATH)
-    upsert_snapshot(ts, ENTITY, period, snapshot, meta={
-        "dataset": "cost_of_living",
-        "note": "Cost_of_Living_India = national fuel prices (Chennai reference). Auto-refreshed monthly.",
-    })
-    save_timeseries(ts, TS_PATH)
-    print(f"\n  Saved snapshot {ENTITY}/{period} to {TS_PATH}")
+    db = None if args.dry_run else get_firestore_client()
+    total = 0
 
-    db = get_firestore_client()
-    upload_snapshot_to_firestore(db, "cost_of_living", ENTITY, period, snapshot["fuel"] | {"data_period": period})
-    print(f"  Uploaded to Firestore: cost_of_living/{ENTITY.lower().replace(' ', '_')}/snapshots/{period}")
+    for state_name, entity_slug, city, lpg_state in STATES:
+        print(f"\n── {state_name} ({city}) ──")
+        try:
+            lpg = fetch_lpg(city, lpg_state)
+            print(f"  LPG 14.2 kg  ₹{lpg['lpg_14kg_domestic']}")
+
+            petdsl = fetch_petrol_diesel(city)
+            print(f"  Petrol       ₹{petdsl['petrol']}/litre")
+            print(f"  Diesel       ₹{petdsl['diesel']}/litre")
+
+            fuel_snapshot = build_fuel_snapshot(lpg, petdsl, city, period)
+
+            if args.dry_run:
+                continue
+
+            # Merge fuel into existing snapshot (preserve non-fuel fields like dairy, electricity)
+            existing_snaps = ts.get("entities", {}).get(entity_slug, {}).get("snapshots", {})
+            prev = existing_snaps.get(period, {})
+            snapshot = {**prev, "fuel": fuel_snapshot}
+
+            upsert_snapshot(ts, entity_slug, period, snapshot, meta={
+                "dataset": "cost_of_living",
+                "note": f"Cost of living for {state_name}. Fuel prices auto-refreshed monthly.",
+            } if total == 0 else None)
+
+            upload_snapshot_to_firestore(
+                db, "cost_of_living", entity_slug, period,
+                snapshot,
+            )
+            print(f"  Uploaded: cost_of_living/{entity_slug}/snapshots/{period}")
+            total += 1
+
+        except Exception as e:
+            print(f"  ERROR: {e}")
+
+    if not args.dry_run:
+        save_timeseries(ts, TS_PATH)
+        print(f"\nSaved {TS_PATH}  ({total} state snapshots updated)")
 
 
 if __name__ == "__main__":
