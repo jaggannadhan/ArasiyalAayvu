@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "dataset": "asi",
+    "source": "Annual Survey of Industries (MOSPI)",
+    "url": "https://www.mospi.gov.in/asi-summary-results",
+    "note": "Factory sector. Monetary values in ₹ crore. Focus states + All India.",
+    "last_updated": "2026-04-13"
+  },
+  "entities": {
+    "All-India": {
+      "id": "all_india",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 260061,
+          "fixed_capital_cr": 4624.09,
+          "total_output_cr": 15327.17,
+          "total_input_cr": 12868.83,
+          "gva_cr": 2458.34,
+          "nva_cr": 2103.14
+        }
+      }
+    },
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 16011,
+          "fixed_capital_cr": 251.9,
+          "total_output_cr": 683.62,
+          "total_input_cr": 584.77,
+          "gva_cr": 98.86,
+          "nva_cr": 80.07
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 14984,
+          "fixed_capital_cr": 282.35,
+          "total_output_cr": 985.58,
+          "total_input_cr": 801.84,
+          "gva_cr": 183.75,
+          "nva_cr": 161.59
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 7528,
+          "fixed_capital_cr": 60.89,
+          "total_output_cr": 264.19,
+          "total_input_cr": 224.47,
+          "gva_cr": 39.72,
+          "nva_cr": 34.75
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 40121,
+          "fixed_capital_cr": 374.27,
+          "total_output_cr": 1549.4,
+          "total_input_cr": 1297.22,
+          "gva_cr": 252.18,
+          "nva_cr": 213.96
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "factories": 13446,
+          "fixed_capital_cr": 123.06,
+          "total_output_cr": 409.86,
+          "total_input_cr": 327.88,
+          "gva_cr": 81.99,
+          "nva_cr": 71.18
+        }
+      }
+    }
+  }
+}

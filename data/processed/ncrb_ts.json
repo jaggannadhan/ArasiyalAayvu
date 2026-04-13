@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "dataset": "ncrb",
+    "source": "NCRB Crime in India — Additional Tables (States/UTs)",
+    "url": "https://www.ncrb.gov.in/crime-in-india-additional-table",
+    "note": "Cases registered during the year. Focus states + All India.",
+    "last_updated": "2026-04-13"
+  },
+  "entities": {
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 3561379.0,
+          "crimes_against_women": 445256.0,
+          "crimes_against_children": 162449.0,
+          "crimes_against_sc": 57582.0,
+          "crimes_against_st": 10064.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 3663360.0,
+          "crimes_against_women": 428278.0,
+          "crimes_against_children": 149404.0,
+          "crimes_against_sc": 50900.0,
+          "crimes_against_st": 8802.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 4254356.0,
+          "crimes_against_women": 371503.0,
+          "crimes_against_children": 128531.0,
+          "crimes_against_sc": 50291.0,
+          "crimes_against_st": 8272.0
+        }
+      }
+    },
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 158547.0,
+          "crimes_against_women": 25503.0,
+          "crimes_against_children": 3308.0,
+          "crimes_against_sc": 2315.0,
+          "crimes_against_st": 396.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 179611.0,
+          "crimes_against_women": 17752.0,
+          "crimes_against_children": 2669.0,
+          "crimes_against_sc": 2014.0,
+          "crimes_against_st": 361.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 188997.0,
+          "crimes_against_women": 17089.0,
+          "crimes_against_children": 2648.0,
+          "crimes_against_sc": 1950.0,
+          "crimes_against_st": 320.0
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 129461.0,
+          "crimes_against_women": 17813.0,
+          "crimes_against_children": 7988.0,
+          "crimes_against_sc": 1977.0,
+          "crimes_against_st": 438.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 115728.0,
+          "crimes_against_women": 14468.0,
+          "crimes_against_children": 7261.0,
+          "crimes_against_sc": 1673.0,
+          "crimes_against_st": 361.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 106350.0,
+          "crimes_against_women": 12680.0,
+          "crimes_against_children": 5471.0,
+          "crimes_against_sc": 1398.0,
+          "crimes_against_st": 293.0
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 235858.0,
+          "crimes_against_women": 15213.0,
+          "crimes_against_children": 5640.0,
+          "crimes_against_sc": 1050.0,
+          "crimes_against_st": 172.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 142643.0,
+          "crimes_against_women": 13539.0,
+          "crimes_against_children": 4536.0,
+          "crimes_against_sc": 948.0,
+          "crimes_against_st": 133.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 149099.0,
+          "crimes_against_women": 10139.0,
+          "crimes_against_children": 3941.0,
+          "crimes_against_sc": 846.0,
+          "crimes_against_st": 130.0
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 193913.0,
+          "crimes_against_women": 9207.0,
+          "crimes_against_children": 6580.0,
+          "crimes_against_sc": 1761.0,
+          "crimes_against_st": 67.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 322852.0,
+          "crimes_against_women": 8501.0,
+          "crimes_against_children": 6064.0,
+          "crimes_against_sc": 1377.0,
+          "crimes_against_st": 39.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 891700.0,
+          "crimes_against_women": 6630.0,
+          "crimes_against_children": 4338.0,
+          "crimes_against_sc": 1274.0,
+          "crimes_against_st": 23.0
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022",
+          "total_ipc_crimes": 151849.0,
+          "crimes_against_women": 22066.0,
+          "crimes_against_children": 5657.0,
+          "crimes_against_sc": 1787.0,
+          "crimes_against_st": 545.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021",
+          "total_ipc_crimes": 146131.0,
+          "crimes_against_women": 20865.0,
+          "crimes_against_children": 5667.0,
+          "crimes_against_sc": 1772.0,
+          "crimes_against_st": 512.0
+        },
+        "2020": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2020",
+          "total_ipc_crimes": 135885.0,
+          "crimes_against_women": 17791.0,
+          "crimes_against_children": 4200.0,
+          "crimes_against_sc": 1959.0,
+          "crimes_against_st": 573.0
+        }
+      }
+    }
+  }
+}

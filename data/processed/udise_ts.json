@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "dataset": "udise",
+    "source": "UDISE+ (MoE) via gsidhu/udise-csv-data",
+    "url": "https://udiseplus.gov.in",
+    "note": "GER, dropout rate, PTR, infrastructure. Focus states + All India.",
+    "last_updated": "2026-04-13"
+  },
+  "entities": {
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 103.4,
+            "upper_primary": 94.7,
+            "elementary": 100.1,
+            "secondary": 79.6,
+            "higher_secondary": 57.6
+          },
+          "dropout_rate": {
+            "primary": 1.5,
+            "upper_primary": 3.0,
+            "secondary": 12.6
+          },
+          "ptr": {
+            "primary": 26.0,
+            "upper_primary": 19.0,
+            "secondary": 18.0,
+            "higher_secondary": 27.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 96.2,
+            "upper_primary": 90.2,
+            "elementary": 93.9,
+            "secondary": 79.2,
+            "higher_secondary": 56.8
+          },
+          "dropout_rate": {
+            "primary": 7.8,
+            "upper_primary": 8.1,
+            "secondary": 16.4
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 93.0,
+            "upper_primary": 89.7,
+            "elementary": 91.7,
+            "secondary": 77.4,
+            "higher_secondary": 56.2
+          },
+          "dropout_rate": {
+            "primary": 1.9,
+            "upper_primary": 5.2,
+            "secondary": 14.1
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    },
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 101.6,
+            "upper_primary": 97.6,
+            "elementary": 100.1,
+            "secondary": 85.4,
+            "higher_secondary": 56.7
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 1.6,
+            "secondary": 16.3
+          },
+          "ptr": {
+            "primary": 25.0,
+            "upper_primary": 16.0,
+            "secondary": 11.0,
+            "higher_secondary": 32.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 100.3,
+            "upper_primary": 101.6,
+            "elementary": 100.8,
+            "secondary": 90.9,
+            "higher_secondary": 60.7
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 14.7
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 96.3,
+            "upper_primary": 102.4,
+            "elementary": 98.6,
+            "secondary": 95.9,
+            "higher_secondary": 65.4
+          },
+          "dropout_rate": {
+            "primary": 0.2,
+            "upper_primary": 1.1,
+            "secondary": 12.5
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 108.1,
+            "upper_primary": 105.5,
+            "elementary": 107.1,
+            "secondary": 94.7,
+            "higher_secondary": 56.6
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 1.1,
+            "secondary": 14.7
+          },
+          "ptr": {
+            "primary": 23.0,
+            "upper_primary": 18.0,
+            "secondary": 18.0,
+            "higher_secondary": 28.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 110.0,
+            "upper_primary": 106.3,
+            "elementary": 108.6,
+            "secondary": 99.3,
+            "higher_secondary": 64.3
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 14.9
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 106.8,
+            "upper_primary": 105.0,
+            "elementary": 106.1,
+            "secondary": 100.9,
+            "higher_secondary": 58.5
+          },
+          "dropout_rate": {
+            "primary": 1.7,
+            "upper_primary": 2.7,
+            "secondary": 22.1
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 102.1,
+            "upper_primary": 99.3,
+            "elementary": 101.0,
+            "secondary": 97.9,
+            "higher_secondary": 85.0
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 5.5
+          },
+          "ptr": {
+            "primary": 27.0,
+            "upper_primary": 21.0,
+            "secondary": 15.0,
+            "higher_secondary": 22.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 97.4,
+            "upper_primary": 99.3,
+            "elementary": 98.1,
+            "secondary": 97.2,
+            "higher_secondary": 87.4
+          },
+          "dropout_rate": {
+            "primary": 3.1,
+            "upper_primary": 1.9,
+            "secondary": 6.7
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 95.4,
+            "upper_primary": 100.6,
+            "elementary": 97.4,
+            "secondary": 98.9,
+            "higher_secondary": 88.1
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 3.4
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 99.0,
+            "upper_primary": 98.3,
+            "elementary": 98.8,
+            "secondary": 95.6,
+            "higher_secondary": 81.5
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 4.5
+          },
+          "ptr": {
+            "primary": 20.0,
+            "upper_primary": 15.0,
+            "secondary": 13.0,
+            "higher_secondary": 21.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 95.9,
+            "upper_primary": 100.3,
+            "elementary": 97.6,
+            "secondary": 96.3,
+            "higher_secondary": 80.1
+          },
+          "dropout_rate": {
+            "primary": 2.3,
+            "upper_primary": 0.0,
+            "secondary": 10.3
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 95.8,
+            "upper_primary": 102.6,
+            "elementary": 98.4,
+            "secondary": 97.5,
+            "higher_secondary": 82.9
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 7.7
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2021-22": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2021-22",
+          "ger": {
+            "primary": 112.5,
+            "upper_primary": 106.5,
+            "elementary": 110.2,
+            "secondary": 94.1,
+            "higher_secondary": 64.8
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 3.1,
+            "secondary": 13.7
+          },
+          "ptr": {
+            "primary": 21.0,
+            "upper_primary": 13.0,
+            "secondary": 10.0,
+            "higher_secondary": 29.0
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2022-23": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2022-23",
+          "ger": {
+            "primary": 110.0,
+            "upper_primary": 107.2,
+            "elementary": 108.9,
+            "secondary": 94.6,
+            "higher_secondary": 76.3
+          },
+          "dropout_rate": {
+            "primary": 2.1,
+            "upper_primary": 5.0,
+            "secondary": 11.6
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-13",
+          "data_period": "2023-24",
+          "ger": {
+            "primary": 111.2,
+            "upper_primary": 110.6,
+            "elementary": 111.0,
+            "secondary": 97.2,
+            "higher_secondary": 72.3
+          },
+          "dropout_rate": {
+            "primary": 0.0,
+            "upper_primary": 0.0,
+            "secondary": 11.4
+          },
+          "schools_with_electricity_pct": null,
+          "schools_with_internet_pct": null,
+          "schools_with_toilet_pct": null
+        }
+      }
+    }
+  }
+}
