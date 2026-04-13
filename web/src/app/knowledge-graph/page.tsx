@@ -64,22 +64,55 @@ const LAYER_CONFIG: Record<string, { label: string; order: number }> = {
 };
 
 const NODE_SIZE: Record<string, number> = {
-  state: 12,
-  district: 4,
-  constituency: 2,
-  party: 8,
-  candidate: 1.5,
-  mla: 4,
+  state: 18,
+  district: 6,
+  constituency: 3,
+  party: 14,
+  candidate: 2,
+  mla: 6,
+  manifesto_item: 4,
+  sdg_goal: 12,
+  indicator_plfs: 10,
+  indicator_srs: 10,
+  indicator_hces: 10,
+  indicator_udise: 10,
+  indicator_aishe: 10,
+  indicator_ncrb: 10,
+  indicator_asi: 10,
+  indicator_col: 10,
+};
+
+// Link distance by verb — spreads clusters apart
+const LINK_DISTANCE: Record<string, number> = {
+  contains: 40,
+  belongs_to: 30,
+  contests: 25,
+  represents: 35,
+  promised: 50,
+  targets_goal: 70,
+  measured_by: 80,
+  describes: 60,
+  influences: 90,
+};
+
+// Label visibility threshold per node type (zoom level)
+const LABEL_ZOOM_THRESHOLD: Record<string, number> = {
+  state: 0.3,
+  sdg_goal: 0.5,
+  party: 0.6,
+  indicator_plfs: 0.8,
+  indicator_srs: 0.8,
+  indicator_hces: 0.8,
+  indicator_udise: 0.8,
+  indicator_aishe: 0.8,
+  indicator_ncrb: 0.8,
+  indicator_asi: 0.8,
+  indicator_col: 0.8,
+  district: 1.5,
+  mla: 2.0,
   manifesto_item: 2.5,
-  sdg_goal: 7,
-  indicator_plfs: 6,
-  indicator_srs: 6,
-  indicator_hces: 6,
-  indicator_udise: 6,
-  indicator_aishe: 6,
-  indicator_ncrb: 6,
-  indicator_asi: 6,
-  indicator_col: 6,
+  constituency: 3.0,
+  candidate: 5.0,
 };
 
 const VERB_COLORS: Record<string, string> = {
@@ -108,6 +141,7 @@ export default function KnowledgeGraphPage() {
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const graphRef = useRef<any>(null);
 
@@ -141,6 +175,21 @@ export default function KnowledgeGraphPage() {
     });
     return { nodes: visibleNodes, links: visibleEdges };
   }, [graphData, hiddenTypes]);
+
+  // Configure d3 forces after graph mounts / data changes
+  useEffect(() => {
+    if (!graphRef.current) return;
+    const fg = graphRef.current;
+    // Stronger repulsion to spread nodes apart
+    fg.d3Force("charge")?.strength(-120).distanceMax(500);
+    // Center gravity to keep clusters from drifting off screen
+    fg.d3Force("center")?.strength(0.05);
+    // Variable link distance by edge type
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fg.d3Force("link")?.distance((link: any) => LINK_DISTANCE[link.verb] || 40);
+    // Reheat simulation
+    fg.d3ReheatSimulation();
+  }, [filteredGraph]);
 
   // Search
   useEffect(() => {
@@ -203,33 +252,54 @@ export default function KnowledgeGraphPage() {
     });
   };
 
-  // Node paint
+  // Node paint — semantic zoom: labels appear progressively as you zoom in
   const paintNode = useCallback(
     (node: GraphNode, ctx: CanvasRenderingContext2D) => {
-      const size = NODE_SIZE[node.type] || 3;
+      const baseSize = NODE_SIZE[node.type] || 3;
+      const x = node.x || 0;
+      const y = node.y || 0;
       const isHighlighted =
         highlightNodes.size === 0 || highlightNodes.has(node.id);
-      const alpha = isHighlighted ? 1 : 0.15;
+      const alpha = isHighlighted ? 1 : 0.12;
+      const hexAlpha = alpha < 1 ? Math.round(alpha * 255).toString(16).padStart(2, "0") : "";
 
+      // Glow for highlighted important nodes
+      if (isHighlighted && highlightNodes.size > 0 && baseSize >= 8) {
+        ctx.beginPath();
+        ctx.arc(x, y, baseSize + 4, 0, 2 * Math.PI);
+        ctx.fillStyle = node.color + "30";
+        ctx.fill();
+      }
+
+      // Node circle
       ctx.beginPath();
-      ctx.arc(node.x || 0, node.y || 0, size, 0, 2 * Math.PI);
-      ctx.fillStyle =
-        node.color + (alpha < 1 ? Math.round(alpha * 255).toString(16).padStart(2, "0") : "");
+      ctx.arc(x, y, baseSize, 0, 2 * Math.PI);
+      ctx.fillStyle = node.color + hexAlpha;
       ctx.fill();
 
-      // Label for large nodes when zoomed in
-      if (size >= 5) {
-        ctx.font = `${Math.max(3, size * 0.8)}px sans-serif`;
+      // Border for indicator/SDG/state/party nodes
+      if (baseSize >= 8) {
+        ctx.strokeStyle = isHighlighted ? "#ffffff40" : "#ffffff10";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Semantic zoom labels — show based on zoom level and node type
+      const threshold = LABEL_ZOOM_THRESHOLD[node.type] ?? 3;
+      if (zoomLevel >= threshold && isHighlighted) {
+        const fontSize = Math.max(3, Math.min(12, baseSize * 0.7));
+        ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
-        ctx.fillStyle = isHighlighted ? "#1f2937" : "#9ca3af";
-        ctx.fillText(node.label.slice(0, 25), node.x || 0, (node.y || 0) + size + 1);
+        ctx.fillStyle = isHighlighted ? "#e5e7eb" : "#6b728060";
+        const maxLen = zoomLevel > 3 ? 40 : 20;
+        ctx.fillText(node.label.slice(0, maxLen), x, y + baseSize + 2);
       }
     },
-    [highlightNodes]
+    [highlightNodes, zoomLevel]
   );
 
-  // Edge paint
+  // Edge paint — bridge edges are thicker and more visible
   const paintLink = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (link: any, ctx: CanvasRenderingContext2D) => {
@@ -238,17 +308,33 @@ export default function KnowledgeGraphPage() {
       if (!src?.x || !tgt?.x) return;
 
       const edgeKey = `${src.id}→${tgt.id}`;
-      const isHighlighted =
-        highlightEdges.size === 0 || highlightEdges.has(edgeKey);
+      const hasSelection = highlightEdges.size > 0;
+      const isHighlighted = !hasSelection || highlightEdges.has(edgeKey);
+      const verb: string = link.verb || "";
+
+      // Base width by edge importance
+      const isBridge = ["targets_goal", "measured_by", "influences", "promised"].includes(verb);
+      const baseWidth = isBridge ? 1.2 : 0.4;
+
+      if (!isHighlighted) {
+        // Dim non-highlighted edges
+        ctx.beginPath();
+        ctx.moveTo(src.x, src.y);
+        ctx.lineTo(tgt.x, tgt.y);
+        ctx.strokeStyle = "#ffffff06";
+        ctx.lineWidth = 0.15;
+        ctx.stroke();
+        return;
+      }
 
       ctx.beginPath();
       ctx.moveTo(src.x, src.y);
       ctx.lineTo(tgt.x, tgt.y);
-      ctx.strokeStyle = isHighlighted
-        ? (VERB_COLORS[link.verb] || "#6b7280")
-        : "#e5e7eb20";
-      ctx.lineWidth = isHighlighted ? (link.weight || 0.5) * 1.5 : 0.2;
+      ctx.strokeStyle = VERB_COLORS[verb] || "#6b7280";
+      ctx.lineWidth = hasSelection ? baseWidth * 2.5 : baseWidth;
+      ctx.globalAlpha = hasSelection ? 1 : (isBridge ? 0.6 : 0.25);
       ctx.stroke();
+      ctx.globalAlpha = 1;
     },
     [highlightEdges]
   );
@@ -292,7 +378,8 @@ export default function KnowledgeGraphPage() {
             <h1 className="text-sm font-bold">Knowledge Graph</h1>
             <span className="text-xs text-gray-500">
               {filteredGraph.nodes.length} nodes &middot;{" "}
-              {filteredGraph.links.length} edges
+              {filteredGraph.links.length} edges &middot;{" "}
+              {zoomLevel.toFixed(1)}x
             </span>
           </div>
           <input
@@ -495,18 +582,28 @@ export default function KnowledgeGraphPage() {
           linkCanvasObject={paintLink as any}
           onNodeClick={handleNodeClick as any}
           onBackgroundClick={handleBackgroundClick}
+          onZoom={(transform: { k: number }) => setZoomLevel(transform.k)}
           nodeId="id"
           linkSource="source"
           linkTarget="target"
           enableNodeDrag={true}
           enableZoomInteraction={true}
           enablePanInteraction={true}
-          cooldownTicks={100}
-          d3VelocityDecay={0.3}
-          d3AlphaDecay={0.02}
+          cooldownTicks={200}
+          warmupTicks={100}
+          d3VelocityDecay={0.4}
+          d3AlphaDecay={0.015}
+          d3AlphaMin={0.001}
           linkDirectionalArrowLength={0}
-          warmupTicks={50}
           backgroundColor="#030712"
+          minZoom={0.1}
+          maxZoom={15}
+          onEngineStop={() => {
+            // After simulation settles, zoom to fit
+            if (graphRef.current) {
+              graphRef.current.zoomToFit(400, 60);
+            }
+          }}
         />
         {/* eslint-enable @typescript-eslint/no-explicit-any */}
       </div>
