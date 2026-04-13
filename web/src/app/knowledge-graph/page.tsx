@@ -178,6 +178,22 @@ export default function KnowledgeGraphPage() {
   // Avoid hydration mismatch — ForceGraph2D needs window/canvas
   useEffect(() => { setMounted(true); }, []);
 
+  // Prevent browser zoom (Ctrl+scroll, pinch) on this page — let the graph canvas handle it
+  useEffect(() => {
+    const prevent = (e: WheelEvent) => {
+      if (e.ctrlKey || e.metaKey) e.preventDefault();
+    };
+    const preventTouch = (e: TouchEvent) => {
+      if (e.touches.length > 1) e.preventDefault();
+    };
+    document.addEventListener("wheel", prevent, { passive: false });
+    document.addEventListener("touchmove", preventTouch, { passive: false });
+    return () => {
+      document.removeEventListener("wheel", prevent);
+      document.removeEventListener("touchmove", preventTouch);
+    };
+  }, []);
+
   // Fetch graph data from backend API
   useEffect(() => {
     apiGet<GraphData>("/api/knowledge-graph")
