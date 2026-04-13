@@ -455,15 +455,13 @@ export default function KnowledgeGraphPage() {
       </div>
 
       {/* Node type filters — left panel */}
-      <div className="absolute top-10 bottom-0 left-0 z-20 bg-gray-900/90 backdrop-blur-sm border-r border-gray-800 p-3 overflow-y-auto w-48">
+      <div className={`absolute top-10 left-0 z-20 bg-gray-900/90 backdrop-blur-sm border-r border-gray-800 p-2 transition-all ${legendCollapsed ? "" : "bottom-0 w-48 overflow-y-auto"}`}>
         <button
           onClick={() => setLegendCollapsed((p) => !p)}
-          className="flex items-center justify-between w-full cursor-pointer mb-1"
+          className="flex items-center justify-center cursor-pointer w-6 h-6 rounded hover:bg-gray-800"
+          title={legendCollapsed ? "Show legend" : "Hide legend"}
         >
-          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-            Legend
-          </p>
-          <span className="text-gray-500 text-xs">{legendCollapsed ? "+" : "\u2212"}</span>
+          <span className="text-gray-400 text-xs">{legendCollapsed ? "\u25B6" : "\u25C0"}</span>
         </button>
         {!legendCollapsed && <>
         <div className="flex items-center justify-between mb-2 mt-1">
