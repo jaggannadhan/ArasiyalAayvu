@@ -9,8 +9,8 @@ const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
   ssr: false,
 });
 
-const GRAPH_URL =
-  "https://storage.googleapis.com/naatunadappu-media/knowledge_graph/latest.json";
+import { apiGet } from "@/lib/api-client";
+
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -107,23 +107,22 @@ export default function KnowledgeGraphPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
+  const [mounted, setMounted] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const graphRef = useRef<any>(null);
 
-  // Fetch graph data
+  // Avoid hydration mismatch — ForceGraph2D needs window/canvas
+  useEffect(() => { setMounted(true); }, []);
+
+  // Fetch graph data from backend API
   useEffect(() => {
-    fetch(GRAPH_URL)
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then((data: GraphData) => {
-        // react-force-graph expects "links" not "edges"
+    apiGet<GraphData>("/api/knowledge-graph")
+      .then((data) => {
         setGraphData(data);
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        setError(err.message || "Failed to load graph");
         setLoading(false);
       });
   }, []);
@@ -256,7 +255,7 @@ export default function KnowledgeGraphPage() {
 
   // ─── Render ──────────────────────────────────────────────────────────────
 
-  if (loading) {
+  if (!mounted || loading) {
     return (
       <div className="min-h-screen bg-gray-950 flex items-center justify-center">
         <div className="text-center">

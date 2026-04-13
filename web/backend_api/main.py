@@ -754,6 +754,35 @@ def state_report(state_slug: str) -> Dict[str, Any]:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Knowledge Graph
+# ─────────────────────────────────────────────────────────────────────────────
+
+_kg_graph_cache: Dict[str, Any] = {"data": None, "ts": 0}
+
+@app.get("/api/knowledge-graph")
+def knowledge_graph():
+    """Serve the pre-built knowledge graph JSON (cached for 1 hour)."""
+    import time
+    now = time.time()
+    # Cache for 1 hour
+    if _kg_graph_cache["data"] and now - _kg_graph_cache["ts"] < 3600:
+        return _kg_graph_cache["data"]
+
+    try:
+        from google.cloud import storage
+        client = storage.Client(project=PROJECT_ID)
+        bucket = client.bucket("naatunadappu-media")
+        blob = bucket.blob("knowledge_graph/latest.json")
+        raw = blob.download_as_text()
+        data = json.loads(raw)
+        _kg_graph_cache["data"] = data
+        _kg_graph_cache["ts"] = now
+        return data
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Could not load knowledge graph: {exc}") from exc
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Pincode resolve helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
