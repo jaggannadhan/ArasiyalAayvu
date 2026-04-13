@@ -102,6 +102,26 @@ const LINK_DISTANCE: Record<string, number> = {
   operates_in: 100,
 };
 
+// Human-readable display names for the legend
+const NODE_TYPE_LABELS: Record<string, string> = {
+  candidate: "Candidate",
+  manifesto_item: "Manifesto Promise",
+  constituency: "Constituency",
+  party: "Political Party",
+  district: "District",
+  sdg_goal: "SDG Goal",
+  state: "State",
+  mla: "Sitting MLA",
+  indicator_plfs: "Labour (PLFS)",
+  indicator_srs: "Health (SRS)",
+  indicator_hces: "Spending (HCES)",
+  indicator_udise: "School Education (UDISE+)",
+  indicator_aishe: "Higher Education (AISHE)",
+  indicator_ncrb: "Crime (NCRB)",
+  indicator_asi: "Industry (ASI)",
+  indicator_col: "Cost of Living",
+};
+
 // Label visibility threshold per node type (zoom level)
 const LABEL_ZOOM_THRESHOLD: Record<string, number> = {
   state: 0.3,
@@ -425,7 +445,7 @@ export default function KnowledgeGraphPage() {
                 style={{ backgroundColor: hidden ? "#555" : color }}
               />
               <span className="truncate">
-                {type.replace("indicator_", "").replace("_", " ")}
+                {NODE_TYPE_LABELS[type] || type}
               </span>
               <span className="text-gray-600 ml-auto">{count}</span>
             </button>
@@ -446,8 +466,8 @@ export default function KnowledgeGraphPage() {
                   className="w-4 h-0.5 flex-shrink-0"
                   style={{ backgroundColor: VERB_COLORS[verb] || "#6b7280" }}
                 />
-                <span className="text-gray-400 truncate">
-                  {verb.replace("_", " ")}
+                <span className="text-gray-400 truncate capitalize">
+                  {verb.replace(/_/g, " ")}
                 </span>
                 <span className="text-gray-600 ml-auto">{count}</span>
               </div>
@@ -460,7 +480,7 @@ export default function KnowledgeGraphPage() {
           <div className="flex items-start justify-between mb-3">
             <div>
               <p className="text-xs font-bold text-gray-500 uppercase">
-                {selectedNode.type.replace("indicator_", "").replace("_", " ")}
+                {NODE_TYPE_LABELS[selectedNode.type] || selectedNode.type}
               </p>
               <p className="text-sm font-semibold mt-0.5">
                 {selectedNode.label}
@@ -572,7 +592,7 @@ export default function KnowledgeGraphPage() {
                           backgroundColor: VERB_COLORS[verb] || "#6b7280",
                         }}
                       />
-                      <span>{verb.replace("_", " ")}</span>
+                      <span className="capitalize">{verb.replace(/_/g, " ")}</span>
                       <span className="text-gray-600 ml-auto">{count}</span>
                     </div>
                   ));
