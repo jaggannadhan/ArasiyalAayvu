@@ -745,7 +745,7 @@ def state_report(state_slug: str) -> Dict[str, Any]:
 
         report["all_india"] = {
             col: _kg_latest_snapshot(col, "all_india")
-            for col in ("plfs", "srs", "hces", "udise", "asi")
+            for col in ("plfs", "srs", "hces", "udise", "asi", "sdg_index")
         }
 
         return jsonable_encoder(report)

@@ -206,6 +206,31 @@ def main():
             upsert_snapshot(ts, state, year, snapshot, meta=meta if first else None)
             first = False
 
+    # Compute All India average per year (mean of all state composites)
+    for year in YEAR_FILES:
+        composites = [
+            d[year]["composite"]
+            for d in output["by_state"].values()
+            if year in d and d[year].get("composite") is not None
+        ]
+        if composites:
+            avg_composite = round(sum(composites) / len(composites), 1)
+            goal_avgs: dict[str, int | None] = {}
+            for g in SDG_GOALS:
+                scores = [
+                    d[year]["goals"].get(g)
+                    for d in output["by_state"].values()
+                    if year in d and d[year]["goals"].get(g) is not None
+                ]
+                goal_avgs[g] = round(sum(scores) / len(scores)) if scores else None
+            upsert_snapshot(ts, "All India", year, {
+                "composite": avg_composite,
+                "rank": None,
+                "goals": goal_avgs,
+                "note": f"National average across {len(composites)} states/UTs",
+            })
+            print(f"  All India {year}: composite={avg_composite} (avg of {len(composites)} states)")
+
     save_timeseries(ts, out_path)
     print(f"\nWrote {out_path}  ({out_path.stat().st_size // 1024} KB)")
 
