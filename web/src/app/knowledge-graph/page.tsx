@@ -168,6 +168,7 @@ export default function KnowledgeGraphPage() {
     new Set(["candidate"]) // hide candidates by default (4488 nodes)
   );
   const [searchQuery, setSearchQuery] = useState("");
+  const [legendCollapsed, setLegendCollapsed] = useState(false);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
@@ -455,7 +456,17 @@ export default function KnowledgeGraphPage() {
 
       {/* Node type filters — left panel */}
       <div className="absolute top-12 left-2 z-20 bg-gray-900/90 backdrop-blur-sm rounded-xl border border-gray-800 p-3 max-h-[70vh] overflow-y-auto">
-        <div className="flex items-center justify-between mb-2">
+        <button
+          onClick={() => setLegendCollapsed((p) => !p)}
+          className="flex items-center justify-between w-full cursor-pointer mb-1"
+        >
+          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">
+            Legend
+          </p>
+          <span className="text-gray-500 text-xs">{legendCollapsed ? "+" : "\u2212"}</span>
+        </button>
+        {!legendCollapsed && <>
+        <div className="flex items-center justify-between mb-2 mt-1">
           <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide">
             Node Types
           </p>
@@ -520,6 +531,7 @@ export default function KnowledgeGraphPage() {
                 <span className="text-gray-600 ml-auto">{count}</span>
               </div>
             ))}
+        </>}
       </div>
 
       {/* Selected node detail — right panel */}
