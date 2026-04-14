@@ -4,8 +4,11 @@ import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-// react-force-graph-2d uses canvas and window — must be client-only
+// Force graph components — client-only (use canvas/WebGL + window)
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
+  ssr: false,
+});
+const ForceGraph3D = dynamic(() => import("react-force-graph-3d"), {
   ssr: false,
 });
 
@@ -169,6 +172,7 @@ export default function KnowledgeGraphPage() {
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [legendCollapsed, setLegendCollapsed] = useState(false);
+  const [view3D, setView3D] = useState(false);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
@@ -444,13 +448,25 @@ export default function KnowledgeGraphPage() {
               {zoomLevel.toFixed(1)}x
             </span>
           </div>
-          <input
-            type="text"
-            placeholder="Search nodes..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-1 text-xs text-white w-48 focus:outline-none focus:border-blue-500"
-          />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setView3D((p) => !p)}
+              className={`px-2.5 py-1 rounded-lg text-xs font-semibold border transition-colors cursor-pointer ${
+                view3D
+                  ? "bg-blue-600 border-blue-500 text-white"
+                  : "bg-gray-800 border-gray-700 text-gray-400 hover:text-white"
+              }`}
+            >
+              {view3D ? "3D" : "2D"}
+            </button>
+            <input
+              type="text"
+              placeholder="Search nodes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-1 text-xs text-white w-48 focus:outline-none focus:border-blue-500"
+            />
+          </div>
         </div>
       </div>
 
@@ -662,36 +678,86 @@ export default function KnowledgeGraphPage() {
       {/* Graph canvas */}
       <div className="w-full h-screen pt-10">
         {/* eslint-disable @typescript-eslint/no-explicit-any */}
-        <ForceGraph2D
-          ref={graphRef}
-          graphData={filteredGraph}
-          nodeCanvasObject={paintNode as any}
-          linkCanvasObject={paintLink as any}
-          onNodeClick={handleNodeClick as any}
-          onBackgroundClick={handleBackgroundClick}
-          onZoom={(transform: { k: number }) => setZoomLevel(transform.k)}
-          nodeId="id"
-          linkSource="source"
-          linkTarget="target"
-          enableNodeDrag={true}
-          enableZoomInteraction={true}
-          enablePanInteraction={true}
-          cooldownTicks={50}
-          warmupTicks={0}
-          d3VelocityDecay={0.6}
-          d3AlphaDecay={0.05}
-          d3AlphaMin={0.01}
-          linkDirectionalArrowLength={0}
-          backgroundColor="#030712"
-          minZoom={0.1}
-          maxZoom={15}
-          onEngineStop={() => {
-            // After simulation settles, zoom to fit
-            if (graphRef.current) {
-              graphRef.current.zoomToFit(400, 60);
-            }
-          }}
-        />
+        {view3D ? (
+          <ForceGraph3D
+            ref={graphRef}
+            graphData={filteredGraph}
+            nodeId="id"
+            linkSource="source"
+            linkTarget="target"
+            nodeColor={(node: any) => {
+              const n = node as GraphNode;
+              if (highlightNodes.size > 0 && !highlightNodes.has(n.id)) return "#ffffff08";
+              return n.color || "#999";
+            }}
+            nodeVal={(node: any) => {
+              const n = node as GraphNode;
+              return (NODE_SIZE[n.type] || 3) * 0.5;
+            }}
+            nodeLabel={(node: any) => {
+              const n = node as GraphNode;
+              return `${NODE_TYPE_LABELS[n.type] || n.type}: ${n.label}`;
+            }}
+            linkColor={(link: any) => {
+              const verb = link.verb || "";
+              if (highlightEdges.size > 0) {
+                const src = typeof link.source === "string" ? link.source : link.source?.id;
+                const tgt = typeof link.target === "string" ? link.target : link.target?.id;
+                if (!highlightEdges.has(`${src}→${tgt}`)) return "#ffffff06";
+              }
+              return VERB_COLORS[verb] || "#6b7280";
+            }}
+            linkWidth={(link: any) => {
+              const verb = link.verb || "";
+              return ["targets_goal", "measured_by", "influences", "promised", "allied_with", "won"].includes(verb) ? 1.5 : 0.3;
+            }}
+            linkOpacity={0.4}
+            onNodeClick={handleNodeClick as any}
+            onBackgroundClick={handleBackgroundClick}
+            enableNodeDrag={true}
+            cooldownTicks={50}
+            warmupTicks={0}
+            d3VelocityDecay={0.6}
+            d3AlphaDecay={0.05}
+            d3AlphaMin={0.01}
+            backgroundColor="#030712"
+            onEngineStop={() => {
+              if (graphRef.current) {
+                graphRef.current.zoomToFit(400, 60);
+              }
+            }}
+          />
+        ) : (
+          <ForceGraph2D
+            ref={graphRef}
+            graphData={filteredGraph}
+            nodeCanvasObject={paintNode as any}
+            linkCanvasObject={paintLink as any}
+            onNodeClick={handleNodeClick as any}
+            onBackgroundClick={handleBackgroundClick}
+            onZoom={(transform: { k: number }) => setZoomLevel(transform.k)}
+            nodeId="id"
+            linkSource="source"
+            linkTarget="target"
+            enableNodeDrag={true}
+            enableZoomInteraction={true}
+            enablePanInteraction={true}
+            cooldownTicks={50}
+            warmupTicks={0}
+            d3VelocityDecay={0.6}
+            d3AlphaDecay={0.05}
+            d3AlphaMin={0.01}
+            linkDirectionalArrowLength={0}
+            backgroundColor="#030712"
+            minZoom={0.1}
+            maxZoom={15}
+            onEngineStop={() => {
+              if (graphRef.current) {
+                graphRef.current.zoomToFit(400, 60);
+              }
+            }}
+          />
+        )}
         {/* eslint-enable @typescript-eslint/no-explicit-any */}
       </div>
     </div>
