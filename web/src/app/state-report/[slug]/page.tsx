@@ -179,6 +179,8 @@ interface AllIndiaRef {
   udise?: UDISESnapshot | null;
   asi?: ASISnapshot | null;
   sdg_index?: SDGSnapshot | null;
+  ncrb?: NCRBSnapshot | null;
+  aishe?: AISHESnapshot | null;
 }
 
 interface StateReport {
@@ -530,7 +532,7 @@ function SpendingSection({
 
 // ─── Education (AISHE) ────────────────────────────────────────────────────────
 
-function EducationSection({ aishe }: { aishe?: AISHESnapshot | null }) {
+function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; aiAishe?: AISHESnapshot | null }) {
   if (!aishe) return <EmptySection msg="No AISHE data available" />;
 
   return (
@@ -547,22 +549,26 @@ function EducationSection({ aishe }: { aishe?: AISHESnapshot | null }) {
               Gross Enrolment Ratio (GER) — 18–23 age group
             </p>
             <div className="grid grid-cols-3 gap-2 text-center">
-              {(["male", "female", "total"] as const).map((g) => (
-                <div key={g} className="bg-gray-50 rounded-xl p-2">
-                  <p className="text-[9px] text-gray-500 capitalize font-semibold">
-                    {g === "total" ? "Overall" : g}
-                  </p>
-                  <p className="text-xl font-black text-gray-900">
-                    {f1(aishe.ger?.[g])}
-                    <span className="text-xs font-normal text-gray-400">%</span>
-                  </p>
-                  <MiniBar
-                    value={aishe.ger?.[g]}
-                    max={60}
-                    color={g === "male" ? "bg-blue-400" : g === "female" ? "bg-rose-400" : "bg-gray-400"}
-                  />
-                </div>
-              ))}
+              {(["male", "female", "total"] as const).map((g) => {
+                const ai = aiAishe?.ger?.[g];
+                return (
+                  <div key={g} className="bg-gray-50 rounded-xl p-2">
+                    <p className="text-[9px] text-gray-500 capitalize font-semibold">
+                      {g === "total" ? "Overall" : g}
+                    </p>
+                    <p className="text-xl font-black text-gray-900">
+                      {f1(aishe.ger?.[g])}
+                      <span className="text-xs font-normal text-gray-400">%</span>
+                    </p>
+                    {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}%</p>}
+                    <MiniBar
+                      value={aishe.ger?.[g]}
+                      max={60}
+                      color={g === "male" ? "bg-blue-400" : g === "female" ? "bg-rose-400" : "bg-gray-400"}
+                    />
+                  </div>
+                );
+              })}
             </div>
             {aishe.ger?.gpi != null && (
               <p className="text-[10px] text-gray-500 mt-2 text-center">
@@ -1137,6 +1143,8 @@ export default function StateReportPage() {
   const aiHces  = report?.all_india?.hces;
   const aiUdise = report?.all_india?.udise;
   const aiAsi   = report?.all_india?.asi;
+  const aiNcrb  = report?.all_india?.ncrb;
+  const aiAishe = report?.all_india?.aishe;
 
   const visibleSections = SECTIONS;
 
@@ -1220,9 +1228,9 @@ export default function StateReportPage() {
             {activeSection === "labour"    && <LabourSection    plfs={report.plfs}       aiPlfs={aiPlfs} />}
             {activeSection === "health"    && <HealthSection    srs={report.srs}         aiSrs={aiSrs} />}
             {activeSection === "spending"  && <SpendingSection  hces={report.hces}       aiHces={aiHces} />}
-            {activeSection === "education" && <EducationSection aishe={report.aishe} />}
+            {activeSection === "education" && <EducationSection aishe={report.aishe} aiAishe={aiAishe} />}
             {activeSection === "school"    && <SchoolSection    udise={report.udise}     aiUdise={aiUdise} />}
-            {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={undefined} />}
+            {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={aiNcrb} />}
             {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
             {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
