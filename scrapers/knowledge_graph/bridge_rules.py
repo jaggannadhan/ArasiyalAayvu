@@ -30,6 +30,7 @@ SDG_TO_INDICATORS: dict[str, list[dict]] = {
         {"indicator": "indicator_hces",  "field": "mpce_combined", "weight": 1.0, "reason": "Household expenditure is the primary poverty proxy"},
         {"indicator": "indicator_plfs",  "field": "unemployment_rate", "weight": 0.7, "reason": "Unemployment directly drives poverty"},
         {"indicator": "indicator_col",   "field": "petrol",       "weight": 0.4, "reason": "Fuel cost affects purchasing power of poor"},
+        {"indicator": "indicator_fiscal","field": "fiscal_deficit_cr", "weight": 0.4, "reason": "Fiscal deficit constrains anti-poverty spending capacity"},
     ],
     "2": [  # Zero Hunger
         {"indicator": "indicator_hces",  "field": "mpce_combined", "weight": 0.7, "reason": "Food is the largest share of poor household expenditure"},
@@ -61,6 +62,7 @@ SDG_TO_INDICATORS: dict[str, list[dict]] = {
         {"indicator": "indicator_plfs",  "field": "lfpr",              "weight": 0.7, "reason": "Labour force participation = economic engagement"},
         {"indicator": "indicator_asi",   "field": "factories",         "weight": 0.7, "reason": "Factory count = formal sector employment capacity"},
         {"indicator": "indicator_asi",   "field": "gva_cr",            "weight": 1.0, "reason": "Gross value added = economic output"},
+        {"indicator": "indicator_fiscal","field": "total_revenue_cr",  "weight": 0.4, "reason": "Revenue capacity determines employment program funding"},
     ],
     "9": [  # Industry, Innovation & Infrastructure
         {"indicator": "indicator_asi",   "field": "factories",         "weight": 1.0, "reason": "Factory count = industrial base"},
@@ -80,6 +82,7 @@ SDG_TO_INDICATORS: dict[str, list[dict]] = {
     "16": [  # Peace, Justice & Strong Institutions
         {"indicator": "indicator_ncrb",  "field": "total_ipc_crimes", "weight": 1.0, "reason": "Total crime = institutional effectiveness proxy"},
         {"indicator": "indicator_ncrb",  "field": "crimes_against_children", "weight": 0.7, "reason": "Child safety = institutional protection capacity"},
+        {"indicator": "indicator_fiscal","field": "fiscal_deficit_cr", "weight": 0.4, "reason": "Fiscal health = institutional governance capacity"},
     ],
 }
 
@@ -190,6 +193,18 @@ INDICATOR_INFLUENCES: list[dict] = [
         "target": "indicator_plfs",  "target_field": "female_lfpr",
         "weight": 0.5, "direction": "negative",
         "reason": "Higher crime against women → reduced female labour participation (safety barrier)",
+    },
+    {
+        "source": "indicator_fiscal","source_field": "fiscal_deficit_cr",
+        "target": "indicator_col",   "target_field": "petrol",
+        "weight": 0.4, "direction": "positive",
+        "reason": "Higher fiscal deficit → reduced subsidy capacity → higher consumer fuel prices",
+    },
+    {
+        "source": "indicator_fiscal","source_field": "fiscal_deficit_cr",
+        "target": "indicator_asi",   "target_field": "gva_cr",
+        "weight": 0.4, "direction": "negative",
+        "reason": "Higher fiscal deficit → crowding out private investment → lower industrial output",
     },
 ]
 

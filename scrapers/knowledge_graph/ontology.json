@@ -115,6 +115,13 @@
       "color": "#d35400",
       "size_field": null,
       "fields": ["petrol", "diesel", "lpg_14kg", "period"]
+    },
+    "indicator_fiscal": {
+      "label": "State Finances (CAG)",
+      "layer": "socioeconomic",
+      "color": "#7f1d1d",
+      "size_field": null,
+      "fields": ["fiscal_deficit_cr", "revenue_deficit_cr", "total_revenue_cr", "total_exp_cr", "salaries_cr", "interest_cr", "period"]
     }
   },
 
@@ -211,6 +218,9 @@
     {"from": "indicator_asi",   "verb": "influences",   "to": "indicator_plfs",  "note": "industrial growth → employment"},
     {"from": "indicator_col",   "verb": "influences",   "to": "indicator_hces",  "note": "cost of living → household spending"},
     {"from": "indicator_srs",   "verb": "influences",   "to": "indicator_udise", "note": "demographics → school demand"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_fiscal"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_fiscal"},
+    {"from": "indicator_fiscal","verb": "influences",   "to": "indicator_col",   "note": "fiscal policy → subsidies → cost of living"},
     {"from": "party",           "verb": "allied_with",  "to": "party"},
     {"from": "party",           "verb": "won",          "to": "constituency"},
     {"from": "party",           "verb": "operates_in",  "to": "state"}

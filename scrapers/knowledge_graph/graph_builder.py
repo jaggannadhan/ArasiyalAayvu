@@ -482,6 +482,33 @@ class GraphBuilder:
                 self._add_node(aishe_id, "indicator_aishe", label, period=period, state=state_slug)
                 self._add_edge(state_id, aishe_id, "describes", period=period)
 
+            # State Finances (CAG) — different collection schema: doc ID = {code}_{fy}
+            _SLUG_TO_CAG = {
+                "tamil_nadu": "TN", "kerala": "KL", "karnataka": "KA",
+                "andhra_pradesh": "AP", "telangana": "TS",
+            }
+            cag_code = _SLUG_TO_CAG.get(state_slug)
+            if cag_code:
+                budget_docs = [
+                    d for d in self.db.collection("state_budgets").stream()
+                    if d.id.startswith(f"{cag_code}_")
+                ]
+                if budget_docs:
+                    latest = max(budget_docs, key=lambda d: d.id)
+                    bdata = latest.to_dict()
+                    fy = bdata.get("fiscal_year", "")
+                    fiscal_id = f"indicator_fiscal:{state_slug}"
+                    label = f"State Finances (CAG) — {state_name}"
+                    self._add_node(fiscal_id, "indicator_fiscal", label,
+                                   period=fy, state=state_slug,
+                                   fiscal_deficit_cr=bdata.get("fiscal", {}).get("fiscal_deficit_cr"),
+                                   revenue_deficit_cr=bdata.get("fiscal", {}).get("revenue_deficit_cr"),
+                                   total_revenue_cr=bdata.get("revenue", {}).get("total_revenue_receipts_cr"),
+                                   total_exp_cr=bdata.get("expenditure", {}).get("total_exp_cr"),
+                                   salaries_cr=bdata.get("committed", {}).get("salaries_cr"),
+                                   interest_cr=bdata.get("committed", {}).get("interest_cr"))
+                    self._add_edge(state_id, fiscal_id, "describes", period=fy)
+
         count = sum(1 for n in self.nodes if n["layer"] == "socioeconomic")
         print(f"    {count} indicator nodes")
 
