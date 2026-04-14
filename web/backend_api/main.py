@@ -637,7 +637,7 @@ def frequently_browsed(limit: int = Query(6, ge=1, le=20)) -> List[Dict[str, Any
 
 _KG_COLLECTIONS = frozenset({
     "plfs", "srs", "hces", "aishe", "sdg_index", "cost_of_living",
-    "udise", "ncrb", "asi",
+    "udise", "ncrb", "asi", "rbi_state_finances",
 })
 
 # States we have KG data for → their Firestore entity slug (matches ts_utils.slugify)
@@ -736,7 +736,7 @@ def state_report(state_slug: str) -> Dict[str, Any]:
     try:
         report: Dict[str, Any] = {"state": state_slug}
 
-        for col in ("plfs", "srs", "hces", "aishe", "sdg_index", "udise", "ncrb", "asi"):
+        for col in ("plfs", "srs", "hces", "aishe", "sdg_index", "udise", "ncrb", "asi", "rbi_state_finances"):
             report[col] = _kg_latest_snapshot(col, state_slug)
 
         report["cost_of_living"] = _kg_latest_snapshot(

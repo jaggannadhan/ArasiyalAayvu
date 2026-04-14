@@ -172,6 +172,15 @@ interface StateBudget {
   };
 }
 
+interface RBISnapshot {
+  period: string;
+  gfd_cr?: number | null;
+  rev_deficit_cr?: number | null;
+  debt_to_gsdp_pct?: number | null;
+  interest_payments_cr?: number | null;
+  dev_expenditure_cr?: number | null;
+}
+
 interface AllIndiaRef {
   plfs?: PLFSSnapshot | null;
   srs?: SRSSnapshot | null;
@@ -195,6 +204,7 @@ interface StateReport {
   asi?: ASISnapshot | null;
   cost_of_living?: CoLSnapshot | null;
   state_budget?: StateBudget | null;
+  rbi_state_finances?: RBISnapshot | null;
   all_india?: AllIndiaRef;
 }
 
@@ -1012,12 +1022,49 @@ function fCr(v: number | null | undefined): string {
   return "₹" + v.toLocaleString("en-IN", { maximumFractionDigits: 0 }) + " Cr";
 }
 
-function FiscalSection({ budget }: { budget?: StateBudget | null }) {
-  if (!budget) return <EmptySection msg="No state budget data available" />;
-  const { revenue: rev, expenditure: exp, fiscal: fis, committed: com } = budget;
+function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBISnapshot | null }) {
+  if (!budget && !rbi) return <EmptySection msg="No state budget data available" />;
+  // These are only used inside {budget && (...)} so always defined there
+  const rev = budget?.revenue ?? {} as StateBudget["revenue"];
+  const exp = budget?.expenditure ?? {} as StateBudget["expenditure"];
+  const fis = budget?.fiscal ?? {} as StateBudget["fiscal"];
+  const com = budget?.committed ?? {} as StateBudget["committed"];
 
   return (
     <div className="space-y-4">
+      {/* RBI Debt-to-GSDP headline */}
+      {rbi?.debt_to_gsdp_pct != null && (
+        <div className="bg-gradient-to-br from-red-900 to-red-700 rounded-2xl p-5 text-white">
+          <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">
+            <a href="https://rbi.org.in/scripts/PublicationsView.aspx?Id=23729" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-100">
+              RBI State Finances
+            </a>{" "}· {rbi.period}
+          </p>
+          <div className="flex items-end gap-6 mt-2">
+            <div>
+              <p className="text-4xl font-black">{rbi.debt_to_gsdp_pct}%</p>
+              <p className="text-xs opacity-70">Debt-to-GSDP ratio</p>
+            </div>
+            <div className="flex gap-4 text-sm opacity-80">
+              {rbi.gfd_cr != null && (
+                <div>
+                  <p className="font-bold">{fCr(rbi.gfd_cr)}</p>
+                  <p className="text-[10px] opacity-70">Gross Fiscal Deficit</p>
+                </div>
+              )}
+              {rbi.interest_payments_cr != null && (
+                <div>
+                  <p className="font-bold">{fCr(rbi.interest_payments_cr)}</p>
+                  <p className="text-[10px] opacity-70">Interest Payments</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CAG detailed breakdown */}
+      {budget && (
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           State Finances — CAG Actuals · {budget.fiscal_year}
@@ -1113,6 +1160,7 @@ function FiscalSection({ budget }: { budget?: StateBudget | null }) {
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }
@@ -1251,7 +1299,7 @@ export default function StateReportPage() {
             {activeSection === "school"    && <SchoolSection    udise={report.udise}     aiUdise={aiUdise} />}
             {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={aiNcrb} />}
             {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
-            {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} />}
+            {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} rbi={report.rbi_state_finances} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
             {activeSection === "cost"      && (
               <CostSection
