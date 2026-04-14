@@ -784,7 +784,7 @@ export default function KnowledgeGraphPage() {
       {view3D && (
         <>
           {/* Vertical pan — right edge, half-height centered */}
-          <div className="absolute top-14 right-0 z-10 flex flex-col items-center w-7 overflow-hidden" style={{ height: "25vh" }}>
+          <div className="absolute top-14 right-0 z-10 flex flex-col items-center w-7" style={{ bottom: "6.5rem" }}>
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
               onClick={() => {
@@ -797,8 +797,8 @@ export default function KnowledgeGraphPage() {
               min={-500}
               max={500}
               defaultValue={0}
-              className="cursor-pointer accent-gray-500 flex-shrink"
-              style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", height: "calc(25vh - 50px)" }}
+              className="cursor-pointer accent-gray-500"
+              style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", flex: "1 1 0", minHeight: 0 }}
               onChange={(e) => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
