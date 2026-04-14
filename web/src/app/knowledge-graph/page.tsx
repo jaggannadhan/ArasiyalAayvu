@@ -172,7 +172,7 @@ export default function KnowledgeGraphPage() {
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [legendCollapsed, setLegendCollapsed] = useState(false);
-  const [view3D, setView3D] = useState(false);
+  const [view3D, setView3D] = useState(true);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
