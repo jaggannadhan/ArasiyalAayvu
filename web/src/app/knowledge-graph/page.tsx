@@ -789,13 +789,13 @@ export default function KnowledgeGraphPage() {
               className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.y += 50; ctrl.update(); }
+                if (ctrl?.target) { ctrl.target.y += 100; ctrl.update(); }
               }}
             >&#9650;</button>
             <input
               type="range"
-              min={-500}
-              max={500}
+              min={-2000}
+              max={2000}
               defaultValue={0}
               className="cursor-pointer accent-gray-500"
               style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", flex: "1 1 0", minHeight: 0 }}
@@ -808,7 +808,7 @@ export default function KnowledgeGraphPage() {
               className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.y -= 50; ctrl.update(); }
+                if (ctrl?.target) { ctrl.target.y -= 100; ctrl.update(); }
               }}
             >&#9660;</button>
           </div>
@@ -819,13 +819,13 @@ export default function KnowledgeGraphPage() {
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.x -= 50; ctrl.update(); }
+                if (ctrl?.target) { ctrl.target.x -= 100; ctrl.update(); }
               }}
             >&#9664;</button>
             <input
               type="range"
-              min={-500}
-              max={500}
+              min={-2000}
+              max={2000}
               defaultValue={0}
               className="flex-1 h-2 cursor-pointer accent-gray-500"
               onChange={(e) => {
@@ -837,7 +837,7 @@ export default function KnowledgeGraphPage() {
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.x += 50; ctrl.update(); }
+                if (ctrl?.target) { ctrl.target.x += 100; ctrl.update(); }
               }}
             >&#9654;</button>
           </div>
