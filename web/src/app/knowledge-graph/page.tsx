@@ -780,47 +780,68 @@ export default function KnowledgeGraphPage() {
         </div>
       </div>
 
-      {/* Pan sliders — shift the graph's lookAt target (moves the whole scene) */}
+      {/* Pan controls — shift the graph's lookAt target (moves the whole scene) */}
       {view3D && (
         <>
-          {/* Vertical slider — right edge */}
-          <div className="absolute top-14 bottom-20 right-1 sm:right-2 z-10 flex items-center">
-            <input
-              type="range"
-              min={-500}
-              max={500}
-              defaultValue={0}
-              className="h-full appearance-none cursor-pointer accent-gray-600 opacity-40 hover:opacity-80 transition-opacity"
-              style={{ writingMode: "vertical-lr", direction: "rtl", width: "16px" }}
-              onChange={(e) => {
-                if (!graphRef.current) return;
-                const y = parseInt(e.target.value);
-                const ctrl = graphRef.current.controls();
-                if (ctrl?.target) {
-                  ctrl.target.y = y;
-                  ctrl.update();
-                }
+          {/* Vertical pan — right edge */}
+          <div className="absolute top-14 bottom-20 right-0 z-10 flex flex-col items-center w-8 sm:w-10">
+            <button
+              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
+              onClick={() => {
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.y += 50; ctrl.update(); }
               }}
-            />
+            >&#9650;</button>
+            <div className="flex-1 flex items-center">
+              <input
+                type="range"
+                min={-500}
+                max={500}
+                defaultValue={0}
+                className="cursor-pointer accent-gray-500"
+                style={{ writingMode: "vertical-lr", direction: "rtl", width: "20px", height: "100%" }}
+                onChange={(e) => {
+                  const ctrl = graphRef.current?.controls();
+                  if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
+                }}
+              />
+            </div>
+            <button
+              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
+              onClick={() => {
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.y -= 50; ctrl.update(); }
+              }}
+            >&#9660;</button>
           </div>
-          {/* Horizontal slider — bottom, above timeline */}
-          <div className="absolute bottom-14 left-40 sm:left-48 right-6 z-10 flex items-center px-2 py-1">
+
+          {/* Horizontal pan — bottom edge, above timeline */}
+          <div className="absolute bottom-[3.6rem] left-40 sm:left-48 right-10 z-10 flex items-center gap-1 h-8">
+            <button
+              className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
+              onClick={() => {
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.x -= 50; ctrl.update(); }
+              }}
+            >&#9664;</button>
             <input
               type="range"
               min={-500}
               max={500}
               defaultValue={0}
-              className="w-full h-1 appearance-none cursor-pointer accent-gray-600 opacity-40 hover:opacity-80 transition-opacity"
+              className="flex-1 h-2 cursor-pointer accent-gray-500"
               onChange={(e) => {
-                if (!graphRef.current) return;
-                const x = parseInt(e.target.value);
-                const ctrl = graphRef.current.controls();
-                if (ctrl?.target) {
-                  ctrl.target.x = x;
-                  ctrl.update();
-                }
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.x = parseInt(e.target.value); ctrl.update(); }
               }}
             />
+            <button
+              className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
+              onClick={() => {
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.x += 50; ctrl.update(); }
+              }}
+            >&#9654;</button>
           </div>
         </>
       )}
