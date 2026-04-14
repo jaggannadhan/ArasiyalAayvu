@@ -237,7 +237,12 @@ export default function KnowledgeGraphPage() {
     fg.d3Force("center")?.strength(0.02);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fg.d3Force("link")?.distance((link: any) => LINK_DISTANCE[link.verb] || 40);
-  }, [filteredGraph]);
+    // 3D: increase zoom sensitivity via Three.js controls
+    if (view3D && fg.controls) {
+      const ctrl = fg.controls();
+      if (ctrl && ctrl.zoomSpeed !== undefined) ctrl.zoomSpeed = 1.5;
+    }
+  }, [filteredGraph, view3D]);
 
   // Search
   useEffect(() => {
