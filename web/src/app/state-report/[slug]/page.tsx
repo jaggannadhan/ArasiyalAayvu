@@ -99,10 +99,48 @@ interface CoLTNSnapshot {
   food_dairy?: Record<string, DairyItem>;
 }
 
+interface UDISESnapshot {
+  period: string;
+  ger?: { primary?: number; upper_primary?: number; elementary?: number; secondary?: number; higher_secondary?: number };
+  dropout_rate?: { primary?: number; upper_primary?: number; secondary?: number };
+  ptr?: { primary?: number; upper_primary?: number; secondary?: number; higher_secondary?: number };
+  schools_total?: number;
+  schools_with_electricity_pct?: number | null;
+  schools_with_internet_pct?: number | null;
+}
+
+interface NCRBSnapshot {
+  period: string;
+  total_ipc_crimes?: number;
+  crimes_against_women?: number;
+  crimes_against_children?: number;
+  crimes_against_sc?: number;
+  crimes_against_st?: number;
+}
+
+interface ASISnapshot {
+  period: string;
+  factories?: number;
+  fixed_capital_cr?: number;
+  total_output_cr?: number;
+  total_input_cr?: number;
+  gva_cr?: number;
+  nva_cr?: number;
+}
+
+interface CoLSnapshot {
+  period: string;
+  fuel?: Record<string, FuelItem>;
+  food_dairy?: Record<string, DairyItem>;
+}
+
 interface AllIndiaRef {
   plfs?: PLFSSnapshot | null;
   srs?: SRSSnapshot | null;
   hces?: HCESSnapshot | null;
+  udise?: UDISESnapshot | null;
+  asi?: ASISnapshot | null;
+  sdg_index?: SDGSnapshot | null;
 }
 
 interface StateReport {
@@ -112,8 +150,10 @@ interface StateReport {
   hces?: HCESSnapshot | null;
   aishe?: AISHESnapshot | null;
   sdg_index?: SDGSnapshot | null;
-  cost_of_living_india?: CoLIndiaSnapshot | null;
-  cost_of_living_tn?: CoLTNSnapshot | null;
+  udise?: UDISESnapshot | null;
+  ncrb?: NCRBSnapshot | null;
+  asi?: ASISnapshot | null;
+  cost_of_living?: CoLSnapshot | null;
   all_india?: AllIndiaRef;
 }
 
@@ -648,8 +688,8 @@ function CostSection({
   colIndia,
   colTN,
 }: {
-  colIndia?: CoLIndiaSnapshot | null;
-  colTN?: CoLTNSnapshot | null;
+  colIndia?: CoLSnapshot | null;
+  colTN?: CoLSnapshot | null;
 }) {
   return (
     <div className="space-y-4">
@@ -723,15 +763,194 @@ function CostSection({
   );
 }
 
+// ─── School Education (UDISE+) ───────────────────────────────────────────────
+
+function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdise?: UDISESnapshot | null }) {
+  if (!udise) return <EmptySection msg="No UDISE+ data available" />;
+  const ger = udise.ger;
+  const aiGer = aiUdise?.ger;
+  const dropout = udise.dropout_rate;
+  const aiDropout = aiUdise?.dropout_rate;
+  const ptr = udise.ptr;
+
+  return (
+    <div className="space-y-4">
+      {/* GER */}
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+          Gross Enrolment Ratio · {udise.period}
+        </p>
+        <p className="text-[10px] text-gray-400 mb-3">Source: UDISE+</p>
+        <div className="grid grid-cols-5 gap-2 text-center">
+          {(["primary", "upper_primary", "elementary", "secondary", "higher_secondary"] as const).map((level) => {
+            const val = ger?.[level];
+            const ai = aiGer?.[level];
+            const labels: Record<string, string> = { primary: "Primary", upper_primary: "Upper Pri.", elementary: "Elem.", secondary: "Secondary", higher_secondary: "Hr. Sec." };
+            return (
+              <div key={level} className="bg-gray-50 rounded-xl p-2">
+                <p className="text-[9px] text-gray-500 font-semibold">{labels[level]}</p>
+                <p className="text-lg font-black text-gray-900">{f1(val)}</p>
+                {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}</p>}
+                <MiniBar value={val} max={120} color="bg-blue-500" />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Dropout */}
+      {dropout && (
+        <div className="bg-white rounded-2xl border border-gray-200 p-4">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+            Dropout Rate (%)
+          </p>
+          <div className="grid grid-cols-3 gap-3 text-center">
+            {(["primary", "upper_primary", "secondary"] as const).map((level) => {
+              const val = dropout?.[level];
+              const ai = aiDropout?.[level];
+              const labels: Record<string, string> = { primary: "Primary", upper_primary: "Upper Primary", secondary: "Secondary" };
+              const isGood = val != null && val < 3;
+              return (
+                <div key={level} className="bg-gray-50 rounded-xl p-3">
+                  <p className="text-[10px] text-gray-500 font-semibold">{labels[level]}</p>
+                  <p className={`text-xl font-black ${isGood ? "text-green-600" : val != null && val > 10 ? "text-red-600" : "text-gray-900"}`}>
+                    {f1(val)}%
+                  </p>
+                  {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}%</p>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* PTR + Schools */}
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+          Pupil-Teacher Ratio & Infrastructure
+        </p>
+        <div className="grid grid-cols-2 gap-3">
+          {ptr && (["primary", "secondary"] as const).map((level) => (
+            <div key={level} className="bg-gray-50 rounded-xl p-3 text-center">
+              <p className="text-[10px] text-gray-500 font-semibold">PTR ({level})</p>
+              <p className="text-xl font-black text-gray-900">{f1(ptr[level])}</p>
+              <p className="text-[9px] text-gray-400">students per teacher</p>
+            </div>
+          ))}
+          {udise.schools_total && (
+            <div className="bg-gray-50 rounded-xl p-3 text-center">
+              <p className="text-[10px] text-gray-500 font-semibold">Total Schools</p>
+              <p className="text-xl font-black text-gray-900">{udise.schools_total.toLocaleString("en-IN")}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Crime (NCRB) ────────────────────────────────────────────────────────────
+
+function CrimeSection({ ncrb, aiNcrb }: { ncrb?: NCRBSnapshot | null; aiNcrb?: NCRBSnapshot | null }) {
+  if (!ncrb) return <EmptySection msg="No NCRB data available" />;
+
+  const metrics: { key: keyof NCRBSnapshot; label: string; color: string }[] = [
+    { key: "total_ipc_crimes",       label: "Total IPC Crimes",       color: "bg-red-500" },
+    { key: "crimes_against_women",   label: "Against Women",          color: "bg-pink-500" },
+    { key: "crimes_against_children",label: "Against Children",       color: "bg-orange-500" },
+    { key: "crimes_against_sc",      label: "Against SC",             color: "bg-amber-500" },
+    { key: "crimes_against_st",      label: "Against ST",             color: "bg-yellow-500" },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+          Cognizable Crimes — IPC · {ncrb.period}
+        </p>
+        <p className="text-[10px] text-gray-400 mb-3">Source: NCRB Crime in India</p>
+
+        <div className="space-y-3">
+          {metrics.map(({ key, label, color }) => {
+            const val = ncrb[key] as number | undefined;
+            const ai = aiNcrb?.[key] as number | undefined;
+            if (val == null) return null;
+            return (
+              <div key={key} className="flex items-center gap-3">
+                <div className="w-32 flex-shrink-0">
+                  <p className="text-xs font-semibold text-gray-700">{label}</p>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-baseline gap-2">
+                    <p className="text-lg font-black text-gray-900">{val.toLocaleString("en-IN")}</p>
+                    {ai != null && (
+                      <p className="text-[10px] text-gray-400">IN: {ai.toLocaleString("en-IN")}</p>
+                    )}
+                  </div>
+                  <MiniBar value={val} max={ai || val * 1.2} color={color} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Industry (ASI) ──────────────────────────────────────────────────────────
+
+function IndustrySection({ asi, aiAsi }: { asi?: ASISnapshot | null; aiAsi?: ASISnapshot | null }) {
+  if (!asi) return <EmptySection msg="No ASI data available" />;
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+          Factory Sector · {asi.period}
+        </p>
+        <p className="text-[10px] text-gray-400 mb-3">Source: Annual Survey of Industries (MOSPI)</p>
+
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { label: "Factories", val: asi.factories, ai: aiAsi?.factories, fmt: (v: number) => v.toLocaleString("en-IN"), unit: "" },
+            { label: "GVA", val: asi.gva_cr, ai: aiAsi?.gva_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Total Output", val: asi.total_output_cr, ai: aiAsi?.total_output_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Total Input", val: asi.total_input_cr, ai: aiAsi?.total_input_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "NVA", val: asi.nva_cr, ai: aiAsi?.nva_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Fixed Capital", val: asi.fixed_capital_cr, ai: aiAsi?.fixed_capital_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+          ].map(({ label, val, ai, fmt, unit }) => {
+            if (val == null) return null;
+            return (
+              <div key={label} className="bg-gray-50 rounded-xl p-3 text-center">
+                <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                <p className="text-lg font-black text-gray-900">
+                  {fmt(val)}<span className="text-xs font-normal text-gray-400">{unit}</span>
+                </p>
+                {ai != null && (
+                  <p className="text-[9px] text-gray-400">IN: {fmt(ai)}{unit}</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-type SectionKey = "labour" | "health" | "spending" | "education" | "sdg" | "cost";
+type SectionKey = "labour" | "health" | "spending" | "education" | "school" | "crime" | "industry" | "sdg" | "cost";
 
 const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "labour",    label: "Labour" },
   { key: "health",    label: "Health" },
   { key: "spending",  label: "Spending" },
-  { key: "education", label: "Education" },
+  { key: "education", label: "Higher Ed" },
+  { key: "school",    label: "School Ed" },
+  { key: "crime",     label: "Crime" },
+  { key: "industry",  label: "Industry" },
   { key: "sdg",       label: "SDG" },
   { key: "cost",      label: "Cost of Living" },
 ];
@@ -759,11 +978,13 @@ export default function StateReportPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  const aiPlfs = report?.all_india?.plfs;
-  const aiSrs  = report?.all_india?.srs;
-  const aiHces = report?.all_india?.hces;
+  const aiPlfs  = report?.all_india?.plfs;
+  const aiSrs   = report?.all_india?.srs;
+  const aiHces  = report?.all_india?.hces;
+  const aiUdise = report?.all_india?.udise;
+  const aiAsi   = report?.all_india?.asi;
 
-  const visibleSections = SECTIONS.filter((s) => s.key !== "cost" || isTN);
+  const visibleSections = SECTIONS;
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -846,11 +1067,14 @@ export default function StateReportPage() {
             {activeSection === "health"    && <HealthSection    srs={report.srs}         aiSrs={aiSrs} />}
             {activeSection === "spending"  && <SpendingSection  hces={report.hces}       aiHces={aiHces} />}
             {activeSection === "education" && <EducationSection aishe={report.aishe} />}
+            {activeSection === "school"    && <SchoolSection    udise={report.udise}     aiUdise={aiUdise} />}
+            {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={undefined} />}
+            {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
-            {activeSection === "cost" && isTN && (
+            {activeSection === "cost"      && (
               <CostSection
-                colIndia={report.cost_of_living_india}
-                colTN={report.cost_of_living_tn}
+                colIndia={report.cost_of_living}
+                colTN={isTN ? report.cost_of_living : undefined}
               />
             )}
           </div>
@@ -858,8 +1082,7 @@ export default function StateReportPage() {
 
         {/* Attribution */}
         <p className="text-center text-[10px] text-gray-400 mt-10 pb-4">
-          Sources: PLFS 2023-24 · SRS 2023 · HCES 2023-24 · AISHE 2021-22 · NITI Aayog SDG Index 2023-24
-          {isTN ? " · Goodreturns / Aavin (monthly)" : ""}
+          Sources: PLFS · SRS · HCES · AISHE · UDISE+ · NCRB · ASI (MOSPI) · NITI Aayog SDG Index · Goodreturns
         </p>
       </div>
     </main>
