@@ -784,7 +784,7 @@ export default function KnowledgeGraphPage() {
       {view3D && (
         <>
           {/* Vertical pan — right edge, half-height centered */}
-          <div className="absolute top-1/3 bottom-1/3 right-0 z-10 flex flex-col items-center w-7">
+          <div className="absolute top-14 bottom-1/2 right-0 z-10 flex flex-col items-center w-7">
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer py-1 flex-shrink-0"
               onClick={() => {
