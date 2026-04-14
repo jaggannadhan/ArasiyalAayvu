@@ -33,26 +33,34 @@ interface RuralUrbanTotal {
   total?: number | null;
 }
 
+interface IMRCell {
+  male?: number | null;
+  female?: number | null;
+  total?: number | null;
+}
+
 interface SRSSnapshot {
   period: string;
-  birth_rate?: RuralUrbanTotal;
-  death_rate?: RuralUrbanTotal;
-  natural_growth_rate?: RuralUrbanTotal;
-  imr?: RuralUrbanTotal;
-  u5mr?: RuralUrbanTotal;
+  cbr?: RuralUrbanTotal;
+  cdr?: RuralUrbanTotal;
   tfr?: RuralUrbanTotal;
-  birth_rate_trend?: number[];
-  death_rate_trend?: number[];
-  imr_trend?: number[];
-  tfr_trend?: number[];
-  birth_rate_trend_years?: number[];
+  imr?: { rural?: IMRCell; urban?: IMRCell; total?: IMRCell };
+  mmr_2018_20?: { mmr?: number; ci_low?: number; ci_high?: number };
+  trend?: {
+    years?: number[];
+    cbr_total?: number[];
+    cdr_total?: number[];
+    imr_total?: number[];
+    tfr_total?: number[];
+  };
 }
 
 interface HCESSnapshot {
   period: string;
-  mpce_with_free?: { rural?: number; urban?: number };
-  mpce_without_free?: { rural?: number; urban?: number };
-  welfare_uplift_pct?: { rural?: number; urban?: number };
+  mpce_with_free_items?: { rural?: number; urban?: number };
+  mpce_without_free_items?: { rural?: number; urban?: number };
+  welfare_uplift?: { rural_uplift_pct?: number; urban_uplift_pct?: number; rural_uplift_rs?: number; urban_uplift_rs?: number };
+  gap_vs_all_india_with_free?: { rural?: number; urban?: number };
 }
 
 interface EnrollmentCell {
@@ -63,12 +71,11 @@ interface EnrollmentCell {
 
 interface AISHESnapshot {
   period: string;
-  ger?: EnrollmentCell;
-  universities?: number;
-  colleges?: number;
-  enrollment?: EnrollmentCell;
-  phd_enrollment?: number;
-  gender_parity_index?: number;
+  ger?: { male?: number; female?: number; total?: number; gpi?: number };
+  universities?: { total?: number; [k: string]: number | undefined };
+  colleges?: { total?: number; government?: number; private_total?: number; [k: string]: number | undefined };
+  enrollment?: { total_approx?: number; ug?: number; pg?: number; phd?: number; [k: string]: number | undefined };
+  ger_vs_all_india?: number;
 }
 
 interface SDGSnapshot {
@@ -333,12 +340,11 @@ function HealthSection({
     unit: string;
     lowerBetter: boolean;
   }[] = [
-    { label: "Infant Mortality Rate",      val: srs.imr?.total,              ai: aiSrs?.imr?.total,              unit: "/1000 LB", lowerBetter: true  },
-    { label: "Under-5 Mortality",          val: srs.u5mr?.total,             ai: aiSrs?.u5mr?.total,             unit: "/1000 LB", lowerBetter: true  },
+    { label: "Infant Mortality Rate",      val: srs.imr?.total?.total,       ai: aiSrs?.imr?.total?.total,       unit: "/1000 LB", lowerBetter: true  },
+    { label: "Maternal Mortality Ratio",   val: srs.mmr_2018_20?.mmr,        ai: aiSrs?.mmr_2018_20?.mmr,        unit: "/1L LB",   lowerBetter: true  },
     { label: "Total Fertility Rate",       val: srs.tfr?.total,              ai: aiSrs?.tfr?.total,              unit: "",         lowerBetter: true  },
-    { label: "Birth Rate",                 val: srs.birth_rate?.total,       ai: aiSrs?.birth_rate?.total,       unit: "/1000",    lowerBetter: false },
-    { label: "Death Rate",                 val: srs.death_rate?.total,       ai: aiSrs?.death_rate?.total,       unit: "/1000",    lowerBetter: true  },
-    { label: "Natural Growth Rate",        val: srs.natural_growth_rate?.total, ai: aiSrs?.natural_growth_rate?.total, unit: "/1000", lowerBetter: false },
+    { label: "Birth Rate (CBR)",           val: srs.cbr?.total,              ai: aiSrs?.cbr?.total,              unit: "/1000",    lowerBetter: false },
+    { label: "Death Rate (CDR)",           val: srs.cdr?.total,              ai: aiSrs?.cdr?.total,              unit: "/1000",    lowerBetter: true  },
   ];
 
   return (
@@ -386,10 +392,10 @@ function HealthSection({
         </p>
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: "IMR",         rural: srs.imr?.rural,         urban: srs.imr?.urban },
+            { label: "IMR",         rural: srs.imr?.rural?.total,  urban: srs.imr?.urban?.total },
             { label: "TFR",         rural: srs.tfr?.rural,         urban: srs.tfr?.urban },
-            { label: "Birth Rate",  rural: srs.birth_rate?.rural,  urban: srs.birth_rate?.urban },
-            { label: "Death Rate",  rural: srs.death_rate?.rural,  urban: srs.death_rate?.urban },
+            { label: "Birth Rate",  rural: srs.cbr?.rural,         urban: srs.cbr?.urban },
+            { label: "Death Rate",  rural: srs.cdr?.rural,         urban: srs.cdr?.urban },
           ].map(({ label, rural, urban }) => (
             <div key={label} className="bg-gray-50 rounded-xl p-3">
               <p className="text-[10px] font-bold text-gray-500 mb-2">{label}</p>
@@ -435,10 +441,10 @@ function SpendingSection({
         {/* MPCE grid */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           {[
-            { label: "Rural\n(with free goods)",    val: hces.mpce_with_free?.rural,   ai: aiHces?.mpce_with_free?.rural },
-            { label: "Urban\n(with free goods)",    val: hces.mpce_with_free?.urban,   ai: aiHces?.mpce_with_free?.urban },
-            { label: "Rural\n(without free goods)", val: hces.mpce_without_free?.rural, ai: aiHces?.mpce_without_free?.rural },
-            { label: "Urban\n(without free goods)", val: hces.mpce_without_free?.urban, ai: aiHces?.mpce_without_free?.urban },
+            { label: "Rural\n(with free goods)",    val: hces.mpce_with_free_items?.rural,   ai: aiHces?.mpce_with_free_items?.rural },
+            { label: "Urban\n(with free goods)",    val: hces.mpce_with_free_items?.urban,   ai: aiHces?.mpce_with_free_items?.urban },
+            { label: "Rural\n(without free goods)", val: hces.mpce_without_free_items?.rural, ai: aiHces?.mpce_without_free_items?.rural },
+            { label: "Urban\n(without free goods)", val: hces.mpce_without_free_items?.urban, ai: aiHces?.mpce_without_free_items?.urban },
           ].map(({ label, val, ai }) => {
             const gap = val != null && ai != null ? val - ai : null;
             return (
@@ -461,7 +467,7 @@ function SpendingSection({
         </div>
 
         {/* Welfare uplift */}
-        {(hces.welfare_uplift_pct?.rural != null || hces.welfare_uplift_pct?.urban != null) && (
+        {(hces.welfare_uplift?.rural_uplift_pct != null || hces.welfare_uplift?.urban_uplift_pct != null) && (
           <div className="border-t border-gray-100 pt-3">
             <p className="text-[10px] font-bold text-gray-500 mb-2">
               Welfare Uplift from Free Goods
@@ -470,13 +476,13 @@ function SpendingSection({
               <div>
                 <p className="text-[9px] text-green-600 font-semibold">Rural</p>
                 <p className="text-base font-black text-gray-900">
-                  +{f1(hces.welfare_uplift_pct?.rural)}%
+                  +{f1(hces.welfare_uplift?.rural_uplift_pct)}%
                 </p>
               </div>
               <div>
                 <p className="text-[9px] text-blue-600 font-semibold">Urban</p>
                 <p className="text-base font-black text-gray-900">
-                  +{f1(hces.welfare_uplift_pct?.urban)}%
+                  +{f1(hces.welfare_uplift?.urban_uplift_pct)}%
                 </p>
               </div>
             </div>
@@ -526,13 +532,13 @@ function EducationSection({ aishe }: { aishe?: AISHESnapshot | null }) {
                 </div>
               ))}
             </div>
-            {aishe.gender_parity_index != null && (
+            {aishe.ger?.gpi != null && (
               <p className="text-[10px] text-gray-500 mt-2 text-center">
                 Gender Parity Index:{" "}
-                <span className={`font-bold ${aishe.gender_parity_index >= 1 ? "text-emerald-600" : "text-amber-600"}`}>
-                  {aishe.gender_parity_index.toFixed(2)}
+                <span className={`font-bold ${aishe.ger.gpi >= 1 ? "text-emerald-600" : "text-amber-600"}`}>
+                  {aishe.ger.gpi.toFixed(2)}
                 </span>
-                <span className="text-gray-400"> — {aishe.gender_parity_index >= 1 ? "more women than men enrolled" : "below parity"}</span>
+                <span className="text-gray-400"> — {aishe.ger.gpi >= 1 ? "more women than men enrolled" : "below parity"}</span>
               </p>
             )}
           </div>
@@ -541,9 +547,9 @@ function EducationSection({ aishe }: { aishe?: AISHESnapshot | null }) {
         {/* Institutions */}
         <div className="grid grid-cols-3 gap-2 text-center mb-4">
           {[
-            { label: "Universities",  val: aishe.universities },
-            { label: "Colleges",      val: aishe.colleges },
-            { label: "PhD Students",  val: aishe.phd_enrollment },
+            { label: "Universities",  val: aishe.universities?.total },
+            { label: "Colleges",      val: aishe.colleges?.total },
+            { label: "PhD Students",  val: aishe.enrollment?.phd },
           ].map(({ label, val }) => (
             <div key={label} className="bg-gray-50 rounded-xl p-2">
               <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
@@ -557,21 +563,21 @@ function EducationSection({ aishe }: { aishe?: AISHESnapshot | null }) {
         {/* Enrollment */}
         {aishe.enrollment && (
           <div className="border-t border-gray-100 pt-3">
-            <p className="text-[10px] font-bold text-gray-500 mb-2">Total Enrollment</p>
-            <div className="grid grid-cols-3 gap-2 text-center">
-              {(["male", "female", "total"] as const).map((g) => {
-                const v = aishe.enrollment?.[g];
-                return (
-                  <div key={g}>
-                    <p className="text-[9px] text-gray-400 capitalize font-semibold">
-                      {g === "total" ? "Total" : g}
-                    </p>
-                    <p className="text-sm font-black text-gray-900">
-                      {v != null ? (v / 100000).toFixed(1) + "L" : "—"}
-                    </p>
-                  </div>
-                );
-              })}
+            <p className="text-[10px] font-bold text-gray-500 mb-2">Enrollment Breakdown</p>
+            <div className="grid grid-cols-4 gap-2 text-center">
+              {[
+                { label: "Total", val: aishe.enrollment.total_approx },
+                { label: "UG",    val: aishe.enrollment.ug },
+                { label: "PG",    val: aishe.enrollment.pg },
+                { label: "PhD",   val: aishe.enrollment.phd },
+              ].map(({ label, val }) => (
+                <div key={label}>
+                  <p className="text-[9px] text-gray-400 font-semibold">{label}</p>
+                  <p className="text-sm font-black text-gray-900">
+                    {val != null ? (val >= 100000 ? (val / 100000).toFixed(1) + "L" : val.toLocaleString("en-IN")) : "—"}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         )}
