@@ -784,30 +784,28 @@ export default function KnowledgeGraphPage() {
       {view3D && (
         <>
           {/* Vertical pan — right edge, half-height centered */}
-          <div className="absolute top-14 right-0 z-10 flex flex-col items-center w-7 h-[25vh]">
+          <div className="absolute top-14 right-0 z-10 flex flex-col items-center w-7 overflow-hidden" style={{ height: "25vh" }}>
             <button
-              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1 flex-shrink-0"
+              className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y += 50; ctrl.update(); }
               }}
             >&#9650;</button>
-            <div className="flex-1 flex items-center">
-              <input
-                type="range"
-                min={-500}
-                max={500}
-                defaultValue={0}
-                className="cursor-pointer accent-gray-500"
-                style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", height: "100%" }}
-                onChange={(e) => {
-                  const ctrl = graphRef.current?.controls();
-                  if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
-                }}
-              />
-            </div>
+            <input
+              type="range"
+              min={-500}
+              max={500}
+              defaultValue={0}
+              className="cursor-pointer accent-gray-500 flex-shrink"
+              style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", height: "calc(25vh - 50px)" }}
+              onChange={(e) => {
+                const ctrl = graphRef.current?.controls();
+                if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
+              }}
+            />
             <button
-              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1 flex-shrink-0"
+              className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y -= 50; ctrl.update(); }
