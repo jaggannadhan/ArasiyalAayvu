@@ -141,6 +141,35 @@ interface CoLSnapshot {
   food_dairy?: Record<string, DairyItem>;
 }
 
+interface StateBudget {
+  fiscal_year: string;
+  state_code: string;
+  state_name: string;
+  revenue: {
+    own_tax_revenue_cr?: number | null;
+    central_devolution_cr?: number | null;
+    grants_in_aid_cr?: number | null;
+    total_revenue_receipts_cr?: number | null;
+  };
+  expenditure: {
+    revenue_expenditure_cr?: number | null;
+    capital_expenditure_cr?: number | null;
+    total_exp_cr?: number | null;
+  };
+  fiscal: {
+    fiscal_deficit_cr?: number | null;
+    revenue_deficit_cr?: number | null;
+    primary_deficit_cr?: number | null;
+  };
+  committed: {
+    salaries_cr?: number | null;
+    pensions_cr?: number | null;
+    interest_cr?: number | null;
+    subsidies_cr?: number | null;
+    discretionary_cr?: number | null;
+  };
+}
+
 interface AllIndiaRef {
   plfs?: PLFSSnapshot | null;
   srs?: SRSSnapshot | null;
@@ -161,6 +190,7 @@ interface StateReport {
   ncrb?: NCRBSnapshot | null;
   asi?: ASISnapshot | null;
   cost_of_living?: CoLSnapshot | null;
+  state_budget?: StateBudget | null;
   all_india?: AllIndiaRef;
 }
 
@@ -947,9 +977,112 @@ function IndustrySection({ asi, aiAsi }: { asi?: ASISnapshot | null; aiAsi?: ASI
   );
 }
 
+// ─── Fiscal (State Budget / CAG) ─────────────────────────────────────────────
+
+function fCr(v: number | null | undefined): string {
+  if (v == null) return "—";
+  if (typeof v !== "number") return "—";
+  return "₹" + v.toLocaleString("en-IN", { maximumFractionDigits: 0 }) + " Cr";
+}
+
+function FiscalSection({ budget }: { budget?: StateBudget | null }) {
+  if (!budget) return <EmptySection msg="No state budget data available" />;
+  const { revenue: rev, expenditure: exp, fiscal: fis, committed: com } = budget;
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+          State Finances — CAG Actuals · {budget.fiscal_year}
+        </p>
+        <p className="text-[10px] text-gray-400 mb-3">Source: CAG Finance Accounts Vol I</p>
+
+        {/* Revenue */}
+        <div className="mb-4">
+          <p className="text-[10px] font-bold text-gray-500 mb-2">Revenue Receipts</p>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { label: "Total Revenue", val: rev.total_revenue_receipts_cr },
+              { label: "Own Tax Revenue", val: rev.own_tax_revenue_cr },
+              { label: "Central Devolution", val: rev.central_devolution_cr },
+              { label: "Grants-in-Aid", val: rev.grants_in_aid_cr },
+            ].filter(({ val }) => val != null).map(({ label, val }) => (
+              <div key={label} className="bg-gray-50 rounded-xl p-3">
+                <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Expenditure */}
+        {(exp.total_exp_cr != null || exp.revenue_expenditure_cr != null) && (
+          <div className="mb-4">
+            <p className="text-[10px] font-bold text-gray-500 mb-2">Expenditure</p>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { label: "Total Expenditure", val: exp.total_exp_cr },
+                { label: "Revenue Expenditure", val: exp.revenue_expenditure_cr },
+                { label: "Capital Expenditure", val: exp.capital_expenditure_cr },
+              ].filter(({ val }) => val != null).map(({ label, val }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-3">
+                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Fiscal deficits */}
+        {(fis.fiscal_deficit_cr != null || fis.revenue_deficit_cr != null) && (
+          <div className="mb-4">
+            <p className="text-[10px] font-bold text-gray-500 mb-2">Deficit Indicators</p>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { label: "Fiscal Deficit", val: fis.fiscal_deficit_cr, warn: true },
+                { label: "Revenue Deficit", val: fis.revenue_deficit_cr, warn: true },
+                { label: "Primary Deficit", val: fis.primary_deficit_cr, warn: true },
+              ].filter(({ val }) => val != null).map(({ label, val, warn }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-3">
+                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className={`text-sm font-black ${warn && val != null && val > 0 ? "text-red-600" : "text-gray-900"}`}>
+                    {fCr(val)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Committed expenditure */}
+        {(com.salaries_cr != null || com.interest_cr != null || com.pensions_cr != null) && (
+          <div>
+            <p className="text-[10px] font-bold text-gray-500 mb-2">Committed Expenditure</p>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { label: "Salaries", val: com.salaries_cr },
+                { label: "Pensions", val: com.pensions_cr },
+                { label: "Interest Payments", val: com.interest_cr },
+                { label: "Subsidies", val: com.subsidies_cr },
+                { label: "Discretionary Space", val: com.discretionary_cr },
+              ].filter(({ val }) => val != null).map(({ label, val }) => (
+                <div key={label} className="bg-gray-50 rounded-xl p-3">
+                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-type SectionKey = "labour" | "health" | "spending" | "education" | "school" | "crime" | "industry" | "sdg" | "cost";
+type SectionKey = "labour" | "health" | "spending" | "education" | "school" | "crime" | "industry" | "fiscal" | "sdg" | "cost";
 
 const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "labour",    label: "Labour" },
@@ -959,6 +1092,7 @@ const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "school",    label: "School Ed" },
   { key: "crime",     label: "Crime" },
   { key: "industry",  label: "Industry" },
+  { key: "fiscal",    label: "Fiscal" },
   { key: "sdg",       label: "SDG" },
   { key: "cost",      label: "Cost of Living" },
 ];
@@ -1078,6 +1212,7 @@ export default function StateReportPage() {
             {activeSection === "school"    && <SchoolSection    udise={report.udise}     aiUdise={aiUdise} />}
             {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={undefined} />}
             {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
+            {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
             {activeSection === "cost"      && (
               <CostSection

@@ -743,6 +743,23 @@ def state_report(state_slug: str) -> Dict[str, Any]:
             "cost_of_living", f"cost_of_living_{state_slug}"
         )
 
+        # State budgets (CAG Finance Accounts) — doc ID = {code}_{fy}
+        _SLUG_TO_CAG_CODE = {
+            "tamil_nadu": "TN", "kerala": "KL", "karnataka": "KA",
+            "andhra_pradesh": "AP", "telangana": "TS",
+        }
+        cag_code = _SLUG_TO_CAG_CODE.get(state_slug)
+        report["state_budget"] = None
+        if cag_code:
+            # Find latest by scanning all docs for this state
+            budget_docs = [
+                d for d in _db.collection("state_budgets").stream()
+                if d.id.startswith(f"{cag_code}_")
+            ]
+            if budget_docs:
+                latest = max(budget_docs, key=lambda d: d.id)
+                report["state_budget"] = latest.to_dict()
+
         report["all_india"] = {
             col: _kg_latest_snapshot(col, "all_india")
             for col in ("plfs", "srs", "hces", "udise", "asi", "sdg_index")
