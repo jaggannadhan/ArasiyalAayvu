@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import hierarchyRaw from "@/lib/pincode-hierarchy.json";
 
@@ -146,10 +146,9 @@ export default function PincodeMapPage() {
                   const distOpen = isDistrictOpen(d.district);
 
                   return (
-                    <>
+                    <React.Fragment key={`dist-${d.district}`}>
                       {/* ── District header row ── */}
                       <tr
-                        key={`dist-${d.district}`}
                         onClick={() => toggleDistrict(d.district)}
                         className="bg-gray-900 border-b border-gray-700 select-none cursor-pointer hover:bg-gray-800 transition-colors"
                       >
@@ -257,7 +256,7 @@ export default function PincodeMapPage() {
                             );
                           });
                         })}
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </tbody>
