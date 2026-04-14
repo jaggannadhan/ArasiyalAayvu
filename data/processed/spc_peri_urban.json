@@ -1,0 +1,87 @@
+{
+  "source": "TN State Planning Commission — Peri-Urban Management Study 2026",
+  "url": "https://spc.tn.gov.in/wp-content/uploads/Peri-Urban-Management.pdf",
+  "state": "Tamil Nadu",
+  "period": "2026",
+  "urbanization": {
+    "urban_population_pct": 48,
+    "urban_population_million": 34.9,
+    "rural_population_million": 37.2,
+    "urban_settlements": 1097,
+    "rural_settlements": 15049,
+    "cbuAs_identified": 316,
+    "town_panchayats": 490,
+    "town_panchayats_pct_of_ulbs": 74,
+    "built_up_outside_statutory_pct": 37,
+    "note": "Census 2011 base data. CBUAs delineated using DEGURBA + satellite imagery."
+  },
+  "peri_urban_growth_1990_2020": {
+    "unit": "sq km",
+    "cities": {
+      "Chennai": {
+        "cbua_growth": 139.95,
+        "peri_urban_growth": 41.26,
+        "peri_urban_pct": 29.5
+      },
+      "Coimbatore": {
+        "cbua_growth": 121.42,
+        "peri_urban_growth": 55.33,
+        "peri_urban_pct": 45.6
+      },
+      "Salem": {
+        "cbua_growth": 55.16,
+        "peri_urban_growth": 35.12,
+        "peri_urban_pct": 63.7
+      },
+      "Erode": {
+        "cbua_growth": 31.27,
+        "peri_urban_growth": 15.55,
+        "peri_urban_pct": 49.7
+      },
+      "Tiruchirappalli": {
+        "cbua_growth": 16.28,
+        "peri_urban_growth": 5.12,
+        "peri_urban_pct": 31.4
+      },
+      "Madurai": {
+        "cbua_growth": 14.19,
+        "peri_urban_growth": 8.1,
+        "peri_urban_pct": 57.0
+      },
+      "Vellore": {
+        "cbua_growth": 13.64,
+        "peri_urban_growth": 5.59,
+        "peri_urban_pct": 41.0
+      },
+      "Hosur": {
+        "cbua_growth": 12.0,
+        "peri_urban_growth": 9.06,
+        "peri_urban_pct": 75.5
+      },
+      "Thanjavur": {
+        "cbua_growth": 10.09,
+        "peri_urban_growth": 6.28,
+        "peri_urban_pct": 62.2
+      },
+      "Dindigul": {
+        "cbua_growth": 8.9,
+        "peri_urban_growth": 5.31,
+        "peri_urban_pct": 59.7
+      }
+    }
+  },
+  "key_findings": [
+    "Hosur has highest peri-urban growth share (75.5%) — driven by Bengaluru spillover",
+    "Salem and Thanjavur show 60%+ peri-urban growth — industrial corridor effect",
+    "Chennai has lowest peri-urban share (29.5%) despite largest absolute growth — mature urban core",
+    "37% of built-up area lies outside statutory town boundaries — governance gap",
+    "490 town panchayats = 74% of all ULBs — most urban governance at smallest scale"
+  ],
+  "policy_recommendations": [
+    "Establish Rural-to-Urban Transition Agencies at state and district levels",
+    "Mandate community participation in merger decisions when reclassifying rural→urban",
+    "Enable coordinated taxation across urban-rural boundaries for peri-urban areas",
+    "Integrate peri-urban areas into master plans of adjoining corporations",
+    "Protect agricultural land in peri-urban zones through zoning regulations"
+  ]
+}
