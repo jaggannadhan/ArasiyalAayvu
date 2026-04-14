@@ -571,7 +571,57 @@ def parse_finance_accounts_vol1(pdf_path: Path, fiscal_year: str, state_code: st
     pension            = _nth_match_first_num(r"\(Ref\.\s*Statement\s*4-A,4-B\b", full_stmt2, 2)
 
     # ── Fiscal position ─────────────────────────────────────────────────────
-    fiscal_deficit       = _extract_number_after(full_stmt2, r"Fiscal Deficit\s*\(a\)")
+    # Fiscal Deficit appears in various formats across states:
+    #   "Fiscal Deficit (a) 48,922.06"   (TS)
+    #   "Fiscal Deficit(*) 48,248.14"    (KL)
+    #   "Fiscal Deficit 85,029.56(#)"    (KA)
+    #   "Fiscal Deficit 81,071.17"       (AP)
+    fiscal_deficit = None
+    for fd_pat in [
+        r"Fiscal\s+Deficit\s*\(a\)",             # TS format
+        r"Fiscal\s+Deficit\s*\(\*\)",             # KL format
+        r"Fiscal\s+Deficit(?:\s*\([^)]*\))*\s*",  # generic: skip any footnote markers
+    ]:
+        fiscal_deficit = _extract_number_after(full_stmt2, fd_pat)
+        if fiscal_deficit is not None:
+            break
+
+    # Revenue Deficit — similar format variations
+    revenue_deficit = None
+    for rd_pat in [
+        r"Revenue\s+Deficit\s*\(-?\)",
+        r"Revenue\s+Deficit(?:\s*\([^)]*\))*\s*",
+    ]:
+        revenue_deficit = _extract_number_after(full_stmt2, rd_pat)
+        if revenue_deficit is not None:
+            break
+
+    # Primary Deficit
+    primary_deficit = _extract_number_after(full_stmt2, r"Primary\s+Deficit")
+
+    # ── Fallback: extract from fiscal summary page ─────────────────────────
+    # Some states have a compact summary page with lines like:
+    #   "Revenue Receipts 2,58,152.52 Revenue Expenditure 2,78,986.97"
+    #   "Total Receipts 3,61,836.42 Total Expenditure 3,68,419.19"
+    # Try these as fallback for missing fields.
+    if revenue_exp is None:
+        revenue_exp = _extract_number_after(full_stmt2, r"Revenue\s+Expenditure\s+")
+        # Avoid picking up "Revenue Expenditure" from guide/contents pages
+        if revenue_exp is not None and revenue_exp < 1000:
+            revenue_exp = None
+
+    if capital_exp is None:
+        capital_exp = _extract_number_after(full_stmt2, r"Capital\s+Expenditure\s+(?:Stt|Statement)")
+        if capital_exp is None:
+            # Try the summary page format: "Capital Receipts X Capital Expenditure Y"
+            for ce_m in re.finditer(r"Capital\s+Expenditure\s+", full_stmt2):
+                snippet = full_stmt2[ce_m.end():ce_m.end() + 80]
+                n = re.search(_NUM, snippet)
+                if n:
+                    v = _clean_num(n.group(0))
+                    if v and v > 5000:  # realistic capital expenditure
+                        capital_exp = v
+                        break
 
     # ── Cash balance (from Annexure) ─────────────────────────────────────────
     # Closing Cash Balance appears as "Closing Cash Balance (-)17.15 (-)93.22"
@@ -594,6 +644,11 @@ def parse_finance_accounts_vol1(pdf_path: Path, fiscal_year: str, state_code: st
     total_exp: float | None = None
     if revenue_exp is not None and capital_exp is not None:
         total_exp = revenue_exp + capital_exp
+    # Fallback: extract "Total Expenditure" directly from summary page
+    if total_exp is None:
+        total_exp = _extract_number_after(full_stmt2, r"Total\s+Expenditure\s+(?:Consolidated\s+)?")
+        if total_exp is not None and total_exp < 10000:
+            total_exp = None  # avoid picking up small/irrelevant numbers
 
     # Fiscal year label  e.g. "2024-25" → "April 2024 – March 2025"
     fy_label = _fy_label(fiscal_year)
@@ -614,9 +669,9 @@ def parse_finance_accounts_vol1(pdf_path: Path, fiscal_year: str, state_code: st
             "total_revenue_receipts_cr": revenue_receipts,
         },
         "expenditure": {
-            "revenue_exp_cr":  revenue_exp,
-            "capital_exp_cr":  capital_exp,
-            "total_exp_cr":    total_exp,
+            "revenue_expenditure_cr": revenue_exp,
+            "capital_expenditure_cr": capital_exp,
+            "total_exp_cr":           total_exp,
         },
         "committed": {
             "salaries_cr":        salaries,
@@ -629,6 +684,8 @@ def parse_finance_accounts_vol1(pdf_path: Path, fiscal_year: str, state_code: st
         },
         "fiscal": {
             "fiscal_deficit_cr":       fiscal_deficit,
+            "revenue_deficit_cr":      revenue_deficit,
+            "primary_deficit_cr":      primary_deficit,
             "closing_cash_balance_cr": closing_cash_balance,
         },
 
