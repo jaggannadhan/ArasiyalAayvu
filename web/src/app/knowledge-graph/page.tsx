@@ -813,9 +813,8 @@ export default function KnowledgeGraphPage() {
             >&#9660;</button>
           </div>
 
-          {/* Horizontal pan — bottom edge, above timeline */}
-          {/* Horizontal pan — sits just above timeline bar */}
-          <div className="absolute bottom-[4.5rem] left-40 sm:left-48 right-10 z-10 flex items-center gap-1 h-8">
+          {/* Horizontal pan — sits just above timeline bar, adjusts to legend width */}
+          <div className={`absolute bottom-[4.5rem] right-10 z-10 flex items-center gap-1 h-8 ${legendCollapsed ? "left-10" : "left-40 sm:left-48"}`}>
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
               onClick={() => {
