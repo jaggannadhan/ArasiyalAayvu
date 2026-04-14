@@ -783,8 +783,8 @@ export default function KnowledgeGraphPage() {
       {/* Pan controls — shift the graph's lookAt target (moves the whole scene) */}
       {view3D && (
         <>
-          {/* Vertical pan — right edge, within the 3D space (top-10 to bottom-14) */}
-          <div className="absolute top-12 bottom-[4.5rem] right-0 z-10 flex flex-col items-center w-8 sm:w-10">
+          {/* Vertical pan — right edge, stops above horizontal slider + timeline */}
+          <div className="absolute top-12 bottom-[5.5rem] right-0 z-10 flex flex-col items-center w-8 sm:w-10">
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
               onClick={() => {
