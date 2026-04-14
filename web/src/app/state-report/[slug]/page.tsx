@@ -230,6 +230,19 @@ function fInr(v: number | null | undefined): string {
   return "₹" + v.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+function SourceLink({ name, url, period }: { name: string; url: string; period?: string }) {
+  return (
+    <p className="text-[10px] text-gray-400 mb-3">
+      {period && <>As of {period} · </>}
+      Source:{" "}
+      <a href={url} target="_blank" rel="noopener noreferrer"
+         className="underline underline-offset-2 hover:text-gray-600">
+        {name}
+      </a>
+    </p>
+  );
+}
+
 function MiniBar({
   value,
   max = 100,
@@ -275,9 +288,10 @@ function LabourSection({
     <div className="space-y-4">
       {/* 15+ headline */}
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Labour Force — Age 15+ · {plfs.period}
         </p>
+        <SourceLink name="Periodic Labour Force Survey (MoSFA)" url="https://www.mospi.gov.in/publication/plfs-annual-report-2023-24" period={plfs.period} />
         <div className="grid grid-cols-3 gap-2 text-center mb-4">
           {(["lfpr", "wpr", "ur"] as const).map((metric) => {
             const val = plfs[metric]?.["15+"]?.total?.person;
@@ -384,9 +398,10 @@ function HealthSection({
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Vital Statistics · SRS {srs.period}
         </p>
+        <SourceLink name="Sample Registration System (RGI)" url="https://censusindia.gov.in/nada/index.php/catalog/46172" />
         <div className="space-y-0">
           {rows.map(({ label, val, ai, unit, lowerBetter }) => {
             const gap = val != null && ai != null ? val - ai : null;
@@ -468,6 +483,7 @@ function SpendingSection({
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Monthly Per Capita Consumption — HCES {hces.period}
         </p>
+        <SourceLink name="Household Consumption Expenditure Survey (MoSFA)" url="https://www.mospi.gov.in/publication/household-consumption-expenditure-survey-2023-24" period={hces.period} />
         <p className="text-[10px] text-gray-400 mb-4">
           &ldquo;With free goods&rdquo; counts govt-supplied items at imputed value.
         </p>
@@ -538,9 +554,10 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Higher Education — AISHE {aishe.period}
         </p>
+        <SourceLink name="All India Survey on Higher Education (MoE)" url="https://aishe.gov.in" period={aishe.period} />
 
         {/* GER */}
         {aishe.ger && (
@@ -642,7 +659,9 @@ function SDGSection({ sdg }: { sdg?: SDGSnapshot | null }) {
       {/* Hero */}
       <div className="bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl p-5 text-white">
         <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">
-          NITI Aayog SDG India Index · {sdg.period}
+          <a href="https://sdgindiaindex.niti.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-100">
+            NITI Aayog SDG India Index
+          </a>{" "}· {sdg.period}
         </p>
         <div className="flex items-end gap-6 mt-2">
           <div>
@@ -745,7 +764,7 @@ function CostSection({
           <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
             Fuel Prices — Chennai Reference
           </p>
-          <p className="text-[10px] text-gray-400 mb-3">As of {colIndia.period} · Source: Goodreturns / IOCL</p>
+          <SourceLink name="Goodreturns / IOCL" url="https://www.goodreturns.in/petrol-price.html" period={colIndia.period} />
           <div className="space-y-0">
             {[
               { label: "Petrol",                     key: "petrol" },
@@ -779,7 +798,7 @@ function CostSection({
           <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
             Aavin Dairy Prices — Tamil Nadu
           </p>
-          <p className="text-[10px] text-gray-400 mb-3">As of {colTN.period} · Source: LiveChennai</p>
+          <SourceLink name="LiveChennai / Aavin" url="https://www.livechennai.com/aavin_milk_price_in_chennai.asp" period={colTN.period} />
           <div className="space-y-0">
             {Object.entries(colTN.food_dairy)
               .filter(([, v]) => v.price != null)
@@ -826,7 +845,7 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Gross Enrolment Ratio · {udise.period}
         </p>
-        <p className="text-[10px] text-gray-400 mb-3">Source: UDISE+</p>
+        <SourceLink name="UDISE+ (Ministry of Education)" url="https://udiseplus.gov.in" period={udise.period} />
         <div className="grid grid-cols-5 gap-2 text-center">
           {(["primary", "upper_primary", "elementary", "secondary", "higher_secondary"] as const).map((level) => {
             const val = ger?.[level];
@@ -914,7 +933,7 @@ function CrimeSection({ ncrb, aiNcrb }: { ncrb?: NCRBSnapshot | null; aiNcrb?: N
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Cognizable Crimes — IPC · {ncrb.period}
         </p>
-        <p className="text-[10px] text-gray-400 mb-3">Source: NCRB Crime in India</p>
+        <SourceLink name="NCRB Crime in India" url="https://www.ncrb.gov.in/crime-in-india.html" period={ncrb.period} />
 
         <div className="space-y-3">
           {metrics.map(({ key, label, color }) => {
@@ -955,7 +974,7 @@ function IndustrySection({ asi, aiAsi }: { asi?: ASISnapshot | null; aiAsi?: ASI
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Factory Sector · {asi.period}
         </p>
-        <p className="text-[10px] text-gray-400 mb-3">Source: Annual Survey of Industries (MOSPI)</p>
+        <SourceLink name="Annual Survey of Industries (MOSPI)" url="https://www.mospi.gov.in/asi-summary-results" period={asi.period} />
 
         <div className="grid grid-cols-2 gap-3">
           {[
