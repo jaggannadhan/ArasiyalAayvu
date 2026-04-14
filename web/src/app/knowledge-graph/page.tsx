@@ -783,10 +783,10 @@ export default function KnowledgeGraphPage() {
       {/* Pan controls — shift the graph's lookAt target (moves the whole scene) */}
       {view3D && (
         <>
-          {/* Vertical pan — right edge, ends where timeline bar starts */}
-          <div className="absolute top-12 bottom-[4.5rem] right-0 z-10 flex flex-col items-center w-8 sm:w-10">
+          {/* Vertical pan — right edge, half-height centered */}
+          <div className="absolute top-1/3 bottom-1/3 right-0 z-10 flex flex-col items-center w-7">
             <button
-              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
+              className="text-gray-500 hover:text-white text-xs cursor-pointer leading-none"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y += 50; ctrl.update(); }
@@ -799,7 +799,7 @@ export default function KnowledgeGraphPage() {
                 max={500}
                 defaultValue={0}
                 className="cursor-pointer accent-gray-500"
-                style={{ writingMode: "vertical-lr", direction: "rtl", width: "20px", height: "100%" }}
+                style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", height: "100%" }}
                 onChange={(e) => {
                   const ctrl = graphRef.current?.controls();
                   if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
@@ -807,7 +807,7 @@ export default function KnowledgeGraphPage() {
               />
             </div>
             <button
-              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
+              className="text-gray-500 hover:text-white text-xs cursor-pointer leading-none"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y -= 50; ctrl.update(); }
