@@ -265,6 +265,22 @@ export default function KnowledgeGraphPage() {
     return { nodes: visibleNodes, links: visibleEdges };
   }, [graphData, hiddenTypes, timeRange]);
 
+  // Center graph in viewport whenever data loads, view switches, or window resizes
+  useEffect(() => {
+    if (!graphRef.current || !filteredGraph.nodes.length) return;
+    const timer = setTimeout(() => {
+      graphRef.current?.zoomToFit(400, 40);
+    }, 300);
+    const onResize = () => {
+      graphRef.current?.zoomToFit(400, 40);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [filteredGraph.nodes.length, view3D]);
+
   // Pre-baked layout: nodes have fx/fy from the graph builder.
   // Only run a brief simulation to settle any floating nodes, then stop.
   useEffect(() => {
