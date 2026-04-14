@@ -185,8 +185,8 @@ class GraphBuilder:
                                party=party, constituency=cslug)
                 party_id = f"party:{party.lower().replace(' ', '_')}"
                 ac_id = f"constituency:{cslug}"
-                self._add_edge(cand_id, party_id, "belongs_to")
-                self._add_edge(cand_id, ac_id, "contests")
+                self._add_edge(cand_id, party_id, "belongs_to", period=2026)
+                self._add_edge(cand_id, ac_id, "contests", period=2026)
 
         # MLA data — from candidate_accountability (2021 winners)
         try:
@@ -205,10 +205,13 @@ class GraphBuilder:
                                    party=party, constituency=ac_slug,
                                    assets=assets, criminal_cases=cases)
                     ac_id = f"constituency:{ac_slug}"
-                    self._add_edge(mla_id, ac_id, "represents")
+                    # Extract year from doc ID (format: {year}_{slug})
+                    mla_parts = doc.id.split("_", 1)
+                    mla_year = int(mla_parts[0]) if mla_parts[0].isdigit() else 2021
+                    self._add_edge(mla_id, ac_id, "represents", period=mla_year)
                     if party:
                         party_id = f"party:{party.lower().replace(' ', '_')}"
-                        self._add_edge(mla_id, party_id, "belongs_to")
+                        self._add_edge(mla_id, party_id, "belongs_to", period=mla_year)
         except Exception as e:
             print(f"    WARNING: Could not read MLAs: {e}")
 
@@ -229,10 +232,12 @@ class GraphBuilder:
                 if not text:
                     continue
 
+                target_year = data.get("target_year", 2026)
                 promise_id = f"promise:{doc.id}"
                 self._add_node(promise_id, "manifesto_item", text,
-                               party=party_name, category=category, status=status)
-                self._add_edge(party_id, promise_id, "promised")
+                               party=party_name, category=category, status=status,
+                               period=target_year)
+                self._add_edge(party_id, promise_id, "promised", period=target_year)
 
                 # Link to SDG goals via category
                 cat_key = category.lower().strip().replace("'", "").replace("&", "and")
@@ -261,7 +266,7 @@ class GraphBuilder:
                 for mapping in cat_mappings:
                     sdg_id = f"sdg:{mapping['sdg']}"
                     self._add_edge(promise_id, sdg_id, "targets_goal",
-                                   weight=mapping["weight"])
+                                   weight=mapping["weight"], period=target_year)
 
         except Exception as e:
             print(f"    WARNING: Could not read manifesto: {e}")
@@ -415,10 +420,14 @@ class GraphBuilder:
                 # Link to each state's indicator node
                 for state_slug in FOCUS_STATES:
                     ind_id = f"{ind['indicator']}:{state_slug}"
+                    # Get period from the indicator node
+                    ind_node = next((n for n in self.nodes if n["id"] == ind_id), None)
+                    ind_period = ind_node.get("period") if ind_node else None
                     self._add_edge(sdg_id, ind_id, "measured_by",
                                    weight=ind["weight"],
                                    field=ind["field"],
-                                   reason=ind["reason"])
+                                   reason=ind["reason"],
+                                   **({"period": ind_period} if ind_period else {}))
 
         print(f"    {len(SDG_GOAL_NAMES)} SDG goal nodes")
 
@@ -453,7 +462,7 @@ class GraphBuilder:
                 label = f"{self.ontology['node_types'][ind_type]['label']} — {state_name}"
 
                 self._add_node(ind_id, ind_type, label, period=period, state=state_slug, **snap)
-                self._add_edge(state_id, ind_id, "describes")
+                self._add_edge(state_id, ind_id, "describes", period=period)
 
             # Cost of Living
             col_snap = self._latest_snapshot("cost_of_living", f"cost_of_living_{state_slug}")
@@ -462,7 +471,7 @@ class GraphBuilder:
                 col_id = f"indicator_col:{state_slug}"
                 label = f"Cost of Living — {state_name}"
                 self._add_node(col_id, "indicator_col", label, period=period, state=state_slug)
-                self._add_edge(state_id, col_id, "describes")
+                self._add_edge(state_id, col_id, "describes", period=period)
 
             # AISHE
             aishe_snap = self._latest_snapshot("aishe", state_slug)
@@ -471,7 +480,7 @@ class GraphBuilder:
                 aishe_id = f"indicator_aishe:{state_slug}"
                 label = f"Higher Education (AISHE) — {state_name}"
                 self._add_node(aishe_id, "indicator_aishe", label, period=period, state=state_slug)
-                self._add_edge(state_id, aishe_id, "describes")
+                self._add_edge(state_id, aishe_id, "describes", period=period)
 
         count = sum(1 for n in self.nodes if n["layer"] == "socioeconomic")
         print(f"    {count} indicator nodes")
@@ -486,10 +495,14 @@ class GraphBuilder:
                 src = f"{influence['source']}:{state_slug}"
                 tgt = f"{influence['target']}:{state_slug}"
                 if src in self._node_ids and tgt in self._node_ids:
+                    # Use source indicator's period
+                    src_node = next((n for n in self.nodes if n["id"] == src), None)
+                    inf_period = src_node.get("period") if src_node else None
                     self._add_edge(src, tgt, "influences",
                                    weight=influence["weight"],
                                    direction=influence["direction"],
-                                   reason=influence["reason"])
+                                   reason=influence["reason"],
+                                   **({"period": inf_period} if inf_period else {}))
                     count += 1
         print(f"    {count} causal edges")
 

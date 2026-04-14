@@ -125,6 +125,31 @@ const NODE_TYPE_LABELS: Record<string, string> = {
   indicator_col: "Cost of Living",
 };
 
+// ─── Temporal config ────────────────────────────────────────────────────────
+
+// Key time markers for the slider
+const TIME_MARKERS = [
+  { year: 2006, label: "2006 Election" },
+  { year: 2011, label: "2011 Election" },
+  { year: 2016, label: "2016 Election" },
+  { year: 2021, label: "2021 Election" },
+  { year: 2026, label: "2026 Election" },
+];
+
+const MIN_YEAR = 2006;
+const MAX_YEAR = 2026;
+
+/**
+ * Normalize a period string or number to a numeric year for comparison.
+ * "2023-24" → 2023, "2021-22" → 2021, 2021 → 2021, "2026-04" → 2026
+ */
+function periodToYear(p: string | number | undefined | null): number | null {
+  if (p == null) return null;
+  const s = String(p);
+  const m = s.match(/^(\d{4})/);
+  return m ? parseInt(m[1]) : null;
+}
+
 // Label visibility threshold per node type (zoom level)
 const LABEL_ZOOM_THRESHOLD: Record<string, number> = {
   state: 0.3,
@@ -173,6 +198,7 @@ export default function KnowledgeGraphPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [legendCollapsed, setLegendCollapsed] = useState(false);
   const [view3D, setView3D] = useState(true);
+  const [timeRange, setTimeRange] = useState<number>(MAX_YEAR); // show edges up to this year
   const hasZoomedToFit = useRef(false);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
@@ -223,10 +249,15 @@ export default function KnowledgeGraphPage() {
     const visibleEdges = graphData.edges.filter((e) => {
       const src = typeof e.source === "string" ? e.source : e.source.id;
       const tgt = typeof e.target === "string" ? e.target : e.target.id;
-      return visibleIds.has(src) && visibleIds.has(tgt);
+      if (!visibleIds.has(src) || !visibleIds.has(tgt)) return false;
+      // Temporal filter: edges with a period must be <= timeRange
+      // Edges without period (structural) always pass
+      const edgeYear = periodToYear(e.period);
+      if (edgeYear != null && edgeYear > timeRange) return false;
+      return true;
     });
     return { nodes: visibleNodes, links: visibleEdges };
-  }, [graphData, hiddenTypes]);
+  }, [graphData, hiddenTypes, timeRange]);
 
   // Pre-baked layout: nodes have fx/fy from the graph builder.
   // Only run a brief simulation to settle any floating nodes, then stop.
@@ -681,8 +712,44 @@ export default function KnowledgeGraphPage() {
         </div>
       )}
 
+      {/* Time slider — bottom bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-gray-900/90 backdrop-blur-sm border-t border-gray-800 px-6 py-3">
+        <div className="flex items-center gap-4 max-w-3xl mx-auto">
+          <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide flex-shrink-0">
+            Timeline
+          </span>
+          <div className="flex-1 relative">
+            <input
+              type="range"
+              min={MIN_YEAR}
+              max={MAX_YEAR}
+              value={timeRange}
+              onChange={(e) => setTimeRange(parseInt(e.target.value))}
+              className="w-full h-1.5 bg-gray-700 rounded-full appearance-none cursor-pointer accent-blue-500"
+            />
+            {/* Tick marks */}
+            <div className="flex justify-between mt-1">
+              {TIME_MARKERS.map((m) => (
+                <button
+                  key={m.year}
+                  onClick={() => setTimeRange(m.year)}
+                  className={`text-[9px] cursor-pointer transition-colors ${
+                    timeRange >= m.year ? "text-blue-400 font-bold" : "text-gray-600"
+                  }`}
+                >
+                  {m.year}
+                </button>
+              ))}
+            </div>
+          </div>
+          <span className="text-xs font-bold text-blue-400 flex-shrink-0 w-16 text-right">
+            ≤ {timeRange}
+          </span>
+        </div>
+      </div>
+
       {/* Graph canvas */}
-      <div className="w-full h-screen pt-10">
+      <div className="w-full h-screen pt-10 pb-16">
         {/* eslint-disable @typescript-eslint/no-explicit-any */}
         {view3D ? (
           <ForceGraph3D
