@@ -145,6 +145,8 @@ interface StateBudget {
   fiscal_year: string;
   state_code: string;
   state_name: string;
+  source?: string;
+  source_url?: string;
   revenue: {
     own_tax_revenue_cr?: number | null;
     central_devolution_cr?: number | null;
@@ -995,7 +997,17 @@ function FiscalSection({ budget }: { budget?: StateBudget | null }) {
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           State Finances — CAG Actuals · {budget.fiscal_year}
         </p>
-        <p className="text-[10px] text-gray-400 mb-3">Source: CAG Finance Accounts Vol I</p>
+        <p className="text-[10px] text-gray-400 mb-3">
+          Source:{" "}
+          {budget.source_url ? (
+            <a href={budget.source_url} target="_blank" rel="noopener noreferrer"
+               className="underline underline-offset-2 hover:text-gray-600">
+              {budget.source || "CAG Finance Accounts Vol I"}
+            </a>
+          ) : (
+            budget.source || "CAG Finance Accounts Vol I"
+          )}
+        </p>
 
         {/* Revenue */}
         <div className="mb-4">
