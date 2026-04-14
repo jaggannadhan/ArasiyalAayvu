@@ -1,7 +1,7 @@
 {
   "meta": {
     "dataset": "plfs",
-    "source": "MoSPI — Periodic Labour Force Survey (PLFS) Annual Report 2023-24",
+    "source": "PLFS Annual Report January-December 2025 (MoSFA)",
     "url": "https://www.mospi.gov.in/publications-reports",
     "status": "usual status (ps+ss)",
     "note": "ps = principal status; ss = subsidiary status. Data covers July 2023 – June 2024.",
@@ -16,7 +16,7 @@
       "15+": "15 years and above",
       "all": "All ages"
     },
-    "last_updated": "2026-04-11"
+    "last_updated": "2026-04-14"
   },
   "entities": {
     "Andhra Pradesh": {
@@ -300,6 +300,67 @@
                 "rural": 0.9,
                 "urban": 0.8,
                 "total": 0.9
+              }
+            }
+          }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 80.4,
+                "female": 51.1,
+                "person": 65.2
+              },
+              "urban": {
+                "male": 74.4,
+                "female": 33.2,
+                "person": 53.1
+              },
+              "total": {
+                "male": 78.3,
+                "female": 44.8,
+                "person": 60.9
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 77.4,
+                "female": 49.7,
+                "person": 63.0
+              },
+              "urban": {
+                "male": 70.4,
+                "female": 30.7,
+                "person": 49.8
+              },
+              "total": {
+                "male": 74.9,
+                "female": 43.0,
+                "person": 58.3
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 3.7,
+                "female": 2.8,
+                "person": 3.4
+              },
+              "urban": {
+                "male": 5.5,
+                "female": 7.5,
+                "person": 6.2
+              },
+              "total": {
+                "male": 4.3,
+                "female": 4.0,
+                "person": 4.2
               }
             }
           }
@@ -590,6 +651,67 @@
               }
             }
           }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 81.8,
+                "female": 45.9,
+                "person": 63.5
+              },
+              "urban": {
+                "male": 76.1,
+                "female": 31.0,
+                "person": 53.6
+              },
+              "total": {
+                "male": 79.4,
+                "female": 39.8,
+                "person": 59.4
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 80.1,
+                "female": 45.1,
+                "person": 62.2
+              },
+              "urban": {
+                "male": 74.1,
+                "female": 29.9,
+                "person": 52.0
+              },
+              "total": {
+                "male": 77.6,
+                "female": 38.8,
+                "person": 58.0
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 2.1,
+                "female": 1.8,
+                "person": 2.0
+              },
+              "urban": {
+                "male": 2.7,
+                "female": 3.3,
+                "person": 2.9
+              },
+              "total": {
+                "male": 2.4,
+                "female": 2.3,
+                "person": 2.3
+              }
+            }
+          }
         }
       }
     },
@@ -874,6 +996,67 @@
                 "rural": 5.1,
                 "urban": 1.6,
                 "total": 4.0
+              }
+            }
+          }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 77.3,
+                "female": 44.9,
+                "person": 60.0
+              },
+              "urban": {
+                "male": 74.3,
+                "female": 37.4,
+                "person": 54.6
+              },
+              "total": {
+                "male": 75.8,
+                "female": 41.2,
+                "person": 57.4
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 74.8,
+                "female": 42.1,
+                "person": 57.3
+              },
+              "urban": {
+                "male": 72.2,
+                "female": 34.8,
+                "person": 52.3
+              },
+              "total": {
+                "male": 73.5,
+                "female": 38.6,
+                "person": 54.9
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 3.2,
+                "female": 6.2,
+                "person": 4.4
+              },
+              "urban": {
+                "male": 2.9,
+                "female": 6.7,
+                "person": 4.3
+              },
+              "total": {
+                "male": 3.1,
+                "female": 6.4,
+                "person": 4.4
               }
             }
           }
@@ -1164,6 +1347,67 @@
               }
             }
           }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 80.6,
+                "female": 57.9,
+                "person": 68.7
+              },
+              "urban": {
+                "male": 76.0,
+                "female": 35.9,
+                "person": 55.6
+              },
+              "total": {
+                "male": 78.3,
+                "female": 47.3,
+                "person": 62.3
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 78.3,
+                "female": 56.6,
+                "person": 66.9
+              },
+              "urban": {
+                "male": 73.2,
+                "female": 33.7,
+                "person": 53.1
+              },
+              "total": {
+                "male": 75.8,
+                "female": 45.6,
+                "person": 60.1
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 2.9,
+                "female": 2.2,
+                "person": 2.6
+              },
+              "urban": {
+                "male": 3.7,
+                "female": 6.0,
+                "person": 4.4
+              },
+              "total": {
+                "male": 3.2,
+                "female": 3.6,
+                "person": 3.4
+              }
+            }
+          }
         }
       }
     },
@@ -1451,6 +1695,67 @@
               }
             }
           }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 77.7,
+                "female": 56.0,
+                "person": 66.5
+              },
+              "urban": {
+                "male": 76.3,
+                "female": 32.5,
+                "person": 54.1
+              },
+              "total": {
+                "male": 77.1,
+                "female": 46.4,
+                "person": 61.4
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 74.2,
+                "female": 54.2,
+                "person": 63.9
+              },
+              "urban": {
+                "male": 71.7,
+                "female": 29.7,
+                "person": 50.4
+              },
+              "total": {
+                "male": 73.2,
+                "female": 44.1,
+                "person": 58.3
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 4.4,
+                "female": 3.3,
+                "person": 3.9
+              },
+              "urban": {
+                "male": 6.0,
+                "female": 8.7,
+                "person": 6.8
+              },
+              "total": {
+                "male": 5.1,
+                "female": 4.8,
+                "person": 5.0
+              }
+            }
+          }
         }
       }
     },
@@ -1667,6 +1972,67 @@
                 "male": 3.2,
                 "female": 3.1,
                 "person": 3.2
+              }
+            }
+          }
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "lfpr": {
+            "15+": {
+              "rural": {
+                "male": 80.5,
+                "female": 45.9,
+                "person": 62.8
+              },
+              "urban": {
+                "male": 76.2,
+                "female": 27.7,
+                "person": 52.2
+              },
+              "total": {
+                "male": 79.1,
+                "female": 40.0,
+                "person": 59.3
+              }
+            }
+          },
+          "wpr": {
+            "15+": {
+              "rural": {
+                "male": 78.4,
+                "female": 44.9,
+                "person": 61.2
+              },
+              "urban": {
+                "male": 73.0,
+                "female": 25.9,
+                "person": 49.7
+              },
+              "total": {
+                "male": 76.6,
+                "female": 38.8,
+                "person": 57.4
+              }
+            }
+          },
+          "ur": {
+            "15+": {
+              "rural": {
+                "male": 2.6,
+                "female": 2.1,
+                "person": 2.4
+              },
+              "urban": {
+                "male": 4.2,
+                "female": 6.4,
+                "person": 4.8
+              },
+              "total": {
+                "male": 3.1,
+                "female": 3.1,
+                "person": 3.1
               }
             }
           }
