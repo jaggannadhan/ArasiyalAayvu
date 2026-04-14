@@ -199,14 +199,17 @@ export default function KnowledgeGraphPage() {
     new Set(["candidate"]) // hide candidates by default (4488 nodes)
   );
   const [searchQuery, setSearchQuery] = useState("");
-  const [legendCollapsed, setLegendCollapsed] = useState(false);
+  const [legendCollapsed, setLegendCollapsed] = useState(
+    typeof window !== "undefined" && window.innerWidth < 640
+  );
   const [view3D, setView3D] = useState(true);
   const [timeRange, setTimeRange] = useState<number>(MAX_YEAR); // show edges up to this year
   const hasZoomedToFit = useRef(false);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
-  const [zoomLevel, setZoomLevel] = useState(1);
+  const [zoomDisplay, setZoomDisplay] = useState(1);
+  const zoomRef = useRef(1);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const graphRef = useRef<any>(null);
 
@@ -279,6 +282,24 @@ export default function KnowledgeGraphPage() {
     }
   }, [filteredGraph, view3D]);
 
+  // Pre-build adjacency index for fast neighbor lookup on click
+  const adjacency = useMemo(() => {
+    if (!graphData) return new Map<string, { neighbors: Set<string>; edgeKeys: Set<string> }>();
+    const adj = new Map<string, { neighbors: Set<string>; edgeKeys: Set<string> }>();
+    for (const e of graphData.edges) {
+      const src = typeof e.source === "string" ? e.source : e.source.id;
+      const tgt = typeof e.target === "string" ? e.target : e.target.id;
+      const key = `${src}→${tgt}`;
+      if (!adj.has(src)) adj.set(src, { neighbors: new Set(), edgeKeys: new Set() });
+      if (!adj.has(tgt)) adj.set(tgt, { neighbors: new Set(), edgeKeys: new Set() });
+      adj.get(src)!.neighbors.add(tgt);
+      adj.get(src)!.edgeKeys.add(key);
+      adj.get(tgt)!.neighbors.add(src);
+      adj.get(tgt)!.edgeKeys.add(key);
+    }
+    return adj;
+  }, [graphData]);
+
   // Search
   useEffect(() => {
     if (!searchQuery.trim() || !graphData) {
@@ -299,29 +320,18 @@ export default function KnowledgeGraphPage() {
     setHighlightNodes(matched);
   }, [searchQuery, graphData]);
 
-  // Node click → highlight neighbors
+  // Node click → highlight neighbors (uses adjacency index — O(1) lookup)
   const handleNodeClick = useCallback(
     (node: GraphNode) => {
       setSelectedNode(node);
-      if (!graphData) return;
-
-      const neighborIds = new Set<string>();
-      const edgeKeys = new Set<string>();
+      const entry = adjacency.get(node.id);
+      if (!entry) return;
+      const neighborIds = new Set(entry.neighbors);
       neighborIds.add(node.id);
-
-      for (const e of graphData.edges) {
-        const src = typeof e.source === "string" ? e.source : e.source.id;
-        const tgt = typeof e.target === "string" ? e.target : e.target.id;
-        if (src === node.id || tgt === node.id) {
-          neighborIds.add(src);
-          neighborIds.add(tgt);
-          edgeKeys.add(`${src}→${tgt}`);
-        }
-      }
       setHighlightNodes(neighborIds);
-      setHighlightEdges(edgeKeys);
+      setHighlightEdges(entry.edgeKeys);
     },
-    [graphData]
+    [adjacency]
   );
 
   const handleBackgroundClick = useCallback(() => {
@@ -340,71 +350,76 @@ export default function KnowledgeGraphPage() {
     });
   };
 
-  // Node paint — semantic zoom: labels appear progressively as you zoom in
-  // Node sizes scale inversely with zoom so they stay visually consistent
+  // Refs for highlight state — read in paint callbacks without causing re-render
+  const highlightNodesRef = useRef(highlightNodes);
+  highlightNodesRef.current = highlightNodes;
+  const highlightEdgesRef = useRef(highlightEdges);
+  highlightEdgesRef.current = highlightEdges;
+
+  // Pre-compute label direction hash per node (stable, never changes)
+  const labelDirCache = useRef(new Map<string, number>());
+
+  // Node paint — reads zoom/highlight from refs (no dependency → never recreated)
   const paintNode = useCallback(
     (node: GraphNode, ctx: CanvasRenderingContext2D) => {
-      const baseSize = (NODE_SIZE[node.type] || 3) / Math.max(zoomLevel, 0.3);
+      const z = Math.max(zoomRef.current, 0.3);
+      const rawSize = NODE_SIZE[node.type] || 3;
+      const baseSize = rawSize / z;
       const x = node.x || 0;
       const y = node.y || 0;
-      const isHighlighted =
-        highlightNodes.size === 0 || highlightNodes.has(node.id);
-      const alpha = isHighlighted ? 1 : 0.12;
-      const hexAlpha = alpha < 1 ? Math.round(alpha * 255).toString(16).padStart(2, "0") : "";
+      const hl = highlightNodesRef.current;
+      const isHighlighted = hl.size === 0 || hl.has(node.id);
+      const hexAlpha = isHighlighted ? "" : "1f";
 
-      // Glow for highlighted important nodes
-      const rawSize = NODE_SIZE[node.type] || 3;
-      if (isHighlighted && highlightNodes.size > 0 && rawSize >= 4) {
+      // Glow
+      if (isHighlighted && hl.size > 0 && rawSize >= 4) {
         ctx.beginPath();
-        ctx.arc(x, y, baseSize + 4 / Math.max(zoomLevel, 0.3), 0, 2 * Math.PI);
+        ctx.arc(x, y, baseSize + 4 / z, 0, 2 * Math.PI);
         ctx.fillStyle = node.color + "30";
         ctx.fill();
       }
 
-      // Node circle
+      // Circle
       ctx.beginPath();
       ctx.arc(x, y, baseSize, 0, 2 * Math.PI);
       ctx.fillStyle = node.color + hexAlpha;
       ctx.fill();
 
-      // Border for indicator/SDG/state/party nodes
       if (rawSize >= 4) {
         ctx.strokeStyle = isHighlighted ? "#ffffff40" : "#ffffff10";
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1 / z;
         ctx.stroke();
       }
 
-      // Semantic zoom labels — show based on zoom level and node type
-      // Font size stays constant in screen pixels (divide by zoom to counteract canvas scaling)
-      // Labels are offset in different directions based on node ID hash to avoid overlap
+      // Label
       const threshold = LABEL_ZOOM_THRESHOLD[node.type] ?? 3;
-      if (zoomLevel >= threshold && isHighlighted) {
-        const fontSize = 10 / zoomLevel;
+      if (zoomRef.current >= threshold && isHighlighted) {
+        const fontSize = 10 / zoomRef.current;
         ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
 
-        // Hash node ID to pick a label direction (8 directions)
-        let hash = 0;
-        for (let i = 0; i < node.id.length; i++) hash = ((hash << 5) - hash + node.id.charCodeAt(i)) | 0;
-        const dir = ((hash % 8) + 8) % 8;
+        // Cached direction hash
+        let dir = labelDirCache.current.get(node.id);
+        if (dir === undefined) {
+          let h = 0;
+          for (let i = 0; i < node.id.length; i++) h = ((h << 5) - h + node.id.charCodeAt(i)) | 0;
+          dir = ((h % 8) + 8) % 8;
+          labelDirCache.current.set(node.id, dir);
+        }
+        const angle = dir * (Math.PI / 4);
         const offset = baseSize + fontSize * 0.5;
-        const angles = [0, Math.PI / 4, Math.PI / 2, (3 * Math.PI) / 4, Math.PI, (5 * Math.PI) / 4, (3 * Math.PI) / 2, (7 * Math.PI) / 4];
-        const angle = angles[dir];
         const lx = x + Math.cos(angle) * offset;
         const ly = y + Math.sin(angle) * offset;
-
-        // Align text based on direction
         const cos = Math.cos(angle);
         ctx.textAlign = cos > 0.3 ? "left" : cos < -0.3 ? "right" : "center";
         ctx.textBaseline = Math.sin(angle) > 0.3 ? "top" : Math.sin(angle) < -0.3 ? "bottom" : "middle";
-        ctx.fillStyle = isHighlighted ? "#e5e7eb" : "#6b728060";
-        const maxLen = zoomLevel > 3 ? 40 : 20;
-        ctx.fillText(node.label.slice(0, maxLen), lx, ly);
+        ctx.fillStyle = "#e5e7eb";
+        ctx.fillText(node.label.slice(0, zoomRef.current > 3 ? 40 : 20), lx, ly);
       }
     },
-    [highlightNodes, zoomLevel]
+    [] // no deps — reads everything from refs
   );
 
-  // Edge paint — bridge edges are thicker and more visible
+  // Edge paint — reads zoom/highlight from refs
   const paintLink = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (link: any, ctx: CanvasRenderingContext2D) => {
@@ -412,23 +427,21 @@ export default function KnowledgeGraphPage() {
       const tgt = link.target;
       if (!src?.x || !tgt?.x) return;
 
+      const z = Math.max(zoomRef.current, 0.3);
       const edgeKey = `${src.id}→${tgt.id}`;
-      const hasSelection = highlightEdges.size > 0;
-      const isHighlighted = !hasSelection || highlightEdges.has(edgeKey);
+      const hl = highlightEdgesRef.current;
+      const hasSelection = hl.size > 0;
+      const isHighlighted = !hasSelection || hl.has(edgeKey);
       const verb: string = link.verb || "";
-
-      // Base width by edge importance
-      const isBridge = ["targets_goal", "measured_by", "influences", "promised"].includes(verb);
+      const isBridge = ["targets_goal", "measured_by", "influences", "promised", "allied_with", "won"].includes(verb);
       const baseWidth = isBridge ? 1.2 : 0.4;
-
-      const zScale = 1 / Math.max(zoomLevel, 0.3);
 
       if (!isHighlighted) {
         ctx.beginPath();
         ctx.moveTo(src.x, src.y);
         ctx.lineTo(tgt.x, tgt.y);
         ctx.strokeStyle = "#ffffff06";
-        ctx.lineWidth = 0.15 * zScale;
+        ctx.lineWidth = 0.15 / z;
         ctx.stroke();
         return;
       }
@@ -437,12 +450,12 @@ export default function KnowledgeGraphPage() {
       ctx.moveTo(src.x, src.y);
       ctx.lineTo(tgt.x, tgt.y);
       ctx.strokeStyle = VERB_COLORS[verb] || "#6b7280";
-      ctx.lineWidth = (hasSelection ? baseWidth * 2.5 : baseWidth) * zScale;
+      ctx.lineWidth = (hasSelection ? baseWidth * 2.5 : baseWidth) / z;
       ctx.globalAlpha = hasSelection ? 1 : (isBridge ? 0.6 : 0.25);
       ctx.stroke();
       ctx.globalAlpha = 1;
     },
-    [highlightEdges, zoomLevel]
+    [] // no deps — reads everything from refs
   );
 
   // ─── Render ──────────────────────────────────────────────────────────────
@@ -476,16 +489,16 @@ export default function KnowledgeGraphPage() {
     <div className="min-h-screen bg-gray-950 text-white relative">
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-20 bg-gray-950/80 backdrop-blur-sm border-b border-gray-800">
-        <div className="flex items-center justify-between px-4 py-2">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="text-gray-400 hover:text-white text-sm">
-              &larr; Home
+        <div className="flex items-center justify-between px-2 sm:px-4 py-2">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <Link href="/" className="text-gray-400 hover:text-white text-sm flex-shrink-0">
+              &larr;
             </Link>
-            <h1 className="text-sm font-bold">Knowledge Graph</h1>
-            <span className="text-xs text-gray-500">
+            <h1 className="text-xs sm:text-sm font-bold truncate">Knowledge Graph</h1>
+            <span className="text-[10px] sm:text-xs text-gray-500 hidden sm:inline">
               {filteredGraph.nodes.length} nodes &middot;{" "}
               {filteredGraph.links.length} edges &middot;{" "}
-              {zoomLevel.toFixed(1)}x
+              {zoomDisplay.toFixed(1)}x
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -504,14 +517,14 @@ export default function KnowledgeGraphPage() {
               placeholder="Search nodes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-1 text-xs text-white w-48 focus:outline-none focus:border-blue-500"
+              className="bg-gray-800 border border-gray-700 rounded-lg px-2 sm:px-3 py-1 text-xs text-white w-28 sm:w-48 focus:outline-none focus:border-blue-500"
             />
           </div>
         </div>
       </div>
 
       {/* Node type filters — left panel */}
-      <div className={`absolute top-10 left-0 z-20 bg-gray-900/90 backdrop-blur-sm border-r border-gray-800 p-2 transition-all ${legendCollapsed ? "" : "bottom-0 w-48 overflow-y-auto"}`}>
+      <div className={`absolute top-10 left-0 z-20 bg-gray-900/90 backdrop-blur-sm border-r border-gray-800 p-2 transition-all ${legendCollapsed ? "" : "bottom-14 w-40 sm:w-48 overflow-y-auto"}`}>
         <button
           onClick={() => setLegendCollapsed((p) => !p)}
           className="flex items-center justify-center cursor-pointer w-6 h-6 rounded hover:bg-gray-800"
@@ -590,7 +603,7 @@ export default function KnowledgeGraphPage() {
 
       {/* Selected node detail — right panel */}
       {selectedNode && (
-        <div className="absolute top-12 right-2 z-20 bg-gray-900/95 backdrop-blur-sm rounded-xl border border-gray-800 p-4 w-72 max-h-[70vh] overflow-y-auto">
+        <div className="absolute top-12 right-1 sm:right-2 z-20 bg-gray-900/95 backdrop-blur-sm rounded-xl border border-gray-800 p-3 sm:p-4 w-60 sm:w-72 max-h-[60vh] sm:max-h-[70vh] overflow-y-auto">
           <div className="flex items-start justify-between mb-3">
             <div>
               <p className="text-xs font-bold text-gray-500 uppercase">
@@ -716,9 +729,9 @@ export default function KnowledgeGraphPage() {
       )}
 
       {/* Time slider — bottom bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-gray-900/90 backdrop-blur-sm border-t border-gray-800 px-6 py-3">
-        <div className="flex items-center gap-4 max-w-3xl mx-auto">
-          <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide flex-shrink-0">
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-gray-900/90 backdrop-blur-sm border-t border-gray-800 px-3 sm:px-6 py-2 sm:py-3">
+        <div className="flex items-center gap-2 sm:gap-4 max-w-3xl mx-auto">
+          <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-wide flex-shrink-0 hidden sm:inline">
             Timeline
           </span>
           <div className="flex-1 relative">
@@ -745,8 +758,8 @@ export default function KnowledgeGraphPage() {
               ))}
             </div>
           </div>
-          <span className="text-xs font-bold text-blue-400 flex-shrink-0 w-16 text-right">
-            ≤ {timeRange}
+          <span className="text-[10px] sm:text-xs font-bold text-blue-400 flex-shrink-0 w-10 sm:w-16 text-right">
+            ≤{timeRange}
           </span>
         </div>
       </div>
@@ -812,7 +825,11 @@ export default function KnowledgeGraphPage() {
             linkCanvasObject={paintLink as any}
             onNodeClick={handleNodeClick as any}
             onBackgroundClick={handleBackgroundClick}
-            onZoom={(transform: { k: number }) => setZoomLevel(transform.k)}
+            onZoom={(transform: { k: number }) => {
+              zoomRef.current = transform.k;
+              // Debounced display update — don't re-render on every frame
+              setZoomDisplay(Math.round(transform.k * 10) / 10);
+            }}
             nodeId="id"
             linkSource="source"
             linkTarget="target"
