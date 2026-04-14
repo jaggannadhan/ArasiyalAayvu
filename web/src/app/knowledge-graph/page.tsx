@@ -173,6 +173,7 @@ export default function KnowledgeGraphPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [legendCollapsed, setLegendCollapsed] = useState(false);
   const [view3D, setView3D] = useState(true);
+  const hasZoomedToFit = useRef(false);
   const [highlightNodes, setHighlightNodes] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [mounted, setMounted] = useState(false);
@@ -455,7 +456,7 @@ export default function KnowledgeGraphPage() {
           </div>
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setView3D((p) => !p)}
+              onClick={() => { hasZoomedToFit.current = false; setView3D((p) => !p); }}
               className={`px-2.5 py-1 rounded-lg text-xs font-semibold border transition-colors cursor-pointer ${
                 view3D
                   ? "bg-blue-600 border-blue-500 text-white"
@@ -727,7 +728,8 @@ export default function KnowledgeGraphPage() {
             d3AlphaMin={0.01}
             backgroundColor="#030712"
             onEngineStop={() => {
-              if (graphRef.current) {
+              if (!hasZoomedToFit.current && graphRef.current) {
+                hasZoomedToFit.current = true;
                 graphRef.current.zoomToFit(400, 60);
               }
             }}
@@ -757,7 +759,8 @@ export default function KnowledgeGraphPage() {
             minZoom={0.1}
             maxZoom={15}
             onEngineStop={() => {
-              if (graphRef.current) {
+              if (!hasZoomedToFit.current && graphRef.current) {
+                hasZoomedToFit.current = true;
                 graphRef.current.zoomToFit(400, 60);
               }
             }}
