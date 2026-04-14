@@ -783,8 +783,8 @@ export default function KnowledgeGraphPage() {
       {/* Pan controls — shift the graph's lookAt target (moves the whole scene) */}
       {view3D && (
         <>
-          {/* Vertical pan — right edge, ends exactly where timeline bar starts (same as graph canvas: bottom-14) */}
-          <div className="absolute top-12 bottom-14 right-0 z-10 flex flex-col items-center w-8 sm:w-10">
+          {/* Vertical pan — right edge, ends where timeline bar starts */}
+          <div className="absolute top-12 bottom-[4.5rem] right-0 z-10 flex flex-col items-center w-8 sm:w-10">
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer py-1"
               onClick={() => {
@@ -816,8 +816,8 @@ export default function KnowledgeGraphPage() {
           </div>
 
           {/* Horizontal pan — bottom edge, above timeline */}
-          {/* Horizontal pan — sits at bottom of 3D space, just above timeline */}
-          <div className="absolute bottom-14 left-40 sm:left-48 right-10 z-10 flex items-center gap-1 h-8">
+          {/* Horizontal pan — sits just above timeline bar */}
+          <div className="absolute bottom-[4.5rem] left-40 sm:left-48 right-10 z-10 flex items-center gap-1 h-8">
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
               onClick={() => {
