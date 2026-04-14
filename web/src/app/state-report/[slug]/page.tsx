@@ -179,7 +179,9 @@ const SDG_GOAL_NAMES: Record<string, string> = {
 // ─── Shared helpers ───────────────────────────────────────────────────────────
 
 function f1(v: number | null | undefined): string {
-  return v == null ? "—" : v.toFixed(1);
+  if (v == null) return "—";
+  if (typeof v !== "number") return "—";
+  return v.toFixed(1);
 }
 
 function fInr(v: number | null | undefined): string {
