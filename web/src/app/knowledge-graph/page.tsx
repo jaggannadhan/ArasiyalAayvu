@@ -336,6 +336,70 @@ export default function KnowledgeGraphPage() {
     setHighlightNodes(matched);
   }, [searchQuery, graphData]);
 
+  // Pan along camera-relative screen axes (works after rotation)
+  const panScreen = useCallback((screenX: number, screenY: number) => {
+    if (!graphRef.current) return;
+    const cam = graphRef.current.camera();
+    const ctrl = graphRef.current.controls();
+    if (!cam || !ctrl?.target) return;
+
+    // Get camera's local right and up vectors
+    const right = { x: 0, y: 0, z: 0 };
+    const up = { x: 0, y: 0, z: 0 };
+
+    // Camera matrix columns: [right, up, -forward]
+    const m = cam.matrixWorld.elements;
+    right.x = m[0]; right.y = m[1]; right.z = m[2];
+    up.x = m[4]; up.y = m[5]; up.z = m[6];
+
+    // Apply delta along screen axes
+    ctrl.target.x += right.x * screenX + up.x * screenY;
+    ctrl.target.y += right.y * screenX + up.y * screenY;
+    ctrl.target.z += right.z * screenX + up.z * screenY;
+    cam.position.x += right.x * screenX + up.x * screenY;
+    cam.position.y += right.y * screenX + up.y * screenY;
+    cam.position.z += right.z * screenX + up.z * screenY;
+    ctrl.update();
+  }, []);
+
+  // Track cumulative pan offset for slider absolute positioning
+  const panOrigin = useRef<{ x: number; y: number; z: number } | null>(null);
+  const panScreenAbsolute = useCallback((screenX: number, screenY: number) => {
+    if (!graphRef.current) return;
+    const cam = graphRef.current.camera();
+    const ctrl = graphRef.current.controls();
+    if (!cam || !ctrl?.target) return;
+
+    // Store origin on first interaction
+    if (!panOrigin.current) {
+      panOrigin.current = { x: ctrl.target.x, y: ctrl.target.y, z: ctrl.target.z };
+    }
+
+    const m = cam.matrixWorld.elements;
+    const rx = m[0], ry = m[1], rz = m[2];   // right
+    const ux = m[4], uy = m[5], uz = m[6];   // up
+
+    const ox = panOrigin.current.x;
+    const oy = panOrigin.current.y;
+    const oz = panOrigin.current.z;
+
+    const newX = ox + rx * screenX + ux * screenY;
+    const newY = oy + ry * screenX + uy * screenY;
+    const newZ = oz + rz * screenX + uz * screenY;
+
+    const dx = newX - ctrl.target.x;
+    const dy = newY - ctrl.target.y;
+    const dz = newZ - ctrl.target.z;
+
+    ctrl.target.x = newX;
+    ctrl.target.y = newY;
+    ctrl.target.z = newZ;
+    cam.position.x += dx;
+    cam.position.y += dy;
+    cam.position.z += dz;
+    ctrl.update();
+  }, []);
+
   // Node click → highlight neighbors (uses adjacency index — O(1) lookup)
   const handleNodeClick = useCallback(
     (node: GraphNode) => {
@@ -787,10 +851,7 @@ export default function KnowledgeGraphPage() {
           <div className="absolute top-14 right-0 z-10 flex flex-col items-center w-7" style={{ bottom: "6.5rem" }}>
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
-              onClick={() => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.y += 100; ctrl.update(); }
-              }}
+              onClick={() => panScreen(0, 100)}
             >&#9650;</button>
             <input
               type="range"
@@ -799,17 +860,11 @@ export default function KnowledgeGraphPage() {
               defaultValue={0}
               className="cursor-pointer accent-gray-500"
               style={{ writingMode: "vertical-lr", direction: "rtl", width: "14px", flex: "1 1 0", minHeight: 0 }}
-              onChange={(e) => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.y = parseInt(e.target.value); ctrl.update(); }
-              }}
+              onChange={(e) => panScreenAbsolute(0, parseInt(e.target.value))}
             />
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer flex-shrink-0"
-              onClick={() => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.y -= 100; ctrl.update(); }
-              }}
+              onClick={() => panScreen(0, -100)}
             >&#9660;</button>
           </div>
 
@@ -817,10 +872,7 @@ export default function KnowledgeGraphPage() {
           <div className={`absolute bottom-[4.5rem] right-10 z-10 flex items-center gap-1 h-8 ${legendCollapsed ? "left-10" : "left-40 sm:left-48"}`}>
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
-              onClick={() => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.x -= 100; ctrl.update(); }
-              }}
+              onClick={() => panScreen(-100, 0)}
             >&#9664;</button>
             <input
               type="range"
@@ -828,17 +880,11 @@ export default function KnowledgeGraphPage() {
               max={2000}
               defaultValue={0}
               className="flex-1 h-2 cursor-pointer accent-gray-500"
-              onChange={(e) => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.x = parseInt(e.target.value); ctrl.update(); }
-              }}
+              onChange={(e) => panScreenAbsolute(parseInt(e.target.value), 0)}
             />
             <button
               className="text-gray-500 hover:text-white text-lg cursor-pointer px-1 flex-shrink-0"
-              onClick={() => {
-                const ctrl = graphRef.current?.controls();
-                if (ctrl?.target) { ctrl.target.x += 100; ctrl.update(); }
-              }}
+              onClick={() => panScreen(100, 0)}
             >&#9654;</button>
           </div>
         </>
