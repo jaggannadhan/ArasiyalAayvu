@@ -780,6 +780,49 @@ export default function KnowledgeGraphPage() {
         </div>
       </div>
 
+      {/* Pan sliders — only in 3D mode */}
+      {view3D && (
+        <>
+          {/* Vertical slider — right edge — moves camera up/down */}
+          <div className="absolute top-14 bottom-20 right-1 sm:right-2 z-10 flex items-center">
+            <input
+              type="range"
+              min={-500}
+              max={500}
+              defaultValue={0}
+              className="h-full appearance-none cursor-pointer accent-gray-600 opacity-40 hover:opacity-80 transition-opacity"
+              style={{ writingMode: "vertical-lr", direction: "rtl", width: "16px" }}
+              onChange={(e) => {
+                if (!graphRef.current) return;
+                const y = parseInt(e.target.value);
+                const cam = graphRef.current.camera();
+                if (cam) {
+                  cam.position.y = y;
+                }
+              }}
+            />
+          </div>
+          {/* Horizontal slider — bottom, above timeline — moves camera left/right */}
+          <div className="absolute bottom-14 left-40 sm:left-48 right-6 z-10 flex items-center px-2 py-1">
+            <input
+              type="range"
+              min={-500}
+              max={500}
+              defaultValue={0}
+              className="w-full h-1 appearance-none cursor-pointer accent-gray-600 opacity-40 hover:opacity-80 transition-opacity"
+              onChange={(e) => {
+                if (!graphRef.current) return;
+                const x = parseInt(e.target.value);
+                const cam = graphRef.current.camera();
+                if (cam) {
+                  cam.position.x = x;
+                }
+              }}
+            />
+          </div>
+        </>
+      )}
+
       {/* Graph canvas */}
       <div className="absolute inset-0 top-10 bottom-14">
         {/* eslint-disable @typescript-eslint/no-explicit-any */}
