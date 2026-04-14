@@ -780,10 +780,10 @@ export default function KnowledgeGraphPage() {
         </div>
       </div>
 
-      {/* Pan sliders — only in 3D mode */}
+      {/* Pan sliders — shift the graph's lookAt target (moves the whole scene) */}
       {view3D && (
         <>
-          {/* Vertical slider — right edge — moves camera up/down */}
+          {/* Vertical slider — right edge */}
           <div className="absolute top-14 bottom-20 right-1 sm:right-2 z-10 flex items-center">
             <input
               type="range"
@@ -795,14 +795,15 @@ export default function KnowledgeGraphPage() {
               onChange={(e) => {
                 if (!graphRef.current) return;
                 const y = parseInt(e.target.value);
-                const cam = graphRef.current.camera();
-                if (cam) {
-                  cam.position.y = y;
+                const ctrl = graphRef.current.controls();
+                if (ctrl?.target) {
+                  ctrl.target.y = y;
+                  ctrl.update();
                 }
               }}
             />
           </div>
-          {/* Horizontal slider — bottom, above timeline — moves camera left/right */}
+          {/* Horizontal slider — bottom, above timeline */}
           <div className="absolute bottom-14 left-40 sm:left-48 right-6 z-10 flex items-center px-2 py-1">
             <input
               type="range"
@@ -813,9 +814,10 @@ export default function KnowledgeGraphPage() {
               onChange={(e) => {
                 if (!graphRef.current) return;
                 const x = parseInt(e.target.value);
-                const cam = graphRef.current.camera();
-                if (cam) {
-                  cam.position.x = x;
+                const ctrl = graphRef.current.controls();
+                if (ctrl?.target) {
+                  ctrl.target.x = x;
+                  ctrl.update();
                 }
               }}
             />
