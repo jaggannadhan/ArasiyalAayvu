@@ -786,7 +786,7 @@ export default function KnowledgeGraphPage() {
           {/* Vertical pan — right edge, half-height centered */}
           <div className="absolute top-1/3 bottom-1/3 right-0 z-10 flex flex-col items-center w-7">
             <button
-              className="text-gray-500 hover:text-white text-xs cursor-pointer leading-none"
+              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1 flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y += 50; ctrl.update(); }
@@ -807,7 +807,7 @@ export default function KnowledgeGraphPage() {
               />
             </div>
             <button
-              className="text-gray-500 hover:text-white text-xs cursor-pointer leading-none"
+              className="text-gray-500 hover:text-white text-lg cursor-pointer py-1 flex-shrink-0"
               onClick={() => {
                 const ctrl = graphRef.current?.controls();
                 if (ctrl?.target) { ctrl.target.y -= 50; ctrl.update(); }
