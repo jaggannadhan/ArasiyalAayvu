@@ -411,7 +411,7 @@ function HealthSection({
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Vital Statistics · SRS {srs.period}
         </p>
-        <SourceLink name="Sample Registration System (RGI)" url="https://censusindia.gov.in/nada/index.php/catalog/46172" />
+        <SourceLink name="SRS Statistical Report 2023 (RGI)" url="https://censusindia.gov.in/nada/index.php/catalog/46172/download/50420/SRS_STAT_2023.pdf" />
         <div className="space-y-0">
           {rows.map(({ label, val, ai, unit, lowerBetter }) => {
             const gap = val != null && ai != null ? val - ai : null;
@@ -567,7 +567,7 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Higher Education — AISHE {aishe.period}
         </p>
-        <SourceLink name="All India Survey on Higher Education (MoE)" url="https://aishe.gov.in" period={aishe.period} />
+        <SourceLink name="AISHE 2021-22 Report (MoE)" url="https://aishe.gov.in/aishe/viewDocument.action?documentId=352" period={aishe.period} />
 
         {/* GER */}
         {aishe.ger && (
@@ -669,8 +669,8 @@ function SDGSection({ sdg }: { sdg?: SDGSnapshot | null }) {
       {/* Hero */}
       <div className="bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl p-5 text-white">
         <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">
-          <a href="https://sdgindiaindex.niti.gov.in" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-100">
-            NITI Aayog SDG India Index
+          <a href="https://sdgindiaindex.niti.gov.in/#/ranking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-100">
+            NITI Aayog SDG India Index 2023-24
           </a>{" "}· {sdg.period}
         </p>
         <div className="flex items-end gap-6 mt-2">
@@ -855,7 +855,7 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Gross Enrolment Ratio · {udise.period}
         </p>
-        <SourceLink name="UDISE+ (Ministry of Education)" url="https://udiseplus.gov.in" period={udise.period} />
+        <SourceLink name="UDISE+ Flash Statistics (MoE)" url="https://udiseplus.gov.in/#/page/publications" period={udise.period} />
         <div className="grid grid-cols-5 gap-2 text-center">
           {(["primary", "upper_primary", "elementary", "secondary", "higher_secondary"] as const).map((level) => {
             const val = ger?.[level];
@@ -943,7 +943,7 @@ function CrimeSection({ ncrb, aiNcrb }: { ncrb?: NCRBSnapshot | null; aiNcrb?: N
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Cognizable Crimes — IPC · {ncrb.period}
         </p>
-        <SourceLink name="NCRB Crime in India" url="https://www.ncrb.gov.in/crime-in-india.html" period={ncrb.period} />
+        <SourceLink name="NCRB Crime in India — Additional Tables (States/UTs)" url="https://www.ncrb.gov.in/crime-in-india-additional-table?year=2022&category=States/UTs" period={ncrb.period} />
 
         <div className="space-y-3">
           {metrics.map(({ key, label, color }) => {
@@ -984,7 +984,7 @@ function IndustrySection({ asi, aiAsi }: { asi?: ASISnapshot | null; aiAsi?: ASI
         <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
           Factory Sector · {asi.period}
         </p>
-        <SourceLink name="Annual Survey of Industries (MOSPI)" url="https://www.mospi.gov.in/asi-summary-results" period={asi.period} />
+        <SourceLink name="ASI 2023-24 Vol I (MOSPI)" url="https://www.mospi.gov.in/asi-summary-results" period={asi.period} />
 
         <div className="grid grid-cols-2 gap-3">
           {[
