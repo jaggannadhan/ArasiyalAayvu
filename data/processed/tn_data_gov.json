@@ -1,55 +1,61 @@
 {
-  "original_example": {
-    "total": 5,
-    "fields": [
-      "financial_year",
-      "budget_estimates_be_",
-      "revised_estimates_re_",
-      "actual_collection",
-      "_of_be_achieved",
-      "_of_re_achieved"
-    ],
-    "records": [
-      {
-        "financial_year": "2019-20",
-        "budget_estimates_be_": 663343,
-        "revised_estimates_re_": 612327,
-        "actual_collection": 598749,
-        "_of_be_achieved": 90.3,
-        "_of_re_achieved": 97.8
-      },
-      {
-        "financial_year": "2020-21",
-        "budget_estimates_be_": 690500,
-        "revised_estimates_re_": 515100,
-        "actual_collection": 548777,
-        "_of_be_achieved": 79.5,
-        "_of_re_achieved": 106.5
-      },
-      {
-        "financial_year": "2021-22",
-        "budget_estimates_be_": 630000,
-        "revised_estimates_re_": 675000,
-        "actual_collection": 698114,
-        "_of_be_achieved": 110.8,
-        "_of_re_achieved": 103.4
-      },
-      {
-        "financial_year": "2022-23",
-        "budget_estimates_be_": 780000,
-        "revised_estimates_re_": 854000,
-        "actual_collection": 849132,
-        "_of_be_achieved": 108.9,
-        "_of_re_achieved": 99.4
-      },
-      {
-        "financial_year": "2023-24",
-        "budget_estimates_be_": 956600,
-        "revised_estimates_re_": 956600,
-        "actual_collection": 957208,
-        "_of_be_achieved": 100.1,
-        "_of_re_achieved": 100.1
-      }
-    ]
+  "source": "Tamil Nadu Open Government Data Portal",
+  "url": "https://tn.data.gov.in/",
+  "api_key_note": "API key required for data.gov.in resource endpoints",
+  "note": "Limited structured data available. Most TN govt data is published as PDFs on tn.gov.in.",
+  "datasets": {
+    "original_example": {
+      "total": 5,
+      "fields": [
+        "financial_year",
+        "budget_estimates_be_",
+        "revised_estimates_re_",
+        "actual_collection",
+        "_of_be_achieved",
+        "_of_re_achieved"
+      ],
+      "records": [
+        {
+          "financial_year": "2019-20",
+          "budget_estimates_be_": 663343,
+          "revised_estimates_re_": 612327,
+          "actual_collection": 598749,
+          "_of_be_achieved": 90.3,
+          "_of_re_achieved": 97.8
+        },
+        {
+          "financial_year": "2020-21",
+          "budget_estimates_be_": 690500,
+          "revised_estimates_re_": 515100,
+          "actual_collection": 548777,
+          "_of_be_achieved": 79.5,
+          "_of_re_achieved": 106.5
+        },
+        {
+          "financial_year": "2021-22",
+          "budget_estimates_be_": 630000,
+          "revised_estimates_re_": 675000,
+          "actual_collection": 698114,
+          "_of_be_achieved": 110.8,
+          "_of_re_achieved": 103.4
+        },
+        {
+          "financial_year": "2022-23",
+          "budget_estimates_be_": 780000,
+          "revised_estimates_re_": 854000,
+          "actual_collection": 849132,
+          "_of_be_achieved": 108.9,
+          "_of_re_achieved": 99.4
+        },
+        {
+          "financial_year": "2023-24",
+          "budget_estimates_be_": 956600,
+          "revised_estimates_re_": 956600,
+          "actual_collection": 957208,
+          "_of_be_achieved": 100.1,
+          "_of_re_achieved": 100.1
+        }
+      ]
+    }
   }
 }

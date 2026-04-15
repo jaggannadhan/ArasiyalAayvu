@@ -1,47 +1,61 @@
 {
-  "Andhra Pradesh": {
-    "TOTAL REVENUE": 173767.01,
-    "I. TAX REVENUE": 131633.09,
-    "A. Own Tax Revenue": 85922.35,
-    "B. Share in Central Taxes": 45710.74,
-    "II. NON-TAX REVENUE": 42133.92,
-    "C. Own Non-Tax Revenue": 7432.11,
-    "D. Grants from the Centre": 34701.8
+  "source": "RBI State Finances: A Study of Budgets — Appendix I: Revenue Receipts",
+  "url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=State+Finances+%3a+A+Study+of+Budgets",
+  "pages": {
+    "Andhra Pradesh": "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23747",
+    "Karnataka": "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23749",
+    "Kerala": "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23750",
+    "Tamil Nadu": "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23752",
+    "Telangana": "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23753"
   },
-  "Karnataka": {
-    "TOTAL REVENUE": 233342.88,
-    "I. TAX REVENUE": 204697.66,
-    "A. Own Tax Revenue": 163505.03,
-    "B. Share in Central Taxes": 41192.63,
-    "II. NON-TAX REVENUE": 28645.21,
-    "C. Own Non-Tax Revenue": 13117.37,
-    "D. Grants from the Centre": 15527.84
-  },
-  "Kerala": {
-    "TOTAL REVENUE": 124486.15,
-    "I. TAX REVENUE": 96071.93,
-    "A. Own Tax Revenue": 74329.01,
-    "B. Share in Central Taxes": 21742.92,
-    "II. NON-TAX REVENUE": 28414.22,
-    "C. Own Non-Tax Revenue": 16345.96,
-    "D. Grants from the Centre": 12068.26
-  },
-  "Tamil Nadu": {
-    "TOTAL REVENUE": 264596.66,
-    "I. TAX REVENUE": 213350.67,
-    "A. Own Tax Revenue": 167278.39,
-    "B. Share in Central Taxes": 46072.28,
-    "II. NON-TAX REVENUE": 51245.99,
-    "C. Own Non-Tax Revenue": 25903.84,
-    "D. Grants from the Centre": 25342.16
-  },
-  "Telangana": {
-    "TOTAL REVENUE": 169293.36,
-    "I. TAX REVENUE": 135540.17,
-    "A. Own Tax Revenue": 111798.13,
-    "B. Share in Central Taxes": 23742.04,
-    "II. NON-TAX REVENUE": 33753.19,
-    "C. Own Non-Tax Revenue": 23819.5,
-    "D. Grants from the Centre": 9933.68
+  "period": "2023-24 (Accounts)",
+  "unit": "INR Crore",
+  "note": "Values converted from ₹ Lakh to ₹ Crore (÷100). 7 key revenue metrics per state.",
+  "states": {
+    "Andhra Pradesh": {
+      "TOTAL REVENUE": 173767.01,
+      "I. TAX REVENUE": 131633.09,
+      "A. Own Tax Revenue": 85922.35,
+      "B. Share in Central Taxes": 45710.74,
+      "II. NON-TAX REVENUE": 42133.92,
+      "C. Own Non-Tax Revenue": 7432.11,
+      "D. Grants from the Centre": 34701.8
+    },
+    "Karnataka": {
+      "TOTAL REVENUE": 233342.88,
+      "I. TAX REVENUE": 204697.66,
+      "A. Own Tax Revenue": 163505.03,
+      "B. Share in Central Taxes": 41192.63,
+      "II. NON-TAX REVENUE": 28645.21,
+      "C. Own Non-Tax Revenue": 13117.37,
+      "D. Grants from the Centre": 15527.84
+    },
+    "Kerala": {
+      "TOTAL REVENUE": 124486.15,
+      "I. TAX REVENUE": 96071.93,
+      "A. Own Tax Revenue": 74329.01,
+      "B. Share in Central Taxes": 21742.92,
+      "II. NON-TAX REVENUE": 28414.22,
+      "C. Own Non-Tax Revenue": 16345.96,
+      "D. Grants from the Centre": 12068.26
+    },
+    "Tamil Nadu": {
+      "TOTAL REVENUE": 264596.66,
+      "I. TAX REVENUE": 213350.67,
+      "A. Own Tax Revenue": 167278.39,
+      "B. Share in Central Taxes": 46072.28,
+      "II. NON-TAX REVENUE": 51245.99,
+      "C. Own Non-Tax Revenue": 25903.84,
+      "D. Grants from the Centre": 25342.16
+    },
+    "Telangana": {
+      "TOTAL REVENUE": 169293.36,
+      "I. TAX REVENUE": 135540.17,
+      "A. Own Tax Revenue": 111798.13,
+      "B. Share in Central Taxes": 23742.04,
+      "II. NON-TAX REVENUE": 33753.19,
+      "C. Own Non-Tax Revenue": 23819.5,
+      "D. Grants from the Centre": 9933.68
+    }
   }
 }
