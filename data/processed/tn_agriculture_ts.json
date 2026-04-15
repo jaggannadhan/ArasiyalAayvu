@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "dataset": "tn_agriculture",
+    "source": "TN Statistical Handbook — Agriculture",
+    "url": "https://www.tn.gov.in/deptst/agriculture.pdf",
+    "note": "District-wise crop area, production, fertilizer. State-level time series.",
+    "last_updated": "2026-04-14"
+  },
+  "entities": {
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2022-23": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022-23",
+          "crops": {
+            "Paddy": {
+              "area_hectares": 2158898,
+              "production_tonnes": 7556567,
+              "productivity_kg_per_hec": 3500
+            },
+            "Cholam(Jowar)": {
+              "area_hectares": 360175,
+              "production_tonnes": 292694,
+              "productivity_kg_per_hec": 813
+            },
+            "Cumbu (Bajra)": {
+              "area_hectares": 45088,
+              "production_tonnes": 113355,
+              "productivity_kg_per_hec": 2514
+            },
+            "Ragi": {
+              "area_hectares": 69600,
+              "production_tonnes": 206553,
+              "productivity_kg_per_hec": 2968
+            },
+            "Maize": {
+              "area_hectares": 426701,
+              "production_tonnes": 2989945,
+              "productivity_kg_per_hec": 7007
+            },
+            "Bengal gram": {
+              "area_hectares": 3836,
+              "production_tonnes": 3552,
+              "productivity_kg_per_hec": 926
+            },
+            "Horse gram": {
+              "area_hectares": 69771,
+              "production_tonnes": 53848,
+              "productivity_kg_per_hec": 772
+            },
+            "Gingelly": {
+              "area_hectares": 47874,
+              "production_tonnes": 25071,
+              "productivity_kg_per_hec": 524
+            },
+            "Coconut ": {
+              "area_hectares": 472711,
+              "production_tonnes": 67989,
+              "productivity_kg_per_hec": 14383
+            },
+            "Castor": {
+              "area_hectares": 5814,
+              "production_tonnes": 1813,
+              "productivity_kg_per_hec": 312
+            },
+            "Cotton ": {
+              "area_hectares": 173270,
+              "production_tonnes": 319248,
+              "productivity_kg_per_hec": 313
+            },
+            "Sugarcane ": {
+              "area_hectares": 158977,
+              "production_tonnes": 17658090,
+              "productivity_kg_per_hec": 111
+            },
+            "Chillies": {
+              "area_hectares": 52703,
+              "production_tonnes": 25292,
+              "productivity_kg_per_hec": 480
+            },
+            "Total Cereals": {
+              "area_hectares": 3082653,
+              "production_tonnes": 11187580
+            },
+            "Total Pulses": {
+              "area_hectares": 14,
+              "production_tonnes": 503161
+            }
+          },
+          "districts_count": 49,
+          "fertilizer_districts": 38,
+          "time_series_years": 15
+        }
+      }
+    }
+  }
+}

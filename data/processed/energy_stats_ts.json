@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "dataset": "energy_stats",
+    "source": "Energy Statistics India (MOSPI)",
+    "url": "https://www.mospi.gov.in/publications-reports",
+    "note": "State-wise installed capacity and renewable energy. Annual reports 2022-2026.",
+    "last_updated": "2026-04-14"
+  },
+  "entities": {
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "installed_capacity_gw": 7.6
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "installed_capacity_gw": 21.67
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "installed_capacity_gw": 3.11
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "installed_capacity_gw": 11.32,
+          "wind_mw": 11739.91,
+          "solar_mw": 19983.0,
+          "total_renewable_mw": 23063.0
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "installed_capacity_gw": 13.68
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "installed_capacity_gw": 3.97
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "installed_capacity_gw": 8.37
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "installed_capacity_gw": 0.78,
+          "wind_mw": 71.27,
+          "solar_mw": 1365.0,
+          "total_renewable_mw": 1889.0
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "installed_capacity_gw": 22.64
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "installed_capacity_gw": 14.97
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "installed_capacity_gw": 3.89
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "installed_capacity_gw": 10.07,
+          "wind_mw": 7351.1,
+          "solar_mw": 17753.0,
+          "total_renewable_mw": 20228.0
+        }
+      }
+    },
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "installed_capacity_gw": 7.72
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "installed_capacity_gw": 3.47
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "installed_capacity_gw": 3.6,
+          "wind_mw": 4377.15,
+          "solar_mw": 9419.0,
+          "total_renewable_mw": 10504.0
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "wind_mw": 128.1,
+          "solar_mw": 5199.0,
+          "total_renewable_mw": 5283.0
+        }
+      }
+    },
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "per_capita_energy_kgoe": 2020.0
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "per_capita_energy_kgoe": 2021.0
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "per_capita_energy_kgoe": 2022.0
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "per_capita_energy_kgoe": 122.0
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "per_capita_energy_kgoe": 2023.0
+        }
+      }
+    }
+  }
+}

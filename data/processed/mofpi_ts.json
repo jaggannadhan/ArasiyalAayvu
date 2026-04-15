@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "dataset": "mofpi",
+    "source": "Ministry of Food Processing Industries — State Profiles",
+    "url": "https://www.mofpi.gov.in/KnowledgeCentre/state-profile",
+    "note": "Key agriculture production, livestock, PMFME metrics. Period: 2023-24.",
+    "last_updated": "2026-04-14"
+  },
+  "entities": {
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "crop_pulses_000mt": 386.0,
+          "crop_coarse_cereals_000mt": 3515.0,
+          "crop_rice_000mt": 6799.0,
+          "crop_oilseeds_000mt": 916.7,
+          "livestock_eggs_lakh": 223325.33,
+          "livestock_milk_000mt": 10807.8,
+          "livestock_meat_000mt": 767.7,
+          "livestock_fish_lakh_mt": 8.29,
+          "veg_tapioca_000mt": 3607.4,
+          "veg_tomato_000mt": 1169.24,
+          "veg_onion_000mt": 437.5,
+          "fruit_banana_000mt": 4719.95,
+          "fruit_mango_000mt": 949.45,
+          "fruit_watermelon_000mt": 538.26,
+          "spice_turmeric_000mt": 139.44,
+          "spice_tamarind_000mt": 41.39,
+          "pmfme_micro_enterprises": 15605.0,
+          "pmfme_subsidy_cr": 0.15,
+          "pmfme_shg_members": 26385.0,
+          "agri_mandis": 288.0,
+          "agri_enam_mandis": 157.0,
+          "agri_fpos": 90.0,
+          "installed_power_mw": 39805.97
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "crop_rice_000mt": 498.0,
+          "crop_pulses_000mt": 2.3,
+          "livestock_eggs_lakh": 24052.0,
+          "livestock_milk_000mt": 2580.0,
+          "livestock_meat_000mt": 518.0,
+          "livestock_fish_lakh_mt": 9.21,
+          "fruit_banana_000mt": 477.52,
+          "fruit_mango_000mt": 495.54,
+          "veg_tapioca_000mt": 2365.77,
+          "spice_tamarind_000mt": 28.91,
+          "pmfme_micro_enterprises": 6802.0,
+          "pmfme_subsidy_cr": 0.0,
+          "pmfme_shg_members": 6802.0,
+          "agri_mandis": 93.0,
+          "agri_fpos": 44.0,
+          "installed_power_mw": 6669.13
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "crop_pulses_000mt": 1668.8,
+          "crop_coarse_cereals_000mt": 7790.8,
+          "crop_rice_000mt": 3127.0,
+          "livestock_eggs_lakh": 9491.0,
+          "livestock_milk_000mt": 13463.0,
+          "livestock_meat_000mt": 454.0,
+          "livestock_fish_lakh_mt": 12.25,
+          "fruit_banana_000mt": 3121.97,
+          "fruit_mango_000mt": 1457.03,
+          "veg_tomato_000mt": 2007.33,
+          "veg_onion_000mt": 1637.89,
+          "spice_turmeric_000mt": 66.83,
+          "pmfme_micro_enterprises": 6625.0,
+          "pmfme_subsidy_cr": 3.12,
+          "pmfme_shg_members": 19042.0,
+          "agri_mandis": 5.0,
+          "agri_fpos": 52.0,
+          "installed_power_mw": 10829.47
+        }
+      }
+    },
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "crop_coarse_cereals_000mt": 2248.0,
+          "crop_pulses_000mt": 823.0,
+          "crop_rice_000mt": 7342.0,
+          "livestock_meat_000mt": 10.679,
+          "livestock_fish_lakh_mt": 51.06,
+          "fruit_banana_000mt": 5830.93,
+          "fruit_mango_000mt": 4985.28,
+          "fruit_watermelon_000mt": 637.75,
+          "veg_tomato_000mt": 2438.28,
+          "veg_onion_000mt": 512.79,
+          "spice_turmeric_000mt": 38.03,
+          "spice_tamarind_000mt": 15.93,
+          "pmfme_micro_enterprises": 7180.0,
+          "pmfme_subsidy_cr": 0.78,
+          "pmfme_shg_members": 32831.0,
+          "agri_fpos": 232.0,
+          "agri_mandis": 199.0,
+          "agri_enam_mandis": 33.0,
+          "installed_power_mw": 27543.89
+        }
+      }
+    }
+  }
+}

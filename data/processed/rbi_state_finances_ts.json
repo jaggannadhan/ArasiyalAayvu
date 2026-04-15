@@ -1,0 +1,787 @@
+{
+  "meta": {
+    "dataset": "rbi_state_finances",
+    "source": "RBI State Finances: A Study of Budgets",
+    "url": "https://rbi.org.in/Scripts/AnnualPublications.aspx?head=State+Finances+%3a+A+Study+of+Budgets",
+    "note": "Statements 2, 3, 11, 13, 20. Values in ₹ crore or per cent.",
+    "last_updated": "2026-04-14"
+  },
+  "entities": {
+    "Andhra Pradesh": {
+      "id": "andhra_pradesh",
+      "snapshots": {
+        "2008": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2008",
+          "debt_to_gsdp_pct": 27.4
+        },
+        "2009": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2009",
+          "debt_to_gsdp_pct": 25.8
+        },
+        "2010": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2010",
+          "debt_to_gsdp_pct": 25.9
+        },
+        "2011": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2011",
+          "debt_to_gsdp_pct": 23.9
+        },
+        "2012": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2012",
+          "debt_to_gsdp_pct": 39.7
+        },
+        "2013": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2013",
+          "debt_to_gsdp_pct": 42.4
+        },
+        "2014": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2014",
+          "debt_to_gsdp_pct": 42.3
+        },
+        "2015": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2015",
+          "debt_to_gsdp_pct": 23.3
+        },
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 24.5
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 37.2
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 29.2
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 30.3
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 33.2
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 36.1
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 33.6
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 33.0
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 62719.6,
+          "gfd_receipts_cr": 173767.0,
+          "gfd_expenditure_cr": 236486.6,
+          "rev_deficit_cr": 38682.5,
+          "rev_receipts_cr": 173767.0,
+          "rev_expenditure_cr": 212449.6,
+          "interest_payments_cr": 29481.2,
+          "dev_expenditure_cr": 167775.6
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 34.6
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 73362.4,
+          "gfd_receipts_cr": 176031.2,
+          "gfd_expenditure_cr": 249393.5,
+          "rev_deficit_cr": 48311.5,
+          "rev_receipts_cr": 176031.2,
+          "rev_expenditure_cr": 224342.6,
+          "interest_payments_cr": 29460.4,
+          "dev_expenditure_cr": 178388.5
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 35.5
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 79926.9,
+          "gfd_receipts_cr": 217976.5,
+          "gfd_expenditure_cr": 297903.4,
+          "rev_deficit_cr": 33186.0,
+          "rev_receipts_cr": 217976.5,
+          "rev_expenditure_cr": 251162.5,
+          "interest_payments_cr": 30944.4,
+          "dev_expenditure_cr": 221518.9
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 35.4
+        }
+      }
+    },
+    "Karnataka": {
+      "id": "karnataka",
+      "snapshots": {
+        "2008": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2008",
+          "debt_to_gsdp_pct": 22.4
+        },
+        "2009": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2009",
+          "debt_to_gsdp_pct": 21.0
+        },
+        "2010": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2010",
+          "debt_to_gsdp_pct": 25.0
+        },
+        "2011": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2011",
+          "debt_to_gsdp_pct": 22.8
+        },
+        "2012": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2012",
+          "debt_to_gsdp_pct": 17.5
+        },
+        "2013": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2013",
+          "debt_to_gsdp_pct": 16.2
+        },
+        "2014": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2014",
+          "debt_to_gsdp_pct": 17.0
+        },
+        "2015": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2015",
+          "debt_to_gsdp_pct": 17.4
+        },
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 17.8
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 17.5
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 18.4
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 19.4
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 21.0
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 25.7
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 25.3
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 24.5
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 65522.4,
+          "gfd_receipts_cr": 233378.9,
+          "gfd_expenditure_cr": 298901.2,
+          "rev_deficit_cr": 9271.6,
+          "rev_receipts_cr": 233342.9,
+          "rev_expenditure_cr": 242614.4,
+          "interest_payments_cr": 30826.3,
+          "dev_expenditure_cr": 214294.0
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 25.3
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 82940.1,
+          "gfd_receipts_cr": 257838.7,
+          "gfd_expenditure_cr": 340778.9,
+          "rev_deficit_cr": 26127.0,
+          "rev_receipts_cr": 257800.7,
+          "rev_expenditure_cr": 283927.8,
+          "interest_payments_cr": 29333.6,
+          "dev_expenditure_cr": 241195.8
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 25.4
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 90428.2,
+          "gfd_receipts_cr": 292512.5,
+          "gfd_expenditure_cr": 382940.8,
+          "rev_deficit_cr": 19262.2,
+          "rev_receipts_cr": 292476.5,
+          "rev_expenditure_cr": 311738.7,
+          "interest_payments_cr": 36633.5,
+          "dev_expenditure_cr": 262001.1
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 26.5
+        }
+      }
+    },
+    "Kerala": {
+      "id": "kerala",
+      "snapshots": {
+        "2008": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2008",
+          "debt_to_gsdp_pct": 33.4
+        },
+        "2009": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2009",
+          "debt_to_gsdp_pct": 33.0
+        },
+        "2010": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2010",
+          "debt_to_gsdp_pct": 32.5
+        },
+        "2011": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2011",
+          "debt_to_gsdp_pct": 31.8
+        },
+        "2012": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2012",
+          "debt_to_gsdp_pct": 26.0
+        },
+        "2013": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2013",
+          "debt_to_gsdp_pct": 26.7
+        },
+        "2014": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2014",
+          "debt_to_gsdp_pct": 27.0
+        },
+        "2015": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2015",
+          "debt_to_gsdp_pct": 28.0
+        },
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 28.9
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 30.2
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 30.9
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 30.9
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 32.9
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 40.3
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 38.9
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 37.9
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 34258.1,
+          "gfd_receipts_cr": 124533.7,
+          "gfd_expenditure_cr": 158791.7,
+          "rev_deficit_cr": 18140.2,
+          "rev_receipts_cr": 124486.1,
+          "rev_expenditure_cr": 142626.3,
+          "interest_payments_cr": 26986.2,
+          "dev_expenditure_cr": 71396.5
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 36.3
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 44747.0,
+          "gfd_receipts_cr": 132974.8,
+          "gfd_expenditure_cr": 177721.8,
+          "rev_deficit_cr": 29195.9,
+          "rev_receipts_cr": 132929.8,
+          "rev_expenditure_cr": 162125.7,
+          "interest_payments_cr": 26810.9,
+          "dev_expenditure_cr": 80074.6
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 36.2
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 45038.5,
+          "gfd_receipts_cr": 152418.0,
+          "gfd_expenditure_cr": 197456.5,
+          "rev_deficit_cr": 27124.5,
+          "rev_receipts_cr": 152351.7,
+          "rev_expenditure_cr": 179476.2,
+          "interest_payments_cr": 29739.3,
+          "dev_expenditure_cr": 94932.6
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 35.5
+        }
+      }
+    },
+    "Tamil Nadu": {
+      "id": "tamil_nadu",
+      "snapshots": {
+        "2008": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2008",
+          "debt_to_gsdp_pct": 21.1
+        },
+        "2009": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2009",
+          "debt_to_gsdp_pct": 21.5
+        },
+        "2010": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2010",
+          "debt_to_gsdp_pct": 21.2
+        },
+        "2011": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2011",
+          "debt_to_gsdp_pct": 19.6
+        },
+        "2012": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2012",
+          "debt_to_gsdp_pct": 17.4
+        },
+        "2013": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2013",
+          "debt_to_gsdp_pct": 17.9
+        },
+        "2014": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2014",
+          "debt_to_gsdp_pct": 18.5
+        },
+        "2015": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2015",
+          "debt_to_gsdp_pct": 17.3
+        },
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 19.4
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 21.8
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 22.3
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 24.6
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 26.5
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 31.8
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 32.2
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 31.7
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 90430.1,
+          "gfd_receipts_cr": 264608.5,
+          "gfd_expenditure_cr": 355038.6,
+          "rev_deficit_cr": 45121.1,
+          "rev_receipts_cr": 264596.7,
+          "rev_expenditure_cr": 309717.8,
+          "interest_payments_cr": 53565.7,
+          "dev_expenditure_cr": 221142.2
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 31.0
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 101347.9,
+          "gfd_receipts_cr": 293915.0,
+          "gfd_expenditure_cr": 395262.8,
+          "rev_deficit_cr": 46467.5,
+          "rev_receipts_cr": 293906.4,
+          "rev_expenditure_cr": 340373.9,
+          "interest_payments_cr": 43596.9,
+          "dev_expenditure_cr": 247963.8
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 30.2
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 106963.2,
+          "gfd_receipts_cr": 331573.8,
+          "gfd_expenditure_cr": 438537.0,
+          "rev_deficit_cr": 41634.9,
+          "rev_receipts_cr": 331568.8,
+          "rev_expenditure_cr": 373203.7,
+          "interest_payments_cr": 60357.2,
+          "dev_expenditure_cr": 268972.3
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 29.2
+        }
+      }
+    },
+    "Telangana": {
+      "id": "telangana",
+      "snapshots": {
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 15.7
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 12.4
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 21.4
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 22.2
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 23.7
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 28.8
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 28.0
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 26.5
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 49963.1,
+          "gfd_receipts_cr": 169293.4,
+          "gfd_expenditure_cr": 219256.5,
+          "rev_deficit_cr": -779.3,
+          "rev_receipts_cr": 169293.4,
+          "rev_expenditure_cr": 168514.1,
+          "interest_payments_cr": 24347.2,
+          "dev_expenditure_cr": 162738.4
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 27.0
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 46764.5,
+          "gfd_receipts_cr": 202107.7,
+          "gfd_expenditure_cr": 248872.1,
+          "rev_deficit_cr": -5888.7,
+          "rev_receipts_cr": 202107.7,
+          "rev_expenditure_cr": 196219.0,
+          "interest_payments_cr": 24318.0,
+          "dev_expenditure_cr": 203029.0
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 27.3
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 54009.7,
+          "gfd_receipts_cr": 229720.6,
+          "gfd_expenditure_cr": 283730.4,
+          "rev_deficit_cr": -2738.3,
+          "rev_receipts_cr": 229720.6,
+          "rev_expenditure_cr": 226982.3,
+          "interest_payments_cr": 17729.8,
+          "dev_expenditure_cr": 234506.6
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 27.5
+        }
+      }
+    },
+    "All India": {
+      "id": "all_india",
+      "snapshots": {
+        "2008": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2008",
+          "debt_to_gsdp_pct": 26.6
+        },
+        "2009": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2009",
+          "debt_to_gsdp_pct": 26.1
+        },
+        "2010": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2010",
+          "debt_to_gsdp_pct": 25.5
+        },
+        "2011": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2011",
+          "debt_to_gsdp_pct": 23.5
+        },
+        "2012": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2012",
+          "debt_to_gsdp_pct": 22.8
+        },
+        "2013": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2013",
+          "debt_to_gsdp_pct": 22.2
+        },
+        "2014": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2014",
+          "debt_to_gsdp_pct": 22.0
+        },
+        "2015": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2015",
+          "debt_to_gsdp_pct": 21.7
+        },
+        "2016": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2016",
+          "debt_to_gsdp_pct": 23.7
+        },
+        "2017": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2017",
+          "debt_to_gsdp_pct": 25.1
+        },
+        "2018": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2018",
+          "debt_to_gsdp_pct": 25.1
+        },
+        "2019": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2019",
+          "debt_to_gsdp_pct": 25.3
+        },
+        "2020": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2020",
+          "debt_to_gsdp_pct": 26.6
+        },
+        "2021": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2021",
+          "debt_to_gsdp_pct": 31.0
+        },
+        "2022": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2022",
+          "debt_to_gsdp_pct": 29.1
+        },
+        "2023": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023",
+          "debt_to_gsdp_pct": 28.2
+        },
+        "2023-24": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2023-24",
+          "gfd_cr": 877194.6,
+          "gfd_receipts_cr": 3930475.6,
+          "gfd_expenditure_cr": 4807670.2,
+          "rev_deficit_cr": 93436.9,
+          "rev_receipts_cr": 3930240.2,
+          "rev_expenditure_cr": 4023677.1,
+          "interest_payments_cr": 507175.4,
+          "dev_expenditure_cr": 3269418.7
+        },
+        "2024": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024",
+          "debt_to_gsdp_pct": 28.1
+        },
+        "2024-25": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2024-25",
+          "gfd_cr": 1161160.6,
+          "gfd_receipts_cr": 4586833.9,
+          "gfd_expenditure_cr": 5747994.4,
+          "rev_deficit_cr": 190220.6,
+          "rev_receipts_cr": 4584018.6,
+          "rev_expenditure_cr": 4774239.1,
+          "interest_payments_cr": 478681.8,
+          "dev_expenditure_cr": 3994549.3
+        },
+        "2025": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025",
+          "debt_to_gsdp_pct": 28.4
+        },
+        "2025-26": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2025-26",
+          "gfd_cr": 1175074.7,
+          "gfd_receipts_cr": 5154550.7,
+          "gfd_expenditure_cr": 6329625.3,
+          "rev_deficit_cr": 81573.9,
+          "rev_receipts_cr": 5129619.6,
+          "rev_expenditure_cr": 5211193.4,
+          "interest_payments_cr": 561544.6,
+          "dev_expenditure_cr": 4348046.2
+        },
+        "2026": {
+          "fetched_at": "2026-04-14",
+          "data_period": "2026",
+          "debt_to_gsdp_pct": 29.2
+        }
+      }
+    }
+  }
+}
