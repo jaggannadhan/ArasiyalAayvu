@@ -122,6 +122,34 @@
       "color": "#7f1d1d",
       "size_field": null,
       "fields": ["fiscal_deficit_cr", "revenue_deficit_cr", "total_revenue_cr", "total_exp_cr", "salaries_cr", "interest_cr", "period"]
+    },
+    "indicator_energy": {
+      "label": "Energy (MOSPI)",
+      "layer": "socioeconomic",
+      "color": "#eab308",
+      "size_field": null,
+      "fields": ["installed_capacity_gw", "solar_mw", "wind_mw", "total_renewable_mw", "period"]
+    },
+    "indicator_agriculture": {
+      "label": "Agriculture (TN Stat Handbook)",
+      "layer": "socioeconomic",
+      "color": "#65a30d",
+      "size_field": null,
+      "fields": ["crop_rice_000mt", "livestock_milk_000mt", "crop_pulses_000mt", "period"]
+    },
+    "indicator_rbi_fiscal": {
+      "label": "RBI State Finances",
+      "layer": "socioeconomic",
+      "color": "#991b1b",
+      "size_field": null,
+      "fields": ["debt_to_gsdp_pct", "gfd_cr", "interest_payments_cr", "period"]
+    },
+    "indicator_revenue": {
+      "label": "Revenue Receipts (RBI)",
+      "layer": "socioeconomic",
+      "color": "#b45309",
+      "size_field": null,
+      "fields": ["total_revenue_cr", "own_tax_revenue_cr", "central_share_cr", "period"]
     }
   },
 
@@ -219,6 +247,15 @@
     {"from": "indicator_col",   "verb": "influences",   "to": "indicator_hces",  "note": "cost of living → household spending"},
     {"from": "indicator_srs",   "verb": "influences",   "to": "indicator_udise", "note": "demographics → school demand"},
     {"from": "state",           "verb": "describes",    "to": "indicator_fiscal"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_energy"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_agriculture"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_rbi_fiscal"},
+    {"from": "state",           "verb": "describes",    "to": "indicator_revenue"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_energy"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_agriculture"},
+    {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_rbi_fiscal"},
+    {"from": "indicator_energy", "verb": "influences",  "to": "indicator_asi",    "note": "energy capacity → industrial output"},
+    {"from": "indicator_revenue","verb": "influences",  "to": "indicator_fiscal", "note": "revenue capacity → fiscal headroom"},
     {"from": "sdg_goal",        "verb": "measured_by",  "to": "indicator_fiscal"},
     {"from": "indicator_fiscal","verb": "influences",   "to": "indicator_col",   "note": "fiscal policy → subsidies → cost of living"},
     {"from": "party",           "verb": "allied_with",  "to": "party"},

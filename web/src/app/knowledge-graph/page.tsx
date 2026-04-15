@@ -88,6 +88,10 @@ const NODE_SIZE: Record<string, number> = {
   indicator_asi: 4,
   indicator_col: 4,
   indicator_fiscal: 5,
+  indicator_energy: 4,
+  indicator_agriculture: 4,
+  indicator_rbi_fiscal: 5,
+  indicator_revenue: 4,
 };
 
 // Link distance by verb — spreads clusters apart
@@ -125,6 +129,10 @@ const NODE_TYPE_LABELS: Record<string, string> = {
   indicator_asi: "Industry (ASI)",
   indicator_col: "Cost of Living",
   indicator_fiscal: "State Finances (CAG)",
+  indicator_energy: "Energy (MOSPI)",
+  indicator_agriculture: "Agriculture",
+  indicator_rbi_fiscal: "RBI State Finances",
+  indicator_revenue: "Revenue Receipts (RBI)",
 };
 
 // ─── Temporal config ────────────────────────────────────────────────────────
@@ -166,6 +174,10 @@ const LABEL_ZOOM_THRESHOLD: Record<string, number> = {
   indicator_asi: 0.8,
   indicator_col: 0.8,
   indicator_fiscal: 0.8,
+  indicator_energy: 0.8,
+  indicator_agriculture: 0.8,
+  indicator_rbi_fiscal: 0.8,
+  indicator_revenue: 0.8,
   district: 1.5,
   mla: 2.0,
   manifesto_item: 2.5,

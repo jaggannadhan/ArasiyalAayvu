@@ -509,6 +509,50 @@ class GraphBuilder:
                                    interest_cr=bdata.get("committed", {}).get("interest_cr"))
                     self._add_edge(state_id, fiscal_id, "describes", period=fy)
 
+        # ── Energy Stats ──
+        for state_slug, state_name in FOCUS_STATES.items():
+            state_id = f"state:{state_slug}"
+            snap = self._latest_snapshot("energy_stats", state_slug)
+            if snap:
+                period = snap.pop("period", snap.pop("data_period", ""))
+                eid = f"indicator_energy:{state_slug}"
+                self._add_node(eid, "indicator_energy", f"Energy — {state_name}",
+                               period=period, state=state_slug,
+                               installed_capacity_gw=snap.get("installed_capacity_gw"),
+                               solar_mw=snap.get("solar_mw"),
+                               wind_mw=snap.get("wind_mw"),
+                               total_renewable_mw=snap.get("total_renewable_mw"))
+                self._add_edge(state_id, eid, "describes", period=period)
+
+        # ── RBI State Finances (debt-to-GSDP, GFD time-series) ──
+        for state_slug, state_name in FOCUS_STATES.items():
+            state_id = f"state:{state_slug}"
+            snap = self._latest_snapshot("rbi_state_finances", state_slug)
+            if snap:
+                period = snap.pop("period", snap.pop("data_period", ""))
+                rid = f"indicator_rbi_fiscal:{state_slug}"
+                self._add_node(rid, "indicator_rbi_fiscal", f"RBI Fiscal — {state_name}",
+                               period=period, state=state_slug,
+                               debt_to_gsdp_pct=snap.get("debt_to_gsdp_pct"),
+                               gfd_cr=snap.get("gfd_cr"),
+                               interest_payments_cr=snap.get("interest_payments_cr"))
+                self._add_edge(state_id, rid, "describes", period=period)
+
+        # ── MOFPI (food processing + agriculture) ──
+        for state_slug, state_name in FOCUS_STATES.items():
+            state_id = f"state:{state_slug}"
+            snap = self._latest_snapshot("mofpi", state_slug)
+            if snap:
+                period = snap.pop("period", snap.pop("data_period", ""))
+                mid = f"indicator_agriculture:{state_slug}"
+                self._add_node(mid, "indicator_agriculture", f"Agriculture — {state_name}",
+                               period=period, state=state_slug,
+                               crop_rice_000mt=snap.get("crop_rice_000mt"),
+                               livestock_milk_000mt=snap.get("livestock_milk_000mt"),
+                               fruit_banana_000mt=snap.get("fruit_banana_000mt"),
+                               pmfme_micro_enterprises=snap.get("pmfme_micro_enterprises"))
+                self._add_edge(state_id, mid, "describes", period=period)
+
         count = sum(1 for n in self.nodes if n["layer"] == "socioeconomic")
         print(f"    {count} indicator nodes")
 

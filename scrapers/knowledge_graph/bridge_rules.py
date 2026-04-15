@@ -35,6 +35,7 @@ SDG_TO_INDICATORS: dict[str, list[dict]] = {
     "2": [  # Zero Hunger
         {"indicator": "indicator_hces",  "field": "mpce_combined", "weight": 0.7, "reason": "Food is the largest share of poor household expenditure"},
         {"indicator": "indicator_col",   "field": "lpg_14kg",     "weight": 0.4, "reason": "Cooking fuel cost affects food preparation access"},
+        {"indicator": "indicator_agriculture", "field": "crop_rice_000mt", "weight": 1.0, "reason": "Rice production = primary food security metric"},
     ],
     "3": [  # Good Health & Well-being
         {"indicator": "indicator_srs",   "field": "imr",          "weight": 1.0, "reason": "Infant mortality is the primary health outcome indicator"},
@@ -56,6 +57,8 @@ SDG_TO_INDICATORS: dict[str, list[dict]] = {
         {"indicator": "indicator_col",   "field": "petrol",       "weight": 0.7, "reason": "Fuel affordability"},
         {"indicator": "indicator_col",   "field": "lpg_14kg",     "weight": 1.0, "reason": "LPG access = clean cooking fuel"},
         {"indicator": "indicator_udise", "field": "electricity_pct", "weight": 0.7, "reason": "School electrification = infrastructure proxy"},
+        {"indicator": "indicator_energy","field": "total_renewable_mw", "weight": 1.0, "reason": "Renewable installed capacity = clean energy progress"},
+        {"indicator": "indicator_energy","field": "solar_mw",     "weight": 0.7, "reason": "Solar capacity = renewable transition"},
     ],
     "8": [  # Decent Work & Economic Growth
         {"indicator": "indicator_plfs",  "field": "unemployment_rate", "weight": 1.0, "reason": "Unemployment is the direct measure"},
@@ -205,6 +208,24 @@ INDICATOR_INFLUENCES: list[dict] = [
         "target": "indicator_asi",   "target_field": "gva_cr",
         "weight": 0.4, "direction": "negative",
         "reason": "Higher fiscal deficit → crowding out private investment → lower industrial output",
+    },
+    {
+        "source": "indicator_energy","source_field": "installed_capacity_gw",
+        "target": "indicator_asi",   "target_field": "factories",
+        "weight": 0.6, "direction": "positive",
+        "reason": "More energy capacity → enables more industrial growth → more factories",
+    },
+    {
+        "source": "indicator_agriculture","source_field": "crop_rice_000mt",
+        "target": "indicator_hces",  "target_field": "mpce_combined",
+        "weight": 0.3, "direction": "negative",
+        "reason": "Higher food production → lower food prices → lower household expenditure on food",
+    },
+    {
+        "source": "indicator_rbi_fiscal","source_field": "debt_to_gsdp_pct",
+        "target": "indicator_fiscal","target_field": "fiscal_deficit_cr",
+        "weight": 0.7, "direction": "positive",
+        "reason": "Higher debt-to-GSDP → higher interest burden → larger fiscal deficit",
     },
 ]
 
