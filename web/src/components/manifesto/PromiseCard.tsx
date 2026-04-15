@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { StanceLabel, StatusBadge } from "./StanceLabel";
 import { VerificationPanel } from "./VerificationPanel";
+import { FeasibilityPanel } from "./FeasibilityPanel";
 import type { ManifestoPromise } from "@/lib/types";
 import { PARTIES } from "@/lib/types";
 
@@ -14,6 +15,7 @@ interface PromiseCardProps {
 
 export function PromiseCard({ promise, lang = "en", highlighted = false }: PromiseCardProps) {
   const [showVerification, setShowVerification] = useState(false);
+  const [showFeasibility, setShowFeasibility] = useState(false);
   const party = PARTIES[promise.party_id];
   const text = lang === "ta" ? promise.promise_text_ta : promise.promise_text_en;
 
@@ -51,17 +53,28 @@ export function PromiseCard({ promise, lang = "en", highlighted = false }: Promi
         )}
       </div>
 
-      {/* Verification toggle */}
-      <button
-        onClick={() => setShowVerification(!showVerification)}
-        className="text-xs text-blue-600 hover:text-blue-800 underline underline-offset-2 self-start mt-1 transition-colors"
-      >
-        {showVerification
-          ? (lang === "ta" ? "சரிபார்ப்பை மறை" : "Hide verification")
-          : (lang === "ta" ? "ஆதாரம் காட்டு ↓" : "Show source & verification ↓")}
-      </button>
+      {/* Toggles */}
+      <div className="flex items-center gap-4 flex-wrap mt-1">
+        <button
+          onClick={() => setShowVerification(!showVerification)}
+          className="text-xs text-blue-600 hover:text-blue-800 underline underline-offset-2 transition-colors"
+        >
+          {showVerification
+            ? (lang === "ta" ? "சரிபார்ப்பை மறை" : "Hide verification")
+            : (lang === "ta" ? "ஆதாரம் காட்டு ↓" : "Show source & verification ↓")}
+        </button>
+        <button
+          onClick={() => setShowFeasibility(!showFeasibility)}
+          className="text-xs text-indigo-600 hover:text-indigo-800 underline underline-offset-2 transition-colors"
+        >
+          {showFeasibility
+            ? (lang === "ta" ? "சாத்தியத்தை மறை" : "Hide feasibility")
+            : (lang === "ta" ? "நிதிச் சாத்தியம் ↓" : "Compute fiscal feasibility ↓")}
+        </button>
+      </div>
 
       {showVerification && <VerificationPanel promise={promise} lang={lang} />}
+      {showFeasibility && <FeasibilityPanel docId={promise.doc_id} lang={lang} />}
     </div>
   );
 }

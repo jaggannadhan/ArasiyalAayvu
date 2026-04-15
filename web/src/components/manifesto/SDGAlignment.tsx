@@ -1,9 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ManifestoPromise, Pillar } from "@/lib/types";
 import {
-  computeSDGCoverage,
   coveredSDGs,
   uncoveredSDGs,
   blockedBy,
@@ -12,6 +11,16 @@ import {
   type CoverageQuality,
 } from "@/lib/sdg-mapping";
 import { SDG_GOALS } from "@/lib/sdg-data";
+import { apiGet } from "@/lib/api-client";
+
+interface SDGAlignmentResponse {
+  party_id: string;
+  year: number;
+  cached: boolean;
+  promise_count?: number;
+  /** 17 entries, one per SDG 1..17, in order. */
+  coverage: SDGCoverage[];
+}
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -323,16 +332,51 @@ export function SDGAlignment({ promises, partyName, partyNameTa, lang, onJumpToP
   const isTA = lang === "ta";
   const [howModalSdgId, setHowModalSdgId] = useState<number | null>(null);
 
-  const coverageMap = useMemo(() => computeSDGCoverage(promises), [promises]);
-  const covered = useMemo(() => coveredSDGs(coverageMap), [coverageMap]);
-  const uncovered = useMemo(() => uncoveredSDGs(coverageMap), [coverageMap]);
+  // Pre-computed alignment from the backend (KG-sourced, cached per party+year).
+  const partyId = promises[0]?.party_id;
+  const targetYear = promises[0]?.target_year;
+  const [coverageMap, setCoverageMap] = useState<SDGCoverageMap | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
-  const chainBreakCount = covered.filter(
-    (id) => (coverageMap.get(id)?.chain_breaks.length ?? 0) > 0
-  ).length;
+  useEffect(() => {
+    if (!partyId || !targetYear) {
+      setCoverageMap(null);
+      return;
+    }
+    let cancelled = false;
+    setCoverageMap(null);
+    setLoadError(null);
+    apiGet<SDGAlignmentResponse>(`/api/manifesto/${partyId}/${targetYear}/sdg-alignment`)
+      .then((resp) => {
+        if (cancelled) return;
+        const map: SDGCoverageMap = new Map();
+        for (const cov of resp.coverage) map.set(cov.sdg_id, cov);
+        setCoverageMap(map);
+      })
+      .catch((err: Error) => {
+        if (!cancelled) setLoadError(err.message);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [partyId, targetYear]);
+
+  const covered = useMemo(
+    () => (coverageMap ? coveredSDGs(coverageMap) : []),
+    [coverageMap]
+  );
+  const uncovered = useMemo(
+    () => (coverageMap ? uncoveredSDGs(coverageMap) : []),
+    [coverageMap]
+  );
+
+  const chainBreakCount = coverageMap
+    ? covered.filter((id) => (coverageMap.get(id)?.chain_breaks.length ?? 0) > 0).length
+    : 0;
 
   // Sort uncovered: SDGs that create chain breaks first (most impactful gaps)
   const sortedUncovered = useMemo(() => {
+    if (!coverageMap) return [];
     return [...uncovered].sort((a, b) => {
       const aBlocks = blockedBy(a, coverageMap).length;
       const bBlocks = blockedBy(b, coverageMap).length;
@@ -346,6 +390,28 @@ export function SDGAlignment({ promises, partyName, partyNameTa, lang, onJumpToP
         <p className="text-2xl mb-2">📄</p>
         <p className="text-sm font-semibold text-gray-700">
           {isTA ? "இந்தக் கட்சிக்கான அறிக்கை தரவு இல்லை" : "No manifesto data available for this party"}
+        </p>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="bg-rose-50 border border-rose-200 rounded-2xl px-5 py-6 text-center">
+        <p className="text-sm font-semibold text-rose-700">
+          {isTA ? "SDG ஒப்படைவு ஏற்ற முடியவில்லை" : "Could not load SDG alignment"}
+        </p>
+        <p className="text-xs text-rose-500 mt-1">{loadError}</p>
+      </div>
+    );
+  }
+
+  if (!coverageMap) {
+    return (
+      <div className="bg-white rounded-2xl border border-gray-200 px-5 py-8 text-center">
+        <div className="inline-block h-5 w-5 rounded-full border-2 border-gray-300 border-t-gray-700 animate-spin" />
+        <p className="text-xs text-gray-500 mt-2">
+          {isTA ? "SDG ஒப்படைவு கணக்கிடப்படுகிறது…" : "Loading SDG alignment…"}
         </p>
       </div>
     );

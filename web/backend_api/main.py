@@ -800,6 +800,172 @@ def knowledge_graph():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Graph Query API — runtime traversal over the KG
+# ─────────────────────────────────────────────────────────────────────────────
+
+from . import graph_query as _gq  # noqa: E402
+from . import sdg_alignment as _sdg  # noqa: E402
+
+
+def _graph() -> "_gq.nx.MultiDiGraph":
+    g, _raw = _gq.load_graph(project_id=PROJECT_ID)
+    return g
+
+
+def _fetch_promise_doc(raw_doc_id: str) -> Optional[Dict[str, Any]]:
+    doc = _db.collection("manifesto_promises").document(raw_doc_id).get()
+    return doc.to_dict() if doc.exists else None
+
+
+def _fetch_state_finances_latest(state_slug: str = "tamil_nadu") -> Optional[Dict[str, Any]]:
+    # state_finances collection is keyed by fiscal_year (e.g., "2025-26"), TN-only for now
+    if state_slug != "tamil_nadu":
+        return None
+    docs = list(_db.collection("state_finances").stream())
+    if not docs:
+        return None
+    latest = max(docs, key=lambda d: d.id)
+    return {"fiscal_year": latest.id, **(latest.to_dict() or {})}
+
+
+def _fetch_indicator_snapshot(collection: str, entity_slug: str) -> Optional[Dict[str, Any]]:
+    if collection not in _KG_COLLECTIONS:
+        return None
+    return _kg_latest_snapshot(collection, entity_slug)
+
+
+@app.get("/api/graph/neighbors/{node_id:path}")
+def graph_neighbors(
+    node_id: str,
+    verb: Optional[str] = Query(None, description="Filter to a single relation verb"),
+    direction: str = Query("out", pattern="^(in|out|both)$"),
+    limit: int = Query(200, ge=1, le=1000),
+) -> Dict[str, Any]:
+    """Immediate 1-hop neighbors of a KG node, filterable by edge verb + direction."""
+    g = _graph()
+    if node_id not in g:
+        raise HTTPException(status_code=404, detail=f"Unknown node: {node_id}")
+    node = {"id": node_id, **g.nodes[node_id]}
+    results = _gq.neighbors(g, node_id, verb=verb, direction=direction, limit=limit)
+    return {"node": node, "neighbors": results, "count": len(results)}
+
+
+@app.get("/api/graph/traverse/{node_id:path}")
+def graph_traverse(
+    node_id: str,
+    verbs: Optional[str] = Query(None, description="Comma-separated verbs to follow"),
+    max_depth: int = Query(3, ge=1, le=6),
+    max_nodes: int = Query(500, ge=1, le=2000),
+) -> Dict[str, Any]:
+    """BFS traversal from a node, optionally restricted to specific edge verbs."""
+    g = _graph()
+    allowed = [v.strip() for v in verbs.split(",")] if verbs else None
+    return _gq.traverse(g, node_id, allowed_verbs=allowed, max_depth=max_depth, max_nodes=max_nodes)
+
+
+@app.get("/api/graph/path")
+def graph_path(
+    source: str = Query(...),
+    target: str = Query(...),
+    verbs: Optional[str] = Query(None, description="Comma-separated verbs to allow"),
+) -> Dict[str, Any]:
+    """Shortest path between two nodes, optionally restricted to specific verbs."""
+    g = _graph()
+    allowed = [v.strip() for v in verbs.split(",")] if verbs else None
+    return _gq.shortest_path(g, source, target, allowed_verbs=allowed)
+
+
+@app.get("/api/manifesto/{party_id}/{year}/sdg-alignment")
+def manifesto_sdg_alignment(
+    party_id: str,
+    year: int,
+    refresh: bool = Query(False, description="Force recompute and overwrite cache"),
+) -> Dict[str, Any]:
+    """Pre-computed SDG coverage for a single party's manifesto in a given year.
+
+    Sourced from the Knowledge Graph's `targets_goal` edges (weighted). Cached
+    indefinitely since manifestos are fixed for the cycle; pass `refresh=true`
+    to recompute after a manifesto edit.
+    """
+    if not refresh:
+        cached = _sdg.get_cached(party_id, year)
+        if cached is not None:
+            return {"party_id": party_id, "year": year, "cached": True, "coverage": cached}
+
+    try:
+        docs = list(
+            _db.collection("manifesto_promises")
+            .where(filter=FieldFilter("party_id", "==", party_id))
+            .where(filter=FieldFilter("target_year", "==", year))
+            .stream()
+        )
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+    promises = [_doc_to_dict(d) for d in docs]
+    if not promises:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No promises found for party={party_id}, year={year}",
+        )
+
+    g = _graph()
+    coverage = _sdg.compute_party_alignment(g, promises)
+    _sdg.set_cached(party_id, year, coverage)
+
+    return {
+        "party_id": party_id,
+        "year": year,
+        "cached": False,
+        "promise_count": len(promises),
+        "coverage": coverage,
+    }
+
+
+@app.get("/api/manifesto/sdg-alignment/cache")
+def sdg_alignment_cache_stats() -> Dict[str, Any]:
+    return _sdg.cache_stats()
+
+
+@app.post("/api/manifesto/sdg-alignment/cache/clear")
+def sdg_alignment_cache_clear(
+    party_id: Optional[str] = Query(None),
+    year: Optional[int] = Query(None),
+) -> Dict[str, Any]:
+    removed = _sdg.clear_cache(party_id=party_id, year=year)
+    return {"removed": removed, "stats": _sdg.cache_stats()}
+
+
+@app.get("/api/graph/feasibility/{promise_id:path}")
+def graph_feasibility(
+    promise_id: str,
+    state: str = Query("tamil_nadu"),
+) -> Dict[str, Any]:
+    """Walk a promise node through SDG → indicators → fiscal data and score feasibility."""
+    g = _graph()
+    # Accept either the bare doc_id (e.g., "dmk_2026_women_001") or the graph id.
+    node_id = promise_id if promise_id.startswith("promise:") else f"promise:{promise_id}"
+    if node_id not in g:
+        raise HTTPException(status_code=404, detail=f"Unknown promise: {promise_id}")
+
+    try:
+        result = _gq.compute_feasibility(
+            g,
+            node_id,
+            fetch_promise_doc=_fetch_promise_doc,
+            fetch_state_finances_latest=lambda: _fetch_state_finances_latest(state),
+            state_slug=state,
+            fetch_indicator_snapshot=_fetch_indicator_snapshot,
+        )
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+    return jsonable_encoder(result.to_dict())
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Pincode resolve helpers
 # ─────────────────────────────────────────────────────────────────────────────
 

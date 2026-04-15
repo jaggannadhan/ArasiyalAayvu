@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
+import { InfoTip, LabelWithTip } from "@/components/state/InfoTip";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -283,16 +284,54 @@ function EmptySection({ msg }: { msg: string }) {
 
 // ─── Labour (PLFS) ────────────────────────────────────────────────────────────
 
+interface PLFSHistory {
+  snapshots?: Record<string, PLFSSnapshot>;
+}
+
 function LabourSection({
   plfs,
   aiPlfs,
+  slug,
 }: {
   plfs?: PLFSSnapshot | null;
   aiPlfs?: PLFSSnapshot | null;
+  slug: string;
 }) {
+  // Fetch full time-series so we can fall back to a snapshot that actually has
+  // the 15-29 youth breakdown. The latest snapshot is often the MoSPI
+  // Quarterly Bulletin (15+ headline only); the Annual Report (with youth
+  // detail) lags by 9-12 months.
+  const [youth, setYouth] = useState<{ period: string; ur?: Record<string, AreaCell> } | null>(null);
+  const [youthAI, setYouthAI] = useState<{ period: string; ur?: Record<string, AreaCell> } | null>(null);
+
+  useEffect(() => {
+    if (!slug) return;
+    let cancelled = false;
+    const findLatestWithYouth = (history: PLFSHistory | null) => {
+      const snaps = history?.snapshots ?? {};
+      const periods = Object.keys(snaps).sort().reverse();
+      for (const p of periods) {
+        if (snaps[p]?.ur?.["15-29"]) return { period: p, ur: snaps[p].ur };
+      }
+      return null;
+    };
+    Promise.all([
+      apiGet<PLFSHistory>(`/api/kg/plfs/${slug}`).catch(() => null),
+      apiGet<PLFSHistory>(`/api/kg/plfs/all_india`).catch(() => null),
+    ]).then(([stateHist, aiHist]) => {
+      if (cancelled) return;
+      setYouth(findLatestWithYouth(stateHist));
+      setYouthAI(findLatestWithYouth(aiHist));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
   if (!plfs) return <EmptySection msg="No PLFS data available" />;
 
   const areas = ["rural", "urban", "total"] as const;
+  const isQuarterly = /^\d{4}$/.test(plfs.period); // 4-digit = quarterly bulletin; "YYYY-YY" = annual report
 
   return (
     <div className="space-y-4">
@@ -306,15 +345,19 @@ function LabourSection({
           {(["lfpr", "wpr", "ur"] as const).map((metric) => {
             const val = plfs[metric]?.["15+"]?.total?.person;
             const ai = aiPlfs?.[metric]?.["15+"]?.total?.person;
-            const labels = { lfpr: "LFPR", wpr: "WPR", ur: "Unemployment" };
+            const labels = { lfpr: "LFPR", wpr: "WPR", ur: "Unemployment" } as const;
+            const terms  = { lfpr: "LFPR", wpr: "WPR", ur: "Unemployment" } as const;
             return (
               <div key={metric} className="bg-gray-50 rounded-xl p-2">
-                <p className="text-[10px] text-gray-500 font-semibold">{labels[metric]}</p>
+                <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center justify-center w-full">
+                  {labels[metric]}
+                  <InfoTip term={terms[metric]} />
+                </p>
                 <p className="text-xl font-black text-gray-900">
                   {f1(val)}<span className="text-xs font-normal text-gray-400">%</span>
                 </p>
                 {ai != null && (
-                  <p className="text-[9px] text-gray-400">IN: {f1(ai)}%</p>
+                  <p className="text-[9px] text-gray-400">India: {f1(ai)}%</p>
                 )}
               </div>
             );
@@ -329,8 +372,8 @@ function LabourSection({
             const total  = plfs.lfpr?.["15+"]?.[area]?.person;
             return (
               <div key={area}>
-                <p className="text-[10px] font-bold text-gray-400 uppercase mb-1.5">
-                  {area} LFPR (15+)
+                <p className="text-[10px] font-bold text-gray-400 uppercase mb-1.5 inline-flex items-center">
+                  {area} <LabelWithTip label="LFPR" term="LFPR" className="ml-1" /> (15+)
                 </p>
                 <div className="grid grid-cols-3 gap-2">
                   {[
@@ -352,29 +395,74 @@ function LabourSection({
 
       {/* Youth 15-29 unemployment */}
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center">
           Youth Unemployment Rate — Age 15–29
+          <InfoTip term="Youth Unemployment" />
         </p>
-        <div className="grid grid-cols-3 gap-2">
-          {areas.map((area) => {
-            const val  = plfs.ur?.["15-29"]?.[area]?.person;
-            const ai   = aiPlfs?.ur?.["15-29"]?.[area]?.person;
-            const gap  = val != null && ai != null ? val - ai : null;
+
+        {/* Prefer headline period if it has youth data; otherwise fall back to the
+            latest Annual Report snapshot that does. */}
+        {(() => {
+          const hasHeadlineYouth = plfs.ur?.["15-29"] != null;
+          const sourceUr  = hasHeadlineYouth ? plfs.ur?.["15-29"] : youth?.ur?.["15-29"];
+          const sourceAI  = hasHeadlineYouth
+            ? aiPlfs?.ur?.["15-29"]
+            : youthAI?.ur?.["15-29"];
+          const sourcePeriod = hasHeadlineYouth ? plfs.period : youth?.period;
+
+          if (!sourceUr) {
             return (
-              <div key={area} className="bg-gray-50 rounded-xl p-3 text-center">
-                <p className="text-[10px] text-gray-500 font-semibold capitalize mb-1">{area}</p>
-                <p className="text-lg font-black text-gray-900">
-                  {f1(val)}<span className="text-xs font-normal text-gray-400">%</span>
-                </p>
-                {gap != null && (
-                  <p className={`text-[10px] font-bold ${gap > 0 ? "text-red-500" : "text-emerald-600"}`}>
-                    {gap > 0 ? "+" : ""}{gap.toFixed(1)} vs IN
-                  </p>
-                )}
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[11px] text-amber-800 leading-snug">
+                Youth (15–29) breakdown isn&apos;t published yet for any period we have on file.
+                MoSPI releases this in the PLFS <span className="font-semibold">Annual Report</span>,
+                which typically lags the Quarterly Bulletin by 9–12 months.
               </div>
             );
-          })}
-        </div>
+          }
+
+          return (
+            <>
+              <p className="text-[10px] text-gray-500 mb-3 leading-snug">
+                {isQuarterly && !hasHeadlineYouth ? (
+                  <>
+                    Source: <span className="font-semibold">PLFS Annual Report {sourcePeriod}</span>.
+                    The {plfs.period} Quarterly Bulletin only publishes the 15+ headline — MoSPI releases
+                    the youth breakdown separately, 9–12 months later.
+                  </>
+                ) : (
+                  <>As of {sourcePeriod}.</>
+                )}
+              </p>
+              <div className="grid grid-cols-3 gap-2">
+                {areas.map((area) => {
+                  const val = sourceUr?.[area]?.person;
+                  const ai  = sourceAI?.[area]?.person;
+                  const gap = val != null && ai != null ? val - ai : null;
+                  return (
+                    <div key={area} className="bg-gray-50 rounded-xl p-3 text-center">
+                      <p className="text-[10px] text-gray-500 font-semibold capitalize mb-1">{area}</p>
+                      <p className="text-lg font-black text-gray-900">
+                        {f1(val)}<span className="text-xs font-normal text-gray-400">%</span>
+                      </p>
+                      {ai != null && (
+                        <p className="text-[9px] text-gray-400">India: {f1(ai)}%</p>
+                      )}
+                      {gap != null && (
+                        <p className={`text-[10px] font-bold ${gap > 0 ? "text-red-500" : "text-emerald-600"}`}>
+                          {gap > 0 ? "+" : ""}{gap.toFixed(1)} pts vs India
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="text-[10px] text-gray-400 mt-3">
+                Lower is better. <span className="text-emerald-600 font-semibold">Green</span> = TN is below the national rate;{" "}
+                <span className="text-red-500 font-semibold">red</span> = worse than India average.
+              </p>
+            </>
+          );
+        })()}
       </div>
     </div>
   );
@@ -393,54 +481,60 @@ function HealthSection({
 
   const rows: {
     label: string;
+    term: string;
     val?: number | null;
     ai?: number | null;
     unit: string;
     lowerBetter: boolean;
   }[] = [
-    { label: "Infant Mortality Rate",      val: srs.imr?.total?.total,       ai: aiSrs?.imr?.total?.total,       unit: "/1000 LB", lowerBetter: true  },
-    { label: "Maternal Mortality Ratio",   val: srs.mmr_2018_20?.mmr,        ai: aiSrs?.mmr_2018_20?.mmr,        unit: "/1L LB",   lowerBetter: true  },
-    { label: "Total Fertility Rate",       val: srs.tfr?.total,              ai: aiSrs?.tfr?.total,              unit: "",         lowerBetter: true  },
-    { label: "Birth Rate (CBR)",           val: srs.cbr?.total,              ai: aiSrs?.cbr?.total,              unit: "/1000",    lowerBetter: false },
-    { label: "Death Rate (CDR)",           val: srs.cdr?.total,              ai: aiSrs?.cdr?.total,              unit: "/1000",    lowerBetter: true  },
+    { label: "Infant Mortality Rate (IMR)",    term: "IMR", val: srs.imr?.total?.total, ai: aiSrs?.imr?.total?.total, unit: "per 1,000 live births",    lowerBetter: true  },
+    { label: "Maternal Mortality Ratio (MMR)", term: "MMR", val: srs.mmr_2018_20?.mmr,  ai: aiSrs?.mmr_2018_20?.mmr,  unit: "per 100,000 live births",  lowerBetter: true  },
+    { label: "Total Fertility Rate (TFR)",     term: "TFR", val: srs.tfr?.total,        ai: aiSrs?.tfr?.total,        unit: "children per woman",       lowerBetter: true  },
+    { label: "Crude Birth Rate (CBR)",         term: "CBR", val: srs.cbr?.total,        ai: aiSrs?.cbr?.total,        unit: "per 1,000 population",     lowerBetter: false },
+    { label: "Crude Death Rate (CDR)",         term: "CDR", val: srs.cdr?.total,        ai: aiSrs?.cdr?.total,        unit: "per 1,000 population",     lowerBetter: true  },
   ];
 
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Vital Statistics · SRS {srs.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center">
+          Vital Statistics · <LabelWithTip label="SRS" term="SRS" className="mx-1" /> {srs.period}
         </p>
         <SourceLink name="SRS Statistical Report 2023 (RGI)" url="https://censusindia.gov.in/nada/index.php/catalog/46172/download/50420/SRS_STAT_2023.pdf" />
         <div className="space-y-0">
-          {rows.map(({ label, val, ai, unit, lowerBetter }) => {
+          {rows.map(({ label, term, val, ai, unit, lowerBetter }) => {
             const gap = val != null && ai != null ? val - ai : null;
             const gapGood = gap != null && (lowerBetter ? gap < 0 : gap > 0);
             return (
               <div
                 key={label}
-                className="flex items-center justify-between py-2.5 border-b border-gray-50 last:border-0"
+                className="flex items-center justify-between py-2.5 border-b border-gray-50 last:border-0 gap-2"
               >
-                <span className="text-xs text-gray-700">{label}</span>
+                <span className="text-xs text-gray-700 inline-flex items-center">
+                  {label}
+                  <InfoTip term={term} />
+                </span>
                 <div className="flex items-center gap-2 text-right flex-shrink-0">
                   {gap != null && (
                     <span className={`text-[10px] font-bold ${gapGood ? "text-emerald-600" : "text-red-500"}`}>
                       {gap > 0 ? "+" : ""}{gap.toFixed(1)}
                     </span>
                   )}
-                  <span className="text-xs font-black text-gray-900">
-                    {f1(val)}<span className="text-[10px] text-gray-400">{unit && ` ${unit}`}</span>
+                  <span className="text-xs font-black text-gray-900 whitespace-nowrap">
+                    {f1(val)}<span className="text-[10px] text-gray-400 font-normal">{unit && ` ${unit}`}</span>
                   </span>
                   {ai != null && (
-                    <span className="text-[10px] text-gray-400 w-12">IN: {f1(ai)}</span>
+                    <span className="text-[10px] text-gray-400 whitespace-nowrap">India: {f1(ai)}</span>
                   )}
                 </div>
               </div>
             );
           })}
         </div>
-        <p className="text-[9px] text-gray-400 mt-2">
-          Gap shown vs All India average. Green = better than average.
+        <p className="text-[10px] text-gray-400 mt-2 leading-snug">
+          The leftmost number is the <span className="font-semibold">gap vs India average</span>
+          {" "}(green = better for this metric; context-aware). Middle = Tamil Nadu&apos;s value. Right = India&apos;s value.
+          Tap the <span className="inline-block w-3.5 h-3.5 rounded-full border border-gray-300 text-[8px] text-gray-500 font-bold leading-none text-center align-middle">i</span> for a definition.
         </p>
       </div>
 
@@ -451,13 +545,15 @@ function HealthSection({
         </p>
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: "IMR",         rural: srs.imr?.rural?.total,  urban: srs.imr?.urban?.total },
-            { label: "TFR",         rural: srs.tfr?.rural,         urban: srs.tfr?.urban },
-            { label: "Birth Rate",  rural: srs.cbr?.rural,         urban: srs.cbr?.urban },
-            { label: "Death Rate",  rural: srs.cdr?.rural,         urban: srs.cdr?.urban },
-          ].map(({ label, rural, urban }) => (
+            { label: "IMR",         term: "IMR", rural: srs.imr?.rural?.total,  urban: srs.imr?.urban?.total },
+            { label: "TFR",         term: "TFR", rural: srs.tfr?.rural,         urban: srs.tfr?.urban },
+            { label: "Birth Rate",  term: "CBR", rural: srs.cbr?.rural,         urban: srs.cbr?.urban },
+            { label: "Death Rate",  term: "CDR", rural: srs.cdr?.rural,         urban: srs.cdr?.urban },
+          ].map(({ label, term, rural, urban }) => (
             <div key={label} className="bg-gray-50 rounded-xl p-3">
-              <p className="text-[10px] font-bold text-gray-500 mb-2">{label}</p>
+              <p className="text-[10px] font-bold text-gray-500 mb-2 inline-flex items-center">
+                {label}<InfoTip term={term} />
+              </p>
               <div className="flex justify-between">
                 <div>
                   <p className="text-[9px] text-green-600 font-semibold">Rural</p>
@@ -490,12 +586,16 @@ function SpendingSection({
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Monthly Per Capita Consumption — HCES {hces.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center flex-wrap">
+          <LabelWithTip label="MPCE" term="MPCE" />
+          <span className="ml-1">— Monthly Per Capita Consumption · <LabelWithTip label="HCES" term="HCES" className="ml-0.5" /> {hces.period}</span>
         </p>
         <SourceLink name="Household Consumption Expenditure Survey (MoSFA)" url="https://www.mospi.gov.in/publication/household-consumption-expenditure-survey-2023-24" period={hces.period} />
+        <p className="text-[10px] text-gray-500 mb-1 leading-snug">
+          Average <span className="font-semibold">₹ spent per person, per month</span> — calculated across every individual in sampled households (adults, children, elderly) and averaged state-wide.
+        </p>
         <p className="text-[10px] text-gray-400 mb-4">
-          &ldquo;With free goods&rdquo; counts govt-supplied items at imputed value.
+          &ldquo;With free goods&rdquo; includes govt-supplied items (rice, pulses, laptops, etc.) valued at market price.
         </p>
 
         {/* MPCE grid */}
@@ -514,11 +614,11 @@ function SpendingSection({
                 </p>
                 <p className="text-sm font-black text-gray-900">{fInr(val)}</p>
                 {ai != null && (
-                  <p className="text-[9px] text-gray-400">IN: {fInr(ai)}</p>
+                  <p className="text-[9px] text-gray-400">India: {fInr(ai)}</p>
                 )}
                 {gap != null && (
                   <p className={`text-[10px] font-bold mt-0.5 ${gap > 0 ? "text-emerald-600" : "text-red-500"}`}>
-                    {gap > 0 ? "+" : ""}{fInr(gap)} vs IN
+                    {gap > 0 ? "+" : ""}{fInr(gap)} vs India
                   </p>
                 )}
               </div>
@@ -529,8 +629,9 @@ function SpendingSection({
         {/* Welfare uplift */}
         {(hces.welfare_uplift?.rural_uplift_pct != null || hces.welfare_uplift?.urban_uplift_pct != null) && (
           <div className="border-t border-gray-100 pt-3">
-            <p className="text-[10px] font-bold text-gray-500 mb-2">
+            <p className="text-[10px] font-bold text-gray-500 mb-2 inline-flex items-center">
               Welfare Uplift from Free Goods
+              <InfoTip term="Welfare Uplift" />
             </p>
             <div className="flex gap-6">
               <div>
@@ -564,16 +665,16 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Higher Education — AISHE {aishe.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center">
+          Higher Education — <LabelWithTip label="AISHE" term="AISHE" className="mx-1" /> {aishe.period}
         </p>
         <SourceLink name="AISHE 2021-22 Report (MoE)" url="https://aishe.gov.in/aishe/viewDocument.action?documentId=352" period={aishe.period} />
 
         {/* GER */}
         {aishe.ger && (
           <div className="mb-4">
-            <p className="text-[10px] text-gray-500 font-semibold mb-2">
-              Gross Enrolment Ratio (GER) — 18–23 age group
+            <p className="text-[10px] text-gray-500 font-semibold mb-2 inline-flex items-center">
+              Gross Enrolment Ratio (<LabelWithTip label="GER" term="GER" />) — 18–23 age group
             </p>
             <div className="grid grid-cols-3 gap-2 text-center">
               {(["male", "female", "total"] as const).map((g) => {
@@ -587,7 +688,7 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
                       {f1(aishe.ger?.[g])}
                       <span className="text-xs font-normal text-gray-400">%</span>
                     </p>
-                    {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}%</p>}
+                    {ai != null && <p className="text-[9px] text-gray-400">India: {f1(ai)}%</p>}
                     <MiniBar
                       value={aishe.ger?.[g]}
                       max={60}
@@ -598,8 +699,8 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
               })}
             </div>
             {aishe.ger?.gpi != null && (
-              <p className="text-[10px] text-gray-500 mt-2 text-center">
-                Gender Parity Index:{" "}
+              <p className="text-[10px] text-gray-500 mt-2 text-center inline-flex items-center justify-center w-full">
+                <LabelWithTip label="Gender Parity Index" term="GPI" className="mr-1" />:{" "}
                 <span className={`font-bold ${aishe.ger.gpi >= 1 ? "text-emerald-600" : "text-amber-600"}`}>
                   {aishe.ger.gpi.toFixed(2)}
                 </span>
@@ -631,13 +732,15 @@ function EducationSection({ aishe, aiAishe }: { aishe?: AISHESnapshot | null; ai
             <p className="text-[10px] font-bold text-gray-500 mb-2">Enrollment Breakdown</p>
             <div className="grid grid-cols-4 gap-2 text-center">
               {[
-                { label: "Total", val: aishe.enrollment.total_approx },
-                { label: "UG",    val: aishe.enrollment.ug },
-                { label: "PG",    val: aishe.enrollment.pg },
-                { label: "PhD",   val: aishe.enrollment.phd },
-              ].map(({ label, val }) => (
+                { label: "Total", term: null,  val: aishe.enrollment.total_approx },
+                { label: "UG",    term: "UG",  val: aishe.enrollment.ug },
+                { label: "PG",    term: "PG",  val: aishe.enrollment.pg },
+                { label: "PhD",   term: "PhD", val: aishe.enrollment.phd },
+              ].map(({ label, term, val }) => (
                 <div key={label}>
-                  <p className="text-[9px] text-gray-400 font-semibold">{label}</p>
+                  <p className="text-[9px] text-gray-400 font-semibold inline-flex items-center justify-center w-full">
+                    {label}{term && <InfoTip term={term} />}
+                  </p>
                   <p className="text-sm font-black text-gray-900">
                     {val != null ? (val >= 100000 ? (val / 100000).toFixed(1) + "L" : val.toLocaleString("en-IN")) : "—"}
                   </p>
@@ -668,19 +771,22 @@ function SDGSection({ sdg }: { sdg?: SDGSnapshot | null }) {
     <div className="space-y-4">
       {/* Hero */}
       <div className="bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl p-5 text-white">
-        <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">
+        <p className="text-[10px] font-bold uppercase tracking-widest opacity-70 inline-flex items-center flex-wrap">
           <a href="https://sdgindiaindex.niti.gov.in/#/ranking" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-100">
-            NITI Aayog SDG India Index 2023-24
+            NITI Aayog <LabelWithTip label="SDG" term="SDG" /> India Index 2023-24
           </a>{" "}· {sdg.period}
         </p>
         <div className="flex items-end gap-6 mt-2">
           <div>
             <p className="text-5xl font-black">{sdg.composite ?? "—"}</p>
-            <p className="text-xs opacity-80">Overall Score (0–100)</p>
+            <p className="text-xs opacity-80 inline-flex items-center">
+              <LabelWithTip label="Composite Score" term="Composite Score" />
+              <span className="ml-1">(0–100)</span>
+            </p>
           </div>
           <div className="pb-1">
             <p className="text-2xl font-black text-yellow-300">#{sdg.rank ?? "—"}</p>
-            <p className="text-xs opacity-80">National Rank</p>
+            <p className="text-xs opacity-80">Rank among Indian states/UTs</p>
           </div>
         </div>
         {sdg.composite != null && (
@@ -852,8 +958,9 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
     <div className="space-y-4">
       {/* GER */}
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Gross Enrolment Ratio · {udise.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center flex-wrap">
+          <LabelWithTip label="GER" term="GER" />
+          <span className="ml-1">— Gross Enrolment Ratio · <LabelWithTip label="UDISE+" term="UDISE+" className="ml-0.5" /> {udise.period}</span>
         </p>
         <SourceLink name="UDISE+ Flash Statistics (MoE)" url="https://udiseplus.gov.in/#/page/publications" period={udise.period} />
         <div className="grid grid-cols-5 gap-2 text-center">
@@ -865,19 +972,23 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
               <div key={level} className="bg-gray-50 rounded-xl p-2">
                 <p className="text-[9px] text-gray-500 font-semibold">{labels[level]}</p>
                 <p className="text-lg font-black text-gray-900">{f1(val)}</p>
-                {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}</p>}
+                {ai != null && <p className="text-[9px] text-gray-400">India: {f1(ai)}</p>}
                 <MiniBar value={val} max={120} color="bg-blue-500" />
               </div>
             );
           })}
         </div>
+        <p className="text-[10px] text-gray-400 mt-2 leading-snug">
+          GER can exceed 100% because it counts over-age and under-age students, not just the eligible age group.
+        </p>
       </div>
 
       {/* Dropout */}
       {dropout && (
         <div className="bg-white rounded-2xl border border-gray-200 p-4">
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3 inline-flex items-center">
             Dropout Rate (%)
+            <InfoTip term="Dropout Rate" />
           </p>
           <div className="grid grid-cols-3 gap-3 text-center">
             {(["primary", "upper_primary", "secondary"] as const).map((level) => {
@@ -891,7 +1002,7 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
                   <p className={`text-xl font-black ${isGood ? "text-green-600" : val != null && val > 10 ? "text-red-600" : "text-gray-900"}`}>
                     {f1(val)}%
                   </p>
-                  {ai != null && <p className="text-[9px] text-gray-400">IN: {f1(ai)}%</p>}
+                  {ai != null && <p className="text-[9px] text-gray-400">India: {f1(ai)}%</p>}
                 </div>
               );
             })}
@@ -901,13 +1012,16 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
 
       {/* PTR + Schools */}
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
-          Pupil-Teacher Ratio & Infrastructure
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3 inline-flex items-center">
+          <LabelWithTip label="PTR" term="PTR" />
+          <span className="ml-1">— Pupil-Teacher Ratio & Infrastructure</span>
         </p>
         <div className="grid grid-cols-2 gap-3">
           {ptr && (["primary", "secondary"] as const).map((level) => (
             <div key={level} className="bg-gray-50 rounded-xl p-3 text-center">
-              <p className="text-[10px] text-gray-500 font-semibold">PTR ({level})</p>
+              <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center justify-center w-full">
+                PTR ({level})<InfoTip term="PTR" />
+              </p>
               <p className="text-xl font-black text-gray-900">{f1(ptr[level])}</p>
               <p className="text-[9px] text-gray-400">students per teacher</p>
             </div>
@@ -929,37 +1043,42 @@ function SchoolSection({ udise, aiUdise }: { udise?: UDISESnapshot | null; aiUdi
 function CrimeSection({ ncrb, aiNcrb }: { ncrb?: NCRBSnapshot | null; aiNcrb?: NCRBSnapshot | null }) {
   if (!ncrb) return <EmptySection msg="No NCRB data available" />;
 
-  const metrics: { key: keyof NCRBSnapshot; label: string; color: string }[] = [
-    { key: "total_ipc_crimes",       label: "Total IPC Crimes",       color: "bg-red-500" },
-    { key: "crimes_against_women",   label: "Against Women",          color: "bg-pink-500" },
-    { key: "crimes_against_children",label: "Against Children",       color: "bg-orange-500" },
-    { key: "crimes_against_sc",      label: "Against SC",             color: "bg-amber-500" },
-    { key: "crimes_against_st",      label: "Against ST",             color: "bg-yellow-500" },
+  const metrics: { key: keyof NCRBSnapshot; label: string; term: string | null; color: string }[] = [
+    { key: "total_ipc_crimes",       label: "Total IPC Crimes",       term: "IPC", color: "bg-red-500" },
+    { key: "crimes_against_women",   label: "Against Women",          term: null,  color: "bg-pink-500" },
+    { key: "crimes_against_children",label: "Against Children",       term: null,  color: "bg-orange-500" },
+    { key: "crimes_against_sc",      label: "Against SC",             term: "SC",  color: "bg-amber-500" },
+    { key: "crimes_against_st",      label: "Against ST",             term: "ST",  color: "bg-yellow-500" },
   ];
 
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Cognizable Crimes — IPC · {ncrb.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center flex-wrap">
+          Cognizable Crimes — <LabelWithTip label="IPC" term="IPC" className="mx-1" /> · <LabelWithTip label="NCRB" term="NCRB" className="mx-1" /> {ncrb.period}
         </p>
         <SourceLink name="NCRB Crime in India — Additional Tables (States/UTs)" url="https://www.ncrb.gov.in/crime-in-india-additional-table?year=2022&category=States/UTs" period={ncrb.period} />
+        <p className="text-[10px] text-gray-500 mb-3 leading-snug">
+          Absolute number of registered cognizable offences in {ncrb.period}. Higher reported numbers can reflect either more crime or better reporting/registration — interpret with care.
+        </p>
 
         <div className="space-y-3">
-          {metrics.map(({ key, label, color }) => {
+          {metrics.map(({ key, label, term, color }) => {
             const val = ncrb[key] as number | undefined;
             const ai = aiNcrb?.[key] as number | undefined;
             if (val == null) return null;
             return (
               <div key={key} className="flex items-center gap-3">
                 <div className="w-32 flex-shrink-0">
-                  <p className="text-xs font-semibold text-gray-700">{label}</p>
+                  <p className="text-xs font-semibold text-gray-700 inline-flex items-center">
+                    {label}{term && <InfoTip term={term} />}
+                  </p>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-baseline gap-2">
                     <p className="text-lg font-black text-gray-900">{val.toLocaleString("en-IN")}</p>
                     {ai != null && (
-                      <p className="text-[10px] text-gray-400">IN: {ai.toLocaleString("en-IN")}</p>
+                      <p className="text-[10px] text-gray-400">India: {ai.toLocaleString("en-IN")}</p>
                     )}
                   </div>
                   <MiniBar value={val} max={ai || val * 1.2} color={color} />
@@ -981,34 +1100,39 @@ function IndustrySection({ asi, aiAsi }: { asi?: ASISnapshot | null; aiAsi?: ASI
   return (
     <div className="space-y-4">
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          Factory Sector · {asi.period}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center">
+          Factory Sector · <LabelWithTip label="ASI" term="ASI" className="mx-1" /> {asi.period}
         </p>
         <SourceLink name="ASI 2023-24 Vol I (MOSPI)" url="https://www.mospi.gov.in/asi-summary-results" period={asi.period} />
 
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: "Factories", val: asi.factories, ai: aiAsi?.factories, fmt: (v: number) => v.toLocaleString("en-IN"), unit: "" },
-            { label: "GVA", val: asi.gva_cr, ai: aiAsi?.gva_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
-            { label: "Total Output", val: asi.total_output_cr, ai: aiAsi?.total_output_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
-            { label: "Total Input", val: asi.total_input_cr, ai: aiAsi?.total_input_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
-            { label: "NVA", val: asi.nva_cr, ai: aiAsi?.nva_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
-            { label: "Fixed Capital", val: asi.fixed_capital_cr, ai: aiAsi?.fixed_capital_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
-          ].map(({ label, val, ai, fmt, unit }) => {
+            { label: "Factories",     term: null,             val: asi.factories,        ai: aiAsi?.factories,        fmt: (v: number) => v.toLocaleString("en-IN"), unit: "" },
+            { label: "GVA",           term: "GVA",            val: asi.gva_cr,           ai: aiAsi?.gva_cr,           fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Total Output",  term: "Total Output",   val: asi.total_output_cr,  ai: aiAsi?.total_output_cr,  fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Total Input",   term: "Total Input",    val: asi.total_input_cr,   ai: aiAsi?.total_input_cr,   fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "NVA",           term: "NVA",            val: asi.nva_cr,           ai: aiAsi?.nva_cr,           fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+            { label: "Fixed Capital", term: "Fixed Capital",  val: asi.fixed_capital_cr, ai: aiAsi?.fixed_capital_cr, fmt: (v: number) => `₹${v.toFixed(0)}`, unit: " Cr" },
+          ].map(({ label, term, val, ai, fmt, unit }) => {
             if (val == null) return null;
             return (
               <div key={label} className="bg-gray-50 rounded-xl p-3 text-center">
-                <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center justify-center w-full">
+                  {label}{term && <InfoTip term={term} />}
+                </p>
                 <p className="text-lg font-black text-gray-900">
                   {fmt(val)}<span className="text-xs font-normal text-gray-400">{unit}</span>
                 </p>
                 {ai != null && (
-                  <p className="text-[9px] text-gray-400">IN: {fmt(ai)}{unit}</p>
+                  <p className="text-[9px] text-gray-400">India: {fmt(ai)}{unit}</p>
                 )}
               </div>
             );
           })}
         </div>
+        <p className="text-[10px] text-gray-400 mt-3 leading-snug">
+          Covers registered factories (10+ workers with power, or 20+ without). &ldquo;Cr&rdquo; = crore (1 Cr = ₹10 million = ₹1,00,00,000).
+        </p>
       </div>
     </div>
   );
@@ -1043,13 +1167,17 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
           <div className="flex items-end gap-6 mt-2">
             <div>
               <p className="text-4xl font-black">{rbi.debt_to_gsdp_pct}%</p>
-              <p className="text-xs opacity-70">Debt-to-GSDP ratio</p>
+              <p className="text-[11px] opacity-70 inline-flex items-center">
+                <LabelWithTip label="Debt-to-GSDP ratio" term="Debt-to-GSDP" />
+              </p>
             </div>
             <div className="flex gap-4 text-sm opacity-80">
               {rbi.gfd_cr != null && (
                 <div>
                   <p className="font-bold">{fCr(rbi.gfd_cr)}</p>
-                  <p className="text-[10px] opacity-70">Gross Fiscal Deficit</p>
+                  <p className="text-[10px] opacity-70 inline-flex items-center">
+                    <LabelWithTip label="Gross Fiscal Deficit" term="GFD" />
+                  </p>
                 </div>
               )}
               {rbi.interest_payments_cr != null && (
@@ -1066,8 +1194,8 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
       {/* CAG detailed breakdown */}
       {budget && (
       <div className="bg-white rounded-2xl border border-gray-200 p-4">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
-          State Finances — CAG Actuals · {budget.fiscal_year}
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center">
+          State Finances — <LabelWithTip label="CAG" term="CAG" className="mx-1" /> Actuals · {budget.fiscal_year}
         </p>
         <p className="text-[10px] text-gray-400 mb-3">
           Source:{" "}
@@ -1083,16 +1211,20 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
 
         {/* Revenue */}
         <div className="mb-4">
-          <p className="text-[10px] font-bold text-gray-500 mb-2">Revenue Receipts</p>
+          <p className="text-[10px] font-bold text-gray-500 mb-2 inline-flex items-center">
+            <LabelWithTip label="Revenue Receipts" term="Revenue Receipts" />
+          </p>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { label: "Total Revenue", val: rev.total_revenue_receipts_cr },
-              { label: "Own Tax Revenue", val: rev.own_tax_revenue_cr },
-              { label: "Central Devolution", val: rev.central_devolution_cr },
-              { label: "Grants-in-Aid", val: rev.grants_in_aid_cr },
-            ].filter(({ val }) => val != null).map(({ label, val }) => (
+              { label: "Total Revenue",      term: "Revenue Receipts",  val: rev.total_revenue_receipts_cr },
+              { label: "Own Tax Revenue",    term: "Own Tax Revenue",   val: rev.own_tax_revenue_cr },
+              { label: "Central Devolution", term: "Central Devolution",val: rev.central_devolution_cr },
+              { label: "Grants-in-Aid",      term: "Grants-in-Aid",     val: rev.grants_in_aid_cr },
+            ].filter(({ val }) => val != null).map(({ label, term, val }) => (
               <div key={label} className="bg-gray-50 rounded-xl p-3">
-                <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center">
+                  {label}<InfoTip term={term} />
+                </p>
                 <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
               </div>
             ))}
@@ -1105,12 +1237,14 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
             <p className="text-[10px] font-bold text-gray-500 mb-2">Expenditure</p>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { label: "Total Expenditure", val: exp.total_exp_cr },
-                { label: "Revenue Expenditure", val: exp.revenue_expenditure_cr },
-                { label: "Capital Expenditure", val: exp.capital_expenditure_cr },
-              ].filter(({ val }) => val != null).map(({ label, val }) => (
+                { label: "Total Expenditure",   term: null,                    val: exp.total_exp_cr },
+                { label: "Revenue Expenditure", term: "Revenue Expenditure",   val: exp.revenue_expenditure_cr },
+                { label: "Capital Expenditure", term: "Capital Expenditure",   val: exp.capital_expenditure_cr },
+              ].filter(({ val }) => val != null).map(({ label, term, val }) => (
                 <div key={label} className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center">
+                    {label}{term && <InfoTip term={term} />}
+                  </p>
                   <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
                 </div>
               ))}
@@ -1124,12 +1258,14 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
             <p className="text-[10px] font-bold text-gray-500 mb-2">Deficit Indicators</p>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { label: "Fiscal Deficit", val: fis.fiscal_deficit_cr, warn: true },
-                { label: "Revenue Deficit", val: fis.revenue_deficit_cr, warn: true },
-                { label: "Primary Deficit", val: fis.primary_deficit_cr, warn: true },
-              ].filter(({ val }) => val != null).map(({ label, val, warn }) => (
+                { label: "Fiscal Deficit",  term: "Fiscal Deficit",  val: fis.fiscal_deficit_cr,  warn: true },
+                { label: "Revenue Deficit", term: "Revenue Deficit", val: fis.revenue_deficit_cr, warn: true },
+                { label: "Primary Deficit", term: "Primary Deficit", val: fis.primary_deficit_cr, warn: true },
+              ].filter(({ val }) => val != null).map(({ label, term, val, warn }) => (
                 <div key={label} className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center">
+                    {label}<InfoTip term={term} />
+                  </p>
                   <p className={`text-sm font-black ${warn && val != null && val > 0 ? "text-red-600" : "text-gray-900"}`}>
                     {fCr(val)}
                   </p>
@@ -1142,17 +1278,21 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
         {/* Committed expenditure */}
         {(com.salaries_cr != null || com.interest_cr != null || com.pensions_cr != null) && (
           <div>
-            <p className="text-[10px] font-bold text-gray-500 mb-2">Committed Expenditure</p>
+            <p className="text-[10px] font-bold text-gray-500 mb-2 inline-flex items-center">
+              <LabelWithTip label="Committed Expenditure" term="Committed Expenditure" />
+            </p>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { label: "Salaries", val: com.salaries_cr },
-                { label: "Pensions", val: com.pensions_cr },
-                { label: "Interest Payments", val: com.interest_cr },
-                { label: "Subsidies", val: com.subsidies_cr },
-                { label: "Discretionary Space", val: com.discretionary_cr },
-              ].filter(({ val }) => val != null).map(({ label, val }) => (
+                { label: "Salaries",            term: null,                    val: com.salaries_cr },
+                { label: "Pensions",            term: null,                    val: com.pensions_cr },
+                { label: "Interest Payments",   term: null,                    val: com.interest_cr },
+                { label: "Subsidies",           term: null,                    val: com.subsidies_cr },
+                { label: "Discretionary Space", term: "Discretionary Space",   val: com.discretionary_cr },
+              ].filter(({ val }) => val != null).map(({ label, term, val }) => (
                 <div key={label} className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                  <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center">
+                    {label}{term && <InfoTip term={term} />}
+                  </p>
                   <p className="text-sm font-black text-gray-900">{fCr(val)}</p>
                 </div>
               ))}
@@ -1292,7 +1432,7 @@ export default function StateReportPage() {
         {/* Content */}
         {!loading && !error && report && (
           <div className="space-y-4">
-            {activeSection === "labour"    && <LabourSection    plfs={report.plfs}       aiPlfs={aiPlfs} />}
+            {activeSection === "labour"    && <LabourSection    plfs={report.plfs}       aiPlfs={aiPlfs} slug={slug} />}
             {activeSection === "health"    && <HealthSection    srs={report.srs}         aiSrs={aiSrs} />}
             {activeSection === "spending"  && <SpendingSection  hces={report.hces}       aiHces={aiHces} />}
             {activeSection === "education" && <EducationSection aishe={report.aishe} aiAishe={aiAishe} />}
