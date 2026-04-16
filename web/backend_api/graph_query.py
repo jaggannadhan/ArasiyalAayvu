@@ -50,6 +50,8 @@ def load_graph(project_id: str = "naatunadappu", force: bool = False) -> Tuple[n
     now = time.time()
     if not force and _GRAPH_CACHE["graph"] is not None and now - _GRAPH_CACHE["ts"] < _CACHE_TTL_SEC:
         return _GRAPH_CACHE["graph"], _GRAPH_CACHE["raw"]
+    # Reset before re-fetching so a partial load doesn't leak old state.
+    _GRAPH_CACHE.update({"graph": None, "raw": None, "ts": 0.0})
 
     raw = _load_raw_from_gcs(project_id) or _load_raw_from_disk()
     if raw is None:
@@ -70,6 +72,13 @@ def load_graph(project_id: str = "naatunadappu", force: bool = False) -> Tuple[n
 
     _GRAPH_CACHE.update({"graph": g, "raw": raw, "ts": now})
     return g, raw
+
+
+def clear_cache() -> Dict[str, Any]:
+    """Evict the in-memory KG. Next load_graph() call will re-fetch from GCS."""
+    had_graph = _GRAPH_CACHE["graph"] is not None
+    _GRAPH_CACHE.update({"graph": None, "raw": None, "ts": 0.0})
+    return {"cleared": had_graph}
 
 
 # ── Traversal primitives ─────────────────────────────────────────────────────

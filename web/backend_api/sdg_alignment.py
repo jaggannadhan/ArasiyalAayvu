@@ -151,8 +151,10 @@ def compute_party_alignment(
             "promise_count": len(entries),
             "effective_promise_count": effective,
             "contributing_pillars": contributing,
-            # Return only what the UI actually needs to keep the payload small.
-            "top_promises": [_trim_promise(p) for p, _ in ranked[:3]],
+            # Return the full promise doc (including deep-analysis fields like
+            # impact_mechanism, promise_components, sustainability_verdict) so
+            # the frontend "How?" modal can render without a second fetch.
+            "top_promises": [p for p, _ in ranked[:3]],
             "dependency_ids": deps,
             "chain_breaks": [],  # filled in pass 2
             "top_gap_notes": top_gap_notes,
@@ -168,21 +170,6 @@ def compute_party_alignment(
         ]
 
     return [coverage[sdg] for sdg in range(1, 18)]
-
-
-# Fields the frontend SDGAlignment component reads from top_promises.
-_PROMISE_FIELDS = (
-    "doc_id", "party_id", "party_name", "party_color", "category",
-    "promise_text_en", "promise_text_ta", "target_year", "status",
-    "stance_vibe", "amount_mentioned", "scheme_name",
-    "impact_depth", "beneficiary_coverage", "fiscal_viability",
-    "coverage_gap_note", "implementation_risk", "root_cause_addressed",
-    "ground_truth_confidence",
-)
-
-
-def _trim_promise(p: Dict[str, Any]) -> Dict[str, Any]:
-    return {k: p[k] for k in _PROMISE_FIELDS if k in p}
 
 
 # ── Cache ────────────────────────────────────────────────────────────────────

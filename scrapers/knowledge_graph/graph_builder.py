@@ -711,9 +711,49 @@ def main():
     print(f"  Wrote {slim_path}  ({slim_path.stat().st_size // 1024} KB)")
 
     if upload:
-        print("  Uploading to Firestore (knowledge_graph/latest)...")
-        db.collection("knowledge_graph").document("latest").set(graph)
-        print("  Done.")
+        # Backend reads the slim KG from GCS — this is the canonical live source.
+        try:
+            from google.cloud import storage
+            client = storage.Client()
+            bucket = client.bucket("naatunadappu-media")
+            blob = bucket.blob("knowledge_graph/latest.json")
+            blob.cache_control = "no-store, max-age=0"
+            blob.upload_from_string(
+                slim_path.read_text(encoding="utf-8"),
+                content_type="application/json",
+            )
+            print("  ✓ Uploaded slim graph to gs://naatunadappu-media/knowledge_graph/latest.json")
+
+            # Bust the backend's in-memory KG cache (1h TTL).
+            import os, requests
+            backend = os.environ.get(
+                "BACKEND_URL",
+                "https://arasiyalaayvu-be-bo6oacabma-uc.a.run.app",
+            )
+            try:
+                r = requests.post(f"{backend}/api/graph/cache/clear", timeout=15)
+                if r.ok:
+                    print(f"  ✓ Cleared backend KG cache: {r.json()}")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  (Skipped backend cache clear: {exc})")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  ⚠ GCS upload failed: {exc}")
+
+        # Best-effort Firestore mirror. The full graph is ~3 MB and exceeds
+        # the 1 MB document limit — slim it down or skip if too large.
+        try:
+            db.collection("knowledge_graph").document("latest").set(graph)
+            print("  ✓ Mirrored full graph to Firestore knowledge_graph/latest")
+        except Exception as exc:  # noqa: BLE001
+            msg = str(exc)
+            if "exceeds the maximum allowed size" in msg:
+                try:
+                    db.collection("knowledge_graph").document("latest").set(slim_graph)
+                    print("  ✓ Mirrored slim graph to Firestore knowledge_graph/latest (full was too large)")
+                except Exception as inner:  # noqa: BLE001
+                    print(f"  (Skipped Firestore mirror: {inner})")
+            else:
+                print(f"  (Skipped Firestore mirror: {exc})")
 
 
 if __name__ == "__main__":

@@ -834,6 +834,13 @@ def _fetch_indicator_snapshot(collection: str, entity_slug: str) -> Optional[Dic
     return _kg_latest_snapshot(collection, entity_slug)
 
 
+@app.post("/api/graph/cache/clear")
+def graph_cache_clear() -> Dict[str, Any]:
+    """Evict the in-memory KG; next request re-fetches from GCS. Use after a
+    `graph_builder.py --upload` so the new graph is served immediately."""
+    return _gq.clear_cache()
+
+
 @app.get("/api/graph/neighbors/{node_id:path}")
 def graph_neighbors(
     node_id: str,
@@ -875,18 +882,29 @@ def graph_path(
     return _gq.shortest_path(g, source, target, allowed_verbs=allowed)
 
 
+from fastapi import Response  # noqa: E402
+
+# Manifesto/enrichment data changes when we re-OCR or re-enrich a party. Browsers
+# applying heuristic caching (no Cache-Control header) can serve a stale response
+# for ~10 min, which masks server-side cache invalidations. Force always-revalidate.
+_NO_BROWSER_CACHE = {"Cache-Control": "no-store, max-age=0"}
+
+
 @app.get("/api/manifesto/{party_id}/{year}/sdg-alignment")
 def manifesto_sdg_alignment(
     party_id: str,
     year: int,
+    response: Response,
     refresh: bool = Query(False, description="Force recompute and overwrite cache"),
 ) -> Dict[str, Any]:
     """Pre-computed SDG coverage for a single party's manifesto in a given year.
 
     Sourced from the Knowledge Graph's `targets_goal` edges (weighted). Cached
-    indefinitely since manifestos are fixed for the cycle; pass `refresh=true`
-    to recompute after a manifesto edit.
+    server-side indefinitely since manifestos are fixed for the cycle; pass
+    `refresh=true` to recompute after a manifesto edit.
     """
+    response.headers.update(_NO_BROWSER_CACHE)
+
     if not refresh:
         cached = _sdg.get_cached(party_id, year)
         if cached is not None:
