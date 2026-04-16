@@ -73,13 +73,30 @@ export default function ConstituencyPage() {
   const slug = typeof params.slug === "string" ? params.slug : "";
 
   const { lang, setLang } = useLanguage();
-  const [selectedTerm, setSelectedTerm] = useState(2026);
+
+  // Read saved term ONCE, shared by both selectedTerm and loading initializers
+  // so they agree on which URL to check in the cache.
+  const savedTerm = (() => {
+    if (typeof window === "undefined") return 2026;
+    try {
+      const v = parseInt(localStorage.getItem("aayvu_selected_term") ?? "", 10);
+      if (TERMS.some((t) => t.electionYear === v)) return v;
+    } catch { /* ignore */ }
+    return 2026;
+  })();
+
+  const [selectedTerm, setSelectedTermRaw] = useState<number>(savedTerm);
+  const setSelectedTerm = (term: number) => {
+    setSelectedTermRaw(term);
+    try { localStorage.setItem("aayvu_selected_term", String(term)); } catch { /* ignore */ }
+  };
+
   // `data` is derived on every render directly from the shared cache, so a
   // tab/term switch with a warm cache renders instantly with no skeleton flash.
   // `bumpFetchTick` forces a re-read from cache when a fetch completes.
   const [, bumpFetchTick] = useState(0);
   const [loading, setLoading] = useState<boolean>(
-    () => !!slug && !cacheHas(constituencyUrl(slug, 2026)),
+    () => !!slug && !cacheHas(constituencyUrl(slug, savedTerm)),
   );
   const [error, setError] = useState<ErrorState | null>(null);
   const data: ConstituencyDrillData | null = slug
