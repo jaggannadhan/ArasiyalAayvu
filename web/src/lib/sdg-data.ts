@@ -348,6 +348,7 @@ export const TN_SDG_SUMMARY = {
   performance_category: "Front Runner" as const,
   year: "2023-24",
   source: "NITI Aayog SDG India Index 2023-24",
+  source_url: "https://sdgindiaindex.niti.gov.in/#/ranking",
   strengths: [1, 3, 4, 7, 9, 12] as number[],  // SDG IDs where TN is a strength
   needs_attention: [2, 5] as number[],           // SDG IDs that need improvement
 };

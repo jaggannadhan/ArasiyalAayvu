@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Optional, Tuple  # noqa: UP035
 from urllib.parse import quote_plus, urlparse, parse_qs, unquote
 
 import httpx
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from google.api_core.exceptions import GoogleAPICallError, RetryError
@@ -321,6 +321,65 @@ def health() -> Dict[str, Any]:
         "project_id": PROJECT_ID,
         "ls_map_loaded": len(ASSEMBLY_TO_LS),
     }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Feedback — user-submitted corrections, suggestions, bug reports, etc.
+# ─────────────────────────────────────────────────────────────────────────────
+
+_FEEDBACK_CATEGORIES = {"correction", "missing_data", "suggestion", "bug_report", "other"}
+
+
+class FeedbackSubmission(BaseModel):
+    category: str
+    message: str
+    page_url: Optional[str] = None     # client-captured, e.g. window.location.href
+    entity_context: Optional[Dict[str, Any]] = None  # optional: { slug, doc_id, … }
+
+
+@app.post("/api/feedback")
+def submit_feedback(payload: FeedbackSubmission, request: Request) -> Dict[str, Any]:
+    category = (payload.category or "").strip().lower()
+    if category not in _FEEDBACK_CATEGORIES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unknown category. Expected one of: {sorted(_FEEDBACK_CATEGORIES)}",
+        )
+
+    message = (payload.message or "").strip()
+    if not message:
+        raise HTTPException(status_code=400, detail="Message is required.")
+    if len(message) > 5000:
+        raise HTTPException(status_code=400, detail="Message too long (max 5000 characters).")
+
+    # Client-provided context — trim but accept free-form.
+    page_url = (payload.page_url or "").strip()[:500] or None
+    entity_context = payload.entity_context or None
+
+    # Capture server-side signals useful for moderation/debugging.
+    user_agent = request.headers.get("user-agent", "")[:500]
+    # Respect the Cloud-Run/Vercel proxy chain when reading client IP.
+    fwd = request.headers.get("x-forwarded-for", "")
+    client_ip = fwd.split(",")[0].strip() if fwd else (request.client.host if request.client else "")
+
+    doc = {
+        "category":       category,
+        "message":        message,
+        "page_url":       page_url,
+        "entity_context": entity_context,
+        "user_agent":     user_agent,
+        "client_ip":      client_ip,
+        "status":         "new",  # for future moderation workflow
+        "created_at":     firestore.SERVER_TIMESTAMP,
+    }
+
+    try:
+        ref = _db.collection("feedback").document()
+        ref.set(doc)
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+    return {"ok": True, "id": ref.id}
 
 
 @app.get("/api/manifesto-promises")

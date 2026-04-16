@@ -555,7 +555,7 @@ export default function KnowledgeGraphPage() {
 
   if (!mounted || loading) {
     return (
-      <div className="h-screen bg-gray-950 flex items-center justify-center">
+      <div className="h-full bg-gray-950 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full mx-auto mb-4" />
           <p className="text-gray-400 text-sm">Loading knowledge graph...</p>
@@ -566,7 +566,7 @@ export default function KnowledgeGraphPage() {
 
   if (error) {
     return (
-      <div className="h-screen bg-gray-950 flex items-center justify-center">
+      <div className="h-full bg-gray-950 flex items-center justify-center">
         <p className="text-red-400">Failed to load graph: {error}</p>
       </div>
     );
@@ -579,7 +579,7 @@ export default function KnowledgeGraphPage() {
     : [];
 
   return (
-    <div className="h-screen bg-gray-950 text-white relative overflow-hidden">
+    <div className="h-full bg-gray-950 text-white relative overflow-hidden">
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-20 bg-gray-950/80 backdrop-blur-sm border-b border-gray-800">
         <div className="flex items-center justify-between px-2 sm:px-4 py-2">

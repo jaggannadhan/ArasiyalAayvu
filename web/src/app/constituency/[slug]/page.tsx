@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 import { MlaCard } from "@/components/constituency/MlaCard";
 import { CandidatesPanel } from "@/components/constituency/CandidatesPanel";
 import { WardPanel } from "@/components/constituency/WardPanel";
@@ -68,7 +69,7 @@ export default function ConstituencyPage() {
   const params = useParams();
   const slug = typeof params.slug === "string" ? params.slug : "";
 
-  const [lang, setLang] = useState<"en" | "ta">("en");
+  const { lang, setLang } = useLanguage();
   const [selectedTerm, setSelectedTerm] = useState(2026);
   const [data, setData] = useState<ConstituencyDrillData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -126,7 +127,7 @@ export default function ConstituencyPage() {
   }, [slug]);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-full bg-gray-50">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-3">

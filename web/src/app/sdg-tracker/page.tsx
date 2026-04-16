@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   SDG_GOALS,
   TN_SDG_SUMMARY,
@@ -274,7 +275,7 @@ function FilterPill({
 type FilterKey = "all" | SDGPerformance;
 
 export default function SDGTrackerPage() {
-  const [lang, setLang] = useState<"en" | "ta">("en");
+  const { lang, setLang } = useLanguage();
   const [filter, setFilter] = useState<FilterKey>("all");
   const isTA = lang === "ta";
 
@@ -290,7 +291,7 @@ export default function SDGTrackerPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-full bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -357,10 +358,18 @@ export default function SDGTrackerPage() {
               </div>
             </div>
           </div>
-          <p className="text-[10px] opacity-50 mt-2">
-            {isTA
-              ? `ஆதாரம்: ${TN_SDG_SUMMARY.source} · ${TN_SDG_SUMMARY.year}`
-              : `Source: ${TN_SDG_SUMMARY.source} · ${TN_SDG_SUMMARY.year}`}
+          <p className="text-[10px] opacity-60 mt-2">
+            {isTA ? "ஆதாரம்: " : "Source: "}
+            <a
+              href={TN_SDG_SUMMARY.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:opacity-100"
+            >
+              {TN_SDG_SUMMARY.source}
+            </a>
+            {" · "}
+            {TN_SDG_SUMMARY.year}
           </p>
         </div>
 
@@ -440,10 +449,31 @@ export default function SDGTrackerPage() {
           </Link>
         </div>
 
-        {/* Attribution */}
-        <p className="text-center text-[10px] text-gray-400 pb-4">
-          {isTA ? "ஆதாரம்: " : "Source: "}
-          NITI Aayog SDG India Index 2023-24 · NFHS-5 · UDISE+ · PLFS 2022-23 · FSI 2023 · NCRB 2022
+        {/* Attribution — every source is a live link to the authoritative dataset. */}
+        <p className="text-center text-[10px] text-gray-400 pb-4 flex flex-wrap justify-center items-center gap-x-1.5 gap-y-1">
+          <span>{isTA ? "ஆதாரம்:" : "Source:"}</span>
+          {(
+            [
+              { label: "NITI Aayog SDG India Index 2023-24", url: "https://sdgindiaindex.niti.gov.in/#/ranking" },
+              { label: "NFHS-5",         url: "https://rchiips.org/nfhs/NFHS-5Reports/TN.pdf" },
+              { label: "UDISE+",         url: "https://udiseplus.gov.in/#/page/publications" },
+              { label: "PLFS 2022-23",   url: "https://www.mospi.gov.in/publication/plfs-annual-report-2022-23" },
+              { label: "FSI 2023",       url: "https://fsi.nic.in/forest-report-2023" },
+              { label: "NCRB 2022",      url: "https://www.ncrb.gov.in/crime-in-india-additional-table?year=2022&category=States/UTs" },
+            ] as const
+          ).map((s, i, arr) => (
+            <span key={s.label} className="inline-flex items-center">
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-gray-600 transition-colors"
+              >
+                {s.label}
+              </a>
+              {i < arr.length - 1 && <span className="ml-1.5 text-gray-300">·</span>}
+            </span>
+          ))}
         </p>
       </div>
     </main>

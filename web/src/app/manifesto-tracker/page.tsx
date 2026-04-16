@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
 import { PillarTabs } from "@/components/manifesto/PillarTabs";
 import { PromiseCard } from "@/components/manifesto/PromiseCard";
@@ -119,7 +120,7 @@ function CoalitionRow({
 // Page
 // ---------------------------------------------------------------------------
 export default function ManifestoTrackerPage() {
-  const [lang, setLang] = useState<"en" | "ta">("en");
+  const { lang, setLang } = useLanguage();
   const [selectedTerm, setSelectedTerm] = useState(TERMS[TERMS.length - 1].electionYear);
   const [activePillar, setActivePillar] = useState<Pillar | "All">("All");
   const [activeStatus, setActiveStatus] = useState<StatusFilter>("All");
@@ -220,7 +221,7 @@ export default function ManifestoTrackerPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-full bg-gray-50">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-3">

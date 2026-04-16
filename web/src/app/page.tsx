@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
+import { useLanguage } from "@/lib/LanguageContext";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import type { FrequentlyBrowsedItem } from "@/lib/types";
@@ -16,7 +17,7 @@ const FEATURED_FALLBACK: FrequentlyBrowsedItem[] = [
 ];
 
 export default function Home() {
-  const [lang, setLang] = useState<"en" | "ta">("en");
+  const { lang, setLang } = useLanguage();
   const [featured, setFeatured] = useState<FrequentlyBrowsedItem[]>(FEATURED_FALLBACK);
   const isTA = lang === "ta";
 
@@ -43,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-full bg-gray-50">
       <header className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
           <div>

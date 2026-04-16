@@ -1590,7 +1590,7 @@ export default function StateReportPage() {
   const visibleSections = SECTIONS;
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-full bg-gray-50">
       {/* Sticky header */}
       <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
@@ -1677,9 +1677,38 @@ export default function StateReportPage() {
           </div>
         )}
 
-        {/* Attribution */}
-        <p className="text-center text-[10px] text-gray-400 mt-10 pb-4">
-          Sources: PLFS · SRS · HCES · AISHE · UDISE+ · NCRB · ASI (MOSPI) · NITI Aayog SDG Index · Goodreturns
+        {/* Attribution — every source is a live link to the authoritative dataset. */}
+        <p className="text-center text-[10px] text-gray-400 mt-10 pb-4 flex flex-wrap justify-center items-center gap-x-1.5 gap-y-1">
+          <span>Sources:</span>
+          {(
+            [
+              { label: "PLFS",             url: "https://www.mospi.gov.in/publication/plfs-annual-report-2023-24" },
+              { label: "SRS",              url: "https://censusindia.gov.in/nada/index.php/catalog/46172/download/50420/SRS_STAT_2023.pdf" },
+              { label: "HCES",             url: "https://www.mospi.gov.in/publication/household-consumption-expenditure-survey-2023-24" },
+              { label: "AISHE",            url: "https://aishe.gov.in/aishe/viewDocument.action?documentId=352" },
+              { label: "UDISE+",           url: "https://udiseplus.gov.in/#/page/publications" },
+              { label: "NCRB",             url: "https://www.ncrb.gov.in/crime-in-india-additional-table?year=2022&category=States/UTs" },
+              { label: "ASI (MOSPI)",      url: "https://www.mospi.gov.in/asi-summary-results" },
+              { label: "CEA Power",        url: "https://cea.nic.in/installed-capacity-report/?lang=en" },
+              { label: "MOFPI",            url: "https://mofpi.gov.in/sites/default/files/annual_report_2023-24.pdf" },
+              { label: "NITI SDG Index",   url: "https://sdgindiaindex.niti.gov.in/#/ranking" },
+              { label: "RBI State Finances", url: "https://rbi.org.in/scripts/PublicationsView.aspx?Id=23729" },
+              { label: "PRS Budget",       url: "https://prsindia.org/budgets/states" },
+              { label: "Goodreturns",      url: "https://www.goodreturns.in/petrol-price.html" },
+            ] as const
+          ).map((s, i, arr) => (
+            <span key={s.label} className="inline-flex items-center">
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-gray-700 transition-colors"
+              >
+                {s.label}
+              </a>
+              {i < arr.length - 1 && <span className="ml-1.5 text-gray-300">·</span>}
+            </span>
+          ))}
         </p>
       </div>
     </main>
