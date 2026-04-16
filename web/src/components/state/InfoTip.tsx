@@ -256,6 +256,56 @@ export const GLOSSARY: Record<string, GlossaryEntry> = {
   // ── Cost of Living ─────────────────────────────────────────────────────────
   LPG: { full: "Liquefied Petroleum Gas", what: "Cooking gas — sold in 5 kg, 14.2 kg (domestic) and 19 kg (commercial) cylinders." },
 
+  // ── Energy ─────────────────────────────────────────────────────────────────
+  MW: { full: "Megawatt", what: "1 MW = 1,000 kilowatts. Enough to power roughly 600–800 Indian households at average consumption." },
+  GW: { full: "Gigawatt", what: "1 GW = 1,000 MW. A typical utility-scale thermal or nuclear plant is ~1 GW." },
+  "Installed Capacity": {
+    full: "Installed Power Generation Capacity",
+    what: "The peak amount of electricity the state's power plants can produce at full load — not what they actually generate at any given moment.",
+    unit: "GW",
+  },
+  "Renewable Capacity": {
+    full: "Total Renewable Capacity",
+    what: "Combined capacity of wind + solar + small hydro + biomass. Excludes large hydro and nuclear.",
+    unit: "MW",
+  },
+  "Wind Capacity": {
+    full: "Wind Power Capacity",
+    what: "Installed wind turbine capacity. Tamil Nadu pioneered Indian wind power in the 1990s and still has the largest installed base.",
+    unit: "MW",
+  },
+  "Solar Capacity": {
+    full: "Solar Power Capacity",
+    what: "Installed solar PV capacity (utility + rooftop). Scaled rapidly after 2015 under the National Solar Mission.",
+    unit: "MW",
+  },
+
+  // ── Agriculture / MOFPI ────────────────────────────────────────────────────
+  "PM-FME": {
+    full: "PM Formalisation of Micro Food Processing Enterprises",
+    what: "Centrally-sponsored scheme (2020–25) giving 35% capital subsidy to micro food-processing units. States co-fund and implement via district-level nodal agencies.",
+  },
+  FPO: {
+    full: "Farmer Producer Organisation",
+    what: "Collective registered under the Companies Act or cooperative law that lets small farmers pool produce, negotiate prices, and access credit — a counterweight to middlemen.",
+  },
+  eNAM: {
+    full: "Electronic National Agriculture Market",
+    what: "Central online trading platform (2016) that lets farmers sell across state-level mandi boundaries. Participating mandis are called 'eNAM mandis'.",
+  },
+  "APMC Mandi": {
+    full: "Agricultural Produce Market Committee Mandi",
+    what: "Regulated wholesale market where farmers auction produce. Notified under each state's APMC Act.",
+  },
+  MOFPI: {
+    full: "Ministry of Food Processing Industries",
+    what: "Central ministry publishing state-wise production and processing data for crops, livestock, fruits, and spices.",
+  },
+  "000 MT": {
+    full: "Thousand Metric Tonnes",
+    what: "Unit for crop/livestock output: 1,000 metric tonnes = 10,00,000 kg. '6,799 × 000 MT' = 6.8 million tonnes of rice.",
+  },
+
   // ── General ────────────────────────────────────────────────────────────────
   "vs IN": {
     full: "vs India average",

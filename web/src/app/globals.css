@@ -32,3 +32,33 @@ body {
     display: none;
   }
 }
+
+/* Loading shimmer — a soft light band sweeps across the card, overlaying any
+   gray skeleton bars inside. Keep pointer-events: none so interactions fall
+   through to the underlying content (if any). */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@utility skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(243, 244, 246, 0.85) 45%,
+      rgba(229, 231, 235, 0.55) 50%,
+      rgba(243, 244, 246, 0.85) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+}

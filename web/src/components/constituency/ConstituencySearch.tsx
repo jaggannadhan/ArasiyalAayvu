@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import constituencyMap from "@/lib/constituency-map.json";
 import constituencyPincodes from "@/lib/constituency-pincodes.json";
+import constituencyLocalities from "@/lib/constituency-localities.json";
+import pincodeFlat from "@/lib/pincode-flat.json";
 import { apiGet } from "@/lib/api-client";
 import type { PincodeResult } from "@/lib/types";
 
@@ -63,10 +65,54 @@ function normalizeQuery(q: string): string {
   return normalize(s);
 }
 
+interface Locality {
+  display: string;  // original casing, e.g. "Kilpauk"
+  norm:    string;  // normalized for matching, e.g. "kilpauk"
+}
+
 interface ConstituencyOptionNorm extends ConstituencyOption {
   normName: string;
   normDistrict: string;
+  localities: Locality[];
 }
+
+// Merge localities from two sources so we don't lose any: the curated
+// per-constituency list AND the per-pincode list (pincode-flat carries
+// localities like "Ashok Nagar" that aren't always mirrored into
+// constituency-localities.json).
+type PincodeRow = { assembly_slugs?: string[]; localities?: string[] };
+const MERGED_LOCALITIES: Record<string, string[]> = (() => {
+  const out: Record<string, string[]> = {};
+  const seenPerSlug: Record<string, Set<string>> = {};
+
+  const push = (slug: string, items: string[] | undefined) => {
+    if (!items || items.length === 0) return;
+    const arr  = (out[slug] ??= []);
+    const seen = (seenPerSlug[slug] ??= new Set<string>());
+    for (const raw of items) {
+      const item = raw.trim();
+      if (!item) continue;
+      // Drop junk like a year string ("2026") that slipped into the data.
+      if (/^\d{4}$/.test(item)) continue;
+      const key = item.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      arr.push(item);
+    }
+  };
+
+  for (const [slug, locs] of Object.entries(
+    constituencyLocalities as Record<string, string[]>,
+  )) {
+    push(slug, locs);
+  }
+  for (const row of pincodeFlat as PincodeRow[]) {
+    for (const slug of row.assembly_slugs ?? []) {
+      push(slug, row.localities);
+    }
+  }
+  return out;
+})();
 
 const ALL_CONSTITUENCIES: ConstituencyOptionNorm[] = Object.entries(
   constituencyMap as Record<string, { name: string; district: string }>
@@ -77,6 +123,10 @@ const ALL_CONSTITUENCIES: ConstituencyOptionNorm[] = Object.entries(
     district:     meta.district,
     normName:     normalize(meta.name),
     normDistrict: normalize(meta.district),
+    localities: (MERGED_LOCALITIES[slug] ?? []).map((l) => ({
+      display: l,
+      norm:    normalize(l),
+    })),
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -96,13 +146,23 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
 
   const isPinMode = IS_PINCODE(query);
 
-  // Name-search results (only when not in pin mode)
+  // Name/district/locality search results (only when not in pin mode).
+  // Localities extend the match surface — e.g. "kilpauk" matches Anna Nagar.
   const normQ = normalizeQuery(query);
-  const nameResults = isPinMode || query.trim().length < 1
+  type MatchedResult = ConstituencyOptionNorm & { matchedLocality: string | null };
+  const nameResults: MatchedResult[] = isPinMode || query.trim().length < 1
     ? []
-    : ALL_CONSTITUENCIES.filter(
-        (c) => c.normName.includes(normQ) || c.normDistrict.includes(normQ)
-      ).slice(0, 8);
+    : ALL_CONSTITUENCIES.reduce<MatchedResult[]>((acc, c) => {
+        const nameHit     = c.normName.includes(normQ);
+        const districtHit = c.normDistrict.includes(normQ);
+        const localityHit = !nameHit && !districtHit
+          ? c.localities.find((l) => l.norm.includes(normQ)) ?? null
+          : null;
+        if (nameHit || districtHit || localityHit) {
+          acc.push({ ...c, matchedLocality: localityHit ? localityHit.display : null });
+        }
+        return acc;
+      }, []).slice(0, 8);
 
   const showDropdown =
     open &&
@@ -210,7 +270,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
       {/* Unified dropdown: name-search results OR pincode ambiguous picker */}
       {showDropdown && (
         <div className="absolute z-30 top-full mt-1 w-full bg-white rounded-xl border border-gray-200 shadow-lg overflow-y-auto max-h-64">
-          {/* Name-search results */}
+          {/* Name/district/locality-search results */}
           {nameResults.map((c) => {
             const pcData = (constituencyPincodes as Record<string, { pincodes: string[]; ambiguous_pincodes: string[] }>)[c.slug];
             const pinCount = pcData ? pcData.pincodes.length + pcData.ambiguous_pincodes.length : 0;
@@ -218,20 +278,27 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
               <button
                 key={c.slug}
                 onClick={() => navigate(c.slug)}
-                className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex items-center justify-between gap-3 text-sm transition-colors cursor-pointer ${
+                className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 flex flex-col gap-0.5 text-sm transition-colors cursor-pointer ${
                   c.slug === currentSlug ? "bg-gray-100 font-semibold" : ""
                 }`}
               >
-                <span className="font-medium text-gray-900 truncate">{c.name}</span>
-                <span className="text-xs text-gray-400 shrink-0 flex items-center gap-1.5">
-                  <span>{c.district}</span>
-                  {pinCount > 0 && (
-                    <span className="text-gray-300">·</span>
-                  )}
-                  {pinCount > 0 && (
-                    <span>{pinCount} PINs</span>
-                  )}
-                </span>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-medium text-gray-900 truncate">{c.name}</span>
+                  <span className="text-xs text-gray-400 shrink-0 flex items-center gap-1.5">
+                    <span>{c.district}</span>
+                    {pinCount > 0 && (
+                      <>
+                        <span className="text-gray-300">·</span>
+                        <span>{pinCount} PINs</span>
+                      </>
+                    )}
+                  </span>
+                </div>
+                {c.matchedLocality && (
+                  <span className="text-[11px] text-indigo-600">
+                    📍 {c.matchedLocality}
+                  </span>
+                )}
               </button>
             );
           })}

@@ -4,12 +4,10 @@
   "alangudi": [
     "Alangudi town",
     "Rasiyamangalam",
-    "Rasiyamangalam",
     "Pachikkottai",
     "Pudukkottaividuthi",
     "Ayippatti",
     "Kovilur Devasthanam",
-    "V. Kottai",
     "Manjanviduthi",
     "Kotthakottai",
     "Kayampatti",
@@ -21,7 +19,8 @@
     "Vijayaregunathapuram",
     "Settivayal",
     "Poovarasakudi",
-    "Manaiyambalam"
+    "Manaiyambalam",
+    "V. Kottai"
   ],
   "alangulam": [
     "Alangulam town",
@@ -34,7 +33,6 @@
     "Ambasamudram town",
     "Papanasam",
     "Manjolai Hills",
-    "Agricultural villages along the Thamirabarani river basin",
     "Kallidaikurichi",
     "Vagaikulam",
     "Sattupathu",
@@ -47,7 +45,6 @@
     "Ambur municipality",
     "Ambur town",
     "Adjacent rural areas",
-    "Areas associated with the leather tanning industry",
     "Mordhana Dam",
     "Kurumalai Mountain View Point"
   ],
@@ -98,7 +95,8 @@
     "New Avadi Road",
     "Ormes Road",
     "Balfour Road",
-    "Halls Road"
+    "Halls Road",
+    "Kellys"
   ],
   "arakkonam_sc": [
     "Arakkonam municipal town",
@@ -138,8 +136,7 @@
     "Arcot market streets",
     "Residential town wards",
     "Irrigation-fed village clusters",
-    "Weekly shandies and transport nodes",
-    "Cultural landmarks like the Arcot Fort with its Delhi Gate"
+    "Weekly shandies and transport nodes"
   ],
   "ariyalur": [],
   "aruppukottai": [
@@ -199,12 +196,12 @@
   "egmore_sc": [],
   "erode_west": [],
   "erode_east": [
-    "P. Agraharam",
     "Karungalpalayam",
     "Erode Fort",
     "Erode Market",
     "Krishna Palayam",
-    "Marapalam"
+    "Marapalam",
+    "P. Agraharam"
   ],
   "gandarvakottai_sc": [
     "Gandarvakkottai",
@@ -394,8 +391,8 @@
     "Sanapiratti",
     "Andankoil",
     "Gandhigramam",
-    "N. Samudram",
-    "Inam Karur"
+    "Inam Karur",
+    "N. Samudram"
   ],
   "katpadi": [
     "Katpadi",
@@ -700,13 +697,13 @@
     "Mettur",
     "Mecheri",
     "Kolathur",
-    "N. Patti",
     "Veerakkalpudur",
     "Mettur Dam",
     "Mettur Thermal Project",
     "Salem Steel Plant area",
     "Kaveri Cross",
-    "Kuttapatti"
+    "Kuttapatti",
+    "N. Patti"
   ],
   "mudukulathur": [
     "Mudukulathur",
@@ -1144,11 +1141,11 @@
     "Kalmandapam",
     "Stanley Hospital Area",
     "Robinson Park",
-    "C. Road",
-    "A. Road",
     "Fishing Harbour",
     "Kasiimedu",
-    "Maniyakkaranchatram"
+    "Maniyakkaranchatram",
+    "C. Road",
+    "A. Road"
   ],
   "saidapet": [
     "Saidapet",
@@ -1205,7 +1202,7 @@
   ],
   "singanallur": [
     "Singanallur",
-    "industrial hub) Ondipudur Peelamedu"
+    "Ondipudur Peelamedu"
   ],
   "sirkazhi_sc": [
     "Tamil Nadu",
@@ -1216,7 +1213,9 @@
     "India  •  Update location"
   ],
   "sivakasi": [],
-  "sriperumbudur_sc": [],
+  "sriperumbudur_sc": [
+    "Chembarambakkam"
+  ],
   "srirangam": [],
   "srivaikuntam": [],
   "srivilliputhur_sc": [],
@@ -1239,210 +1238,134 @@
     "O.C. Nagar",
     "S. Puram"
   ],
-  "thirumangalam": [
-    "Toll Plaza hub)"
-  ],
+  "thirumangalam": [],
   "thirumayam": [],
   "thiruparankundram": [],
   "thiruporur": [
-    "surfing) Muttukadu"
+    "Muttukadu"
   ],
   "thiruthuraipoondi_sc": [],
   "thiruvaiyaru": [
-    "engineering site) Sengipatti Kalyanapuram"
+    "Sengipatti Kalyanapuram"
   ],
   "thiruvallur": [],
   "thiruverumbur": [],
   "thiruvidaimarudur_sc": [],
   "thiruvottiyur": [
     "Thiruvottiyur",
-    "thermal power hub) Kathivakkam Manali"
+    "Kathivakkam Manali"
   ],
   "thiyagarayanagar": [
-    "film studios) Kodambakkam"
+    "Kodambakkam"
   ],
   "thondamuthur": [],
   "thoothukudi": [
     "Thoothukudi City",
-    "port hub) Polpettai",
-    "logistics point) Sankaraperi Athimarapatti"
+    "Polpettai",
+    "Sankaraperi Athimarapatti"
   ],
   "thousand_lights": [
     "Thousand Lights",
-    "major corporate offices) Nungambakkam",
-    "ground analysis of the urban growth"
+    "Nungambakkam"
   ],
   "thuraiyur_sc": [],
   "tindivanam_sc": [
     "Tindivanam",
-    "rail junction connecting Chennai",
-    "Trichy",
-    "the Mailam Bommapura Aadheenam)"
+    "Trichy"
   ],
   "tiruchendur": [
     "Tamil Nadu",
     "India  •  Update location"
   ],
-  "tiruchengodu": [
-    "AIADMK",
-    "NTK. As a major center for the rig-building",
-    "textile industries",
-    "local issues often center on industrial power tariffs",
-    "urban infrastructure"
-  ],
+  "tiruchengodu": [],
   "tiruchirappalli_east": [
     "Rock Fort / Teppakulam",
-    "residential zone) Sangiliyandapuram"
+    "Sangiliyandapuram"
   ],
   "tiruchirappalli_west": [],
-  "tiruchuli": [
-    "educational center on the Madurai-Aruppukkottai highway)"
-  ],
+  "tiruchuli": [],
   "tirukkoyilur": [],
   "tirunelveli": [
-    "transport hub) Thachanallur",
-    "industrial zone) Pettai"
+    "Thachanallur",
+    "Pettai"
   ],
   "tirupattur": [],
   "tiruppathur": [],
   "tiruppur_north": [
     "15-Velampalayam",
-    "Ravi Subramanian",
-    "with V. Sathyabama",
-    "urban traffic management along PN Road"
+    "Ravi Subramanian"
   ],
   "tiruppur_south": [
-    "residential suburb) Veerapandi",
-    "S. Thangaraj",
+    "Veerapandi",
     "Veerapandi industrial belts. +1"
   ],
-  "tiruttani": [
-    "weaving communities)"
-  ],
+  "tiruttani": [],
   "tiruvadanai": [
-    "2026",
     "Keerthika Muniyasamy",
-    "V. K. Raji",
-    "improving water storage in the R. S. Mangalam tank system"
+    "V. K. Raji"
   ],
   "tiruvannamalai": [],
   "tittakudi_sc": [],
-  "udhagamandalam": [
-    "2026",
-    "M. Bhojarajan",
-    "with R. Ibrahim",
-    "tea sector challenges",
-    "the renovation of the Ooty Market"
-  ],
-  "ulundurpettai": [
-    "2026",
-    "R. Kumaraguru",
-    "with M. Sudhakar"
-  ],
+  "udhagamandalam": [],
+  "ulundurpettai": [],
   "usilampatti": [
-    "Kerala) Elumalai"
+    "Elumalai"
   ],
-  "uthangarai_sc": [
-    "commercial hub)"
-  ],
-  "uthiramerur": [
-    "J. Munirathinam"
-  ],
+  "uthangarai_sc": [],
+  "uthiramerur": [],
   "valparai_sc": [
     "Valparai",
-    "2026",
-    "D. Lakshmana Singh",
-    "permanent solutions for human-wildlife conflict"
+    "D. Lakshmana Singh"
   ],
   "vandavasi_sc": [],
   "vaniyambadi": [
-    "2026",
     "Sayyed Farooq",
-    "Pattasu Velu",
-    "the demand for improved rail connectivity"
+    "Pattasu Velu"
   ],
-  "vanur_sc": [
-    "2026",
-    "science college in Vanur"
-  ],
+  "vanur_sc": [],
   "vasudevanallur_sc": [
-    "2026",
     "Ananthan Ayyasamy",
-    "R. Amudha Rani",
-    "export center in Puliyangudi"
+    "R. Amudha Rani"
   ],
   "vedasandur": [
-    "2026",
-    "V. P. B. Paramasivam",
-    "N. Nagajothi",
-    "ginning industries. +1"
+    "V. P. B. Paramasivam"
   ],
   "vedharanyam": [
-    "2026",
-    "A. Kingsley Gerald",
-    "modernization of the fishing harbor at Arcottuthurai",
-    "strengthening coastal embankments against seasonal storms"
+    "A. Kingsley Gerald"
   ],
   "velachery": [
     "Velachery",
-    "commercial hub; includes TNHB Colony",
-    "100 Feet Road) Besant Nagar",
-    "the start of the IT corridor) Tharamani",
-    "IT hub containing Tidel Park",
+    "Besant Nagar",
+    "Tharamani",
     "Indra Nagar",
-    "2026",
-    "R. Kumar",
-    "permanent solutions for monsoon flooding in south Chennai",
-    "the expansion of the MRTS rail link"
+    "IIT Madras (Indian Institute of Technology)",
+    "Tidel Park"
   ],
   "vellore": [
-    "Vellore Fort Area",
-    "site of the Central Prison)"
+    "Vellore Fort Area"
   ],
   "vilathikulam": [
-    "historic village) Pasuvandane",
-    "salt-producing center)"
+    "Pasuvandane"
   ],
-  "vilavancode": [
-    "ancient administrative center)"
-  ],
-  "villivakkam": [
-    "2026",
-    "the modernization of the aging sewer network in Ayanavaram",
-    "the persistent stray cattle menace on Mada streets. +1"
-  ],
+  "vilavancode": [],
+  "villivakkam": [],
   "villupuram": [
-    "Villupuram Municipality",
-    "a major railway junction)"
+    "Villupuram Municipality"
   ],
-  "viralimalai": [
-    "2026",
-    "P. Murugesan",
-    "infrastructure upgrades for the Mathur industrial estate"
-  ],
+  "viralimalai": [],
   "virudhunagar": [
-    "known for wholesale trade in oils",
-    "spices) Allampatti",
-    "2026",
+    "Allampatti",
     "Lakshmanan",
     "S. P. Selvam"
   ],
   "virugampakkam": [
-    "2026",
-    "Nesapakkam"
+    "Nesapakkam",
+    "Ashok Nagar",
+    "Ashok Pillar",
+    "Jafferkhanpet"
   ],
-  "vridhachalam": [
-    "2026",
-    "supported by the SPA/DMK alliance) has filed her nomination",
-    "aiming to reclaim the seat her husband",
-    "the late \"Captain\" Vijayakant"
-  ],
-  "yercaud_st": [
-    "orange groves) Puthur Election 2026 Context: As of April 8",
-    "2026",
-    "P. Usharani",
-    "J. Lakshmi"
-  ],
+  "vridhachalam": [],
+  "yercaud_st": [],
   "anthiyur": [
     "Anthiyur",
     "Athani",
@@ -1492,8 +1415,7 @@
     "Mallapadi",
     "Sigaralapalli",
     "Pochampalli",
-    "Balethottam",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Balethottam"
   ],
   "bhuvanagiri": [
     "Bhuvanagiri",
@@ -1505,8 +1427,7 @@
     "Elleri",
     "Vadakkuthailam",
     "Keelamanakudi",
-    "Pinnalur",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Pinnalur"
   ],
   "colachal": [
     "Colachel",
@@ -1543,8 +1464,7 @@
     "Stanley Nagar",
     "VOC Nagar",
     "Jeeva Nagar",
-    "Cherian Nagar",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Cherian Nagar"
   ],
   "kalasapakkam": [
     "Kalasapakkam",
@@ -1568,8 +1488,7 @@
     "Padiyur",
     "Nathakattuvalasu",
     "Olapalayam",
-    "Kangeyampalayam",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Kangeyampalayam"
   ],
   "killiyoor": [
     "Killiyoor",
@@ -1598,7 +1517,6 @@
     "Erumpoondi"
   ],
   "kilvaithinankuppam_sc": [
-    "V. Kuppam",
     "Vaduganthangal",
     "Latheri",
     "Kavanur",
@@ -1608,7 +1526,7 @@
     "Senur",
     "Ammanankuppam",
     "Bomminayakkanpalayam",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "V. Kuppam"
   ],
   "kurinjipadi": [
     "Kurinjipadi",
@@ -1633,8 +1551,7 @@
     "Papankulam",
     "Kadathur",
     "Jotampatti",
-    "Thungavi",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Thungavi"
   ],
   "maduravoyal": [
     "Maduravoyal",
@@ -1659,8 +1576,7 @@
     "Perani",
     "Karai",
     "Thaludali",
-    "Thiruvakkarai",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Thiruvakkarai"
   ],
   "modakkurichi": [
     "Modakkurichi",
@@ -1774,8 +1690,7 @@
     "Brahmadesam",
     "Nemur",
     "Kappiyampuliyur",
-    "Thumbur",
-    "Chennai, Tamil Nadu, India  •  Update location"
+    "Thumbur"
   ],
   "tondiarpet": []
 }

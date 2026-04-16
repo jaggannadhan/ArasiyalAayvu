@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import { InfoTip, LabelWithTip } from "@/components/state/InfoTip";
+import { SkeletonSection } from "@/components/state/SkeletonCard";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -182,6 +183,44 @@ interface RBISnapshot {
   dev_expenditure_cr?: number | null;
 }
 
+interface EnergySnapshot {
+  period: string;
+  installed_capacity_gw?: number | null;
+  wind_mw?: number | null;
+  solar_mw?: number | null;
+  total_renewable_mw?: number | null;
+}
+
+interface MofpiSnapshot {
+  period: string;
+  // Crops (000 metric tonnes)
+  crop_rice_000mt?: number | null;
+  crop_pulses_000mt?: number | null;
+  crop_coarse_cereals_000mt?: number | null;
+  crop_oilseeds_000mt?: number | null;
+  // Livestock
+  livestock_milk_000mt?: number | null;
+  livestock_eggs_lakh?: number | null;
+  livestock_meat_000mt?: number | null;
+  livestock_fish_lakh_mt?: number | null;
+  // Fruits / veg / spices
+  fruit_banana_000mt?: number | null;
+  fruit_mango_000mt?: number | null;
+  fruit_watermelon_000mt?: number | null;
+  veg_tapioca_000mt?: number | null;
+  veg_tomato_000mt?: number | null;
+  veg_onion_000mt?: number | null;
+  spice_turmeric_000mt?: number | null;
+  spice_tamarind_000mt?: number | null;
+  // Schemes + infra
+  pmfme_micro_enterprises?: number | null;
+  pmfme_subsidy_cr?: number | null;
+  pmfme_shg_members?: number | null;
+  agri_mandis?: number | null;
+  agri_enam_mandis?: number | null;
+  agri_fpos?: number | null;
+}
+
 interface AllIndiaRef {
   plfs?: PLFSSnapshot | null;
   srs?: SRSSnapshot | null;
@@ -191,6 +230,7 @@ interface AllIndiaRef {
   sdg_index?: SDGSnapshot | null;
   ncrb?: NCRBSnapshot | null;
   aishe?: AISHESnapshot | null;
+  energy_stats?: EnergySnapshot | null;
 }
 
 interface StateReport {
@@ -206,6 +246,8 @@ interface StateReport {
   cost_of_living?: CoLSnapshot | null;
   state_budget?: StateBudget | null;
   rbi_state_finances?: RBISnapshot | null;
+  energy_stats?: EnergySnapshot | null;
+  mofpi?: MofpiSnapshot | null;
   all_india?: AllIndiaRef;
 }
 
@@ -1305,9 +1347,198 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
   );
 }
 
+// ─── Energy (MNRE / CEA) ─────────────────────────────────────────────────────
+
+function EnergySection({ energy, aiEnergy }: { energy?: EnergySnapshot | null; aiEnergy?: EnergySnapshot | null }) {
+  if (!energy) return <EmptySection msg="No energy data available" />;
+
+  const tiles = [
+    { label: "Installed Capacity", term: "Installed Capacity", val: energy.installed_capacity_gw,  ai: aiEnergy?.installed_capacity_gw,  unit: "GW" },
+    { label: "Solar",              term: "Solar Capacity",     val: energy.solar_mw,               ai: aiEnergy?.solar_mw,               unit: "MW" },
+    { label: "Wind",               term: "Wind Capacity",      val: energy.wind_mw,                ai: aiEnergy?.wind_mw,                unit: "MW" },
+    { label: "Total Renewable",    term: "Renewable Capacity", val: energy.total_renewable_mw,     ai: aiEnergy?.total_renewable_mw,     unit: "MW" },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center flex-wrap">
+          Power Sector · {energy.period}
+        </p>
+        <SourceLink
+          name="MNRE / Central Electricity Authority (CEA)"
+          url="https://cea.nic.in/installed-capacity-report/?lang=en"
+          period={energy.period}
+        />
+        <div className="grid grid-cols-2 gap-3">
+          {tiles.map(({ label, term, val, ai, unit }) => {
+            if (val == null) return null;
+            return (
+              <div key={label} className="bg-gray-50 rounded-xl p-3 text-center">
+                <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center justify-center w-full">
+                  {label}<InfoTip term={term} />
+                </p>
+                <p className="text-lg font-black text-gray-900">
+                  {f1(val)}<span className="text-xs font-normal text-gray-400"> {unit}</span>
+                </p>
+                {ai != null && (
+                  <p className="text-[9px] text-gray-400">India: {f1(ai)} {unit}</p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-[10px] text-gray-400 mt-3 leading-snug">
+          Capacity is the peak generation potential — actual output depends on sun, wind, and plant availability.
+          <LabelWithTip label=" GW" term="GW" /> = 1,000 <LabelWithTip label="MW" term="MW" />.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
+// ─── Agriculture (MOFPI) ─────────────────────────────────────────────────────
+
+function AgricultureSection({ mofpi }: { mofpi?: MofpiSnapshot | null }) {
+  if (!mofpi) return <EmptySection msg="No agriculture data available" />;
+
+  const fmtMT = (v: number | null | undefined) =>
+    v == null ? "—" : (v >= 1000 ? `${(v / 1000).toFixed(2)} M` : v.toLocaleString("en-IN"));
+
+  interface Row { label: string; val?: number | null; unit: string }
+  interface Group { label: string; term: string | null; rows: Row[] }
+  const sections: Group[] = [
+    {
+      label: "Crops",
+      term: "000 MT",
+      rows: [
+        { label: "Rice",            val: mofpi.crop_rice_000mt,           unit: "'000 MT" },
+        { label: "Pulses",          val: mofpi.crop_pulses_000mt,         unit: "'000 MT" },
+        { label: "Coarse Cereals",  val: mofpi.crop_coarse_cereals_000mt, unit: "'000 MT" },
+        { label: "Oilseeds",        val: mofpi.crop_oilseeds_000mt,       unit: "'000 MT" },
+      ],
+    },
+    {
+      label: "Livestock",
+      term: null,
+      rows: [
+        { label: "Milk",  val: mofpi.livestock_milk_000mt,   unit: "'000 MT" },
+        { label: "Eggs",  val: mofpi.livestock_eggs_lakh,    unit: "lakh" },
+        { label: "Meat",  val: mofpi.livestock_meat_000mt,   unit: "'000 MT" },
+        { label: "Fish",  val: mofpi.livestock_fish_lakh_mt, unit: "lakh MT" },
+      ],
+    },
+    {
+      label: "Top Produce",
+      term: "000 MT",
+      rows: [
+        { label: "Banana",      val: mofpi.fruit_banana_000mt,    unit: "'000 MT" },
+        { label: "Mango",       val: mofpi.fruit_mango_000mt,     unit: "'000 MT" },
+        { label: "Watermelon",  val: mofpi.fruit_watermelon_000mt,unit: "'000 MT" },
+        { label: "Tapioca",     val: mofpi.veg_tapioca_000mt,     unit: "'000 MT" },
+        { label: "Tomato",      val: mofpi.veg_tomato_000mt,      unit: "'000 MT" },
+        { label: "Onion",       val: mofpi.veg_onion_000mt,       unit: "'000 MT" },
+        { label: "Turmeric",    val: mofpi.spice_turmeric_000mt,  unit: "'000 MT" },
+        { label: "Tamarind",    val: mofpi.spice_tamarind_000mt,  unit: "'000 MT" },
+      ],
+    },
+  ];
+
+  return (
+    <div className="space-y-4">
+      {/* Production summary */}
+      <div className="bg-white rounded-2xl border border-gray-200 p-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 inline-flex items-center flex-wrap">
+          Agricultural Production · <LabelWithTip label="MOFPI" term="MOFPI" className="mx-1" /> {mofpi.period}
+        </p>
+        <SourceLink
+          name="Ministry of Food Processing Industries (state-wise production)"
+          url="https://mofpi.gov.in/sites/default/files/annual_report_2023-24.pdf"
+          period={mofpi.period}
+        />
+
+        {sections.map(({ label, rows, term }) => {
+          const populated = rows.filter((r) => r.val != null);
+          if (!populated.length) return null;
+          return (
+            <div key={label} className="mb-4 last:mb-0">
+              <p className="text-[10px] font-bold text-gray-500 mb-2 inline-flex items-center">
+                {label}{term && <InfoTip term={term} />}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {populated.map((r) => (
+                  <div key={r.label} className="bg-gray-50 rounded-xl p-3">
+                    <p className="text-[10px] text-gray-500 font-semibold">{r.label}</p>
+                    <p className="text-sm font-black text-gray-900">
+                      {fmtMT(r.val)}
+                      <span className="text-[10px] font-normal text-gray-400 ml-1">
+                        {r.unit}
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+        <p className="text-[10px] text-gray-400 mt-2 leading-snug">
+          &ldquo;M&rdquo; = million tonnes shorthand (e.g. rice 6.80 M = 6,799 thousand tonnes).
+        </p>
+      </div>
+
+      {/* Market infrastructure */}
+      {(mofpi.agri_mandis != null || mofpi.agri_fpos != null || mofpi.agri_enam_mandis != null) && (
+        <div className="bg-white rounded-2xl border border-gray-200 p-4">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3">
+            Market Infrastructure
+          </p>
+          <div className="grid grid-cols-3 gap-2 text-center">
+            {[
+              { label: "APMC Mandis",  term: "APMC Mandi", val: mofpi.agri_mandis },
+              { label: "eNAM Mandis",  term: "eNAM",       val: mofpi.agri_enam_mandis },
+              { label: "FPOs",         term: "FPO",        val: mofpi.agri_fpos },
+            ].filter((x) => x.val != null).map(({ label, term, val }) => (
+              <div key={label} className="bg-gray-50 rounded-xl p-3">
+                <p className="text-[10px] text-gray-500 font-semibold inline-flex items-center justify-center w-full">
+                  {label}<InfoTip term={term} />
+                </p>
+                <p className="text-xl font-black text-gray-900">{val?.toLocaleString("en-IN")}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* PM-FME scheme */}
+      {(mofpi.pmfme_micro_enterprises != null || mofpi.pmfme_subsidy_cr != null || mofpi.pmfme_shg_members != null) && (
+        <div className="bg-white rounded-2xl border border-gray-200 p-4">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-3 inline-flex items-center">
+            <LabelWithTip label="PM-FME" term="PM-FME" />
+            <span className="ml-1">Scheme — Food Processing Uplift</span>
+          </p>
+          <div className="grid grid-cols-3 gap-2 text-center">
+            {[
+              { label: "Micro Enterprises",    val: mofpi.pmfme_micro_enterprises,  fmt: (v: number) => v.toLocaleString("en-IN") },
+              { label: "Subsidy (₹ Cr)",       val: mofpi.pmfme_subsidy_cr,         fmt: (v: number) => `₹${v.toFixed(2)}` },
+              { label: "SHG Members",          val: mofpi.pmfme_shg_members,        fmt: (v: number) => v.toLocaleString("en-IN") },
+            ].filter((x) => x.val != null).map(({ label, val, fmt }) => (
+              <div key={label} className="bg-gray-50 rounded-xl p-3">
+                <p className="text-[10px] text-gray-500 font-semibold">{label}</p>
+                <p className="text-lg font-black text-gray-900">{fmt(val as number)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-type SectionKey = "labour" | "health" | "spending" | "education" | "school" | "crime" | "industry" | "fiscal" | "sdg" | "cost";
+type SectionKey = "labour" | "health" | "spending" | "education" | "school" | "crime" | "industry" | "energy" | "agri" | "fiscal" | "sdg" | "cost";
 
 const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "labour",    label: "Labour" },
@@ -1317,6 +1548,8 @@ const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "school",    label: "School Ed" },
   { key: "crime",     label: "Crime" },
   { key: "industry",  label: "Industry" },
+  { key: "energy",    label: "Energy" },
+  { key: "agri",      label: "Agriculture" },
   { key: "fiscal",    label: "Fiscal" },
   { key: "sdg",       label: "SDG" },
   { key: "cost",      label: "Cost of Living" },
@@ -1345,13 +1578,14 @@ export default function StateReportPage() {
       .finally(() => setLoading(false));
   }, [slug]);
 
-  const aiPlfs  = report?.all_india?.plfs;
-  const aiSrs   = report?.all_india?.srs;
-  const aiHces  = report?.all_india?.hces;
-  const aiUdise = report?.all_india?.udise;
-  const aiAsi   = report?.all_india?.asi;
-  const aiNcrb  = report?.all_india?.ncrb;
-  const aiAishe = report?.all_india?.aishe;
+  const aiPlfs   = report?.all_india?.plfs;
+  const aiSrs    = report?.all_india?.srs;
+  const aiHces   = report?.all_india?.hces;
+  const aiUdise  = report?.all_india?.udise;
+  const aiAsi    = report?.all_india?.asi;
+  const aiNcrb   = report?.all_india?.ncrb;
+  const aiAishe  = report?.all_india?.aishe;
+  const aiEnergy = report?.all_india?.energy_stats;
 
   const visibleSections = SECTIONS;
 
@@ -1411,16 +1645,7 @@ export default function StateReportPage() {
 
       <div className="max-w-2xl mx-auto px-4 py-6">
         {/* Loading skeleton */}
-        {loading && (
-          <div className="space-y-3">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-200 p-4 h-32 animate-pulse"
-              />
-            ))}
-          </div>
-        )}
+        {loading && <SkeletonSection count={3} />}
 
         {/* Error */}
         {!loading && error && (
@@ -1439,6 +1664,8 @@ export default function StateReportPage() {
             {activeSection === "school"    && <SchoolSection    udise={report.udise}     aiUdise={aiUdise} />}
             {activeSection === "crime"     && <CrimeSection     ncrb={report.ncrb}       aiNcrb={aiNcrb} />}
             {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
+            {activeSection === "energy"    && <EnergySection    energy={report.energy_stats} aiEnergy={aiEnergy} />}
+            {activeSection === "agri"      && <AgricultureSection mofpi={report.mofpi} />}
             {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} rbi={report.rbi_state_finances} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
             {activeSection === "cost"      && (
