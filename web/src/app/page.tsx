@@ -134,7 +134,12 @@ export default function Home() {
           >
             <div className="flex items-start justify-between gap-2">
               <div>
-                <p className="text-lg mb-1">🌍</p>
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-lg">🌍</span>
+                  <span className="text-xs font-black uppercase tracking-wider text-gray-700">
+                    {isTA ? "ஐக்கிய நாடுகள் சபை" : "United Nations"}
+                  </span>
+                </div>
                 <p className="text-sm font-bold text-gray-900">
                   {isTA ? "நிலையான வளர்ச்சி இலக்குகள் (SDG)" : "Sustainable Development Goals"}
                 </p>

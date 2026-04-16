@@ -25,20 +25,38 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Interactive elements shouldn't behave like selectable text. Drag-selecting
-   over a card/nav link shouldn't highlight its label — the card is a button,
-   not a paragraph. Form fields and their internals are explicitly opted back
-   in so users can still edit/select input contents. */
+/* Interactive elements and UI chrome shouldn't behave like selectable text.
+   Anchors, buttons, nav regions, header/footer bands, and section headings
+   are all navigation scaffolding — drag-selecting them feels wrong. Real
+   content (promise text, MLA bios, etc.) lives in <p>/<span>/<li> and stays
+   selectable by default so users can still quote/copy it. */
 a,
+a *,
 button,
+button *,
 [role="button"],
+[role="button"] *,
 summary,
-label {
+label,
+header,
+header *,
+footer,
+footer *,
+nav,
+nav *,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Form fields and editable regions are always selectable — this has to come
+   after the chrome rules so nested <input>s inside <label> aren't frozen. */
 input,
 textarea,
 select,

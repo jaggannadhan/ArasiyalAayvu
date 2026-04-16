@@ -16,7 +16,7 @@ export function FeedbackFooter() {
 
   return (
     <>
-      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-sm py-4 sm:py-5 px-4 max-w-full overflow-hidden">
+      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-sm py-4 sm:py-5 px-4 max-w-full overflow-hidden select-none">
         <div className="max-w-2xl w-full mx-auto flex flex-col items-center gap-3 text-xs">
           {/* Civic disclaimer — one language at a time, driven by the header toggle. */}
           {isTA ? (
