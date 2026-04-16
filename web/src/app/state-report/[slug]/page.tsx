@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
+import { cachePeek, cacheFetch, cacheHas } from "@/lib/data-cache";
 import { InfoTip, LabelWithTip } from "@/components/state/InfoTip";
 import { SkeletonSection } from "@/components/state/SkeletonCard";
 
@@ -330,6 +331,18 @@ interface PLFSHistory {
   snapshots?: Record<string, PLFSSnapshot>;
 }
 
+const plfsUrl       = (slug: string) => `/api/kg/plfs/${slug}`;
+const PLFS_AI_URL   = plfsUrl("all_india");
+
+const findLatestWithYouth = (history: PLFSHistory | null) => {
+  const snaps = history?.snapshots ?? {};
+  const periods = Object.keys(snaps).sort().reverse();
+  for (const p of periods) {
+    if (snaps[p]?.ur?.["15-29"]) return { period: p, ur: snaps[p].ur };
+  }
+  return null;
+};
+
 function LabourSection({
   plfs,
   aiPlfs,
@@ -339,31 +352,30 @@ function LabourSection({
   aiPlfs?: PLFSSnapshot | null;
   slug: string;
 }) {
-  // Fetch full time-series so we can fall back to a snapshot that actually has
-  // the 15-29 youth breakdown. The latest snapshot is often the MoSPI
-  // Quarterly Bulletin (15+ headline only); the Annual Report (with youth
-  // detail) lags by 9-12 months.
-  const [youth, setYouth] = useState<{ period: string; ur?: Record<string, AreaCell> } | null>(null);
-  const [youthAI, setYouthAI] = useState<{ period: string; ur?: Record<string, AreaCell> } | null>(null);
+  // Fetch the full PLFS time-series so we can fall back to a snapshot that
+  // actually has the 15-29 youth breakdown. The latest snapshot is often the
+  // MoSPI Quarterly Bulletin (15+ headline only); the Annual Report (with
+  // youth detail) lags by 9-12 months.
+  const [, bumpFetchTick] = useState(0);
+
+  // Derive view values directly from the shared URL-keyed cache — if a slug is
+  // already cached (either from a prior visit or background prefetch), the tab
+  // renders immediately without skeleton or network.
+  const cachedState = cachePeek<PLFSHistory | null>(plfsUrl(slug));
+  const cachedAI    = cachePeek<PLFSHistory | null>(PLFS_AI_URL);
+  const youth   = cachedState !== undefined ? findLatestWithYouth(cachedState) : null;
+  const youthAI = cachedAI    !== undefined ? findLatestWithYouth(cachedAI)    : null;
 
   useEffect(() => {
     if (!slug) return;
+    if (cacheHas(plfsUrl(slug)) && cacheHas(PLFS_AI_URL)) return;
+
     let cancelled = false;
-    const findLatestWithYouth = (history: PLFSHistory | null) => {
-      const snaps = history?.snapshots ?? {};
-      const periods = Object.keys(snaps).sort().reverse();
-      for (const p of periods) {
-        if (snaps[p]?.ur?.["15-29"]) return { period: p, ur: snaps[p].ur };
-      }
-      return null;
-    };
     Promise.all([
-      apiGet<PLFSHistory>(`/api/kg/plfs/${slug}`).catch(() => null),
-      apiGet<PLFSHistory>(`/api/kg/plfs/all_india`).catch(() => null),
-    ]).then(([stateHist, aiHist]) => {
-      if (cancelled) return;
-      setYouth(findLatestWithYouth(stateHist));
-      setYouthAI(findLatestWithYouth(aiHist));
+      cacheFetch<PLFSHistory | null>(plfsUrl(slug)).catch(() => null),
+      cacheFetch<PLFSHistory | null>(PLFS_AI_URL).catch(() => null),
+    ]).then(() => {
+      if (!cancelled) bumpFetchTick((n) => n + 1);
     });
     return () => {
       cancelled = true;
@@ -1555,27 +1567,53 @@ const SECTIONS: { key: SectionKey; label: string }[] = [
   { key: "cost",      label: "Cost of Living" },
 ];
 
+const reportUrl = (slug: string) => `/api/state-report/${slug}`;
+
 export default function StateReportPage() {
   const params = useParams();
   const slug = typeof params.slug === "string" ? params.slug : "";
 
   const [activeSection, setActiveSection] = useState<SectionKey>("labour");
-  const [report, setReport]   = useState<StateReport | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(() => !!slug && !cacheHas(reportUrl(slug)));
   const [error, setError]     = useState<string | null>(null);
+  // Forces a re-render when a fetch completes (the actual data lives in the
+  // shared URL-keyed cache, not in React state).
+  const [, bumpFetchTick] = useState(0);
 
   const currentState = STATES.find((s) => s.slug === slug) ?? STATES[0];
   const isTN = slug === "tamil_nadu";
 
+  // Read synchronously from cache — cached slugs render with no skeleton flash
+  // even on cross-tab navigation or from background prefetch.
+  const report: StateReport | null = slug
+    ? cachePeek<StateReport>(reportUrl(slug)) ?? null
+    : null;
+
   useEffect(() => {
     if (!slug) return;
+
+    if (cacheHas(reportUrl(slug))) {
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
+    let cancelled = false;
     setLoading(true);
-    setReport(null);
     setError(null);
-    apiGet<StateReport>(`/api/state-report/${slug}`)
-      .then(setReport)
-      .catch((e: Error) => setError(e.message))
-      .finally(() => setLoading(false));
+    cacheFetch<StateReport>(reportUrl(slug))
+      .then(() => {
+        if (!cancelled) bumpFetchTick((n) => n + 1);
+      })
+      .catch((e: Error) => {
+        if (!cancelled) setError(e.message);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [slug]);
 
   const aiPlfs   = report?.all_india?.plfs;

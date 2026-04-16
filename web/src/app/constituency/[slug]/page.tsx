@@ -14,9 +14,12 @@ import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigato
 import { ElectorateCard } from "@/components/constituency/ElectorateCard";
 import {
   fetchConstituencyData,
+  peekConstituencyData,
+  constituencyUrl,
   type ConstituencyDrillData,
 } from "@/lib/constituency-fetcher";
 import { apiGet } from "@/lib/api-client";
+import { cacheHas } from "@/lib/data-cache";
 import constituencyMap from "@/lib/constituency-map.json";
 import electorateData2021 from "@/lib/constituency-electorate-2021.json";
 
@@ -71,9 +74,17 @@ export default function ConstituencyPage() {
 
   const { lang, setLang } = useLanguage();
   const [selectedTerm, setSelectedTerm] = useState(2026);
-  const [data, setData] = useState<ConstituencyDrillData | null>(null);
-  const [loading, setLoading] = useState(true);
+  // `data` is derived on every render directly from the shared cache, so a
+  // tab/term switch with a warm cache renders instantly with no skeleton flash.
+  // `bumpFetchTick` forces a re-read from cache when a fetch completes.
+  const [, bumpFetchTick] = useState(0);
+  const [loading, setLoading] = useState<boolean>(
+    () => !!slug && !cacheHas(constituencyUrl(slug, 2026)),
+  );
   const [error, setError] = useState<ErrorState | null>(null);
+  const data: ConstituencyDrillData | null = slug
+    ? peekConstituencyData(slug, selectedTerm) ?? null
+    : null;
 
   const currentTermMeta = TERMS.find((t) => t.electionYear === selectedTerm) ?? TERMS.find((t) => t.electionYear === 2021)!;
 
@@ -97,26 +108,44 @@ export default function ConstituencyPage() {
       ? meta.district_slug_pre_2021
       : (meta?.district_slug ?? "");
 
-  // Fetch constituency data (re-fetches when slug or term changes)
+  // Fetch constituency data (re-fetches when slug or term changes, unless
+  // the same slug+term is already in cache — in which case `data` is already
+  // populated via the render-time cache read above and this is a no-op).
   useEffect(() => {
-    if (!slug || !currentTermMeta.hasDrillData) { setLoading(false); return; }
+    if (!slug || !currentTermMeta.hasDrillData) {
+      setLoading(false);
+      return;
+    }
+    if (cacheHas(constituencyUrl(slug, selectedTerm))) {
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
+    let cancelled = false;
     setLoading(true);
     setError(null);
-    setData(null);
 
     fetchConstituencyData(slug, selectedTerm)
-      .then(setData)
+      .then(() => {
+        if (!cancelled) bumpFetchTick((n) => n + 1);
+      })
       .catch((err: unknown) => {
+        if (cancelled) return;
         if (isOfflineError(err)) {
           setError({ kind: "offline", message: "offline" });
           return;
         }
-
         console.error("[ConstituencyPage] fetch error:", err);
         setError({ kind: "generic", message: getErrorMessage(err) });
       })
-      .finally(() => setLoading(false));
-  }, [slug, selectedTerm]);
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, selectedTerm, currentTermMeta.hasDrillData]);
 
   // Fire-and-forget view counter increment (client-side only, non-blocking)
   useEffect(() => {

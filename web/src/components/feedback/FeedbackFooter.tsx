@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FeedbackModal } from "./FeedbackModal";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useCookieConsent } from "@/lib/CookieConsentContext";
 
 /** Page-wide footer rendered at the bottom of every page via layout.tsx.
  *  Stacks the civic disclaimer above a tight, centered row containing the
@@ -12,6 +13,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 export function FeedbackFooter() {
   const [open, setOpen] = useState(false);
   const { lang } = useLanguage();
+  const { reopen: reopenCookieBanner } = useCookieConsent();
   const isTA = lang === "ta";
 
   return (
@@ -60,6 +62,17 @@ export function FeedbackFooter() {
               <span>💬</span>
               <span lang={isTA ? "ta" : undefined}>
                 {isTA ? "கருத்து தெரிவிக்கவும்" : "Send feedback"}
+              </span>
+            </button>
+            <span className="text-gray-300">·</span>
+            <button
+              type="button"
+              onClick={reopenCookieBanner}
+              className="font-semibold text-gray-500 hover:text-gray-900 inline-flex items-center gap-1.5 cursor-pointer transition-colors"
+            >
+              <span>🍪</span>
+              <span lang={isTA ? "ta" : undefined}>
+                {isTA ? "குக்கீ அமைப்புகள்" : "Cookie settings"}
               </span>
             </button>
           </div>

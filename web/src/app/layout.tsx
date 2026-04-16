@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { FeedbackFooter } from "@/components/feedback/FeedbackFooter";
+import { CookieBanner } from "@/components/consent/CookieBanner";
+import { PerformanceTelemetry } from "@/components/consent/PerformanceTelemetry";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { CookieConsentProvider } from "@/lib/CookieConsentContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,14 +41,17 @@ export default function RootLayout({
         suppressHydrationWarning
         className="h-screen h-svh overflow-hidden flex flex-col"
       >
-        <LanguageProvider>
-          <div className="flex-1 overflow-y-auto">{children}</div>
-          <div className="flex-shrink-0">
-            <FeedbackFooter />
-          </div>
-        </LanguageProvider>
-        <Analytics />
-        <SpeedInsights />
+        <CookieConsentProvider>
+          <LanguageProvider>
+            <div className="flex-1 overflow-y-auto">{children}</div>
+            <div className="flex-shrink-0">
+              <FeedbackFooter />
+            </div>
+            <CookieBanner />
+          </LanguageProvider>
+          {/* Only mounts when performance-cookie consent = true. */}
+          <PerformanceTelemetry />
+        </CookieConsentProvider>
       </body>
     </html>
   );

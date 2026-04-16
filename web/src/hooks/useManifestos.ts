@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { apiGet } from "@/lib/api-client";
+import { cacheFetch, cacheHas, cachePeek } from "@/lib/data-cache";
 import type { ManifestoPromise } from "@/lib/types";
 
 export type ManifestoYearFilter = "all" | 2021 | 2026;
@@ -12,50 +12,27 @@ interface UseManifestosResult {
   error: string | null;
 }
 
-// Module-level cache — persists for the browser session.
-// Keyed by year filter string. In-flight map prevents duplicate concurrent fetches.
-const _cache = new Map<string, ManifestoPromise[]>();
-const _inFlight = new Map<string, Promise<ManifestoPromise[]>>();
-
-function fetchManifestos(yearFilter: ManifestoYearFilter): Promise<ManifestoPromise[]> {
-  const key = String(yearFilter);
-
-  const cached = _cache.get(key);
-  if (cached) return Promise.resolve(cached);
-
-  const inFlight = _inFlight.get(key);
-  if (inFlight) return inFlight;
-
+function urlForYear(yearFilter: ManifestoYearFilter): string {
   const yearParam = yearFilter === "all" ? "all" : String(yearFilter);
-  const promise = apiGet<ManifestoPromise[]>(
-    `/api/manifesto-promises?year=${encodeURIComponent(yearParam)}`
-  ).then((docs) => {
-    _cache.set(key, docs);
-    _inFlight.delete(key);
-    return docs;
-  }).catch((err) => {
-    _inFlight.delete(key);
-    throw err;
-  });
-
-  _inFlight.set(key, promise);
-  return promise;
+  return `/api/manifesto-promises?year=${encodeURIComponent(yearParam)}`;
 }
 
 export function useManifestos(
-  yearFilter: ManifestoYearFilter = "all"
+  yearFilter: ManifestoYearFilter = "all",
 ): UseManifestosResult {
-  const cached = _cache.get(String(yearFilter));
+  const url = urlForYear(yearFilter);
+  const cached = cachePeek<ManifestoPromise[]>(url);
+
   const [promises, setPromises] = useState<ManifestoPromise[]>(cached ?? []);
-  const [loading, setLoading] = useState(!cached);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading]   = useState(!cached);
+  const [error, setError]       = useState<string | null>(null);
 
   useEffect(() => {
-    const key = String(yearFilter);
+    const nextUrl = urlForYear(yearFilter);
 
-    // Already cached — no fetch needed
-    if (_cache.has(key)) {
-      setPromises(_cache.get(key)!);
+    // Cached — short-circuit, no network.
+    if (cacheHas(nextUrl)) {
+      setPromises(cachePeek<ManifestoPromise[]>(nextUrl)!);
       setLoading(false);
       setError(null);
       return;
@@ -65,21 +42,22 @@ export function useManifestos(
     setError(null);
 
     let cancelled = false;
-    fetchManifestos(yearFilter)
+    cacheFetch<ManifestoPromise[]>(nextUrl)
       .then((docs) => {
-        if (!cancelled) {
-          setPromises(docs);
-          setLoading(false);
-        }
+        if (cancelled) return;
+        setPromises(docs);
+        setLoading(false);
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         if (cancelled) return;
         console.error("[useManifestos] API error:", err);
         setError(err instanceof Error ? err.message : "Unknown error");
         setLoading(false);
       });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [yearFilter]);
 
   return { promises, loading, error };

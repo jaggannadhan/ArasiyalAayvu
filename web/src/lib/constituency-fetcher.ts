@@ -1,4 +1,4 @@
-import { apiGet } from "@/lib/api-client";
+import { cacheFetch, cachePeek } from "@/lib/data-cache";
 import type { MlaRecord, SocioMetric, ManifestoPromise, LsConstituencyMeta, DistrictWaterRisk, DistrictCrimeIndex, DistrictRoadSafety, WardMapping, UlbCouncillor, UlbHead } from "@/lib/types";
 
 type MetricsScope = "district" | "state_fallback";
@@ -25,38 +25,28 @@ export interface ConstituencyDrillData {
   ulb_heads: UlbHead[];
 }
 
-// In-memory cache for the browser session.
-// Keyed by "slug:termYear". In-flight map prevents duplicate concurrent fetches.
-const _cache = new Map<string, ConstituencyDrillData>();
-const _inFlight = new Map<string, Promise<ConstituencyDrillData>>();
+/** Canonical API path — also the cache key. */
+export function constituencyUrl(slug: string, term: number = 2021): string {
+  return `/api/constituency/${encodeURIComponent(slug)}?term=${term}`;
+}
+
+/** Synchronous read from the shared cache — useful during render so components
+ *  can show data immediately if it's already warm (via prior visit, prefetch,
+ *  or localStorage hydration with performance-cookie consent). */
+export function peekConstituencyData(
+  slug: string,
+  term: number = 2021,
+): ConstituencyDrillData | undefined {
+  if (!slug) return undefined;
+  return cachePeek<ConstituencyDrillData>(constituencyUrl(slug, term));
+}
 
 export async function fetchConstituencyData(
   constituencySlug: string,
-  termYear: number = 2021
+  termYear: number = 2021,
 ): Promise<ConstituencyDrillData> {
   if (!constituencySlug) {
     throw new Error("Missing constituency slug");
   }
-
-  const key = `${constituencySlug}:${termYear}`;
-
-  const cached = _cache.get(key);
-  if (cached) return cached;
-
-  const inFlight = _inFlight.get(key);
-  if (inFlight) return inFlight;
-
-  const promise = apiGet<ConstituencyDrillData>(
-    `/api/constituency/${encodeURIComponent(constituencySlug)}?term=${termYear}`
-  ).then((data) => {
-    _cache.set(key, data);
-    _inFlight.delete(key);
-    return data;
-  }).catch((err) => {
-    _inFlight.delete(key);
-    throw err;
-  });
-
-  _inFlight.set(key, promise);
-  return promise;
+  return cacheFetch<ConstituencyDrillData>(constituencyUrl(constituencySlug, termYear));
 }

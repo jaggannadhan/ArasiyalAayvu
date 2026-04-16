@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
 import { useLanguage } from "@/lib/LanguageContext";
+import { prefetchOnIdle } from "@/lib/data-cache";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import type { FrequentlyBrowsedItem } from "@/lib/types";
@@ -42,6 +43,27 @@ export default function Home() {
         // use fallback silently
       });
   }, []);
+
+  // Background prefetch — warm the shared URL-keyed cache during browser idle
+  // time so downstream routes render without a network round-trip. Strictly
+  // best-effort: failures are silent; a hard refresh clears everything
+  // (persistence is handled by data-cache.ts when consent is granted).
+  useEffect(() => {
+    const STATE_SLUGS = ["tamil_nadu", "kerala", "karnataka", "andhra_pradesh", "telangana"];
+    const featuredSlugs = featured.map((f) => f.slug);
+    const urls = [
+      // State Vitals — the most common next destination from home.
+      ...STATE_SLUGS.map((s) => `/api/state-report/${s}`),
+      // PLFS histories used by the Labour tab's youth-breakdown fallback.
+      ...STATE_SLUGS.map((s) => `/api/kg/plfs/${s}`),
+      `/api/kg/plfs/all_india`,
+      // Manifesto promises — single call covers all parties.
+      `/api/manifesto-promises?year=2026`,
+      // Featured constituency drill pages (2026 term) — one click away from home.
+      ...featuredSlugs.map((s) => `/api/constituency/${encodeURIComponent(s)}?term=2026`),
+    ];
+    prefetchOnIdle(urls);
+  }, [featured]);
 
   return (
     <main className="min-h-full bg-gray-50">

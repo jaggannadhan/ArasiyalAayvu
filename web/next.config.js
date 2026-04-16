@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days — photos are immutable once on GCS
+    // Candidate photos in GCS are uploaded with `public, max-age=31536000,
+    // immutable`, so we can safely cache them at the Next.js image-optimizer
+    // layer for the full year too. A shorter TTL here was causing the browser
+    // to hit the optimizer on every reload even though the underlying blob
+    // never changes.
+    minimumCacheTTL: 60 * 60 * 24 * 365,   // 1 year
     remotePatterns: [
       {
         protocol: "https",
