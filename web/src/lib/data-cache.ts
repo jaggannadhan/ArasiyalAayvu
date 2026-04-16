@@ -18,13 +18,20 @@ const _inflight = new Map<string, Promise<unknown>>();
 
 const STORAGE_PREFIX = "aayvu_cache:";
 const CONSENT_KEY    = "aayvu_cookie_consent";
-const TTL_MS         = 24 * 60 * 60 * 1000; // 24 hours
 const SCHEMA_VERSION = 1;
 
 interface PersistedEntry {
   data: unknown;
-  stored_at: number;
+  stored_at: number;  // epoch ms
   version: number;
+}
+
+/** An entry is stale if it was stored before today's midnight in the user's
+ *  local timezone. Every user gets a clean slate at their own 00:00. */
+function isStale(storedAt: number): boolean {
+  const now = new Date();
+  const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  return storedAt < todayMidnight;
 }
 
 function hasPerformanceConsent(): boolean {
@@ -56,7 +63,6 @@ function persist(url: string, data: unknown): void {
 function hydrate(): void {
   if (typeof window === "undefined" || !hasPerformanceConsent()) return;
   try {
-    const now = Date.now();
     const toRemove: string[] = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -65,7 +71,7 @@ function hydrate(): void {
         const raw = localStorage.getItem(key);
         if (!raw) continue;
         const entry = JSON.parse(raw) as PersistedEntry;
-        if (entry.version !== SCHEMA_VERSION || now - entry.stored_at > TTL_MS) {
+        if (entry.version !== SCHEMA_VERSION || isStale(entry.stored_at)) {
           toRemove.push(key);
           continue;
         }
