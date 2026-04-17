@@ -18,7 +18,7 @@ export function FeedbackFooter() {
 
   return (
     <>
-      <footer className="border-t border-gray-200 bg-white/70 backdrop-blur-sm py-4 sm:py-5 px-4 max-w-full overflow-hidden select-none">
+      <footer className="border-t border-gray-200 bg-white py-4 sm:py-5 px-4 max-w-full overflow-hidden select-none">
         <div className="max-w-2xl w-full mx-auto flex flex-col items-center gap-3 text-xs">
           {/* Civic disclaimer — one language at a time, driven by the header toggle. */}
           {isTA ? (
@@ -33,7 +33,7 @@ export function FeedbackFooter() {
             </p>
           ) : (
             <p className="text-[11px] text-gray-500 text-center leading-relaxed max-w-lg break-words hyphens-auto">
-              India is evolving — both in digital footprint and political transparency — but we&apos;re not there yet.{" "}
+              India is evolving — both in digital footprint and political transparency — but we&apos;re not there yet!{" "}<br/>
               <span className="font-semibold text-gray-600">⚠ Some data here may be wrong.</span>
               {" "}Help us fix it.{" "}
               <span className="font-semibold text-gray-600">Be a citizen, not a spectator.</span>

@@ -8,6 +8,7 @@ import constituencyLocalities from "@/lib/constituency-localities.json";
 import pincodeFlat from "@/lib/pincode-flat.json";
 import { apiGet } from "@/lib/api-client";
 import type { PincodeResult } from "@/lib/types";
+import candidateIndex from "@/lib/candidate-search-index.json";
 
 interface ConstituencySearchProps {
   lang?: "en" | "ta";
@@ -130,8 +131,46 @@ const ALL_CONSTITUENCIES: ConstituencyOptionNorm[] = Object.entries(
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
+// ── Candidate search index ────────────────────────────────────────────────────
+
+interface CandidateEntry {
+  n: string;   // full name (ALL CAPS from scraper)
+  p: string;   // party
+  s: string;   // constituency slug
+}
+
+/** Strip single-letter initials ("M.K.", "E.P.S.", "K.") so "Stalin" matches
+ *  "M.K. STALIN". Also applies the same transliteration normalize(). */
+function normalizeCandidateName(raw: string): string {
+  // Remove patterns like "J.", "M.K.", "E.P.S."
+  const stripped = raw.replace(/\b[A-Z]\.?\s*/gi, "").trim();
+  return normalize(stripped || raw);
+}
+
+function titleCase(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/(^|\s|\.)\S/g, (c) => c.toUpperCase());
+}
+
+const CANDIDATE_MAP = constituencyMap as Record<string, { name: string; district: string }>;
+
+interface CandidateMatch {
+  name: string;          // title-cased display name
+  party: string;
+  slug: string;
+  constituencyName: string;
+}
+
+const CANDIDATES_NORM = (candidateIndex as CandidateEntry[]).map((c) => ({
+  ...c,
+  norm: normalizeCandidateName(c.n),
+  normFull: normalize(c.n),  // also match full name with initials
+}));
+
 const IS_PINCODE = (v: string) => /^\d+$/.test(v);
 const STORAGE_KEY = (pin: string) => `aayvu_p2c_${pin}`;
+const TERM_STORAGE_KEY = "aayvu_selected_term";
 
 type PincodeStatus = "idle" | "loading" | "ambiguous" | "not_found" | "error";
 
@@ -164,9 +203,38 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
         return acc;
       }, []).slice(0, 8);
 
+  // Candidate name search — runs alongside constituency/locality search.
+  // Prioritize exact (case-insensitive) substring matches over transliteration-
+  // normalized ones so "seeman" shows SEEMAN first, not "Narasimman" (which
+  // matches only after ee→i + mm→m collapse).
+  const candidateResults: CandidateMatch[] = (() => {
+    if (isPinMode || query.trim().length < 2) return [];
+    const rawQ = query.trim().toLowerCase();
+    const exact: CandidateMatch[] = [];
+    const fuzzy: CandidateMatch[] = [];
+    for (const c of CANDIDATES_NORM) {
+      if (exact.length + fuzzy.length >= 5) break;
+      const meta = CANDIDATE_MAP[c.s];
+      const entry: CandidateMatch = {
+        name: titleCase(c.n),
+        party: c.p,
+        slug: c.s,
+        constituencyName: meta?.name ?? c.s.replace(/_/g, " ").toUpperCase(),
+      };
+      // Exact lowercase match (before normalization) gets priority.
+      if (c.n.toLowerCase().includes(rawQ)) {
+        exact.push(entry);
+      } else if (c.norm.includes(normQ) || c.normFull.includes(normQ)) {
+        fuzzy.push(entry);
+      }
+    }
+    return [...exact, ...fuzzy].slice(0, 5);
+  })();
+
   const showDropdown =
     open &&
     (nameResults.length > 0 ||
+      candidateResults.length > 0 ||
       (pincodeStatus === "ambiguous" && !!pincodeResult));
 
   // Close dropdown on outside click
@@ -180,9 +248,12 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  function navigate(slug: string) {
+  function navigate(slug: string, term?: number) {
     setQuery("");
     setOpen(false);
+    if (term) {
+      try { localStorage.setItem(TERM_STORAGE_KEY, String(term)); } catch { /* ignore */ }
+    }
     router.push(`/constituency/${slug}`);
   }
 
@@ -240,7 +311,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
   const icon = isPinMode ? "📮" : "🔍";
   const placeholder = isTA
     ? "தொகுதி பெயர் அல்லது பின்கோடு (எ.கா. Harur அல்லது 600023)"
-    : "Constituency, District, PinCode, Locality";
+    : "Constituency, District, PinCode, Candidate";
 
   return (
     <div ref={containerRef} className="relative w-full max-w-sm">
@@ -302,6 +373,34 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
               </button>
             );
           })}
+
+          {/* Candidate name results */}
+          {candidateResults.length > 0 && nameResults.length > 0 && (
+            <div className="px-4 py-1.5 border-t border-gray-100">
+              <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide">
+                {isTA ? "வேட்பாளர்கள் (2026)" : "Candidates (2026)"}
+              </p>
+            </div>
+          )}
+          {candidateResults.map((c, i) => (
+            <button
+              key={`${c.slug}-${i}`}
+              onClick={() => navigate(c.slug, 2026)}
+              className="w-full text-left px-4 py-2.5 hover:bg-gray-50 flex flex-col gap-0.5 text-sm transition-colors cursor-pointer"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <span className="font-medium text-gray-900 truncate">
+                  {c.name}
+                </span>
+                <span className="text-xs text-gray-400 shrink-0">
+                  {c.party}
+                </span>
+              </div>
+              <span className="text-[11px] text-emerald-600">
+                🏛 {c.constituencyName}
+              </span>
+            </button>
+          ))}
 
           {/* Pincode ambiguous picker */}
           {pincodeStatus === "ambiguous" && pincodeResult && (
