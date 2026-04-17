@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { MlaRecord } from "@/lib/types";
-import { PARTIES } from "@/lib/types";
 import { CandidateCriminalModal } from "./CandidateCriminalModal";
 import { normalizeName } from "@/lib/formatters";
 
@@ -41,7 +40,6 @@ function partyIdFromName(name: string): string {
 export function MlaCard({ mla, district, lang = "en", winnerVotes, winnerPct }: MlaCardProps) {
   const isTA = lang === "ta";
   const partyId = mla.party_id ?? partyIdFromName(mla.party);
-  const partyMeta = PARTIES[partyId];
   const severity = SEVERITY_META[mla.criminal_severity as keyof typeof SEVERITY_META] ?? SEVERITY_META.CLEAN;
   const [modalOpen, setModalOpen] = useState(false);
   const [assetsExpanded, setAssetsExpanded] = useState(false);
@@ -50,14 +48,6 @@ export function MlaCard({ mla, district, lang = "en", winnerVotes, winnerPct }: 
   const caseCount = mla.criminal_cases && mla.criminal_cases.length > 0
     ? mla.criminal_cases.length
     : mla.criminal_cases_total;
-
-  // Initials avatar from MLA name
-  const initials = mla.mla_name
-    .split(/[\s.]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0].toUpperCase())
-    .join("");
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
@@ -93,6 +83,7 @@ export function MlaCard({ mla, district, lang = "en", winnerVotes, winnerPct }: 
         {/* Party flag — far right */}
         {PARTY_FLAG_EXT[partyId] && (
           <div className="shrink-0 flex flex-col items-center gap-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`/party-flags/${partyId}.${PARTY_FLAG_EXT[partyId]}`}
               alt={mla.party}

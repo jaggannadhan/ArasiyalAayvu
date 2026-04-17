@@ -18,8 +18,6 @@ export function LiveCount() {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setInterval>;
-
     const fetchCount = () => {
       fetch(`${API_BASE_URL}/api/live-count`)
         .then((r) => (r.ok ? r.json() : null))
@@ -30,7 +28,7 @@ export function LiveCount() {
     };
 
     fetchCount();
-    timer = setInterval(fetchCount, POLL_INTERVAL_MS);
+    const timer = setInterval(fetchCount, POLL_INTERVAL_MS);
 
     const onVisibility = () => {
       if (!document.hidden) fetchCount();

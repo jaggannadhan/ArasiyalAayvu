@@ -44,7 +44,7 @@ export default function PincodeMapPage() {
   function toggleDistrict(dist: string) {
     setExpandedDistricts((prev) => {
       const next = new Set(prev);
-      next.has(dist) ? next.delete(dist) : next.add(dist);
+      if (next.has(dist)) next.delete(dist); else next.add(dist);
       return next;
     });
   }

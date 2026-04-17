@@ -75,18 +75,18 @@ export default function ConstituencyPage() {
 
   const { lang, setLang } = useLanguage();
 
-  // Read saved term ONCE, shared by both selectedTerm and loading initializers
-  // so they agree on which URL to check in the cache.
-  const savedTerm = (() => {
-    if (typeof window === "undefined") return 2026;
+  // Start with 2026 for SSR consistency (localStorage isn't available on the
+  // server). After hydration, sync from localStorage so the user lands on
+  // whichever term they were viewing before refresh.
+  const [selectedTerm, setSelectedTermRaw] = useState(2026);
+  useEffect(() => {
     try {
-      const v = parseInt(localStorage.getItem("aayvu_selected_term") ?? "", 10);
-      if (TERMS.some((t) => t.electionYear === v)) return v;
+      const saved = parseInt(localStorage.getItem("aayvu_selected_term") ?? "", 10);
+      if (TERMS.some((t) => t.electionYear === saved) && saved !== 2026) {
+        setSelectedTermRaw(saved);
+      }
     } catch { /* ignore */ }
-    return 2026;
-  })();
-
-  const [selectedTerm, setSelectedTermRaw] = useState<number>(savedTerm);
+  }, []);
   const setSelectedTerm = (term: number) => {
     setSelectedTermRaw(term);
     try { localStorage.setItem("aayvu_selected_term", String(term)); } catch { /* ignore */ }
@@ -97,7 +97,7 @@ export default function ConstituencyPage() {
   // `bumpFetchTick` forces a re-read from cache when a fetch completes.
   const [, bumpFetchTick] = useState(0);
   const [loading, setLoading] = useState<boolean>(
-    () => !!slug && !cacheHas(constituencyUrl(slug, savedTerm)),
+    () => !!slug && !cacheHas(constituencyUrl(slug, 2026)),
   );
   const [error, setError] = useState<ErrorState | null>(null);
   const data: ConstituencyDrillData | null = slug
@@ -121,10 +121,6 @@ export default function ConstituencyPage() {
     selectedTerm < 2021 && meta?.district_pre_2021
       ? meta.district_pre_2021
       : (meta?.district ?? "");
-  const effectiveDistrictSlug =
-    selectedTerm < 2021 && meta?.district_slug_pre_2021
-      ? meta.district_slug_pre_2021
-      : (meta?.district_slug ?? "");
 
   // Fetch constituency data (re-fetches when slug or term changes, unless
   // the same slug+term is already in cache — in which case `data` is already

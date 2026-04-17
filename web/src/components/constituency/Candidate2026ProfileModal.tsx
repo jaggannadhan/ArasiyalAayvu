@@ -25,6 +25,7 @@ function CandidatePhoto({ url, gender, name, className }: {
 }) {
   const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
   if (url?.includes("suvidha.eci.gov.in")) {
+    // eslint-disable-next-line @next/next/no-img-element
     return <img src={url} alt={name} className={className} />;
   }
   return <Image src={url ?? def} alt={name} width={80} height={100} sizes="80px" className={className} />;
@@ -116,6 +117,7 @@ export function Candidate2026ProfileModal({ candidate, onClose, lang = "en" }: P
               </p>
               <div className="flex items-center gap-2 flex-wrap">
                 {flagExt ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={`/party-flags/${candidate.party_id}.${flagExt}`}
                     alt={candidate.party}

@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { apiGet } from "@/lib/api-client";
 import { cachePeek, cacheFetch, cacheHas } from "@/lib/data-cache";
 import { InfoTip, LabelWithTip } from "@/components/state/InfoTip";
 import { SkeletonSection } from "@/components/state/SkeletonCard";
@@ -66,12 +65,6 @@ interface HCESSnapshot {
   gap_vs_all_india_with_free?: { rural?: number; urban?: number };
 }
 
-interface EnrollmentCell {
-  male?: number | null;
-  female?: number | null;
-  total?: number | null;
-}
-
 interface AISHESnapshot {
   period: string;
   ger?: { male?: number; female?: number; total?: number; gpi?: number };
@@ -94,19 +87,9 @@ interface FuelItem {
   unit?: string;
 }
 
-interface CoLIndiaSnapshot {
-  period: string;
-  fuel?: Record<string, FuelItem>;
-}
-
 interface DairyItem {
   price?: number | null;
   unit?: string;
-}
-
-interface CoLTNSnapshot {
-  period: string;
-  food_dairy?: Record<string, DairyItem>;
 }
 
 interface UDISESnapshot {

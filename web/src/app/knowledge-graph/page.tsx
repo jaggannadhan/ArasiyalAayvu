@@ -63,6 +63,7 @@ interface GraphData {
 
 // ─── Layer / type config ────────────────────────────────────────────────────
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LAYER_CONFIG: Record<string, { label: string; order: number }> = {
   foundation: { label: "Foundation", order: 0 },
   socioeconomic: { label: "Social Pulse", order: 1 },

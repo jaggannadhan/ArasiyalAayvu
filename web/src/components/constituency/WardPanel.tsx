@@ -48,17 +48,6 @@ const TERM_TO_COUNCIL_YEAR: Record<number, number> = {
   2011: 2011,  // GCC elected Oct 2011, served through the 2011–2016 assembly term
 };
 
-const COUNCIL_NOTE: Record<number, { en: string; ta: string }> = {
-  2022: {
-    en: "2022 election results · OpenCity / LGD",
-    ta: "2022 தேர்தல் முடிவுகள் · OpenCity / LGD",
-  },
-  2011: {
-    en: "2011 GCC election · OpenCity / LGD · Names only (party data not in source)",
-    ta: "2011 GCC தேர்தல் · OpenCity / LGD · பெயர்கள் மட்டும் (கட்சி தரவு இல்லை)",
-  },
-};
-
 // Per-term message shown when there is no elected local body (administrator rule, etc.)
 const NO_COUNCIL_MSG: Record<number, { en: string; ta: string }> = {
   2016: {
@@ -106,9 +95,7 @@ export function WardPanel({
   const t = T[lang];
   const [expanded, setExpanded] = useState(false);
   const councilYear = TERM_TO_COUNCIL_YEAR[selectedTerm];
-  const councilNote = councilYear ? COUNCIL_NOTE[councilYear]?.[lang] : undefined;
   const noCouncilMsg = !councilYear ? NO_COUNCIL_MSG[selectedTerm]?.[lang] : undefined;
-  const hasCouncilData = ulbCouncillors.length > 0 || ulbHeads.length > 0;
 
   if (!wardMapping) return null;
 

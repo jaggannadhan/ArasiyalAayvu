@@ -39,6 +39,7 @@ function CandidatePhoto({ url, gender, name, className }: {
   const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
   // ECI URLs are blocked by Next.js optimizer (WAF) — render as plain <img> so browser fetches directly
   if (url?.includes("suvidha.eci.gov.in")) {
+    // eslint-disable-next-line @next/next/no-img-element
     return <img src={url} alt={name} className={className} />;
   }
   return <Image src={url ?? def} alt={name} width={64} height={80} sizes="64px" className={className} />;
@@ -160,6 +161,7 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
               {/* Party flag */}
               <div className="shrink-0 flex flex-col items-center gap-1">
                 {flagExt ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={`/party-flags/${c.party_id}.${flagExt}`}
                     alt={c.party}

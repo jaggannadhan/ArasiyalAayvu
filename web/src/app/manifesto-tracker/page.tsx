@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LiveCount } from "@/components/LiveCount";
 import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
-import { PillarTabs } from "@/components/manifesto/PillarTabs";
+
 import { PromiseCard } from "@/components/manifesto/PromiseCard";
 import { ComparisonSkeleton } from "@/components/manifesto/PromiseSkeleton";
 import { SDGAlignment, type SdgJumpTarget } from "@/components/manifesto/SDGAlignment";
@@ -22,6 +22,7 @@ import {
 
 const HAS_DATA_FOR = new Set([2021, 2026]);
 const STATUS_ORDER: PromiseStatus[] = ["Fulfilled", "Partial", "Proposed", "Abandoned", "Historical"];
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FILTER_STATUSES = ["All", "Fulfilled", "Partial", "Abandoned"] as const;
 type StatusFilter = (typeof FILTER_STATUSES)[number];
 
@@ -319,6 +320,7 @@ export default function ManifestoTrackerPage() {
           return (
             <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm bg-white flex items-stretch min-h-40">
               {ext && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={`/party-flags/${selectedParty.id}.${ext}`}
                   alt=""

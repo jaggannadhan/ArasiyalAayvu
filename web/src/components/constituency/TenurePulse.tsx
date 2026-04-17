@@ -103,7 +103,7 @@ function buildCrimeCategories(c: DistrictCrimeIndex): CrimeCategory[] {
   ];
 }
 
-export function TenurePulse({ districtName, waterRisk, crimeIndex, roadSafety, lang = "en" }: TenurePulseProps) {
+export function TenurePulse({ waterRisk, crimeIndex, roadSafety, lang = "en" }: TenurePulseProps) {
   const isTA = lang === "ta";
   const [crimeExpanded, setCrimeExpanded] = useState(false);
 
