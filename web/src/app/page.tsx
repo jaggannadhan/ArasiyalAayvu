@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
 import { useLanguage } from "@/lib/LanguageContext";
 import { prefetchOnIdle } from "@/lib/data-cache";
+import { LiveCount } from "@/components/LiveCount";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import type { FrequentlyBrowsedItem } from "@/lib/types";
@@ -77,12 +78,15 @@ export default function Home() {
               {isTA ? "தமிழ்நாடு தேர்தல் விழிப்புணர்வு" : "Tamil Nadu Election Awareness"}
             </p>
           </div>
-          <button
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
-          >
-            {lang === "en" ? "தமிழ்" : "English"}
-          </button>
+          <div className="flex items-center gap-3">
+            <LiveCount />
+            <button
+              onClick={() => setLang(lang === "en" ? "ta" : "en")}
+              className="text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
+            >
+              {lang === "en" ? "தமிழ்" : "English"}
+            </button>
+          </div>
         </div>
       </header>
 

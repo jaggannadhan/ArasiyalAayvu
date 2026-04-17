@@ -5,6 +5,20 @@ function buildApiUrl(path: string): string {
   return `${API_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+// Stable per-tab session ID — generated once and kept in sessionStorage so it
+// survives soft navigations but not tab close. Used by the backend's session-
+// tracking middleware to count "live users" without extra heartbeat requests.
+function getSessionId(): string {
+  if (typeof window === "undefined") return "";
+  const KEY = "aayvu_session_id";
+  let id = sessionStorage.getItem(KEY);
+  if (!id) {
+    id = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    sessionStorage.setItem(KEY, id);
+  }
+  return id;
+}
+
 async function parseError(response: Response): Promise<string> {
   try {
     const body = (await response.json()) as { detail?: string };
@@ -19,11 +33,13 @@ export async function apiGet<T>(
   path: string,
   init?: RequestInit
 ): Promise<T> {
+  const sessionId = getSessionId();
   const response = await fetch(buildApiUrl(path), {
     method: "GET",
     ...init,
     headers: {
       "Accept": "application/json",
+      ...(sessionId ? { "X-Session-ID": sessionId } : {}),
       ...(init?.headers ?? {}),
     },
   });

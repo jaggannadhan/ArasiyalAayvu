@@ -105,7 +105,66 @@ PILLAR_ORDER = {
     "Infrastructure": 4,
 }
 
+import threading
+import time as _time
+
 app = FastAPI(title=API_TITLE, version="1.0.0")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Live user count — piggybacks on existing API traffic (zero extra client
+# requests). Each request carrying an X-Session-ID header is logged into an
+# in-memory set. A background thread flushes distinct-session counts to a
+# single Firestore doc once per minute. GET /api/live-count reads that doc
+# (cached for 30s) to serve the badge number.
+# ─────────────────────────────────────────────────────────────────────────────
+
+_PRESENCE_WINDOW_SEC = 300      # "active in last 5 min"
+_FLUSH_INTERVAL_SEC  = 60       # flush to Firestore every 60s
+_COUNT_CACHE_SEC     = 30       # cache the count read for 30s
+
+# In-memory: {session_id: last_seen_epoch}
+_sessions: Dict[str, float] = {}
+_sessions_lock = threading.Lock()
+
+# Cached count result
+_live_count_cache: Dict[str, Any] = {"count": 0, "ts": 0.0}
+
+
+def _record_session(session_id: str) -> None:
+    with _sessions_lock:
+        _sessions[session_id] = _time.time()
+
+
+def _flush_presence() -> None:
+    """Flush active-session count from this instance to Firestore. Runs in a
+    background thread every _FLUSH_INTERVAL_SEC seconds."""
+    while True:
+        _time.sleep(_FLUSH_INTERVAL_SEC)
+        try:
+            now = _time.time()
+            with _sessions_lock:
+                # Prune stale sessions and count active ones.
+                stale = [sid for sid, ts in _sessions.items() if now - ts > _PRESENCE_WINDOW_SEC]
+                for sid in stale:
+                    del _sessions[sid]
+                active = len(_sessions)
+
+            # Write this instance's count + a server timestamp so the reader
+            # can sum across instances and ignore stale ones.
+            import socket
+            instance_id = os.getenv("K_REVISION", socket.gethostname())[:32]
+            _db.collection("meta").document("presence").collection("instances").document(instance_id).set({
+                "active": active,
+                "updated_at": firestore.SERVER_TIMESTAMP,
+            })
+        except Exception:
+            pass  # best-effort; never crash the background thread
+
+
+# Start the flusher thread (daemon so it dies with the process).
+_flusher = threading.Thread(target=_flush_presence, daemon=True)
+_flusher.start()
 
 # CORS: allow_origins defaults to * for local dev.
 # Set ALLOWED_ORIGINS env var (comma-separated) in Cloud Run to lock down to Vercel domain.
@@ -123,6 +182,24 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.requests import Request as StarletteRequest
+from starlette.responses import Response as StarletteResponse
+
+
+class SessionTrackingMiddleware(BaseHTTPMiddleware):
+    """Record X-Session-ID from every inbound request. No extra client calls
+    needed — the header piggybacks on normal data fetches."""
+    async def dispatch(self, request: StarletteRequest, call_next) -> StarletteResponse:  # type: ignore[override]
+        sid = request.headers.get("x-session-id")
+        if sid:
+            _record_session(sid)
+        return await call_next(request)
+
+
+app.add_middleware(SessionTrackingMiddleware)
 
 with MAP_PATH.open("r", encoding="utf-8") as f:
     CONSTITUENCY_MAP: Dict[str, Dict[str, Any]] = json.load(f)
@@ -321,6 +398,42 @@ def health() -> Dict[str, Any]:
         "project_id": PROJECT_ID,
         "ls_map_loaded": len(ASSEMBLY_TO_LS),
     }
+
+
+@app.get("/api/live-count")
+def live_count() -> Dict[str, Any]:
+    """Return the approximate number of users active in the last 5 minutes.
+
+    Reads from Firestore `meta/presence/instances/*` — each Cloud Run instance
+    writes its local session count every 60s. We sum across instances whose
+    `updated_at` is within the last 2 minutes (stale instances are ignored).
+    Result is cached in-memory for 30s so high traffic doesn't hammer Firestore.
+    """
+    now = _time.time()
+    if now - _live_count_cache["ts"] < _COUNT_CACHE_SEC:
+        return {"count": _live_count_cache["count"], "cached": True}
+
+    try:
+        from datetime import datetime, timezone, timedelta
+        cutoff = datetime.now(timezone.utc) - timedelta(seconds=_FLUSH_INTERVAL_SEC * 2)
+        docs = list(
+            _db.collection("meta")
+            .document("presence")
+            .collection("instances")
+            .stream()
+        )
+        total = 0
+        for d in docs:
+            data = d.to_dict() or {}
+            updated = data.get("updated_at")
+            if updated and updated.replace(tzinfo=timezone.utc) >= cutoff:
+                total += data.get("active", 0)
+
+        _live_count_cache["count"] = total
+        _live_count_cache["ts"] = now
+        return {"count": total, "cached": False}
+    except Exception:
+        return {"count": _live_count_cache.get("count", 0), "cached": True}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

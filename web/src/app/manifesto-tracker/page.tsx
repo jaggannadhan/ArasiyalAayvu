@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
+import { LiveCount } from "@/components/LiveCount";
 import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
 import { PillarTabs } from "@/components/manifesto/PillarTabs";
 import { PromiseCard } from "@/components/manifesto/PromiseCard";
@@ -236,12 +237,15 @@ export default function ManifestoTrackerPage() {
               </p>
             </div>
           </div>
-          <button
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
-          >
-            {lang === "en" ? "தமிழ்" : "English"}
-          </button>
+          <div className="flex items-center gap-3 shrink-0">
+            <LiveCount />
+            <button
+              onClick={() => setLang(lang === "en" ? "ta" : "en")}
+              className="text-xs font-bold px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors text-gray-900"
+            >
+              {lang === "en" ? "தமிழ்" : "English"}
+            </button>
+          </div>
         </div>
       </header>
 
