@@ -41,7 +41,10 @@ export function LiveCount() {
     };
   }, []);
 
-  if (count === null || count === 0) return null;
+  // Always show at least 1 — you're a user. The backend count lags by up to
+  // 60s (flush interval) so a fresh session reads 0 from Firestore even though
+  // someone (you) is clearly here.
+  const display = Math.max(count ?? 1, 1);
 
   return (
     <span className="inline-flex items-center gap-1.5 text-[11px] text-gray-500 font-semibold tabular-nums">
@@ -49,7 +52,7 @@ export function LiveCount() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
       </span>
-      {count} {isTA ? "நேரடி பயனர்கள்" : "live users"}
+      {display} {isTA ? "நேரடி பயனர்கள்" : "live users"}
     </span>
   );
 }
