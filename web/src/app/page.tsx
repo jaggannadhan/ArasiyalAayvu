@@ -204,6 +204,20 @@ export default function Home() {
             </div>
           </Link>
           <Link
+            href="/politicians"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <p className="text-lg mb-1">👤</p>
+            <p className="text-sm font-bold text-gray-900">
+              {isTA ? "அரசியல்வாதிகள் சுயவிவரம்" : "Politician Profiles"}
+            </p>
+            <p className="text-xs text-gray-500">
+              {isTA
+                ? "சொத்து · குற்ற வழக்குகள் · கட்சி வரலாறு · நகல் நீக்கம்"
+                : "Assets · Criminal cases · Party history · Deduplication"}
+            </p>
+          </Link>
+          <Link
             href="/pincode-map"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
           >

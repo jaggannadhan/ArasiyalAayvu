@@ -36,7 +36,7 @@ export function FeedbackFooter() {
               India is evolving — both in digital footprint and political transparency — but we&apos;re not there yet!{" "}<br/>
               <span className="font-semibold text-gray-600">⚠ Some data here may be wrong.</span>
               {" "}Help us fix it.{" "}
-              <span className="font-semibold text-gray-600">Be a citizen, not a spectator.</span>
+              <span className="font-semibold text-gray-600">Be a citizen, not a spectator!</span>
             </p>
           )}
 

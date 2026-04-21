@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scrapers/scrape_politician_photos.py --limit 10 --sleep 10)",
+      "Bash(python3 -m playwright install chromium)",
+      "Bash(python3 scrapers/scrape_politician_photos.py --limit 5 --sleep 5)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

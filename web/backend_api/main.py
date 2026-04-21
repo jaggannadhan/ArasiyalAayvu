@@ -174,16 +174,6 @@ _allow_origins: list[str] = (
     else [o.strip() for o in _raw_origins.split(",") if o.strip()]
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=_allow_origins,
-    allow_origin_regex=r"https://.*\.vercel\.app",
-    allow_credentials=False,
-    allow_methods=["GET", "POST"],
-    allow_headers=["*"],
-)
-
-
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request as StarletteRequest
 from starlette.responses import Response as StarletteResponse
@@ -199,7 +189,18 @@ class SessionTrackingMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
+# Middleware order matters: last-added = outermost. CORSMiddleware must be
+# outermost so it adds Access-Control-* headers even when inner middleware
+# or the route handler raises an error (404, 500, etc.).
 app.add_middleware(SessionTrackingMiddleware)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_allow_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 with MAP_PATH.open("r", encoding="utf-8") as f:
     CONSTITUENCY_MAP: Dict[str, Dict[str, Any]] = json.load(f)
@@ -321,6 +322,80 @@ def _fetch_mla_by_constituency(
             return _doc_to_dict(docs[0])
 
     return None
+
+
+def _fetch_mla_from_profile(
+    constituency_slug: str, election_year: int
+) -> Optional[Dict[str, Any]]:
+    """Try to fetch MLA data from politician_profile via the reverse index.
+    Returns a dict shaped like candidate_accountability for backward compat,
+    or None if not found."""
+    slug_clean = constituency_slug.rstrip("_")
+    index_key = f"{election_year}_{slug_clean}"
+
+    # Also try without SC/ST suffix
+    base_slug = re.sub(r"_(sc|st)$", "", slug_clean, flags=re.IGNORECASE)
+    keys_to_try = [index_key]
+    if base_slug != slug_clean:
+        keys_to_try.append(f"{election_year}_{base_slug}")
+
+    profile_id = None
+    for key in keys_to_try:
+        idx_doc = _db.collection("constituency_mla_index").document(key).get()
+        if idx_doc.exists:
+            profile_id = (idx_doc.to_dict() or {}).get("profile_id")
+            break
+
+    if not profile_id:
+        return None
+
+    prof_doc = _db.collection("politician_profile").document(profile_id).get()
+    if not prof_doc.exists:
+        return None
+
+    prof = prof_doc.to_dict() or {}
+    timeline = prof.get("timeline") or []
+
+    # Find the timeline entry matching this year + constituency
+    entry = None
+    for t in timeline:
+        t_slug = (t.get("constituency_slug") or "").rstrip("_")
+        if t.get("year") == election_year and (t_slug == slug_clean or t_slug == base_slug):
+            entry = t
+            break
+
+    if not entry:
+        return None
+
+    # Shape the response to match candidate_accountability format so the
+    # frontend doesn't need changes. Profile-level fields override where richer.
+    return {
+        "doc_id": prof_doc.id,
+        "mla_name": prof.get("canonical_name") or entry.get("mla_name", ""),
+        "party": entry.get("party"),
+        "photo_url": prof.get("photo_url"),
+        "election_year": election_year,
+        "constituency": entry.get("constituency"),
+        "constituency_slug": entry.get("constituency_slug"),
+        "assets_cr": entry.get("assets_cr"),
+        "movable_assets_cr": entry.get("movable_assets_cr"),
+        "immovable_assets_cr": entry.get("immovable_assets_cr"),
+        "liabilities_cr": entry.get("liabilities_cr"),
+        "net_assets_cr": entry.get("net_assets_cr"),
+        "is_crorepati": entry.get("is_crorepati"),
+        "criminal_cases": entry.get("criminal_cases") or [],
+        "criminal_cases_total": entry.get("criminal_cases_total") or 0,
+        "criminal_severity": entry.get("criminal_severity") or "CLEAN",
+        "education": entry.get("education"),
+        "education_tier": entry.get("education_tier"),
+        "source_url": entry.get("source_url"),
+        "ground_truth_confidence": entry.get("ground_truth_confidence"),
+        # Profile-level extras
+        "gender": prof.get("gender"),
+        "age": prof.get("age"),
+        "aliases": prof.get("aliases") or [],
+        "_source": "politician_profile",
+    }
 
 
 def _filter_metrics(docs: List[firestore.DocumentSnapshot]) -> List[Dict[str, Any]]:
@@ -537,7 +612,13 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
         district_slug = district_meta.get("district_slug") if district_meta else None
 
         constituency_name = district_meta.get("constituency_name", "") if district_meta else ""
-        mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name, election_year=term)
+
+        # Try politician_profile first (single source of truth with merged
+        # timelines, standardized names, and curated photos). Fall back to
+        # candidate_accountability if not found in the index.
+        mla = _fetch_mla_from_profile(slug, election_year=term)
+        if not mla:
+            mla = _fetch_mla_by_constituency(slug, constituency_id, constituency_name, election_year=term)
 
         # Enrich MLA with photo_url from mla_profiles (2011 + 2016 + 2021)
         if mla and term in {2011, 2016, 2021}:
@@ -1484,5 +1565,291 @@ def state_vitals(category: str = Query("all")) -> Dict[str, List[Dict[str, Any]]
             result[cat] = records
 
         return jsonable_encoder(result)
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Politician Profiles — admin CRUD for the master person-identity table.
+# ─────────────────────────────────────────────────────────────────────────────
+
+_POLITICIAN_COL = "politician_profile"
+
+
+def _extract_name_and_initials(name: str) -> tuple[str, str]:
+    """Split a standardized name like 'Ajith Kumar A.J.' into:
+       name_part = 'ajith kumar' (lowercased, for grouping)
+       initials  = 'a.j.' (lowercased, for matching — empty string if no initials)
+    """
+    import re as _re
+    s = _re.sub(r"[,;@]", " ", name.strip())
+    s = " ".join(s.split())
+
+    # Separate trailing initials (e.g., "A.J." at the end) from name parts.
+    # Also handle title prefixes at the front (Dr., Adv., etc.) — keep in name.
+    tokens = s.split()
+    name_parts: list[str] = []
+    init_parts: list[str] = []
+
+    for t in tokens:
+        clean = t.strip(".").strip()
+        # Single letter or dotted cluster (A., M.K., A.R.S.)
+        if _re.fullmatch(r"([A-Za-z]\.?)+", t.strip()) and len(clean.replace(".", "")) <= 3 and all(len(seg) <= 1 for seg in clean.split(".")):
+            for ch in _re.findall(r"[A-Za-z]", t):
+                init_parts.append(ch.lower())
+        else:
+            name_parts.append(clean.lower())
+
+    return " ".join(name_parts), ".".join(init_parts) + ("." if init_parts else "")
+
+
+@app.get("/api/politicians")
+def list_politicians(
+    page: int = Query(1, ge=1),
+    limit: int = Query(100, ge=1, le=500),
+    q: Optional[str] = Query(None, description="Search by name"),
+    sort: str = Query("canonical_name"),
+    order: str = Query("asc", pattern="^(asc|desc)$"),
+    duplicates_only: bool = Query(False, description="Show only records with duplicate names"),
+    needs_review: bool = Query(False, description="Show only records flagged for name review"),
+    no_photo: bool = Query(False, description="Show only records without a profile picture"),
+) -> Dict[str, Any]:
+    """Paginated politician profiles with optional name search."""
+    try:
+        col = _db.collection(_POLITICIAN_COL)
+        all_docs = list(col.stream())
+        docs_list = []
+        needle = (q or "").strip().lower()
+
+        for d in all_docs:
+            data = d.to_dict() or {}
+            data["doc_id"] = d.id
+            if needle:
+                name = (data.get("canonical_name") or "").lower()
+                aliases = [a.lower() for a in (data.get("aliases") or [])]
+                party = (data.get("current_party") or "").lower()
+                constituency = (data.get("current_constituency") or "").lower()
+                if not (needle in name or any(needle in a for a in aliases) or needle in party or needle in constituency):
+                    continue
+            # Compute latest_year for sorting
+            tl = data.get("timeline") or data.get("elections") or []
+            years = [e.get("year") for e in tl if e.get("year")]
+            data["latest_year"] = max(years) if years else 0
+            docs_list.append(data)
+
+        # Needs-review filter
+        if needs_review:
+            docs_list = [d for d in docs_list if d.get("name_needs_review") is True]
+
+        # No-photo filter
+        if no_photo:
+            docs_list = [d for d in docs_list if not d.get("photo_url")]
+
+        # Strict duplicate filter — three rules must ALL be satisfied:
+        #   1. Same name spelling + initials (no-initials matches any)
+        #   2. Share at least one constituency_slug across timelines
+        #   3. Same gender (null matches any)
+        if duplicates_only:
+            from collections import defaultdict as _defaultdict
+
+            # Pre-compute per-doc: name_part, initials, constituency set, gender
+            for d in docs_list:
+                np, ini = _extract_name_and_initials(d.get("canonical_name") or "")
+                d["_name_part"] = np
+                d["_initials"] = ini
+                tl = d.get("timeline") or d.get("elections") or []
+                d["_constituencies"] = {e.get("constituency_slug") for e in tl if e.get("constituency_slug")}
+
+            # Group by name_part (bare name without initials)
+            groups: dict[str, list[Dict[str, Any]]] = _defaultdict(list)
+            for d in docs_list:
+                groups[d["_name_part"]].append(d)
+
+            # Within each group, find records that form duplicate pairs
+            dup_ids: set[str] = set()
+            for name_key, members in groups.items():
+                if len(members) < 2:
+                    continue
+                for i, a in enumerate(members):
+                    for j, b in enumerate(members):
+                        if i >= j:
+                            continue
+                        # Rule 1: initials must match, or one/both have no initials
+                        a_ini = a["_initials"]
+                        b_ini = b["_initials"]
+                        if a_ini and b_ini and a_ini != b_ini:
+                            continue
+                        # Rule 2: share at least one constituency
+                        if not (a["_constituencies"] & b["_constituencies"]):
+                            continue
+                        # Rule 3: same gender (null matches any)
+                        a_gen = a.get("gender")
+                        b_gen = b.get("gender")
+                        if a_gen and b_gen and a_gen != b_gen:
+                            continue
+                        # All three rules satisfied — both are duplicates
+                        dup_ids.add(a["doc_id"])
+                        dup_ids.add(b["doc_id"])
+
+            docs_list = [d for d in docs_list if d["doc_id"] in dup_ids]
+            # Attach grouping key for sorted output
+            for d in docs_list:
+                d["_dedup_key"] = d["_name_part"]
+
+            # Clean up temp fields
+            for d in docs_list:
+                d.pop("_name_part", None)
+                d.pop("_initials", None)
+                d.pop("_constituencies", None)
+
+        # Sort — when showing duplicates, group by normalized name first so
+        # matching entries sit together; user's chosen sort applies within groups.
+        reverse = order == "desc"
+        def sort_key(item: Dict[str, Any]) -> Any:
+            val = item.get(sort)
+            if val is None:
+                return "" if not reverse else "zzz"
+            if isinstance(val, (int, float)):
+                return val
+            return str(val).lower()
+
+        if duplicates_only:
+            docs_list.sort(key=lambda d: (d.get("_dedup_key", ""), sort_key(d)), reverse=reverse)
+            for d in docs_list:
+                d.pop("_dedup_key", None)
+        else:
+            docs_list.sort(key=sort_key, reverse=reverse)
+
+        total = len(docs_list)
+        start = (page - 1) * limit
+        page_items = docs_list[start : start + limit]
+
+        return {
+            "total": total,
+            "page": page,
+            "limit": limit,
+            "total_pages": (total + limit - 1) // limit,
+            "items": jsonable_encoder(page_items),
+        }
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+@app.delete("/api/politicians/{doc_id}")
+def delete_politician(doc_id: str) -> Dict[str, Any]:
+    """Delete a single politician profile."""
+    try:
+        ref = _db.collection(_POLITICIAN_COL).document(doc_id)
+        doc = ref.get()
+        if not doc.exists:
+            raise HTTPException(status_code=404, detail=f"Profile not found: {doc_id}")
+        ref.delete()
+        return {"ok": True, "deleted": doc_id}
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+class MergeRequest(BaseModel):
+    source_id: str
+    target_id: str
+    education_override: Optional[str] = None  # user-resolved when source/target disagree
+
+
+@app.post("/api/politicians/merge")
+def merge_politicians(payload: MergeRequest) -> Dict[str, Any]:
+    """Merge source into target: copy elections, add name as alias, delete source."""
+    try:
+        src_ref = _db.collection(_POLITICIAN_COL).document(payload.source_id)
+        tgt_ref = _db.collection(_POLITICIAN_COL).document(payload.target_id)
+        src_doc = src_ref.get()
+        tgt_doc = tgt_ref.get()
+        if not src_doc.exists:
+            raise HTTPException(status_code=404, detail=f"Source not found: {payload.source_id}")
+        if not tgt_doc.exists:
+            raise HTTPException(status_code=404, detail=f"Target not found: {payload.target_id}")
+
+        src = src_doc.to_dict() or {}
+        tgt = tgt_doc.to_dict() or {}
+
+        # Step 1 — fill every gap in target with source's data. This ensures
+        # no field is lost: if target has null/empty for any key and source
+        # has a value, it carries over.
+        SKIP_KEYS = {"doc_id", "created_at"}
+        merged = dict(tgt)
+        for key, val in src.items():
+            if key in SKIP_KEYS:
+                continue
+            existing = merged.get(key)
+            if existing is None or existing == "" or existing == []:
+                merged[key] = val
+
+        # Step 2 — merge timeline (union, avoid duplicating same year+constituency)
+        tgt_timeline = list(tgt.get("timeline") or tgt.get("elections") or [])
+        existing_keys = {(e.get("year"), e.get("constituency_slug")) for e in tgt_timeline}
+        for e in (src.get("timeline") or src.get("elections") or []):
+            if (e.get("year"), e.get("constituency_slug")) not in existing_keys:
+                tgt_timeline.append(e)
+        merged["timeline"] = tgt_timeline
+        merged.pop("elections", None)  # drop legacy key if present
+
+        # Step 3 — merge aliases (union + add source's canonical name)
+        aliases = list(tgt.get("aliases") or [])
+        src_name = (src.get("canonical_name") or "").strip()
+        if src_name and src_name not in aliases and src_name != tgt.get("canonical_name"):
+            aliases.append(src_name)
+        for a in (src.get("aliases") or []):
+            if a not in aliases and a != tgt.get("canonical_name"):
+                aliases.append(a)
+        merged["aliases"] = aliases
+
+        # Step 4 — prefer non-null photo
+        merged["photo_url"] = tgt.get("photo_url") or src.get("photo_url")
+
+        # Step 5 — recompute aggregate fields from the full timeline
+        wins = sum(1 for e in tgt_timeline if e.get("won") is True)
+        losses = sum(1 for e in tgt_timeline if e.get("won") is False)
+        sorted_el = sorted(tgt_timeline, key=lambda e: e.get("year") or 0, reverse=True)
+        latest = sorted_el[0] if sorted_el else {}
+
+        merged["win_count"] = wins
+        merged["loss_count"] = losses
+        merged["total_contested"] = len(tgt_timeline)
+        merged["current_party"] = latest.get("party") or tgt.get("current_party") or src.get("current_party")
+        merged["current_constituency"] = latest.get("constituency") or tgt.get("current_constituency") or src.get("current_constituency")
+        merged["current_constituency_slug"] = latest.get("constituency_slug") or tgt.get("current_constituency_slug") or src.get("current_constituency_slug")
+
+        # Assets & criminal: always from most recent election (these can go up or down)
+        merged["total_assets_cr"] = latest.get("assets_cr") or tgt.get("total_assets_cr") or src.get("total_assets_cr")
+        merged["total_liabilities_cr"] = latest.get("liabilities_cr") or tgt.get("total_liabilities_cr") or src.get("total_liabilities_cr")
+        merged["net_assets_cr"] = tgt.get("net_assets_cr") or src.get("net_assets_cr")
+        merged["criminal_cases_total"] = latest.get("criminal_cases_total") if latest.get("criminal_cases_total") is not None else (tgt.get("criminal_cases_total") or src.get("criminal_cases_total"))
+        merged["criminal_severity"] = latest.get("criminal_severity") or tgt.get("criminal_severity") or src.get("criminal_severity")
+
+        merged["gender"] = tgt.get("gender") or src.get("gender")
+
+        # Age: take the highest (politician was younger in earlier elections)
+        ages = [a for a in [tgt.get("age"), src.get("age")] if isinstance(a, (int, float))]
+        merged["age"] = max(ages) if ages else None
+
+        # Education: user-resolved override wins; otherwise fall back to most recent
+        if payload.education_override:
+            merged["education"] = payload.education_override
+        else:
+            merged["education"] = latest.get("education") or tgt.get("education") or src.get("education")
+
+        # Write the fully merged doc (set, not update, so no field is left behind)
+        merged.pop("doc_id", None)
+        tgt_ref.set(merged)
+        src_ref.delete()
+
+        # Return the full merged target doc so the frontend can update in-place
+        # without refetching the entire list.
+        merged["doc_id"] = payload.target_id
+        return jsonable_encoder({
+            "ok": True,
+            "merged": payload.source_id,
+            "into": payload.target_id,
+            "target": merged,
+        })
     except (GoogleAPICallError, RetryError) as exc:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
