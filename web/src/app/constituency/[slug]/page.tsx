@@ -5,6 +5,8 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import { LiveCount } from "@/components/LiveCount";
+import { ProfileModal, type PoliticianProfile } from "@/components/politicians/ProfileModal";
+import { apiGet as apiGetRaw } from "@/lib/api-client";
 import { MlaCard } from "@/components/constituency/MlaCard";
 import { CandidatesPanel } from "@/components/constituency/CandidatesPanel";
 import { WardPanel } from "@/components/constituency/WardPanel";
@@ -75,22 +77,16 @@ export default function ConstituencyPage() {
 
   const { lang, setLang } = useLanguage();
 
-  // Start with 2026 for SSR consistency (localStorage isn't available on the
-  // server). After hydration, sync from localStorage so the user lands on
-  // whichever term they were viewing before refresh.
-  const [selectedTerm, setSelectedTermRaw] = useState(2026);
-  useEffect(() => {
-    try {
-      const saved = parseInt(localStorage.getItem("aayvu_selected_term") ?? "", 10);
-      if (TERMS.some((t) => t.electionYear === saved) && saved !== 2026) {
-        setSelectedTermRaw(saved);
-      }
-    } catch { /* ignore */ }
-  }, []);
-  const setSelectedTerm = (term: number) => {
-    setSelectedTermRaw(term);
-    try { localStorage.setItem("aayvu_selected_term", String(term)); } catch { /* ignore */ }
-  };
+  // Always show the latest term (2026) when opening a constituency page.
+  const [selectedTerm, setSelectedTerm] = useState(2026);
+  const [profileModal, setProfileModal] = useState<PoliticianProfile | null>(null);
+
+  function handleMlaClick(mlaDocId: string | undefined) {
+    if (!mlaDocId) return;
+    apiGetRaw<PoliticianProfile>(`/api/politicians/${encodeURIComponent(mlaDocId)}`)
+      .then(setProfileModal)
+      .catch(() => { /* silent — profile not found */ });
+  }
 
   // `data` is derived on every render directly from the shared cache, so a
   // tab/term switch with a warm cache renders instantly with no skeleton flash.
@@ -299,19 +295,24 @@ export default function ConstituencyPage() {
               </div>
             )}
 
-            {/* MLA card */}
+            {/* MLA card — clickable to show full politician profile */}
             {data.mla && (() => {
               const e2021 = (electorateData2021 as Record<string, { winner_votes?: number; winner_pct?: number }>)[slug];
               const winnerVotes = selectedTerm === 2021 ? e2021?.winner_votes : undefined;
               const winnerPct   = selectedTerm === 2021 ? e2021?.winner_pct   : undefined;
               return (
-                <MlaCard
-                  mla={data.mla!}
-                  district={effectiveDistrict}
-                  lang={lang}
-                  winnerVotes={winnerVotes}
-                  winnerPct={winnerPct}
-                />
+                <div
+                  className="cursor-pointer"
+                  onClick={() => handleMlaClick(data.mla?.doc_id)}
+                >
+                  <MlaCard
+                    mla={data.mla!}
+                    district={effectiveDistrict}
+                    lang={lang}
+                    winnerVotes={winnerVotes}
+                    winnerPct={winnerPct}
+                  />
+                </div>
               );
             })()}
 
@@ -355,6 +356,10 @@ export default function ConstituencyPage() {
           </>
         )}
       </div>
+
+      {profileModal && (
+        <ProfileModal profile={profileModal} onClose={() => setProfileModal(null)} />
+      )}
     </main>
   );
 }

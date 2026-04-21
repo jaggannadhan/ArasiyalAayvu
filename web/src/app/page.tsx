@@ -182,28 +182,6 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/knowledge-graph"
-            className="bg-gray-950 rounded-2xl border border-gray-700 p-4 hover:shadow-sm hover:border-gray-500 transition-all col-span-2"
-          >
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <p className="text-lg mb-1">🕸️</p>
-                <p className="text-sm font-bold text-white">
-                  {isTA ? "அறிவு வரைபடம்" : "Knowledge Graph"}
-                </p>
-                <p className="text-xs text-gray-400">
-                  {isTA
-                    ? "அரசியல் · பொருளாதாரம் · SDG · உறவுகள்"
-                    : "Politics · Socioeconomics · SDG · Relationships"}
-                </p>
-              </div>
-              <div className="flex-shrink-0 text-right">
-                <p className="text-lg font-black text-blue-400">5.5K</p>
-                <p className="text-[10px] text-gray-500 font-semibold">nodes</p>
-              </div>
-            </div>
-          </Link>
-          <Link
             href="/politicians"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
           >
@@ -228,6 +206,33 @@ export default function Home() {
             <p className="text-xs text-gray-500">
               {isTA ? "பின்கோடு → தொகுதி → மாவட்டம்" : "Pincode → Constituency → District"}
             </p>
+          </Link>
+          <Link
+            href="/knowledge-graph"
+            className="bg-gray-950 rounded-2xl border border-gray-700 p-4 hover:shadow-sm hover:border-gray-500 transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-lg">🕸️</span>
+                  <span className="text-[11px] font-semibold italic text-gray-400">
+                    {isTA ? "எல்லாம் எப்படி இணைக்கப்பட்டுள்ளது என்று அறிய விரும்புகிறீர்களா?" : "Want to know how everything is connected?"}
+                  </span>
+                </div>
+                <p className="text-sm font-bold text-white">
+                  {isTA ? "அறிவு வரைபடம்" : "Knowledge Graph"}
+                </p>
+                <p className="text-xs text-gray-400">
+                  {isTA
+                    ? "அரசியல் · பொருளாதாரம் · SDG · உறவுகள்"
+                    : "Politics · Socioeconomics · SDG · Relationships"}
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-right">
+                <p className="text-lg font-black text-blue-400">5.5K</p>
+                <p className="text-[10px] text-gray-500 font-semibold">nodes</p>
+              </div>
+            </div>
           </Link>
         </div>
 

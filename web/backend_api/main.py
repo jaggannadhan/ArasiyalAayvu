@@ -1735,6 +1735,21 @@ def list_politicians(
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
 
+@app.get("/api/politicians/{doc_id}")
+def get_politician(doc_id: str) -> Dict[str, Any]:
+    """Get a single politician profile by doc_id."""
+    try:
+        ref = _db.collection(_POLITICIAN_COL).document(doc_id)
+        doc = ref.get()
+        if not doc.exists:
+            raise HTTPException(status_code=404, detail=f"Profile not found: {doc_id}")
+        data = doc.to_dict() or {}
+        data["doc_id"] = doc.id
+        return jsonable_encoder(data)
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
 @app.delete("/api/politicians/{doc_id}")
 def delete_politician(doc_id: str) -> Dict[str, Any]:
     """Delete a single politician profile."""
