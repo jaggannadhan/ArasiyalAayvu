@@ -1,52 +1,48 @@
-# ArasiyalAayvu Web + Backend API
+# ArasiyalAayvu — Web + Backend API
 
-This repository contains:
-- `web` frontend (Next.js, mobile + desktop)
-- `backend_api` Python API (FastAPI) that reads Firestore server-side
+The user-facing application: Next.js 15 frontend + FastAPI backend.
 
-The frontend no longer reads Firestore directly from the browser. It calls Python APIs.
+See the [root README](../README.md) for the full project overview.
 
-## Run Frontend
+## Quick Start
 
 ```bash
-cd /Users/jv/Documents/MyProjects/ArasiyalAayvu/web
+cd web
 npm install
-make run-fe
+make run-fe        # Frontend on http://localhost:3000
+make run-be        # Backend on http://localhost:8000
 ```
 
-## Run Backend API
+## Environment
 
-```bash
-cd /Users/jv/Documents/MyProjects/ArasiyalAayvu/web
-make install-be-deps
-make run-be
-```
-
-Backend runs on `http://localhost:8000` by default.
-
-## Frontend API base URL
-
-Create `web/.env.local` if your API is not on localhost:
+Create `web/.env.local`:
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+VERCEL_API_KEY=<optional-vercel-token>
 ```
 
-## API Endpoints
-
-- `GET /health`
-- `GET /api/manifesto-promises?year=all|2021|2026`
-- `GET /api/constituency/{slug}`
-
-## Firestore Credentials (server-side)
-
-The backend API uses Google Cloud credentials (ADC/service account), not browser API keys.
-
-Local options:
+Backend requires Google Cloud credentials:
 
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/service-account.json
 export GOOGLE_CLOUD_PROJECT=naatunadappu
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
 ```
 
-For deployment, attach a service account to the runtime (Cloud Run/GKE/VM), and keep Firestore access server-side only.
+## Structure
+
+```
+src/app/                    8 page routes (App Router)
+src/components/             Shared components (ProfileModal, InfoTip, LiveCount, etc.)
+src/lib/                    Client infra (data-cache, LanguageContext, CookieConsent, api-client)
+src/hooks/                  Custom hooks (useManifestos)
+backend_api/
+  main.py                   40+ API endpoints
+  graph_query.py            NetworkX runtime traversal
+  sdg_alignment.py          Pre-computed SDG coverage
+```
+
+## Deployment
+
+- **Frontend:** Vercel (auto-deploys from `main` branch)
+- **Backend:** Cloud Run via `gcloud builds submit --config cloudbuild.yaml`
