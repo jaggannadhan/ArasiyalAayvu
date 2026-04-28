@@ -54,24 +54,24 @@ ArasiyalAayvu ingests, normalizes, and presents **all public political data for 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        GOVERNMENT DATA SOURCES                          │
-│  ECI · MyNeta · MOSPI · NCRB · NITI Aayog · RBI · CAG · MOFPI · CEA     │
-│  PLFS · SRS · HCES · AISHE · UDISE+ · NFHS-5 · PRS · ASER · MNRE        │
+│                        GOVERNMENT DATA SOURCES                         │
+│  ECI · MyNeta · MOSPI · NCRB · NITI Aayog · RBI · CAG · MOFPI · CEA  │
+│  PLFS · SRS · HCES · AISHE · UDISE+ · NFHS-5 · PRS · ASER · MNRE    │
 └───────────────────────────────┬─────────────────────────────────────────┘
                                 │
-                    ┌───────────▼───────────────────────┐
-                    │   INGESTION LAYER                 │
-                    │   50+ Python scrapers             │
-                    │                                   │
-                    │ • BeautifulSoup (HTML)            │
-                    │ • Playwright (JS-rendered sites)  │
-                    │ • pypdf (PDF extraction)          │
-                    │ • Gemini 2.5 Pro (OCR)            │
-                    │ • Custom Tamil font               │
-                    │   decoders                        │
-                    └───────────┬───────────────────────┘
+                    ┌───────────▼───────────┐
+                    │   INGESTION LAYER     │
+                    │   50+ Python scrapers │
+                    │                       │
+                    │ • BeautifulSoup (HTML) │
+                    │ • Playwright (JS-rendered sites)
+                    │ • pypdf (PDF extraction)│
+                    │ • Gemini 2.5 Pro (OCR) │
+                    │ • Custom Tamil font    │
+                    │   decoders             │
+                    └───────────┬───────────┘
                                 │
-          ┌─────────────────────▼──────────────────────┐
+          ┌─────────────────────▼─────────────────────┐
           │            GOOGLE CLOUD FIRESTORE          │
           │            25+ collections                 │
           │                                            │
@@ -81,16 +81,16 @@ ArasiyalAayvu ingests, normalizes, and presents **all public political data for 
           │  │ (5,000+)     │  │ (1,889)           │   │
           │  └──────┬───────┘  └────────┬──────────┘   │
           │         │                   │              │
-          │  ┌──────▼───────┐  ┌───────▼──────────┐    │
+          │  ┌──────▼───────┐  ┌───────▼──────────┐   │
           │  │ constituency │  │ knowledge_graph   │   │
           │  │ _mla_index   │  │ (6,871 nodes)     │   │
           │  │ (912 entries)│  │ (16,856 edges)    │   │
-          │  └──────────────┘  └──────────────────┘    │
+          │  └──────────────┘  └──────────────────┘   │
           │                                            │
           │  candidates_2026 · state_finances · plfs   │
           │  srs · hces · ncrb · udise · asi · energy  │
           │  mofpi · rbi_state_finances · feedback     │
-          └─────────────────────┬──────────────────────┘
+          └─────────────────────┬─────────────────────┘
                                 │
                     ┌───────────▼───────────┐
                     │   FastAPI BACKEND     │
@@ -138,30 +138,30 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
 │  (legacy     │────▶│  Multimodal         │────▶│  Promises JSON   │
 │   fonts)     │     │                     │     │                  │
 │              │     │  • Reads PDF as     │     │  • Tamil Unicode │
-│  462 pages   │     │    images (bypasses │     │  • English trans.│
+│  462 pages   │     │    images (bypasses  │     │  • English trans. │
 │  NTK example │     │    font encoding)   │     │  • Category      │
 │              │     │  • OCR → Unicode    │     │  • Stance vibe   │
 │              │     │  • Translate Tamil  │     │  • Page ref      │
 │              │     │  • JSON schema      │     │                  │
-│              │     │    enforced output  │     │  1,065 promises  │
+│              │     │    enforced output   │     │  1,065 promises  │
 └──────────────┘     └─────────────────────┘     └────────┬─────────┘
                                                           │
-                     ┌─────────────────────┐     ┌────────▼───────────┐
-                     │  Enrichment Pass    │     │  Deep Analysis     │
-                     │  (TN-grounded)      │◀────│  per promise       │
-                     │                     │     │                    │
-                     │  • TN Budget 2025-26│     │  • impact_mechanism│
-                     │    context injected │     │  • fiscal_cost_note│
-                     │  • Reference data:  │     │  • sustainability  │
-                     │    population, BPL, │     │    _verdict        │
-                     │    farmer count,    │     │  • promise_        │
-                     │    MGNREGS wage     │     │    components[]    │
-                     │  • Arithmetic-      │     │  • implementation  │
-                     │    required rule    │     │    _risk           │
-                     │  • "data unavailable│     │  • root_cause_     │
-                     │    — cannot calc"   │     │    addressed       │
-                     │   (no hallucination)│     │                    │
-                     └─────────────────────┘     └────────────────────┘
+                     ┌─────────────────────┐     ┌────────▼─────────┐
+                     │  Enrichment Pass    │     │  Deep Analysis   │
+                     │  (TN-grounded)      │◀────│  per promise     │
+                     │                     │     │                  │
+                     │  • TN Budget 2025-26│     │  • impact_mechanism
+                     │    context injected  │     │  • fiscal_cost_note
+                     │  • Reference data:  │     │  • sustainability │
+                     │    population, BPL,  │     │    _verdict      │
+                     │    farmer count,     │     │  • promise_      │
+                     │    MGNREGS wage     │     │    components[]  │
+                     │  • Arithmetic-      │     │  • implementation│
+                     │    required rule    │     │    _risk         │
+                     │  • "data unavailable│     │  • root_cause_   │
+                     │    — cannot calc"   │     │    addressed     │
+                     │    (no hallucination)│     │                  │
+                     └─────────────────────┘     └──────────────────┘
 ```
 
 **Results:** NTK (1,065 promises from 462 pages), DMK (525 from 98 pages), AIADMK (299 from 45 pages) — all with deep analysis, zero hallucinated content.
@@ -189,9 +189,9 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
                     │   BRIDGE LAYER      │
                     │   16 SDG Goals      │
                     │                     │
-                    │ targets_goal (1,071)│
-                    │ measured_by (194)   │
-                    │ influences (59)     │
+                    │ targets_goal (1,071) │
+                    │ measured_by (194)    │
+                    │ influences (59)      │
                     └──────────┬──────────┘
                                │
               ┌────────────────┼────────────────┐
@@ -215,7 +215,7 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                   POLITICIAN PROFILE                        │
-│                   (Single Source of Truth)                  │
+│                   (Single Source of Truth)                   │
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐    │
 │  │  Identity                                           │    │
@@ -226,28 +226,28 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
 │  └─────────────────────────────────────────────────────┘    │
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │  Timeline (per-election full detail)                │    │
+│  │  Timeline (per-election full detail)                 │    │
 │  │                                                     │    │
 │  │  2021 │ DMK │ KOLATHUR │ Won                        │    │
-│  │       │ Assets: ₹4.67 Cr (movable ₹2.1, immov ₹2.5) │    │
-│  │       │ Liabilities: ₹0.12 Cr                       │    │
+│  │       │ Assets: ₹4.67 Cr (movable ₹2.1, immov ₹2.5)│    │
+│  │       │ Liabilities: ₹0.12 Cr                      │    │
 │  │       │ Criminal: 4 cases SERIOUS                   │    │
-│  │       │   └─ [{act: "IPC", status: "Pending"...}]   │    │
+│  │       │   └─ [{act: "IPC", status: "Pending"...}]  │    │
 │  │       │ Education: Graduate                         │    │
-│  │       │ Source:candidate_accountability/2021_kolathur│   │
+│  │       │ Source: candidate_accountability/2021_kolathur│   │
 │  │                                                     │    │
 │  │  2016 │ DMK │ KOLATHUR │ Won                        │    │
-│  │       │ Assets: ₹3.21 Cr                            │    │
+│  │       │ Assets: ₹3.21 Cr                           │    │
 │  │       │ Criminal: 2 cases MODERATE                  │    │
 │  │                                                     │    │
 │  │  2026 │ DMK │ KOLATHUR │ Contesting                 │    │
 │  └─────────────────────────────────────────────────────┘    │
 │                                                             │
-│  win_count: 2 │ loss_count: 0 │ total_contested: 3          │
+│  win_count: 2 │ loss_count: 0 │ total_contested: 3         │
 │                                                             │
 │  ┌──────────────────────────────────────────┐               │
 │  │  Asset Growth                            │               │
-│  │  📊 ₹3.21 Cr (2016) → ₹4.67 Cr (2021)    │               │
+│  │  📊 ₹3.21 Cr (2016) → ₹4.67 Cr (2021)  │               │
 │  │     +45% over 5 years                    │               │
 │  └──────────────────────────────────────────┘               │
 └──────────────────────────┬──────────────────────────────────┘
@@ -260,7 +260,7 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
   │              │  │ Page      │  │                │
   │ Reads via    │  │           │  │ Candidate name │
   │ constituency │  │ Table +   │  │ → constituency │
-  │ _mla_index   │  │ Grid view │  │ → term 2026    │
+  │ _mla_index   │  │ Grid view │  │ → term 2026   │
   │ → profile    │  │ + modal   │  │                │
   └──────────────┘  └───────────┘  └────────────────┘
 ```
@@ -269,7 +269,7 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    BROWSER                              │
+│                    BROWSER                               │
 │                                                         │
 │  ┌─────────────────────────────────────────────────┐    │
 │  │  data-cache.ts (URL-keyed, generic)             │    │
@@ -298,7 +298,7 @@ Tamil political manifestos are published as PDFs using **legacy non-Unicode Tami
 │  │ Persists   │  │ Performance  │  │ X-Session-ID   │   │
 │  │ to local   │  │ cookies gate │  │ header on all  │   │
 │  │ Storage    │  │ localStorage │  │ API calls      │   │
-│  │ EN ↔ தமிழ்  │  │ + Analytics  │  │ (piggyback,    │   │
+│  │ EN ↔ தமிழ் │  │ + Analytics  │  │ (piggyback,    │   │
 │  │            │  │              │  │  zero extra    │   │
 │  │ Shared via │  │ Banner re-   │  │  requests)     │   │
 │  │ React      │  │ shows until  │  │                │   │

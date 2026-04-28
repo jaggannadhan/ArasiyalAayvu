@@ -229,7 +229,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex-shrink-0 text-right">
-                <p className="text-lg font-black text-blue-400">5.5K</p>
+                <p className="text-lg font-black text-blue-400">6.9K</p>
                 <p className="text-[10px] text-gray-500 font-semibold">nodes</p>
               </div>
             </div>

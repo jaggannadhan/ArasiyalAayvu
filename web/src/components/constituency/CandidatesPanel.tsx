@@ -5,6 +5,7 @@ import Image from "next/image";
 import { apiGet } from "@/lib/api-client";
 import { normalizeName } from "@/lib/formatters";
 import { Candidate2026ProfileModal, type Candidate2026 } from "./Candidate2026ProfileModal";
+import { ProfileModal, type PoliticianProfile } from "@/components/politicians/ProfileModal";
 
 type Candidate = Candidate2026;
 
@@ -56,6 +57,31 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [selected, setSelected] = useState<Candidate | null>(null);
+  const [profileModal, setProfileModal] = useState<PoliticianProfile | null>(null);
+
+  function handleCandidateClick(c: Candidate) {
+    // Try to find the politician profile; fall back to the basic 2026 modal
+    const searchName = encodeURIComponent(c.name);
+    apiGet<{ total: number; items: PoliticianProfile[] }>(
+      `/api/politicians?q=${searchName}&limit=5`
+    )
+      .then((res) => {
+        // Match by name + constituency slug
+        const match = res.items.find((p) =>
+          p.timeline.some(
+            (t) => t.year === 2026 && t.constituency_slug === slug
+          )
+        );
+        if (match) {
+          setProfileModal(match);
+        } else {
+          setSelected(c);
+        }
+      })
+      .catch(() => {
+        setSelected(c);
+      });
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -138,8 +164,8 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
           return (
             <button
               key={i}
-              onClick={() => setSelected(c)}
-              className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+              onClick={() => handleCandidateClick(c)}
+              className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-gray-50 transition-colors cursor-pointer"
             >
               {/* Photo */}
               <CandidatePhoto
@@ -198,12 +224,17 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
         </p>
       </div>
 
-      {/* Candidate profile modal */}
+      {/* Candidate profile modal (basic fallback) */}
       <Candidate2026ProfileModal
         candidate={selected}
         onClose={() => setSelected(null)}
         lang={lang}
       />
+
+      {/* Full politician profile modal */}
+      {profileModal && (
+        <ProfileModal profile={profileModal} onClose={() => setProfileModal(null)} />
+      )}
     </div>
   );
 }
