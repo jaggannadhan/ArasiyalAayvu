@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-05-02T21:46:18.565846+00:00",
+  "lang": "ta",
+  "segment_count": 7,
+  "timestamps": [
+    0.0,
+    2.568,
+    16.104,
+    27.696,
+    44.976,
+    58.272,
+    72.984
+  ],
+  "articles": [
+    {
+      "title": "Para-legal volunteers to aid in missing children cases in Tamil Nadu",
+      "summary": "Tamil Nadu's State government will deploy para-legal volunteers in police stations to assist in the 8,000 annual missing children cases, providing support to families and children.",
+      "category": "WORLD",
+      "sdg_alignment": [
+        "SDG-16",
+        "SDG-3",
+        "SDG-10"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.thehindu.com/news/national/tamil-nadu/para-legal-volunteers-to-aid-in-missing-children-cases-in-tamil-nadu/article70928742.ece",
+      "start": 2.568,
+      "end": 16.104
+    },
+    {
+      "title": "Chennai residents, take cleanliness survey seriously now",
+      "summary": "Chennai residents are urged to participate in the 10th Swachh Survekshan cleanliness survey, as their feedback will determine the city's ranking among other cities.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [
+        "SDG-6",
+        "SDG-11"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.thehindu.com/news/cities/chennai/chennai-residents-take-cleanliness-survey-seriously-now/article70931071.ece",
+      "start": 16.104,
+      "end": 27.696
+    },
+    {
+      "title": "TVK chief Vijay cancells Velankanni trip",
+      "summary": "Tamilaga Vettri Kazhagam chief Vijay cancelled his planned visit to Velankanni Church in Nagapattinam district, disappointing thousands of fans, citing personal reasons.",
+      "category": "WORLD",
+      "sdg_alignment": [],
+      "source_name": "in",
+      "source_url": "https://m.rediff.com/news/commentary/2026/may/02/tvk-chief-vijay-cancells-velankanni-trip/f8c36c1c869fbcfc933e98f9b3d09121",
+      "start": 27.696,
+      "end": 44.976
+    },
+    {
+      "title": "Hotels may shut': DMK's TKS Elangovan slams LPG price hike, says centre acted after elections to burden public",
+      "summary": "DMK spokesperson TKS Elangovan criticized the central government's hike in commercial LPG prices, stating it burdens the public.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [
+        "SDG-8",
+        "SDG-10"
+      ],
+      "source_name": "in",
+      "source_url": "https://aninews.in/news/national/politics/hotels-may-shut-dmks-tks-elangovan-slams-lpg-price-hike-says-centre-acted-after-elections-to-burden-public20260502110605",
+      "start": 44.976,
+      "end": 58.272
+    },
+    {
+      "title": "Thousands Gather To See Vijay At Velankanni Church Ahead of Counting - Watch",
+      "summary": "Actor-turned-politician Vijay's spiritual tour ahead of the Tamil Nadu election results caused massive crowds and disruptions at Velankanni Church, drawing public criticism. The Election Commission of India has consolidated counting centers for efficiency, while Vijay's political debut and the piracy of his final film, Jana Nayagan, add to the high stakes of the 2026 Tamil Nadu elections.",
+      "category": "POLITICS",
+      "sdg_alignment": [
+        "SDG-16"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.oneindia.com/chennai/vijay-visits-velankanni-church-ahead-of-counting-fans-go-crazy-watch-8075409.html?ref_source=OI-EN&ref_medium=Home-Page&ref_campaign=News-Cards",
+      "start": 58.272,
+      "end": 72.984
+    }
+  ]
+}

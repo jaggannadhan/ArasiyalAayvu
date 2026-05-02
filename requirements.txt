@@ -11,3 +11,4 @@ tabula-py
 pdfminer.six
 pdfplumber
 anthropic
+trafilatura

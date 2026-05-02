@@ -131,6 +131,24 @@ export default function Home() {
         {/* Nav links */}
         <div className="grid grid-cols-2 gap-3">
           <Link
+            href="/news"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-lg mb-1">📰</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {isTA ? "செய்திகள் & பகுப்பாய்வு" : "News & Analysis"}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {isTA
+                    ? "AI-NER · செய்திகள் · SDG இணைப்பு · அறிவு வரைபடம்"
+                    : "AI-powered NER · SDG alignment · Knowledge Graph linked"}
+                </p>
+              </div>
+            </div>
+          </Link>
+          <Link
             href="/manifesto-tracker"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all"
           >

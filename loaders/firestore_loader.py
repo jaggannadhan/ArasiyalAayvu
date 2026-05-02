@@ -140,3 +140,12 @@ def upload_assembly_summary(summary: dict) -> None:
 def upload_manifesto_promises(promises: list[dict]) -> None:
     """Upload atomic manifesto promise documents keyed by doc_id."""
     _batch_upload("manifesto_promises", promises, id_field="doc_id")
+
+
+# ---------------------------------------------------------------------------
+# Module 6 — MLACDS Budget
+# ---------------------------------------------------------------------------
+
+def upload_mlacds_budget(docs: list[dict]) -> None:
+    """Upload MLACDS budget documents keyed by fiscal_year (e.g. '2021-22')."""
+    _batch_upload("mlacds_budget", docs, id_field="doc_id")

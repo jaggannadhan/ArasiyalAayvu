@@ -43,173 +43,573 @@
     },
     "source": "CAG Finance Accounts Volume I",
     "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=88",
-    "_ingested_at": "2026-04-14T14:42:27.548982+00:00"
+    "_ingested_at": "2026-05-01T17:20:11.356504+00:00"
   },
   {
-    "doc_id": "AP_2024-25",
-    "state_code": "AP",
-    "state_name": "Andhra Pradesh",
-    "fiscal_year": "2024-25",
-    "fiscal_year_label": "April 2024 \u2013 March 2025",
+    "doc_id": "TN_2023-24",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2023-24",
+    "fiscal_year_label": "April 2023 \u2013 March 2024",
     "data_type": "Actuals",
     "revenue": {
-      "own_tax_revenue_cr": null,
-      "non_tax_revenue_cr": 10.63,
-      "central_devolution_cr": 52080.15,
-      "central_grants_cr": 20188.2,
-      "total_revenue_receipts_cr": 89435.3
+      "own_tax_revenue_cr": 167278.0,
+      "non_tax_revenue_cr": 25904.0,
+      "central_devolution_cr": 46072.0,
+      "central_grants_cr": 25342.0,
+      "total_revenue_receipts_cr": 264597.0
     },
     "expenditure": {
-      "revenue_expenditure_cr": 89435.3,
-      "capital_expenditure_cr": 16141.28,
-      "total_exp_cr": 105576.58
+      "revenue_exp_cr": 309718.0,
+      "capital_exp_cr": 40500.0,
+      "total_exp_cr": 350218.0
     },
     "committed": {
-      "salaries_cr": 5972.16,
-      "pensions_cr": null,
-      "interest_cr": null,
+      "salaries_cr": 75030.0,
+      "pensions_cr": 37697.0,
+      "interest_cr": 53566.0,
       "subsidies_cr": null,
-      "grants_in_aid_cr": 80603.45,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 166293.0,
+      "discretionary_cr": 143425.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 90442.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 264597.0,
+      "total_rev_exp_cr": 309718.0,
+      "committed_cr": 166293.0,
+      "discretionary_cr": 143425.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 8.4e-05
+    },
+    "source": "CAG Accounts at a Glance 2024-25 (5-year trend tables); PRS Tamil Nadu Budget Analysis 2025-26 (Tables 3, 5, 7). Original Finance Accounts 2023-24 PDF is scanned/image-only.",
+    "source_url": "https://cag.gov.in/uploads/state_accounts_report/account-report-Accounts-at-a-glance-Eng-2024-25-0699be10d0cf539-36906021.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356652+00:00"
+  },
+  {
+    "doc_id": "TN_2022-23",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2022-23",
+    "fiscal_year_label": "April 2022 \u2013 March 2023",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 150223.0,
+      "non_tax_revenue_cr": 17061.0,
+      "central_devolution_cr": 38731.0,
+      "central_grants_cr": 37734.0,
+      "total_revenue_receipts_cr": 243749.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 279964.0,
+      "capital_exp_cr": 39530.0,
+      "total_exp_cr": 319494.0
+    },
+    "committed": {
+      "salaries_cr": 68588.0,
+      "pensions_cr": 32177.0,
+      "interest_cr": 46911.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 147676.0,
+      "discretionary_cr": 132288.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 81886.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 243749.0,
+      "total_rev_exp_cr": 279964.0,
+      "committed_cr": 147676.0,
+      "discretionary_cr": 132288.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 9.1e-05
+    },
+    "source": "CAG Accounts at a Glance 2024-25 (5-year trend tables); PRS Tamil Nadu Budget Analysis 2024-25 (Tables 2, 3, 5). Original Finance Accounts 2022-23 PDF is scanned/image-only.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2024/Tamil_Nadu_Budget_Analysis_2024-25.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356661+00:00"
+  },
+  {
+    "doc_id": "TN_2021-22",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2021-22",
+    "fiscal_year_label": "April 2021 \u2013 March 2022",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 122866.0,
+      "non_tax_revenue_cr": 12117.0,
+      "central_devolution_cr": 37459.0,
+      "central_grants_cr": 35051.0,
+      "total_revenue_receipts_cr": 207492.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 254030.0,
+      "capital_exp_cr": 37011.0,
+      "total_exp_cr": 291041.0
+    },
+    "committed": {
+      "salaries_cr": 60625.0,
+      "pensions_cr": 26250.0,
+      "interest_cr": 41564.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 128439.0,
+      "discretionary_cr": 125591.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 73739.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 207492.0,
+      "total_rev_exp_cr": 254030.0,
+      "committed_cr": 128439.0,
+      "discretionary_cr": 125591.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 9.6e-05
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2023-24 (Tables 2, 3, 5, 7 \u2014 2021-22 Actuals column). Original Finance Accounts 2021-22 PDF is scanned/image-only.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2023/TN_Budget_Analysis_2023-24.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356666+00:00"
+  },
+  {
+    "doc_id": "TN_2011-12",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2011-12",
+    "fiscal_year_label": "April 2011 \u2013 March 2012",
+    "data_type": "Actuals (Provisional)",
+    "revenue": {
+      "own_tax_revenue_cr": null,
+      "non_tax_revenue_cr": 4986.57,
+      "central_devolution_cr": null,
+      "central_grants_cr": 7274.26,
+      "total_revenue_receipts_cr": 84639.7,
+      "tax_revenue_cr": 72378.87
+    },
+    "expenditure": {
+      "revenue_exp_cr": 83694.72,
+      "capital_exp_cr": 15512.0,
+      "total_exp_cr": 104689.87
+    },
+    "committed": {
+      "salaries_cr": null,
+      "pensions_cr": null,
+      "interest_cr": 8330.34,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
       "total_committed_cr": null,
       "discretionary_cr": null
     },
     "fiscal": {
-      "fiscal_deficit_cr": 81071.17,
-      "revenue_deficit_cr": 60285.15,
-      "primary_deficit_cr": null,
+      "fiscal_deficit_cr": 16869.54,
+      "revenue_deficit_cr": -944.98,
       "closing_cash_balance_cr": null
     },
     "feasibility": {
-      "total_revenue_cr": 89435.3,
-      "total_rev_exp_cr": 89435.3
+      "total_revenue_cr": 84639.7,
+      "total_rev_exp_cr": 83694.72
     },
-    "source": "CAG Finance Accounts Volume I",
-    "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=64",
-    "_ingested_at": "2026-04-14T14:42:43.575957+00:00"
+    "source": "CAG Accounts at a Glance, Government of Tamil Nadu, as at end of March 2012 (Provisional). Tax Revenue combines own taxes + share in central taxes (not separated). Revenue surplus of \u20b9945 Cr indicates revenue receipts exceeded revenue expenditure.",
+    "source_url": "https://cag.gov.in/uploads/state_accounts_report/Tamil_March_2011_12.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356671+00:00"
   },
   {
-    "doc_id": "KA_2024-25",
-    "state_code": "KA",
-    "state_name": "Karnataka",
-    "fiscal_year": "2024-25",
-    "fiscal_year_label": "April 2024 \u2013 March 2025",
+    "doc_id": "TN_2012-13",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2012-13",
+    "fiscal_year_label": "April 2012 \u2013 March 2013",
     "data_type": "Actuals",
     "revenue": {
-      "own_tax_revenue_cr": 16148.38,
+      "own_tax_revenue_cr": null,
       "non_tax_revenue_cr": null,
       "central_devolution_cr": null,
       "central_grants_cr": null,
-      "total_revenue_receipts_cr": null
+      "total_revenue_receipts_cr": 98828.0
     },
     "expenditure": {
-      "revenue_expenditure_cr": 278986.97,
-      "capital_expenditure_cr": 57905.85,
-      "total_exp_cr": 336892.81999999995
+      "revenue_exp_cr": 97067.0,
+      "capital_exp_cr": 17275.0,
+      "total_exp_cr": 114342.0
     },
     "committed": {
       "salaries_cr": null,
       "pensions_cr": null,
       "interest_cr": null,
       "subsidies_cr": null,
-      "grants_in_aid_cr": 72865.07,
+      "grants_in_aid_cr": null,
       "total_committed_cr": null,
       "discretionary_cr": null
     },
     "fiscal": {
-      "fiscal_deficit_cr": 85029.56,
-      "revenue_deficit_cr": 20834.45,
-      "primary_deficit_cr": null,
+      "fiscal_deficit_cr": 16519.0,
+      "revenue_deficit_cr": -1761.0,
       "closing_cash_balance_cr": null
     },
     "feasibility": {
-      "total_rev_exp_cr": 278986.97
+      "total_revenue_cr": 98828.0,
+      "total_rev_exp_cr": 97067.0
     },
-    "source": "CAG Finance Accounts Volume I",
-    "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=76",
-    "_ingested_at": "2026-04-14T14:42:57.962072+00:00"
+    "source": "CAG Audit Report \u2014 Finances of the State of Tamil Nadu (Chapter II). Revenue receipts \u20b998,828 Cr; fiscal deficit \u20b916,519 Cr; revenue surplus \u20b91,761 Cr. Expenditure breakdown is from CAG audit observation for 2012-13.",
+    "source_url": "https://cag.gov.in/en/audit-report/details/8840",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356675+00:00"
   },
   {
-    "doc_id": "KL_2024-25",
-    "state_code": "KL",
-    "state_name": "Kerala",
-    "fiscal_year": "2024-25",
-    "fiscal_year_label": "April 2024 \u2013 March 2025",
+    "doc_id": "TN_2013-14",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2013-14",
+    "fiscal_year_label": "April 2013 \u2013 March 2014",
     "data_type": "Actuals",
     "revenue": {
-      "own_tax_revenue_cr": 76642.19,
-      "non_tax_revenue_cr": 29303.44,
+      "own_tax_revenue_cr": null,
+      "non_tax_revenue_cr": null,
       "central_devolution_cr": null,
-      "central_grants_cr": 17008.42,
-      "total_revenue_receipts_cr": 263746.02
+      "central_grants_cr": null,
+      "total_revenue_receipts_cr": 108000.0
     },
     "expenditure": {
-      "revenue_expenditure_cr": 13593.31,
-      "capital_expenditure_cr": 263746.02,
-      "total_exp_cr": 277339.33
+      "revenue_exp_cr": 115000.0,
+      "capital_exp_cr": 17500.0,
+      "total_exp_cr": 132500.0
     },
     "committed": {
-      "salaries_cr": 29303.44,
+      "salaries_cr": null,
       "pensions_cr": null,
       "interest_cr": null,
       "subsidies_cr": null,
-      "grants_in_aid_cr": 453816.1,
+      "grants_in_aid_cr": null,
       "total_committed_cr": null,
       "discretionary_cr": null
     },
     "fiscal": {
-      "fiscal_deficit_cr": 48248.14,
-      "revenue_deficit_cr": 31059.72,
-      "primary_deficit_cr": null,
+      "fiscal_deficit_cr": 23000.0,
       "closing_cash_balance_cr": null
     },
     "feasibility": {
-      "total_revenue_cr": 263746.02,
-      "total_rev_exp_cr": 13593.31
+      "total_revenue_cr": 108000.0,
+      "total_rev_exp_cr": 115000.0
     },
-    "source": "CAG Finance Accounts Volume I",
-    "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=77",
-    "_ingested_at": "2026-04-14T14:43:13.132191+00:00"
+    "source": "Cross-referenced from govtbudget.com, trend analysis, and CAG audit observations. Approximate values \u2014 detailed breakdowns not available from primary sources. Fiscal deficit ~2.7% of GSDP per CAG.",
+    "source_url": "https://www.govtbudget.com/state-budget/tamil-nadu/2013-14",
+    "_manual_entry": true,
+    "ground_truth_confidence": "MEDIUM",
+    "_ingested_at": "2026-05-01T17:20:11.356679+00:00"
   },
   {
-    "doc_id": "TS_2024-25",
-    "state_code": "TS",
-    "state_name": "Telangana",
-    "fiscal_year": "2024-25",
-    "fiscal_year_label": "April 2024 \u2013 March 2025",
+    "doc_id": "TN_2014-15",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2014-15",
+    "fiscal_year_label": "April 2014 \u2013 March 2015",
     "data_type": "Actuals",
     "revenue": {
-      "own_tax_revenue_cr": 23607.77,
-      "non_tax_revenue_cr": 27.1,
-      "central_devolution_cr": 16942.31,
-      "central_grants_cr": 7913.08,
-      "total_revenue_receipts_cr": 109233.22
+      "own_tax_revenue_cr": null,
+      "non_tax_revenue_cr": null,
+      "central_devolution_cr": null,
+      "central_grants_cr": null,
+      "total_revenue_receipts_cr": 122000.0
     },
     "expenditure": {
-      "revenue_expenditure_cr": 109233.22,
-      "capital_expenditure_cr": 36071.51,
-      "total_exp_cr": 145304.73
+      "revenue_exp_cr": 130500.0,
+      "capital_exp_cr": 19500.0,
+      "total_exp_cr": 150000.0
     },
     "committed": {
-      "salaries_cr": 27.1,
+      "salaries_cr": null,
       "pensions_cr": null,
       "interest_cr": null,
       "subsidies_cr": null,
-      "grants_in_aid_cr": 74271.12,
+      "grants_in_aid_cr": null,
       "total_committed_cr": null,
       "discretionary_cr": null
     },
     "fiscal": {
-      "fiscal_deficit_cr": 48922.06,
-      "revenue_deficit_cr": 9420.05,
-      "primary_deficit_cr": null,
+      "fiscal_deficit_cr": 26500.0,
       "closing_cash_balance_cr": null
     },
     "feasibility": {
-      "total_revenue_cr": 109233.22,
-      "total_rev_exp_cr": 109233.22
+      "total_revenue_cr": 122000.0,
+      "total_rev_exp_cr": 130500.0
     },
-    "source": "CAG Finance Accounts Volume I",
-    "source_url": "https://cag.gov.in/en/state-accounts-report?defuat_state_id=93",
-    "_ingested_at": "2026-04-14T14:43:25.453887+00:00"
+    "source": "Cross-referenced from govtbudget.com and CAG audit trend data. Approximate values \u2014 detailed breakdowns not available. Fiscal deficit ~2.7% of GSDP.",
+    "source_url": "https://www.govtbudget.com/state-budget/tamil-nadu/2014-15",
+    "_manual_entry": true,
+    "ground_truth_confidence": "MEDIUM",
+    "_ingested_at": "2026-05-01T17:20:11.356683+00:00"
+  },
+  {
+    "doc_id": "TN_2015-16",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2015-16",
+    "fiscal_year_label": "April 2015 \u2013 March 2016",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": null,
+      "non_tax_revenue_cr": null,
+      "central_devolution_cr": null,
+      "central_grants_cr": null,
+      "total_revenue_receipts_cr": 135000.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 145000.0,
+      "capital_exp_cr": 21500.0,
+      "total_exp_cr": 167000.0
+    },
+    "committed": {
+      "salaries_cr": null,
+      "pensions_cr": null,
+      "interest_cr": null,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": null,
+      "discretionary_cr": null
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 30000.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 135000.0,
+      "total_rev_exp_cr": 145000.0
+    },
+    "source": "Cross-referenced from govtbudget.com and NITI Aayog Macro & Fiscal Landscape report. Approximate values. Fiscal deficit ~2.7% of GSDP.",
+    "source_url": "https://www.govtbudget.com/state-budget/tamil-nadu/2015-16",
+    "_manual_entry": true,
+    "ground_truth_confidence": "MEDIUM",
+    "_ingested_at": "2026-05-01T17:20:11.356686+00:00"
+  },
+  {
+    "doc_id": "TN_2016-17",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2016-17",
+    "fiscal_year_label": "April 2016 \u2013 March 2017",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": null,
+      "non_tax_revenue_cr": null,
+      "central_devolution_cr": null,
+      "central_grants_cr": null,
+      "total_revenue_receipts_cr": 150000.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 162000.0,
+      "capital_exp_cr": 24000.0,
+      "total_exp_cr": 186000.0
+    },
+    "committed": {
+      "salaries_cr": null,
+      "pensions_cr": null,
+      "interest_cr": null,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": null,
+      "discretionary_cr": null
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 35000.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 150000.0,
+      "total_rev_exp_cr": 162000.0
+    },
+    "source": "Cross-referenced from govtbudget.com and NITI Aayog report. Approximate values \u2014 demonetization impact on revenue collection. Fiscal deficit ~2.8% of GSDP.",
+    "source_url": "https://www.govtbudget.com/state-budget/tamil-nadu/2016-17",
+    "_manual_entry": true,
+    "ground_truth_confidence": "MEDIUM",
+    "_ingested_at": "2026-05-01T17:20:11.356689+00:00"
+  },
+  {
+    "doc_id": "TN_2017-18",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2017-18",
+    "fiscal_year_label": "April 2017 \u2013 March 2018",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 93737.0,
+      "non_tax_revenue_cr": 10764.0,
+      "central_devolution_cr": 27100.0,
+      "central_grants_cr": 14679.0,
+      "total_revenue_receipts_cr": 146280.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 167874.0,
+      "capital_exp_cr": 35711.0,
+      "total_exp_cr": 203585.0
+    },
+    "committed": {
+      "salaries_cr": null,
+      "pensions_cr": null,
+      "interest_cr": null,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": null,
+      "discretionary_cr": null
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 39840.0,
+      "revenue_deficit_cr": 21594.0,
+      "primary_deficit_cr": 13828.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 146280.0,
+      "total_rev_exp_cr": 167874.0
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2019-20 (Tables 1, 2, 4 \u2014 2017-18 Actuals column). Source: Tamil Nadu Annual Financial Statement 2019-20.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2019/State%20Budget%20Analysis%20-%20Tamil%20Nadu%202019-20.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356697+00:00"
+  },
+  {
+    "doc_id": "TN_2018-19",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2018-19",
+    "fiscal_year_label": "April 2018 \u2013 March 2019",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 105549.9,
+      "non_tax_revenue_cr": 14200.02,
+      "central_devolution_cr": 30623.03,
+      "central_grants_cr": 23368.21,
+      "total_revenue_receipts_cr": 173741.16
+    },
+    "expenditure": {
+      "revenue_exp_cr": 199938.0,
+      "capital_exp_cr": 48422.0,
+      "total_exp_cr": 248360.0
+    },
+    "committed": {
+      "salaries_cr": null,
+      "pensions_cr": null,
+      "interest_cr": null,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": null,
+      "discretionary_cr": null
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 45520.0,
+      "revenue_deficit_cr": 19319.0,
+      "primary_deficit_cr": 16816.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 173741.16,
+      "total_rev_exp_cr": 199938.0
+    },
+    "source": "Revenue: CAG Compliance Audit Report 2022-23 (Report 7 of 2025), Table 1.1 \u2014 5-year trend of revenue receipts (2018-19 Actuals column). Expenditure & deficit: PRS Tamil Nadu Budget Analysis 2019-20 (Tables 1, 2). Revenue figures upgraded from PRS Revised Estimates to CAG Actuals.",
+    "source_url": "https://cag.gov.in/ag1/tamil-nadu/en/audit-report/details/9416",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356700+00:00"
+  },
+  {
+    "doc_id": "TN_2019-20",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2019-20",
+    "fiscal_year_label": "April 2019 \u2013 March 2020",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 107462.0,
+      "non_tax_revenue_cr": 12888.0,
+      "central_devolution_cr": 26392.0,
+      "central_grants_cr": 27783.0,
+      "total_revenue_receipts_cr": 174526.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 210435.0,
+      "capital_exp_cr": 47520.0,
+      "total_exp_cr": 257955.0
+    },
+    "committed": {
+      "salaries_cr": 57829.0,
+      "pensions_cr": 30202.0,
+      "interest_cr": 31980.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 120011.0,
+      "discretionary_cr": 90424.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 60179.0,
+      "revenue_deficit_cr": 35909.0,
+      "primary_deficit_cr": 27239.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 174526.0,
+      "total_rev_exp_cr": 210435.0,
+      "committed_cr": 120011.0,
+      "discretionary_cr": 90424.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 0.000133
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2021-22 (Tables 1, 4, 5 \u2014 2019-20 Actuals column). Source: Tamil Nadu Budget Documents 2021-22.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2021/Tamil%20Nadu%20Budget%20Analysis%202021-22.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356703+00:00"
+  },
+  {
+    "doc_id": "TN_2020-21",
+    "state_code": "TN",
+    "state_name": "Tamil Nadu",
+    "fiscal_year": "2020-21",
+    "fiscal_year_label": "April 2020 \u2013 March 2021",
+    "data_type": "Actuals",
+    "revenue": {
+      "own_tax_revenue_cr": 106153.0,
+      "non_tax_revenue_cr": 10422.0,
+      "central_devolution_cr": 24925.0,
+      "central_grants_cr": 32577.0,
+      "total_revenue_receipts_cr": 174076.0
+    },
+    "expenditure": {
+      "revenue_exp_cr": 236402.0,
+      "capital_exp_cr": 33068.0,
+      "total_exp_cr": 273305.0
+    },
+    "committed": {
+      "salaries_cr": 57373.0,
+      "pensions_cr": 27115.0,
+      "interest_cr": 36497.0,
+      "subsidies_cr": null,
+      "grants_in_aid_cr": null,
+      "total_committed_cr": 120985.0,
+      "discretionary_cr": 115417.0
+    },
+    "fiscal": {
+      "fiscal_deficit_cr": 87742.0,
+      "revenue_deficit_cr": 62326.0,
+      "closing_cash_balance_cr": null
+    },
+    "feasibility": {
+      "total_revenue_cr": 174076.0,
+      "total_rev_exp_cr": 236402.0,
+      "committed_cr": 120985.0,
+      "discretionary_cr": 115417.0,
+      "cost_per_rupee_per_lakh_pop_cr": 0.12,
+      "pct_discretionary_per_rupee_lakh": 0.000104
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2022-23 (Annexure 2, Table 7 \u2014 2020-21 Actuals). COVID year \u2014 revenue deficit was 3.28% of GSDP (188% higher than budget estimate). Source: Tamil Nadu Budget Documents 2022-23.",
+    "source_url": "https://prsindia.org/files/budget/budget_state/tamil-nadu/2022/Tamil%20Nadu%20Budget%20Analysis%202022-23.pdf",
+    "_manual_entry": true,
+    "_ingested_at": "2026-05-01T17:20:11.356707+00:00"
   }
 ]

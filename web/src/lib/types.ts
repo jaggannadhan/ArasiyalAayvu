@@ -564,6 +564,52 @@ export const TERM_COALITIONS: Record<number, TermCoalition> = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// District Collectors
+// ---------------------------------------------------------------------------
+
+export interface DistrictCollector {
+  doc_id: string;
+  name: string;
+  name_raw?: string;
+  district: string;
+  district_slug: string;
+  designation: string;
+  from_date: string;
+  to_date: string | null;
+  is_current: boolean;
+  election_terms: string[];
+  ias_batch_year: number | null;
+  educational_qualification: string | null;
+  contact_email: string | null;
+  contact_phone: string | null;
+  photo_url: string | null;
+  source_url: string | null;
+}
+
+// ---------------------------------------------------------------------------
+// MLACDS (MLA Constituency Development Scheme) Budget
+// ---------------------------------------------------------------------------
+
+export interface MLACDSBudget {
+  doc_id: string;
+  fiscal_year?: string;
+  per_constituency_allocation_cr: number;
+  state_total_allocation_cr: number;
+  tied_fund_cr?: number;
+  untied_fund_cr?: number;
+  tied_components?: Record<string, number>;
+  assembly_term?: string;
+  ruling_party?: string;
+  performance?: {
+    works_initiated?: number;
+    works_completed?: number;
+    expenditure_cr?: number;
+    utilization_pct?: number;
+  };
+  sc_st_earmark_pct?: number;
+}
+
 export const STATUS_META: Record<PromiseStatus, { label_en: string; label_ta: string; bg: string; text: string }> = {
   Proposed:    { label_en: "Proposed",    label_ta: "முன்மொழிவு",   bg: "bg-sky-100",    text: "text-sky-800" },
   Fulfilled:   { label_en: "Fulfilled",   label_ta: "நிறைவேற்றப்பட்டது", bg: "bg-emerald-100", text: "text-emerald-800" },

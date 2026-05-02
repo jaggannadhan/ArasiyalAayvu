@@ -128,6 +128,7 @@ interface CoLSnapshot {
 }
 
 interface StateBudget {
+  doc_id?: string;
   fiscal_year: string;
   state_code: string;
   state_name: string;
@@ -1183,7 +1184,135 @@ function fCr(v: number | null | undefined): string {
   return "₹" + v.toLocaleString("en-IN", { maximumFractionDigits: 0 }) + " Cr";
 }
 
-function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBISnapshot | null }) {
+function FiscalTimeseries({ stateSlug }: { stateSlug: string }) {
+  const [budgets, setBudgets] = useState<StateBudget[]>([]);
+  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+
+  useEffect(() => {
+    cacheFetch<{ budgets: StateBudget[] }>(`/api/state-budgets/${stateSlug}/timeseries`)
+      .then((d) => { if (d) setBudgets(d.budgets); })
+      .catch(() => {});
+  }, [stateSlug]);
+
+  if (budgets.length < 3) return null;
+
+  const PARTY_BANDS: Record<string, { color: string; label: string }> = {
+    "2011": { color: "bg-green-500", label: "AIADMK" },
+    "2012": { color: "bg-green-500", label: "" },
+    "2013": { color: "bg-green-500", label: "" },
+    "2014": { color: "bg-green-500", label: "" },
+    "2015": { color: "bg-green-500", label: "" },
+    "2016": { color: "bg-green-500", label: "AIADMK" },
+    "2017": { color: "bg-green-500", label: "" },
+    "2018": { color: "bg-green-500", label: "" },
+    "2019": { color: "bg-green-500", label: "" },
+    "2020": { color: "bg-green-500", label: "" },
+    "2021": { color: "bg-red-500", label: "DMK" },
+    "2022": { color: "bg-red-500", label: "" },
+    "2023": { color: "bg-red-500", label: "" },
+    "2024": { color: "bg-red-500", label: "" },
+    "2025": { color: "bg-red-500", label: "" },
+  };
+
+  const maxVal = Math.max(
+    ...budgets.map((b) => Math.max(
+      b.revenue?.total_revenue_receipts_cr ?? 0,
+      b.expenditure?.total_exp_cr ?? 0,
+    ))
+  );
+
+  const selected = selectedYear ? budgets.find((b) => b.fiscal_year === selectedYear) : null;
+
+  return (
+    <div className="bg-white rounded-2xl border border-gray-200 p-4 mb-4">
+      <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">
+        Revenue vs Expenditure — {budgets.length}-Year Trend
+      </p>
+      <p className="text-[10px] text-gray-400 mb-3">Tap a bar for detail</p>
+
+      {/* Bar chart */}
+      <div className="flex items-end gap-1 h-32 mb-1">
+        {budgets.map((b) => {
+          const fy = b.fiscal_year?.slice(0, 4) ?? b.doc_id?.slice(3, 7) ?? "";
+          const rev = b.revenue?.total_revenue_receipts_cr ?? 0;
+          const exp = b.expenditure?.total_exp_cr ?? 0;
+          const revPct = maxVal > 0 ? (rev / maxVal) * 100 : 0;
+          const expPct = maxVal > 0 ? (exp / maxVal) * 100 : 0;
+          const isSelected = b.fiscal_year === selectedYear;
+          const band = PARTY_BANDS[fy];
+
+          return (
+            <button
+              key={b.fiscal_year ?? b.doc_id}
+              onClick={() => setSelectedYear(b.fiscal_year ?? null)}
+              className={`flex-1 flex flex-col items-center gap-[2px] transition-opacity ${
+                selectedYear && !isSelected ? "opacity-40" : ""
+              }`}
+            >
+              <div className="w-full flex gap-[1px] items-end" style={{ height: "100%" }}>
+                <div
+                  className="flex-1 bg-emerald-400 rounded-t-sm"
+                  style={{ height: `${Math.max(revPct, 3)}%` }}
+                  title={`Revenue: ${fCr(rev)}`}
+                />
+                <div
+                  className="flex-1 bg-rose-400 rounded-t-sm"
+                  style={{ height: `${Math.max(expPct, 3)}%` }}
+                  title={`Expenditure: ${fCr(exp)}`}
+                />
+              </div>
+              {band && (
+                <div className={`w-full h-1 rounded-full ${band.color}`} />
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Year labels */}
+      <div className="flex gap-1 mb-2">
+        {budgets.map((b) => {
+          const fy = b.fiscal_year?.slice(0, 4) ?? b.doc_id?.slice(3, 7) ?? "";
+          return (
+            <div key={b.fiscal_year ?? b.doc_id} className="flex-1 text-center">
+              <span className="text-[7px] text-gray-400">{fy.slice(2)}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Legend */}
+      <div className="flex items-center gap-4 text-[9px] text-gray-500">
+        <span className="flex items-center gap-1"><span className="w-2 h-2 bg-emerald-400 rounded-sm" /> Revenue</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 bg-rose-400 rounded-sm" /> Expenditure</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-1 bg-green-500 rounded-full" /> AIADMK</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-1 bg-red-500 rounded-full" /> DMK</span>
+      </div>
+
+      {/* Selected year detail */}
+      {selected && (
+        <div className="mt-3 pt-3 border-t border-gray-100 grid grid-cols-3 gap-2 text-center">
+          <div className="bg-gray-50 rounded-lg p-2">
+            <p className="text-[9px] text-gray-500 font-semibold">Revenue</p>
+            <p className="text-xs font-black text-gray-900">{fCr(selected.revenue?.total_revenue_receipts_cr)}</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-2">
+            <p className="text-[9px] text-gray-500 font-semibold">Expenditure</p>
+            <p className="text-xs font-black text-gray-900">{fCr(selected.expenditure?.total_exp_cr)}</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-2">
+            <p className="text-[9px] text-gray-500 font-semibold">Fiscal Deficit</p>
+            <p className={`text-xs font-black ${(selected.fiscal?.fiscal_deficit_cr ?? 0) > 0 ? "text-red-600" : "text-gray-900"}`}>
+              {fCr(selected.fiscal?.fiscal_deficit_cr)}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FiscalSection({ budget, rbi, stateSlug }: { budget?: StateBudget | null; rbi?: RBISnapshot | null; stateSlug: string }) {
   if (!budget && !rbi) return <EmptySection msg="No state budget data available" />;
   // These are only used inside {budget && (...)} so always defined there
   const rev = budget?.revenue ?? {} as StateBudget["revenue"];
@@ -1193,6 +1322,9 @@ function FiscalSection({ budget, rbi }: { budget?: StateBudget | null; rbi?: RBI
 
   return (
     <div className="space-y-4">
+      {/* 14-year timeseries chart */}
+      <FiscalTimeseries stateSlug={stateSlug} />
+
       {/* RBI Debt-to-GSDP headline */}
       {rbi?.debt_to_gsdp_pct != null && (
         <div className="bg-gradient-to-br from-red-900 to-red-700 rounded-2xl p-5 text-white">
@@ -1687,7 +1819,7 @@ export default function StateReportPage() {
             {activeSection === "industry"  && <IndustrySection  asi={report.asi}         aiAsi={aiAsi} />}
             {activeSection === "energy"    && <EnergySection    energy={report.energy_stats} aiEnergy={aiEnergy} />}
             {activeSection === "agri"      && <AgricultureSection mofpi={report.mofpi} />}
-            {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} rbi={report.rbi_state_finances} />}
+            {activeSection === "fiscal"    && <FiscalSection    budget={report.state_budget} rbi={report.rbi_state_finances} stateSlug={slug} />}
             {activeSection === "sdg"       && <SDGSection       sdg={report.sdg_index} />}
             {activeSection === "cost"      && (
               <CostSection

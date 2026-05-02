@@ -11,6 +11,9 @@ import { MlaCard } from "@/components/constituency/MlaCard";
 import { CandidatesPanel } from "@/components/constituency/CandidatesPanel";
 import { WardPanel } from "@/components/constituency/WardPanel";
 import { DistrictPanel } from "@/components/constituency/DistrictPanel";
+import { InTheNews } from "@/components/news/InTheNews";
+import { MLACDSCard } from "@/components/constituency/MLACDSCard";
+import { CollectorCard } from "@/components/constituency/CollectorCard";
 import { ConstituencySearch } from "@/components/constituency/ConstituencySearch";
 import { ConstituencySkeleton } from "@/components/constituency/ConstituencySkeleton";
 import { TenureNavigator, TERMS } from "@/components/constituency/TenureNavigator";
@@ -117,6 +120,10 @@ export default function ConstituencyPage() {
     selectedTerm < 2021 && meta?.district_pre_2021
       ? meta.district_pre_2021
       : (meta?.district ?? "");
+  const effectiveDistrictSlug =
+    selectedTerm < 2021 && meta?.district_slug_pre_2021
+      ? meta.district_slug_pre_2021
+      : (meta?.district_slug ?? "");
 
   // Fetch constituency data (re-fetches when slug or term changes, unless
   // the same slug+term is already in cache — in which case `data` is already
@@ -315,6 +322,17 @@ export default function ConstituencyPage() {
                 </div>
               );
             })()}
+
+            {/* MLACDS — MLA development fund allocation */}
+            <MLACDSCard lang={lang} />
+
+            {/* In the News — articles mentioning this constituency */}
+            <InTheNews entityId={slug} lang={lang} />
+
+            {/* District Collector */}
+            {effectiveDistrictSlug && (
+              <CollectorCard districtSlug={effectiveDistrictSlug} lang={lang} />
+            )}
 
             {/* Ward & Local Body mapping + councillors */}
             <WardPanel
