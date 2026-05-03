@@ -75,19 +75,43 @@ export function NewsReaderPlayer({ lang = "en" }: Props) {
   const animFrameRef = useRef<number>(0);
   const transitionIdx = useRef(0);
   const elapsedRef = useRef(0);
-  const liveElapsedRef = useRef(0); // the furthest point reached
+  const liveElapsedRef = useRef(0);
   const elapsedTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sequencerIdRef = useRef(0); // incremented to abort previous sequencer runs
 
   const preloadedRef = useRef<Map<string, string>>(new Map());
 
   const articles = meta?.articles ?? [];
 
-  // Total broadcast duration (approximate)
-  const totalDuration = meta
-    ? meta.intro.duration + 3 + // intro + intro-pause
-      meta.articles.reduce((sum, a) => sum + a.duration + TRANSITION_MS / 1000 + 0.3, 0) +
-      meta.outro.duration + 1.2
-    : 0;
+  // Build timeline: array of { type, index, url, startAt, duration }
+  interface Segment { type: "intro" | "pause" | "transition" | "article" | "outro" | "gap"; index: number; url?: string; startAt: number; duration: number; }
+  const timeline = useRef<Segment[]>([]);
+
+  const totalDuration = (() => {
+    if (!meta) return 0;
+    const segs: Segment[] = [];
+    let t = 0;
+    // Intro
+    segs.push({ type: "intro", index: -1, url: meta.intro.video_url, startAt: t, duration: meta.intro.duration });
+    t += meta.intro.duration;
+    // Intro pause
+    segs.push({ type: "pause", index: -1, startAt: t, duration: 3 });
+    t += 3;
+    // Articles
+    for (let i = 0; i < meta.articles.length; i++) {
+      segs.push({ type: "transition", index: i, startAt: t, duration: TRANSITION_MS / 1000 });
+      t += TRANSITION_MS / 1000;
+      segs.push({ type: "article", index: i, url: meta.articles[i].video_url, startAt: t, duration: meta.articles[i].duration });
+      t += meta.articles[i].duration;
+      segs.push({ type: "gap", index: i, startAt: t, duration: 0.3 });
+      t += 0.3;
+    }
+    // Outro
+    segs.push({ type: "outro", index: -1, url: meta.outro.video_url, startAt: t, duration: meta.outro.duration });
+    t += meta.outro.duration;
+    timeline.current = segs;
+    return t;
+  })();
 
   /* ── Elapsed timer — ticks every 200ms while playing ── */
   const startElapsedTimer = useCallback(() => {
@@ -206,48 +230,116 @@ export function NewsReaderPlayer({ lang = "en" }: Props) {
     return () => { clearTimeout(t); cancelAnimationFrame(animFrameRef.current); };
   }, [renderFrame]);
 
-  /* ── Play a clip ── */
-  const playClip = useCallback(async (url: string): Promise<void> => {
-    const video = videoRef.current; if (!video) return;
+  /* ── Play a clip (abortable via sequencer ID) ── */
+  const playClip = useCallback(async (url: string, seqId: number): Promise<boolean> => {
+    const video = videoRef.current; if (!video) return false;
     const src = preloadedRef.current.get(url) || url;
     video.src = src; video.volume = volumeRef.current; video.muted = mutedRef.current;
     await new Promise<void>(res => { video.oncanplay = () => { video.oncanplay = null; res(); }; video.onerror = () => { video.onerror = null; res(); }; video.load(); });
-    try { await video.play(); } catch { return; }
+    if (sequencerIdRef.current !== seqId) return false; // aborted
+    try { await video.play(); } catch { return false; }
     await new Promise<void>(res => { video.onended = () => { video.onended = null; res(); }; video.onerror = () => { video.onerror = null; res(); }; });
+    return sequencerIdRef.current === seqId; // still valid?
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const wait = (ms: number) => new Promise(r => setTimeout(r, ms));
+  const waitAbortable = useCallback((ms: number, seqId: number): Promise<boolean> => {
+    return new Promise(res => {
+      setTimeout(() => res(sequencerIdRef.current === seqId), ms);
+    });
+  }, []);
 
-  /* ── Main sequencer ── */
-  const runShow = useCallback(async () => {
+  /* ── Main sequencer (can start from any segment) ── */
+  const runShowFrom = useCallback(async (startSegIdx: number = 0, _seekOffset: number = 0) => {
     if (!meta) return;
+    const seqId = ++sequencerIdRef.current; // new run — aborts any previous
     setIsPaused(false);
     startElapsedTimer();
 
-    setPhase("intro");
-    const video = videoRef.current;
-    if (video && !video.paused && !video.ended) {
-      await new Promise<void>(res => { video.onended = () => { video.onended = null; res(); }; video.onerror = () => { video.onerror = null; res(); }; });
-    } else {
-      await playClip(meta.intro.video_url);
+    const segs = timeline.current;
+    if (segs.length === 0) return;
+
+    for (let si = startSegIdx; si < segs.length; si++) {
+      if (sequencerIdRef.current !== seqId) return; // aborted by seek
+
+      const seg = segs[si];
+
+      if (seg.type === "intro") {
+        setPhase("intro");
+        const video = videoRef.current;
+        // If video is already playing this clip (from handleStart or seekTo), just wait for it to end
+        if (video && !video.paused && !video.ended && video.readyState >= 2) {
+          const ok = await new Promise<boolean>(res => {
+            video.onended = () => { video.onended = null; res(sequencerIdRef.current === seqId); };
+            video.onerror = () => { video.onerror = null; res(false); };
+          });
+          if (!ok) return;
+        } else {
+          const ok = await playClip(meta.intro.video_url, seqId);
+          if (!ok) return;
+        }
+      } else if (seg.type === "pause") {
+        setPhase("intro-pause");
+        fadeInBg(0.15, 400);
+        if (!await waitAbortable(2000, seqId)) return;
+        fadeOutBg(800);
+        if (!await waitAbortable(1000, seqId)) return;
+      } else if (seg.type === "transition") {
+        preloadNext(seg.index + 1);
+        setPhase("transition");
+        setCurrentArticle(seg.index);
+        fadeInBg(0.5, 300);
+        const types: TransitionType[] = ["page-flip", "card-shuffle"];
+        setTransition(types[transitionIdx.current % types.length]);
+        transitionIdx.current++;
+        if (!await waitAbortable(ANIM_MS, seqId)) return;
+        setTransition(null);
+        fadeOutBg(800);
+        if (!await waitAbortable(TRANSITION_MS - ANIM_MS, seqId)) return;
+      } else if (seg.type === "article") {
+        setPhase("article");
+        setCurrentArticle(seg.index);
+        const video = videoRef.current;
+        if (video && !video.paused && !video.ended && video.readyState >= 2) {
+          const ok = await new Promise<boolean>(res => {
+            video.onended = () => { video.onended = null; res(sequencerIdRef.current === seqId); };
+            video.onerror = () => { video.onerror = null; res(false); };
+          });
+          if (!ok) return;
+        } else {
+          const ok = await playClip(meta.articles[seg.index].video_url, seqId);
+          if (!ok) return;
+        }
+        if (!await waitAbortable(300, seqId)) return;
+      } else if (seg.type === "outro") {
+        setPhase("outro");
+        fadeInBg(0.15, 500);
+        const video = videoRef.current;
+        if (video && !video.paused && !video.ended && video.readyState >= 2) {
+          const ok = await new Promise<boolean>(res => {
+            video.onended = () => { video.onended = null; res(sequencerIdRef.current === seqId); };
+            video.onerror = () => { video.onerror = null; res(false); };
+          });
+          if (!ok) return;
+        } else {
+          const ok = await playClip(meta.outro.video_url, seqId);
+          if (!ok) return;
+        }
+        fadeOutBg(1000);
+        if (!await waitAbortable(1200, seqId)) return;
+      } else if (seg.type === "gap") {
+        if (!await waitAbortable(300, seqId)) return;
+      }
     }
 
-    setPhase("intro-pause");
-    fadeInBg(0.15, 400); await wait(2000); fadeOutBg(800); await wait(1000);
-
-    for (let i = 0; i < meta.articles.length; i++) {
-      preloadNext(i + 1);
-      setPhase("transition"); setCurrentArticle(i); fadeInBg(0.5, 300);
-      const types: TransitionType[] = ["page-flip", "card-shuffle"];
-      setTransition(types[transitionIdx.current % types.length]); transitionIdx.current++;
-      await wait(ANIM_MS); setTransition(null); fadeOutBg(800); await wait(TRANSITION_MS - ANIM_MS);
-      setPhase("article"); await playClip(meta.articles[i].video_url); await wait(300);
+    if (sequencerIdRef.current === seqId) {
+      setPhase("done");
+      stopElapsedTimer();
     }
+  }, [meta, playClip, waitAbortable, fadeInBg, fadeOutBg, preloadNext, startElapsedTimer, stopElapsedTimer]);
 
-    setPhase("outro"); fadeInBg(0.15, 500); await playClip(meta.outro.video_url); fadeOutBg(1000); await wait(1200);
-    setPhase("done"); stopElapsedTimer();
-  }, [meta, playClip, fadeInBg, fadeOutBg, preloadNext, startElapsedTimer, stopElapsedTimer]);
+  // Convenience: start from beginning
+  const runShow = useCallback(() => runShowFrom(0, 0), [runShowFrom]);
 
   /* ── User clicks play ── */
   const handleStart = useCallback(() => {
@@ -282,26 +374,109 @@ export function NewsReaderPlayer({ lang = "en" }: Props) {
     isPaused ? handleResume() : handlePause();
   }, [isPaused, handlePause, handleResume]);
 
-  /* ── Skip back/forward 5s ── */
-  const handleSkipBack = useCallback(() => {
-    const video = videoRef.current; if (!video) return;
-    video.currentTime = Math.max(0, video.currentTime - 5);
-    elapsedRef.current = Math.max(0, elapsedRef.current - 5);
-    setElapsed(elapsedRef.current);
-    setAtLiveEdge(false);
+  /* ── Find the nearest playable segment at a given absolute time ── */
+  const findPlayableAt = useCallback((t: number): { segIdx: number; offset: number } | null => {
+    const segs = timeline.current;
+    // Find which segment this time falls in
+    let hitIdx = 0;
+    for (let i = segs.length - 1; i >= 0; i--) {
+      if (t >= segs[i].startAt) { hitIdx = i; break; }
+    }
+    const hit = segs[hitIdx];
+    const offset = t - hit.startAt;
+
+    // If it's a playable clip, use it directly
+    if (hit.url && (hit.type === "intro" || hit.type === "article" || hit.type === "outro")) {
+      return { segIdx: hitIdx, offset };
+    }
+
+    // If it's a non-playable segment (transition/pause/gap), find the nearest playable clip
+    // Look backwards first — seek into the end of the previous playable clip
+    for (let i = hitIdx - 1; i >= 0; i--) {
+      if (segs[i].url && (segs[i].type === "intro" || segs[i].type === "article" || segs[i].type === "outro")) {
+        // How far into the non-playable segment are we?
+        const timeIntoGap = t - hit.startAt;
+        // Play from the end of the previous clip, minus remaining gap time
+        const prevClipOffset = Math.max(0, segs[i].duration - (hit.duration - timeIntoGap));
+        return { segIdx: i, offset: prevClipOffset };
+      }
+    }
+
+    // Fallback: find next playable clip
+    for (let i = hitIdx + 1; i < segs.length; i++) {
+      if (segs[i].url) return { segIdx: i, offset: 0 };
+    }
+    return null;
   }, []);
 
+  /* ── Seek to absolute broadcast time ── */
+  const seekTo = useCallback(async (targetElapsed: number) => {
+    const video = videoRef.current;
+    if (!video || !meta) return;
+
+    const result = findPlayableAt(targetElapsed);
+    if (!result) return;
+
+    const { segIdx, offset } = result;
+    const seg = timeline.current[segIdx];
+
+    // Update elapsed
+    elapsedRef.current = seg.startAt + offset;
+    setElapsed(elapsedRef.current);
+    setAtLiveEdge(Math.abs(elapsedRef.current - liveElapsedRef.current) < 0.5);
+
+    // Kill current sequencer
+    const seqId = ++sequencerIdRef.current;
+    video.pause();
+    video.onended = null;
+    video.onerror = null;
+    video.oncanplay = null;
+    fadeOutBg(100);
+
+    // Update UI for target segment
+    if (seg.type === "article") { setPhase("article"); setCurrentArticle(seg.index); }
+    else if (seg.type === "intro") { setPhase("intro"); }
+    else { setPhase("outro"); }
+
+    // Load + seek + play the target clip
+    const src = preloadedRef.current.get(seg.url!) || seg.url!;
+    video.src = src;
+    video.volume = volumeRef.current;
+    video.muted = mutedRef.current;
+
+    await new Promise<void>(res => {
+      video.oncanplay = () => { video.oncanplay = null; res(); };
+      video.onerror = () => { video.onerror = null; res(); };
+      video.load();
+    });
+
+    if (sequencerIdRef.current !== seqId) return;
+    video.currentTime = Math.min(offset, video.duration || offset);
+    try { await video.play(); } catch { return; }
+
+    // Wait for this clip to finish
+    await new Promise<void>(res => {
+      video.onended = () => { video.onended = null; res(); };
+      video.onerror = () => { video.onerror = null; res(); };
+    });
+
+    if (sequencerIdRef.current !== seqId) return;
+
+    // Clip finished — restart sequencer from the NEXT segment
+    runShowFrom(segIdx + 1, 0);
+  }, [meta, findPlayableAt, fadeOutBg, runShowFrom]);
+
+  /* ── Skip back/forward 5s ── */
+  const handleSkipBack = useCallback(() => {
+    const newElapsed = Math.max(0, elapsedRef.current - 5);
+    seekTo(newElapsed);
+  }, [seekTo]);
+
   const handleSkipForward = useCallback(() => {
-    const video = videoRef.current; if (!video) return;
-    const maxForward = Math.min(video.currentTime + 5, video.duration);
-    // Can't go beyond live edge
     const maxElapsed = liveElapsedRef.current;
     const newElapsed = Math.min(elapsedRef.current + 5, maxElapsed);
-    video.currentTime = maxForward;
-    elapsedRef.current = newElapsed;
-    setElapsed(newElapsed);
-    setAtLiveEdge(Math.abs(newElapsed - maxElapsed) < 0.5);
-  }, []);
+    seekTo(newElapsed);
+  }, [seekTo]);
 
   /* ── Replay ── */
   const handleReplay = useCallback(() => {
@@ -496,7 +671,7 @@ export function NewsReaderPlayer({ lang = "en" }: Props) {
           {/* LIVE badge */}
           {isPlaying && (
             <div className={`flex items-center gap-1 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${atLiveEdge ? "bg-red-600 text-white" : "bg-gray-600 text-gray-300 cursor-pointer hover:bg-red-600 hover:text-white"}`}
-              onClick={() => { if (!atLiveEdge) { elapsedRef.current = liveElapsedRef.current; setElapsed(liveElapsedRef.current); setAtLiveEdge(true); } }}
+              onClick={() => { if (!atLiveEdge) { seekTo(liveElapsedRef.current); } }}
               title={atLiveEdge ? "Live" : "Click to go live"}>
               <div className={`w-1.5 h-1.5 rounded-full ${atLiveEdge ? "bg-white animate-pulse" : "bg-gray-400"}`} />
               LIVE
