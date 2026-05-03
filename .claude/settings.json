@@ -77,13 +77,33 @@
       "Bash(xargs kill *)",
       "Bash(lsof -ti:54112)",
       "Bash(ffmpeg -version)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Read(//Users/jv/Downloads/**)",
+      "Bash(ffprobe -v quiet -show_entries format=duration,size -show_entries stream=width,height,r_frame_rate,codec_name -of json /Users/jv/Downloads/reader_video.mp4)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('scrapers/ai_news_reader.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(ls -lt /Users/jv/Documents/MyProjects/ArasiyalAayvu/data/processed/news_reader/*_meta.json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Has intro.audio_url:', 'intro' in d and 'audio_url' in d.get\\('intro',{}\\)\\); print\\('Has articles[0].audio_url:', 'audio_url' in d.get\\('articles',[[]]\\)[0] if d.get\\('articles'\\) else False\\); print\\('generated_at:', d.get\\('generated_at'\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Has intro.audio_url:', 'audio_url' in d.get\\('intro',{}\\)\\); print\\('generated_at:', d.get\\('generated_at'\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('Has intro.audio_url:', 'audio_url' in d.get\\('intro',{}\\)\\); print\\('generated_at:', d.get\\('generated_at'\\)\\); print\\('Articles:', len\\(d.get\\('articles',[]\\)\\)\\); print\\('Article 0 audio:', d['articles'][0].get\\('audio_url','MISSING'\\)[:60]\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('generated_at:', d.get\\('generated_at'\\)\\); print\\('has intro:', 'intro' in d and 'audio_url' in d.get\\('intro',{}\\)\\); print\\('intro url:', d.get\\('intro',{}\\).get\\('audio_url','MISSING'\\)[:80] if 'intro' in d else 'NO INTRO KEY'\\)\")",
+      "Bash(grep -E \"\\\\.py$\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('scrapers/news_ingestion.py'\\).read\\(\\)\\); print\\('news_ingestion.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('scrapers/ai_news_reader.py'\\).read\\(\\)\\); print\\('ai_news_reader.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('web/backend_api/main.py'\\).read\\(\\)\\); print\\('main.py: OK'\\)\")",
+      "Read(//Users/jv/Desktop/**)",
+      "Bash(ls -la /Users/jv/Documents/MyProjects/ArasiyalAayvu/data/processed/news_reader/run_*/article_*.mp4 /Users/jv/Documents/MyProjects/ArasiyalAayvu/data/processed/news_reader/run_*/intro.mp4 /Users/jv/Documents/MyProjects/ArasiyalAayvu/data/processed/news_reader/run_*/outro.mp4)",
+      "Bash(md5 intro.mp4 article_00.mp4 article_01.mp4 article_02.mp4 article_03.mp4 article_04.mp4 outro.mp4)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('scrapers/ai_news_reader.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ],
     "additionalDirectories": [
       "/Users/jv/Downloads/ArasiyalAavyuDB",
       "/Users/jv/Documents/MyProjects/SadTalker/src/face3d/util",
       "/Users/jv/Documents/MyProjects/SadTalker/src/utils",
-      "/Users/jv/Documents/MyProjects/Wav2Lip"
+      "/Users/jv/Documents/MyProjects/Wav2Lip",
+      "/Users/jv/Downloads"
     ]
   }
 }
