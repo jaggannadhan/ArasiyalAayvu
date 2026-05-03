@@ -1,0 +1,626 @@
+[
+  {
+    "doc_id": "2011-12",
+    "fiscal_year": "2011-12",
+    "fiscal_year_label": "April 2011 – March 2012",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2011-2016",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2014-15, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202014-15.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2015-16, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202015-16.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation from 2011-12; tied ₹1.10 Cr / untied ₹0.90 Cr split from same page. TNRD page shows total allocation as ₹470 Cr (vs computed 234×2=₹468 Cr; ₹2 Cr difference likely administrative overhead)."
+  },
+  {
+    "doc_id": "2012-13",
+    "fiscal_year": "2012-13",
+    "fiscal_year_label": "April 2012 – March 2013",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2011-2016",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2014-15, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202014-15.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2015-16, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202015-16.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation from 2011-12; tied ₹1.10 Cr / untied ₹0.90 Cr split from same page. TNRD page shows total allocation as ₹470 Cr (vs computed 234×2=₹468 Cr; ₹2 Cr difference likely administrative overhead)."
+  },
+  {
+    "doc_id": "2013-14",
+    "fiscal_year": "2013-14",
+    "fiscal_year_label": "April 2013 – March 2014",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2011-2016",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2014-15, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202014-15.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2015-16, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202015-16.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation from 2011-12; tied ₹1.10 Cr / untied ₹0.90 Cr split from same page. TNRD page shows total allocation as ₹470 Cr (vs computed 234×2=₹468 Cr; ₹2 Cr difference likely administrative overhead)."
+  },
+  {
+    "doc_id": "2014-15",
+    "fiscal_year": "2014-15",
+    "fiscal_year_label": "April 2014 – March 2015",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2011-2016",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2014-15, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202014-15.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2015-16, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202015-16.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation from 2011-12; tied ₹1.10 Cr / untied ₹0.90 Cr split from same page. TNRD page shows total allocation as ₹470 Cr (vs computed 234×2=₹468 Cr; ₹2 Cr difference likely administrative overhead)."
+  },
+  {
+    "doc_id": "2015-16",
+    "fiscal_year": "2015-16",
+    "fiscal_year_label": "April 2015 – March 2016",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2011-2016",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2014-15, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202014-15.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2015-16, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/ENGLISH%20POLICY%20NOTE%202015-16.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation from 2011-12; tied ₹1.10 Cr / untied ₹0.90 Cr split from same page. TNRD page shows total allocation as ₹470 Cr (vs computed 234×2=₹468 Cr; ₹2 Cr difference likely administrative overhead).",
+    "performance": {
+      "total_allocation_cr": 470.0,
+      "works_initiated": 14684,
+      "total_expenditure_cr": 469.4,
+      "utilization_pct": 99.9,
+      "category_wise": {
+        "buildings": {
+          "works": 3463,
+          "expenditure_cr": 190.2
+        },
+        "roads": {
+          "works": 2908,
+          "expenditure_cr": 110.74
+        },
+        "water_supply": {
+          "works": 2850,
+          "expenditure_cr": 70.0
+        },
+        "procurement_supply": {
+          "works": 3431,
+          "expenditure_cr": 50.69
+        },
+        "cd_irrigation": {
+          "works": 1155,
+          "expenditure_cr": 40.01
+        }
+      }
+    },
+    "performance_source": "TNRD MLACDS page — year-wise performance data 2015-16"
+  },
+  {
+    "doc_id": "2016-17",
+    "fiscal_year": "2016-17",
+    "fiscal_year_label": "April 2016 – March 2017",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2016-2021",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": 1.1,
+    "untied_fund_cr": 0.9,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.2,
+      "water_supply_cr": 0.15,
+      "other_permissible_cr": 0.5
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Scheme Page",
+        "url": "https://tnrd.tn.gov.in/schemes/st_mlacds.php",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2016-17, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/Policy%20Note%20-%202016-17%20in%20English.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD MLACDS page confirms ₹2.00 Cr allocation for 2016-17; total allocation ₹470 Cr. Last year at ₹2 Cr before hike to ₹2.5 Cr.",
+    "performance": {
+      "total_allocation_cr": 470.0
+    }
+  },
+  {
+    "doc_id": "2017-18",
+    "fiscal_year": "2017-18",
+    "fiscal_year_label": "April 2017 – March 2018",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2016-2021",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.5,
+    "state_total_allocation_cr": 585.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.0,
+    "tied_components": {
+      "school_infrastructure_cr": 0.2,
+      "other_priority_works_cr": 1.3
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "Krishnagiri District NIC — MLACDS Scheme Page",
+        "url": "https://krishnagiri.nic.in/scheme/member-of-legislative-assembly-constituency-development-scheme/",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2017-18, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/Policy%20Note%20-%202017-18%20in%20English.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "Krishnagiri NIC district page confirms allocation increased from ₹2.00 Cr to ₹2.50 Cr for 2017-18. Tied ₹1.50 Cr / Untied ₹1.00 Cr."
+  },
+  {
+    "doc_id": "2018-19",
+    "fiscal_year": "2018-19",
+    "fiscal_year_label": "April 2018 – March 2019",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2016-2021",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.5,
+    "state_total_allocation_cr": 585.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.0,
+    "tied_components": {
+      "school_infrastructure_cr": 0.2,
+      "other_priority_works_cr": 1.3
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "Krishnagiri District NIC — MLACDS Scheme Page",
+        "url": "https://krishnagiri.nic.in/scheme/member-of-legislative-assembly-constituency-development-scheme/",
+        "type": "government"
+      },
+      {
+        "title": "TNRD Policy Note 2018-19, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/rd_e_pn_2018_19.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "Continuation of ₹2.50 Cr allocation. Krishnagiri NIC and Policy Note 2018-19 confirm same structure as 2017-18."
+  },
+  {
+    "doc_id": "2019-20",
+    "fiscal_year": "2019-20",
+    "fiscal_year_label": "April 2019 – March 2020",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2016-2021",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.5,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.25,
+      "water_supply_cr": 0.15,
+      "differently_abled_cr": 0.05,
+      "other_priority_works_cr": 0.8
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "DTNext — TN Rs 352 cr MLA fund released, guidelines issued",
+        "url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-rs-352-cr-mla-fund-released-guidelines-issued-for-works",
+        "type": "news"
+      },
+      {
+        "title": "TNRD Policy Note 2019-20, Demand No. 42",
+        "url": "https://tnrd.tn.gov.in/policynotes/42%20-%20RDPR%20-%20POLICY%20NOTE%20-%202019%20-%20ENGLISH.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "DTNext confirms fund enhanced to ₹3 Cr in 2019. Tied ₹1.50 Cr / Untied ₹1.50 Cr. 22% earmarked for SC/ST areas, 30% for priority works."
+  },
+  {
+    "doc_id": "2020-21",
+    "fiscal_year": "2020-21",
+    "fiscal_year_label": "April 2020 – March 2021",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2016-2021",
+    "ruling_party": "AIADMK",
+    "per_constituency_allocation_cr": 2.0,
+    "state_total_allocation_cr": 468.0,
+    "tied_fund_cr": null,
+    "untied_fund_cr": null,
+    "tied_components": null,
+    "sc_st_earmark_pct": 22.0,
+    "covid_impact": true,
+    "sources": [
+      {
+        "title": "DTNext — TN Rs 352 cr MLA fund released, guidelines issued",
+        "url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-rs-352-cr-mla-fund-released-guidelines-issued-for-works",
+        "type": "news"
+      }
+    ],
+    "source_notes": "DTNext article confirms: 'The fund was enhanced to Rs 3 crore in 2019, was scaled down to Rs 2 crore in 2020 owing to the spread of COVID-19.' Tied/untied split was modified during COVID — guidelines allowed MLACDS funds to be used for COVID prevention and containment."
+  },
+  {
+    "doc_id": "2021-22",
+    "fiscal_year": "2021-22",
+    "fiscal_year_label": "April 2021 – March 2022",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2021-2026",
+    "ruling_party": "DMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.5,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.25,
+      "water_supply_cr": 0.15,
+      "differently_abled_cr": 0.05,
+      "other_priority_works_cr": 0.8
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD Policy Note 2021-22, Demand No. 42, Section 2.2 (p. 11)",
+        "url": "https://tnrd.tn.gov.in/policynotes/42-RD-POLICY%20NOTE-ENGLSIH_2021_2022.pdf",
+        "type": "government"
+      },
+      {
+        "title": "DTNext — TN Rs 352 cr MLA fund released, guidelines issued",
+        "url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-rs-352-cr-mla-fund-released-guidelines-issued-for-works",
+        "type": "news"
+      },
+      {
+        "title": "TNRD MLACDS Reports — Physical & Financial Performance",
+        "url": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/public_page_table_content_details_view.php?tabular_content_id=NQ%3D%3D&page_id=Ng%3D%3D",
+        "type": "government"
+      }
+    ],
+    "source_notes": "Policy Note 2021-22 Section 2.2 (p.11): '₹3.00 crore per constituency per annum. Tied ₹1.50 Cr for priority works, Untied ₹1.50 Cr.' DTNext confirms initial release of ₹352.5 Cr (₹1.5 Cr × 234 + ₹1.5 Cr). Total ₹702 Cr for the year. 30% priority works, 22% SC/ST.",
+    "performance": {
+      "total_released_cr": 702.0,
+      "works_initiated": 10123,
+      "total_cost_cr": 694.09,
+      "works_completed": 9446,
+      "works_ongoing": 677,
+      "utilization_pct": 98.9
+    },
+    "performance_source": "TNRD Reports Page — MLACDS Physical & Financial Performance 2021-22"
+  },
+  {
+    "doc_id": "2022-23",
+    "fiscal_year": "2022-23",
+    "fiscal_year_label": "April 2022 – March 2023",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2021-2026",
+    "ruling_party": "DMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.5,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.25,
+      "water_supply_cr": 0.15,
+      "differently_abled_cr": 0.05,
+      "other_priority_works_cr": 0.8
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD Policy Note 2024-25, Demand No. 42, Section 3.4 (pp. 76-77)",
+        "url": "https://tnrd.tn.gov.in/policynotes/rd1_e_pn_2024_25.pdf",
+        "type": "government"
+      },
+      {
+        "title": "TNRD MLACDS Reports — Physical & Financial Performance",
+        "url": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/public_page_table_content_details_view.php?tabular_content_id=NQ%3D%3D&page_id=Ng%3D%3D",
+        "type": "government"
+      }
+    ],
+    "source_notes": "Policy Note 2024-25 (p.76): 'During the Year 2022-23, the Government released new guidelines for the scheme.' TNRD Reports: ₹702 Cr released, 9,536 works initiated.",
+    "performance": {
+      "total_released_cr": 702.0,
+      "works_initiated": 9536,
+      "total_cost_cr": 683.55,
+      "works_completed": 6703,
+      "works_ongoing": 2833,
+      "utilization_pct": 97.4
+    },
+    "performance_source": "TNRD Reports Page — MLACDS Physical & Financial Performance 2022-23"
+  },
+  {
+    "doc_id": "2023-24",
+    "fiscal_year": "2023-24",
+    "fiscal_year_label": "April 2023 – March 2024",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2021-2026",
+    "ruling_party": "DMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": 1.5,
+    "untied_fund_cr": 1.5,
+    "tied_components": {
+      "school_infrastructure_cr": 0.25,
+      "anganwadi_noon_meal_cr": 0.25,
+      "water_supply_cr": 0.15,
+      "differently_abled_cr": 0.05,
+      "other_priority_works_cr": 0.8
+    },
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD MLACDS Reports — Physical & Financial Performance",
+        "url": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/public_page_table_content_details_view.php?tabular_content_id=NQ%3D%3D&page_id=Ng%3D%3D",
+        "type": "government"
+      }
+    ],
+    "source_notes": "TNRD Reports: ₹702 Cr sanctioned for 2023-24. 9,012 works initiated at ₹604.86 Cr cost. Only 1,384 completed as of report date (7,628 ongoing — lower completion likely due to reporting midway through the year).",
+    "performance": {
+      "total_sanctioned_cr": 702.0,
+      "works_initiated": 9012,
+      "total_cost_cr": 604.86,
+      "works_completed": 1384,
+      "works_ongoing": 7628,
+      "utilization_pct": 86.2
+    },
+    "performance_source": "TNRD Reports Page — MLACDS Physical & Financial Performance 2023-24"
+  },
+  {
+    "doc_id": "2024-25",
+    "fiscal_year": "2024-25",
+    "fiscal_year_label": "April 2024 – March 2025",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2021-2026",
+    "ruling_party": "DMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": null,
+    "untied_fund_cr": 3.0,
+    "tied_components": null,
+    "sc_st_earmark_pct": 22.0,
+    "policy_change": "CM approved modification allowing MLAs to utilize the entire ₹3 Cr for works of their choice, removing the tied component restriction. GST deductions on MLACDS works also eliminated.",
+    "sources": [
+      {
+        "title": "TNRD Policy Note 2024-25, Demand No. 42, Section 3.4 (pp. 76-77)",
+        "url": "https://tnrd.tn.gov.in/policynotes/rd1_e_pn_2024_25.pdf",
+        "type": "government"
+      },
+      {
+        "title": "DTNext — MLAs allowed to spend Rs 3 crore on work of their choice",
+        "url": "https://www.dtnext.in/news/tamilnadu/mlas-would-be-allowed-to-spend-rs-3-crore-on-work-of-their-choice-in-their-constituency-minister-duraimurugan-792031",
+        "type": "news"
+      }
+    ],
+    "source_notes": "Policy Note 2024-25 (p.77): 'For the year 2024-25, the Government have accorded administrative sanction for Rs.702 crore.' DTNext (June 2024): CM accepted MLAs' demands — entire ₹3 Cr now discretionary. GST deductions (~₹54 lakh) eliminated.",
+    "performance": {
+      "total_sanctioned_cr": 702.0
+    }
+  },
+  {
+    "doc_id": "2025-26",
+    "fiscal_year": "2025-26",
+    "fiscal_year_label": "April 2025 – March 2026",
+    "state": "Tamil Nadu",
+    "state_code": "TN",
+    "scheme_name": "Member of Legislative Assembly Constituency Development Scheme",
+    "scheme_short": "MLACDS",
+    "num_constituencies": 234,
+    "ground_truth_confidence": "HIGH",
+    "assembly_term": "2021-2026",
+    "ruling_party": "DMK",
+    "per_constituency_allocation_cr": 3.0,
+    "state_total_allocation_cr": 702.0,
+    "tied_fund_cr": null,
+    "untied_fund_cr": 3.0,
+    "tied_components": null,
+    "sc_st_earmark_pct": 22.0,
+    "sources": [
+      {
+        "title": "TNRD Policy Note 2024-25, Demand No. 42, Section 3.4 (pp. 76-77)",
+        "url": "https://tnrd.tn.gov.in/policynotes/rd1_e_pn_2024_25.pdf",
+        "type": "government"
+      }
+    ],
+    "source_notes": "Continuation of ₹3 Cr allocation per Policy Note 2024-25 guidelines. This is the final year of the 2021-2026 DMK term. Performance data not yet available (fiscal year in progress)."
+  }
+]

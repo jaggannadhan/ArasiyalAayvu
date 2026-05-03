@@ -1868,3 +1868,741 @@ def merge_politicians(payload: MergeRequest) -> Dict[str, Any]:
         })
     except (GoogleAPICallError, RetryError) as exc:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
+# ── News API ─────────────────────────────────────────────────────────────────
+
+@app.get("/api/news")
+def get_news(
+    limit: int = Query(50, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+    category: Optional[str] = Query(None, description="OV category filter (POLITICS, BUSINESS, etc.)"),
+    topic: Optional[str] = Query(None, description="NER topic filter"),
+    sdg: Optional[str] = Query(None, description="SDG filter (e.g. SDG-4)"),
+    entity: Optional[str] = Query(None, description="Filter to articles mentioning this entity node_id"),
+    min_relevance: float = Query(0.0, ge=0.0, le=1.0),
+) -> Dict[str, Any]:
+    """Paginated news articles with NER-enriched metadata."""
+    try:
+        query = _db.collection("news_articles").order_by(
+            "published_at", direction=firestore.Query.DESCENDING
+        ).limit(500)
+        docs = list(query.stream())
+
+        articles = []
+        for doc in docs:
+            d = doc.to_dict()
+            d["doc_id"] = doc.id
+
+            if category and d.get("ov_category", "").upper() != category.upper():
+                continue
+            if min_relevance > 0 and d.get("relevance_to_tn", 0) < min_relevance:
+                continue
+            if topic:
+                topics_lower = [t.lower() for t in d.get("topics", [])]
+                if topic.lower() not in topics_lower:
+                    continue
+            if sdg:
+                if sdg.upper() not in [s.upper() for s in d.get("sdg_alignment", [])]:
+                    continue
+            if entity:
+                entity_ids = [e.get("node_id", "") for e in d.get("entities", [])]
+                canonical_ids = [e.get("canonical_id", "") for e in d.get("entities", [])]
+                if entity not in entity_ids and entity not in canonical_ids:
+                    continue
+
+            articles.append({
+                "doc_id": d["doc_id"],
+                "title": d.get("title", ""),
+                "snippet": d.get("snippet", ""),
+                "summary": d.get("one_line_summary", ""),
+                "source_url": d.get("source_url", ""),
+                "source_name": d.get("source_name", ""),
+                "category": d.get("ov_category", ""),
+                "topics": d.get("topics", []),
+                "sdg_alignment": d.get("sdg_alignment", []),
+                "sentiment": d.get("sentiment", 0),
+                "relevance_to_tn": d.get("relevance_to_tn", 0),
+                "is_breaking": d.get("is_breaking", False),
+                "heat_score": d.get("heat_score", 0),
+                "latitude": d.get("latitude"),
+                "longitude": d.get("longitude"),
+                "published_at": d.get("published_at", ""),
+                "entity_count": len(d.get("entities", [])),
+                "relation_count": len(d.get("relations", [])),
+            })
+
+        paginated = articles[offset : offset + limit]
+        return {"total": len(articles), "offset": offset, "limit": limit, "articles": paginated}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get("/api/news/threads")
+def get_news_threads(
+    top_n: int = Query(10, ge=1, le=20, description="Number of anchor stories to thread"),
+) -> Dict[str, Any]:
+    """Build narrative threads starting from today's top stories.
+
+    For each of the top N most recent articles (by heat_score, then recency),
+    find all other articles that share at least one NER entity.
+    Returns threads sorted by the anchor article's rank.
+    """
+    try:
+        # Fetch all articles with entities
+        all_docs = list(
+            _db.collection("news_articles")
+            .order_by("published_at", direction=firestore.Query.DESCENDING)
+            .limit(500)
+            .stream()
+        )
+        all_articles: List[Dict[str, Any]] = []
+        for doc in all_docs:
+            d = doc.to_dict()
+            d["doc_id"] = doc.id
+            all_articles.append(d)
+
+        # Build entity → article index
+        # Skip overly generic entities that connect everything
+        STOP_ENTITIES = {
+            "tamil_nadu", "india", "chennai", "tamil_nadu_assembly_elections",
+            "state_government", "chief_minister", "assembly_elections",
+            "tn_assembly_elections_2026", "election", "elections",
+            "voters", "candidates", "political_parties",
+            # Generic community/topic terms that link unrelated articles
+            "public", "residents", "media", "journalists", "people",
+            "government", "officials", "police", "youth", "women",
+            "students", "citizens", "opposition", "ruling_party",
+            "exit_polls", "political_reactions", "ground_reality",
+            "tamil_nadu_assembly_election", "tamil_nadu_assembly",
+        }
+
+        # Only thread on high-signal entity types.
+        # Place/Topic/Community/Resource are too generic — district names
+        # appear in weather bulletins, election results, and power reports
+        # as mere geographic tags, creating false threads.
+        THREAD_ENTITY_TYPES = {"Person", "Party", "Policy", "Event", "Institution"}
+
+        entity_to_articles: Dict[str, List[int]] = {}  # entity node_id → [article indices]
+        for idx, a in enumerate(all_articles):
+            for ent in a.get("entities", []):
+                if ent.get("type", "") not in THREAD_ENTITY_TYPES:
+                    continue
+                nid = ent.get("node_id", "")
+                cid = ent.get("canonical_id")
+                key = cid if cid and cid != "null" else nid
+                if key and key.lower().replace(" ", "_") not in STOP_ENTITIES:
+                    entity_to_articles.setdefault(key, []).append(idx)
+
+        # Also filter entities that appear in >60% of articles (too generic)
+        max_frequency = len(all_articles) * 0.6
+        entity_to_articles = {
+            k: v for k, v in entity_to_articles.items()
+            if len(v) <= max_frequency
+        }
+
+        # Pick anchor stories: most recent, weighted by heat_score
+        # Sort by: heat_score desc, then published_at desc
+        anchors = sorted(
+            range(len(all_articles)),
+            key=lambda i: (
+                all_articles[i].get("heat_score", 0),
+                all_articles[i].get("published_at", ""),
+            ),
+            reverse=True,
+        )[:top_n]
+
+        used_article_ids: set[str] = set()  # track which articles are already anchored
+        used_thread_entities: set[str] = set()  # avoid duplicate thread labels
+        threads: List[Dict[str, Any]] = []
+
+        for anchor_idx in anchors:
+            anchor = all_articles[anchor_idx]
+            anchor_id = anchor["doc_id"]
+
+            if anchor_id in used_article_ids:
+                continue
+
+            # Find all articles connected via shared high-signal entities
+            anchor_entities = set()
+            for ent in anchor.get("entities", []):
+                if ent.get("type", "") not in THREAD_ENTITY_TYPES:
+                    continue
+                cid = ent.get("canonical_id")
+                key = cid if cid and cid != "null" else ent.get("node_id", "")
+                if key and key.lower().replace(" ", "_") not in STOP_ENTITIES:
+                    anchor_entities.add(key)
+
+            if not anchor_entities:
+                continue
+
+            # Collect connected articles — require 2+ shared entities
+            # (not just 1) to ensure content relevance, not coincidence
+            article_shared_count: Dict[int, int] = {}  # article_idx → number of shared entities
+            shared_entities_map: Dict[str, int] = {}  # entity → count of articles sharing it
+            for ent_key in anchor_entities:
+                article_indices = entity_to_articles.get(ent_key, [])
+                shared_entities_map[ent_key] = len(article_indices)
+                for ai in article_indices:
+                    article_shared_count[ai] = article_shared_count.get(ai, 0) + 1
+
+            # Only include articles sharing 2+ entities with the anchor
+            MIN_SHARED = 2
+            connected_indices: set[int] = {anchor_idx}  # always include anchor
+            for ai, count in article_shared_count.items():
+                if count >= MIN_SHARED:
+                    connected_indices.add(ai)
+
+            # Build thread: anchor + connected, sorted chronologically
+            thread_articles = []
+            for idx in connected_indices:
+                a = all_articles[idx]
+                aid = a["doc_id"]
+                is_anchor = (aid == anchor_id)
+                thread_articles.append({
+                    "doc_id": aid,
+                    "title": a.get("title", ""),
+                    "summary": a.get("one_line_summary", ""),
+                    "snippet": a.get("snippet", ""),
+                    "source_url": a.get("source_url", ""),
+                    "source_name": a.get("source_name", ""),
+                    "category": a.get("ov_category", ""),
+                    "published_at": a.get("published_at", ""),
+                    "heat_score": a.get("heat_score", 0),
+                    "is_breaking": a.get("is_breaking", False),
+                    "is_anchor": is_anchor,
+                    "sentiment": a.get("sentiment", 0),
+                    "sdg_alignment": a.get("sdg_alignment", []),
+                })
+
+            # Sort by published_at ascending (timeline left→right)
+            thread_articles.sort(key=lambda x: x.get("published_at", ""))
+
+            # Thread title: use the anchor article's title as the thread label
+            # when it's a standalone (1 article) or small thread.
+            # For larger threads, use the most prominent Person/Party entity.
+            # This ensures the label always conveys the essence of the thread.
+
+            if len(connected_indices) <= 2:
+                # Small/standalone thread — the anchor title IS the thread
+                thread_label = anchor.get("title", "")
+                # Trim to a concise headline: take first clause
+                for sep in [": ", " — ", " - ", " | ", "; "]:
+                    if sep in thread_label:
+                        thread_label = thread_label.split(sep)[0]
+                        break
+                # Cap at a word boundary
+                if len(thread_label) > 45:
+                    cut = thread_label[:45].rfind(" ")
+                    if cut > 20:
+                        thread_label = thread_label[:cut] + "..."
+                    else:
+                        thread_label = thread_label[:42] + "..."
+                thread_entity = thread_label.lower().replace(" ", "_")
+            else:
+                # Larger thread — find the most prominent entity
+                ENTITY_TYPE_RANK = {"Person": 0, "Party": 1, "Event": 2, "Institution": 3, "Policy": 4}
+                best_entity_key = ""
+                best_entity_label = ""
+                best_score = (-1, -1)
+
+                for ent in anchor.get("entities", []):
+                    cid = ent.get("canonical_id")
+                    key = cid if cid and cid != "null" else ent.get("node_id", "")
+                    if key not in anchor_entities or key not in shared_entities_map:
+                        continue
+                    etype = ent.get("type", "")
+                    type_rank = ENTITY_TYPE_RANK.get(etype, 9)
+                    shared_count = shared_entities_map.get(key, 0)
+                    score = (-type_rank, shared_count)
+                    if score > best_score:
+                        best_score = score
+                        best_entity_key = key
+                        best_entity_label = ent.get("name", key)
+
+                thread_entity = best_entity_key or (max(shared_entities_map, key=shared_entities_map.get) if shared_entities_map else "")
+                thread_label = best_entity_label or thread_entity
+
+            # Clean up label: remove underscores, title-case
+            thread_label = thread_label.replace("_", " ").strip()
+            if thread_label == thread_label.lower():
+                thread_label = thread_label.title()
+
+            # Skip if this thread's label was already used (normalized)
+            label_key = thread_label.lower().strip()
+            if label_key in used_thread_entities:
+                continue
+            used_article_ids.add(anchor_id)
+            used_thread_entities.add(label_key)
+
+            threads.append({
+                "anchor_title": anchor.get("title", ""),
+                "thread_entity": thread_entity,
+                "thread_label": thread_label,
+                "article_count": len(thread_articles),
+                "shared_entities": list(anchor_entities)[:10],
+                "articles": thread_articles,
+            })
+
+        return {"threads": threads, "count": len(threads)}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get("/api/news/{doc_id}")
+def get_news_article(doc_id: str) -> Dict[str, Any]:
+    """Single news article with full NER detail (entities + relations)."""
+    try:
+        doc = _db.collection("news_articles").document(doc_id).get()
+        if not doc.exists:
+            raise HTTPException(status_code=404, detail="Article not found")
+        d = doc.to_dict()
+        d["doc_id"] = doc.id
+        return d
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get("/api/news/by-entity/{entity_id}")
+def news_by_entity(
+    entity_id: str,
+    limit: int = Query(20, ge=1, le=100),
+) -> Dict[str, Any]:
+    """Find news articles mentioning a specific entity (politician, place, party, etc.)."""
+    try:
+        docs = list(
+            _db.collection("news_articles")
+            .order_by("published_at", direction=firestore.Query.DESCENDING)
+            .limit(200)
+            .stream()
+        )
+        matching = []
+        for doc in docs:
+            d = doc.to_dict()
+            entities = d.get("entities", [])
+            matched = any(
+                e.get("node_id") == entity_id or e.get("canonical_id") == entity_id
+                for e in entities
+            )
+            if matched:
+                matching.append({
+                    "doc_id": doc.id,
+                    "title": d.get("title", ""),
+                    "summary": d.get("one_line_summary", ""),
+                    "source_url": d.get("source_url", ""),
+                    "category": d.get("ov_category", ""),
+                    "topics": d.get("topics", []),
+                    "published_at": d.get("published_at", ""),
+                    "sentiment": d.get("sentiment", 0),
+                })
+            if len(matching) >= limit:
+                break
+        return {"entity_id": entity_id, "total": len(matching), "articles": matching}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+# ── News Knowledge Graph ─────────────────────────────────────────────────────
+
+@app.get("/api/news-graph")
+def get_news_graph() -> Dict[str, Any]:
+    """Return the raw News KG payload (nodes + edges + meta)."""
+    try:
+        _, raw = _gq.load_news_graph(project_id=PROJECT_ID)
+        return raw
+    except RuntimeError:
+        raise HTTPException(status_code=404, detail="News knowledge graph not available yet")
+
+
+@app.post("/api/news-graph/cache/clear")
+def news_graph_cache_clear() -> Dict[str, Any]:
+    """Evict the in-memory News KG cache."""
+    return _gq.clear_news_cache()
+
+
+@app.get("/api/news-graph/neighbors/{node_id:path}")
+def news_graph_neighbors(
+    node_id: str,
+    verb: Optional[str] = Query(None),
+    direction: str = Query("out", pattern="^(in|out|both)$"),
+    limit: int = Query(200, ge=1, le=1000),
+) -> Dict[str, Any]:
+    """1-hop neighbors in the News KG."""
+    try:
+        g, _ = _gq.load_news_graph(project_id=PROJECT_ID)
+    except RuntimeError:
+        raise HTTPException(status_code=404, detail="News KG not available")
+    if node_id not in g:
+        raise HTTPException(status_code=404, detail=f"Unknown node: {node_id}")
+    node = {"id": node_id, **g.nodes[node_id]}
+    results = _gq.neighbors(g, node_id, verb=verb, direction=direction, limit=limit)
+    return {"node": node, "neighbors": results, "count": len(results)}
+
+
+# ── District Collectors ───────────────────────────────────────────────────────
+
+@app.get("/api/district-collectors/{district_slug}")
+def district_collectors(district_slug: str) -> Dict[str, Any]:
+    """Current + historical collectors for a district."""
+    try:
+        docs = list(
+            _db.collection("district_collectors_profile")
+            .where(filter=FieldFilter("district_slug", "==", district_slug))
+            .stream()
+        )
+        if not docs:
+            return {"current": None, "history": [], "count": 0}
+
+        all_collectors = sorted(
+            [{**d.to_dict(), "doc_id": d.id} for d in docs],
+            key=lambda x: x.get("from_date") or "",
+            reverse=True,
+        )
+        current = next((c for c in all_collectors if c.get("is_current")), None)
+        return {"current": current, "history": all_collectors, "count": len(all_collectors)}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+# ── MLACDS Budget ─────────────────────────────────────────────────────────────
+
+@app.get("/api/mlacds-budget")
+def mlacds_budget() -> Dict[str, Any]:
+    """MLA Constituency Development Scheme — all years (state-level, uniform allocation)."""
+    try:
+        docs = list(_db.collection("mlacds_budget").stream())
+        budgets = sorted(
+            [{**d.to_dict(), "doc_id": d.id} for d in docs],
+            key=lambda x: x.get("doc_id", ""),
+        )
+        latest = budgets[-1] if budgets else None
+        return {"budgets": budgets, "count": len(budgets), "latest": latest}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+# ── State Budget Time-Series ──────────────────────────────────────────────────
+
+@app.get("/api/state-budgets/{state_slug}/timeseries")
+def state_budgets_timeseries(state_slug: str) -> Dict[str, Any]:
+    """All available budget years for a state (up to 14 years for TN)."""
+    # Map slug → state code prefix used in doc IDs
+    slug_to_prefix: Dict[str, str] = {
+        "tamil_nadu": "TN", "kerala": "KL", "karnataka": "KA",
+        "andhra_pradesh": "AP", "telangana": "TS",
+    }
+    prefix = slug_to_prefix.get(state_slug)
+    if not prefix:
+        raise HTTPException(status_code=404, detail=f"No budget data for {state_slug}")
+
+    try:
+        docs = [
+            d for d in _db.collection("state_budgets").stream()
+            if d.id.startswith(f"{prefix}_")
+        ]
+        budgets = sorted(
+            [{**d.to_dict(), "doc_id": d.id} for d in docs],
+            key=lambda x: x.get("fiscal_year", x["doc_id"]),
+        )
+        return {"state": state_slug, "budgets": budgets, "count": len(budgets)}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+# ── News Ingestion Cron ──────────────────────────────────────────────────────
+
+from fastapi import Header  # noqa: E402
+
+_NEWS_INGEST_SECRET = os.getenv("NEWS_INGEST_SECRET", "")
+
+
+@app.post("/tasks/news-ingest")
+async def task_news_ingest(
+    x_ingest_token: Optional[str] = Header(None, alias="X-Ingest-Token"),
+    hours: int = Query(4, ge=1, le=48),
+) -> Dict[str, Any]:
+    """Cron-triggered news ingestion: fetch from OmnesVident, run NER, store.
+
+    Protected by X-Ingest-Token header. Called by Cloud Scheduler every 3h.
+    """
+    if not _NEWS_INGEST_SECRET:
+        raise HTTPException(status_code=503, detail="NEWS_INGEST_SECRET not configured")
+    if x_ingest_token != _NEWS_INGEST_SECRET:
+        raise HTTPException(status_code=401, detail="Invalid ingest token")
+
+    import hashlib
+    from datetime import datetime, timedelta, timezone
+
+    ov_key = os.getenv("OMNES_VIDENT_API_KEY", "")
+    if not ov_key:
+        raise HTTPException(status_code=503, detail="OMNES_VIDENT_API_KEY not configured")
+
+    OV_API_BASE = "https://omnesvident-api-naqkmfs2qa-uc.a.run.app"
+    OV_CATEGORIES = {"POLITICS", "BUSINESS", "HEALTH", "SCIENCE_TECH", "WORLD", "ENTERTAINMENT", "SPORTS"}
+    start_date = (datetime.now(timezone.utc) - timedelta(hours=hours)).isoformat()
+
+    # 1. Fetch stories from OmnesVident (single call)
+    async with httpx.AsyncClient(timeout=30) as client:
+        resp = await client.get(
+            f"{OV_API_BASE}/v1/stories",
+            params={"region": "IN-TN", "start_date": start_date, "limit": 200},
+            headers={"x-api-key": ov_key},
+        )
+        resp.raise_for_status()
+        all_stories = [
+            s for s in resp.json().get("stories", [])
+            if s.get("category", "").upper() in OV_CATEGORIES
+        ]
+
+    # 2. Dedup against existing (by ID + title similarity)
+    import unicodedata as _ud
+    def _norm_title(t: str) -> str:
+        t = _ud.normalize("NFKD", t.lower())
+        t = re.sub(r"[^\w\s]", "", t)
+        return re.sub(r"\s+", " ", t).strip()
+
+    existing_ids: set[str] = set()
+    existing_titles: set[str] = set()
+    for doc in _db.collection("news_articles").select(["ov_id", "title"]).stream():
+        d = doc.to_dict()
+        existing_ids.add(d.get("ov_id", ""))
+        t = d.get("title", "")
+        if t:
+            existing_titles.add(_norm_title(t))
+
+    new_stories = [s for s in all_stories if s["dedup_group_id"] not in existing_ids]
+
+    # Title-similarity dedup within batch + against existing
+    deduped: list = []
+    batch_titles: set[str] = set(existing_titles)
+    for s in new_stories:
+        norm = _norm_title(s.get("title", ""))
+        if not norm:
+            deduped.append(s)
+            continue
+        if norm in batch_titles:
+            continue
+        # Token overlap check
+        tokens = set(norm.split())
+        is_dup = False
+        for et in batch_titles:
+            et_tokens = set(et.split())
+            if et_tokens and tokens:
+                overlap = len(tokens & et_tokens) / min(len(tokens), len(et_tokens))
+                if overlap >= 0.90:
+                    is_dup = True
+                    break
+        if not is_dup:
+            batch_titles.add(norm)
+            deduped.append(s)
+    title_dupes_removed = len(new_stories) - len(deduped)
+    new_stories = deduped
+
+    if not new_stories:
+        return {"status": "ok", "fetched": len(all_stories), "new": 0, "stored": 0, "title_dupes_removed": title_dupes_removed}
+
+    # 3. Fetch full article texts via trafilatura
+    full_texts: Dict[str, str] = {}
+    try:
+        import trafilatura
+        import concurrent.futures
+
+        def _extract(url: str) -> Optional[str]:
+            try:
+                dl = trafilatura.fetch_url(url)
+                if dl:
+                    text = trafilatura.extract(dl, include_comments=False, include_tables=False, no_fallback=True)
+                    return text[:3000] if text and len(text) > 50 else None
+            except Exception:
+                pass
+            return None
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
+            futures = {pool.submit(_extract, s.get("source_url", "")): s["dedup_group_id"] for s in new_stories}
+            for fut in concurrent.futures.as_completed(futures):
+                sid = futures[fut]
+                result = fut.result()
+                if result:
+                    full_texts[sid] = result
+    except ImportError:
+        pass  # trafilatura not installed — use snippet only
+
+    # 4. Run NER via Gemini
+    ner_results: list[Dict[str, Any]] = []
+    try:
+        from google import genai
+        from google.genai import types as genai_types
+
+        from backend_api.news_ner import load_reference_data, build_ner_system_prompt, NER_RESPONSE_SCHEMA
+
+        ref_data = load_reference_data()
+        system_prompt = build_ner_system_prompt(ref_data)
+        gemini_client = genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
+
+        for i in range(0, len(new_stories), 10):
+            batch = new_stories[i : i + 10]
+            article_inputs = [{
+                "id": a["dedup_group_id"], "title": a["title"],
+                "body": full_texts.get(a["dedup_group_id"], a.get("snippet", "")),
+                "category": a.get("category", ""), "source": a.get("source_name", ""),
+                "timestamp": a.get("timestamp", ""), "region": a.get("region_code", ""),
+            } for a in batch]
+
+            config = genai_types.GenerateContentConfig(
+                system_instruction=system_prompt,
+                response_mime_type="application/json",
+                response_schema=NER_RESPONSE_SCHEMA,
+                temperature=0.1,
+            )
+            try:
+                gemini_resp = await gemini_client.aio.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=(
+                        "Extract entities and relations from these articles. "
+                        "Return one result per article in the same order.\n\n"
+                        + json.dumps(article_inputs, separators=(",", ":"))
+                    ),
+                    config=config,
+                )
+                ner_results.extend(json.loads(gemini_resp.text).get("articles", []))
+            except Exception:
+                pass  # Store without NER; retry-empty fixes later
+    except Exception:
+        pass
+
+    # 5. Store in Firestore
+    ner_by_id = {r["article_id"]: r for r in ner_results}
+    fb = _db.batch()
+    batch_count = 0
+    stored = 0
+
+    for story in new_stories:
+        sid = story["dedup_group_id"]
+        ner = ner_by_id.get(sid, {})
+        doc_data = {
+            "ov_id": sid,
+            "title": story["title"],
+            "snippet": story.get("snippet", ""),
+            "full_text": full_texts.get(sid, ""),
+            "source_url": story.get("source_url", ""),
+            "source_name": story.get("source_name", ""),
+            "region_code": story.get("region_code", ""),
+            "ov_category": story.get("category", ""),
+            "latitude": story.get("latitude"),
+            "longitude": story.get("longitude"),
+            "is_breaking": story.get("is_breaking", False),
+            "heat_score": story.get("heat_score", 0),
+            "published_at": story.get("timestamp", ""),
+            "ov_processed_at": story.get("processed_at", ""),
+            "entities": ner.get("entities", []),
+            "relations": ner.get("relations", []),
+            "topics": ner.get("topics", []),
+            "sdg_alignment": ner.get("sdg_alignment", []),
+            "sentiment": ner.get("sentiment", 0.0),
+            "relevance_to_tn": ner.get("relevance_to_tn", 0.0),
+            "one_line_summary": ner.get("one_line_summary", ""),
+            "ingested_at": datetime.now(timezone.utc).isoformat(),
+        }
+        doc_id = hashlib.md5(sid.encode()).hexdigest()[:16]
+        fb.set(_db.collection("news_articles").document(doc_id), doc_data)
+        batch_count += 1
+        stored += 1
+        if batch_count >= 400:
+            fb.commit()
+            fb = _db.batch()
+            batch_count = 0
+
+    if batch_count > 0:
+        fb.commit()
+
+    # 6. Run KG-enriched consolidation for newly stored articles
+    consolidated = 0
+    try:
+        from google import genai as _genai
+        from google.genai import types as _genai_types
+
+        _g_client = _genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
+
+        # Load KG for context
+        try:
+            _kg, _ = _gq.load_news_graph(PROJECT_ID)
+        except Exception:
+            _kg = None
+
+        for story in new_stories:
+            sid = story["dedup_group_id"]
+            ner = ner_by_id.get(sid, {})
+            title = story.get("title", "")
+            summary = ner.get("one_line_summary", "") or story.get("snippet", "")
+            entities = ner.get("entities", [])
+
+            if not entities:
+                continue
+
+            # Get KG context
+            kg_context_parts = []
+            if _kg:
+                for e in entities[:8]:
+                    nid = e.get("canonical_id") or e.get("node_id", "")
+                    if nid and nid in _kg:
+                        for _, tgt, data in list(_kg.out_edges(nid, data=True))[:10]:
+                            tgt_label = _kg.nodes[tgt].get("label", tgt) if tgt in _kg else tgt
+                            src_label = _kg.nodes[nid].get("label", nid)
+                            kg_context_parts.append(f"- {src_label} {data.get('verb', '')} {tgt_label}")
+                        for src, _, data in list(_kg.in_edges(nid, data=True))[:10]:
+                            src_label = _kg.nodes[src].get("label", src) if src in _kg else src
+                            tgt_label = _kg.nodes[nid].get("label", nid)
+                            kg_context_parts.append(f"- {src_label} {data.get('verb', '')} {tgt_label}")
+
+            kg_context = "KNOWLEDGE GRAPH FACTS:\n" + "\n".join(list(dict.fromkeys(kg_context_parts))[:20]) if kg_context_parts else ""
+
+            prompt = f"""You are a Tamil news anchor. Write a contextual news script using today's article and any relevant past information.
+
+TODAY'S ARTICLE:
+Title: {title}
+Summary: {summary}
+
+{kg_context if kg_context else "(No related past information available)"}
+
+RULES:
+- IMPORTANT: Start with today's article content FIRST, then weave in relevant background
+- Include past events ONLY if they explain WHY or HOW today's news happened
+- Just matching an entity name is NOT enough — there must be a causal or narrative link
+- If nothing from history is contextually relevant, just summarize today's article as-is
+- Write 2-4 sentences, naturally as spoken language
+
+JSON output (nothing else):
+{{"script_ta": "Tamil script", "script_en": "English script", "used_context": [{{"ref_title": "past article title", "relation": "consequence|continuation|background", "confidence": 0.0-1.0}}]}}
+
+Note: In used_context, include ONLY past articles you actually referenced. If none, return []."""
+
+            try:
+                _cons_resp = await _g_client.aio.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=prompt,
+                    config=_genai_types.GenerateContentConfig(temperature=0.4, response_mime_type="application/json"),
+                )
+                _cons_result = json.loads(_cons_resp.text.strip())
+                doc_id = hashlib.md5(sid.encode()).hexdigest()[:16]
+                _db.collection("news_articles").document(doc_id).update({
+                    "consolidated_script_ta": _cons_result.get("script_ta", ""),
+                    "consolidated_script_en": _cons_result.get("script_en", ""),
+                    "contextual_history": _cons_result.get("used_context", []),
+                })
+                consolidated += 1
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    return {
+        "status": "ok",
+        "fetched": len(all_stories),
+        "new": len(new_stories),
+        "stored": stored,
+        "ner_extracted": len(ner_results),
+        "full_text_fetched": len(full_texts),
+        "consolidated": consolidated,
+    }

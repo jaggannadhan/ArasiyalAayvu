@@ -14,6 +14,9 @@ COPY backend_api/ ./backend_api/
 COPY backend_api/constituency-map.json ./src/lib/constituency-map.json
 COPY backend_api/ls-constituency-map.json ./src/lib/ls-constituency-map.json
 
+# Copy candidate search index for NER reference data
+COPY backend_api/candidate-search-index.json ./src/lib/candidate-search-index.json
+
 ENV PORT=8080
 
 CMD ["sh", "-c", "uvicorn backend_api.main:app --host 0.0.0.0 --port ${PORT}"]

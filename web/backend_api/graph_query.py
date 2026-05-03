@@ -22,17 +22,19 @@ import networkx as nx
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 LOCAL_KG_PATH = ROOT_DIR / "data" / "processed" / "knowledge_graph_slim.json"
+LOCAL_NEWS_KG_PATH = ROOT_DIR / "data" / "processed" / "news_knowledge_graph.json"
 
 # Cache the assembled graph in memory. TTL matches the GCS cache in main.py.
 _GRAPH_CACHE: Dict[str, Any] = {"graph": None, "raw": None, "ts": 0.0}
+_NEWS_GRAPH_CACHE: Dict[str, Any] = {"graph": None, "raw": None, "ts": 0.0}
 _CACHE_TTL_SEC = 3600
 
 
-def _load_raw_from_gcs(project_id: str) -> Optional[Dict[str, Any]]:
+def _load_raw_from_gcs(project_id: str, blob_path: str = "knowledge_graph/latest.json") -> Optional[Dict[str, Any]]:
     try:
         from google.cloud import storage
         client = storage.Client(project=project_id)
-        blob = client.bucket("naatunadappu-media").blob("knowledge_graph/latest.json")
+        blob = client.bucket("naatunadappu-media").blob(blob_path)
         return json.loads(blob.download_as_text())
     except Exception:
         return None
@@ -79,6 +81,45 @@ def clear_cache() -> Dict[str, Any]:
     had_graph = _GRAPH_CACHE["graph"] is not None
     _GRAPH_CACHE.update({"graph": None, "raw": None, "ts": 0.0})
     return {"cleared": had_graph}
+
+
+# ── News Knowledge Graph ─────────────────────────────────────────────────────
+
+def load_news_graph(project_id: str = "naatunadappu", force: bool = False) -> Tuple[nx.MultiDiGraph, Dict[str, Any]]:
+    """Load the News KG. Separate from the Election KG."""
+    now = time.time()
+    if not force and _NEWS_GRAPH_CACHE["graph"] is not None and now - _NEWS_GRAPH_CACHE["ts"] < _CACHE_TTL_SEC:
+        return _NEWS_GRAPH_CACHE["graph"], _NEWS_GRAPH_CACHE["raw"]
+    _NEWS_GRAPH_CACHE.update({"graph": None, "raw": None, "ts": 0.0})
+
+    raw = _load_raw_from_gcs(project_id, "news_knowledge_graph/latest.json")
+    if raw is None and LOCAL_NEWS_KG_PATH.exists():
+        with LOCAL_NEWS_KG_PATH.open("r", encoding="utf-8") as f:
+            raw = json.load(f)
+    if raw is None:
+        raise RuntimeError("News knowledge graph not available")
+
+    g = nx.MultiDiGraph()
+    for node in raw.get("nodes", []):
+        g.add_node(node["id"], **{k: v for k, v in node.items() if k != "id"})
+    for edge in raw.get("edges", []):
+        g.add_edge(
+            edge["source"], edge["target"],
+            key=edge.get("verb", "edge"),
+            verb=edge.get("verb"),
+            weight=edge.get("weight", 1.0),
+            **({"timestamp": edge["timestamp"]} if "timestamp" in edge else {}),
+        )
+
+    _NEWS_GRAPH_CACHE.update({"graph": g, "raw": raw, "ts": now})
+    return g, raw
+
+
+def clear_news_cache() -> Dict[str, Any]:
+    """Evict the in-memory News KG."""
+    had = _NEWS_GRAPH_CACHE["graph"] is not None
+    _NEWS_GRAPH_CACHE.update({"graph": None, "raw": None, "ts": 0.0})
+    return {"cleared": had}
 
 
 # ── Traversal primitives ─────────────────────────────────────────────────────
