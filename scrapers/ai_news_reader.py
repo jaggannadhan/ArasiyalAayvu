@@ -1,17 +1,16 @@
-"""AI News Reader — generates a lip-synced news anchor video from today's top stories.
+"""AI News Reader — per-article TTS + parallel Wav2Lip video generation.
 
-Pipeline: Firestore articles → Gemini per-article scripts → edge-tts segments → concat → Wav2Lip video
-         + metadata JSON (articles + timestamps) uploaded alongside the video
+Pipeline:
+  1. Firestore articles → Gemini per-article scripts → edge-tts per-article audio
+  2. Parallel Wav2Lip: one video clip per article (+ intro/outro)
+  3. Upload individual clips + metadata to GCS
+
+Each article gets its own video file — article sync is structurally guaranteed.
 
 Usage:
-    # Generate from live Firestore articles:
-    python scrapers/ai_news_reader.py
-
-    # Test with a sample script (skip Gemini):
-    python scrapers/ai_news_reader.py --test
-
-    # Custom output path:
-    python scrapers/ai_news_reader.py --output /tmp/news.mp4
+    python scrapers/ai_news_reader.py              # full pipeline
+    python scrapers/ai_news_reader.py --test        # sample articles (skip Gemini)
+    python scrapers/ai_news_reader.py --no-upload   # skip GCS upload
 """
 from __future__ import annotations
 
@@ -21,6 +20,7 @@ import json
 import os
 import subprocess
 import sys
+import concurrent.futures
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -38,77 +38,15 @@ GCS_PREFIX = "news-reader"
 TAMIL_VOICE = "ta-IN-PallaviNeural"
 ENGLISH_VOICE = "en-IN-NeerjaNeural"
 
-
-# ── Step A: Generate per-article scripts via Gemini ────────────────────────────
-
-async def generate_segments(articles: list[dict[str, Any]], lang: str = "ta") -> list[str]:
-    """Generate individual news script segments — one per article + intro/outro."""
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(vertexai=True, project=PROJECT, location=LOCATION)
-
-    article_block = "\n\n".join(
-        f"[{i+1}] {a.get('title', '')}\n{a.get('one_line_summary', '') or a.get('snippet', '')}"
-        for i, a in enumerate(articles[:5])
-    )
-
-    if lang == "ta":
-        prompt = f"""நீங்கள் ஒரு தமிழ் செய்தி வாசிப்பாளர். கீழே கொடுக்கப்பட்ட செய்திகளை செய்தி ஸ்கிரிப்டாக மாற்றுங்கள்.
-
-விதிகள்:
-- முழுவதும் தமிழில் எழுதவும்
-- ஒவ்வொரு செய்தியையும் 1-2 வாக்கியங்களில் சுருக்கவும்
-- இயற்கையாகவும் பேச்சு வழக்கிலும் எழுதவும்
-- செய்திகளின் வரிசையை மாற்றக் கூடாது — கொடுக்கப்பட்ட வரிசையிலேயே எழுதவும்
-- ஒவ்வொரு பகுதியையும் ||| என்ற குறியீட்டால் பிரிக்கவும்
-- சரியாக {len(articles) + 2} பகுதிகள் வேண்டும்:
-  பகுதி 1: அறிமுகம் — "வணக்கம்! அரசியல் ஆய்வு செய்திகளை வாசிப்பது உங்கள் தமிழ் செல்வி."
-  பகுதி 2 முதல் {len(articles) + 1} வரை: ஒவ்வொரு செய்தியும் (வரிசையில்)
-  கடைசி பகுதி: முடிவு — "மீண்டும் சந்திப்போம், அரசியல் ஆய்வு செய்தி சேனலில் இருந்து தமிழ் செல்வி."
-
-செய்திகள்:
-{article_block}
-
-ஸ்கிரிப்ட் (||| பிரிப்பான்களுடன்):"""
-    else:
-        prompt = f"""You are a professional news anchor. Convert these news articles into a news script.
-
-Rules:
-- Summarize each story in 1-2 sentences
-- Write naturally, as spoken language
-- IMPORTANT: Keep articles in the exact order given — do NOT reorder them
-- Separate each section with ||| delimiter
-- There must be exactly {len(articles) + 2} sections:
-  Section 1: Intro — "Good evening! This is TamilSelvi, reading the news for Arasiyal Aayvu."
-  Sections 2 to {len(articles) + 1}: One section per article (in order)
-  Last section: Outro — "See you again, this is TamilSelvi from Arasiyal Aayvu news channel."
-
-Articles:
-{article_block}
-
-Script (with ||| separators):"""
-
-    config = types.GenerateContentConfig(temperature=0.7)
-    resp = await client.aio.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config=config,
-    )
-
-    raw = resp.text.strip()
-    segments = [s.strip() for s in raw.split("|||") if s.strip()]
-    return segments
+INTRO_SCRIPT_TA = "வணக்கம்! அரசியல் ஆய்வு செய்திகளை வாசிப்பது உங்கள் தமிழ் செல்வி."
+INTRO_SCRIPT_EN = "Good evening! This is TamilSelvi, reading the news for Arasiyal Aayvu."
+OUTRO_SCRIPT_TA = "மீண்டும் சந்திப்போம், அரசியல் ஆய்வு செய்தி சேனலில் இருந்து தமிழ் செல்வி."
+OUTRO_SCRIPT_EN = "See you again, this is TamilSelvi from Arasiyal Aayvu news channel."
 
 
-# ── Step B: Per-segment TTS + concatenation with pacing gaps ───────────────────
-
-INTRO_DURATION = 15.0   # intro padded to exactly 15 seconds
-TRANSITION_GAP = 3.0    # silence between articles
-
+# ── Helpers ────────────────────────────────────────────────────────────────────
 
 def _get_audio_duration(path: Path) -> float:
-    """Get audio duration in seconds via ffprobe."""
     result = subprocess.run(
         ["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
          "-of", "csv=p=0", str(path)],
@@ -117,150 +55,97 @@ def _get_audio_duration(path: Path) -> float:
     return float(result.stdout.strip())
 
 
-def _generate_silence(output_path: Path, duration: float) -> Path:
-    """Generate a silent MP3 of the given duration."""
+def _fade_out_audio(input_path: Path, output_path: Path, fade_ms: int = 300) -> Path:
+    dur = _get_audio_duration(input_path)
+    fade_sec = fade_ms / 1000.0
+    fade_start = max(0, dur - fade_sec)
     subprocess.run(
-        ["ffmpeg", "-y", "-f", "lavfi", "-i",
-         f"anullsrc=r=24000:cl=mono", "-t", str(duration),
+        ["ffmpeg", "-y", "-i", str(input_path),
+         "-af", f"afade=t=out:st={fade_start}:d={fade_sec}",
          "-c:a", "libmp3lame", "-b:a", "48k", str(output_path)],
         capture_output=True, text=True,
     )
     return output_path
 
 
-def _pad_audio_to_duration(input_path: Path, target_duration: float, output_path: Path) -> Path:
-    """Pad an audio file with silence to reach the target duration."""
-    current = _get_audio_duration(input_path)
-    if current >= target_duration:
-        # Already long enough, just copy
-        import shutil
-        shutil.copy2(input_path, output_path)
-        return output_path
+# ── Step A: Generate per-article scripts via Gemini ────────────────────────────
 
-    pad = target_duration - current
-    # Use ffmpeg adelay/apad filter to append silence
-    subprocess.run(
-        ["ffmpeg", "-y", "-i", str(input_path),
-         "-af", f"apad=pad_dur={pad}", "-c:a", "libmp3lame", "-b:a", "48k",
-         str(output_path)],
-        capture_output=True, text=True,
+async def generate_article_script(article: dict[str, Any], lang: str = "ta") -> str:
+    from google import genai
+    from google.genai import types
+
+    client = genai.Client(vertexai=True, project=PROJECT, location=LOCATION)
+
+    title = article.get("title", "")
+    summary = article.get("one_line_summary", "") or article.get("snippet", "")
+
+    if lang == "ta":
+        prompt = f"""நீங்கள் ஒரு தமிழ் செய்தி வாசிப்பாளர். கீழே கொடுக்கப்பட்ட செய்தியை 1-2 வாக்கியங்களில் சுருக்கி, செய்தி வாசிப்பு பாணியில் எழுதவும்.
+
+விதிகள்:
+- முழுவதும் தமிழில் எழுதவும்
+- இயற்கையாகவும் பேச்சு வழக்கிலும் எழுதவும்
+- வாசிப்பு ஸ்கிரிப்ட் மட்டுமே — முன்னுரை அல்லது முடிவுரை வேண்டாம்
+
+செய்தி:
+தலைப்பு: {title}
+சுருக்கம்: {summary}
+
+ஸ்கிரிப்ட்:"""
+    else:
+        prompt = f"""You are a news anchor. Summarize this article in 1-2 sentences, as spoken language.
+
+Rules:
+- Write only the reading script — no intro or outro
+- Write naturally, as spoken language
+
+Article:
+Title: {title}
+Summary: {summary}
+
+Script:"""
+
+    config = types.GenerateContentConfig(temperature=0.7)
+    resp = await client.aio.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=config,
     )
+    return resp.text.strip()
+
+
+# ── Step B: Per-article TTS ────────────────────────────────────────────────────
+
+async def generate_tts(text: str, output_path: Path, lang: str = "ta") -> Path:
+    import edge_tts
+    voice = TAMIL_VOICE if lang == "ta" else ENGLISH_VOICE
+    raw_path = output_path.with_suffix(".raw.mp3")
+    comm = edge_tts.Communicate(text, voice)
+    await comm.save(str(raw_path))
+    _fade_out_audio(raw_path, output_path, fade_ms=300)
+    raw_path.unlink(missing_ok=True)
     return output_path
 
 
-async def text_to_speech_segments(
-    segments: list[str], output_dir: Path, lang: str = "ta"
-) -> tuple[Path, list[float]]:
-    """TTS each segment, pad intro to 15s, insert 3s gaps between articles, concatenate.
+# ── Step C: Wav2Lip per clip ───────────────────────────────────────────────────
 
-    Audio layout:
-        [intro padded to 15s] [3s gap] [article 1] [3s gap] [article 2] ... [3s gap] [outro]
+def _run_wav2lip(audio_path: Path, output_path: Path, label: str) -> Path:
+    """Run Wav2Lip for a single audio clip.
 
-    Returns:
-        combined_path: Path to the concatenated MP3
-        timestamps: Cumulative start times for each logical segment (including gaps)
+    Each call gets its own temp directory to avoid collisions when running in parallel.
+    Wav2Lip uses hardcoded 'temp/' for intermediate files — parallel runs clobber each other
+    if they share the same cwd.
     """
-    import edge_tts
+    import shutil
+    import tempfile
 
-    voice = TAMIL_VOICE if lang == "ta" else ENGLISH_VOICE
+    # Create an isolated working directory with Wav2Lip code symlinked
+    work_dir = Path(tempfile.mkdtemp(prefix=f"wav2lip_{label}_"))
+    temp_dir = work_dir / "temp"
+    temp_dir.mkdir()
 
-    # Generate TTS for each segment
-    raw_paths: list[Path] = []
-    for i, text in enumerate(segments):
-        seg_path = output_dir / f"_seg_{i:02d}.mp3"
-        comm = edge_tts.Communicate(text, voice)
-        await comm.save(str(seg_path))
-        raw_paths.append(seg_path)
-        print(f"  Segment {i}: {seg_path.name} ({seg_path.stat().st_size // 1024} KB)")
-
-    raw_durations = [_get_audio_duration(p) for p in raw_paths]
-    print(f"  Raw durations: {[round(d, 2) for d in raw_durations]}")
-
-    # Pad intro (segment 0) to INTRO_DURATION
-    padded_intro = output_dir / "_seg_00_padded.mp3"
-    _pad_audio_to_duration(raw_paths[0], INTRO_DURATION, padded_intro)
-    intro_actual = _get_audio_duration(padded_intro)
-    print(f"  Intro padded: {raw_durations[0]:.2f}s → {intro_actual:.2f}s")
-
-    # Generate silence file for gaps
-    silence_path = output_dir / "_silence.mp3"
-    _generate_silence(silence_path, TRANSITION_GAP)
-    silence_dur = _get_audio_duration(silence_path)
-
-    # Build concat list and compute timestamps
-    # Layout: [intro_padded] [gap] [art1] [gap] [art2] ... [gap] [outro]
-    concat_files: list[Path] = []
-    timestamps: list[float] = []
-    cumulative = 0.0
-
-    # Intro
-    timestamps.append(round(cumulative, 3))         # intro starts at 0
-    concat_files.append(padded_intro)
-    cumulative += intro_actual
-
-    # Article segments (indices 1 to N-2) + outro (index N-1)
-    for i in range(1, len(segments)):
-        # Insert gap before each article and before outro
-        concat_files.append(silence_path)
-        cumulative += silence_dur
-
-        timestamps.append(round(cumulative, 3))      # article/outro start
-        concat_files.append(raw_paths[i])
-        cumulative += raw_durations[i]
-
-    print(f"  Total duration: {cumulative:.2f}s")
-    print(f"  Timestamps: {timestamps}")
-
-    # Concatenate all files
-    concat_list = output_dir / "_concat_list.txt"
-    concat_list.write_text(
-        "\n".join(f"file '{p.name}'" for p in concat_files)
-    )
-    combined_path = output_dir / "_combined.mp3"
-    subprocess.run(
-        ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
-         "-i", str(concat_list), "-c", "copy", str(combined_path)],
-        capture_output=True, text=True, cwd=str(output_dir),
-    )
-
-    print(f"  Combined audio: {combined_path} ({combined_path.stat().st_size // 1024} KB)")
-
-    # Cleanup temp files
-    for p in raw_paths:
-        p.unlink(missing_ok=True)
-    padded_intro.unlink(missing_ok=True)
-    silence_path.unlink(missing_ok=True)
-    concat_list.unlink(missing_ok=True)
-
-    return combined_path, timestamps, raw_durations
-
-
-async def text_to_speech(script: str, output_path: Path, lang: str = "ta") -> Path:
-    """Convert script to audio using edge-tts (legacy single-script fallback)."""
-    import edge_tts
-
-    voice = TAMIL_VOICE if lang == "ta" else ENGLISH_VOICE
-    comm = edge_tts.Communicate(script, voice)
-    await comm.save(str(output_path))
-    print(f"  Audio saved: {output_path} ({output_path.stat().st_size // 1024} KB)")
-    return output_path
-
-
-# ── Step C: Lip-sync animation via Wav2Lip ─────────────────────────────────────
-
-def generate_video(
-    source_image: Path,
-    audio_path: Path,
-    output_path: Path,
-) -> Path:
-    """Run Wav2Lip to generate lip-synced video.
-
-    Wav2Lip is much faster than SadTalker on CPU (~45s vs ~105min for 30s audio).
-    It only animates the lip region, keeping the rest of the face static.
-    """
-    # Numpy compat shim for Wav2Lip (written for numpy 1.x)
-    shim_dir = output_path.parent / "_shim"
-    shim_dir.mkdir(parents=True, exist_ok=True)
+    shim_dir = work_dir / "_shim"
+    shim_dir.mkdir()
     (shim_dir / "sitecustomize.py").write_text(
         "import numpy as np\n"
         "for attr, val in [('float',float),('int',int),('complex',complex),('bool',bool),('object',object),('str',str)]:\n"
@@ -271,42 +156,64 @@ def generate_video(
         sys.executable,
         str(WAV2LIP_DIR / "inference.py"),
         "--checkpoint_path", str(WAV2LIP_DIR / "checkpoints" / "wav2lip_gan.pth"),
-        "--face", str(source_image),
-        "--audio", str(audio_path),
-        "--outfile", str(output_path),
+        "--face", str(ANCHOR_IMAGE),
+        "--audio", str(audio_path.resolve()),
+        "--outfile", str(output_path.resolve()),
         "--pads", "0", "15", "5", "5",
     ]
-
-    print(f"  Running Wav2Lip...")
 
     env = os.environ.copy()
     existing_pp = env.get("PYTHONPATH", "")
     env["PYTHONPATH"] = str(shim_dir) + os.pathsep + str(WAV2LIP_DIR) + (os.pathsep + existing_pp if existing_pp else "")
 
+    t0 = __import__("time").time()
     result = subprocess.run(
-        cmd,
-        capture_output=True,
-        text=True,
-        cwd=str(WAV2LIP_DIR),
-        env=env,
-        timeout=600,  # ~7 min with video input on CPU
+        cmd, capture_output=True, text=True,
+        cwd=str(work_dir),  # isolated cwd — each process gets its own temp/
+        env=env, timeout=600,
     )
+    elapsed = __import__("time").time() - t0
+
+    # Cleanup isolated work dir
+    shutil.rmtree(work_dir, ignore_errors=True)
 
     if result.returncode != 0:
-        print(f"  STDERR: {result.stderr[-500:]}")
-        raise RuntimeError(f"Wav2Lip failed with exit code {result.returncode}")
+        print(f"  [{label}] FAILED ({elapsed:.1f}s): {result.stderr[-300:]}")
+        raise RuntimeError(f"Wav2Lip failed for {label}")
 
-    if not output_path.exists():
-        raise RuntimeError(f"Output not found: {output_path}")
-
-    print(f"  Video saved: {output_path} ({output_path.stat().st_size // 1024} KB)")
+    size_kb = output_path.stat().st_size // 1024
+    print(f"  [{label}] Done in {elapsed:.1f}s ({size_kb} KB)")
     return output_path
 
 
-# ── Step D: Fetch articles from Firestore ────────────────────────────────────
+def run_wav2lip_parallel(tasks: list[tuple[Path, Path, str]], max_workers: int = 3) -> list[Path]:
+    """Run multiple Wav2Lip jobs in parallel using a thread pool.
+
+    Args:
+        tasks: List of (audio_path, output_video_path, label) tuples
+        max_workers: Max parallel Wav2Lip processes (3 is safe for most CPUs)
+
+    Returns:
+        List of output video paths in the same order as input tasks
+    """
+    print(f"  Launching {len(tasks)} Wav2Lip jobs (max {max_workers} parallel)...")
+
+    results: dict[int, Path] = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_idx = {
+            executor.submit(_run_wav2lip, audio, video, label): idx
+            for idx, (audio, video, label) in enumerate(tasks)
+        }
+        for future in concurrent.futures.as_completed(future_to_idx):
+            idx = future_to_idx[future]
+            results[idx] = future.result()
+
+    return [results[i] for i in range(len(tasks))]
+
+
+# ── Step D: Fetch articles from Firestore ──────────────────────────────────────
 
 def fetch_top_articles(limit: int = 5) -> list[dict[str, Any]]:
-    """Fetch the most recent high-relevance articles from Firestore."""
     from google.cloud import firestore
     db = firestore.Client(project=PROJECT)
 
@@ -321,13 +228,11 @@ def fetch_top_articles(limit: int = 5) -> list[dict[str, Any]]:
     for doc in docs:
         d = doc.to_dict()
         d["_doc_id"] = doc.id
-        # Prefer articles with NER data and higher relevance
         if d.get("relevance_to_tn", 0) >= 0.5 and d.get("entities"):
             articles.append(d)
         if len(articles) >= limit:
             break
 
-    # Fallback: if not enough high-relevance articles, take any
     if len(articles) < limit:
         for doc in docs:
             d = doc.to_dict()
@@ -340,14 +245,14 @@ def fetch_top_articles(limit: int = 5) -> list[dict[str, Any]]:
     return articles
 
 
-# ── Step E: Upload to GCS ────────────────────────────────────────────────────
+# ── Step E: Upload to GCS ──────────────────────────────────────────────────────
 
 def upload_to_gcs(local_path: Path, gcs_name: str) -> str:
-    """Upload a file to GCS and return its public URL."""
     from google.cloud import storage
     client = storage.Client(project=PROJECT)
     bucket = client.bucket(GCS_BUCKET)
     blob = bucket.blob(f"{GCS_PREFIX}/{gcs_name}")
+    blob.cache_control = "no-cache, max-age=0"
     blob.upload_from_filename(str(local_path))
     blob.make_public()
     url = blob.public_url
@@ -355,111 +260,14 @@ def upload_to_gcs(local_path: Path, gcs_name: str) -> str:
     return url
 
 
-# ── Step F: Build metadata JSON ─────────────────────────────────────────────
-
-def _match_segments_to_articles(
-    articles: list[dict[str, Any]], segments: list[str],
-) -> list[int]:
-    """Match each article segment to its source article index using keyword overlap.
-
-    Gemini may reorder articles in the script, so we can't assume segment i+1 = article i.
-    Returns a list where result[seg_idx] = article index for that segment.
-    """
-    import re
-
-    # Build keyword sets for each article from title + summary
-    def _keywords(text: str) -> set[str]:
-        # Extract words 3+ chars, lowercased — works for English; for Tamil, whole tokens
-        return {w.lower() for w in re.findall(r'\w{3,}', text)}
-
-    article_kws = []
-    for a in articles:
-        title = a.get("title", "")
-        summary = a.get("one_line_summary", "") or a.get("snippet", "")
-        article_kws.append(_keywords(f"{title} {summary}"))
-
-    # Article segments are segments[1:-1] (skip intro and outro)
-    art_segments = segments[1:-1]
-
-    # Greedy matching: for each segment, find the best-matching unused article
-    used: set[int] = set()
-    seg_to_article: list[int] = []
-
-    for seg_text in art_segments:
-        seg_kw = _keywords(seg_text)
-        best_idx = 0
-        best_score = -1
-        for ai, akw in enumerate(article_kws):
-            if ai in used:
-                continue
-            score = len(seg_kw & akw)
-            if score > best_score:
-                best_score = score
-                best_idx = ai
-        seg_to_article.append(best_idx)
-        used.add(best_idx)
-
-    return seg_to_article
-
-
-def build_metadata(
-    articles: list[dict[str, Any]],
-    segments: list[str],
-    timestamps: list[float],
-    raw_durations: list[float],
-    lang: str,
-) -> dict:
-    """Build metadata JSON that maps each article to its video timestamp.
-
-    Timestamps layout (with gaps baked in):
-        [0]=intro_start, [1]=art0_start, [2]=art1_start, ..., [N]=outro_start
-
-    Each article's end = start + raw_duration (excludes the gap that follows).
-    The gap before each article is TRANSITION_GAP seconds.
-    """
-    seg_to_article = _match_segments_to_articles(articles, segments)
-
-    print(f"  Segment→Article mapping: {seg_to_article}")
-
-    article_meta = []
-    for seg_i, art_i in enumerate(seg_to_article):
-        a = articles[art_i]
-        ts_idx = seg_i + 1  # +1 to skip intro timestamp
-        start = timestamps[ts_idx] if ts_idx < len(timestamps) else timestamps[-1]
-        # End = start + raw TTS duration of this article segment (index = seg_i + 1 in segments)
-        raw_dur = raw_durations[seg_i + 1]  # +1 because raw_durations[0] is intro
-        end = start + raw_dur
-        article_meta.append({
-            "title": a.get("title", ""),
-            "summary": a.get("one_line_summary", "") or a.get("snippet", ""),
-            "category": a.get("ov_category", ""),
-            "sdg_alignment": a.get("sdg_alignment", []),
-            "source_name": a.get("source_name", ""),
-            "source_url": a.get("source_url", ""),
-            "start": round(start, 3),
-            "end": round(end, 3),
-        })
-
-    return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "lang": lang,
-        "segment_count": len(segments),
-        "timestamps": timestamps,
-        "intro_duration": INTRO_DURATION,
-        "transition_gap": TRANSITION_GAP,
-        "articles": article_meta,
-    }
-
-
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 async def main():
-    parser = argparse.ArgumentParser(description="AI News Reader Video Generator")
-    parser.add_argument("--test", action="store_true", help="Use sample script instead of Gemini")
+    parser = argparse.ArgumentParser(description="AI News Reader — Per-article Wav2Lip Pipeline")
+    parser.add_argument("--test", action="store_true", help="Use sample scripts (skip Gemini)")
     parser.add_argument("--lang", default="ta", choices=["ta", "en"], help="Language")
-    parser.add_argument("--output", type=str, default=None, help="Output video path")
-    parser.add_argument("--script-only", action="store_true", help="Generate script only, no video")
     parser.add_argument("--no-upload", action="store_true", help="Skip GCS upload")
+    parser.add_argument("--workers", type=int, default=3, help="Max parallel Wav2Lip jobs")
     args = parser.parse_args()
 
     from dotenv import load_dotenv
@@ -469,43 +277,29 @@ async def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M")
-    output_video = Path(args.output) if args.output else OUTPUT_DIR / f"news_{timestamp}.mp4"
-    meta_path = OUTPUT_DIR / f"news_{timestamp}_meta.json"
+    run_dir = OUTPUT_DIR / f"run_{timestamp}"
+    run_dir.mkdir(parents=True, exist_ok=True)
 
-    anchor_face = ANCHOR_IMAGE
-
-    print("=== AI News Reader Pipeline ===")
+    print("=== AI News Reader Pipeline (Per-Article Wav2Lip) ===")
     print(f"  Language: {args.lang}")
-    print(f"  Anchor face: {anchor_face}")
+    print(f"  Parallel workers: {args.workers}")
     print()
 
-    # Step A: Generate script segments
+    # ── Step A: Get articles + generate scripts ──
     if args.test:
-        print("[A] Using test script segments...")
-        if args.lang == "ta":
-            segments = [
-                "வணக்கம்! அரசியல் ஆய்வு செய்திகளை வாசிப்பது உங்கள் தமிழ் செல்வி.",
-                "தமிழ்நாடு சட்டமன்ற தேர்தல் முடிவுகள் மே 4ம் தேதி வெளியாகும் என தேர்தல் ஆணையம் அறிவித்துள்ளது.",
-                "திமுக தலைவர் முதலமைச்சர் மு.க.ஸ்டாலின் வெற்றி நம்பிக்கையுடன் இருப்பதாக தெரிவித்துள்ளார்.",
-                "தமிழக வெற்றி கழகம் தலைவர் விஜய் வாக்கு எண்ணிக்கை மையங்களில் விழிப்புடன் இருக்குமாறு கேட்டுக்கொண்டுள்ளார்.",
-                "மீண்டும் சந்திப்போம், அரசியல் ஆய்வு செய்தி சேனலில் இருந்து தமிழ் செல்வி.",
-            ]
-        else:
-            segments = [
-                "Good evening! This is TamilSelvi, reading the news for Arasiyal Aayvu.",
-                "The Tamil Nadu Assembly election results will be announced on May 4th.",
-                "DMK leader Chief Minister MK Stalin has expressed confidence of victory.",
-                "TVK president Vijay has asked party candidates to stay alert at counting centres.",
-                "See you again, this is TamilSelvi from Arasiyal Aayvu news channel.",
-            ]
-        # Build test articles to match segments
+        print("[A] Using test articles...")
         articles = [
             {"title": "TN Assembly Election Results on May 4", "snippet": "Election Commission announces results date",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test"},
+             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
             {"title": "DMK Confident of Victory", "snippet": "MK Stalin expresses confidence",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test"},
+             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
             {"title": "TVK Vijay Asks Candidates to Stay Alert", "snippet": "Vijay urges vigilance at counting centres",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test"},
+             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
+        ]
+        scripts = [
+            "தமிழ்நாடு சட்டமன்ற தேர்தல் முடிவுகள் மே 4ம் தேதி வெளியாகும் என தேர்தல் ஆணையம் அறிவித்துள்ளது." if args.lang == "ta" else "The Tamil Nadu Assembly election results will be announced on May 4th.",
+            "திமுக தலைவர் முதலமைச்சர் மு.க.ஸ்டாலின் வெற்றி நம்பிக்கையுடன் இருப்பதாக தெரிவித்துள்ளார்." if args.lang == "ta" else "DMK leader Chief Minister MK Stalin has expressed confidence of victory.",
+            "தமிழக வெற்றி கழகம் தலைவர் விஜய் வாக்கு எண்ணிக்கை மையங்களில் விழிப்புடன் இருக்குமாறு கேட்டுக்கொண்டுள்ளார்." if args.lang == "ta" else "TVK president Vijay has asked party candidates to stay alert at counting centres.",
         ]
     else:
         print("[A] Fetching top articles from Firestore...")
@@ -515,46 +309,131 @@ async def main():
             print("  No articles found. Exiting.")
             return
 
-        print("[A] Generating per-article script segments via Gemini...")
-        segments = await generate_segments(articles, lang=args.lang)
+        print("[A] Extracting per-article scripts...")
+        scripts = []
+        for i, a in enumerate(articles):
+            # Use pre-computed consolidated script from ingestion if available
+            script_key = "consolidated_script_ta" if args.lang == "ta" else "consolidated_script_en"
+            pre_computed = a.get(script_key, "")
+            if pre_computed:
+                scripts.append(pre_computed)
+                print(f"  Article {i+1} [consolidated]: {pre_computed[:80]}{'...' if len(pre_computed) > 80 else ''}")
+            else:
+                # Fallback: generate fresh via Gemini
+                script = await generate_article_script(a, lang=args.lang)
+                scripts.append(script)
+                print(f"  Article {i+1} [generated]: {script[:80]}{'...' if len(script) > 80 else ''}")
 
-    print(f"\n  Segments ({len(segments)}):")
-    for i, seg in enumerate(segments):
-        label = "INTRO" if i == 0 else ("OUTRO" if i == len(segments) - 1 else f"ART-{i}")
-        print(f"    [{label}] {seg[:80]}{'...' if len(seg) > 80 else ''}")
     print()
 
-    if args.script_only:
-        print("  --script-only mode. Done.")
-        return
+    # ── Step B: Generate TTS audio for intro, articles, outro ──
+    print("[B] Generating TTS audio...")
 
-    # Step B: Per-segment TTS + concatenation
-    print("[B] Generating per-segment audio via edge-tts...")
-    audio_path, timestamps, raw_durations = await text_to_speech_segments(segments, OUTPUT_DIR, lang=args.lang)
+    intro_text = INTRO_SCRIPT_TA if args.lang == "ta" else INTRO_SCRIPT_EN
+    outro_text = OUTRO_SCRIPT_TA if args.lang == "ta" else OUTRO_SCRIPT_EN
 
-    # Step C: Build metadata
-    print("[C] Building metadata...")
-    metadata = build_metadata(articles, segments, timestamps, raw_durations, args.lang)
-    meta_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2))
+    intro_audio = run_dir / "intro.mp3"
+    await generate_tts(intro_text, intro_audio, lang=args.lang)
+    print(f"  Intro: {_get_audio_duration(intro_audio):.2f}s")
+
+    article_audios: list[Path] = []
+    for i, script in enumerate(scripts):
+        audio_path = run_dir / f"article_{i:02d}.mp3"
+        await generate_tts(script, audio_path, lang=args.lang)
+        dur = _get_audio_duration(audio_path)
+        print(f"  Article {i}: {dur:.2f}s — {articles[i].get('title', '')[:60]}")
+        article_audios.append(audio_path)
+
+    outro_audio = run_dir / "outro.mp3"
+    await generate_tts(outro_text, outro_audio, lang=args.lang)
+    print(f"  Outro: {_get_audio_duration(outro_audio):.2f}s")
+
+    print()
+
+    # ── Step C: Run Wav2Lip in parallel for all clips ──
+    print("[C] Running Wav2Lip (parallel)...")
+
+    wav2lip_tasks: list[tuple[Path, Path, str]] = []
+
+    # Intro
+    wav2lip_tasks.append((intro_audio, run_dir / "intro.mp4", "intro"))
+
+    # Per-article
+    for i, audio_path in enumerate(article_audios):
+        wav2lip_tasks.append((audio_path, run_dir / f"article_{i:02d}.mp4", f"article_{i}"))
+
+    # Outro
+    wav2lip_tasks.append((outro_audio, run_dir / "outro.mp4", "outro"))
+
+    import time
+    t0 = time.time()
+    video_paths = run_wav2lip_parallel(wav2lip_tasks, max_workers=args.workers)
+    elapsed = time.time() - t0
+    print(f"  All {len(video_paths)} clips done in {elapsed:.1f}s (wall-clock)")
+
+    # video_paths order: [intro, article_0, article_1, ..., outro]
+    intro_video = video_paths[0]
+    article_videos = video_paths[1:-1]
+    outro_video = video_paths[-1]
+
+    print()
+
+    # ── Step D: Upload to GCS ──
+    if not args.no_upload:
+        print("[D] Uploading video clips to GCS...")
+        intro_url = upload_to_gcs(intro_video, "clips/intro.mp4")
+        outro_url = upload_to_gcs(outro_video, "clips/outro.mp4")
+
+        article_urls = []
+        for i, vp in enumerate(article_videos):
+            url = upload_to_gcs(vp, f"clips/article_{i:02d}.mp4")
+            article_urls.append(url)
+    else:
+        print("[D] Skipping GCS upload (--no-upload)")
+        intro_url = "/news-reader/clips/intro.mp4"
+        outro_url = "/news-reader/clips/outro.mp4"
+        article_urls = [f"/news-reader/clips/article_{i:02d}.mp4" for i in range(len(article_videos))]
+
+    print()
+
+    # ── Step E: Build and upload metadata ──
+    print("[E] Building metadata...")
+    meta = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "lang": args.lang,
+        "intro": {
+            "video_url": intro_url,
+            "duration": round(_get_audio_duration(intro_audio), 3),
+        },
+        "outro": {
+            "video_url": outro_url,
+            "duration": round(_get_audio_duration(outro_audio), 3),
+        },
+        "articles": [],
+    }
+
+    for i, a in enumerate(articles):
+        meta["articles"].append({
+            "title": a.get("title", ""),
+            "summary": a.get("one_line_summary", "") or a.get("snippet", ""),
+            "category": a.get("ov_category", ""),
+            "sdg_alignment": a.get("sdg_alignment", []),
+            "source_name": a.get("source_name", ""),
+            "source_url": a.get("source_url", ""),
+            "video_url": article_urls[i],
+            "duration": round(_get_audio_duration(article_audios[i]), 3),
+        })
+
+    meta_path = run_dir / "meta.json"
+    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2))
     print(f"  Metadata saved: {meta_path}")
 
-    # Step D: Generate video
-    print("[D] Generating lip-synced video via Wav2Lip...")
-    generate_video(anchor_face, audio_path, output_video)
-
-    # Cleanup combined audio
-    audio_path.unlink(missing_ok=True)
-
-    # Step E: Upload to GCS
     if not args.no_upload:
-        print("[E] Uploading to GCS...")
-        upload_to_gcs(output_video, "latest.mp4")
         upload_to_gcs(meta_path, "latest_meta.json")
-    else:
-        print("[E] Skipping GCS upload (--no-upload)")
 
-    print(f"\n=== Done! Video: {output_video} ===")
-    print(f"         Metadata: {meta_path}")
+    total_dur = sum(_get_audio_duration(a) for a in [intro_audio] + article_audios + [outro_audio])
+    print(f"\n=== Done! {len(articles)} articles, total: {total_dur:.1f}s, rendered in {elapsed:.1f}s ===")
+    print(f"  Run directory: {run_dir}")
 
 
 if __name__ == "__main__":

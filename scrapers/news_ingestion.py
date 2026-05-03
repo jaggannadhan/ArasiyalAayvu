@@ -503,6 +503,244 @@ async def run_all_ner(
     return all_results
 
 
+# ── News Consolidation (KG-enriched scripts) ────────────────────────────────
+
+def _load_news_kg() -> Any:
+    """Load the News Knowledge Graph as a NetworkX graph."""
+    try:
+        sys.path.insert(0, str(ROOT / "web" / "backend_api"))
+        from graph_query import load_news_graph
+        g, _ = load_news_graph(project_id=PROJECT, force=True)
+        return g
+    except Exception as e:
+        print(f"  Warning: Could not load News KG: {e}")
+        return None
+
+
+def _get_entity_context(
+    g: Any,
+    entities: list[dict],
+    db: Any,
+    current_title: str,
+) -> str:
+    """Query the KG for all edges involving this article's entities,
+    then fetch titles of related articles. Returns a text block for Gemini."""
+    if g is None or not entities:
+        return ""
+
+    # Import neighbors from graph_query
+    sys.path.insert(0, str(ROOT / "web" / "backend_api"))
+    from graph_query import neighbors as gq_neighbors
+
+    # Collect entity node_ids and canonical_ids
+    node_ids = set()
+    for e in entities:
+        node_ids.add(e.get("node_id", ""))
+        if e.get("canonical_id"):
+            node_ids.add(e["canonical_id"])
+    node_ids.discard("")
+
+    # Get KG edges for each entity
+    kg_facts: list[str] = []
+    related_article_ids: set[str] = set()
+
+    for nid in node_ids:
+        if nid not in g:
+            continue
+        edges = gq_neighbors(g, nid, direction="both", limit=30)
+        for edge in edges:
+            verb = edge.get("verb", "")
+            if edge["direction"] == "out":
+                target_node = edge.get("target_node", {})
+                target_label = target_node.get("label", edge.get("target", ""))
+                source_label = g.nodes[nid].get("label", nid) if nid in g else nid
+                kg_facts.append(f"- {source_label} {verb} {target_label}")
+                # Collect article IDs from the target node
+                for aid in target_node.get("article_ids", []):
+                    related_article_ids.add(aid)
+            else:
+                source_node = edge.get("source_node", {})
+                source_label = source_node.get("label", edge.get("source", ""))
+                target_label = g.nodes[nid].get("label", nid) if nid in g else nid
+                kg_facts.append(f"- {source_label} {verb} {target_label}")
+                for aid in source_node.get("article_ids", []):
+                    related_article_ids.add(aid)
+
+    # Fetch titles of related articles from Firestore (up to 15)
+    related_articles: list[str] = []
+    for aid in list(related_article_ids)[:15]:
+        try:
+            doc = db.collection("news_articles").document(aid).get()
+            if doc.exists:
+                d = doc.to_dict()
+                title = d.get("title", "")
+                if title and title != current_title:
+                    date = d.get("published_at", "")[:10]
+                    summary = d.get("one_line_summary", "")
+                    related_articles.append(f"- [{date}] {title}: {summary}" if summary else f"- [{date}] {title}")
+        except Exception:
+            continue
+
+    # Deduplicate KG facts
+    kg_facts = list(dict.fromkeys(kg_facts))[:30]
+
+    context_parts = []
+    if kg_facts:
+        context_parts.append("KNOWLEDGE GRAPH FACTS:\n" + "\n".join(kg_facts))
+    if related_articles:
+        context_parts.append("RELATED PAST ARTICLES:\n" + "\n".join(related_articles[:10]))
+
+    return "\n\n".join(context_parts)
+
+
+async def consolidate_article(
+    client: Any,
+    article_title: str,
+    article_summary: str,
+    kg_context: str,
+    lang: str = "ta",
+    model: str = "gemini-2.5-flash",
+) -> dict:
+    """Use Gemini to generate a contextual news script + identify relevant history.
+
+    Returns:
+        {
+            "consolidated_script_ta": "...",
+            "consolidated_script_en": "...",
+            "contextual_history": [{"ref_title": ..., "relation": ..., "confidence": ...}]
+        }
+    """
+    from google.genai import types
+
+    if lang == "ta":
+        prompt = f"""நீங்கள் ஒரு தமிழ் செய்தி வாசிப்பாளர். இன்றைய செய்தியையும், தொடர்புடைய கடந்த கால தகவல்களையும் பயன்படுத்தி ஒரு முழுமையான செய்தி ஸ்கிரிப்ட் எழுதுங்கள்.
+
+இன்றைய செய்தி:
+தலைப்பு: {article_title}
+சுருக்கம்: {article_summary}
+
+{kg_context if kg_context else "(தொடர்புடைய கடந்த கால தகவல்கள் இல்லை)"}
+
+விதிகள்:
+- முக்கியம்: முதலில் இன்றைய செய்தியின் உள்ளடக்கத்தை சொல்லவும், பிறகு தொடர்புடைய பின்னணியை இணைக்கவும்
+- கடந்த கால தகவல்களை செய்தியின் சூழலில் தொடர்புடையதாக இருந்தால் மட்டுமே பயன்படுத்தவும்
+- ஒரு entity பெயர் பொருந்துவது மட்டும் போதாது — காரண-விளைவு உறவு அல்லது கதை தொடர்ச்சி இருக்க வேண்டும்
+- தொடர்பு இல்லையென்றால் இன்றைய செய்தியை மட்டும் சுருக்கி எழுதவும்
+- 2-4 வாக்கியங்களில் எழுதவும்
+- இயற்கையாகவும் பேச்சு வழக்கிலும் எழுதவும்
+
+JSON வெளியீடு (வேறு எதுவும் வேண்டாம்):
+{{
+  "script_ta": "தமிழ் ஸ்கிரிப்ட்",
+  "script_en": "English translation of the same script",
+  "used_context": [
+    {{"ref_title": "past article title used", "relation": "consequence|continuation|background", "confidence": 0.0-1.0}}
+  ]
+}}
+
+குறிப்பு: used_context-ல் நீங்கள் உண்மையில் ஸ்கிரிப்டில் பயன்படுத்திய கடந்த கால செய்திகளை மட்டுமே சேர்க்கவும். பயன்படுத்தவில்லை என்றால் [] என்று விடவும்."""
+    else:
+        prompt = f"""You are a news anchor. Write a contextual news script using today's article and any relevant past information.
+
+TODAY'S ARTICLE:
+Title: {article_title}
+Summary: {article_summary}
+
+{kg_context if kg_context else "(No related past information available)"}
+
+RULES:
+- IMPORTANT: Start with today's article content FIRST, then weave in relevant background
+- Include past events ONLY if they explain WHY or HOW today's news happened
+- Just matching an entity name is NOT enough — there must be a causal, consequential, or narrative link
+- If nothing from history is contextually relevant, just summarize today's article as-is
+- Write 2-4 sentences
+- Write naturally, as spoken language
+
+JSON output (nothing else):
+{{
+  "script_ta": "Tamil script",
+  "script_en": "English script",
+  "used_context": [
+    {{"ref_title": "past article title used", "relation": "consequence|continuation|background", "confidence": 0.0-1.0}}
+  ]
+}}
+
+Note: In used_context, include ONLY past articles you actually referenced in the script. If none were used, return []."""
+
+    config = types.GenerateContentConfig(
+        temperature=0.4,
+        response_mime_type="application/json",
+    )
+
+    try:
+        resp = await client.aio.models.generate_content(
+            model=model,
+            contents=prompt,
+            config=config,
+        )
+        result = json.loads(resp.text.strip())
+        return {
+            "consolidated_script_ta": result.get("script_ta", ""),
+            "consolidated_script_en": result.get("script_en", ""),
+            "contextual_history": result.get("used_context", []),
+        }
+    except Exception as e:
+        print(f"    Consolidation failed: {e}")
+        return {
+            "consolidated_script_ta": "",
+            "consolidated_script_en": "",
+            "contextual_history": [],
+        }
+
+
+async def run_consolidation(
+    stories: list[dict[str, Any]],
+    ner_results: list[dict[str, Any]],
+    db: Any,
+    model: str = "gemini-2.5-flash",
+) -> dict[str, dict]:
+    """Run KG-enriched consolidation for all articles.
+
+    Returns: {article_id: {"consolidated_script_ta": ..., "consolidated_script_en": ..., "contextual_history": [...]}}
+    """
+    from google import genai
+
+    print("  Loading News Knowledge Graph...")
+    g = _load_news_kg()
+    if g:
+        print(f"  KG loaded: {g.number_of_nodes()} nodes, {g.number_of_edges()} edges")
+    else:
+        print("  KG not available — scripts will be standalone")
+
+    client = genai.Client(vertexai=True, project=PROJECT, location=LOCATION)
+
+    # Index NER by article_id
+    ner_by_id = {nr["article_id"]: nr for nr in ner_results}
+
+    results: dict[str, dict] = {}
+    for i, story in enumerate(stories):
+        sid = story["dedup_group_id"]
+        ner = ner_by_id.get(sid, {})
+        title = story.get("title", "")
+        summary = ner.get("one_line_summary", "") or story.get("snippet", "")
+        entities = ner.get("entities", [])
+
+        # Get KG context for this article's entities
+        kg_context = _get_entity_context(g, entities, db, title)
+
+        # Run Gemini consolidation
+        result = await consolidate_article(
+            client, title, summary, kg_context, lang="ta", model=model,
+        )
+        results[sid] = result
+
+        ctx_count = len(result.get("contextual_history", []))
+        ctx_label = f"+ {ctx_count} context refs" if ctx_count else "standalone"
+        print(f"  Article {i + 1}: {title[:60]}... [{ctx_label}]")
+
+    return results
+
+
 # ── Firestore Storage ────────────────────────────────────────────────────────
 
 def store_articles(
@@ -510,6 +748,7 @@ def store_articles(
     stories: list[dict[str, Any]],
     ner_results: list[dict[str, Any]],
     full_texts: dict[str, str],
+    consolidation: dict[str, dict] | None = None,
 ) -> int:
     """Store articles + NER results in Firestore news_articles collection."""
     # Index NER results by article_id
@@ -548,6 +787,8 @@ def store_articles(
             "sentiment": ner.get("sentiment", 0.0),
             "relevance_to_tn": ner.get("relevance_to_tn", 0.0),
             "one_line_summary": ner.get("one_line_summary", ""),
+            # Consolidation (KG-enriched scripts for news reader)
+            **(consolidation.get(sid, {}) if consolidation else {}),
             # Metadata
             "ingested_at": datetime.now(timezone.utc).isoformat(),
         }
@@ -659,6 +900,67 @@ async def _retry_empty_ner(model: str, batch_size: int) -> None:
     print(f"\n=== Done: {succeeded} succeeded, {failed} failed ===")
 
 
+# ── Backfill consolidation for existing articles ─────────────────────────────
+
+async def _consolidate_existing(model: str) -> None:
+    """Run KG consolidation on Firestore articles that don't have consolidated_script_ta yet."""
+    from google.cloud import firestore as fs
+    from google import genai
+
+    db = fs.Client(project=PROJECT)
+    print("=== Backfill: Consolidate existing articles ===")
+
+    # Fetch all articles that have entities but no consolidated script
+    docs = list(db.collection("news_articles").stream())
+    pending = []
+    for doc in docs:
+        d = doc.to_dict()
+        if d.get("entities") and not d.get("consolidated_script_ta"):
+            pending.append((doc.id, d))
+
+    print(f"  Found {len(pending)} articles needing consolidation (of {len(docs)} total)")
+    if not pending:
+        print("  Nothing to consolidate.")
+        return
+
+    # Load KG
+    print("  Loading News Knowledge Graph...")
+    g = _load_news_kg()
+    if g:
+        print(f"  KG loaded: {g.number_of_nodes()} nodes, {g.number_of_edges()} edges")
+    else:
+        print("  KG not available — scripts will be standalone")
+
+    client = genai.Client(vertexai=True, project=PROJECT, location=LOCATION)
+    succeeded = 0
+
+    for i, (doc_id, d) in enumerate(pending):
+        title = d.get("title", "")
+        summary = d.get("one_line_summary", "") or d.get("snippet", "")
+        entities = d.get("entities", [])
+
+        kg_context = _get_entity_context(g, entities, db, title)
+
+        result = await consolidate_article(
+            client, title, summary, kg_context, lang="ta", model=model,
+        )
+
+        if result.get("consolidated_script_ta"):
+            db.collection("news_articles").document(doc_id).update(result)
+            succeeded += 1
+            ctx_count = len(result.get("contextual_history", []))
+            ctx_label = f"+ {ctx_count} refs" if ctx_count else "standalone"
+            print(f"  [{i + 1}/{len(pending)}] {title[:60]}... [{ctx_label}]")
+        else:
+            print(f"  [{i + 1}/{len(pending)}] {title[:60]}... [FAILED]")
+
+        # Pace to avoid Gemini rate limits
+        if (i + 1) % 5 == 0:
+            await asyncio.sleep(2)
+
+    print(f"\n=== Done: {succeeded}/{len(pending)} articles consolidated ===")
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 async def main() -> None:
@@ -669,6 +971,7 @@ async def main() -> None:
     parser.add_argument("--model", default="gemini-2.5-flash", help="Gemini model")
     parser.add_argument("--skip-ner", action="store_true", help="Skip NER, store raw articles only")
     parser.add_argument("--retry-empty", action="store_true", help="Re-run NER on articles with empty entities")
+    parser.add_argument("--consolidate-existing", action="store_true", help="Backfill consolidation on existing articles")
     parser.add_argument("--batch-size", type=int, default=NER_BATCH_SIZE, help="NER batch size (default: 10)")
     args = parser.parse_args()
 
@@ -683,6 +986,11 @@ async def main() -> None:
     # ── Retry-empty mode: re-process articles that have no NER results ────────
     if args.retry_empty:
         await _retry_empty_ner(args.model, args.batch_size)
+        return
+
+    # ── Consolidate-existing mode: backfill KG-enriched scripts ──────────────
+    if args.consolidate_existing:
+        await _consolidate_existing(args.model)
         return
 
     if not api_key:
@@ -734,9 +1042,17 @@ async def main() -> None:
               f"{len(ref_data['parties'])} parties, {len(ref_data['districts'])} districts")
         ner_results = await run_all_ner(stories, full_texts, ref_data, model=args.model)
 
-    # 5. Store or print
+    # 5. Consolidate — KG-enriched contextual scripts
+    consolidation: dict[str, dict] = {}
+    if not args.skip_ner and ner_results and not args.probe:
+        print("[5/6] Running KG-enriched consolidation...")
+        consolidation = await run_consolidation(stories, ner_results, db, model=args.model)
+    else:
+        print("[5/6] Skipping consolidation")
+
+    # 6. Store or print
     if args.probe:
-        print("[5/5] Probe mode — printing results:")
+        print("[6/6] Probe mode — printing results:")
         print()
         for i, story in enumerate(stories[:5]):
             sid = story["dedup_group_id"]
@@ -759,8 +1075,8 @@ async def main() -> None:
                 print(f"   Sentiment: {ner.get('sentiment', 0):.2f} | Relevance: {ner.get('relevance_to_tn', 0):.2f}")
             print()
     else:
-        print("[5/5] Storing in Firestore...")
-        stored = store_articles(db, stories, ner_results, full_texts)
+        print("[6/6] Storing in Firestore...")
+        stored = store_articles(db, stories, ner_results, full_texts, consolidation)
         print(f"\n=== Done: {stored} articles ingested ===")
 
 

@@ -2517,6 +2517,86 @@ async def task_news_ingest(
     if batch_count > 0:
         fb.commit()
 
+    # 6. Run KG-enriched consolidation for newly stored articles
+    consolidated = 0
+    try:
+        from google import genai as _genai
+        from google.genai import types as _genai_types
+
+        _g_client = _genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
+
+        # Load KG for context
+        try:
+            _kg, _ = _gq.load_news_graph(PROJECT_ID)
+        except Exception:
+            _kg = None
+
+        for story in new_stories:
+            sid = story["dedup_group_id"]
+            ner = ner_by_id.get(sid, {})
+            title = story.get("title", "")
+            summary = ner.get("one_line_summary", "") or story.get("snippet", "")
+            entities = ner.get("entities", [])
+
+            if not entities:
+                continue
+
+            # Get KG context
+            kg_context_parts = []
+            if _kg:
+                for e in entities[:8]:
+                    nid = e.get("canonical_id") or e.get("node_id", "")
+                    if nid and nid in _kg:
+                        for _, tgt, data in list(_kg.out_edges(nid, data=True))[:10]:
+                            tgt_label = _kg.nodes[tgt].get("label", tgt) if tgt in _kg else tgt
+                            src_label = _kg.nodes[nid].get("label", nid)
+                            kg_context_parts.append(f"- {src_label} {data.get('verb', '')} {tgt_label}")
+                        for src, _, data in list(_kg.in_edges(nid, data=True))[:10]:
+                            src_label = _kg.nodes[src].get("label", src) if src in _kg else src
+                            tgt_label = _kg.nodes[nid].get("label", nid)
+                            kg_context_parts.append(f"- {src_label} {data.get('verb', '')} {tgt_label}")
+
+            kg_context = "KNOWLEDGE GRAPH FACTS:\n" + "\n".join(list(dict.fromkeys(kg_context_parts))[:20]) if kg_context_parts else ""
+
+            prompt = f"""You are a Tamil news anchor. Write a contextual news script using today's article and any relevant past information.
+
+TODAY'S ARTICLE:
+Title: {title}
+Summary: {summary}
+
+{kg_context if kg_context else "(No related past information available)"}
+
+RULES:
+- IMPORTANT: Start with today's article content FIRST, then weave in relevant background
+- Include past events ONLY if they explain WHY or HOW today's news happened
+- Just matching an entity name is NOT enough — there must be a causal or narrative link
+- If nothing from history is contextually relevant, just summarize today's article as-is
+- Write 2-4 sentences, naturally as spoken language
+
+JSON output (nothing else):
+{{"script_ta": "Tamil script", "script_en": "English script", "used_context": [{{"ref_title": "past article title", "relation": "consequence|continuation|background", "confidence": 0.0-1.0}}]}}
+
+Note: In used_context, include ONLY past articles you actually referenced. If none, return []."""
+
+            try:
+                _cons_resp = await _g_client.aio.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=prompt,
+                    config=_genai_types.GenerateContentConfig(temperature=0.4, response_mime_type="application/json"),
+                )
+                _cons_result = json.loads(_cons_resp.text.strip())
+                doc_id = hashlib.md5(sid.encode()).hexdigest()[:16]
+                _db.collection("news_articles").document(doc_id).update({
+                    "consolidated_script_ta": _cons_result.get("script_ta", ""),
+                    "consolidated_script_en": _cons_result.get("script_en", ""),
+                    "contextual_history": _cons_result.get("used_context", []),
+                })
+                consolidated += 1
+            except Exception:
+                pass
+    except Exception:
+        pass
+
     return {
         "status": "ok",
         "fetched": len(all_stories),
@@ -2524,4 +2604,5 @@ async def task_news_ingest(
         "stored": stored,
         "ner_extracted": len(ner_results),
         "full_text_fetched": len(full_texts),
+        "consolidated": consolidated,
     }

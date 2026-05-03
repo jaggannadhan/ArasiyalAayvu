@@ -5,3 +5,11 @@ __pycache__/
 *.egg-info/
 .env
 .env.*
+
+# News reader generated artifacts
+data/processed/news_reader/run_*/
+data/processed/news_reader/*.mp4
+data/processed/news_reader/*.mp3
+data/processed/news_reader/*_meta.json
+data/processed/news_reader/_*
+data/assets/reader_video.mp4
