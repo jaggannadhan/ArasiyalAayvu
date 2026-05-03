@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-05-03T05:41:15.656552+00:00",
+  "lang": "ta",
+  "intro": {
+    "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/intro.mp4",
+    "duration": 5.328
+  },
+  "outro": {
+    "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/outro.mp4",
+    "duration": 5.112
+  },
+  "articles": [
+    {
+      "title": "PM congratulates Balasubramaniam, Aniya on appointment as full",
+      "summary": "PM Modi congratulated Dr. R. Balasubramaniam and Dr. Joram Aniya on their appointment as Full-time Members of NITI Aayog, highlighting their expected contributions to policy-making, innovation, and growth.",
+      "category": "POLITICS",
+      "sdg_alignment": [
+        "SDG-8",
+        "SDG-9",
+        "SDG-17"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.newsonair.gov.in/pm-congratulates-balasubramaniam-aniya-on-appointment-as-full-time-niti-aayog-members",
+      "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/article_00.mp4",
+      "duration": 19.368
+    },
+    {
+      "title": "AERB clears equipment installation at Tamil Nadu's Kudankulam Nuclear Power Project Units 5 and 6",
+      "summary": "The Atomic Energy Regulatory Board has granted permission for major equipment installation at Units 5 and 6 of the Kudankulam Nuclear Power Project in Tamil Nadu.",
+      "category": "WORLD",
+      "sdg_alignment": [
+        "SDG-7",
+        "SDG-9"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.aninews.in/news/national/general-news/aerb-clears-equipment-installation-at-tamil-nadus-kudankulam-nuclear-power-project-units-5-and-620260503090723",
+      "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/article_01.mp4",
+      "duration": 22.968
+    },
+    {
+      "title": "MI vs CSK IPL 2026: Chennai Super Kings create history, set new IPL record vs Mumbai Indians",
+      "summary": "Chennai Super Kings made history by becoming the first team to achieve 20 IPL victories against Mumbai Indians, improving their standing in the IPL 2026 points table while Mumbai Indians' playoff hopes dwindle.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [],
+      "source_name": "in",
+      "source_url": "https://economictimes.indiatimes.com/news/new-updates/mi-vs-csk-ipl-2026-chennai-super-kings-create-history-set-new-ipl-record-with-vs-mumbai-indians/articleshow/130726536.cms",
+      "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/article_02.mp4",
+      "duration": 19.296
+    },
+    {
+      "title": "3-tier security, QR-based entry system in place for Tamil Nadu vote counting on May 4: CEO Archana Patnaik",
+      "summary": "The Election Commission of India, led by CEO Archana Patnaik, has implemented a three-tier security and QR-based entry system for vote counting in Tamil Nadu on May 4.",
+      "category": "POLITICS",
+      "sdg_alignment": [
+        "SDG-16"
+      ],
+      "source_name": "in",
+      "source_url": "https://aninews.in/news/national/general-news/3-tier-security-qr-based-entry-system-in-place-for-tamil-nadu-vote-counting-on-may-4-ceo-archana-patnaik20260503063215",
+      "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/article_03.mp4",
+      "duration": 15.576
+    },
+    {
+      "title": "Weather Forecast Today, May 3, 2026: Check Weather Updates, Rainfall and Heatwave Predictions for Mumbai, Delhi, Chennai, Bengaluru, Hyderabad, Kolkata and Shimla",
+      "summary": "The India Meteorological Department issued weather alerts for May 3, 2026, predicting thunderstorms, gusty winds, and heavy rain for Tamil Nadu, along with forecasts for other major Indian cities like Chennai, Mumbai, and Delhi.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [
+        "SDG-13"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.latestly.com/socially/india/news/weather-forecast-today-may-3-2026-check-weather-updates-rainfall-and-heatwave-predictions-for-mumbai-delhi-chennai-bengaluru-hyderabad-kolkata-and-shimla-7415100.html",
+      "video_url": "https://storage.googleapis.com/naatunadappu-media/news-reader/clips/article_04.mp4",
+      "duration": 21.096
+    }
+  ]
+}

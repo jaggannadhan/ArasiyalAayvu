@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-05-03T00:52:22.195221+00:00",
+  "lang": "ta",
+  "segment_count": 7,
+  "timestamps": [
+    0.0,
+    13.0,
+    28.696,
+    46.744,
+    64.984,
+    83.368,
+    101.176
+  ],
+  "intro_duration": 10.0,
+  "transition_gap": 3.0,
+  "articles": [
+    {
+      "title": "Yesterday CSK vs MI, IPL 2026 match result: What happened in Chennai Super Kings vs Mumbai Indians clash?",
+      "summary": "Chennai Super Kings defeated Mumbai Indians by eight wickets in an IPL 2026 match at MA Chidambaram Stadium, with Ruturaj Gaikwad named Player of the Match for his unbeaten 67.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [],
+      "source_name": "in",
+      "source_url": "https://www.livemint.com/news/trends/yesterday-csk-vs-mi-ipl-2026-match-result-what-happened-in-chennai-super-kings-vs-mumbai-indians-clash-11777747993856.html",
+      "start": 13.0,
+      "end": 25.696
+    },
+    {
+      "title": "Para-legal volunteers to aid in missing children cases in Tamil Nadu",
+      "summary": "Tamil Nadu's State government will deploy para-legal volunteers in police stations to assist in the 8,000 annual missing children cases, providing support to families and children.",
+      "category": "WORLD",
+      "sdg_alignment": [
+        "SDG-16",
+        "SDG-3",
+        "SDG-10"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.thehindu.com/news/national/tamil-nadu/para-legal-volunteers-to-aid-in-missing-children-cases-in-tamil-nadu/article70928742.ece",
+      "start": 28.696,
+      "end": 43.744
+    },
+    {
+      "title": "Chennai residents, take cleanliness survey seriously now",
+      "summary": "Chennai residents are urged to participate in the 10th Swachh Survekshan cleanliness survey, as their feedback will determine the city's ranking among other cities.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [
+        "SDG-6",
+        "SDG-11"
+      ],
+      "source_name": "in",
+      "source_url": "https://www.thehindu.com/news/cities/chennai/chennai-residents-take-cleanliness-survey-seriously-now/article70931071.ece",
+      "start": 46.744,
+      "end": 61.984
+    },
+    {
+      "title": "TVK chief Vijay cancells Velankanni trip",
+      "summary": "Tamilaga Vettri Kazhagam chief Vijay cancelled his planned visit to Velankanni Church in Nagapattinam district, disappointing thousands of fans, citing personal reasons.",
+      "category": "WORLD",
+      "sdg_alignment": [],
+      "source_name": "in",
+      "source_url": "https://m.rediff.com/news/commentary/2026/may/02/tvk-chief-vijay-cancells-velankanni-trip/f8c36c1c869fbcfc933e98f9b3d09121",
+      "start": 64.984,
+      "end": 80.368
+    },
+    {
+      "title": "Hotels may shut': DMK's TKS Elangovan slams LPG price hike, says centre acted after elections to burden public",
+      "summary": "DMK spokesperson TKS Elangovan criticized the central government's hike in commercial LPG prices, stating it burdens the public.",
+      "category": "SCIENCE_TECH",
+      "sdg_alignment": [
+        "SDG-8",
+        "SDG-10"
+      ],
+      "source_name": "in",
+      "source_url": "https://aninews.in/news/national/politics/hotels-may-shut-dmks-tks-elangovan-slams-lpg-price-hike-says-centre-acted-after-elections-to-burden-public20260502110605",
+      "start": 83.368,
+      "end": 98.176
+    }
+  ]
+}
