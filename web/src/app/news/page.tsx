@@ -6,7 +6,7 @@ import { apiGet } from "@/lib/api-client";
 import { useLanguage } from "@/lib/LanguageContext";
 import { NewsReaderPlayer } from "@/components/news/NewsReaderPlayer";
 
-interface ThreadArticle {
+interface NewsArticle {
   doc_id: string;
   title: string;
   summary: string;
@@ -17,33 +17,17 @@ interface ThreadArticle {
   published_at: string;
   heat_score: number;
   is_breaking: boolean;
-  is_anchor: boolean;
-  sentiment: number;
   sdg_alignment: string[];
 }
 
-interface NewsThread {
-  anchor_title: string;
-  thread_entity: string;
-  thread_label: string;
-  article_count: number;
-  shared_entities: string[];
-  articles: ThreadArticle[];
-}
-
-interface ThreadsResponse {
-  threads: NewsThread[];
-  count: number;
-}
-
-const CAT_COLOR: Record<string, string> = {
-  POLITICS: "bg-red-500",
-  BUSINESS: "bg-blue-500",
-  HEALTH: "bg-green-500",
-  SCIENCE_TECH: "bg-purple-500",
-  WORLD: "bg-gray-500",
-  ENTERTAINMENT: "bg-pink-500",
-  SPORTS: "bg-orange-500",
+const CAT_META: Record<string, { color: string; label: string; labelTA: string }> = {
+  POLITICS: { color: "bg-red-500", label: "Politics", labelTA: "அரசியல்" },
+  BUSINESS: { color: "bg-blue-500", label: "Business", labelTA: "வணிகம்" },
+  HEALTH: { color: "bg-green-500", label: "Health", labelTA: "சுகாதாரம்" },
+  SCIENCE_TECH: { color: "bg-purple-500", label: "Science & Tech", labelTA: "அறிவியல்" },
+  WORLD: { color: "bg-gray-500", label: "World", labelTA: "உலகம்" },
+  ENTERTAINMENT: { color: "bg-pink-500", label: "Entertainment", labelTA: "பொழுதுபோக்கு" },
+  SPORTS: { color: "bg-orange-500", label: "Sports", labelTA: "விளையாட்டு" },
 };
 
 function timeAgo(dateStr: string): string {
@@ -52,128 +36,41 @@ function timeAgo(dateStr: string): string {
   if (min < 60) return `${min}m`;
   const hr = Math.floor(min / 60);
   if (hr < 24) return `${hr}h`;
-  const days = Math.floor(hr / 24);
-  return `${days}d`;
-}
-
-function formatDate(dateStr: string): string {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
-}
-
-function ThreadCard({ article, fullWidth }: { article: ThreadArticle; fullWidth?: boolean }) {
-  const catColor = CAT_COLOR[article.category] ?? "bg-gray-400";
-
-  return (
-    <a
-      href={article.source_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${fullWidth ? "w-full" : "shrink-0 w-56"} bg-white rounded-xl border shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col ${
-        article.is_anchor
-          ? "border-amber-300 ring-2 ring-amber-200"
-          : "border-gray-200"
-      }`}
-    >
-      {/* Top edge — category color bar */}
-      <div className={`h-1 ${catColor}`} />
-
-      <div className="p-3 flex-1 flex flex-col">
-        {/* Date + breaking badge */}
-        <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[9px] font-semibold text-gray-400">
-            {formatDate(article.published_at)}
-          </span>
-          {article.is_breaking && (
-            <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-red-600 text-white">
-              LIVE
-            </span>
-          )}
-          {article.is_anchor && !article.is_breaking && (
-            <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700">
-              TODAY
-            </span>
-          )}
-        </div>
-
-        {/* Title — 3 lines max */}
-        <h4 className="text-xs font-bold text-gray-900 leading-snug line-clamp-3 flex-1">
-          {article.title}
-        </h4>
-
-        {/* Summary — 2 lines */}
-        {article.summary && (
-          <p className="text-[10px] text-gray-500 leading-relaxed line-clamp-2 mt-1.5">
-            {article.summary}
-          </p>
-        )}
-
-        {/* Footer */}
-        <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-gray-100">
-          <span className="text-[9px] text-gray-400 truncate max-w-[100px]">
-            {article.source_name}
-          </span>
-          <span className="text-[9px] text-gray-400">
-            {timeAgo(article.published_at)}
-          </span>
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function ThreadRow({ thread, isTA }: { thread: NewsThread; isTA: boolean }) {
-  const isSingle = thread.article_count === 1;
-
-  return (
-    <div className="space-y-2">
-      {/* Thread header — the "string" label */}
-      <div className="flex items-center gap-2 px-1">
-        <div className="w-2 h-2 rounded-full bg-amber-400 shadow-sm shadow-amber-200" />
-        <h3 className="text-sm font-black text-gray-900 truncate">
-          {thread.thread_label}
-        </h3>
-        {!isSingle && (
-          <span className="text-[10px] text-gray-400 shrink-0">
-            {thread.article_count} {isTA ? "செய்திகள்" : "articles"}
-          </span>
-        )}
-        <div className="flex-1 border-t border-dashed border-gray-200" />
-        <div className="w-2 h-2 rounded-full bg-amber-400 shadow-sm shadow-amber-200" />
-      </div>
-
-      {/* The "string of lights" — horizontally scrollable cards */}
-      <div className="relative">
-        {/* The wire/string line behind the cards */}
-        <div className="absolute top-0 left-3 right-3 h-px bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200" />
-
-        {/* Cards hanging from the string */}
-        <div className={`flex gap-3 pb-2 pt-3 px-1 ${isSingle ? "" : "overflow-x-auto no-scrollbar snap-x snap-mandatory"}`}>
-          {thread.articles.map((article) => (
-            <div key={article.doc_id} className={`snap-start flex flex-col items-center ${isSingle ? "w-full" : ""}`}>
-              {/* "Light" bulb connector */}
-              <div className="w-1.5 h-3 bg-gradient-to-b from-amber-300 to-amber-100 rounded-b-full mb-1" />
-              <ThreadCard article={article} fullWidth={isSingle} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return `${Math.floor(hr / 24)}d`;
 }
 
 export default function NewsPage() {
   const { lang, setLang } = useLanguage();
   const isTA = lang === "ta";
-  const [threads, setThreads] = useState<NewsThread[]>([]);
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    apiGet<ThreadsResponse>("/api/news/threads?top_n=10")
-      .then((data) => setThreads(data.threads))
-      .catch(() => setThreads([]))
+    apiGet<{ articles: NewsArticle[] }>("/api/news?limit=100")
+      .then((data) => {
+        // Filter to today's articles only
+        const today = new Date().toISOString().slice(0, 10);
+        const todayArticles = (data.articles || []).filter(
+          (a) => a.published_at?.slice(0, 10) === today
+        );
+        setArticles(todayArticles);
+      })
+      .catch(() => setArticles([]))
       .finally(() => setLoading(false));
   }, []);
+
+  // Group by category
+  const grouped: Record<string, NewsArticle[]> = {};
+  for (const a of articles) {
+    const cat = a.category || "OTHER";
+    if (!grouped[cat]) grouped[cat] = [];
+    grouped[cat].push(a);
+  }
+
+  // Sort categories by article count (most articles first)
+  const sortedCategories = Object.keys(grouped).sort(
+    (a, b) => grouped[b].length - grouped[a].length
+  );
 
   return (
     <main className="min-h-full bg-gray-50">
@@ -191,7 +88,7 @@ export default function NewsPage() {
                 {isTA ? "செய்திகள் & பகுப்பாய்வு" : "News & Analysis"}
               </h1>
               <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">
-                {isTA ? "தமிழ்நாடு · AI-NER · கதை நூல்கள்" : "Tamil Nadu · AI-NER · Story Threads"}
+                {isTA ? "தமிழ்நாடு · இன்றைய செய்திகள்" : "Tamil Nadu · Today's News"}
               </p>
             </div>
           </div>
@@ -205,18 +102,30 @@ export default function NewsPage() {
       </header>
 
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-8">
-        {/* AI News Reader — self-contained: fetches its own metadata from GCS */}
+        {/* News Recordings */}
         <NewsReaderPlayer lang={lang} />
+
+        {/* Today's News heading */}
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-black text-gray-900">
+            {isTA ? "இன்றைய செய்திகள்" : "Today's News"}
+          </h2>
+          {!loading && (
+            <span className="text-[10px] text-gray-400 font-semibold">
+              {articles.length} {isTA ? "செய்திகள்" : "articles"}
+            </span>
+          )}
+        </div>
 
         {/* Loading */}
         {loading && (
-          <div className="space-y-8">
+          <div className="space-y-6">
             {[1, 2, 3].map((i) => (
               <div key={i} className="space-y-2">
-                <div className="h-4 w-32 bg-gray-100 rounded animate-pulse" />
-                <div className="flex gap-3 overflow-hidden">
-                  {[1, 2, 3, 4].map((j) => (
-                    <div key={j} className="w-56 h-36 shrink-0 bg-gray-100 rounded-xl animate-pulse" />
+                <div className="h-4 w-24 bg-gray-200 rounded animate-pulse" />
+                <div className="grid grid-cols-2 gap-3">
+                  {[1, 2].map((j) => (
+                    <div key={j} className="h-28 bg-gray-100 rounded-xl animate-pulse" />
                   ))}
                 </div>
               </div>
@@ -225,22 +134,81 @@ export default function NewsPage() {
         )}
 
         {/* Empty state */}
-        {!loading && threads.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-3xl mb-3">📰</p>
+        {!loading && articles.length === 0 && (
+          <div className="text-center py-12">
             <p className="text-sm font-semibold text-gray-600">
-              {isTA ? "இன்று செய்தி நூல்கள் எதுவும் இல்லை" : "No story threads yet"}
+              {isTA ? "இன்று செய்திகள் எதுவும் இல்லை" : "No news articles today"}
             </p>
             <p className="text-xs text-gray-400 mt-1">
-              {isTA ? "செய்திகள் விரைவில் வரும்" : "News threads will appear as articles are ingested"}
+              {isTA ? "செய்திகள் விரைவில் வரும்" : "Articles will appear as they are ingested"}
             </p>
           </div>
         )}
 
-        {/* Thread rows */}
-        {!loading && threads.map((thread, i) => (
-          <ThreadRow key={`${thread.thread_entity}-${i}`} thread={thread} isTA={isTA} />
-        ))}
+        {/* Articles grouped by category */}
+        {!loading && sortedCategories.map((cat) => {
+          const catMeta = CAT_META[cat] || { color: "bg-gray-400", label: cat, labelTA: cat };
+          const catArticles = grouped[cat];
+
+          return (
+            <div key={cat} className="space-y-3">
+              {/* Category header */}
+              <div className="flex items-center gap-2">
+                <div className={`w-2 h-2 rounded-full ${catMeta.color}`} />
+                <h3 className="text-xs font-black text-gray-800 uppercase tracking-wide">
+                  {isTA ? catMeta.labelTA : catMeta.label}
+                </h3>
+                <span className="text-[9px] text-gray-400">{catArticles.length}</span>
+                <div className="flex-1 border-t border-gray-200" />
+              </div>
+
+              {/* Article cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {catArticles.map((article) => (
+                  <a
+                    key={article.doc_id}
+                    href={article.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-xl border border-gray-200 hover:shadow-md transition-all overflow-hidden flex flex-col"
+                  >
+                    <div className={`h-1 ${catMeta.color}`} />
+                    <div className="p-3 flex-1 flex flex-col">
+                      {/* Title */}
+                      <h4 className="text-xs font-bold text-gray-900 leading-snug line-clamp-2 flex-1">
+                        {article.title}
+                      </h4>
+
+                      {/* Summary */}
+                      {(article.summary || article.snippet) && (
+                        <p className="text-[10px] text-gray-500 leading-relaxed line-clamp-2 mt-1.5">
+                          {article.summary || article.snippet}
+                        </p>
+                      )}
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between mt-2 pt-1.5 border-t border-gray-100">
+                        <span className="text-[9px] text-gray-400 truncate max-w-[120px]">
+                          {article.source_name}
+                        </span>
+                        <div className="flex items-center gap-2">
+                          {article.is_breaking && (
+                            <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-red-600 text-white">
+                              LIVE
+                            </span>
+                          )}
+                          <span className="text-[9px] text-gray-400">
+                            {timeAgo(article.published_at)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })}
 
         {/* Footer */}
         <p className="text-center text-[10px] text-gray-400 pb-4 pt-2">
@@ -254,7 +222,7 @@ export default function NewsPage() {
             OmnesVident
           </a>
           {" · "}
-          {isTA ? "NER: Gemini 2.5 Flash · நிறுவன இணைப்பு மூலம் நூல்கள்" : "NER: Gemini 2.5 Flash · Threads via entity overlap"}
+          {isTA ? "NER: Gemini 2.5 Flash" : "NER: Gemini 2.5 Flash"}
         </p>
       </div>
     </main>

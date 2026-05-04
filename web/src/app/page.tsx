@@ -128,6 +128,33 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Election Results 2026 Banner */}
+        <Link
+          href="/2026_results"
+          className="block bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl border-2 border-yellow-300 p-4 hover:shadow-md transition-all"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-green-600 text-white animate-pulse">
+                  RESULTS
+                </span>
+                <span className="text-xs font-black text-gray-800">2026</span>
+              </div>
+              <p className="text-sm font-bold text-gray-900">
+                {isTA ? "தமிழ்நாடு சட்டமன்ற தேர்தல் முடிவுகள்" : "TN Assembly Election Results"}
+              </p>
+              <p className="text-xs text-gray-500">
+                {isTA ? "234 தொகுதிகள் · வாக்கு எண்ணிக்கை · விரிவான பகுப்பாய்வு" : "234 constituencies · Live scoreboard · Full analysis"}
+              </p>
+            </div>
+            <div className="text-right flex-shrink-0">
+              <p className="text-2xl font-black text-yellow-700">TVK</p>
+              <p className="text-xs font-bold text-gray-600">107 seats</p>
+            </div>
+          </div>
+        </Link>
+
         {/* Nav links */}
         <div className="grid grid-cols-2 gap-3">
           <Link

@@ -13,7 +13,7 @@ const TERMS: Term[] = [
   { electionYear: 2011, label: "2011–2016", assembly: "13th Assembly", hasDrillData: true  },
   { electionYear: 2016, label: "2016–2021", assembly: "14th Assembly", hasDrillData: true  },
   { electionYear: 2021, label: "2021–2026", assembly: "15th Assembly", hasDrillData: true  },
-  { electionYear: 2026, label: "2026–2031", assembly: "16th Assembly", hasDrillData: false, isUpcoming: true },
+  { electionYear: 2026, label: "2026–2031", assembly: "16th Assembly", hasDrillData: true  },
 ];
 
 interface TenureNavigatorProps {

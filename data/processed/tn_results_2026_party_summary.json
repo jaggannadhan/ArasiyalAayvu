@@ -1,0 +1,17 @@
+{
+  "scraped_at": "2026-05-04T17:26:30.326Z",
+  "parties": [
+    { "party": "Tamilaga Vettri Kazhagam", "abbr": "TVK", "won": 105, "leading": 2, "total": 107 },
+    { "party": "Dravida Munnetra Kazhagam", "abbr": "DMK", "won": 58, "leading": 2, "total": 60 },
+    { "party": "All India Anna Dravida Munnetra Kazhagam", "abbr": "ADMK", "won": 46, "leading": 1, "total": 47 },
+    { "party": "Indian National Congress", "abbr": "INC", "won": 5, "leading": 0, "total": 5 },
+    { "party": "Pattali Makkal Katchi", "abbr": "PMK", "won": 4, "leading": 0, "total": 4 },
+    { "party": "Indian Union Muslim League", "abbr": "IUML", "won": 2, "leading": 0, "total": 2 },
+    { "party": "Communist Party of India", "abbr": "CPI", "won": 2, "leading": 0, "total": 2 },
+    { "party": "Viduthalai Chiruthaigal Katchi", "abbr": "VCK", "won": 2, "leading": 0, "total": 2 },
+    { "party": "Communist Party of India (Marxist)", "abbr": "CPI(M)", "won": 2, "leading": 0, "total": 2 },
+    { "party": "Bharatiya Janata Party", "abbr": "BJP", "won": 1, "leading": 0, "total": 1 },
+    { "party": "Desiya Murpokku Dravida Kazhagam", "abbr": "DMDK", "won": 1, "leading": 0, "total": 1 },
+    { "party": "Amma Makkal Munnettra Kazagam", "abbr": "AMMK", "won": 1, "leading": 0, "total": 1 }
+  ]
+}

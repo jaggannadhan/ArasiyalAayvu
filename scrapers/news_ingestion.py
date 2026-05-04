@@ -793,8 +793,8 @@ def store_articles(
             "ingested_at": datetime.now(timezone.utc).isoformat(),
         }
 
-        # Use a deterministic doc ID based on ov_id
-        doc_id = hashlib.md5(sid.encode()).hexdigest()[:16]
+        # Use title hash as doc ID — prevents exact-title duplicates across different ov_ids
+        doc_id = hashlib.md5(_normalize_title(story["title"]).encode()).hexdigest()[:16]
         ref = db.collection("news_articles").document(doc_id)
         batch.set(ref, doc_data)
         batch_count += 1

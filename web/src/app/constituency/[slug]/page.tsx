@@ -23,6 +23,7 @@ import {
   peekConstituencyData,
   constituencyUrl,
   type ConstituencyDrillData,
+  type ElectionResult2026,
 } from "@/lib/constituency-fetcher";
 import { apiGet } from "@/lib/api-client";
 import { cacheHas } from "@/lib/data-cache";
@@ -74,9 +75,191 @@ function isOfflineError(err: unknown): boolean {
   );
 }
 
+interface ResultCandidate {
+  name: string;
+  party: string;
+  votes: number;
+  status: string;
+  photo_url?: string;
+}
+
+function ResultCard2026({
+  slug,
+  result,
+  lang,
+  onCandidateClick,
+}: {
+  slug: string;
+  result: ElectionResult2026;
+  lang: string;
+  onCandidateClick?: (candidateName: string) => void;
+}) {
+  const isTA = lang === "ta";
+  const [candidates, setCandidates] = useState<ResultCandidate[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    apiGet<{ candidates: ResultCandidate[] }>(`/api/results/${encodeURIComponent(slug)}`)
+      .then((data) => {
+        const sorted = (data.candidates || []).sort((a, b) => b.votes - a.votes);
+        setCandidates(sorted);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, [slug]);
+
+  const winner = result.winner;
+  if (!winner) return null;
+
+  const votePct = (votes: number) =>
+    result.total_votes > 0 ? ((votes / result.total_votes) * 100).toFixed(1) : "0";
+
+  return (
+    <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden">
+      {/* Header */}
+      <div className="px-4 pt-4 pb-3 space-y-1">
+        <div className="flex items-center justify-between">
+          <p className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">
+            {isTA ? "தேர்தல் 2026 · முடிவுகள்" : "ELECTION 2026 · RESULTS"}
+          </p>
+          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-green-600 text-white">
+            {isTA ? "அறிவிக்கப்பட்டது" : "DECLARED"}
+          </span>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <p className="text-2xl font-black text-gray-900">
+            {loading ? "—" : candidates.length}
+          </p>
+          <p className="text-sm text-gray-500 font-medium">
+            {isTA ? "போட்டியிட்டனர்" : "contested"}
+          </p>
+        </div>
+      </div>
+
+      {/* Winner highlight */}
+      <div
+        className={`mx-4 mb-3 p-3 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 ${onCandidateClick ? "cursor-pointer hover:shadow-md transition-shadow" : ""}`}
+        onClick={() => onCandidateClick?.(winner.name)}
+      >
+        <div className="flex items-center gap-3">
+          {winner.photo_url && (
+            <img
+              src={winner.photo_url}
+              alt={winner.name}
+              className="w-12 h-12 rounded-full object-cover border-2 border-green-400"
+            />
+          )}
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-black text-gray-900 truncate">{winner.name}</p>
+            <p className="text-xs text-gray-600">{winner.party}</p>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <p className="text-sm font-black text-green-700">+{result.margin.toLocaleString()}</p>
+            <p className="text-[9px] text-gray-500">{isTA ? "வெற்றி இடைவெளி" : "margin"}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Candidate list */}
+      {loading && (
+        <div className="px-4 pb-3 space-y-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-12 bg-gray-50 rounded-lg animate-pulse" />
+          ))}
+        </div>
+      )}
+
+      {!loading && candidates.length > 0 && (
+        <div className="divide-y divide-gray-100">
+          {candidates.map((c, i) => {
+            const barWidth = result.total_votes > 0 ? (c.votes / result.total_votes) * 100 : 0;
+            const isWinner = c.status === "won";
+            return (
+              <div
+                key={`${c.name}-${i}`}
+                className={`relative px-4 py-2.5 ${onCandidateClick ? "cursor-pointer hover:bg-gray-100/50 transition-colors" : ""}`}
+                onClick={() => onCandidateClick?.(c.name)}
+              >
+                {/* Vote share bar */}
+                <div
+                  className={`absolute inset-y-0 left-0 ${isWinner ? "bg-green-50" : "bg-gray-50"}`}
+                  style={{ width: `${barWidth}%` }}
+                />
+                <div className="relative flex items-center gap-3">
+                  <span className="text-[10px] font-mono text-gray-400 w-5 text-right flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  {c.photo_url ? (
+                    <img
+                      src={c.photo_url}
+                      alt={c.name}
+                      className={`w-8 h-8 rounded-full object-cover flex-shrink-0 ${
+                        isWinner ? "border-2 border-green-400" : "border border-gray-200"
+                      }`}
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-gray-200 flex-shrink-0" />
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-xs truncate ${isWinner ? "font-bold text-gray-900" : "font-medium text-gray-700"}`}>
+                      {c.name}
+                      {isWinner && (
+                        <span className="ml-1.5 text-[8px] font-bold px-1.5 py-0.5 rounded bg-green-600 text-white">
+                          WON
+                        </span>
+                      )}
+                    </p>
+                    <p className="text-[10px] text-gray-400 truncate">{c.party}</p>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <p className={`text-xs ${isWinner ? "font-bold text-gray-900" : "font-medium text-gray-600"}`}>
+                      {c.votes.toLocaleString()}
+                    </p>
+                    <p className="text-[9px] text-gray-400">{votePct(c.votes)}%</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Total votes footer */}
+      {!loading && candidates.length > 0 && (
+        <div className="px-4 py-2.5 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+          <span className="text-[10px] font-semibold text-gray-500">
+            {isTA ? "மொத்த வாக்குகள்" : "Total Votes Polled"}
+          </span>
+          <span className="text-xs font-bold text-gray-700">
+            {result.total_votes.toLocaleString()}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Resolve slug to canonical form — handles missing _sc/_st suffixes
+function resolveSlug(rawSlug: string): string {
+  if (rawSlug in (constituencyMap as Record<string, unknown>)) return rawSlug;
+  for (const suffix of ["_sc", "_st"]) {
+    const candidate = rawSlug + suffix;
+    if (candidate in (constituencyMap as Record<string, unknown>)) return candidate;
+  }
+  return rawSlug;
+}
+
 export default function ConstituencyPage() {
   const params = useParams();
-  const slug = typeof params.slug === "string" ? params.slug : "";
+  const rawSlug = typeof params.slug === "string" ? params.slug : "";
+  const slug = resolveSlug(rawSlug);
+
+  // Redirect to canonical slug URL to avoid hydration mismatches
+  useEffect(() => {
+    if (rawSlug && slug !== rawSlug) {
+      window.history.replaceState(null, "", `/constituency/${slug}`);
+    }
+  }, [rawSlug, slug]);
 
   const { lang, setLang } = useLanguage();
 
@@ -91,15 +274,19 @@ export default function ConstituencyPage() {
       .catch(() => { /* silent — profile not found */ });
   }
 
-  // `data` is derived on every render directly from the shared cache, so a
-  // tab/term switch with a warm cache renders instantly with no skeleton flash.
   // `bumpFetchTick` forces a re-read from cache when a fetch completes.
   const [, bumpFetchTick] = useState(0);
-  const [loading, setLoading] = useState<boolean>(
-    () => !!slug && !cacheHas(constituencyUrl(slug, 2026)),
-  );
+  // Track whether we've mounted — avoids hydration mismatch from reading
+  // browser-only cache during SSR (server always has empty cache → loading=true,
+  // but client may have a warm cache → loading=false → different HTML).
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<ErrorState | null>(null);
-  const data: ConstituencyDrillData | null = slug
+
+  // Only read from cache after mount to keep server/client initial render identical.
+  const data: ConstituencyDrillData | null = mounted && slug
     ? peekConstituencyData(slug, selectedTerm) ?? null
     : null;
 
@@ -268,9 +455,24 @@ export default function ConstituencyPage() {
           </div>
         )}
 
-        {/* 2026 upcoming election — show candidates panel */}
-        {!loading && selectedTerm === 2026 && meta && (
-          <CandidatesPanel slug={slug} lang={lang} />
+        {/* 2026 Election Result + full candidate list (replaces old CandidatesPanel) */}
+        {!loading && data?.election_result_2026?.winner && (
+          <ResultCard2026
+            slug={slug}
+            result={data.election_result_2026}
+            lang={lang}
+            onCandidateClick={(candidateName) => {
+              apiGetRaw<{ match: { doc_id: string } }>(
+                `/api/politicians/by-constituency/${encodeURIComponent(slug)}?year=2026&name=${encodeURIComponent(candidateName)}`
+              )
+                .then((res) => {
+                  if (res.match?.doc_id) {
+                    handleMlaClick(res.match.doc_id);
+                  }
+                })
+                .catch(() => { /* profile not found — silent */ });
+            }}
+          />
         )}
 
         {/* Term not yet available (non-2026 terms without drill data) */}

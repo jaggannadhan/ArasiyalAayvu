@@ -10,6 +10,14 @@ interface DistrictMeta {
   district_slug: string;
 }
 
+export interface ElectionResult2026 {
+  winner: { name: string; party: string; votes: number; photo_url?: string } | null;
+  runner_up: { name: string; party: string; votes: number; photo_url?: string } | null;
+  margin: number;
+  total_votes: number;
+  status: string;
+}
+
 export interface ConstituencyDrillData {
   mla: MlaRecord | null;
   metrics: SocioMetric[];
@@ -23,6 +31,7 @@ export interface ConstituencyDrillData {
   ward_mapping: WardMapping | null;
   ulb_councillors: UlbCouncillor[];
   ulb_heads: UlbHead[];
+  election_result_2026: ElectionResult2026 | null;
 }
 
 /** Canonical API path — also the cache key. */

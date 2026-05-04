@@ -281,6 +281,19 @@ def _fetch_mla_by_constituency(
     constituency_slug: str, constituency_id: Optional[int],
     constituency_name: str = "", election_year: int = 2021
 ) -> Optional[Dict[str, Any]]:
+    # 2026 winners are in a separate per-year collection with slug-only doc IDs
+    if election_year == 2026:
+        doc_2026 = _db.collection("candidate_accountability_2026").document(constituency_slug).get()
+        if doc_2026.exists:
+            return _doc_to_dict(doc_2026)
+        # Try without _sc/_st suffix
+        base = re.sub(r"_(sc|st)$", "", constituency_slug, flags=re.IGNORECASE)
+        if base != constituency_slug:
+            fallback = _db.collection("candidate_accountability_2026").document(base).get()
+            if fallback.exists:
+                return _doc_to_dict(fallback)
+        return None
+
     col = _db.collection("candidate_accountability")
 
     # Direct doc ID lookup — primary path for all years
@@ -786,6 +799,19 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
                 if head_doc and head_doc.exists:
                     ulb_heads.append(_doc_to_dict(head_doc))
 
+        # 2026 election result for this constituency
+        election_result_2026 = None
+        result_doc = _db.collection("election_results_2026").document(slug).get()
+        if result_doc.exists:
+            rd = result_doc.to_dict()
+            election_result_2026 = {
+                "winner": rd.get("winner"),
+                "runner_up": rd.get("runner_up"),
+                "margin": rd.get("margin"),
+                "total_votes": rd.get("total_votes"),
+                "status": rd.get("status"),
+            }
+
         payload = {
             "mla": mla,
             "metrics": metrics,
@@ -799,6 +825,7 @@ def constituency_drill(slug: str, term: int = Query(default=2021, ge=2001, le=20
             "ward_mapping": ward_mapping,
             "ulb_councillors": ulb_councillors,
             "ulb_heads": ulb_heads,
+            "election_result_2026": election_result_2026,
         }
         return jsonable_encoder(payload)
     except (GoogleAPICallError, RetryError) as exc:
@@ -1575,6 +1602,27 @@ def state_vitals(category: str = Query("all")) -> Dict[str, List[Dict[str, Any]]
 
 _POLITICIAN_COL = "politician_profile"
 
+# In-memory cache for politician profiles — avoids re-streaming the entire
+# Firestore collection on every search request.  TTL = 5 minutes.
+_politician_cache: Dict[str, Any] = {"docs": [], "ts": 0.0}
+_POLITICIAN_CACHE_TTL = 300  # seconds
+
+
+def _get_politician_docs() -> list[Dict[str, Any]]:
+    """Return cached list of politician dicts, refreshing if stale."""
+    now = _time.time()
+    if _politician_cache["docs"] and now - _politician_cache["ts"] < _POLITICIAN_CACHE_TTL:
+        return _politician_cache["docs"]
+    col = _db.collection(_POLITICIAN_COL)
+    docs = []
+    for d in col.stream():
+        data = d.to_dict() or {}
+        data["doc_id"] = d.id
+        docs.append(data)
+    _politician_cache["docs"] = docs
+    _politician_cache["ts"] = now
+    return docs
+
 
 def _extract_name_and_initials(name: str) -> tuple[str, str]:
     """Split a standardized name like 'Ajith Kumar A.J.' into:
@@ -1616,14 +1664,12 @@ def list_politicians(
 ) -> Dict[str, Any]:
     """Paginated politician profiles with optional name search."""
     try:
-        col = _db.collection(_POLITICIAN_COL)
-        all_docs = list(col.stream())
+        all_docs = _get_politician_docs()
         docs_list = []
         needle = (q or "").strip().lower()
 
-        for d in all_docs:
-            data = d.to_dict() or {}
-            data["doc_id"] = d.id
+        for data in all_docs:
+            data = dict(data)  # shallow copy so we don't mutate cache
             if needle:
                 name = (data.get("canonical_name") or "").lower()
                 aliases = [a.lower() for a in (data.get("aliases") or [])]
@@ -1750,6 +1796,72 @@ def get_politician(doc_id: str) -> Dict[str, Any]:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
 
 
+@app.get("/api/politicians/by-constituency/{slug}")
+def get_politician_by_constituency(
+    slug: str,
+    year: int = Query(2026, ge=2006, le=2031),
+    name: Optional[str] = Query(None),
+) -> Dict[str, Any]:
+    """Find politician profiles that contested in a constituency for a given year.
+
+    Returns a list of matches. If `name` is provided, returns the single best match.
+    """
+    try:
+        all_docs = _get_politician_docs()
+        matches = []
+
+        # Normalize slug variants (handle _sc, hyphens, etc.)
+        slug_variants = {slug, slug.replace("-", "_"), slug.replace("_", "-")}
+        for sfx in ("_sc", "_st", "_gen"):
+            if slug.endswith(sfx):
+                slug_variants.add(slug[: -len(sfx)])
+
+        for data in all_docs:
+            for t in data.get("timeline", []):
+                if t.get("year") != year:
+                    continue
+                t_slug = t.get("constituency_slug", "")
+                t_variants = {t_slug, t_slug.replace("-", "_"), t_slug.replace("_", "-")}
+                for sfx in ("_sc", "_st", "_gen"):
+                    if t_slug.endswith(sfx):
+                        t_variants.add(t_slug[: -len(sfx)])
+                if not slug_variants & t_variants:
+                    continue
+                matches.append({
+                    "doc_id": data.get("doc_id"),
+                    "canonical_name": data.get("canonical_name"),
+                    "photo_url": data.get("photo_url"),
+                    "current_party": data.get("current_party"),
+                    "constituency_slug": t_slug,
+                    "won": t.get("won"),
+                    "votes": t.get("votes"),
+                })
+                break
+
+        if name:
+            # Find best match by name
+            from difflib import SequenceMatcher
+            needle = re.sub(r"[.,]", " ", name.lower()).strip()
+            best, best_score = None, 0.0
+            for m in matches:
+                cand = re.sub(r"[.,]", " ", (m["canonical_name"] or "").lower()).strip()
+                score = SequenceMatcher(None, needle, cand).ratio()
+                # Token overlap boost
+                nt, ct = set(needle.split()), set(cand.split())
+                if nt and ct and len(nt & ct) >= min(len(nt), len(ct)):
+                    score = max(score, 0.85)
+                if score > best_score:
+                    best_score = score
+                    best = m
+            if best and best_score >= 0.5:
+                return {"match": best, "score": round(best_score, 3)}
+            raise HTTPException(status_code=404, detail=f"No matching profile for '{name}' in {slug}")
+
+        return {"matches": matches, "count": len(matches)}
+    except (GoogleAPICallError, RetryError) as exc:
+        raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
+
+
 @app.delete("/api/politicians/{doc_id}")
 def delete_politician(doc_id: str) -> Dict[str, Any]:
     """Delete a single politician profile."""
@@ -1759,6 +1871,7 @@ def delete_politician(doc_id: str) -> Dict[str, Any]:
         if not doc.exists:
             raise HTTPException(status_code=404, detail=f"Profile not found: {doc_id}")
         ref.delete()
+        _politician_cache["ts"] = 0.0  # invalidate cache
         return {"ok": True, "deleted": doc_id}
     except (GoogleAPICallError, RetryError) as exc:
         raise HTTPException(status_code=503, detail="Firestore unavailable") from exc
@@ -1856,6 +1969,7 @@ def merge_politicians(payload: MergeRequest) -> Dict[str, Any]:
         merged.pop("doc_id", None)
         tgt_ref.set(merged)
         src_ref.delete()
+        _politician_cache["ts"] = 0.0  # invalidate cache
 
         # Return the full merged target doc so the frontend can update in-place
         # without refetching the entire list.
@@ -2313,6 +2427,55 @@ def state_budgets_timeseries(state_slug: str) -> Dict[str, Any]:
 
 # ── News Ingestion Cron ──────────────────────────────────────────────────────
 
+# ── Election Results 2026 ─────────────────────────────────────────────
+
+
+@app.get("/api/results/summary")
+def results_summary() -> Dict[str, Any]:
+    """State-level election results summary: party-wise seats, total votes, etc."""
+    doc = _db.collection("results_summary_2026").document("state").get()
+    if not doc.exists:
+        raise HTTPException(status_code=404, detail="Results summary not found")
+    return doc.to_dict()
+
+
+@app.get("/api/results/constituencies")
+def results_constituencies(
+    party: Optional[str] = Query(None),
+    limit: int = Query(234, ge=1, le=234),
+) -> Dict[str, Any]:
+    """All constituency results, optionally filtered by winning party."""
+    query = _db.collection("election_results_2026").order_by("ac_no")
+    if party:
+        query = query.where(filter=FieldFilter("winner.party", "==", party))
+    docs = query.limit(limit).stream()
+    results = []
+    for doc in docs:
+        d = doc.to_dict()
+        # Slim down for list view — omit full candidate list
+        results.append({
+            "ac_no": d.get("ac_no"),
+            "ac_name": d.get("ac_name"),
+            "slug": d.get("slug"),
+            "status": d.get("status"),
+            "winner": d.get("winner"),
+            "runner_up": d.get("runner_up"),
+            "margin": d.get("margin"),
+            "total_votes": d.get("total_votes"),
+            "profile_match": d.get("profile_match"),
+        })
+    return {"constituencies": results, "count": len(results)}
+
+
+@app.get("/api/results/{slug}")
+def results_constituency(slug: str) -> Dict[str, Any]:
+    """Full constituency result with all candidates."""
+    doc = _db.collection("election_results_2026").document(slug).get()
+    if not doc.exists:
+        raise HTTPException(status_code=404, detail=f"No results for constituency: {slug}")
+    return doc.to_dict()
+
+
 from fastapi import Header  # noqa: E402
 
 _NEWS_INGEST_SECRET = os.getenv("NEWS_INGEST_SECRET", "")
@@ -2505,8 +2668,9 @@ async def task_news_ingest(
             "one_line_summary": ner.get("one_line_summary", ""),
             "ingested_at": datetime.now(timezone.utc).isoformat(),
         }
-        doc_id = hashlib.md5(sid.encode()).hexdigest()[:16]
-        fb.set(_db.collection("news_articles").document(doc_id), doc_data)
+        # Use title hash as doc ID to prevent exact-title duplicates across different ov_ids
+        title_hash = hashlib.md5(_norm_title(story.get("title", "")).encode()).hexdigest()[:16]
+        fb.set(_db.collection("news_articles").document(title_hash), doc_data)
         batch_count += 1
         stored += 1
         if batch_count >= 400:

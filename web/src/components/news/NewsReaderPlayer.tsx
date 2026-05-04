@@ -215,9 +215,26 @@ export function NewsReaderPlayer({ lang = "en" }: Props) {
     const srcW = source instanceof HTMLVideoElement ? source.videoWidth : source.width;
     const srcH = source instanceof HTMLVideoElement ? source.videoHeight : source.height;
     if (!srcW || !srcH) { animFrameRef.current = requestAnimationFrame(renderFrame); return; }
-    const aspect = srcW / srcH, drawH = Math.floor(h * 1.15), drawW = Math.floor(drawH * aspect);
+    // Videos have the news ticker baked in the bottom ~12.5% — crop it out
+    const isVideo = source instanceof HTMLVideoElement;
+    const cropH = isVideo ? Math.floor(srcH * 0.875) : srcH;
+    // "Cover" fill: scale to fill entire canvas, center horizontally, anchor to bottom
+    const aspect = srcW / cropH;
+    const canvasAspect = w / h;
+    let drawW: number, drawH: number;
+    if (aspect > canvasAspect) {
+      // Source is wider — fit height, crop sides
+      drawH = h; drawW = Math.floor(h * aspect);
+    } else {
+      // Source is taller — fit width, crop top/bottom
+      drawW = w; drawH = Math.floor(w / aspect);
+    }
     const drawX = Math.floor((w - drawW) / 2), drawY = h - drawH;
-    ctx.drawImage(source, drawX, drawY, drawW, drawH);
+    if (isVideo) {
+      ctx.drawImage(source, 0, 0, srcW, cropH, drawX, drawY, drawW, drawH);
+    } else {
+      ctx.drawImage(source, drawX, drawY, drawW, drawH);
+    }
     const imageData = ctx.getImageData(0, 0, w, h); const data = imageData.data;
     for (let i = 0; i < data.length; i += 4) { if (data[i] < BLACK_THRESHOLD && data[i+1] < BLACK_THRESHOLD && data[i+2] < BLACK_THRESHOLD) data[i+3] = 0; }
     ctx.putImageData(imageData, 0, 0);

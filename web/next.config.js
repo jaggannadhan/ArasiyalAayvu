@@ -17,6 +17,14 @@ const nextConfig = {
         hostname: "storage.googleapis.com",
         pathname: "/naatunadappu-media/**",
       },
+      {
+        protocol: "https",
+        hostname: "results.eci.gov.in",
+      },
+      {
+        protocol: "https",
+        hostname: "affidavit.eci.gov.in",
+      },
     ],
   },
 };

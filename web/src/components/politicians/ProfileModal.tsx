@@ -8,6 +8,8 @@ export interface TimelineEntry {
   constituency?: string;
   party?: string;
   won?: boolean | null;
+  votes?: number | null;
+  vote_share_pct?: number | null;
   assets_cr?: number | null;
   movable_assets_cr?: number | null;
   immovable_assets_cr?: number | null;
@@ -23,6 +25,7 @@ export interface TimelineEntry {
   source_doc_id?: string | null;
   source_collection?: string | null;
   affidavit_url?: string | null;
+  eci_photo_url?: string | null;
 }
 
 export interface PoliticianProfile {
@@ -207,11 +210,23 @@ export function ProfileModal({ profile, onClose }: ProfileModalProps) {
                       {t.won === false && (
                         <span className="text-[10px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full">✗ Lost</span>
                       )}
-                      {t.won === null && (
-                        <span className="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">Contesting</span>
+                      {t.won == null && (
+                        <span className="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">—</span>
                       )}
                     </div>
                     <p className="text-xs text-gray-600 mb-2">📍 {t.constituency}</p>
+                    {t.votes != null && (
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-[11px] font-bold text-gray-800">
+                          {t.votes.toLocaleString()} votes
+                        </span>
+                        {t.vote_share_pct != null && (
+                          <span className="text-[10px] text-gray-500">
+                            ({t.vote_share_pct}%)
+                          </span>
+                        )}
+                      </div>
+                    )}
                     <div className="grid grid-cols-2 gap-2 text-[10px]">
                       {t.assets_cr != null && (
                         <div>

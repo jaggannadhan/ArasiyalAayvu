@@ -4,1637 +4,2105 @@
     "female": 129372,
     "third_gender": 36,
     "total": 251603,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 231585,
+    "poll_pct": 92.0
   },
   "ponneri_sc": {
     "male": 121221,
     "female": 127662,
     "third_gender": 34,
     "total": 248917,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 225954,
+    "poll_pct": 90.8
   },
   "tiruttani": {
     "male": 128642,
     "female": 131417,
     "third_gender": 25,
     "total": 260084,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 237588,
+    "poll_pct": 91.4
   },
   "thiruvallur": {
     "male": 121188,
     "female": 127426,
     "third_gender": 37,
     "total": 248651,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 225296,
+    "poll_pct": 90.6
   },
   "poonamallee_sc": {
     "male": 176849,
     "female": 186769,
     "third_gender": 70,
     "total": 363688,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 307323,
+    "poll_pct": 84.5
   },
   "avadi": {
     "male": 209662,
     "female": 219035,
     "third_gender": 75,
     "total": 428772,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 344472,
+    "poll_pct": 80.3
   },
   "maduravoyal": {
     "male": 179602,
     "female": 184349,
     "third_gender": 80,
     "total": 364031,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 292230,
+    "poll_pct": 80.3
   },
   "ambattur": {
     "male": 162248,
     "female": 168175,
     "third_gender": 57,
     "total": 330480,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 258496,
+    "poll_pct": 78.2
   },
   "madhavaram": {
     "male": 205922,
     "female": 214596,
     "third_gender": 83,
     "total": 420601,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 360604,
+    "poll_pct": 85.7
   },
   "thiruvottiyur": {
     "male": 117181,
     "female": 123289,
     "third_gender": 116,
     "total": 240586,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 206283,
+    "poll_pct": 85.7
   },
   "dr_radhakrishnan_nagar": {
     "male": 93576,
     "female": 102201,
     "third_gender": 79,
     "total": 195856,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 180645,
+    "poll_pct": 92.2
   },
   "perambur": {
     "male": 107995,
     "female": 114726,
     "third_gender": 71,
     "total": 222792,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 203783,
+    "poll_pct": 91.5
   },
   "kolathur": {
     "male": 99607,
     "female": 107607,
     "third_gender": 37,
     "total": 207251,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 183159,
+    "poll_pct": 88.4
   },
   "villivakkam": {
     "male": 76947,
     "female": 82785,
     "third_gender": 32,
     "total": 159764,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 140757,
+    "poll_pct": 88.1
   },
   "thiru_vi_ka_nagar_sc": {
     "male": 85724,
     "female": 93008,
     "third_gender": 61,
     "total": 178793,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 143376,
+    "poll_pct": 80.2
   },
   "egmore_sc": {
     "male": 65677,
     "female": 69149,
     "third_gender": 53,
     "total": 134879,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 119043,
+    "poll_pct": 88.3
   },
   "royapuram": {
     "male": 75870,
     "female": 81004,
     "third_gender": 57,
     "total": 156931,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 126897,
+    "poll_pct": 80.9
   },
   "harbour": {
     "male": 58221,
     "female": 58620,
     "third_gender": 55,
     "total": 116896,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 99022,
+    "poll_pct": 84.7
   },
   "chepauk_thiruvallikeni": {
     "male": 79412,
     "female": 84396,
     "third_gender": 58,
     "total": 163866,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 140098,
+    "poll_pct": 85.5
   },
   "thousand_lights": {
     "male": 73500,
     "female": 80343,
     "third_gender": 65,
     "total": 153908,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 131009,
+    "poll_pct": 85.1
   },
   "anna_nagar": {
     "male": 87325,
     "female": 94029,
     "third_gender": 48,
     "total": 181402,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 162376,
+    "poll_pct": 89.5
   },
   "virugampakkam": {
     "male": 95025,
     "female": 101461,
     "third_gender": 50,
     "total": 196536,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 171801,
+    "poll_pct": 87.4
   },
   "saidapet": {
     "male": 96950,
     "female": 103685,
     "third_gender": 62,
     "total": 200697,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 159477,
+    "poll_pct": 79.5
   },
   "thiyagarayanagar": {
     "male": 74682,
     "female": 80228,
     "third_gender": 33,
     "total": 154943,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 133050,
+    "poll_pct": 85.9
   },
   "mylapore": {
     "male": 93017,
     "female": 101691,
     "third_gender": 23,
     "total": 194731,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 149824,
+    "poll_pct": 76.9
   },
   "velachery": {
     "male": 102235,
     "female": 109411,
     "third_gender": 45,
     "total": 211691,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 183479,
+    "poll_pct": 86.7
   },
   "sholinganallur": {
     "male": 262621,
     "female": 274254,
     "third_gender": 116,
     "total": 536991,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 445216,
+    "poll_pct": 82.9
   },
   "alandur": {
     "male": 143839,
     "female": 152173,
     "third_gender": 40,
     "total": 296052,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 260307,
+    "poll_pct": 87.9
   },
   "sriperumbudur_sc": {
     "male": 181852,
     "female": 194007,
     "third_gender": 62,
     "total": 375921,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 329927,
+    "poll_pct": 87.8
   },
   "pallavaram": {
     "male": 161197,
     "female": 168996,
     "third_gender": 24,
     "total": 330217,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 282075,
+    "poll_pct": 85.4
   },
   "tambaram": {
     "male": 157580,
     "female": 166046,
     "third_gender": 51,
     "total": 323677,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 277297,
+    "poll_pct": 85.7
   },
   "chengalpattu": {
     "male": 178076,
     "female": 188267,
     "third_gender": 57,
     "total": 366400,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 322615,
+    "poll_pct": 88.0
   },
   "thiruporur": {
     "male": 140991,
     "female": 148359,
     "third_gender": 51,
     "total": 289401,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 261161,
+    "poll_pct": 90.2
   },
   "cheyyur_sc": {
     "male": 100103,
     "female": 101934,
     "third_gender": 18,
     "total": 202055,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 186801,
+    "poll_pct": 92.5
   },
   "madurantakam_sc": {
     "male": 103943,
     "female": 107288,
     "third_gender": 64,
     "total": 211295,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 197454,
+    "poll_pct": 93.4
   },
   "uthiramerur": {
     "male": 118564,
     "female": 125300,
     "third_gender": 58,
     "total": 243922,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 227765,
+    "poll_pct": 93.4
   },
   "kancheepuram": {
     "male": 133825,
     "female": 142437,
     "third_gender": 37,
     "total": 276299,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 246317,
+    "poll_pct": 89.1
   },
   "arakkonam_sc": {
     "male": 96982,
     "female": 102157,
     "third_gender": 26,
     "total": 199165,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 182340,
+    "poll_pct": 91.6
   },
   "sholinghur": {
     "male": 126034,
     "female": 130072,
     "third_gender": 12,
     "total": 256118,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 233684,
+    "poll_pct": 91.2
   },
   "katpadi": {
     "male": 108863,
     "female": 116914,
     "third_gender": 32,
     "total": 225809,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 203497,
+    "poll_pct": 90.1
   },
   "ranipet": {
     "male": 119090,
     "female": 126719,
     "third_gender": 44,
     "total": 245853,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 221038,
+    "poll_pct": 89.9
   },
   "arcot": {
     "male": 119107,
     "female": 124429,
     "third_gender": 29,
     "total": 243565,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 225786,
+    "poll_pct": 92.7
   },
   "vellore": {
     "male": 101554,
     "female": 109460,
     "third_gender": 49,
     "total": 211063,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 190527,
+    "poll_pct": 90.3
   },
   "anaikattu": {
     "male": 113833,
     "female": 120863,
     "third_gender": 42,
     "total": 234738,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 216318,
+    "poll_pct": 92.2
   },
   "kilvaithinankuppam_sc": {
     "male": 104458,
     "female": 108985,
     "third_gender": 8,
     "total": 213451,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189892,
+    "poll_pct": 89.0
   },
   "gudiyattam_sc": {
     "male": 120946,
     "female": 127547,
     "third_gender": 33,
     "total": 248526,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 229076,
+    "poll_pct": 92.2
   },
   "vaniyambadi": {
     "male": 118457,
     "female": 121713,
     "third_gender": 50,
     "total": 240220,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 212534,
+    "poll_pct": 88.5
   },
   "ambur": {
     "male": 103478,
     "female": 109113,
     "third_gender": 40,
     "total": 212631,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 195584,
+    "poll_pct": 92.0
   },
   "jolarpet": {
     "male": 115656,
     "female": 118154,
     "third_gender": 20,
     "total": 233830,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 213042,
+    "poll_pct": 91.1
   },
   "tirupattur": {
     "male": 111873,
     "female": 113016,
     "third_gender": 29,
     "total": 224918,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 202925,
+    "poll_pct": 90.2
   },
   "uthangarai_sc": {
     "male": 116918,
     "female": 116541,
     "third_gender": 41,
     "total": 233500,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 205530,
+    "poll_pct": 88.0
   },
   "bargur": {
     "male": 117135,
     "female": 120197,
     "third_gender": 17,
     "total": 237349,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 213960,
+    "poll_pct": 90.1
   },
   "krishnagiri": {
     "male": 129777,
     "female": 135200,
     "third_gender": 60,
     "total": 265037,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 230181,
+    "poll_pct": 86.8
   },
   "veppanahalli": {
     "male": 123389,
     "female": 120449,
     "third_gender": 37,
     "total": 243875,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 222608,
+    "poll_pct": 91.3
   },
   "hosur": {
     "male": 169099,
     "female": 169124,
     "third_gender": 72,
     "total": 338295,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 277770,
+    "poll_pct": 82.1
   },
   "thally": {
     "male": 120000,
     "female": 115947,
     "third_gender": 37,
     "total": 235984,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 205878,
+    "poll_pct": 87.2
   },
   "palacode": {
     "male": 119611,
     "female": 117845,
     "third_gender": 20,
     "total": 237476,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 225257,
+    "poll_pct": 94.9
   },
   "pennagaram": {
     "male": 126763,
     "female": 119521,
     "third_gender": 9,
     "total": 246293,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 228666,
+    "poll_pct": 92.8
   },
   "dharmapuri": {
     "male": 129393,
     "female": 128464,
     "third_gender": 82,
     "total": 257939,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 238579,
+    "poll_pct": 92.5
   },
   "pappireddipatti": {
     "male": 127427,
     "female": 127217,
     "third_gender": 14,
     "total": 254658,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 236621,
+    "poll_pct": 92.9
   },
   "harur_sc": {
     "male": 121453,
     "female": 122264,
     "third_gender": 25,
     "total": 243742,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 220042,
+    "poll_pct": 90.3
   },
   "chengam_sc": {
     "male": 132571,
     "female": 134045,
     "third_gender": 13,
     "total": 266629,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 242897,
+    "poll_pct": 91.1
   },
   "tiruvannamalai": {
     "male": 119784,
     "female": 127477,
     "third_gender": 48,
     "total": 247309,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 220066,
+    "poll_pct": 89.0
   },
   "kilpennathur": {
     "male": 117840,
     "female": 121058,
     "third_gender": 15,
     "total": 238913,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 219790,
+    "poll_pct": 92.0
   },
   "kalasapakkam": {
     "male": 114155,
     "female": 116592,
     "third_gender": 19,
     "total": 230766,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 214127,
+    "poll_pct": 92.8
   },
   "polur": {
     "male": 114221,
     "female": 118196,
     "third_gender": 9,
     "total": 232426,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 211743,
+    "poll_pct": 91.1
   },
   "arani": {
     "male": 123335,
     "female": 129650,
     "third_gender": 37,
     "total": 253022,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 230162,
+    "poll_pct": 91.0
   },
   "cheyyar": {
     "male": 117159,
     "female": 121115,
     "third_gender": 9,
     "total": 238283,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 222570,
+    "poll_pct": 93.4
   },
   "vandavasi_sc": {
     "male": 104662,
     "female": 107144,
     "third_gender": 5,
     "total": 211811,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 191204,
+    "poll_pct": 90.3
   },
   "gingee": {
     "male": 119278,
     "female": 121651,
     "third_gender": 28,
     "total": 240957,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 216652,
+    "poll_pct": 89.9
   },
   "mailam": {
     "male": 103451,
     "female": 104195,
     "third_gender": 19,
     "total": 207665,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189221,
+    "poll_pct": 91.1
   },
   "tindivanam_sc": {
     "male": 106762,
     "female": 110836,
     "third_gender": 11,
     "total": 217609,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196026,
+    "poll_pct": 90.1
   },
   "vanur_sc": {
     "male": 101938,
     "female": 106030,
     "third_gender": 16,
     "total": 207984,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 192119,
+    "poll_pct": 92.4
   },
   "villupuram": {
     "male": 118786,
     "female": 125218,
     "third_gender": 76,
     "total": 244080,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 215422,
+    "poll_pct": 88.3
   },
   "vikravandi": {
     "male": 112050,
     "female": 115276,
     "third_gender": 29,
     "total": 227355,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209231,
+    "poll_pct": 92.0
   },
   "tirukkoyilur": {
     "male": 121023,
     "female": 119948,
     "third_gender": 32,
     "total": 241003,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 217318,
+    "poll_pct": 90.2
   },
   "ulundurpettai": {
     "male": 148929,
     "female": 148499,
     "third_gender": 44,
     "total": 297472,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 271002,
+    "poll_pct": 91.1
   },
   "rishivandiyam": {
     "male": 135292,
     "female": 135198,
     "third_gender": 51,
     "total": 270541,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 244795,
+    "poll_pct": 90.5
   },
   "sankarapuram": {
     "male": 130231,
     "female": 132859,
     "third_gender": 46,
     "total": 263136,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 235528,
+    "poll_pct": 89.5
   },
   "kallakurichi_sc": {
     "male": 137649,
     "female": 141044,
     "third_gender": 69,
     "total": 278762,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 249626,
+    "poll_pct": 89.5
   },
   "gangavalli_sc": {
     "male": 105720,
     "female": 111067,
     "third_gender": 7,
     "total": 216794,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196679,
+    "poll_pct": 90.7
   },
   "attur_sc": {
     "male": 109943,
     "female": 116517,
     "third_gender": 21,
     "total": 226481,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208296,
+    "poll_pct": 92.0
   },
   "yercaud_st": {
     "male": 132685,
     "female": 137827,
     "third_gender": 17,
     "total": 270529,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 253592,
+    "poll_pct": 93.7
   },
   "omalur": {
     "male": 148764,
     "female": 143081,
     "third_gender": 21,
     "total": 291866,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 271119,
+    "poll_pct": 92.9
   },
   "mettur": {
     "male": 127853,
     "female": 125575,
     "third_gender": 17,
     "total": 253445,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 231105,
+    "poll_pct": 91.2
   },
   "edappadi": {
     "male": 138709,
     "female": 135316,
     "third_gender": 29,
     "total": 274054,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 258263,
+    "poll_pct": 94.2
   },
   "sankari": {
     "male": 130573,
     "female": 128075,
     "third_gender": 30,
     "total": 258678,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 243779,
+    "poll_pct": 94.2
   },
   "salem_west": {
     "male": 127131,
     "female": 128125,
     "third_gender": 64,
     "total": 255320,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 234407,
+    "poll_pct": 91.8
   },
   "salem_north": {
     "male": 114816,
     "female": 121224,
     "third_gender": 48,
     "total": 236088,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 210712,
+    "poll_pct": 89.3
   },
   "salem_south": {
     "male": 109918,
     "female": 114130,
     "third_gender": 49,
     "total": 224097,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 207902,
+    "poll_pct": 92.8
   },
   "veerapandi": {
     "male": 124850,
     "female": 123611,
     "third_gender": 17,
     "total": 248478,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 235875,
+    "poll_pct": 94.9
   },
   "rasipuram_sc": {
     "male": 107813,
     "female": 112728,
     "third_gender": 13,
     "total": 220554,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 204680,
+    "poll_pct": 92.8
   },
   "senthamangalam_st": {
     "male": 111214,
     "female": 116087,
     "third_gender": 26,
     "total": 227327,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209687,
+    "poll_pct": 92.2
   },
   "namakkal": {
     "male": 113217,
     "female": 122093,
     "third_gender": 41,
     "total": 235351,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 212283,
+    "poll_pct": 90.2
   },
   "paramathivelur": {
     "male": 97727,
     "female": 105830,
     "third_gender": 10,
     "total": 203567,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 188845,
+    "poll_pct": 92.8
   },
   "tiruchengodu": {
     "male": 100412,
     "female": 106475,
     "third_gender": 41,
     "total": 206928,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 191122,
+    "poll_pct": 92.4
   },
   "kumarapalayam": {
     "male": 104916,
     "female": 112239,
     "third_gender": 69,
     "total": 217224,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 205324,
+    "poll_pct": 94.5
   },
   "erode_east": {
     "male": 84202,
     "female": 91989,
     "third_gender": 37,
     "total": 176228,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 162453,
+    "poll_pct": 92.2
   },
   "erode_west": {
     "male": 118206,
     "female": 127246,
     "third_gender": 41,
     "total": 245493,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 221400,
+    "poll_pct": 90.2
   },
   "modakkurichi": {
     "male": 98532,
     "female": 107577,
     "third_gender": 13,
     "total": 206122,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 190759,
+    "poll_pct": 92.5
   },
   "dharapuram_sc": {
     "male": 106142,
     "female": 114593,
     "third_gender": 8,
     "total": 220743,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 199944,
+    "poll_pct": 90.6
   },
   "kangayam": {
     "male": 103784,
     "female": 112849,
     "third_gender": 13,
     "total": 216646,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 203534,
+    "poll_pct": 93.9
   },
   "perundurai": {
     "male": 101851,
     "female": 110225,
     "third_gender": 8,
     "total": 212084,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 200686,
+    "poll_pct": 94.6
   },
   "bhavani": {
     "male": 108203,
     "female": 113170,
     "third_gender": 20,
     "total": 221393,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208323,
+    "poll_pct": 94.1
   },
   "anthiyur": {
     "male": 100339,
     "female": 105371,
     "third_gender": 27,
     "total": 205737,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 185775,
+    "poll_pct": 90.3
   },
   "gobichettipalayam": {
     "male": 113378,
     "female": 124190,
     "third_gender": 13,
     "total": 237581,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 219727,
+    "poll_pct": 92.5
   },
   "bhavanisagar_sc": {
     "male": 113755,
     "female": 121806,
     "third_gender": 23,
     "total": 235584,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 214595,
+    "poll_pct": 91.1
   },
   "udhagamandalam": {
     "male": 89066,
     "female": 98348,
     "third_gender": 11,
     "total": 187425,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 148704,
+    "poll_pct": 79.3
   },
   "gudalur_sc": {
     "male": 89206,
     "female": 94675,
     "third_gender": 7,
     "total": 183888,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 151241,
+    "poll_pct": 82.2
   },
   "coonoor": {
     "male": 83045,
     "female": 92768,
     "third_gender": 7,
     "total": 175820,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 141394,
+    "poll_pct": 80.4
   },
   "mettupalayam": {
     "male": 133022,
     "female": 146382,
     "third_gender": 34,
     "total": 279438,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 244319,
+    "poll_pct": 87.4
   },
   "avanashi_sc": {
     "male": 119841,
     "female": 130496,
     "third_gender": 9,
     "total": 250346,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 231600,
+    "poll_pct": 92.5
   },
   "tiruppur_north": {
     "male": 152351,
     "female": 157662,
     "third_gender": 125,
     "total": 310138,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 263457,
+    "poll_pct": 84.9
   },
   "tiruppur_south": {
     "male": 94579,
     "female": 99011,
     "third_gender": 24,
     "total": 193614,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 179814,
+    "poll_pct": 92.9
   },
   "palladam": {
     "male": 156069,
     "female": 166429,
     "third_gender": 32,
     "total": 322530,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 301014,
+    "poll_pct": 93.3
   },
   "sulur": {
     "male": 145987,
     "female": 157452,
     "third_gender": 102,
     "total": 303541,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 273544,
+    "poll_pct": 90.1
   },
   "kavundampalayam": {
     "male": 198430,
     "female": 208963,
     "third_gender": 114,
     "total": 407507,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 363991,
+    "poll_pct": 89.3
   },
   "coimbatore_north": {
     "male": 143383,
     "female": 148122,
     "third_gender": 28,
     "total": 291533,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 226109,
+    "poll_pct": 77.6
   },
   "thondamuthur": {
     "male": 138968,
     "female": 148371,
     "third_gender": 103,
     "total": 287442,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 258549,
+    "poll_pct": 89.9
   },
   "coimbatore_south": {
     "male": 90214,
     "female": 96263,
     "third_gender": 32,
     "total": 186509,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 156499,
+    "poll_pct": 83.9
   },
   "singanallur": {
     "male": 128758,
     "female": 137277,
     "third_gender": 23,
     "total": 266058,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 221033,
+    "poll_pct": 83.1
   },
   "kinathukadavu": {
     "male": 144562,
     "female": 155888,
     "third_gender": 36,
     "total": 300486,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 267917,
+    "poll_pct": 89.2
   },
   "pollachi": {
     "male": 96061,
     "female": 105919,
     "third_gender": 35,
     "total": 202015,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 181196,
+    "poll_pct": 89.7
   },
   "valparai_sc": {
     "male": 81504,
     "female": 90759,
     "third_gender": 21,
     "total": 172284,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 150431,
+    "poll_pct": 87.3
   },
   "udumalaipettai": {
     "male": 109103,
     "female": 119396,
     "third_gender": 25,
     "total": 228524,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 203575,
+    "poll_pct": 89.1
   },
   "madathukulam": {
     "male": 102309,
     "female": 110417,
     "third_gender": 16,
     "total": 212742,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 188249,
+    "poll_pct": 88.5
   },
   "palani": {
     "male": 115728,
     "female": 121582,
     "third_gender": 49,
     "total": 237359,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208619,
+    "poll_pct": 87.9
   },
   "oddanchatram": {
     "male": 104519,
     "female": 113177,
     "third_gender": 2,
     "total": 217698,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 201624,
+    "poll_pct": 92.6
   },
   "athoor": {
     "male": 125056,
     "female": 134773,
     "third_gender": 17,
     "total": 259846,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 237183,
+    "poll_pct": 91.3
   },
   "nilakkottai_sc": {
     "male": 107389,
     "female": 111673,
     "third_gender": 15,
     "total": 219077,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 197593,
+    "poll_pct": 90.2
   },
   "natham": {
     "male": 127116,
     "female": 131421,
     "third_gender": 66,
     "total": 258603,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 239140,
+    "poll_pct": 92.5
   },
   "dindigul": {
     "male": 114893,
     "female": 122765,
     "third_gender": 21,
     "total": 237679,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 212024,
+    "poll_pct": 89.2
   },
   "vedasandur": {
     "male": 118236,
     "female": 123573,
     "third_gender": 4,
     "total": 241813,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 226554,
+    "poll_pct": 93.7
   },
   "aravakurichi": {
     "male": 92738,
     "female": 101763,
     "third_gender": 4,
     "total": 194505,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 181078,
+    "poll_pct": 93.1
   },
   "karur": {
     "male": 106684,
     "female": 119859,
     "third_gender": 41,
     "total": 226584,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 216829,
+    "poll_pct": 95.7
   },
   "krishnarayapuram_sc": {
     "male": 98262,
     "female": 103794,
     "third_gender": 31,
     "total": 202087,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189357,
+    "poll_pct": 93.7
   },
   "kulithalai": {
     "male": 108343,
     "female": 113638,
     "third_gender": 7,
     "total": 221988,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209091,
+    "poll_pct": 94.2
   },
   "manapparai": {
     "male": 131212,
     "female": 134798,
     "third_gender": 9,
     "total": 266019,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 241216,
+    "poll_pct": 90.7
   },
   "srirangam": {
     "male": 137694,
     "female": 146120,
     "third_gender": 48,
     "total": 283862,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 254985,
+    "poll_pct": 89.8
   },
   "tiruchirappalli_west": {
     "male": 113050,
     "female": 122817,
     "third_gender": 36,
     "total": 235903,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196347,
+    "poll_pct": 83.2
   },
   "tiruchirappalli_east": {
     "male": 104883,
     "female": 112460,
     "third_gender": 54,
     "total": 217397,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 182493,
+    "poll_pct": 83.9
   },
   "thiruverumbur": {
     "male": 124328,
     "female": 131860,
     "third_gender": 51,
     "total": 256239,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 213583,
+    "poll_pct": 83.4
   },
   "lalgudi": {
     "male": 102156,
     "female": 108861,
     "third_gender": 26,
     "total": 211043,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 185213,
+    "poll_pct": 87.8
   },
   "manachanallur": {
     "male": 113256,
     "female": 120924,
     "third_gender": 37,
     "total": 234217,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209780,
+    "poll_pct": 89.6
   },
   "musiri": {
     "male": 103631,
     "female": 108965,
     "third_gender": 16,
     "total": 212612,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189141,
+    "poll_pct": 89.0
   },
   "thuraiyur_sc": {
     "male": 101144,
     "female": 107837,
     "third_gender": 30,
     "total": 209011,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 184426,
+    "poll_pct": 88.2
   },
   "perambalur_sc": {
     "male": 139914,
     "female": 148507,
     "third_gender": 28,
     "total": 288449,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 253654,
+    "poll_pct": 87.9
   },
   "kunnam": {
     "male": 131720,
     "female": 134959,
     "third_gender": 3,
     "total": 266682,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 230570,
+    "poll_pct": 86.5
   },
   "ariyalur": {
     "male": 129521,
     "female": 131624,
     "third_gender": 16,
     "total": 261161,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 235858,
+    "poll_pct": 90.3
   },
   "jayankondam": {
     "male": 129713,
     "female": 132068,
     "third_gender": 12,
     "total": 261793,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 228548,
+    "poll_pct": 87.3
   },
   "tittakudi_sc": {
     "male": 101774,
     "female": 104992,
     "third_gender": 4,
     "total": 206770,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 175754,
+    "poll_pct": 85.0
   },
   "vridhachalam": {
     "male": 118319,
     "female": 119495,
     "third_gender": 22,
     "total": 237836,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209186,
+    "poll_pct": 88.0
   },
   "neyveli": {
     "male": 94505,
     "female": 94503,
     "third_gender": 16,
     "total": 189024,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 168780,
+    "poll_pct": 89.3
   },
   "panruti": {
     "male": 116476,
     "female": 123504,
     "third_gender": 68,
     "total": 240048,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 210767,
+    "poll_pct": 87.8
   },
   "cuddalore": {
     "male": 105300,
     "female": 115773,
     "third_gender": 79,
     "total": 221152,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 190378,
+    "poll_pct": 86.1
   },
   "kurinjipadi": {
     "male": 116013,
     "female": 120238,
     "third_gender": 46,
     "total": 236297,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 213965,
+    "poll_pct": 90.5
   },
   "bhuvanagiri": {
     "male": 114785,
     "female": 116164,
     "third_gender": 19,
     "total": 230968,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 207310,
+    "poll_pct": 89.8
   },
   "chidambaram": {
     "male": 112664,
     "female": 116443,
     "third_gender": 29,
     "total": 229136,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196586,
+    "poll_pct": 85.8
   },
   "kattumannarkoil_sc": {
     "male": 111691,
     "female": 112864,
     "third_gender": 10,
     "total": 224565,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 187905,
+    "poll_pct": 83.7
   },
   "sirkazhi_sc": {
     "male": 118809,
     "female": 120647,
     "third_gender": 13,
     "total": 239469,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 200448,
+    "poll_pct": 83.7
   },
   "mayiladuthurai": {
     "male": 114613,
     "female": 117979,
     "third_gender": 26,
     "total": 232618,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 188461,
+    "poll_pct": 81.0
   },
   "poompuhar": {
     "male": 127071,
     "female": 130050,
     "third_gender": 8,
     "total": 257129,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 219324,
+    "poll_pct": 85.3
   },
   "nagapattinam": {
     "male": 84493,
     "female": 88464,
     "third_gender": 22,
     "total": 172979,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 151326,
+    "poll_pct": 87.5
   },
   "kilvelur": {
     "male": 83392,
     "female": 85535,
     "third_gender": 7,
     "total": 168934,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 151637,
+    "poll_pct": 89.8
   },
   "vedharanyam": {
     "male": 91735,
     "female": 94299,
     "third_gender": 0,
     "total": 186034,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 162216,
+    "poll_pct": 87.2
   },
   "thiruthuraipoondi_sc": {
     "male": 111001,
     "female": 114348,
     "third_gender": 14,
     "total": 225363,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 191030,
+    "poll_pct": 84.8
   },
   "mannargudi": {
     "male": 112530,
     "female": 119401,
     "third_gender": 4,
     "total": 231935,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 194100,
+    "poll_pct": 83.7
   },
   "thiruvaur": {
     "male": 126054,
     "female": 131818,
     "third_gender": 20,
     "total": 257892,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 217875,
+    "poll_pct": 84.5
   },
   "nannilam": {
     "male": 131094,
     "female": 133352,
     "third_gender": 16,
     "total": 264462,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 231444,
+    "poll_pct": 87.5
   },
   "thiruvidaimarudur_sc": {
     "male": 125132,
     "female": 129313,
     "third_gender": 8,
     "total": 254453,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208944,
+    "poll_pct": 82.1
   },
   "kumbakonam": {
     "male": 122383,
     "female": 129469,
     "third_gender": 16,
     "total": 251868,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208288,
+    "poll_pct": 82.7
   },
   "papanasam": {
     "male": 123838,
     "female": 130791,
     "third_gender": 23,
     "total": 254652,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 207723,
+    "poll_pct": 81.6
   },
   "thiruvaiyaru": {
     "male": 125357,
     "female": 131000,
     "third_gender": 20,
     "total": 256377,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 222111,
+    "poll_pct": 86.6
   },
   "thanjavur": {
     "male": 118648,
     "female": 130369,
     "third_gender": 47,
     "total": 249064,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 198798,
+    "poll_pct": 79.8
   },
   "orathanadu": {
     "male": 112298,
     "female": 118947,
     "third_gender": 6,
     "total": 231251,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 195304,
+    "poll_pct": 84.5
   },
   "pattukkottai": {
     "male": 115354,
     "female": 125580,
     "third_gender": 20,
     "total": 240954,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 183745,
+    "poll_pct": 76.3
   },
   "peravurani": {
     "male": 104268,
     "female": 108543,
     "third_gender": 15,
     "total": 212826,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 176274,
+    "poll_pct": 82.8
   },
   "gandarvakottai_sc": {
     "male": 98028,
     "female": 96695,
     "third_gender": 9,
     "total": 194732,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 167618,
+    "poll_pct": 86.1
   },
   "viralimalai": {
     "male": 110011,
     "female": 113040,
     "third_gender": 33,
     "total": 223084,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 203921,
+    "poll_pct": 91.4
   },
   "pudukkottai": {
     "male": 109962,
     "female": 113943,
     "third_gender": 23,
     "total": 223928,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 190378,
+    "poll_pct": 85.0
   },
   "thirumayam": {
     "male": 107006,
     "female": 112270,
     "third_gender": 3,
     "total": 219279,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 182612,
+    "poll_pct": 83.3
   },
   "alangudi": {
     "male": 103987,
     "female": 106309,
     "third_gender": 0,
     "total": 210296,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 180483,
+    "poll_pct": 85.8
   },
   "aranthangi": {
     "male": 112282,
     "female": 115305,
     "third_gender": 1,
     "total": 227588,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 182730,
+    "poll_pct": 80.3
   },
   "karaikudi": {
     "male": 148087,
     "female": 155256,
     "third_gender": 28,
     "total": 303371,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 229267,
+    "poll_pct": 75.6
   },
   "tiruppathur": {
     "male": 134270,
     "female": 139183,
     "third_gender": 3,
     "total": 273456,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 215316,
+    "poll_pct": 78.7
   },
   "sivaganga": {
     "male": 135113,
     "female": 141039,
     "third_gender": 4,
     "total": 276156,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 214067,
+    "poll_pct": 77.5
   },
   "manamadurai_sc": {
     "male": 126565,
     "female": 131048,
     "third_gender": 3,
     "total": 257616,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 208643,
+    "poll_pct": 81.0
   },
   "melur": {
     "male": 113091,
     "female": 114687,
     "third_gender": 11,
     "total": 227789,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 190726,
+    "poll_pct": 83.7
   },
   "madurai_east": {
     "male": 161361,
     "female": 169579,
     "third_gender": 53,
     "total": 330993,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 271566,
+    "poll_pct": 82.0
   },
   "sholavandan_sc": {
     "male": 104246,
     "female": 108243,
     "third_gender": 13,
     "total": 212502,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189080,
+    "poll_pct": 89.0
   },
   "madurai_north": {
     "male": 106263,
     "female": 112410,
     "third_gender": 46,
     "total": 218719,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 161801,
+    "poll_pct": 74.0
   },
   "madurai_south": {
     "male": 87179,
     "female": 90378,
     "third_gender": 48,
     "total": 177605,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 141503,
+    "poll_pct": 79.7
   },
   "madurai_central": {
     "male": 95632,
     "female": 101198,
     "third_gender": 26,
     "total": 196856,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 148586,
+    "poll_pct": 75.5
   },
   "madurai_west": {
     "male": 133116,
     "female": 138214,
     "third_gender": 11,
     "total": 271341,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 216403,
+    "poll_pct": 79.8
   },
   "thiruparankundram": {
     "male": 150596,
     "female": 157157,
     "third_gender": 30,
     "total": 307783,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 255466,
+    "poll_pct": 83.0
   },
   "thirumangalam": {
     "male": 125756,
     "female": 133461,
     "third_gender": 8,
     "total": 259225,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 230980,
+    "poll_pct": 89.1
   },
   "usilampatti": {
     "male": 131411,
     "female": 132724,
     "third_gender": 6,
     "total": 264141,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 224048,
+    "poll_pct": 84.8
   },
   "andipatti": {
     "male": 124591,
     "female": 129928,
     "third_gender": 30,
     "total": 254549,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 217329,
+    "poll_pct": 85.4
   },
   "periyakulam_sc": {
     "male": 128368,
     "female": 135070,
     "third_gender": 109,
     "total": 263547,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 211209,
+    "poll_pct": 80.1
   },
   "bodinayakkanur": {
     "male": 126856,
     "female": 134760,
     "third_gender": 15,
     "total": 261631,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 220628,
+    "poll_pct": 84.3
   },
   "cumbum": {
     "male": 122496,
     "female": 131129,
     "third_gender": 21,
     "total": 253646,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 210574,
+    "poll_pct": 83.0
   },
   "rajapalayam": {
     "male": 103236,
     "female": 108951,
     "third_gender": 33,
     "total": 212220,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 183020,
+    "poll_pct": 86.2
   },
   "srivilliputhur_sc": {
     "male": 108109,
     "female": 114218,
     "third_gender": 40,
     "total": 222367,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 193471,
+    "poll_pct": 87.0
   },
   "sattur": {
     "male": 110693,
     "female": 117207,
     "third_gender": 63,
     "total": 227963,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 198734,
+    "poll_pct": 87.2
   },
   "sivakasi": {
     "male": 109420,
     "female": 116013,
     "third_gender": 28,
     "total": 225461,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 193517,
+    "poll_pct": 85.8
   },
   "virudhunagar": {
     "male": 96436,
     "female": 102141,
     "third_gender": 39,
     "total": 198616,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 167832,
+    "poll_pct": 84.5
   },
   "aruppukottai": {
     "male": 100000,
     "female": 106468,
     "third_gender": 29,
     "total": 206497,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 178413,
+    "poll_pct": 86.4
   },
   "tiruchuli": {
     "male": 100645,
     "female": 103634,
     "third_gender": 14,
     "total": 204293,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 181250,
+    "poll_pct": 88.7
   },
   "paramakudi_sc": {
     "male": 115701,
     "female": 117714,
     "third_gender": 18,
     "total": 233433,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189753,
+    "poll_pct": 81.3
   },
   "tiruvadanai": {
     "male": 140103,
     "female": 141997,
     "third_gender": 21,
     "total": 282121,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 220278,
+    "poll_pct": 78.1
   },
   "ramanathapuram": {
     "male": 152412,
     "female": 157740,
     "third_gender": 13,
     "total": 310165,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 237576,
+    "poll_pct": 76.6
   },
   "mudukulathur": {
     "male": 148105,
     "female": 149202,
     "third_gender": 3,
     "total": 297310,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 231373,
+    "poll_pct": 77.8
   },
   "vilathikulam": {
     "male": 99913,
     "female": 103804,
     "third_gender": 15,
     "total": 203732,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 174814,
+    "poll_pct": 85.8
   },
   "thoothukudi": {
     "male": 120614,
     "female": 127623,
     "third_gender": 63,
     "total": 248300,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 204712,
+    "poll_pct": 82.4
   },
   "tiruchendur": {
     "male": 112367,
     "female": 118305,
     "third_gender": 30,
     "total": 230702,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 186050,
+    "poll_pct": 80.6
   },
   "srivaikuntam": {
     "male": 105099,
     "female": 107782,
     "third_gender": 4,
     "total": 212885,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 176421,
+    "poll_pct": 82.9
   },
   "ottapidaram_sc": {
     "male": 117432,
     "female": 123502,
     "third_gender": 54,
     "total": 240988,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196117,
+    "poll_pct": 81.4
   },
   "kovilpatti": {
     "male": 116317,
     "female": 123673,
     "third_gender": 27,
     "total": 240017,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 194232,
+    "poll_pct": 80.9
   },
   "sankarankovil_sc": {
     "male": 114876,
     "female": 121639,
     "third_gender": 17,
     "total": 236532,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196480,
+    "poll_pct": 83.1
   },
   "vasudevanallur_sc": {
     "male": 110960,
     "female": 116396,
     "third_gender": 13,
     "total": 227369,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 189795,
+    "poll_pct": 83.5
   },
   "kadayanallur": {
     "male": 132228,
     "female": 135272,
     "third_gender": 17,
     "total": 267517,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 221951,
+    "poll_pct": 83.0
   },
   "tenkasi": {
     "male": 136260,
     "female": 143223,
     "third_gender": 102,
     "total": 279585,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 234987,
+    "poll_pct": 84.0
   },
   "alangulam": {
     "male": 123739,
     "female": 129650,
     "third_gender": 19,
     "total": 253408,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 220857,
+    "poll_pct": 87.2
   },
   "tirunelveli": {
     "male": 132511,
     "female": 140929,
     "third_gender": 80,
     "total": 273520,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 218425,
+    "poll_pct": 79.9
   },
   "ambasamudram": {
     "male": 109384,
     "female": 116318,
     "third_gender": 12,
     "total": 225714,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 191195,
+    "poll_pct": 84.7
   },
   "palayamkottai": {
     "male": 123972,
     "female": 131141,
     "third_gender": 17,
     "total": 255130,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 180620,
+    "poll_pct": 70.8
   },
   "nanguneri": {
     "male": 125276,
     "female": 129130,
     "third_gender": 14,
     "total": 254420,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 209419,
+    "poll_pct": 82.3
   },
   "radhapuram": {
     "male": 120458,
     "female": 124000,
     "third_gender": 22,
     "total": 244480,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 199931,
+    "poll_pct": 81.8
   },
   "kanniyakumari": {
     "male": 141230,
     "female": 145643,
     "third_gender": 95,
     "total": 286968,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 239150,
+    "poll_pct": 83.3
   },
   "nagercoil": {
     "male": 125873,
     "female": 131139,
     "third_gender": 10,
     "total": 257022,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 196280,
+    "poll_pct": 76.4
   },
   "colachal": {
     "male": 131885,
     "female": 131562,
     "third_gender": 1,
     "total": 263448,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 199013,
+    "poll_pct": 75.5
   },
   "padmanabhapuram": {
     "male": 116895,
     "female": 117142,
     "third_gender": 19,
     "total": 234056,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 180555,
+    "poll_pct": 77.1
   },
   "vilavancode": {
     "male": 111990,
     "female": 113226,
     "third_gender": 3,
     "total": 225219,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 174927,
+    "poll_pct": 77.7
   },
   "killiyoor": {
     "male": 123143,
     "female": 120678,
     "third_gender": 16,
     "total": 243837,
-    "source": "CEO TN Final Electoral Roll, 23 Feb 2026"
+    "source": "CEO TN Final Electoral Roll, 23 Feb 2026",
+    "total_votes": 177534,
+    "poll_pct": 72.8
   }
 }

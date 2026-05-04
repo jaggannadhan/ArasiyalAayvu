@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { apiGet } from "@/lib/api-client";
 import { normalizeName } from "@/lib/formatters";
-import { Candidate2026ProfileModal, type Candidate2026 } from "./Candidate2026ProfileModal";
+import { type Candidate2026 } from "./Candidate2026ProfileModal";
 import { ProfileModal, type PoliticianProfile } from "@/components/politicians/ProfileModal";
 
 type Candidate = Candidate2026;
@@ -56,17 +56,37 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
   const [data, setData] = useState<CandidatesData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [selected, setSelected] = useState<Candidate | null>(null);
   const [profileModal, setProfileModal] = useState<PoliticianProfile | null>(null);
 
   function handleCandidateClick(c: Candidate) {
-    // Try to find the politician profile; fall back to the basic 2026 modal
+    // Build a minimal PoliticianProfile from candidate data so the standard
+    // ProfileModal appears instantly — no waiting for the API.
+    const stubProfile: PoliticianProfile = {
+      doc_id: "",
+      canonical_name: c.name,
+      aliases: [],
+      photo_url: c.photo_url,
+      gender: c.gender,
+      age: c.age ?? null,
+      current_party: c.party,
+      current_constituency: slug.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+      current_constituency_slug: slug,
+      timeline: [{
+        year: 2026,
+        constituency_slug: slug,
+        constituency: slug.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+        party: c.party,
+        won: null,
+      }],
+    };
+    setProfileModal(stubProfile);
+
+    // In parallel, fetch the full profile and upgrade the modal seamlessly
     const searchName = encodeURIComponent(c.name);
     apiGet<{ total: number; items: PoliticianProfile[] }>(
       `/api/politicians?q=${searchName}&limit=5`
     )
       .then((res) => {
-        // Match by name + constituency slug
         const match = res.items.find((p) =>
           p.timeline.some(
             (t) => t.year === 2026 && t.constituency_slug === slug
@@ -74,12 +94,10 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
         );
         if (match) {
           setProfileModal(match);
-        } else {
-          setSelected(c);
         }
       })
       .catch(() => {
-        setSelected(c);
+        // Keep the stub modal that's already showing
       });
   }
 
@@ -224,14 +242,7 @@ export function CandidatesPanel({ slug, lang = "en" }: Props) {
         </p>
       </div>
 
-      {/* Candidate profile modal (basic fallback) */}
-      <Candidate2026ProfileModal
-        candidate={selected}
-        onClose={() => setSelected(null)}
-        lang={lang}
-      />
-
-      {/* Full politician profile modal */}
+      {/* Politician profile modal */}
       {profileModal && (
         <ProfileModal profile={profileModal} onClose={() => setProfileModal(null)} />
       )}
