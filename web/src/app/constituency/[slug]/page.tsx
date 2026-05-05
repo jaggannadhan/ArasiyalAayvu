@@ -27,6 +27,7 @@ import {
 } from "@/lib/constituency-fetcher";
 import { apiGet } from "@/lib/api-client";
 import { cacheHas } from "@/lib/data-cache";
+import { partyName as getPartyName } from "@/lib/party-names";
 import constituencyMap from "@/lib/constituency-map.json";
 import electorateData2021 from "@/lib/constituency-electorate-2021.json";
 
@@ -151,7 +152,7 @@ function ResultCard2026({
           )}
           <div className="flex-1 min-w-0">
             <p className="text-sm font-black text-gray-900 truncate">{winner.name}</p>
-            <p className="text-xs text-gray-600">{winner.party}</p>
+            <p className="text-xs text-gray-600">{getPartyName(winner.party, lang)}</p>
           </div>
           <div className="text-right flex-shrink-0">
             <p className="text-sm font-black text-green-700">+{result.margin.toLocaleString()}</p>
@@ -209,7 +210,7 @@ function ResultCard2026({
                         </span>
                       )}
                     </p>
-                    <p className="text-[10px] text-gray-400 truncate">{c.party}</p>
+                    <p className="text-[10px] text-gray-400 truncate">{getPartyName(c.party, lang)}</p>
                   </div>
                   <div className="text-right flex-shrink-0">
                     <p className={`text-xs ${isWinner ? "font-bold text-gray-900" : "font-medium text-gray-600"}`}>
@@ -466,13 +467,34 @@ export default function ConstituencyPage() {
                 : "rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700"
             }
           >
-            {error.kind === "offline"
-              ? isTA
-                ? "இணைய இணைப்பு இல்லை அல்லது backend API தற்காலிகமாக அணுக முடியவில்லை. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்."
-                : "You appear to be offline or the backend API is temporarily unreachable. Please check your connection and retry."
-              : isTA
-                ? "தரவு ஏற்றுவதில் பிழை. தயவுசெய்து பின்னர் முயற்சிக்கவும்."
-                : `Failed to load data: ${error.message}`}
+            <p>
+              {error.kind === "offline"
+                ? isTA
+                  ? "இணைய இணைப்பு இல்லை அல்லது backend API தற்காலிகமாக அணுக முடியவில்லை. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்."
+                  : "You appear to be offline or the backend API is temporarily unreachable. Please check your connection and retry."
+                : isTA
+                  ? "தரவு ஏற்றுவதில் பிழை. தயவுசெய்து பின்னர் முயற்சிக்கவும்."
+                  : `Failed to load data: ${error.message}`}
+            </p>
+            <button
+              onClick={() => {
+                setError(null);
+                setLoading(true);
+                fetchConstituencyData(slug, selectedTerm)
+                  .then(() => bumpFetchTick((n) => n + 1))
+                  .catch((err: unknown) => {
+                    if (isOfflineError(err)) {
+                      setError({ kind: "offline", message: "offline" });
+                    } else {
+                      setError({ kind: "generic", message: getErrorMessage(err) });
+                    }
+                  })
+                  .finally(() => setLoading(false));
+              }}
+              className="mt-3 text-xs font-bold px-4 py-2 rounded-full border border-current hover:opacity-80 transition-opacity"
+            >
+              {isTA ? "மீண்டும் முயற்சிக்கவும்" : "Try again"}
+            </button>
           </div>
         )}
 

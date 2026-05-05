@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import type { MlaRecord, CriminalCase, CriminalCaseStatus } from "@/lib/types";
 import { groupCasesByStatus } from "@/lib/formatters";
 
@@ -111,6 +112,7 @@ export function CandidateCriminalModal({
   const t = T[lang];
   const [activeFilter, setActiveFilter] = useState<"All" | CriminalCaseStatus>("All");
   const backdropRef = useRef<HTMLDivElement>(null);
+  const focusTrapRef = useFocusTrap(isOpen);
 
   // Lock body scroll while open
   useEffect(() => {
@@ -163,7 +165,7 @@ export function CandidateCriminalModal({
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4"
       onClick={(e) => { if (e.target === backdropRef.current) onClose(); }}
     >
-      <div className="relative w-full sm:max-w-2xl max-h-[92dvh] sm:max-h-[85dvh] bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div ref={focusTrapRef} className="relative w-full sm:max-w-2xl max-h-[92dvh] sm:max-h-[85dvh] bg-white sm:rounded-2xl rounded-t-2xl shadow-2xl flex flex-col overflow-hidden">
         {/* ── Header ── */}
         <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-4 border-b border-gray-100">
           <div className="min-w-0">

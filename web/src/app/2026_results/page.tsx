@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import { useLanguage } from "@/lib/LanguageContext";
+import { partyAbbr as getPartyAbbr, partyName as getPartyName } from "@/lib/party-names";
 
 interface PartyResult {
   party: string;
@@ -79,18 +80,22 @@ const PARTY_ABBR: Record<string, string> = {
   "Amma Makkal Munnettra Kazagam": "AMMK",
 };
 
-function getAbbr(party: string): string {
+function getAbbrEn(party: string): string {
   return PARTY_ABBR[party] || party.slice(0, 4).toUpperCase();
 }
 
 function getColor(party: string): string {
-  const abbr = getAbbr(party);
+  const abbr = getAbbrEn(party);
   return PARTY_COLORS[abbr] || "bg-gray-400";
 }
 
 export default function ResultsPage() {
   const { lang, setLang } = useLanguage();
   const isTA = lang === "ta";
+
+  // Language-aware abbreviation — uses English abbr internally for color/key lookup,
+  // Tamil abbr for display when in Tamil mode
+  const getAbbr = (party: string) => getPartyAbbr(party, lang);
   const [summary, setSummary] = useState<ResultsSummary | null>(null);
   const [constituencies, setConstituencies] = useState<ConstituencyResult[]>([]);
   const [loading, setLoading] = useState(true);
@@ -189,16 +194,17 @@ export default function ResultsPage() {
             {/* Scoreboard - Top 3 */}
             <div className="grid grid-cols-3 gap-3">
               {top3.map((p, i) => {
-                const abbr = p.abbr || getAbbr(p.party);
-                const color = PARTY_COLORS[abbr] || "bg-gray-400";
+                const abbrEn = p.abbr || getAbbrEn(p.party);
+                const abbr = getAbbr(p.party);
+                const color = PARTY_COLORS[abbrEn] || "bg-gray-400";
                 const seats = p.won || 0;
-                const flag = PARTY_FLAG[abbr];
+                const flag = PARTY_FLAG[abbrEn];
                 const flagUrl = flag
                   ? `/party-flags/${flag.file}.${flag.ext}`
                   : undefined;
                 return (
                   <button
-                    key={abbr}
+                    key={abbrEn}
                     onClick={() => setFilterParty(filterParty === p.party ? "" : p.party)}
                     className={`relative rounded-2xl border-2 p-3 text-center transition-all overflow-hidden ${
                       filterParty === p.party
@@ -260,16 +266,16 @@ export default function ResultsPage() {
             {/* Seat share bar */}
             <div className="h-3 rounded-full overflow-hidden flex bg-gray-100">
               {partyData.map((p) => {
-                const abbr = p.abbr || getAbbr(p.party);
-                const color = PARTY_COLORS[abbr] || "bg-gray-400";
+                const abbrEn = p.abbr || getAbbrEn(p.party);
+                const color = PARTY_COLORS[abbrEn] || "bg-gray-400";
                 const pct = ((p.won || 0) / 234) * 100;
                 if (pct < 0.5) return null;
                 return (
                   <div
-                    key={abbr}
+                    key={abbrEn}
                     className={`${color} transition-all`}
                     style={{ width: `${pct}%` }}
-                    title={`${abbr}: ${p.won}`}
+                    title={`${getAbbr(p.party)}: ${p.won}`}
                   />
                 );
               })}
@@ -278,12 +284,12 @@ export default function ResultsPage() {
             {/* All parties */}
             <div className="flex flex-wrap gap-2">
               {partyData.map((p) => {
-                const abbr = p.abbr || getAbbr(p.party);
-                const color = PARTY_COLORS[abbr] || "bg-gray-400";
+                const abbrEn = p.abbr || getAbbrEn(p.party);
+                const color = PARTY_COLORS[abbrEn] || "bg-gray-400";
                 const isActive = filterParty === p.party;
                 return (
                   <button
-                    key={abbr}
+                    key={abbrEn}
                     onClick={() => setFilterParty(isActive ? "" : p.party)}
                     className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all ${
                       isActive
@@ -292,7 +298,7 @@ export default function ResultsPage() {
                     }`}
                   >
                     <div className={`w-2 h-2 rounded-full ${color}`} />
-                    {abbr} · {p.won}
+                    {getAbbr(p.party)} · {p.won}
                   </button>
                 );
               })}

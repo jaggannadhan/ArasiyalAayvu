@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000").replace(/\/$/, "");
 
@@ -54,6 +55,8 @@ export function FeedbackModal({ open, onClose, lang = "en", defaultCategory }: F
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  const focusTrapRef = useFocusTrap(open);
+
   if (!open) return null;
 
   async function handleSubmit(e: React.FormEvent) {
@@ -95,6 +98,7 @@ export function FeedbackModal({ open, onClose, lang = "en", defaultCategory }: F
       onClick={onClose}
     >
       <div
+        ref={focusTrapRef}
         onClick={(e) => e.stopPropagation()}
         className="w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-200 p-5 flex flex-col gap-4"
       >

@@ -8,6 +8,7 @@ import { LiveCount } from "@/components/LiveCount";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import type { FrequentlyBrowsedItem } from "@/lib/types";
+import { partyAbbr } from "@/lib/party-names";
 
 const FEATURED_FALLBACK: FrequentlyBrowsedItem[] = [
   { slug: "anna_nagar",             name: "Anna Nagar",             district: "Chennai",     view_count: 0 },
@@ -176,7 +177,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-right flex-shrink-0">
-              <p className="text-2xl font-black text-yellow-700">TVK</p>
+              <p className="text-2xl font-black text-yellow-700">{partyAbbr("TVK", lang)}</p>
               <p className="text-xs font-bold text-gray-600">107 seats</p>
             </div>
           </div>

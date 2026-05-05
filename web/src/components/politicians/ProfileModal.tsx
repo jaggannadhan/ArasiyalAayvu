@@ -1,5 +1,7 @@
 "use client";
 
+import { useFocusTrap } from "@/hooks/useFocusTrap";
+
 // ── Types (shared across politicians page + constituency page) ───────────────
 
 export interface TimelineEntry {
@@ -145,6 +147,11 @@ interface ProfileModalProps {
 }
 
 export function ProfileModal({ profile, onClose }: ProfileModalProps) {
+  // The hook must be called unconditionally (Rules of Hooks), so we always
+  // treat the modal as "open" when this component is rendered — the parent
+  // controls mount/unmount.
+  const focusTrapRef = useFocusTrap(true);
+
   // Show skeleton while loading
   if (!profile) {
     return <ProfileSkeleton onClose={onClose} />;
@@ -156,6 +163,7 @@ export function ProfileModal({ profile, onClose }: ProfileModalProps) {
       onClick={onClose}
     >
       <div
+        ref={focusTrapRef}
         className="w-full sm:max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-200 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
