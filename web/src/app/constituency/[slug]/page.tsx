@@ -265,13 +265,34 @@ export default function ConstituencyPage() {
 
   // Always show the latest term (2026) when opening a constituency page.
   const [selectedTerm, setSelectedTerm] = useState(2026);
-  const [profileModal, setProfileModal] = useState<PoliticianProfile | null>(null);
+  // undefined = closed, null = open + loading, PoliticianProfile = open + loaded
+  const [profileModal, setProfileModal] = useState<PoliticianProfile | null | undefined>(undefined);
 
   function handleMlaClick(mlaDocId: string | undefined) {
     if (!mlaDocId) return;
+    setProfileModal(null); // open immediately with skeleton
     apiGetRaw<PoliticianProfile>(`/api/politicians/${encodeURIComponent(mlaDocId)}`)
       .then(setProfileModal)
-      .catch(() => { /* silent — profile not found */ });
+      .catch(() => setProfileModal(undefined)); // close on error
+  }
+
+  function handleMlaClickByName(name: string) {
+    if (!name || !slug) return;
+    setProfileModal(null); // open immediately with skeleton
+    apiGetRaw<{ match: { doc_id: string } }>(
+      `/api/politicians/by-constituency/${encodeURIComponent(slug)}?year=${selectedTerm}&name=${encodeURIComponent(name)}`
+    )
+      .then((res) => {
+        if (res.match?.doc_id) {
+          return apiGetRaw<PoliticianProfile>(`/api/politicians/${encodeURIComponent(res.match.doc_id)}`);
+        }
+        setProfileModal(undefined); // no match — close
+        return null;
+      })
+      .then((profile) => {
+        if (profile) setProfileModal(profile);
+      })
+      .catch(() => setProfileModal(undefined)); // close on error
   }
 
   // `bumpFetchTick` forces a re-read from cache when a fetch completes.
@@ -512,7 +533,13 @@ export default function ConstituencyPage() {
               return (
                 <div
                   className="cursor-pointer"
-                  onClick={() => handleMlaClick(data.mla?.doc_id)}
+                  onClick={() => {
+                    if (selectedTerm === 2026) {
+                      handleMlaClickByName(data.mla?.mla_name || "");
+                    } else {
+                      handleMlaClick(data.mla?.doc_id);
+                    }
+                  }}
                 >
                   <MlaCard
                     mla={data.mla!}
@@ -577,8 +604,8 @@ export default function ConstituencyPage() {
         )}
       </div>
 
-      {profileModal && (
-        <ProfileModal profile={profileModal} onClose={() => setProfileModal(null)} />
+      {profileModal !== undefined && (
+        <ProfileModal profile={profileModal} onClose={() => setProfileModal(undefined)} />
       )}
     </main>
   );

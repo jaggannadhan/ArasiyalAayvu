@@ -64,14 +64,92 @@ const SEVERITY_COLOR: Record<string, string> = {
   SERIOUS: "text-rose-600",
 };
 
+// ── Skeleton ────────────────────────────────────────────────────────────────
+
+function ProfileSkeleton({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="w-full sm:max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-200 max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header skeleton */}
+        <div className="bg-gray-50 p-5 flex items-center gap-4 border-b border-gray-200 rounded-t-2xl">
+          <div className="w-16 h-20 bg-gray-200 rounded-lg animate-pulse" />
+          <div className="flex-1 space-y-2">
+            <div className="h-5 w-40 bg-gray-200 rounded animate-pulse" />
+            <div className="h-3 w-28 bg-gray-200 rounded animate-pulse" />
+            <div className="h-3 w-20 bg-gray-100 rounded animate-pulse" />
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-700 text-2xl leading-none p-1 -m-1 transition-colors self-start"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="p-5 space-y-5">
+          {/* Quick stats skeleton */}
+          <div className="grid grid-cols-3 gap-3">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-gray-50 rounded-xl p-3 text-center">
+                <div className="h-2 w-10 bg-gray-200 rounded animate-pulse mx-auto mb-2" />
+                <div className="h-4 w-8 bg-gray-200 rounded animate-pulse mx-auto" />
+              </div>
+            ))}
+          </div>
+
+          {/* Win/Loss skeleton */}
+          <div className="flex items-center gap-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="h-5 w-5 bg-gray-200 rounded animate-pulse" />
+                <div className="h-3 w-10 bg-gray-100 rounded animate-pulse" />
+              </div>
+            ))}
+          </div>
+
+          {/* Timeline skeleton */}
+          <div className="space-y-3">
+            <div className="h-3 w-32 bg-gray-200 rounded animate-pulse" />
+            {[1, 2].map((i) => (
+              <div key={i} className="bg-gray-50 rounded-xl p-3 border border-gray-100 space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="h-4 w-10 bg-gray-200 rounded animate-pulse" />
+                  <div className="h-3 w-24 bg-gray-200 rounded animate-pulse" />
+                </div>
+                <div className="h-3 w-36 bg-gray-100 rounded animate-pulse" />
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="h-3 w-20 bg-gray-100 rounded animate-pulse" />
+                  <div className="h-3 w-20 bg-gray-100 rounded animate-pulse" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Modal ────────────────────────────────────────────────────────────────────
 
 interface ProfileModalProps {
-  profile: PoliticianProfile;
+  profile: PoliticianProfile | null;
   onClose: () => void;
 }
 
 export function ProfileModal({ profile, onClose }: ProfileModalProps) {
+  // Show skeleton while loading
+  if (!profile) {
+    return <ProfileSkeleton onClose={onClose} />;
+  }
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4"

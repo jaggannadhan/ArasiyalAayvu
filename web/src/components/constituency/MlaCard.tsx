@@ -54,13 +54,10 @@ export function MlaCard({ mla, district, lang = "en", winnerVotes, winnerPct }: 
       {/* Title row: [photo] [name + constituency] [party flag] */}
       <div className="flex items-center gap-4">
         {/* MLA photo */}
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={mla.photo_url ?? "/default-mla.svg"}
           alt={mla.photo_url ? `${mla.mla_name} profile` : "MLA placeholder"}
-          width={64}
-          height={80}
-          sizes="64px"
-          priority
           className="shrink-0 w-16 h-20 rounded-xl object-cover border border-gray-200 shadow-sm bg-gray-50 flex-none"
         />
 

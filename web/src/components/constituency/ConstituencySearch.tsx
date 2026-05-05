@@ -310,7 +310,7 @@ export function ConstituencySearch({ lang = "en", currentSlug }: ConstituencySea
 
   const icon = isPinMode ? "📮" : "🔍";
   const placeholder = isTA
-    ? "தொகுதி பெயர் அல்லது பின்கோடு (எ.கா. Harur அல்லது 600023)"
+    ? "தொகுதி, பெயர், அல்லது பின்கோடு (எ.கா. ஹரூர் அல்லது 600023)"
     : "Constituency, District, PinCode, Candidate";
 
   return (

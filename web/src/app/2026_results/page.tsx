@@ -225,7 +225,6 @@ export default function ResultsPage() {
 
                     {/* Content on top */}
                     <div className="relative z-10">
-                      <div className={`w-3 h-3 rounded-full ${color} mx-auto mb-1`} />
                       <p className="text-2xl font-black text-gray-900">{seats}</p>
                       <p className="text-xs font-bold text-gray-600">{abbr}</p>
                     </div>
@@ -254,7 +253,7 @@ export default function ResultsPage() {
               </span>
               <span className="text-gray-300">|</span>
               <span>
-                {isTA ? "பெரும்பான்மை" : "Majority"}: {summary.majority_mark}
+                {isTA ? "தேவையான பெரும்பான்மை" : "Required Majority"}: {summary.majority_mark}
               </span>
             </div>
 

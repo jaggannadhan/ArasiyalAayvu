@@ -270,7 +270,7 @@ export default function PoliticiansPage() {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder={isTA ? "பெயர், கட்சி, தொகுதி தேடுங்கள்…" : "Search by name, party, constituency…"}
-            className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+            className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 text-gray-900 placeholder-gray-500"
           />
           <button type="submit" className="px-4 py-2 bg-gray-900 text-white text-sm font-bold rounded-lg hover:bg-gray-700 transition-colors">
             {isTA ? "தேடு" : "Search"}
@@ -330,7 +330,7 @@ export default function PoliticiansPage() {
         {!loading && viewMode === "table" && data && data.items.length > 0 && (
           <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white">
             <table className="w-full text-xs">
-              <thead className="bg-gray-50 border-b border-gray-200 text-left">
+              <thead className="bg-gray-50 border-b border-gray-200 text-left text-gray-900">
                 <tr>
                   <th className="pl-5 pr-3 py-2 w-12">Photo</th>
                   <th className="px-3 py-2 cursor-pointer hover:text-gray-900" onClick={() => toggleSort("canonical_name")}>

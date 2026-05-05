@@ -151,7 +151,8 @@
       "Bash(python scrapers/update_profiles_with_results_v2.py)",
       "Bash(.venv/bin/python3 scrapers/myneta_2026_enrich.py --dry-run --only madurai_east)",
       "Bash(.venv/bin/python3 scrapers/myneta_2026_enrich.py)",
-      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/jv/Documents/MyProjects/ArasiyalAayvu/web/public/news-reader-anchor.png'\\); print\\(f'Size: {img.size}, Mode: {img.mode}'\\)\")"
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/jv/Documents/MyProjects/ArasiyalAayvu/web/public/news-reader-anchor.png'\\); print\\(f'Size: {img.size}, Mode: {img.mode}'\\)\")",
+      "Bash(npx vercel *)"
     ],
     "additionalDirectories": [
       "/Users/jv/Downloads/ArasiyalAavyuDB",

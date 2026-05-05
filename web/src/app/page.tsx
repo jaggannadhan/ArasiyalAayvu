@@ -18,6 +18,26 @@ const FEATURED_FALLBACK: FrequentlyBrowsedItem[] = [
   { slug: "tirunelveli",            name: "Tirunelveli",            district: "Tirunelveli", view_count: 0 },
 ];
 
+// Tamil translations for constituency & district names shown on the home page
+const TAMIL_NAMES: Record<string, { name: string; district: string }> = {
+  anna_nagar:             { name: "அண்ணா நகர்",           district: "சென்னை" },
+  harur_sc:               { name: "ஹரூர் (த.சா.)",       district: "தர்மபுரி" },
+  coimbatore_south:       { name: "கோயம்புத்தூர் தெற்கு", district: "கோயம்புத்தூர்" },
+  madurai_central:        { name: "மதுரை மத்தி",          district: "மதுரை" },
+  chepauk_thiruvallikeni: { name: "சேப்பாக்கம்-திருவல்லிக்கேணி", district: "சென்னை" },
+  tirunelveli:            { name: "திருநெல்வேலி",         district: "திருநெல்வேலி" },
+  kolathur:               { name: "கொளத்தூர்",            district: "சென்னை" },
+  villivakkam:            { name: "வில்லிவாக்கம்",        district: "சென்னை" },
+  egmore_sc:              { name: "எழும்பூர் (த.சா.)",    district: "சென்னை" },
+  mylapore:               { name: "மயிலாப்பூர்",          district: "சென்னை" },
+  tambaram:               { name: "தாம்பரம்",             district: "செங்கல்பட்டு" },
+  edappadi:               { name: "எடப்பாடி",             district: "சேலம்" },
+  thanjavur:               { name: "தஞ்சாவூர்",            district: "தஞ்சாவூர்" },
+  salem_west:             { name: "சேலம் மேற்கு",         district: "சேலம்" },
+  trichy_west:            { name: "திருச்சி மேற்கு",      district: "திருச்சிராப்பள்ளி" },
+  perambur:               { name: "பெரம்பூர்",            district: "சென்னை" },
+};
+
 export default function Home() {
   const { lang, setLang } = useLanguage();
   const [featured, setFeatured] = useState<FrequentlyBrowsedItem[]>(FEATURED_FALLBACK);
@@ -115,16 +135,23 @@ export default function Home() {
             {isTA ? "அடிக்கடி பார்க்கப்படுகின்றன" : "Frequently Browsed"}
           </p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            {featured.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/constituency/${c.slug}`}
-                className="bg-white rounded-xl border border-gray-200 px-4 py-3 hover:border-gray-400 hover:shadow-sm transition-all text-left"
-              >
-                <p className="text-sm font-semibold text-gray-900 truncate">{c.name}</p>
-                <p className="text-xs text-gray-400">{c.district}</p>
-              </Link>
-            ))}
+            {featured.map((c) => {
+              const ta = TAMIL_NAMES[c.slug];
+              return (
+                <Link
+                  key={c.slug}
+                  href={`/constituency/${c.slug}`}
+                  className="bg-white rounded-xl border border-gray-200 px-4 py-3 hover:border-gray-400 hover:shadow-sm transition-all text-left"
+                >
+                  <p className="text-sm font-semibold text-gray-900 truncate">
+                    {isTA && ta ? ta.name : c.name}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {isTA && ta ? ta.district : c.district}
+                  </p>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
