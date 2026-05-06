@@ -1,0 +1,199 @@
+{
+  "party_id": "tvk",
+  "party_name": "Tamilaga Vettri Kazhagam (TVK)",
+  "party_name_tamil": "தமிழக வெற்றி கழகம்",
+  "founded_year": 2024,
+  "founded_date": "February 2, 2024",
+  "founded_place": "Chennai",
+  "parent_organization": null,
+  "founders": [
+    {
+      "name": "Joseph Vijay Chandrasekhar",
+      "role": "founder/president",
+      "brief": "Joseph Vijay Chandrasekhar, popularly known as 'Thalapathy' Vijay, is a prominent Indian actor who primarily works in Tamil cinema. He founded the Tamilaga Vettri Kazhagam in 2024, transitioning from a successful film career to politics with the aim of contesting the 2026 Tamil Nadu Assembly elections."
+    }
+  ],
+  "original_ideology": "The party's ideology is rooted in egalitarianism, secularism, and social justice. It positions itself as a centre-left party, drawing inspiration from figures like Periyar, Ambedkar, and Kamaraj, while also emphasizing a two-language policy (Tamil and English) and rejecting right-wing communal politics.",
+  "current_ideology": "The party's ideology is rooted in egalitarianism, secularism, and social justice. It positions itself as a centre-left party, drawing inspiration from figures like Periyar, Ambedkar, and Kamaraj, while also emphasizing a two-language policy (Tamil and English) and rejecting right-wing communal politics.",
+  "original_motto": "Pirappokkum Ella Uyirkkum (All are equal by birth)",
+  "current_motto": "Pirappokkum Ella Uyirkkum (All are equal by birth)",
+  "symbol": "Whistle",
+  "symbol_history": "The Election Commission of India (ECI) officially allotted the 'Whistle' as TVK's common symbol in early 2026. Prior to this, the whistle symbol had been used by independent candidates and some political parties, including the Lok Satta Party and the Gandhian People's Movement.",
+  "headquarters": "Panaiyur, Chennai",
+  "key_splits_and_mergers": [],
+  "notable_leaders_through_history": [
+    {
+      "name": "Joseph Vijay Chandrasekhar",
+      "tenure": "2024-Present",
+      "role": "Founder, President",
+      "legacy": "Founded Tamilaga Vettri Kazhagam in 2024, transforming his fan club into a political party. Led TVK to a significant performance in its debut 2026 Tamil Nadu Assembly elections, emerging as the single largest party."
+    }
+  ],
+  "current_leadership": [
+    {
+      "name": "Joseph Vijay Chandrasekhar",
+      "role": "President",
+      "since": "2024"
+    },
+    {
+      "name": "N. Anand",
+      "role": "General Secretary",
+      "since": "2024"
+    },
+    {
+      "name": "P. Venkataramanan",
+      "role": "Treasurer",
+      "since": "2024"
+    }
+  ],
+  "era_timeline": [
+    "2024-2026: Founding and establishment, pre-election campaigning, and official registration with the Election Commission of India."
+  ],
+  "overall_sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzEhhqRG09aRiiZAUu91SN1lN2phoeV4cidd5N9dsZOz-umqtWDZ9wlFW49vJwmWitALLvLiV5PfDAZ8-cIjNlXuDDfaeg439i343mkQfE5KMEMmW-YSzjJg2nMjPjL4xoHx8xL-cTH-1Vhp9OVn9o6A==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCy8JobKdQRPVD5Mf-dVlwWRqLC-WbeG7Kd-1RnSA69K60Cmp8JPbVqw8qJebraZZnkBbsHejjqyLe28UM-_y1P7Z6YZxpJ51r_VtBNZaalvv1rYiRbDQd517SuURXH15DJnZLwr8UrU4P9H72CSbclpuutc-03POMvbq38jjU4MIG8QIHcqS-xyakkKmY-lzkFMCrH6hDWfR2ZX2-R0eKOtSQY9YJTthe0FTOAfqULytn_uie8cFIK9ZITJMrGVyK-mAr7oWCEhjzyJsXAmHXw9JyQ6BZbyvSb52mafkgVdzyhQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyw5Qau9YBP2u_ylsLLXMtWMD7D2AG6GQnKd1WoAa-JYPOIm_m7N1sEwy8NKCbtCqD2NGxFf306D51_6qvnzPOxk1oa1WJ4V-yQJYzjcTzSsTo78CQPIe2S9qpsCGxdhpQlr1ujjp1Ny5UWofHeEEAhW4pyu5ikydcJsF5X67l_-9uBA68-uw9dl4CikEOueWqDiluA4jHStchQwVQW_5FyUdQI35ik5lNhguXcyBlRBfO9zU1sPGHN25j4jfptu4hVNCLwerxY-KP62kO",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMcD1zmiOWN6UgI9P_lrTw3vbXhvtnbQxQCac8QKWKRHqndVZPc6PJWAbwrKAyhGJ73enaUJt9JIS4z4e9LQJMoHcVTFjTWgh7Idl3MFCHKvYTTSwf1YOJehyqcWRy317fqtxDsKyXi-av59v4VNtUrfaWNuA6A50=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGpSvBi9qnewAJyYR-xJ32NpvizcxHVy_lc3EdOpYGcvcYUVlpLaa8kOfm_TNX4WDQiYCH96RxEogiZMDis5PuUr-fwaBEMAbu4AcPQW6Z4xxQUxxq9dJsNRQJgbR2NrO1gNKlL9a-4Q08kMJpdhB84ph9WkybdS0skAc0hg9Jm2oJIWLh64IuWu50iP2DwtM31vnDXJXV6ZjwdBoSxNN_vJBOKOqvyHAlk1CxPyWerA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQlL9Z5hSLkegAcGZbl2P7Dqyw-ZuwR9vW8KU8LnjBqEpyMeAxnFw3Kymyl1D0v8S5BtlohRc03HQeZSLe9YOpCn7do4X6kmrH5Ek-wxM9VaNiSKIWrPTiItWcWzmMr97gxX22SVs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEbGrtCw29CQ3--1DxIt871HVGHTaBD0oJVVcpTaVrHxzH2bmMBDvAul5Si_SfdxwTNPeuB0U9C05rHfVJ7wlTpoR39gfz2s-7C4ZTAuBlZgHhGxZ0P_FwdfXSRQbM5eRFQt9ytRl-OrWBPQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE9JBERh41g6hLlC23fWn6r9zdIgcsmb9Rp14lE3N3kczw1trMWRagduAjaJ2RRkrHJ2IxkV7ZfkB6P8YBQ9G-JrtizywcQ31PAycM3xW62SJQAtQ9av4yNcEULoPGD-4Ru749rLMbMjZs6RKrVe9u74xCKbcBZCFTs4enJ3BrTLsf0CEo5poXlbvhPrTyWnzzFSXILe0zEMn82Hm-DVuwmRVOz6YPrjM63RipHwQc79olAn6fT69ebqzR7B32wZq-b-qc3t_FNkWce5HQ3zYiw9UVa_6A4uh1L9I=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe20VWp85bidA6HyI8J4MtKX8RtHSDN-5ZVR_ll4YlowBtdnryOFoIrVl8ODn1VzGjWtbUQPKNNEpO1aJ2DjxfBPOXFvtjiSTF2WpFIoEIt8JEopVnGtCT5TD9lZL09L9VdXt0_PFVsbuWOu0oNxvt",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLBvGRQMKVd76IWcxhV_SMrt7BJ0EWOyk69OgNku7VY0Mp43dBDXi00kdbFfXAE-BrBrBMmy3Yt73rxcdg3jorXToxYkaYOfGZFTG_-piKl8aNzT8ZWMyerWSLS1MFI3x0mpuuc6RT6gZ28Jhw",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEV7coXM5ckj5LoR8QiVc-aL1sMfrgJzvnoheeqVtwIoGdfCyivZURlqrA9MVdluBBSZM3CfxdYtgyjsgvwTjqOTRd8HuFry8rEqJ6NjePLy9bJFc3mwu9vDK1pyicdx0fM7vWf-V9cpUwnj3v48AbquYFXaCrwG_FkapEkqCaGldsn710B5iJ0nZaxmFKrgO8QNZo68zW2Vlo8-Tr6T-tZhwhbQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNL5hiOgaZdVRUjqeLp6HJDnhL8UDbPUuoZwODEHfgFMV3n-mbbVEm4crqJr5R4OYU42X6b-KdzeMvsa_xFQzaKYT-HLrSZMzBhhC6iNA2V9SIpodmNpSMbmkuopAqmL1CTaBXoVdqzN_2JaQ-jq2uxWAMFEk=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFExKZIhNIOOusHZyesc4opBYwzCEHZJGODG38aWDoOavRYhJuBocZDWpKuAAlvNZzxITrXSjSlqXU3lzMR73vue0a46hj2R0A7yfgyWOnA1zEpl-_ZH161rKeQ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSj0VWLX-TgC2Vj-Tp9FXhaL4W9oe6czjKy2Judyx1v_G4fSdJKrYf4F6PZj5gw6pcg85AZ-Mjl9vG49w8QkeuHZieBWnN5W9k-FhlvOT9glQdGlopto56fl2WggNviNGH-pAoYXUx7SYJ_OqOZyJtu1nRj56myK5imT5_uPUr0HMO",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZMlM7BX7EtXW69ofIvYIP0L4_3X_T_xLKmFucIQaEWVYXxUXpH6V6VKcWBfd-nD4ha__2dlDZOAWuItstP5wh9cZ3ZZyf0WG_6znHJ6yM06X83R6rNoSO2hxOv-WfNodoTwquwqU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFImjx7vtfaXAdjCVuH-EzfQ09eepygoVJG9DsB1K8dhNBU6mr2zFeXtjIjzX4Yyw1B5FI8fPIjHfa78X1gba0FGStLsbbEYbxWfEhaYFKmVP9URtXdwxsoVyumQ3sFtMHtcwaCYBwqK0kWB5e5e-uQSn19V6_hb8fbAuPhprTyWnzzFSXILe0zEMn82Hm-DVuwmRVOz6YPrjM63RipHwQc79olAn6fT69ebqzR7B32wZq-b-qc3t_FNkWce5HQ3zYiw9UVa_6A4uh1L9I=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6EG-AFBbwi7CC8spyH_xv3zWStOGYe07xWvAP43Wo5ryzgMjNbl_J-5R0M5ti9qgBwU4whTd-txC-HZtrCkO2G1exqe1GIHN1Dk5UpAE85Je_UYwJt8oZ343NVATraIZMscW1d08drvdu3azUFbFgQnirkt5mc0t9T26MKKQUSDA1d62jYHMya3XYUvLXi_TM4G_CvQcH3rTmiZHs3HH-suCJa2ezG33cnFEx0RZ-zc035eJXpPztlTqbZZK2EwFj6OJBRAYMYcKZ0PoRBLwBdXDRQn5BnYtsVPk6aY0KrBe9VBSUrg224gGKnY-P8CopQ0P94fIqExAqtZXNZA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpZ4Gj-NkWna7m1R8qaAgpBV3JSWCXBJjezpIFlwXy_MWrSue3Ly0xEVx-qEDQ8l9ctYKeNaCzP1ckM4l-D1qZbUTS5VVR_KJKzY2DqWaGl9G3O80PkvYePQ_cnkfF5bIqAR8MVEdGIO23Hl2ZMcg12LYPWODUj5XzMdpB6Y9ID1VnnsBmEiy5HASdtd1JRx0uHchabaKyIcNefBSWN4od1cmGFpogWsuN6f4mjLV4PF0KtaCdgu1GDEmJuDl4bS2goeZqkckZYriWJfb9y1w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZpSju70zv5PgR29j3d4MsCpCf060RmkUpRDefVxBKla9ocji1ZSAiiJGq392CQIy0brIi-_67-3UBVfIqe5euHzzeWDgYk-7w5mzPP67R4CztLivirLv8JOsQYIs00A==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoDaEsBncAxmapVgJR1b3N4NxY-ASTxY4zFDXx7lM0hI3ZbJL0DIdrUNvlXK-EHzUAzJODRFyolQZWSveDiLTaTNSkByyLuIJ9VClI3d9gedFUxYSCqX2hgUQuIxnQJzCi6gasMXbSlbeLVZJ1u6K2dGIXJ4IZTwCPr_fbJJcrZgfqUHIeh_zYlvjhK9m6glt6eG89w210Y7NJDo5vAcs-CDXVvUMCKAHsCg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwK0Urajz-CnPMNRnn7ggQ1nk4XEOEHrOfYrj4h7epYTwBv_I-rHxUB-Mz7Z7-MB3uRZ8x00E4e7vnLB4ERXmGEe35e8MFggthpEDvHb3qGzEe0Zel9mhW5Byxl5F846SjJfwTOcFvJFVAhBhhm_SnFk5knabKMQG_rvVply9y5BNL_CoY9RakY1k47V68S3qMCZWYA42V0NUJHhYxnDmLba0ocGYRUTmE",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESbTtExh413HY9-QvyO5JfjsADf8c8CloGOa9DeYXj5WjYX2S7b87m-af6_X0sISRJJArbQRxG_DPapg-GHJedyvO4YXcaQyjSM8t1t-jzkRtys9o83yGCNDrN7aRw_4wfCMehnaOqL0FuCXvOzCxr2Y26Xth4iVLh_I29uMedefqNhnVklF4eZPgdKK0M9Q==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQES4nPq9SVlPvkLKuF-_L014YDY6pyAXANFGvzv9D2zKcivMfSz6WS6j6ZFJtcMQ9ZErX-2DEaA-kGKBV0FdcxCh08m5L4os9iw_hYvEn0NNCLJ79OgOad05tpcXzTgRY7U-VVzCkBXCoasDqdzOtk_q7PLwjts5VOYgeCnlnqhxp0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxdP0-JYa_BV2dHM78jstc5SdnHCHcIp7s0fq_UOSjNDwjc1_Nk3tCiX3Fqlp1iThNxMNX808I0UoAjB0_IsM_SHlYSMM66j1EZZLBwsFNRY7NUqsCroqKqNUR6h-2_wgYukYI5AsZjmE_1dT-jMM9AsmuGu_Z_TRaLNSl5h1v2_TldQJZYKY71Eu29ewJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3P1Y1rdRrdwJYoBuTypVredac2MjiCocwca75OZ27nftTUVhC45GVBNhtyhSkDoUwh0Q0BqmmXmJxsS4rGDZMidGsXRjANTXAXn3Ajf-h_K7kg2UesDmM0rJeJJ-QOSw5qjwS8fnBTFvmZbpZbpgdz0FRvTAQgfyGl4LdDG4_lQ1QkQgnTYq3vBHxfm4mZ7-46-XbwKAEV6RcHdE_ZRXVhTcSRkKTrR8YTHZ0Uaz89PA="
+  ],
+  "chapters": [
+    {
+      "era": "2024-2026",
+      "title": "Thalapathy's Leap: From Silver Screen to Political Stage",
+      "narrative": "The year 2024 marked a seismic shift in Tamil Nadu's political landscape as Joseph Vijay Chandrasekhar, affectionately known as 'Thalapathy' to millions, formally announced his entry into active politics. On February 2, 2024, Vijay launched the Tamilaga Vettri Kazhagam (TVK), declaring his intention to contest the 2026 Assembly elections and signaling a definitive departure from his illustrious film career. This move, long anticipated by his fervent fanbase, instantly injected a new dynamic into the state's traditionally bipolar political arena. The party wasted no time in establishing its foundations, applying for registration with the Election Commission of India (ECI) on the very day of its launch. By September 8, 2024, TVK secured its official registration, gaining the crucial legitimacy needed to participate in electoral politics.\n\nVijay articulated a clear ideological stance for TVK, positioning it as a centre-left party committed to egalitarianism, secularism, and social justice. He drew inspiration from towering figures like Periyar, Ambedkar, and Kamaraj, while advocating for a two-language policy (Tamil and English) and firmly rejecting right-wing communal politics. The party's slogan, 'Pirappokkum Ella Uyirkkum' (All are equal by birth), encapsulated its core philosophy. Though TVK opted out of the 2024 Lok Sabha elections, choosing not to contest or align with any bloc, its presence was felt through a massive inaugural political conference in Vikravandi on October 27, 2024, which reportedly drew over 800,000 attendees. Here, Vijay publicly challenged both the BJP as an 'ideological opponent' and the DMK as a 'political adversary' due to alleged corruption and dynastic politics.\n\nThe journey was not without its trials. In April 2025, a fatwa was reportedly issued against Vijay by the All India Muslim Jamaat, citing alleged anti-Islamic depictions in his films. A far more tragic event unfolded on September 27, 2025, when a crowd crush at a TVK rally in Karur claimed 41 lives and injured over 100, casting a somber shadow over the party's preparations. Despite these challenges, TVK pressed on, launching a massive enrollment drive in February 2025 to recruit 70,000 booth agents for the upcoming 2026 Assembly elections. As the 2026 elections approached, Vijay declared TVK would contest all 234 seats independently, releasing its manifesto and commencing his campaign from Perambur on March 30, 2026. The election results, unfolding in early May 2026, delivered a stunning debut: TVK emerged as the single largest party, securing 108 out of 234 seats, a remarkable feat that disrupted decades of Dravidian dominance, though it fell short of a clear majority. Vijay himself won from both Perambur and Trichy East, solidifying his position as a formidable new force in Tamil Nadu politics.",
+      "key_events": [
+        {
+          "year": 2024,
+          "month": 2,
+          "event": "Joseph Vijay Chandrasekhar launches Tamilaga Vettri Kazhagam (TVK)",
+          "significance": "Marked the official entry of a major film star into Tamil Nadu politics, ending years of speculation and setting the stage for the 2026 Assembly elections."
+        },
+        {
+          "year": 2024,
+          "month": 7,
+          "event": "TVK calls for abolishment of NEET and moving education to State List",
+          "significance": "Demonstrated the party's stance on key state-centric issues and aligned with regional sentiments, particularly concerning education policy."
+        },
+        {
+          "year": 2024,
+          "month": 9,
+          "event": "TVK officially registered with Election Commission of India (ECI)",
+          "significance": "Granted the party legal recognition to participate in electoral politics, a crucial step for its future endeavors."
+        },
+        {
+          "year": 2024,
+          "month": 10,
+          "event": "First political conference in Vikravandi",
+          "significance": "A massive show of strength, reportedly attracting over 800,000 people, where Vijay unveiled the party's ideology and criticized rival parties."
+        },
+        {
+          "year": 2025,
+          "month": 2,
+          "event": "First anniversary of TVK; busts of ideological icons unveiled",
+          "significance": "Reinforced the party's ideological roots by honoring figures like Periyar, Ambedkar, and Kamaraj, connecting TVK to Tamil Nadu's social justice legacy."
+        },
+        {
+          "year": 2025,
+          "month": 9,
+          "event": "Karur rally stampede",
+          "significance": "A tragic incident that resulted in 41 deaths, raising questions about crowd management and testing the party's leadership and crisis response."
+        },
+        {
+          "year": 2026,
+          "month": 3,
+          "event": "TVK announces solo contest for 2026 Assembly elections, releases manifesto, and Vijay begins campaigning",
+          "significance": "Signaled the party's confidence in its independent strength and marked the final push towards its first major electoral battle."
+        }
+      ],
+      "achievements": [
+        "Successful official registration with the Election Commission of India, enabling participation in electoral politics.",
+        "Organized a highly attended inaugural political conference in Vikravandi, demonstrating significant public support.",
+        "Made a strong electoral debut in the 2026 Tamil Nadu Assembly elections, emerging as the single largest party and disrupting the traditional political duopoly."
+      ],
+      "leadership": [
+        "Joseph Vijay Chandrasekhar — President — 2024-present",
+        "N. Anand — General Secretary — 2024-present"
+      ],
+      "election_results": [
+        {
+          "year": 2024,
+          "type": "lok_sabha",
+          "seats_contested": 0,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": null,
+          "alliance": "did_not_contest",
+          "outcome": "did_not_contest"
+        },
+        {
+          "year": 2026,
+          "type": "assembly",
+          "seats_contested": 234,
+          "seats_won": 108,
+          "total_seats": 234,
+          "vote_share_pct": 32.0,
+          "alliance": "standalone",
+          "outcome": "single_largest_party"
+        }
+      ],
+      "controversies": [
+        "On April 16, 2025, the All India Muslim Jamaat reportedly issued a fatwa against TVK chief Vijay, citing alleged anti-Islamic depictions in his film roles and a party iftar gathering.",
+        "A tragic crowd crush occurred at a TVK rally in Karur on September 27, 2025, resulting in 41 deaths and over 100 injuries, leading to police cases against party leaders for culpable homicide and negligence.",
+        "On March 4, 2026, TVK supporters were reported to have created fake social media accounts to impersonate media outlets and post derogatory content against political leaders.",
+        "A case was registered against Vijay for violating the Model Code of Conduct during his campaign for the 2026 Assembly elections."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnwsdWtnGherDDqOJ1o0SfNAMxgeWI05K4aRaUTMonyS4Tp1SO9ecpUnFYiAtFQDWcftqh5Amm2bp3vw24rskRJRFCOKj4zJGPaEZ4V_qwxMkcPb2e55uCcemkL9e8y4T150XjHxlYIeqUmYY5_WuKuA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBjq_7y09_av0ySuWDarvrrcPKfO8jjo6KfFVo0e0LyoJC9U0U4PEdnoLAO9s2qtu-aAhmucQhs_feWCVlaQoIcW99nFQiiPkLR5-du5IUW3H_eoHEGseQngPBXGnuxcUFUYxhptwdEBOHF-FKFPAzIpnG1QGC3gdk1BufSu-FfglA-l7hdzETuhkGZ5b4fH2LtBPg3ts=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdYGjD3w_sZH4m_ExbvZxNNRf3L4Vt2qvRydfOv7EuwPkMe-Ib4K2IrH6Ruun3t1SCyVnCbB066B5ix0Cv7ytsVPjneGhOQaoKGj04ECer1utI9zKi60VJkbOQ6A406uXf8o1SxEBLJh0xTVjZjvJipYCdVTDx01MywYiKpuKPZ67mB7ONmo4cQgM3EUArzoteFRl2PdgJs0-RsA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHBZ_wrif9esxbteBbdBbcLhIKyVL529s-YoFFZ-rNWEudCsSnTQ-ifCFQXO3ZZEFTEWBbNxsg4BmxdW6BQQW3tPaFmYBbzvqJxGJX6b3-WG_3wc6ulFOvBesTYzqDItAVV10elPr3G5n0ieZumy0M83g06DDrkWH9EESjnhW5UtERHlaozf0-OeXkyLyark911Tr-P10muc9dQK0e7yFnhY0KkxT_vuYSYH-I-m0g6qAbSN6W0VcrztSMS8a5fJs8o8wacLh91MLsmczS10QJEmSBgZzXRyR6-ji_F0KFUG8SiV6s5Z5_ROMw9ZqQonaCiXDYlBSmEzCAlpVXNIE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn9OWqXOmsOazAXZ45NQUZmtqJYHkLkztzJHcetKz_r6p88zZJrPuYvEIEHQ6cqkpFiGrEev9Bh_qkuOVSvxH1Pw0jON43cnDn927WGyVfBTqdzZWE05xw1vbbdo9vrsOiTXcce_zYhrRE498u345GaDx3UN5L2hhRk1BctaPUbdnD48VSjTMS-fAyhm3ZPYLX7zgTaVYFGgisoyUvKpGFCIMPDNA7iDPAdhQUHzevoZsZkEqcfdIoifbmtPoLSpeOTA4i87IJvmkvmIyo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8o_n52KifaGN7BnHOKxTACJLwuX1qY1TmmgI4EipUraVzUDegCh2UYakvCJmvTCByGYbE8kWDhesUvK7bggxxZ7GSaWv0QvSzj-JWUtjYXqOHaj8v58YXz9U8Iw9u-7OzPd82L43SS-yEdltoc0Wh_f9bhvMQC7Ex7NSJuJmoJ6uHjms6FeH62I6u4NNHp--t0QOerOj47s1g4vUsPUxnRHKcqoVmpNbfjLM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7kG_uElbp6_AqK98Utzsc04eXh0K1be1mIb9p1YMDeq_xa_tmjQxHPvQqHFRiARGn3h5Jzyr6wPw291EYOuKrbDF4ZPiUR72tLW3oy-Hdpmvh7uL9RRp6zaU-",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVg9tux9WxffHh6QmCfRY1dlyXyyM4XO_v91sOgw4QOREsCZwXM9-vdXCU5-HilblpH2EJ4JnObXoZZxyqvEFlygXfb_sW-TiaODt6xsAVA5nIsVk3OBxXLZu1a1hnN2Ea9YDV_8FSpb5tRj47CgSXZFE18pedGMTdRTmMN9SRfJciEei4h44KJWF8uG91ll4sOkazhj4znEaPGfVdh5N0Zpk6pu1geYMFzKFZa8fF4BeMJLA3sEkm-cNRrEUWVP6U07GE_lny245wuonxbYn6FRAkUYWPjQPPFcruSBzB8vRFlukeqdK0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6VbLoNtbvUlpshmw2_gbgSpRerUPqpUKwi7P0WYE8YkztW5Qn9fapB3cbhlgRbEjPjFXxkaGaiZTzPobR8fFDbeXUecu-Y1JKNw7CmKddzjimRJAUQtNJTEJMLZlKjeDWy0cONARfAfg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKTqvFn6Fxcbf4slSqzeOzgBVCCnoYj8bE8npFME1g58FQkvgpIrj9NFA8Fd_5gtcy7n_ckBN66u5SaxEke8Ogj3-KTwhyXjRze03vXnhwgZxxlwZi6OLmppoeV2-oEZHrLLvy-G0YvpL49hot5wBsjZxifribaYHn1fkjhHxRO6IA7aTwVSYiTbE-pTZjuQ-E11xAm_T8Q5bojLincDZOERU5ToO5G474YRAZTplIJSxzauiWMp9hIVB-EEgOzO-rCEkdlsTavAD5cquZP9h5vxmF-CnAKMv9ECp1mcQv0H3UtSpn5wkOQVagWeJgoY3Kj6L29h-h_cki3tGm4xw7lH5YbAvr7XvdJoZ5VrSf",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWeeVgycdwwnfzt9EOOr92uNhCQPxjnz17k3DwREC8aiTcrMhechlFhdpgfMQxDuTCtNVkWJsZKavIqjk1cF1Lw0MfoCq-7uNs14MgkBdynNQVn0UUTXwxuNSUanchW0jD4ovz2yM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy3K_A36kofKUR8oI_Z1KrzNGpeLFOP_d7tR5owKZDDAPf-2bLEU50GDqH_KSHZCWJHAeho98QOUjZozpFiUwn040XVY4d9HV9mZk4alw649aMaABAhKYUINqPU4R6",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9-ZnxuyjSRVzqWuot_BOvZE9yVrBdIw0xotcWkORod8keeCxBGPdxX-MAZWattXAe_mGhcF5Aycy5lQVQvSQv5HqxbtsZRE8kFh2kF1_nDBtZWeBqR-0wPQr-Pokvxpo2rs2rHqdbPxjn2YYXNYPMEKsJLVZj9-TCus0y_-SxNpjgfnq5gT2Wlg7Pb65YfXU9D9ngor3vNfyqVTJhJI-23QHyYJDwfryX4lRhf9KzW361XnsLRQZ3ySImXsax_r4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQYWf0kjnVFhemjBoS8t7Rmb9j-6i1046mbYIoSP7fbte4WFwyawTgBSwm0PhfNQbi4RkrHcCm3zTBNvMZip9zAOR6i9mokJ07NzitEg5JrTvmHrYQ-YigZphX3nqGfdgAWhWujqj4-w7RPvILvyqHjsGWZccIc7hgOOTB3uSrMi8MNC6vEQ4CwAIxRAw_UP1M7l6ZWZnuCtj295MMLjeqPKE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1RbOQYJVjSJejO0v4rEa2QPtcql_BMo93VLsAQrTLhOdSlBfP8UEiaZBvfsDbDIdVBt8hCp2VHtOZ5eF186UI6L_Azqilpgh1-JpYZisQIpYKLjnPq3WUTIMrvwngsVVq0eaqth2ZlcN_eU0dDqLD22Opgz2-3rNBzotfBhaqYQlMvZN6z6o11Y_SdfnH5oaEPwBbjw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYLE27e4ASoX6ZHOaK2KOHWNA14KlhQAYUzN-VJqKZzCsS-MGB8A4pUDej_DjRZgph_Cb788F-_R5iYr8hBlx93oKW0hUz1EC2g7WSbW3UU_Lgo5ye6eXeHH_Pp3xvpSyUrDfhly5RAdEjOL01apw91C3Ae7sGadqWVw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKd7F_hsQTU-rI2EH_HTXG393cw8ej2CdedknDilCLXiCiVVkgUMED99x9_0UMbdsCdvM_IRpYv6lHC4q2EBWjmXMI4QUUwt4U4QI2MRic1ZZlYFQW__ttE7e4uMs4qUEWX4mhNQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmaln8bUMU-KYPwak54XX2wXCM3oK9xcwqwzSZU06ePzY67Ah1ehxyHavtpNtRjuCdSh2F_9aEHEdJjWoRqehNpDRvic_XQ5s4V5Zep-B0KH0GPQHJOZJGQs9o5EgZ5kV_4maCJA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4oPipquVPbyLZo2fmunIJZIBQwgbLbaL-FfpcMp5m6aMHrP7ioIiQJEgtYZeZyZwxPE9jg3byvT9j236jmsXQZsBIBgeMzL1jlbN_dcHwi6jVVQI1DGHss7mJSZmot75mtMRyBqWnwXx6bGWla3Rf21kEOeXETU-aLGLbJquMDGhGrNv11Uu2dlM_65qmMnCvjbsjuzmMd_C4aCpP6157wfwbLPhST1krD1FK4-K3fg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsjyJ-VWbPPzXsek7flXiy_pnoJcC4LffX5S4-A6pPicGnahbVyeofqMGjMsAw5VPY768C7-_-klZc2j_wWWvZnLVdsCMxn4e_w0kd3iqToORP_iRpS4iGXNxbChzbBzCLPc8EyV-btThyOpEPJ5Y=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4dKVMt1IMBo9o0D6bmCPGGO4K0J2igyqizH-uQS-NEKVT965tK5BYQzGwVPep4B99EULtjU4JRj839mzmvxU4xSBZVRC5yLYV1i_oZvN2idPY9743JfdbXdS9mjGL5JeCssjsLGnfqE__Sz6DSaPr84LKt8RX05MxqODaQIqfJBiaJalHFMRF57J4Qwo0J11Wz-3UL7m5lLQU3UpbPqnt9_K-3gtjJk7QgzuYFqTy322uZqi82BFS3alPGY5F-ZG1Y9UFDg08466OTx57IyV4yXXAOg28a1dJq650AlA8wUlUxl0JMujk",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqF-DlxIuq-JALblQH11E44V2OHVkX21qOyMN-ekS2-18SPo0Wylly_E6nzoFqW8Xqg9U_b3_BppaXTHQjSLiUpz05--OFiyiory-EE50HGvCIn6MZi4zSB0oUAcBW71vHlRPItV7bgGN7TcQOUqD6R9klVvbOTOXu455iwFiRtPNf0OHwEJODN2h-gj_d6tA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-O3yCI8OvGLeVl6xaEbXioaJV-MlnGHurqVOLNVra81U-MNyKROz-q6Dp3g5Oc_ihE0SJlXebtNKBa7_MmiVlfI6MkIElXfvaMpyA92pkZxcIt_PLpYr97Lo0P_esdgUodOyv_V8WLAw3ShmlrSEh10LuKOWWmk6TQV1NyZlEu7FNB17FKNYqe5gakvp8vQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-W30i31NfptgGEZWPchkbrcJqT6y5LWzo7XzSPX0qUTNSnGzPt0DlgvqZvaNIX8NGO2aESF1r6PoLVpturQrWKE1Uar05DY4H2XUiYyZ0QPV0x6I8z-fV2TEUY9o1vNR9N7pogjfaP7pSKhcs56nNprczEDQhq7C5-YKTHE3xLP5oLw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYR76Qz5GxHEMxCqXiWCN6LNP-9m4KovIwy1p_r-1V9sMnXFm2b46LB_ySNBaao79COSKsvu1RaiikAMTDBc2xOJTpReAz8mwMExKDtmF6vywxe_Gmuqs4mVHB52fUTo1V8Isxai2d0Kc1rkkzlugGAwLPmaqF4ITJQuUZRqWCvUUpRvsYiyON7vtPmd6WD6EgbucvyvgZAW-OQdoWJva",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNnIcP1Bi3S9XyJE5maAjp3ZSstWDPyWp1POjdBzeavoBI7muIYMGc5bG2Pl09oFdrSPIyNDw-hfxK-grTXse7IYLKv3pRAb9Xapa02cd753xAfY7X9oP9G63NE_9EkZqTNk5G_TwfJ-dIiBAkLoy3WEwoBOKpslymaZ-53Bc1iLBxfGUhbItQuFIc15irTGB2r8xkbmIfM9wKyYIDR4_2pYNUd8MwJ3JPqNrmmUwass-q_GoHPPazmHNgjji0A3OY3MlyE1sAo7DwXqy-iaPRPAkWKHizgEAMySuc9oE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERXMkP2NF3zO4HSTPprl6dgeMIOTOYTj1M6F6VLiIiTtit_8XUK0_fAViI2rh_OgQ5_kMRWM--l8_9uXECgu8blBhjxPbdCsP6t_E91-8O6YfAdt7AGRJR2zQwNJTDezgzfxjID4knPv5GWFWFvWC6-qM6MoSwicMyCF1RvEzPQ5KlX3DCehBEhAqterfjUtg7euyyabjB15-4vg_CgMUr6-Hs7aivt-MrpVoewnnWPxmuTuwEPZDkUju8g1RjGRKtcl2KGGzLL3JMCcSqAOIw3TE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdGQVROAdHtZc3VKT6mLGqNqOQCdSQTYdya01Q5p_zG54aOCntHKdv07CotUF-rhDHOphaExwZQ3d6kkvhB-L3RYVTEOO7CW7aNPAkILr0th5sGEA8dlJgiRU2h4p_Ssj4mXGt31F99w6QFcF42nbltWPtdj27FtWZ7mP5lC-dMSiuqtEEZP9uY29S_f8xm34Xzjl3wufdJB0StTXiaaFp5KnFTMV7eK20_es9M4jUe7YWjeYWAKNP8UW_Odqhs6ME5lkESXjqlVs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyyXbnDB44XX3YqcsQ6xviuVngxoKcwSaGt8-I8pIdzQDxes9tiIyS9NhH7Ayse8OttEDGeiakPOELk4JxqlsJVBuB6TqigOVoGm42-VjP16nEgrmVZ71KSoABRyjIus566VDkQ3ZMapfoysv6f0QPvtWHZ50rX2jtSxvVTpxGsIDjoliRmv_DjmcgixW0oA-iaRktdq6WWybXuMKHHZLkLTFnLzkL6IxGNzM0M0ZSGlKiY5qXurTWEvktguXAGLow9T3yMyyWnW32ZnvKgSq3g6O-jtsZWlRCcd4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE4TQWP1ISyeMofGEQt13vA7PXbDYj_AUCyphI29-hcn1ui3_JzdXQPIk7n9Ro3SnfvehjMPvhkQTSGf-ReOmCnGy_IV6l_xt6VCukTg80D9Pn_UNK_1fgDk8j7gM4TuYGwH3_mT1FHYxY1UukOng2JV6zvah61cF8DEwjPw4MEhFXfjVByPLjSutxsVog5x1FUaerexqP3a3J2sL8FXzs1y-h1CkBvem57ql1jvkCOSIcCPBUamWGfNdmS_IL"
+      ]
+    }
+  ]
+}

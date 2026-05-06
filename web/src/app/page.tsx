@@ -178,7 +178,7 @@ export default function Home() {
             </div>
             <div className="text-right flex-shrink-0">
               <p className="text-2xl font-black text-yellow-700">{partyAbbr("TVK", lang)}</p>
-              <p className="text-xs font-bold text-gray-600">107 seats</p>
+              <p className="text-xs font-bold text-gray-600">108 seats</p>
             </div>
           </div>
         </Link>
@@ -200,6 +200,28 @@ export default function Home() {
                     ? "AI-NER · செய்திகள் · SDG இணைப்பு · அறிவு வரைபடம்"
                     : "AI-powered NER · SDG alignment · Knowledge Graph linked"}
                 </p>
+              </div>
+            </div>
+          </Link>
+          <Link
+            href="/spending"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-lg mb-1">💰</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {isTA ? "செலவு" : "Spending"}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {isTA
+                    ? "வருவாய் · நிதிக்குழு · செலவுகள் · நிதிப் பற்றாக்குறை"
+                    : "Revenue · Finance Commission · Spending · Fiscal Deficit"}
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-right">
+                <p className="text-lg font-black text-gray-700">{isTA ? "₹2.99L" : "₹2.99L"}</p>
+                <p className="text-[10px] text-gray-400 font-semibold">Cr revenue</p>
               </div>
             </div>
           </Link>
@@ -255,6 +277,28 @@ export default function Home() {
             </div>
           </Link>
           <Link
+            href="/party-history"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-lg mb-1">🏛️</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {isTA ? "கட்சி வரலாறு" : "Party History"}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {isTA
+                    ? "தோற்றம் · தலைவர்கள் · சாதனைகள் · தேர்தல் பயணம்"
+                    : "Origins · Leaders · Achievements · Electoral Journey"}
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-right">
+                <p className="text-lg font-black text-gray-700">5</p>
+                <p className="text-[10px] text-gray-400 font-semibold">{isTA ? "கட்சிகள்" : "Parties"}</p>
+              </div>
+            </div>
+          </Link>
+          <Link
             href="/politicians"
             className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
           >
@@ -267,6 +311,28 @@ export default function Home() {
                 ? "சொத்து · குற்ற வழக்குகள் · கட்சி வரலாறு · நகல் நீக்கம்"
                 : "Assets · Criminal cases · Party history · Deduplication"}
             </p>
+          </Link>
+          <Link
+            href="/law-the-indian-constitution"
+            className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-sm transition-all col-span-2"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-lg mb-1">{"\u2696\uFE0F"}</p>
+                <p className="text-sm font-bold text-gray-900">
+                  {isTA ? "சட்டம் — இந்திய அரசியலமைப்பு" : "Law — The Indian Constitution"}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {isTA
+                    ? "உறுப்புகள் · அட்டவணைகள் · திருத்தங்கள் · மத்திய சட்டங்கள்"
+                    : "Articles · Schedules · Amendments · Central Acts"}
+                </p>
+              </div>
+              <div className="flex-shrink-0 text-right">
+                <p className="text-lg font-black text-amber-700">448</p>
+                <p className="text-[10px] text-gray-400 font-semibold">{isTA ? "உறுப்புகள்" : "Articles"}</p>
+              </div>
+            </div>
           </Link>
           <Link
             href="/pincode-map"

@@ -27306,16 +27306,16 @@
       "ac_no": 185,
       "ac_name": "TIRUPPATHUR",
       "winner": {
-        "name": "PERIAKARUPPAN. KR",
-        "party": "Dravida Munnetra Kazhagam",
-        "votes": 83226,
-        "photo_url": "https://results.eci.gov.in/uploads2/candprofile/E32/2026/AC/s22/KRPE-2026-20260406082820.jpg"
-      },
-      "runner_up": {
         "name": "SEENIVASA SETHUPATHY. R",
         "party": "Tamilaga Vettri Kazhagam",
         "votes": 83196,
         "photo_url": "https://results.eci.gov.in/uploads2/candprofile/E32/2026/AC/s22/RSEE-2026-20260404051435.jpg"
+      },
+      "runner_up": {
+        "name": "PERIAKARUPPAN. KR",
+        "party": "Dravida Munnetra Kazhagam",
+        "votes": 83226,
+        "photo_url": "https://results.eci.gov.in/uploads2/candprofile/E32/2026/AC/s22/KRPE-2026-20260406082820.jpg"
       },
       "margin": 30,
       "total_votes": 215316,
@@ -27324,14 +27324,14 @@
           "name": "PERIAKARUPPAN. KR",
           "party": "Dravida Munnetra Kazhagam",
           "votes": 83226,
-          "status": "leading",
+          "status": "lost",
           "photo_url": "https://results.eci.gov.in/uploads2/candprofile/E32/2026/AC/s22/KRPE-2026-20260406082820.jpg"
         },
         {
           "name": "SEENIVASA SETHUPATHY. R",
           "party": "Tamilaga Vettri Kazhagam",
           "votes": 83196,
-          "status": "trailing",
+          "status": "won",
           "photo_url": "https://results.eci.gov.in/uploads2/candprofile/E32/2026/AC/s22/RSEE-2026-20260404051435.jpg"
         },
         {

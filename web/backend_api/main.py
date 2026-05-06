@@ -2425,6 +2425,95 @@ def state_budgets_timeseries(state_slug: str) -> Dict[str, Any]:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 
+# ── Spending / Fiscal Data ────────────────────────────────────────────────────
+
+_SPENDING_CACHE: Dict[str, Any] = {}
+
+@app.get("/api/spending")
+def spending_overview() -> Dict[str, Any]:
+    """Combined spending data: state budgets timeseries + FC formula + theory."""
+    if _SPENDING_CACHE.get("data"):
+        return _SPENDING_CACHE["data"]
+
+    # Load the static spending data (FC formula, theory, breakdowns)
+    # Try multiple paths: Docker (/app/data/), local dev (../../data/), backend_api/ copy
+    candidates = [
+        Path(__file__).resolve().parent / "tn_spending.json",                  # backend_api/tn_spending.json
+        Path("/app") / "data" / "processed" / "tn_spending.json",             # Docker
+        ROOT_DIR.parent / "data" / "processed" / "tn_spending.json",          # local dev (project root)
+        ROOT_DIR / "data" / "processed" / "tn_spending.json",                 # fallback
+    ]
+    spending_path = next((p for p in candidates if p.exists()), None)
+
+    static_data = {}
+    if spending_path and spending_path.exists():
+        with spending_path.open("r", encoding="utf-8") as f:
+            static_data = json.load(f)
+
+    # Load state budgets from Firestore
+    try:
+        docs = [
+            d for d in _db.collection("state_budgets").stream()
+            if d.id.startswith("TN_")
+        ]
+        budgets = sorted(
+            [{**d.to_dict(), "doc_id": d.id} for d in docs],
+            key=lambda x: x.get("fiscal_year", x["doc_id"]),
+        )
+    except Exception:
+        budgets = []
+
+    # Load MLACDS
+    try:
+        mlacds_docs = list(_db.collection("mlacds_budget").stream())
+        mlacds = sorted(
+            [{**d.to_dict(), "doc_id": d.id} for d in mlacds_docs],
+            key=lambda x: x.get("fiscal_year", x["doc_id"]),
+        )
+    except Exception:
+        mlacds = []
+
+    result = {
+        **static_data,
+        "budgets": budgets,
+        "budgets_count": len(budgets),
+        "mlacds": mlacds,
+        "mlacds_count": len(mlacds),
+    }
+    _SPENDING_CACHE["data"] = result
+    return jsonable_encoder(result)
+
+
+# ── Indian Constitution / Legal System ───────────────────────────────────────
+
+_CONSTITUTION_CACHE: Dict[str, Any] = {}
+
+
+@app.get("/api/constitution")
+def constitution_overview() -> Dict[str, Any]:
+    """Full Constitution of India: parts, articles, schedules, amendments, central acts."""
+    if _CONSTITUTION_CACHE.get("data"):
+        return _CONSTITUTION_CACHE["data"]
+
+    # Load static JSON (same multi-path pattern as spending)
+    candidates = [
+        Path(__file__).resolve().parent / "indian_constitution.json",
+        Path("/app") / "data" / "processed" / "indian_constitution.json",
+        ROOT_DIR.parent / "data" / "processed" / "indian_constitution.json",
+        ROOT_DIR / "data" / "processed" / "indian_constitution.json",
+    ]
+    data_path = next((p for p in candidates if p.exists()), None)
+
+    if not data_path:
+        raise HTTPException(status_code=404, detail="Constitution data not found")
+
+    with data_path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    _CONSTITUTION_CACHE["data"] = data
+    return jsonable_encoder(data)
+
+
 # ── News Ingestion Cron ──────────────────────────────────────────────────────
 
 # ── Election Results 2026 ─────────────────────────────────────────────

@@ -1,0 +1,1497 @@
+{
+  "party_id": "aiadmk",
+  "party_name": "All India Anna Dravida Munnetra Kazhagam (AIADMK)",
+  "party_name_tamil": "அனைத்திந்திய அண்ணா திராவிட முன்னேற்றக் கழகம்",
+  "founded_year": 1972,
+  "founded_date": "17 October 1972",
+  "founded_place": "Madurai",
+  "parent_organization": "Dravida Munnetra Kazhagam (DMK)",
+  "founders": [
+    {
+      "name": "M.G. Ramachandran",
+      "role": "founder/first general secretary",
+      "brief": "A charismatic film actor and politician, M.G. Ramachandran (MGR) founded the AIADMK after being expelled from the DMK. He served as the Chief Minister of Tamil Nadu from 1977 until his death in 1987, known for his populist welfare schemes and mass appeal."
+    }
+  ],
+  "original_ideology": "The AIADMK's original ideology, termed 'Annaism' by MGR, was a blend of Dravidian principles, populism, and welfarism, based on the ideals of C.N. Annadurai. It focused on social justice, self-respect, and the promotion of Tamil identity, while adopting a more moderate stance on religion and language compared to the DMK.",
+  "current_ideology": "The party continues to adhere to Dravidian ideals, populism, and welfarism, emphasizing social welfare programs, the promotion of Tamil culture and language, and state autonomy. It generally maintains a centrist or centre-left position, often being more flexible and less confrontational than the DMK on issues like Hindi imposition and religion.",
+  "original_motto": "Kodi pidikum thondan mudivedupan (The primary members of the party will take the ultimate decision)",
+  "current_motto": "Peace, Prosperity, and Progress",
+  "symbol": "Two Leaves",
+  "symbol_history": "The 'Two Leaves' symbol was adopted at the party's formation. After MGR's death in 1987, the party split into Janaki and Jayalalithaa factions, leading to the symbol being frozen; Janaki's faction received 'Twin Pigeon' and Jayalalithaa's received 'Rooster' for the 1989 elections. The symbol was reunited under Jayalalithaa in February 1989. Following Jayalalithaa's death in 2016, the symbol was again frozen due to a split between O. Panneerselvam (OPS) and V.K. Sasikala factions, with OPS temporarily using 'Electric Pole' and Sasikala using 'Hat'. The Election Commission later allotted the 'Two Leaves' symbol to the unified EPS-OPS camp in November 2017.",
+  "headquarters": "Puratchi Thalaivar M.G.R. Maaligai, 226, V.P. Raman Salai, Royapettah, Chennai – 600014, Tamil Nadu, India",
+  "key_splits_and_mergers": [
+    {
+      "year": 1972,
+      "event": "Split from Dravida Munnetra Kazhagam (DMK)",
+      "parties_involved": [
+        "AIADMK",
+        "DMK"
+      ],
+      "reason": "M.G. Ramachandran's expulsion from DMK after demanding party accounts and growing personality clashes with M. Karunanidhi."
+    },
+    {
+      "year": 1988,
+      "event": "Split into two factions after MGR's death",
+      "parties_involved": [
+        "AIADMK (Janaki faction)",
+        "AIADMK (Jayalalithaa faction)"
+      ],
+      "reason": "Succession crisis following the death of party founder M.G. Ramachandran."
+    },
+    {
+      "year": 1989,
+      "event": "Merger of factions under Jayalalithaa",
+      "parties_involved": [
+        "AIADMK (Janaki faction)",
+        "AIADMK (Jayalalithaa faction)"
+      ],
+      "reason": "After electoral defeat, Janaki Ramachandran quit politics, leading to the reunification of the party under J. Jayalalithaa."
+    },
+    {
+      "year": 2017,
+      "event": "Split into two factions after Jayalalithaa's death",
+      "parties_involved": [
+        "AIADMK (Amma - Sasikala/EPS faction)",
+        "AIADMK (Puratchi Thalaivi Amma - OPS faction)"
+      ],
+      "reason": "Leadership vacuum and internal power struggles following the death of J. Jayalalithaa."
+    },
+    {
+      "year": 2017,
+      "event": "Merger of OPS and EPS factions",
+      "parties_involved": [
+        "AIADMK (Amma)",
+        "AIADMK (Puratchi Thalaivi Amma)"
+      ],
+      "reason": "Efforts to unify the party and resolve the leadership crisis after Jayalalithaa's demise."
+    },
+    {
+      "year": 2022,
+      "event": "Internal power struggle and expulsion of O. Panneerselvam",
+      "parties_involved": [
+        "AIADMK (Edappadi K. Palaniswami faction)",
+        "AIADMK (O. Panneerselvam faction)"
+      ],
+      "reason": "Ongoing leadership tussle between Edappadi K. Palaniswami and O. Panneerselvam, leading to the latter's expulsion and EPS consolidating power as General Secretary."
+    }
+  ],
+  "notable_leaders_through_history": [
+    {
+      "name": "M.G. Ramachandran (MGR)",
+      "tenure": "1972-1987",
+      "role": "Founder, General Secretary, Chief Minister",
+      "legacy": "Founded the AIADMK and led it to three consecutive electoral victories as Chief Minister of Tamil Nadu. He was known for his charismatic leadership and extensive welfare programs, particularly for the poor."
+    },
+    {
+      "name": "J. Jayalalithaa",
+      "tenure": "1989-2016",
+      "role": "General Secretary, Chief Minister",
+      "legacy": "Reunited the party after MGR's death and led AIADMK to multiple electoral successes, serving several terms as Chief Minister. She was a powerful leader known for her 'Amma' welfare schemes and strong administrative decisions."
+    }
+  ],
+  "current_leadership": [
+    {
+      "name": "Edappadi K. Palaniswami",
+      "role": "General Secretary",
+      "since": "2023"
+    }
+  ],
+  "era_timeline": [
+    "1972-1977: Foundation and initial growth under MGR, establishing the party as a significant political force and securing its first electoral victory.",
+    "1977-1980: MGR's first term as Chief Minister, focusing on welfare policies and consolidating the party's hold on power.",
+    "1980-1984: MGR's second term as Chief Minister, marked by continued governance and implementation of populist schemes.",
+    "1984-1987: MGR's third term as Chief Minister, characterized by his declining health and eventual demise, leaving a leadership vacuum.",
+    "1988-1991: Post-MGR succession crisis, party split into factions, and eventual reunification under J. Jayalalithaa's leadership, leading to a significant electoral win.",
+    "1991-1996: Jayalalithaa's first full term as Chief Minister, marked by strong governance and initial allegations of corruption.",
+    "1996-2001: AIADMK in opposition, facing numerous legal challenges and corruption cases against its leader, Jayalalithaa.",
+    "2001-2006: Jayalalithaa's return to power as Chief Minister (after initial disqualification), implementing various policies and schemes.",
+    "2006-2011: AIADMK in opposition, serving as the primary opposition party in the state assembly.",
+    "2011-2016: Jayalalithaa's return to power, securing a rare consecutive victory and implementing popular 'Amma' welfare initiatives.",
+    "2016-2021: Post-Jayalalithaa era, marked by intense leadership struggles, party splits, and eventual electoral defeat in the 2021 assembly elections.",
+    "2021-2026: AIADMK in opposition, undergoing internal leadership consolidation under Edappadi K. Palaniswami, leading up to the 2026 elections."
+  ],
+  "overall_sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXRoX_NnHvEtS5l9dBDfKApc3lXHy5L-ScxTJTbVzWk59XMJTppXmZCAKX43c1088V3IBZdE2Xg9f3uZbHLCFIs941MqHCa3_GwqbRZQvIMDVhP-NsTr7-dh7_vz7xgnbhY8byFBBzYdnJg19augtODBLTWbi0jPrYhF5e7TQKCEc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYjRMYITQXPJYtR5cTE9yYj3OmF5S8tv6CyI7yto_C3f2sUDrwiLYiDSNc6N8jPtk7AYam8lKSteGAmCQPwn8hlMUr0mcYp4Yx_kd0-862l0E4Sl2UuZtnMUnf09kUnPzqbYkM2Iwxr-5GvusEtve-cmi59-6yQO5D7pXuKBMzu8oM8UA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN8tK2N6Jt_jmNEffZZFykaY2xcHpaZ2FTB2GJoLRHG3NDXYQv9zp5Tb4fyASDOg6WN9SpME8PjdAfo90UD_38DNZx4lkqoUcnPJRPP9CTnQDLEcc0AZenIlzpxxyj8PfnU-l4aWwvjglTzS-KXjKH1FM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJD3uHPYITxfn3quhqclHpprcqUrr2K6E80C_atCEPKK1tmS1A_152nYIEPeZSKg3PgM950xN7QzxvfAkX-4OF8-VhwNUXWk_EhGNIcDcWaqoSaV5b7aBweTr5ykAhSFdHqZ0BjVYj7bxC7XaiXE4PFF06PfQNPMQdv5ghSf4MP6_cHsNVNQayC351zJ0YIY31VnqzD3PxILTb967kW0O6lX1XpnZ_QX2AIp2SGVkrw3eKWDuVNJXD",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtgv3XJRVWWOu8Bu3oJy7NXQJHGhTFsZdCsL9U1yB1QRo9dV5lWZS4montwff2Gx6lGd2MRYFHMYpmoMyG8X2egjccLQSpQQ3KGFq684xMbURv14xdE3Tj5sKlX5kUweBjNjoXYq7s0UFH9oLrow-88Y5WNzzIoxuHP01-Zbhoa_p2POvVIvMn8YegjBLI68lxqUcB",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRSdxeIHJ3X_M9E9lRwSZrJRvbqxCAhfWc_9ankIVCOnOpSKma8aA5lzHdOOyC-fM0V9RJyX9PPkuVetSKTdZrVZz-KvbXsR3t0-gidRtwQFRPTq7ZRJRdX3HPtJh6kOBR7LfEDn5K_k7tzi2DnxOIogr5Nerg9OOWhBf0q2zDNrHZ_Os0O1uCtoMMS4UlhgMhjolwQVo0_JptAdKLVocuEoQxtsP8Oen1X5SjA1PNhsO1QiucGr2l7o-EbaU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWYXsNhn0WRnPqxT4kvl90rZLlTXm3eAccKRqUWF1TDuwRZwdPV-FnQhtfcviRLO5wSJt5WeWV9oI-QF0QltKSemAvi65LuM9ZM1qtMb4mCnzL5cb4gQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrPHdGl29oWJtvPfIOlJr8JrKIuKKzg74_gNPUB9Z4G_CBWL1WthDl4QCcNyYNXyZzPyy1sOK6hxc7T6HfiWkoelE77m95OqVApoGmFi_aCRQ1o2vQEUzj9mcdW8A3CyUlThoe9i_FuKl8Wg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYMzU3FXM4qucM41fT-cNIyyVFbaQag3xVEHU1q0-D6-VF729162m1nKaqdO9Ys3XzhEq7noXRKvyjSvCXiOfe5up9r43elgImgFEASFS6SjlHEF8ho9bqi2QisN5PDjp8mpLsn8RaB0ufNzfo6Pqf",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcKS1Mq9u8ahoAY2riABgi4EpQQStg1zyw8qvSX1KC1nTwEMXE4_yvTQ4clUDCnjDmdwPsMl7hOTzE4BYuLWL70LGHD1QPF65yh6KYl2biaxlKys-UfJ4hYBuX5G0XPtug9qRA8HFBLxA5-S62JgxWYrgx4ZV3NpFp0j8SrRPlNje0i47g8RodiE_ZxufqJJdxW-26dHqiaFY8b7MlQW7UMuzR6agkFSRFqvPGZjE05QwiODARb9-W",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3AyGdOWpAYGrdxBgp9doVxWMh4AGsW7IVJnu5HvspvSyr_xV_JFEZns7GnjMt-Qf-zyf4TnnpRK7ldNK_lNQ3p_-d21chbtXrvdpffMTgKvMVCIzVdIPNfncp2cf5rzO9G7Dh0tnBoL3EtPUFAXCKrGqM8tuC18_0HW-R5VuB5kToNy_9nBMSUO06KA0Jl9_Gepnp2h0U8QApGM6ntmFJwcB_sBCuHhEcHQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzSsqlFfC7jKPfusYm5PGwyG6Xn04qZzcozeibm_06ez3iterbcV8bp-CodUD2DvHZ7OGuhzAH-Q91Y1W5dixY7OVZwZDwLJXgBbFgEWsnRtKb0eSyev3nLsWYmSJddTOs_ITzk8lYsOvIssZq3QazZUBu6cFbpTqQh8MeUWQ8Zzmd_6aqElOZtN9duRkfJ9TNFjKzu1w8Gvvj-abE_hNGfmILE76N97SxlgQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5m4cU4laaeR2hdlg-9RzsF7iHBAHv4yvX9i_3_RB5akOiTy4NIpxlsCsWRxfLmUati1nVeA9Z_UrB313leJV5Ynf_Qu7ZUXQQAU4rIwYyw48Sa9dduKbC7detAUprKN8pgXv6",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_BLaMEhIVSFKpCv76bOuX0urD_hKvZVucFjDm1st4aZexnM9QHnoImHhYngxuhQ0vA2_KA55jl35zclPcmWmdS-MwYTGUnMUce7QT2incxnFUbXFBwmYS7qN1_T2IjFF7g6erb_F6_Z10pFI1wtwfXdsMXVfb-OAPWW2DHr7p",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS4ZZnY5mnbjmyivhzfL2KpawzFRw7hfGMPIvE77L5EHFfk0_wChA9heYyca6gNx6gK6B3Ynyj3RMOPV9OSw_DiiwCSAY0MNRVQbpmiIUuxVicQYk7fKxJMO7v0fz4ow==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVRZrjmqXWrD-k2_MZh1ZYsbm28llJ9kaOXn-xKp7G9cxKfsUIlHkbRe6AV5GYlHuk0rFVaewYbqJnyMuy1HPPuttNeZm1gauRm9BOmv1xOLx5djio1n-W605FXCCOWWLeFvCB_yYHY1i-FnSUfqSbvauziafdZImuoetISchPC9sjZc_y4amMEPveRP1XSnLUMpfsxXWQnRdxS4nBoQ2DTBFaQFexVzmorg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzbb5IJU9ZZMUIjRMzrsWC68i3rf-T8YYH5n_ovgaZFhSn5ocJRFZFrb13p2oLd6bbCXn3OVkL58NDjDVx3Vc_jTKvkc9f-Sx4erFuJUzkzh1fYu4RzJd71d5LZkuIRMI03-zLCvtQcbKy3DS8gS5kZfXzOBVIMTho2vNetSTuzAfg9jcY",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdpTMXczYtzjg5I36EF2YmzgYMgkECjzWuFtQ28KJjk_bcc1moSEZLbaghILgz3wjviLWV919acr8GV7qjVIYDf23_6EyDzpkhoRM9vaT25i8mgjeFgdqcs1LuStsVOAsHr_6Lwu9wy8f9nC6TdCA5FARy9LVxQSQSBGcjrBMY5lseXofA8d8OC8veXFpkhvj5snnBlnGFSQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGP74b1in142plO4M0E60A0aJaUEVPG3gq-hxUvDGkbndDIIEpEwDtiHUyeT3sQm9aCk5GySeOCPw3oRzshgisYkJ4B9BUdzFyEyDCFM145g7ek6bgN8DJtCJhgYkMgjd_vG7U4cIHjFrz5IbkeLbAC36gFYrIhHTnNRF1i2ipudtQxh3_GETkQlroOfZoS-ATmD2WYipVTQpetFQhHT_qZpo-TWGr2k03yA4s=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVxHitfrRiC3hW6CbGV2iP5UVuO6_pldHmtC4pNLxS3AFakXeVv-If7D3UUDQddOKvB2ENp-OOwtrB8omcRHP-LJaU4eXbUcxlXNsA790WZBYAzhA4ePxQe0RTQ5uBHUuYFh4j",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeJPC0m0PCOaBw6P2bq-O76QLfuQqq0DI4VInsxTS9b8lrG509pPMgAkyMGicL0IFkmUqlf1PP_lcLFOQycWuYm0Nqywe9IHtREaiQ1qd-yPxb08ha2GUJzGZqh_kxK6fU5WEMPbq7A2M_jpg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQwPb23DwdFeTehcHmC1pY3zopL0H8AwXXyzVMVKsZGkxduCo7jCVWyOyUK2qtViz99d6VplSP5aOS-0VfvQBLCu41q35rkNjS6OP7FTJwyFgOiVDwfq7NxVqTDySD5IlR5-b26fMBnDZUKR8a2VBJeII6QrF6KKAxo3TwKKRFn_2khYitBF-x5d3RF57kMdR5ycji-C5sDNIzRpD31mMtMm9m5jiHjBxZcTxhtA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwnuP4Bi5XCe5bBwFPnM4-a0V7FZRkkqA4H71YGhDJxOXDm2jAdNbUUzErgJRuRTyeTqXc_HpC2ERiwOy2pfZHDz0ZrZJZ-xKCqKfvoQ_lXM2yMVGiPIdOflFa2ez100Qn7meBU4mF6fzcL0M=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnfwvc2m41w7MQXq8YLE0-b-yCk1zOniarYgnpHis-mKi3q3TyqcricBvXhBxP15gn0s9NVsYzA7cXpaBPXFzaYJymHFIEJLs9LEjVzlfJomaPThcPtYfRCzdTzbPS51eX5pDT2fPpB4iPHF_rdYuV52NXdxVG2BAVLC0O0Q8J8M9RJZFtTi8=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF138Vr4XxtzZIjB4I0e7HjTI94r68yquNViLdG5ZR5J37UGrCMO4UR6EG_Iqwa6Ir0Af2D25h1MRhy7Pju9U6nyezIGd_iFV7b9d9fTD1-Om7pM8oEw6VEH-T6QrG8aWGByQbfPrg=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9em_Li-xFdjYFCU4VuMeyCwWP0jz4DZLVboXlcpwRmuO-Tr8NCLNln0NWlQzlmWetgq4AtECC45sfYN6Le_rCZtiTBlD1Sm6W7EF7RR4jY9xxDnmaAkke8hQ14NwxvFByP_BFjJx2o82C",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW6KJL8S_C7ouBdp1eIg8V6PKXDIAeON4mFVmPVvguOnd0vdvp_EI1BKgSkgjFlY5JxWyyeT0rxOF1t7w5DIhezLrGWTdfqn1fLnwOiIFEkv38AnH_hND8qKu5jnVJSBhROLtdXvW7pognVOISwF7wGfs3d3x4ZErsJH17tbFQL4Uy7TMx7ozERr9_1UWK6cWxYYiFDTIzoDD95OMrj4IsR0xNrO4kirkT4Kh9jVRG7eYdn34laPc=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbeWqQGIA9xig59W-CxgpBlt26tSMCM1jmqT5PyXBNrlxn9Xk8KD10tATuzfJ39_CuYJwhHr1u3XkJLUVhRitwIqSjJY3pKs1NUxntQqZDtH9hqYeOOjR9qh_N6-jq1DRSKaDxfCvlKb9aMAu7q_tMusZE9F8_0yf7j1aGEBf2Vuzu1WSS8mrSji1o3Jwl2EQI6lPucRQ6r17krcjW-k6m-VS5GQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER9SjudkqzRre7cVL4TOexuavZrMK6x2MxaJEAyYBHuG-kJHvJ5_1wDMLbjITN3wAgWRh1179pRIrWXYXDND8AIweUMGHzqbVOnm8BDM4_sof62uhJPD3HadGzlWbyA8QooZNkYqoiC1RmYtf4d3xuQPuTFmZSllMGWUdYgMr6rgosJ-GKy3x5nd7SOs5dWAOOUOCRDjhCuhImGKWi0w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBYTbltjVXVCcCExS_Vs3INwEboASGK6_SxmpXfqs2HIkxBkxtZoCjACvCkDlPQT7Xjbk-N6kYhF8r04JPNedDq-aP9yDzxV3WiKJ7EtH2xklSJXmxa-Gh442jYFt6irawojfhQrQsnppuWms1ooMxdEnaiV9vmL7ZDWYRXX1zov1xK-cZvJCya-pn28Nqq2ll9Xta_51tbCoAQS3-CoCjuQIFyGXfD0mTlgiXGIL6HHGRV3iKiiw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_u7RtE2TpHhTZiq6lBAhCjCATN8V6fOc7Uio6ASmo21nPbZJoKJ9IpDB1trLpOyLOxEI6C_NbtVH1zoXS55YkLnB-kOfEiVQv68pSSM3zcflZKofYAq0kWsZ2TDx803PdGnDCP1SmgEL7waXGayPiu4VD6klK7wy0Jp-JHeyfS98UoUiLsnjN8lcWXNLeHLgMj1lAVFwI9S8BzSicLvslP6QD67FTn7eQfEEAjtVgvTdbCR3i3vBTpwvw3yhaqnxgWJysJgmPbs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmRJ9OtJYIJipVGIXLfaFAPz_TI1hLr5W_909f_ckF6S0hmAIzBH10F3EJDsxlFm7-UH6uH5aGMdWkTTQeJSrgrXJf-euEY2vte2LHcu3xerLkDbACBOZj9bskyVM88k_dMf4dHRn71H7Q9hoVYKs8OS3hPc2aBIYj5Bqh-Ec2mlV3cApCqiCsv2gIcOyDnleL21bpxHsgPTU3s8EULu0q1-biiiV6VOOgcmWFIgCmZJ4w5_ylNJw0Ff67j6eOqZZP",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGIxWEms1woWYe5nrdmcgGMO0xbItaoy5gnSTCrqpU8dJF_SUBRIbNY4vZdAa_X9845iGE57cifl-zidAt1hy3GkIy2yCV0dHNlikOdjI_iGQIeuMGjNmaBw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVojvefEBdvuCzr7vCWEto5es8OKqZwqfnyoAMX5DQ21OqvAsXmK_eaHcE26nIxW-Vc79tRpG1lg7uFE8S0dSLcE8Qm0Z-pmnF9mOl5RcXisMTALozD9o-A7Aa3uo_arAskW6PwXQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1EGe5je-jEQprr8-7QWL1CsJgBmRD-lnNCi0rptD4iMoDs6juoraq5UBRRjAML5kDw1trEqzJBUyaz_l5UYKbG6TxP52fJMjaFseMICQvkhMSDwa20KUTNorDvvTf5-WWgmwS2oe0vZ5EtS5uErACgmXL3swdMBcvwSrtknvSeqMpaH5A-H0-ktLLfWtN4eH2uyWI7JczPyXaRfNHkKnKmdv-uCoxRX65XGT8XhILKwLmNc4bh8mB",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3TVUFQW6-rKdUHf_2g4jcZrwveiH6amm7to4cQgR9ybHo7zq7jBAiIUAV0vNySR3arnkeFXJ8cEWjqQLDBWnEGXW2KzyiYNcJxYMpzNbxhpMJmB69jc_FtpO0CX8oNJZDOuW7oHdkSfRDKyRh0ORlf50QUdSsxyP77NMifLzzqAlOQm3gjqLKy54=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB_oZLzz4AGRLU_vtGtZ0eqNiH7k80HKHw-2MvODfhxw0QE0bhYo365HrqGjm6hidP36eMZm-ReZFRkZ7EapOLr2sJK_u-Z16x8OmWIbx2gjoVIO5TfasdoF8ZnBN4ntG9CN1hP8PYnjCcdgFjNe3F1YEoqXR25Yhi68WrH1RmWtaNAVwFoujpF9w-qayhbO0ZfGQaabgMCapHA3z64lIlKmdv-uCoxRX65XGT8XhILKwLmNc4bh8mB",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5Rf3P3aEFd2Co1CKDEOEaP5Ywqfk0YmBiIzdvM8SH1GyVQSGMgP8s3voG0qbghkwFGDY7vI2MF2EgFHpgiHqnIrJYSfAEjOuwC1kTKFZiFnUzBkHtuehguJoFtinWi8R4tSWMlp_BpM3MVB60NbIMH580MIY4zYUi0SIr4Ys7V4CAVnpxdUQsVSib8E1TiOmnHkrutyrJ_BX_VAvxtuE4FgFmDmF5YdRD9f9U4tptzEWNcT4OXJ7MWjE=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV47Hf8ougoWYp-epk7emQnhXWgLRWY6zldvGWS9e6US95z2cqTxzORMVYwDVAIrq454sp929WMDU4CrU4IVrwPQndDw18Tcjjjbqe1ILxB4py3dAVoBfsEv08eDQXgZ2-r2qBRKgY2I68tv0-wijJtALzHb7qVtwjChKt-6G2Qb7MpbturEwOp8SvAirX9QBUZw5aefwDCgfBQS5xpnvPZrocMJ6OuonXxwWf6qrV7nmmbspkM7inaEI6XqS6_dVlJ7QiSaNd5OojJlw5k6FjF97F5L6x4jnX3Q==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9XhbxLIvoXtzDSLQCCQ-HKHu1Aqvd9IPNAU8PDQO7NjrRRZ2ly1c7y3gIV6sA19LL5suG6Z1mwDcfIkc1MGiaJ3ZLg9bz0LuzjoOe8HF-H-YnVU8Wybx4uMMEmISH34iQOnLYl-hz8EpaHj114mT-V1QhGPcM3R5cDz7dArlJslKDUH6Gy81z2XyPDwp8GfT9_40z2llKW8XdTCI6twATsPLL9zO2OVzvq1s="
+  ],
+  "chapters": [
+    {
+      "era": "1972-1977",
+      "title": "The Phoenix Rises: MGR's AIADMK Emerges and Conquers",
+      "narrative": "The year 1972 marked a seismic shift in Tamil Nadu politics, a dramatic turning point orchestrated by the charismatic film star M.G. Ramachandran, affectionately known as MGR. On October 10, 1972, MGR, then the Treasurer of the Dravida Munnetra Kazhagam (DMK), was unceremoniously expelled from the party. His 'crime'? Demanding that DMK leaders declare their assets, a move that exposed simmering tensions and allegations of corruption within the ruling party. Just a week later, on October 17, 1972, MGR launched his own political vehicle, the Anna Dravida Munnetra Kazhagam (ADMK), later renamed All India Anna Dravida Munnetra Kazhagam (AIADMK) in September 1976.\n\nMGR's immense popularity, honed over decades as a cinematic hero who championed the common man, translated almost instantly into political capital. Within two months of its founding, the AIADMK boasted nearly a million supporters, a testament to his magnetic appeal. The party's ideology, termed 'Annaism' by MGR, was a clever blend of Dravidian principles, populism, and welfarism, rooted in the ideals of C.N. Annadurai. It emphasized social justice, self-respect, and Tamil identity, yet adopted a more moderate stance on religion and language compared to the DMK, appealing to a broader spectrum of voters.\n\nThe AIADMK's initial electoral forays were immediate successes. In May 1973, the party secured its first victory in the Dindigul parliamentary by-election, followed by another win in the Coimbatore West assembly by-election in 1974. As the political landscape in India grew turbulent with the imposition of the Emergency in 1975, MGR's AIADMK strategically aligned itself with Prime Minister Indira Gandhi's Congress, even supporting the controversial measure. This alliance proved crucial when, in January 1976, the DMK government led by M. Karunanidhi was dismissed by the central government on corruption charges, leading to President's Rule in Tamil Nadu.\n\nThe stage was set for the 1977 elections. In the March 1977 Lok Sabha elections, the AIADMK, in alliance with the Indian National Congress and the Communist Party of India, swept Tamil Nadu, winning 34 out of 39 seats, even as the Congress faced a national defeat. Just months later, in the June 1977 Assembly elections, MGR led the AIADMK-CPI(M) front to a historic victory, securing 144 out of 234 seats, with AIADMK alone winning 130. On June 30, 1977, MGR was sworn in as Chief Minister, marking the culmination of a meteoric rise and firmly establishing the AIADMK as a dominant force in Tamil Nadu politics.",
+      "key_events": [
+        {
+          "year": 1972,
+          "month": 10,
+          "event": "M.G. Ramachandran (MGR) expelled from Dravida Munnetra Kazhagam (DMK).",
+          "significance": "This event directly led to the formation of AIADMK, fundamentally altering Tamil Nadu's political landscape."
+        },
+        {
+          "year": 1972,
+          "month": 10,
+          "event": "MGR founds the Anna Dravida Munnetra Kazhagam (ADMK).",
+          "significance": "The birth of a new political party that would soon become a major force in the state."
+        },
+        {
+          "year": 1973,
+          "month": 5,
+          "event": "AIADMK wins Dindigul parliamentary by-election.",
+          "significance": "The party's first electoral victory, demonstrating MGR's immediate mass appeal and the viability of the new party."
+        },
+        {
+          "year": 1974,
+          "month": null,
+          "event": "AIADMK wins Coimbatore West assembly by-election.",
+          "significance": "Further solidified the party's growing electoral strength and public acceptance."
+        },
+        {
+          "year": 1975,
+          "month": null,
+          "event": "AIADMK supports the Emergency imposed by Indira Gandhi's central government.",
+          "significance": "This strategic alignment helped the party gain favor with the central government and contributed to the dismissal of the rival DMK government."
+        },
+        {
+          "year": 1976,
+          "month": 1,
+          "event": "DMK government dismissed by the central government; President's Rule imposed in Tamil Nadu.",
+          "significance": "Cleared the path for AIADMK to contest and win the subsequent state elections without the incumbent DMK government in power."
+        },
+        {
+          "year": 1976,
+          "month": 9,
+          "event": "ADMK renamed to All India Anna Dravida Munnetra Kazhagam (AIADMK).",
+          "significance": "Reflected a broader national ambition and a more formal identity for the party."
+        },
+        {
+          "year": 1977,
+          "month": 6,
+          "event": "AIADMK-led alliance wins the Tamil Nadu Assembly elections.",
+          "significance": "AIADMK's first major electoral victory, leading to MGR becoming Chief Minister and establishing the party as a dominant force."
+        },
+        {
+          "year": 1977,
+          "month": 6,
+          "event": "MGR sworn in as Chief Minister of Tamil Nadu.",
+          "significance": "Marked the beginning of MGR's long tenure as CM and a new era in Tamil Nadu politics."
+        }
+      ],
+      "achievements": [
+        "Rapidly established itself as a significant political force, recruiting nearly a million supporters within two months of its formation.",
+        "Secured its first electoral victories in the Dindigul parliamentary by-election (1973) and Coimbatore West assembly by-election (1974), demonstrating immediate public acceptance.",
+        "Achieved a landslide victory in the 1977 Tamil Nadu Assembly elections, forming the government and making MGR the Chief Minister within five years of the party's founding."
+      ],
+      "leadership": [
+        "M.G. Ramachandran — Founder, General Secretary, Chief Minister — 1972-1987"
+      ],
+      "election_results": [
+        {
+          "year": 1977,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 34,
+          "total_seats": 39,
+          "vote_share_pct": 56.91,
+          "alliance": "Congress Front (AIADMK, INC, CPI)",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1977,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 130,
+          "total_seats": 234,
+          "vote_share_pct": 33.52,
+          "alliance": "AIADMK-CPI(M) front",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "MGR's expulsion from the DMK was triggered by his public allegations of corruption against the DMK leadership and his demand for party members to declare their assets, leading to a bitter political split.",
+        "The AIADMK's support for the National Emergency (1975-1977) imposed by Prime Minister Indira Gandhi was a controversial stance, aligning the party with a period of suspended civil liberties."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrA_dkTF-mq_-BnCpqa8fY0ZlPfBpzcrnidJ79T8g-6NB4c1_msVPsTSkMIjA_fJMW2MftJjzAus0eKErM850v9lx1S3P4KzOiGKJZPyR7cLwk6zevazbi_JrMsyulJrjQfXAdU0IYc--wDLiBi3nayL39DWGmBeYC00ZSiLoudxo3hOY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnm-Q71JuECu7KYrNJloXRu3LfSDGV68gHh6uNbz6-1Uo4HjrMlfxGKfOCbj26LWEqCMuwLGYrDj3tEbBus74xYIN57TT5HNaYwjrIFAFrnFC9B4LYmR1cRqF_J48eEEt8YBuctpXakVMCng==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1h8gFxC2f8s3SSetZHzmn66-lUSQAqqBRWGJBWLZ2FU6EwmJKOs0hrz8oc7NMLObLczZDMohO4yBfHOafw_3dYAwqMYxrKrzNawI-aUx55GGl4QNhv3dx1J-1td-ZMZuR6xATCpgsXDx7F2hboiBWlPfhE9yZK8SWBe0v8yE__Q_0ew==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE34RWzsVVsy5GZYsAfO0OpigLUG97jZYiY6a6Ydc0pOvOG92vafbKlX2FdVN_C7FuzTwpwKoTKak6-gHASWin953DS3CsHHLSFikqAE1wSzIgV3z4r9Cjtm1VcJS9wm4Ku9K60rSpGcpFrpE1h8bNklEM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCQgylSWUnAHoFlk7OaIcL3xYVQMmyKmPJx8t-57pT9ESIIScIm-eyP3V3eomOhn-O78GV1k47lA9xNa0PQl1Jz-NnootjrGOVinoL5PY2xAIAOA8NUfPbVqng7qZYjYKaMfnK3c9h1eU9-0S9rYMOPV75xsg_JF4oCcAfiNtLFDNfpMQYICeXfQywZf4R2ta",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn5rXk-1sfXYTIQhGP1nxN-TRgqZ1TGt8Qfvgdieh2UnP-j7ULBMcLwN0k7UEESER-_Yr-xtLiDhJxzSiNGWnGqtJkR-VmbouGiGZre5cgdtg7-YkieOn2WyybWmUKHEm1yXyzL73wHrrtkdcg5bkFQrdMEHv4Ra6iJGVRiQ3SQ0gdfqtKKw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9t94_K3aSM5ywFICk260hZkkJtQzbHHdvP8VkSmOfIunda9tvpBLdriT501dNxPycZWL8c0wxi01_FeMHelk_85Hj2FLHKivhw88g0rFMtn_Cd0bd2qmFnyRHka0Ar0433D45NFJkzywbfmaTrltE1LjehMv4weKT7jKxqv9UE0cCkzYwWd_FwjfrqswCRcD6eYxU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL7JUod2VYIY2Xr4379JG6Emq5Lgd0F28fHT7jfZFRR1ClXfZ_mQiNQ5ViBwANwUty-MByjRBuivqcbIPKJs8eknq0NzXHPPfF6P3Rxo92p-Gw2WKanmVxKkADnbY2hirJxJAs1kIYhMrogwU7RqN2B9fBvUVVD7gLwrNVE5Jhsf1SbiG_2SIYCd3OXEyM9gitX3BylB9xche0z-aCqQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDlY938m6qNcoj_u2UQ80aiGWtxqRKf1vTSLs6XlqlqUZdmSY2dGi5ZofZiN-plMLI2PFH3qjNmlmidNN5JTI1dxup_rKw1MsldLP__JMR67480RhFLql-m_El7i2UC1pDuM0VEpEAYfiTHOLXJb7ABe-3cPAz3l88snSDCDut6wtsjzkR-VmbouGiGZre5cgdtg7-YkieOn2WyybWmUKHEm1yXyzL73wHrrtkdcg5bkFQrdMEHv4Ra6iJGVRiQ3SQ0gdfqtKKw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCYH5ky6_zl4pVPhcTDEKFdRMVsQBGZGB9iFcbEJ7BCB1K7PhtCJvIE_OAc_zkvX7vpCydXyl1EREEiNLUqExYk_nAH1SUNSfqG0cmyI5JzPF594TjF3UEby9KPp099KzA",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTTOtX-6-k6_aOLEC_11a61HsbaZgqTm-6ux6sgWwKqZKcTRSNG0m7h0tiLXdU_GIAKGhAFUnoMKGJ36IVMUi1r1MPqp6RlKEwkjbarLqkG6chx70mHAXwNhe9hgae3lvbO-ATbngnsghsMxw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrxQmUG_J0VxJJvmnIStWmuN82QCduN7GC-j5MeXagA5T-_FV49C-bcWO6v9wcaSdAtDcZYus_uPNmcg9RTxFON5UTAtRG17Vv4YPMZAGvyd8Iw9n5WXdPF_6kTajAT4t-CduuDrrRREKnLig6kM4jezdA-h1ZGoFI8hpJ8O6CLHlZH8ev8fg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI6TrHZKd-AwCIm9XGoPUXIWVrvLOQH6CvpWq-1x2syPH79cJ-srMSO4D_0F0nYZOyth-4P_kXjSeESaXPk5Kl5CaZ7YkXTtSnFce2QZjexHwb3YA7F9sz5MwhDfzP3vGhRyINjnyZCxEYxk8uwfUmu2WkXeWmLBNss1dyZbg-4ovX35iKWdylrMWym-v9b2c0hriIg4Dsf516BvAt3DVXl_Z5gvLmsVkQBhTVbGEAQoQ9h7Li",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW00PZLJJawWmoifLqTrccjiw-MdUZ23VTN1fMzmevpgJgZF2FAxK38NXnXCsz4RtIAlWPAISjhmab1nDNCix3UCVQFyn6BYiqW4qlu6O2N0oppGsYWgzBXkSGh7w0PIxr67p5OtWTrtcM5J-TJqWViGnQOQiiwQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqwZ24zba1k1AWFgGp_29IyRJ2fQiipITixwEYRPgKixBf59nE5DfAGMHTAxa3w4NvywF9JdckZT8dqod7KvcYvfP_JPYetxqXbP7nYItGSsbKEHDvtARo5KVF_CCHIJNhn1YlCBAaXGJT_DVVUttE5Np2KnT3_VI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoT_Hqlx-cnRNYz-GQ0012Dvr3g_XKBSdeel4Ry2-78sD6IyRpsZ8CVGwuO8-_jXu_IrBror8C-LPF0hEXsQHcVVDVG865uVCLWZbrvDuualqrAwwnlJ77pL2sxtZi7XpX54Qx5z4f5pNGQCCqsQJDAacVYnh1ZWeNK7_QPh5wJKuqujwju0A5niv3xe_pZlzhO6csVqK_mG22ZR4H8ROXgydc4ctkShtLGy3Apq9vqRUZTCHUDxYtNcUGIoZayLaxzIITyD2uq8tgZjPkUt8J",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESWKZBF6C0Scw5NS32m1CxpLdo1GhlJheIqspp3sTixD4dbjZZB2zNSQEGVzya8am9yloUEKPM-o5DTFUlpPgT0jX_ijBtYSqTyRBZ9QBNvv5N-1J2av5wo4wv7-Z0b1Bd99JNOLXBxgVxPrmkvDrMq_FtWvPb37cqvSnwRL-vfhHUC0puzUbZ_yAHgOhB6-T13lLIO2Ah8qtHxNVupkiKoZO0SQKw59HiZ-PWw1ywnPEtK5a2ObERRcgRybk2TSKo6joPFhseMwFgl8Re5w==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6AoOGVWFj7KJaD5vg-QdSCivncA5xf534j40-87eKsOUvV4l91rICWxPZifqBkr22jW8y0jSGnUJNFqbOQalm-7ed6riY51sT9HBziO9G3z8xocCWWy8d3DKVp1tfMnrnGnPXh580a6BUfFnkPtCx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMG_2tJn2zDZkSzTBC9RyB5g-N9J60PrXUHdmfvw2y7Q7LMBAY7alH8WtF-Uuyfl66tksrmTlZZFW20DvZvRgQf-tkrCakSH7MJ29ROoaqBJI6duMxWBdib0WHPuYsKICy1RwiQE9DD-NdOeEDYnmBOnyR8ZRL5gVZ6iMmT9CinLwrDpg1xPnqsQXPj1nEovHntoO_"
+      ]
+    },
+    {
+      "era": "1977-1980",
+      "title": "The Rise of the Puratchi Thalaivar: MGR's First Stint as Chief Minister",
+      "narrative": "The year 1977 marked a seismic shift in Tamil Nadu politics, as the charismatic film star M.G. Ramachandran, affectionately known as MGR, led his All India Anna Dravida Munnetra Kazhagam (AIADMK) to a resounding victory in the Assembly elections. Having broken away from the DMK in 1972 amidst allegations of corruption against the then-ruling party, MGR had positioned himself as a champion of the poor and a beacon of clean governance. His cinematic persona, often portraying a benevolent protector of the downtrodden, resonated deeply with the masses, culminating in his historic ascension to the Chief Minister's office on June 30, 1977.\n\nHis first term was defined by a strong focus on welfare policies, aimed at uplifting the economically weaker sections of society. He expanded existing schemes and introduced new ones, laying the groundwork for what would become the 'MGR model' of welfarism. However, this period was not without its challenges. In a controversial move in July 1979, his government introduced an income ceiling for Backward Classes reservations, sparking widespread protests and discontent.\n\nThe political landscape at the national level also played a crucial role. After supporting the Janata Party government at the Centre, the AIADMK faced a setback in the January 1980 Lok Sabha elections, winning only two seats in Tamil Nadu against a formidable DMK-Congress(I) alliance. This defeat emboldened the opposition, and in February 1980, MGR's government was controversily dismissed by the central government, leading to a brief spell of President's Rule. Yet, MGR's popularity proved resilient. Campaigning on a platform of being 'unjustly treated,' he led the AIADMK to another decisive victory in the May 1980 Assembly elections, returning to power and solidifying his image as the 'Puratchi Thalaivar' – the Revolutionary Leader.",
+      "key_events": [
+        {
+          "year": 1977,
+          "month": 6,
+          "event": "AIADMK wins Tamil Nadu Assembly Elections",
+          "significance": "MGR becomes Chief Minister for the first time, marking the beginning of AIADMK's dominance in state politics."
+        },
+        {
+          "year": 1977,
+          "month": 6,
+          "event": "M.G. Ramachandran sworn in as Chief Minister",
+          "significance": "The popular film star officially takes office, ushering in a new era of welfare-focused governance."
+        },
+        {
+          "year": 1979,
+          "month": 7,
+          "event": "Introduction of income ceiling for OBC reservation",
+          "significance": "A controversial policy that led to widespread protests and contributed to the AIADMK's poor performance in the subsequent Lok Sabha elections."
+        },
+        {
+          "year": 1980,
+          "month": 1,
+          "event": "Lok Sabha Elections",
+          "significance": "AIADMK suffers a significant defeat in Tamil Nadu, winning only 2 seats, which was a precursor to the dismissal of the state government."
+        },
+        {
+          "year": 1980,
+          "month": 2,
+          "event": "MGR's government dismissed, President's Rule imposed",
+          "significance": "The central government dismisses the AIADMK government, leading to fresh assembly elections."
+        },
+        {
+          "year": 1980,
+          "month": 5,
+          "event": "AIADMK wins Tamil Nadu Assembly Elections again",
+          "significance": "Despite the dismissal, MGR leads the AIADMK to another victory, demonstrating his enduring popularity and resilience."
+        },
+        {
+          "year": 1980,
+          "month": 6,
+          "event": "M.G. Ramachandran sworn in as Chief Minister for the second time",
+          "significance": "MGR returns to power, reinforcing his political strength and the AIADMK's hold on the state."
+        }
+      ],
+      "achievements": [
+        "Secured a decisive victory in the 1977 Assembly elections, establishing AIADMK as a major political force.",
+        "Implemented and expanded welfare schemes, particularly focusing on the poor and marginalized, laying the foundation for his populist 'Annaism' ideology.",
+        "Successfully returned to power in the 1980 Assembly elections after his government's dismissal, demonstrating strong public support."
+      ],
+      "leadership": [
+        "M.G. Ramachandran — Chief Minister — June 1977 - February 1980; June 1980 - December 1987"
+      ],
+      "election_results": [
+        {
+          "year": 1980,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 2,
+          "total_seats": 39,
+          "vote_share_pct": 40.14,
+          "alliance": "AIADMK-Janata front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1980,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 129,
+          "total_seats": 234,
+          "vote_share_pct": 48.92,
+          "alliance": "AIADMK (standalone)",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "Introduction of an income ceiling of ₹9,000 for Backward Classes reservation in July 1979, which faced significant public opposition and was seen as a factor in the AIADMK's poor performance in the 1980 Lok Sabha elections.",
+        "Dismissal of the AIADMK government by the central government in February 1980, following the party's defeat in the Lok Sabha elections."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW8OMaGHg2aqGFvfd0aAb-JuJ2W0wYPmF-ICKsXsqk2rNUXUKPi6dNev187on9CVn2jwyRhYCby2wL_A9NjYBW1tEG5o_2x93I1hBA8l-ee9xSWvaps70nztnUr3k-YakbCON2I7pNHOqjmHURai0nKWvQmBTeIQEFmkScMqbKrvCI354EnA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2sGtyEObZ7ha8FQI4_NX4w21yaAEZ6spwexeK5ln2FtPPkPLtyAKS8qvpHNHeEBFWJ69zEfUBcVYYKklh5BQdJVGYIcqlT3NTY4r4rgaHC7ourzv7K1KB_li29rD4gS4Ogy7xHFZy3Hx7cm1iSBofZW2-LC2AEFRXi1-2QSAIrBYmg2o2MQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhfW6xEGlcBn7k87gu5hsA7_mNZcjXiyYrB_ofVRoHH7KclfYD5sMNOo0S9mUUq_agpDMYhB4bFsMPCeEKiiH4XiCu8SW-r8gjpKJdd_xdhMCPfFgFHpd-q9AGmEycJSYmnaRZsbOiqIPwnqLHC281PNbnNXl_pjZ1r0UGmKYn99NolyEx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi-2_a2xOb3zfz1uXWIePTllA_b9MhY0-QpnWxZ4XV_0m-SgTyP3M4Nu5ZIQDjegqxQqlJSofFjDbBNbXtI05ErglXU7PDW_aJWqx-8vliVp1BJ0pAh1WJsq6CZ0iiJjweI1YYYQdEgiY8coAl5aLPN8wqt1SqYKX3I1IeM5YM-DF_6xLMbQXrmhfRScL9tuMFGMNNpUdafffE4SzJaWRMpaaMZffvubJGHrbJR0XxUY38PlUIr8NpQXiduaFRQu7W4JBdvqUy",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7llcmqZBDDrU9aemDhFO7QCHBN-QZwmk-Uz8dPXsc2OkfmHA_GwOKlaOdF4mr1HRHosFkPZcq98g9wjV5ZKg5UkqIOyQbpNVrMS86cD-53kl0h09bWR-cm-AI7_nhFqDiLTkDLR8GF9i3X8mEKmunB2WKTGlbFJQSMcJkOGCnl693Hg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiwDHZVFF1IcbUyUz8NAoUJwjTBpgu0XnV0mFzOmF_c3KHi53H49cdqF1XMKP2w4UblEkw6bEjT44Ro2tBvOWemtrQ_B7Thac9ckWKixhQIiq6wc2gUm1UGD9D4hLkWALg0_KVqPIb1kGJoedryMvEaPvxLWTv0ovr0UGqSu_M3cwoGw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIDkC4W0ShoMies-GC9GP5ozCAQtXEfUoZB8kjCP2GCi7zbaqmrsgtgMZY2uLh9zOiZRWEEm1sTVEv36zm5XYdI79MqnxV44bggEURTfMqUhtNwi8tMKpihn6THaz3H4Kf3FmlDGCo_ofa-CxWYrSgTV4tl2EpPcL12Qyw4OB3-JQn9Mgflx6uOyACFhKB",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEk_yIdW4ZHKmirz4X-nCTKuwwg90cutbMSOaVzxze_7jl27Q2uN8DQGvJP0EUzp7LF448ltIRTJxPtJf5KGWsEkAy_l5Z-wgdODPgPL7Gw9akWvVY7P5YkCBHWcRDBWpm2KmckbFJxerCqvW6jJdU3oQKkQzq7mB8ER4_6yoMWVrL2ohcrUbBaWc7DbHSbyNx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFJNqrEp_00q8wJZNFHXqlge665rOT_huBhhU4MymkAiGGgv6Mgnn3IYH27RxZjyaEc9BlYwu7ae9yGIk0fdvY3jAeaQEaar7EqIuEjrhD4o3c0lJ4BHooomvgqd9qDuAAtuerl8IueSYEl-oRBgvQzuBke0qtHpgl9AegMyU0fjQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhLYV4WJ0hNTwg63G2sF03knTMtyJGxdtPVXSsw0cVXHiAOniCUKvJiUnBZXk58-VILKFBfh_8I5Be19PkwEYXZ-w9yRPtUyVuDiyWC7RC19G-7aTr5ZzSNrJXF-T2zH6C3i7bdEWj4YrdVUrry9IcmN_CNUPEalIw2OHR",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpMQ6UYG5vCoAzURnK-aS1orn2kD36eavUEQuP5O3wCRTCvW3LBeekxEN6DeDMNCl1hvHJkQ0ksBOhe9ml7l4wY2pagcfqeqnjvJXdmw3-k2iPtaYf9wM_Pl5o4-wpXYm4EPx67EFoVaXJzmwXp4xU9IYGNAI0T1kzOmx3X68CsI2GkmIjqcJcFFgoigt1ddIYVVvcz3TfnBJ4wBE69sdEeH6MMoGhJXRONOVX5_yWxCOxvney4yXWKPO46tI1CQZfJzlr4g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvftX1zsFfaTNdOJVPx4ZYlhiuKZ-lIeDvC9x1m-UL11HROFdtK7gzxjqmV1L_of-L0Jfulf5fwuDkoPi4wq2V3GN2fU77IcRpO7jLYzhcWVYjYBn_sMr3UMDuzZr3JQMils8N_wV9LCoqVgoH3MmujAxoCdtZY-7S5Ui2pLZtJurq61CoyjygwgcVybFyxE-_sEAa5ztRRRcEn0LQ0NAd5o--3J1f_WA6i5Tyc9zYWAXzzAdTrxoH8_R_MnA0sA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm2_pzbHkGZmN5YK1pQd3OX2z32rqLCd8b4020rNt40BNyJ1WiXGDRoTDh3BTSOo03IrlruxGgwVxbQwBdWzX48TGE-PU5Cn4QSCubhF1GpV7WHGy25f7MfB47ovKH0SXEfOeUNKFddwQCmNHCshmRWIR-GSX4Yo3NbFgsQnfRWIBuau7j-J0lTzXgsDADi4ROqQnABqh1CbaRyYUd7yktOjqxwWK08c3ZXBp_do1U_-yXazrlPYiwldhmONqZObIQ1JeqGcvgxpRWPl9uMyZCEoM1CoT5hw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIgdIJ_MlvVqvWZUL-sKW6Jzb5cO5mKaojtQ17rGSx5qcJHZs-bvkr6qB_03O77B_w_CQlHds8KewSdi4HtoPPGxdLmsVNJCwwE2zjvxVjdD_tzRJrLCPFiAe1FjQTiUUdNCpCrZc3_yXT-Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS8xjSqXDuikHYVQUYN7I6Tvo1LlZL0zYPp7Z9dSgFlEckKfzG7qMj51X6uJyjYKk3EwNhZvhroVQl-yNYiaVOXGtwWKIDl2pPSL-Wok3UeOU-NKXGbAX-6snbnRaNAg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFsuLulD0aO8z1ii4LoM8V48DBzYZNlZj2pZpkDX6rRMP_HOhYnSz9fak3a11LLFLg5ehIQxTPgOBCO-Pa26jfgS3u2jB1BVS-LTn_X7v74U4JxHillodskujJOgaJesGa7KMQ35QUROvLab-EEoEwBJNkX9GTFBhvIPuicTMzoPo5s4YRCvPXkvZEo5neCHU7IdisSpF53-NwXVh6e0Z855A=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFERtsWyG74DYWN8aJwc3t5-tW3WLLNPCmyOnlGirNaYmWnkwScobeqOTnxPvJN_ddPHYv5AbGsjwZH8r2vJsUhNjDl6A4uesihI0Yy7ehjzRnPc-NkDRj4k5MIiTBXcsM-aXxPFnaZaXIphx1ukpOXtwFwaiFTJVwBOUJBI-dVB23dGyn66X2x5wIp1pgjT9vAnEuP8cftTZ-MjfDaCha55e0kEBNXP8TW6hZqnYBMJC6L0liBAIzgldJx0YkJyKanxLY9sX9iTL5x1l7yZhlFxCYskNIOxxf4HSwMwQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgV1kVwEaDPE2zXijE5ss8Y-mrmtGbmRTkImbBs403TwE9VMJ2Vp_7L70im4RXa8_d50s5CDgLLe_-WwLnS1dyHBTaWMZsb4g-cXoETbwpQmGORBgvDzDDdlQ-JabtnXFD0LRUXfWVTcqVLDXC5eyW",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2IjpmabgdWU9eZAauU0t0PbvpPYZuhWiPyrJm9_xpTXuMkrS1R9q7rQNu_uEawoBSx4VaNSKU0X9tGLOs2pDNj0Fowd0luDNjwrZ0sD-heL5kgv1CW2iCZF04Ev2w3D-p7a5NdZZEVcG46gzYHPzUSzBv8eYiF_EXRfl7tU_p-Y9cWBRyGQSxVOWO0AG65ls==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj_Zj0rdpIhJIt-1MviZJCwMWky7-u68lZ_l4s-xUQ_75Q7TSKfQK22Ybg7O9a0VVIMDWtfPYMaUVW3PpqFFHytmlRWBieL2Xi0j3Ds0PfYE5pxBNwmyePvHGfoJmE8AUyZ_sKAw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvruif3jOsA2eyZkKRXiVHkTZw3X6ZBRahRzh7x13HdF5Sceiscz9oePbyMGtxIIusfZn2BUWAnw0MIgV3-t2IBjLlnt16Oa-pTzwvhZDeOQbfQxOncLoLo7Ma9kQ6j4k0s5JVB9AkTC9I63sLS-L8zx3ZuB2ScXnIhu6yso96wHo8zSZOixDFbgoNstqP2D7_LI6FY-XKVbw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNdHMVT0P-NzN4igr0tgLnBr7uRlrFGFaWPkASeUcLDXu94ippQwswLI5cOdlRHjbXqXPvsYafhd1jUZ3I9c55GamhyW6HwyuYTyGvErOZZZ6vKbY2df1x48LdQYBLkzD0Rs1-koW-KVFOQvJqXz_5Ln8dL346ETMU-3IOfWt3dvO1iXg=="
+      ]
+    },
+    {
+      "era": "1980-1984",
+      "title": "The Return of the Matinee Idol: MGR's Second Act and the Rise of Populism",
+      "narrative": "The year 1980 began with a political earthquake in Tamil Nadu. Just months after the AIADMK, led by the charismatic M.G. Ramachandran (MGR), suffered a crushing defeat in the January Lok Sabha elections, winning only 2 out of 39 seats against a resurgent DMK-Congress alliance, MGR's state government was controversially dismissed by the central government. Citing a 'failure of state machinery' amidst farmers' protests, Prime Minister Indira Gandhi dissolved the assembly, forcing fresh elections. Many believed this was the end of MGR's reign. However, the 'Puratchi Thalaivar' (Revolutionary Leader) was far from finished.\n\nDefying political pundits and the formidable DMK-Congress combine, MGR rallied his party. He campaigned on a wave of public sympathy, portraying himself as unjustly targeted by Delhi. The gamble paid off spectacularly. In the May 1980 Assembly elections, the AIADMK, aligning with Left parties and the Janata Party, swept back to power, securing 129 seats on its own and 162 with allies, proving that MGR's connection with the masses remained unbreakable. He was sworn in as Chief Minister for the second time, a remarkable comeback that solidified his image as an invincible leader.\n\nThis term saw the full blossoming of MGR's populist vision. His most enduring legacy, the Nutritious Noon Meal Scheme, was launched on July 1, 1982. This ambitious program provided free meals to millions of school children, aiming to combat malnutrition and boost school enrollment. It was a welfare measure that touched the lives of ordinary people and became a cornerstone of Tamil Nadu's social policy. As the 1984 elections approached, a new wave of drama unfolded. MGR's health deteriorated significantly in October 1984, leading to his hospitalization and eventual airlift to the United States for a kidney transplant. Simultaneously, the nation reeled from the assassination of Prime Minister Indira Gandhi. The combined sympathy wave for the ailing MGR and the martyred Indira Gandhi, coupled with Rajiv Gandhi's rising popularity, created an unprecedented electoral advantage. Despite being hospitalized, MGR contested and won his assembly seat, and the AIADMK-Congress alliance achieved a landslide victory in both the Lok Sabha and Assembly elections, marking a period of unparalleled dominance.",
+      "key_events": [
+        {
+          "year": 1980,
+          "month": 2,
+          "event": "AIADMK state government dismissed by central government",
+          "significance": "Led to snap assembly elections where MGR made a dramatic comeback, solidifying his popular appeal despite a recent Lok Sabha defeat."
+        },
+        {
+          "year": 1980,
+          "month": 6,
+          "event": "MGR sworn in as Chief Minister for his second term",
+          "significance": "Marked a significant political comeback for MGR and the AIADMK, demonstrating his enduring popularity."
+        },
+        {
+          "year": 1982,
+          "month": 7,
+          "event": "Launch of the Nutritious Noon Meal Scheme",
+          "significance": "A landmark populist welfare program that provided free meals to millions of school children, significantly impacting public health and education."
+        },
+        {
+          "year": 1984,
+          "month": 10,
+          "event": "MGR's health deteriorates, hospitalized with renal failure and stroke",
+          "significance": "His severe illness created a massive sympathy wave among the electorate, influencing the outcome of the upcoming elections."
+        },
+        {
+          "year": 1984,
+          "month": 10,
+          "event": "Assassination of Prime Minister Indira Gandhi",
+          "significance": "Combined with MGR's illness, it generated a powerful sympathy wave that significantly benefited the AIADMK-Congress alliance in the 1984 elections."
+        },
+        {
+          "year": 1984,
+          "month": 12,
+          "event": "MGR undergoes kidney transplant in the United States",
+          "significance": "Despite his critical health, he contested and won the assembly election from his hospital bed, further fueling the sympathy wave."
+        }
+      ],
+      "achievements": [
+        "Successfully implemented the Nutritious Noon Meal Scheme (July 1982), providing free meals to millions of school children across rural and urban areas, aiming to improve nutrition and school enrollment."
+      ],
+      "leadership": [
+        "M.G. Ramachandran — Chief Minister — June 9, 1980 – December 24, 1987 (this era covers until 1984 elections)"
+      ],
+      "election_results": [
+        {
+          "year": 1984,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 12,
+          "total_seats": 39,
+          "vote_share_pct": 59.87,
+          "alliance": "AIADMK-INC front",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1984,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 132,
+          "total_seats": 234,
+          "vote_share_pct": 53.87,
+          "alliance": "AIADMK-INC front",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "The AIADMK government was dismissed by the central government in February 1980, just two years into its term, on grounds of 'failure of state machinery' following farmers' protests, leading to snap elections."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfr8kbD2m5rmQyKV-8Mvk2EU2HA4cJ0Vk-NdIDxYFdIpm0g3ufoPy75S_R9LFqond3GKULUWb58OUtOdiAn84Mpt7cVIF-ebyTNR-8kILgbTjVqKKat-wbzN5o6CEZy0fojVZO9dPfrE8GmA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMPCHdUeZGeCH44Gxdw8UE2oGwRdgQWKtd13LGX0HKBy1_XRicltU-UfNSCQltzHHVm9nbGnJ-f_5vuu6VHXYbQegCKLf74okZiEzTWGHAMc8tRHINR6n4lCkr2y1jtgaNCpw7tOjOIq5YKeP926NrftQGAaeX0QHIfRV_6YSthODbbg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOPWCG2BqWtGpSiT_huQnN40yquCeLaLHrh8x-7DQiJ5ZkdJ4QCw-Yw00QuYOCZJmoHwCnZElQQwi1K1MFU4nehkoVVOBNle4qkQkwKdsk7RFkX18bPste5OPckKstIvUeQ5CnrVJakM1wDCnoMDxUUy4lH7n6ebkg2EwW-M9mAIMkHQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf6SY1BL-NFyc7pnLF5ZcPezlM5u6qwbJMk8NRolRbdLJuO3UPKX-8xhLR7UxeIEU9Tc1h3cN-m9e6ExjFcyqh-16pbGP59-CYBJdXxyXTsaGj_3Lqu6-idrUvkdBfQfYO2rT7fS1ipuDGGk50wgsRh8aG0CKv_Iwqg3AxGwzigPHEkSsTxQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8vgk4ggT2UhJ7TYXmx-l2kksP9kUQZXE7DoNuR5r_opAD7ZKq03eDrSecDIPtS8uGgSf5h7HDVWcTqmVHSm9i_qBo84QrfixxjMCRz6ILmzXFxOaaL9qy9IAQyZW3dfeDS61tttVpRD00tO1RmCV7ZkthgsRjprFl6qmbYCJRCqZ2vYOanQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQTVJ8DXNXAtv1z-_JxTVQOai2jUU-RGsVDPwKoqOViCXCkHyVFdhu_9BWf-RpkHGYg8Zqjb2jMsy6gOLlbRtPilzLeb8qP5oKCfkq_bplNC4MZMzGtqONsUcbTJXdpdHjIJpn6k5H6zr-wds=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR0ENog8H_dabNhdNMeXfy3BVDNz8m8lQjVMIagarRsZr6uLdJCoFn4TbQJ8NMJSuT6bwaGVdpqh3SJBVQmg4WsisJ2SbO1H5EX8IXTGvmDVyTwGSIbVGLVxRzYPMenBjJx7SvNPZKPG6wTozzcOtIPk3FlNXq2uFP3vfiK6Romu0QOlB6SHLWwJjPfhBv5bHBbNCC7jWdWT4eEZvxrwU0EZwZtvR1s9ZAoY70QVFs-iAVbXY-3j0IMzmcZcHQwkuE4AK1XLk7tPk8EqjPdNaId44u1PjN7m3BgxA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvQNOzuyz5fBTd5WaI__rv6fsDcYLd7UXNG2jzQ4S9UhT66Ah8iXdKSXTOa9HnX095W8oeaRBUioOS4VCWmKncV8rJQlpqa3AxszY2kWqwuMStcYxVShuhWi-kUXJ2u7ikqgJolBHk3v-cxkA6tyO53doAHbf_1FY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTmZldcijjl5zyFOOjRbg6IT576nxT1CsjOYHSqh8bhqfUAQ3rb5xG0IfJqNPFM04WGzlxHeq7Q3KehcCk9rfAV_I7VwAX9du2AQAg0uVThfeUl3Pj8vma2TT-uEsTIV-A5lMJh8gmn2x1yHHHuc5Twgqqr_9bSjWLQdGBGW5khDRNmAo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3tSdlicKvIkTmhg3xVEdOCrezVMC5K4Mi3_wlopJMJSrTL6i8E14BRcb-q1wN-FF0zcZy4AGh5kDBU6ntIehOKNQ7GF0Yuz-tJ8k_pHH96X3qtct0p1vP2qxz7VY4vxR--5qCFMU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0hXnqgHRnAEPrGB6YeeeOiFvCoxuJg-K6JYp-QJZZYvqqvlKZqzmamGoyMlhuw_aoeCqOzDHnw_WckuiVUcHWa3OvLIECeG-Un7Hf6QKvgZ1yiuWxhFvJmcN5SRrxPlFfGPD0HUdIAiDlpJu1U1_r8Tr9Tn8V8jQ3yk52TXJdGRUri",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcDX9rO698kqgJAegp67tU0dAfLw1ULysuYQSCVqQaBIRkRxy4q6Uzaq3Z031LvdZYxYuwMWTVPE-HSXOXFunD30boiCrExy7L-oBEb-0BdkAQLWbqHF7kyB1I-TdEW_7Tzdu6zsKvu5M=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAaQRBHdQN20GIe-i_spRtE_YhwxItQjnJnCIeNLuHHJdkAWzZW8cxEl-fPcY0kvoJVDwpCiB71GTK21xN9Cp1Wa_gQ8ixLXN_nccuGOcyTem4efazyd9eCiTQpUnTIV0J6E042Gs1mY8AzgrnnSYXyovYnh-heu8stsJVLyM4CoAqawZ0lae5GDIlIWrB9tMIo4NKdTc-p5NFoBCi6gQQKZQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkn80r6PkkdlyK4pQqdp4ereouM6ldzGx96wJbXYsmhQoBqkN_fNjrPCjoMYa4g8ES_m70rx2OSFvAVJvfGscrH_WmR7N8SiJivUMQr5UQlosv-NejGwO1dYlP_63KpT0jcknZmJ_5ZzZ6C0sgpwB3e_Vua9Aoaj1sFnrH-Eag3NGoJr0NSMssZJOZVqr1UwCgilaZwX4Sjk-LNQbWNfn8Hera1AX_4016jRXT1b7A3SUOYrsfr6UKbND4G2hgMcR0oRneVVrjB9ITf8rkRytsGHpXy61UANnzsjU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmjjloqrJ9kCG5ibAwmwLujP6Phl_gpnJCP_xN9h0Z-_TOKTwM4iQ0Xs1ysqiwy5NjUD5CIncMIe4Wn9ppCw4ThaUBcJFaaLJYTItsKhZpvBxMgBO9UNBeu1eLp41Cu82dKKQm4Rnmm3FOlV1tbrxNzURBEa4gsqAvUwBS9p5mX7BTom6fADKk0yia7whGbvr7",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOac2hR8yzisnm43fl5T7IVwhgMigt0DJfbs0iT_jc3Tov0tbvlLkdkJHb6Oo54m9guO0bNzgK0_axpkP83M-AwuEbYrjatlxFwa8Rnp8ypQ4j3tBRUKQDlGWF99_GPfynSGqAzMQ-6Od-cXzxKWU0Nuc8RHIRoCgwNL924LfH-owj4vRAYZ5TTSpMR_9K3hWD",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbHfUt5UvaUiJ1cLLWED35zohWFzARlXedearF_osHKFlSuY6scCK7meodyO4xcSEmgXqVPW0tfZ5hlUI4ffj5SJL82k-dQgRXRhiRMw-qXEg4Ty_qNkS4G40M7jDAAPNvpaqjjZTwXiQFd_GEsnSH8QV56A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-Pu3bOvS653405n_NDeMsROCg_QueQjoGmJGtJ7pgM5QgP4QXOV0Ull7brfshcPL8K0BJCfbbLgkcGHXpE3SkpuPqNXANuCGRrR3hXOLAZxpBUpRyZjMNOLL9HF0MOqY9r5IqqSxn90lstiuB5RrXTMQxyCupYR5NJjxzb8ZmfdA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwqq5DqGG6d4OrMp5gmb4d2bm_43qtz4fWcHDDP7DUYfNnClDP4CqBLcwSOXJY-jvS7S5o1Fc1GmceXU-Gp9BnZZopXBvau_oLUTBNc0cau5JERHDbZD6qyTEYHAxMn9zuUvP3vXYORO5e_V-uwEr-mXKBVqiEX_On6q__Evm7edLuFk3P1L0s8-Odah2NbC6-p_BELFtLjeEJUJlWRDk8ELciZwow=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH08BO6pSBDeSWVEWZVeq_7HE6mH5BjHF70LHUm1FPJCOXB6H4BJAi8FOEXo9Z95jqU2INrnIwd8OZkRHG8YrLwJ_E6Q_Fel23EbKARRF7RsqlnlO41l2FtEoFJFgfNEc73ozuE8o8R_I62RT5r2QBygWqPjWQu-mQ4OLuyGhvEkwfuMz3WEfrPmyqyYbWL6kd26KwdOf4FG_cJsLmi4n7KvONs6dGtH1rq90eJEXqHzuWK4Bs3aGDBgd-ksg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEagq3m1KtHTmbntpqGbYtDxGIY5Sy0uJSuGNTPV_GU2jiv9LiPi28E-BK08pObx6latj75c7YVj09Ad96EO-6SwgW-6iQPpjj8cGT4F0qU7sIW8K4EFcB-FIyqQL_ypg0FnEmpaSlwvFiQMQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcZnoFsYCDa3J4S_9_reGdaQQXkNVsgQWD-OgfS8yYxUziY6OCPPVDNzZ_EvokNklCwirV03ncej2m8Z0AwyWacoLsOfO2YbjkCUFzof-lTBjQPpfEs-xrMWYVrBFkIixV1jvIn4k=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0RfYsH4oC2TjMrl5jFurHqHGBSNj7KhUSnfXLXmU753s6oyFeiqxfLRGe99W9DaWUESZ0rFctWGo9W1V2braDP5QZtp0RN_eTChTAngrZW3uRlMqKp5UG3gJKRD8ATwynWdtp7NH7TcNv1AWNMcDbD4g4yT8mB_xPcO67z6Rjogumgl4sMgD9mhQpesK0zC2usG3xr4oUuviQLpN1F3eNJgqWUYSPeQox2v6YAE5lsef3zOoHLR1e8lfSKJ4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhOBvzh0mP-Vi4GKuWiXFpsH-EbIPQLu6CQ1Nj3k32_bnbeMLxlEdfWafQO7XeJ-UIcc-8vLzqIGpaR872pXjo7SQRRM8wcF7sYCMPqechlvqMZgyI-_XFRMwcN-nAkIy9Zo0u3TGwYSrD05OfEDrBxKJd63I=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxdAlrDe_kQfkFrOP6c0ay7RqvMOb9XbT_g9GfY7_kdNl6gxoR_JsvZ5clNLZYYOKPvXJoxPOIpvEEb35KEOBs8GL9sh7MGRbx7yEdRNXy55kZ8WEVE4qFTOqTUcYxNm61ox2mQyb4CuzWu1Eti7SUMQEBHaSquFMRaXYzZ4f6-hIs_7YBvLxRT8gdeA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_0SZP5zf0YJdq5u90uPWma4fMe2aqC35rHP_9K2ChgzKSsM9tYCl_NjXiqLDEmAYjKVMIv-e9lI7qqgzcBDsPEgO1bo6tsgmU8Q5JQ-pZkFvzcigtMBkeBOgQJkLtk1X2DrhFq9Gb924WrOnpw0rd",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoIytxANw32cj6HHNpEOP4VJ7KaI46IE4Cex41gHdxIjV5Mq0xtRgOumkdLWgsPu1J8ouC6tP8qYQCNKDLzvBCBbcNYGxzA3ZcLtra3uAiZRQHUy9MpexiNCLov7KGrukHcCfGFtFFvlgGOCJm5ML-SMmMReosqRJfzo1-EOM2ghxd8lw37dNepuy8WzgBJsiGuEwyjFhFW9BupmA2ODggN-Ex9HbYEfOO3HofntRNLRyrsIOjC42l3vrIOehozrx-sFETF6-G_Y1FBmqq7x_kuq3g_a2nRWYmoCe9ow="
+      ]
+    },
+    {
+      "era": "1984-1987",
+      "title": "The Last Act: MGR's Triumphant Illness and the Unforeseen Void",
+      "narrative": "The year 1984 marked a dramatic turning point in Tamil Nadu politics, as the charismatic leader M.G. Ramachandran, affectionately known as MGR, faced his greatest personal and political challenge. In October, the Chief Minister was diagnosed with severe renal failure due to diabetes, leading to his urgent admission to Apollo Hospitals in Chennai. His condition rapidly deteriorated, and by November 5, he was airlifted to the Downstate Medical Centre in Brooklyn, New York, for advanced treatment, including a kidney transplant. While MGR lay critically ill, suffering a stroke and breathing through a tube, the state plunged into uncertainty.\n\nYet, even from his hospital bed in a foreign land, MGR's political magic remained potent. The 1984 Assembly and Lok Sabha elections were called amidst a unique confluence of events: MGR's grave illness and the tragic assassination of Prime Minister Indira Gandhi. The AIADMK, in alliance with the Congress, masterfully leveraged a 'sympathy wave' for both MGR and the late Indira Gandhi, plastering posters of their ailing leader across the state. The emotional appeal resonated deeply with the electorate, resulting in a landslide victory for the AIADMK-Congress front in both elections. MGR himself, despite his absence, contested and won his Andipatti constituency.\n\nHe returned to a tumultuous welcome on February 4, 1985, and was sworn in for his third term as Chief Minister just days later. For nearly three more years, MGR continued to govern, albeit with declining health, maintaining his popular welfare schemes like the Nutritious Noon-Meal Scheme. However, the inevitable arrived on December 24, 1987, when MGR passed away at the age of 70 due to cardiac arrest. His death unleashed an unprecedented outpouring of grief, marked by widespread public rioting, looting, and violence across Tamil Nadu, and an estimated one million mourners attending his funeral. The 'Puratchi Thalaivar' (Revolutionary Leader) had left an irreplaceable void, plunging the AIADMK into a fierce succession battle and a profound leadership crisis.",
+      "key_events": [
+        {
+          "year": 1984,
+          "month": 10,
+          "event": "MGR diagnosed with renal failure and admitted to hospital.",
+          "significance": "Marked the beginning of his severe health decline and political uncertainty."
+        },
+        {
+          "year": 1984,
+          "month": 11,
+          "event": "MGR airlifted to the US for treatment, including a kidney transplant.",
+          "significance": "He governed the state from abroad, a controversial and unprecedented situation."
+        },
+        {
+          "year": 1984,
+          "month": 12,
+          "event": "Tamil Nadu Assembly and Lok Sabha elections held.",
+          "significance": "AIADMK-Congress alliance won a landslide victory, fueled by a sympathy wave for MGR and Indira Gandhi."
+        },
+        {
+          "year": 1985,
+          "month": 2,
+          "event": "MGR returns to Tamil Nadu and is sworn in as Chief Minister for the third time.",
+          "significance": "His return solidified his leadership despite his illness, demonstrating his enduring popularity."
+        },
+        {
+          "year": 1987,
+          "month": 12,
+          "event": "MGR passes away.",
+          "significance": "His death created a massive leadership vacuum in the AIADMK and led to widespread public unrest and a succession crisis."
+        }
+      ],
+      "achievements": [
+        "Continued and expanded the Nutritious Noon-Meal Scheme, providing free meals to school children, significantly boosting enrollment and nutrition.",
+        "Implemented welfare measures including free electricity for farmers, free sarees, marriage assistance funds for poor women, and expanded pensions for widows."
+      ],
+      "leadership": [
+        "M.G. Ramachandran — Chief Minister — 1977-1987"
+      ],
+      "election_results": [],
+      "controversies": [
+        "MGR's prolonged illness and treatment abroad raised constitutional questions about governance, as he effectively ruled the state from a hospital bed in the United States.",
+        "His death triggered widespread public rioting, looting, and violence across Tamil Nadu, requiring shoot-at-sight orders to restore order.",
+        "The posthumous award of the Bharat Ratna to MGR in 1988 was controversial, with critics suggesting it was a political move by the ruling Indian National Congress to gain an advantage in the upcoming 1989 Lok Sabha elections."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqfVCLl1VpNBmjqlQq1Qsk1U-J9Tx_Pjwc1N-sVfbQYcP4BAqv6fssB7BJZCZOHkhBaeAlF-uYoJ2FAA4yHfCxlWFPOIV9oNFQ1AGNZttfyPjxLkg4YSdRS2t3iJcnDejpeq4fbsdfj9q8",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7WHUbjkGpOya668iDHXdDo72mdH50E8lqnZ5SndFRXEXmuaEIgDnUHSbX0O8v-FCX9GV6_CCGh2EbD2JbezSRSDS2moC-j2_5jZrHxAUjDFaH5qJzN68SAcKsn7RVZZc0fdBx1A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp5KknDhj3Xl6puJPU_Sundl10CmhgAS8HpG2POSuNe665XrXRlQUxcHQQ8LznlYvbAaYGXzRKU3SB3qlJvtj2BsJ0KQ_pfj-lmycyMFRP5XlN5ykDsoZfPnCZfT5UlMhU7042pindBQ2HtN6B0NA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl_rFsD_roHG-hqM9-DUVi0JkzSjMb7NClxPy4s-AtJpfldZKTxkEvrgMPyAXstG0lD950hLDCz8sPgmp3naL672Z95Z5UgcqmLi37xZfaDOnV0DsjQOjoh4At5tO3KsGTV-nz1Z12SoT59AS9aScLRzzk460F3-yNcJQ6",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWVWnnVnIw2dtSyExMG_EYXqC9KGX35kkqpdyLASDUpUT4IENcMypLVS1eHMLPOGPHviC6yf8DAC2XhRsXMA19bp9mNwvHFRn4UGYU3hfras4osEXSUXAycAGq83WnQOqTOq62BL2IIA1iAJw6RSduYbtM8C1iU85sO9A5yFVewV_5CKE0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7MML3_x9_71WIC2hB8jo65R7MvpYOgdzBD0ct4Jcl0ulhDOR5oPWoOTv1fLvyA1ddG9S5x0XBM4Mq2B1Xkqk3Ezt6_jGeVr7zjXCNpLBZXaxpUyNGPaJ8DST6g1TRGg98ZtxEYzsiA5aT5AKG_yqSomU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQFH7eReX-GiX2-f7gGfwQ0QVK_jQBuiTm7hMBtQGKyD4hP4QTI55UG6rJqNQpmw-G0lLZr3hOo2V0WioBuYZQbBYWH7UrkDKv6B8SEIznQ3VHyCjG0piCBhw6zXF1cfNiVSNmjQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwkAT1lK9jEG5Lk4WwMZD-GmdtafHMW54cduGudNfwzfjkuHRlU-jBUzzGLlJWov3Wjfg7g2_RVMORY0Ek2jIuLdhleQzowNDASLi3sR7XWOM4zf1n_zcnBoK4AOgUP2m_xFu8hVP0JQyXYiKERGr2_Hnt0iMOmQN45I-DiYEhb44=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOwzHxkgQHnlqxOy5nHMyEiKsnzl3Dd_Xq8tHUXte21G0hsnDDIbZU5xzJeXJVZh4YsvuwUf5oPChaamcnbbecvpDgnFwlcH6hSg1yAYYvAmxfjG5S9yz5XPmb4tK4Z2WKWdVauBTt342rxg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU6W4Cq3J2AkStgp-1QVLVlRXA8J24xGyIkrkW0NRTXx18tlSVF1uk_feG_ts8eyYziQhuO9bndlIShYcEgb4gGXW6yCHm1uDXcwuinrJGH1zwuzIMUy20HmK6mxBjjM20G86cvtj9qtKiwF1pt44fGkQc59whR8C84XYYdtqjiQgH",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhk6VLSTm3_8r-wvy39YZk7IPy8pp9Yb1z8rLBzPWTgpbUx-HBEUsrjJcCUoJzXlSOHbccoe8S_78NEEDkVxWoL06lbroQdIk36RiWtRninx2ZLFO7Qsqx8EmsndjoYTSRxBjc0jlhCDKf_KxYz31Zu3N6bsU8K5sgfd1X0NF5ZDtV2q869TMnhBuRKWAYhEvByfvANTp6mahNZELDNLqeWRFZraAZD4_4Tpw8mi5gAxi8iyj3DFFPGUJpuFHjZBk3dciwlEjA2EVBcp47KlqzG3sfr-3OMz3bqA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4JZpIDEMlDrujL9uinKmzbKkh4U_RM82GwLQU9Wj7bm2cNyggeA7F_F_sOa1CBjBmnN1y1jiL338WDpcvo0d8WYR-qZ4g3InnaLmy1zotEPvPkMvTXRDvvTLAQYtJLa3aq_q_KfSIPYD-pgpYHYLReYcCNRp_iiAbXxNxR5BUScuz58bmVO_buOID5SE-JXAM_LBnxNFFoUlqMlE2AsnqsxTdavDYfgVnGKk4rliQ23CTvYdo89dPXDD3sYO1gJmlz28JQpQ32BSlj0dc3KhG5aqYd2ZIiFTf3w==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDGHUDI8za8nOqcdXi_wz1RoXIODmEKm_H4XEnotOvPMHNGbjWwVo4P8rezAilf9UBsYXy7NCduueEs-cW527QtrwyBddfRriVRWEs_YO78YoMQXVHO3ow-BUEgPY3a6Kw9mbb3adnKWjXB8il4jm2-evo5Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfyFAhq0oyQ0k3atYCU1m2riRQDo96yeXOeQXfU-OHhG9pe6v5kx41tysRJZ9n7YaDcMpjhwJ1x2_68u-hFqTeFCm87WMH7M57_jQ_PAGupjuWBGDgNph6yQ9NzgSfb4J-UF6HiJ9f9A0Oz4odkwsDlDAfbdSPhUoXS6aBSDD1BKWYKu2fNltO_QZ85qLG_NB3pI6eAVi_1HOYbsQCvorZ-oU8Aa7-J4slaLTKiKjtnsXLeVY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtvQ7karbXgTj4pv3k6FbTzNyjzWmUxkIOyI37r1Tdt9-66WeQPsTz2Y4vA_9Zy65Or1hBsbsHinDeWg3SHvPbKY1BTw2_lEz_31xskaAT2o37aOhi27NzKEe-NBWgP73gimOJuwCNwu98zvZEW40z2PlmFTzx3CaQB-0F50WxitxqOAyAE3WLbU3N3m-F6TRoKNziW9svj1jQQUZn0V2CTkLEMi7G5vAUKj4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCRW0OP1ClrQIeh5eE0x3hrM4V-_pwvN0O_S85f0LPgdr-c8Wp7Ubb5vlsG6T3xoNGTOWIy1qDeyJtmlTvbjANCEyNLBRBOmANID3k9CMJNGZnbL3LinmlZluQvP9inuUC3_xyNQS-hMTu8GZgnkh4pWOY4J7Mb6brf3hZMBTcX6_dLt4NDDzbQ5oW1SznEA8_9Mcf12xebz-NBDZlYXcT8gcFnLxkhfIaCJwSVbFcod4e0eOK_4SceDhHnhzhUrkhvs4XFmxZ-cSnQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGFJ3Qkmusme19owbSE3D1t6fgLx3mxJ--X-fvFXfHKdu0kCsYzsF-4IfMevZcIAWRhfPGbUux1j6-u_18qKcnVxdrfPDq64ehcZh2MywhURa0wbs1Oq2D6xvmlO4NWf-S-IpgIjT5ux9dAm6eMQzrwDX28LO8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc5W-x9GEnCG5vY4UAqq9PKvJaSWl3R_kcr_fAVxNid1l7Yyro1MBj9aQ2_vnoKFLDq_HZuJL3RwbWkoDzX342vPnTIPnN7mrFtm2vSa0fjhLaUPbg45KOvl-X5xaSjWYsucAn1MqRq3moWNnrb9Y2adS09uZW1Gq1PsQob-rRUxeI68tmlPWyTC3A45tAyJQw_FDQqTxkKSFHmaqMsdVV92HrxNFsndDBAgdhExdPs_hWGGgmNA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXbAhls68WxI7z6S_qP3BS2QaODtEWFA_irkI7PEyuCMBzTLz5AmgrK5w_SALHHBFgqK7MeAYpeFHmpkwhH9DRVs2KsCntMSJt-AKZFpcRFoLB2MxnU72iSV-QeGRLnXRQmONR7ikRWf1icpwZfMAehi2Q6szZdGbsS06IfbqSftiTQ5lL36LiEZu9RZ889DC1trCbFw9XFWr3eCFvbCulv0YsmHRZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdDb79dM2gzpLoF5N5dQjL9ywWGDD9BYR1RMMwJ6VeZ2KqHkCieTOUTQnPvEBjlzPSRFOlpEFmxcAKnHocF8rnx7Rkq4gYt3jGwZ5KyddcOvmIJ8befG6iyWvc1vSv3_M0AHXom3zDVqaxxWSzJNumPLmnX4kbZhJO9ncRQ5kSPFmoM9J8jnwa9kX8UlLTBeMuiYl-dNlrYfsM_VdYAt1e5ZPeBAHz0lyXTEEBbgXHepW5Y35i2ak8EZ2tc7ygNV7ANxEhfUXuuE8LvH3ul-xWe3ZGFmD7vlrFutNkbscU7cAi_ngnvTqBhg07zSY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU6W4Cq3J2AkStgp-1QVLVlRXA8J24xGyIkrkW0NRTXx18tlSVF1uk_feG_ts8eyYziQhuO9bndlIShYcEgb4gGXW6yCHm1uDXcwuinrJGH1zwuzIMUy20HmK6mxBjjM20G86cvtj9qtKiwF1pt44fGkQc59whR8C84XYYdtqjiQgH",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOwzHxkgQHnlqxOy5nHMyEiKsnzl3Dd_Xq8tHUXte21G0hsnDDIbZU5xzJeXJVZh4YsvuwUf5oPChaamcnbbecvpDgnFwlcH6hSg1yAYYvAmxfjG5S9yz5XPmb4tK4Z2WKWdVauBTt342rxg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU6W4Cq3J2AkStgp-1QVLVlRXA8J24xGyIkrkW0NRTXx18tlSVF1uk_feG_ts8eyYziQhuO9bndlIShYcEgb4gGXW6yCHm1uDXcwuinrJGH1zwuzIMUy20HmK6mxBjjM20G86cvtj9qtKiwF1pt44fGkQc59whR8C84XYYdtqjiQgH",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKU_WI4343pAhW70SpurniL5Y0O_fd8Dg-TnCzZQrbz5FiBoCjkNN3Oi6diDlO3gdQAMnY5PYf_sKModFfe4dkLKmWkmZRlWBxSm0k5U332wROwuc2g63q3amf8IOGUQDtTS712FpCSnieUTlXQk--n_l6ZrCn2Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFlYiiwKOtNeqfMRAI7MC7J2Llc3Mfq3_k5PitkrMsQq_tFEWsSsZBYZ6sLHNtioFEvCwkr3Qkv5tXVgo8egBOhJyH86HxHUp8zmCTzJtJ-4eQeedSvML_eeDgOyS4tneh9fgDGT3oLY6Skly5Xg7jB7Lcej17HOoe3Vs5jN6c3f0e",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcaYsWWzsu5cTySJXehbS-VWw2YwU7UzVLbWTANFgHXBlu-dZ6_TJ0C7NUWnYJcF0g51uDNYSgDc-UpoBN2FM-7edOSjHahiCMg_pDju7xtnSFSwXt_f_tQJWbPMOJ97EBxid0RQdBA4C72TIMPOpggfD5tr8FqKSYAE2_dqSVGziO6NOpXRaO9wE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_mRCV9CyvuppMTUmBDICO3GRl_-pf5aeWR-0FoTl92uBJQwxilhrC76dSEV0G8RcJXt-sLIDFO2Ndiduriq2OqI_DCDe2aaClVDHs5Fbhc91Oog7dPPdBq0483o8K2bwmd1rU6MMzXaESHeNd9mx3fn64vglKA3b6nUa9sGlvcQVaQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_5PdcfbiNCeprAAANii9YVgGvtXtkzD6fC6O_f-tTS4Z3saspBBI1aUJcJA4ZWSVFyDcX_mvMgf3VqNZQ03T71sxnXDZ3zHfaNgOuB4LVxEsKsxo-djp7mHY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCRW0OP1ClrQIeh5eE0x3hrM4V-_pwvN0O_S85f0LPgdr-c8Wp7Ubb5vlsG6T3xoNGTOWIy1qDeyJtmlTvbjANCEyNLBRBOmANID3k9CMJNGZnbL3LinmlZluQvP9inuUC3_xyNQS-hMTu8GZgnkh4pWOY4J7Mb6brf3hZMBTcX6_dLt4NDDzbQ5oW1SznEA8_9Mcf12xebz-NBDZlYXcT8gcFnLxkhfIaCJwSVbFcod4e0eOK_4SceDhHnhzhUrkhvs4XFmxZ-cSnQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCRW0OP1ClrQIeh5eE0x3hrM4V-_pwvN0O_S85f0LPgdr-c8Wp7Ubb5vlsG6T3xoNGTOWIy1qDeyJtmlTvbjANCEyNLBRBOmANID3k9CMJNGZnbL3LinmlZluQvP9inuUC3_xyNQS-hMTu8GZgnkh4pWOY4J7Mb6brf3hZMBTcX6_dLt4NDDzbQ5oW1SznEA8_9Mcf12xebz-NBDZlYXcT8gcFnLxkhfIaCJwSVbFcod4e0eOK_4SceDhHnhzhUrkhvs4XFmxZ-cSnQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCRW0OP1ClrQIeh5eE0x3hrM4V-_pwvN0O_S85f0LPgdr-c8Wp7Ubb5vlsG6T3xoNGTOWIy1qDeyJtmlTvbjANCEyNLBRBOmANID3k9CMJNGZnbL3LinmlZluQvP9inuUC3_xyNQS-hMTu8GZgnkh4pWOY4J7Mb6brf3hZMBTcX6_dLt4NDDzbQ5oW1SznEA8_9Mcf12xebz-NBDZlYXcT8gcFnLxkhfIaCJwSVbFcod4e0eOK_4SceDhHnhzhUrkhvs4XFmxZ-cSnQ=="
+      ]
+    },
+    {
+      "era": "1988-1991",
+      "title": "The Phoenix Rises: Jayalalithaa's Ascent from Crisis to Command",
+      "narrative": "The political landscape of Tamil Nadu was plunged into a tumultuous period following the demise of its charismatic leader, M.G. Ramachandran (MGR), on December 24, 1987. His death ignited a fierce succession battle that tore the All India Anna Dravida Munnetra Kazhagam (AIADMK) into two warring factions. On one side stood V.N. Janaki Ramachandran, MGR's widow, who briefly assumed the mantle of Chief Minister on January 7, 1988. Her government, however, was short-lived, dismissed by the central government on January 30, 1988, amidst unprecedented chaos and violence during a confidence vote in the assembly.\n\nThe other faction rallied behind J. Jayalalithaa, MGR's protégé and propaganda secretary, who proclaimed herself his political heir. The 1989 Assembly elections became a battleground for these two AIADMK factions, each contesting separately. The results were devastating for the party MGR had built: the Janaki faction secured a mere 2 seats, while Jayalalithaa's faction managed 27, paving the way for the DMK to return to power after 13 years.\n\nHumbled by the electoral defeat, Janaki Ramachandran, recognizing that politics was not her forte, gracefully stepped aside, leading to the reunification of the AIADMK under Jayalalithaa's undisputed leadership in February 1989. The party's iconic 'Two Leaves' symbol, previously frozen, was restored. This reunification marked a pivotal turning point. The united AIADMK, in alliance with the Indian National Congress, demonstrated its renewed strength in the 1989 Lok Sabha elections, securing a dominant 38 out of 39 seats in Tamil Nadu.\n\nThe ultimate triumph arrived in 1991. Following the tragic assassination of former Prime Minister Rajiv Gandhi during an election campaign in Tamil Nadu in May 1991, a massive wave of sympathy swept the state. Capitalizing on this, the AIADMK-Congress alliance achieved a historic landslide victory in both the Assembly and Lok Sabha elections. Jayalalithaa, at 43, became the youngest Chief Minister of Tamil Nadu, embarking on her first term and firmly establishing her command over the party and the state.",
+      "key_events": [
+        {
+          "year": 1987,
+          "month": 12,
+          "event": "M.G. Ramachandran (MGR) passes away",
+          "significance": "Triggered a severe succession crisis within the AIADMK, leading to a split into two factions."
+        },
+        {
+          "year": 1988,
+          "month": 1,
+          "event": "V.N. Janaki Ramachandran sworn in as Chief Minister",
+          "significance": "MGR's widow briefly became the first female Chief Minister of Tamil Nadu, leading one faction of the AIADMK."
+        },
+        {
+          "year": 1988,
+          "month": 1,
+          "event": "Janaki Ramachandran's government dismissed",
+          "significance": "Her government lasted only 23 days due to political instability and chaos during a confidence vote, leading to President's Rule."
+        },
+        {
+          "year": 1989,
+          "month": 1,
+          "event": "Tamil Nadu Assembly Elections held; AIADMK factions contest separately",
+          "significance": "The split AIADMK performed poorly, with the DMK winning the election, highlighting the need for party unity."
+        },
+        {
+          "year": 1989,
+          "month": 2,
+          "event": "AIADMK factions merge under J. Jayalalithaa's leadership",
+          "significance": "Janaki Ramachandran stepped down, and Jayalalithaa emerged as the undisputed leader, reuniting the party. The 'Two Leaves' symbol was restored."
+        },
+        {
+          "year": 1989,
+          "month": 2,
+          "event": "J. Jayalalithaa becomes Leader of the Opposition",
+          "significance": "Marked her formal entry into the Tamil Nadu Legislative Assembly as a prominent political figure."
+        },
+        {
+          "year": 1991,
+          "month": 5,
+          "event": "Rajiv Gandhi assassinated in Sriperumbudur",
+          "significance": "Generated a massive sympathy wave that significantly influenced the outcome of the 1991 general and assembly elections in Tamil Nadu."
+        },
+        {
+          "year": 1991,
+          "month": 6,
+          "event": "J. Jayalalithaa sworn in as Chief Minister for the first time",
+          "significance": "Following a landslide victory, she became the youngest Chief Minister of Tamil Nadu, solidifying her leadership."
+        }
+      ],
+      "achievements": [
+        "Successfully reunified the fractured AIADMK under a single leadership after a severe succession crisis.",
+        "Led the AIADMK-INC alliance to a historic landslide victory in the 1991 Assembly elections, securing 225 out of 234 seats.",
+        "Secured all 39 Lok Sabha seats in Tamil Nadu in the 1991 general elections in alliance with the Indian National Congress."
+      ],
+      "leadership": [
+        "V.N. Janaki Ramachandran — Chief Minister (Jan 1988)",
+        "J. Jayalalithaa — General Secretary (1988-2016), Leader of Opposition (1989-1991), Chief Minister (1991-1996)"
+      ],
+      "election_results": [
+        {
+          "year": 1989,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 2,
+          "total_seats": 234,
+          "vote_share_pct": null,
+          "alliance": "AIADMK (Janaki faction)",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1989,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 38,
+          "total_seats": 39,
+          "vote_share_pct": 56.98,
+          "alliance": "AIADMK-INC front",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1991,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 164,
+          "total_seats": 234,
+          "vote_share_pct": 44.39,
+          "alliance": "AIADMK-INC front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 1991,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 39,
+          "total_seats": 39,
+          "vote_share_pct": 60.67,
+          "alliance": "AIADMK-INC front",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "The immediate succession crisis after MGR's death led to a bitter power struggle and the split of the AIADMK into two factions, one led by MGR's wife Janaki and the other by Jayalalithaa.",
+        "Chaos and violence erupted in the Tamil Nadu Assembly during the confidence vote for Janaki Ramachandran's government in January 1988, leading to its dismissal and the imposition of President's Rule.",
+        "The Election Commission froze the AIADMK's 'Two Leaves' symbol for the 1989 elections due to the party split, forcing both factions to contest under different symbols.",
+        "J. Jayalalithaa was allegedly assaulted by ruling DMK members in the Assembly in March 1989, an incident that she vowed would only be avenged by her return to power."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpt9lXfVv4BdgPws5dcOETX-eptxel_D0X2GTkpWtX-Hu_VEH9zDGvBC--yciLzUV12MujQ2ss30bqdGbPpbmDu380cEbwrVvn-3g0BXBhzrvwO0EPo7pYlk2YpMOZVeSjg9UpCpyGSxYWzwM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEca3VXrsGXkRD1BIG-ZxxcfvFeqp4Y8F50_TyO0_hrHM8_prgdNDqE0zOJYE9ciokhNLXr4m-F9b0fv9bcyxMr9Ag7t28j1vCGQYX_WL1kQ_chl7LHlhg_lI_mtLnwVeNP9UEttsPedyN1FkagvAS26rcVh2x_ncUQmrM5cvWk3r_ERDEGAw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtOe5l1lM1B2KJAbqg9AL40IULmceXqYfU58h96pWFNBfNOVW_jkbObTKBsM3KeJmZNINJPd68zENqRDRQk3KDdgdmbsggL2kFb5tKBkDMpkgFL8RkfZzCZ7dS3aW9VoUJMsXYEXuEDJGtVQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0JocT8NoXJVAhfX7xA0TLHd9GL9akw-_rplY_n8PbbaRYP6UDQcxxWqgbv7JAafR-94ERz3GsZfIm5NjqL26MBy---jNHSLyM4ROyQfvkLQWubIxoOYnahfYtd3T2Zd65JpPEU0U=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3mVAtb8nh6jLUyzn8cs8iDRnBROH7wYYJWxipF7Tnlps-KwA2vh7ssQSoaePP8H09d8ga-c1gbYhtGKLpotAHP2XZBX6Gmg6-e81Ut-bj9CQLjaP7Ps9PBFfGQxoByKP2a-yFpkGg-FaYGRHqt40F",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4P4FWCCocWURjxxniryUMw_WW0ChEX5MwkR1euEBn1D0gQqVzTxCGSTMxeKTMe9G9NphqzfnS_GswNmPLVbo2UAMC5yfIbi6ipOaQBqT8pdsWWym3HY6En-Z30-LmdCbLUEIN8ZUnhtKa77olSidw8bvCe8epf1GTCn7_Lw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGsJut_7V_fPGeKmwd1akEGZ-jqv2cNIOQKCFbDWqqUMggcKXuXwpw6M4FarG_W73C6-MTxzfre6VJtNFCcL9H_NLQwhwHl5G39zLwGlPh1vpPgu2aHTTCmcBnGgX4eg7fgZivseQtkJdHXd3C1Dmx8udv2y_6kvIoslHCjp8KS_bFUDe7hw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGCWcXWj3B4B6NEuW-nA_zvVuBSstQE40wimbGNLCFk7bvRJVnh5S3iOU0NpqRI_e2cT23oxD1DiGqqd4tcB8TAhSBNoSOpTlnio2Ng16LejB2KnW8XvQwziAMF0wz8DnjcqJe8b1ryIUGgCan3Z8TeezEtuhirs66m4B0Rqbo5rngVQzUy3U6OG5a__JOFcZuqjAOzMOoEZgeYLV0PQjf9cP4LgXCWxuYz3EA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFolZ9V6uJO4xAoIl8fWk5wFxJGurubG-AAbNQbMzImvLpRDYC-n_X2RQV6dCtWqmy-x7EhYZKehwoWaDB-BgGIEBGK9HQiUAI5V9sPNW_vTVfgKd6ZJIhpNvm8c2s707KXCDF-C5JA10ZQ8nYSiJFXh9tOH8LRX_DrSoLwDRuogs1PSJJKb72lTRUxxkeCDhrqgeqGQIIlGtmF3fNRUbZv_rfl1h7E=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi3B4mtn_OdE6QtE58AM9r_jfruI6cLGPOGNMzUgsmhph4QE9iYVfC-HMZJgQcrlG2e0QQGc8QQAKpkGt4IsnyesH0IrH6TRErcInYXeH3CKL2ARw6eqLjPF_VI4o3xUdmNEONFbfln56nWehUyH3l6IvuDQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfcGyWIL_-WTbtjcySqkZe7RTBUHjgw1LtKPArAJA2-BBqhXGyW61q87oCkjtaCXPAXlWpTVJUPCFYnks5kA6z20zInT1y0Iai4_krbtZ6T3MmBYDZFdhGED96bFj8Te-IanKkpiGR0VHUF7z47oGbXd-C",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4QPF8Z0I4tDoHVXuqpW8wvUkhHZujkwG7_gFiT5Qx2WeVs49uNj9FakiSOUnJBFWHhJP9MgL1YG0P7X8UjcWK7dJXBSnTLhmSy-SruYsOOVIgN2hvvX7X5XZbiGGoN9s0RGEQsLPpKyF6BMn-U4lAAieyUcmpSxvt_wMKEiD4m6Qi0g=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZdRG3WQVTbD4IF5mYefg-fI00CpHNoxNSGZ5goLGVbxorhjRBSu1cEc8xV366nBNf3k4Qubtjp4T2lslWX3xfHOI6jUP6sPOj1zm61dyTx9rEIVHqPsY6gLViM909rCazmeKACMwPRF5v90aJEvQ4l0rDVYfXhWZdSvRFLKjAu8K2X3_CQifBcCTudEu6sYzd2O3uW1CypDANlHzv_nA0QaQwbaWvNsZu4fo_fAX5DFZcf",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy8KF7ntioM2LH_sVW8KFMYvoG6JPsBJzW_v_Kbs6HMZHq-vTb21vXmEzNJuYnIii1iUbcCHh6K7I1TVQhiyDCbvzIVofABCH2Ab1grPyyPBtcb0qnHVifZqUFEi62GCuzLZwoNZF2RBDWJG0MIxNv2oxyNvYVfJ4iTFHFb8f_KV4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnGjvdt2Gt0qWX5oaof8-rI6L4ofITXZNpjvNyA6_UidnAF1o_4cBSmKe8zYI3edid4RiqX68phu60CpNCu0e83mQNpmC1NoNCb8h5Wfr5ZWRFlTQZEOUzYDuBkBnuDvzCHt5C88MC1w==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ6hpVTgJyKBXh8BgsCHg9s3XOMmrrRbmb9dV--JAX-SJYFIEePEcFSvpMvwEa5xpZfDgj1spsr4QHsdjzFGJMrEoLLSI4XuDQ1btDlWk5mUKTYK0FJ95i62RU64qWiPSCd7jrLg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT-ta8Y7XNa_hIWhqBF_b0ulMhvF2BPjsdPMTm_n02ddxlZxGUcrM7DYXFMLRQJGNSaqkSemJ-MYKxqu_u93mePZYbk-RBklij0WPh_P2PNz-qpsYPeTezvsKWWmgh0bpTfVH0shNdW8y9nuPJJjbwzQCakTHlZYVmiINrSzVmSgXaAA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7nCq_IGH9OyuG-Axs7i5K8eJvszouOo0d_EOpKCPOV9l3gMb4RZJBJ4yoO92yJbva822xzTERuxBnq19fLTirvTy9L30gSUPKtBQxbPKI1Gdok_qbQUXcELmTo0I5sGSTjoJPEO2LnWT5uxSTEKdvXGFRwExavnO7gYMCrNlvuDbppwmG6p5TppicwnZh1C5RUb9Rp3IHoyH6s8ehlnfDgSMnMdY2chbpOGM5a_u8zerRoHmMooHnFuF6TY4qK7pigvxKNosJEoDDsxJ3VKsrW-qNIdT0zf1b",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEZbEAEET-G4fgC6C3e843v6ynEuI7YO5zw2hSdlTdFGywDiLkDqhXQvDKi0Cf6nmW8YOKjt-QUXsLOooy0S5V5dEF1I5RaKznfCpUqByaaelyFlfrbXViYOcwZbOtJWtUS-jlrBcvDj2HtNseeJbVnca_FWsEoej-X40wOZqmzwgyMnvFsaTN2WIm7v_I83D7",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBtzjuiHwJBQb8jn9pprOnp2dLK726RDTxsY7Q5n49DECcwDeXQrUhVCk9JuSuJa5h4EquqQy3bDM2SJ1xh2DpheKdYXZ8dQIGtiB0Uy88Ssp66w8M93ec0pHEKOaVDVlljlGCdR8x7FQmLf4peXOm3fmC4r8Hm1Y9drKJjRMLZCnvsipPAaIm5WKUT_wi6oSowRASeBfa1UIUV3pFvD2lfqavQBFmay1SQWVqu7Dop39jwIOkATGOqZAfviCEO0d8mXPOFMIHqw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH4eQetzAJ8AN46q4XHVGkh-XzpsvM_a8h_7TbYVkJar6oPi54b9hOgJ8u2K90TFhm3SQeLi_GRpG43xU4Mhdl3dzGGI2t4QfxETZPDEht4nbjoDAtJM8VXVz5dZEigcIXG_KkGMzo1nSMVLPJshNHwmyTWmJzNs11D45JgVZ2gy8B84kF5B_dRfILwLMkaJNaBUVwrm3HCBRFGspGnSZJGEGXVzp5fLp5bxWffkH_EAa6YtBYLYd6rXFCaLwGiaQGpjXyuP2kgWHFonhK2i-vhp4uzWlB",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnfiZ91a36pagGm_tCjZGyM30idG1YxH-fDbdI0H668gwJjWZRHkTPda1GNRlNEro5lSDRpBCbOxis6pP6JdwxEmxOYUM1zEtwXTFvh2ZNE46MLpoTW0tKFdSG6oWITEDbt1oYWtUeqlxGEXjqXlVomIA0xYmfh0JRaSX3Nw2uvedx-bvvAAAyE0IYNMCZ_ESH216uvbI2Kds-BibNgbgEvkTqNMg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt3QAQVY_Sk7tz9YCDz6KoWSnuGYZoBowoyYmCYKxU7yzwAilxnkAUJKHq9x_X5KZw0_Bc_XlTXZDIJjwgydRSjrHOxOUTsiRTmkFJLXVn_i4TbeMmS1tvv0cQoXgIamL02Flb4YoN0P908L7KXBNHTujLxlYdr2bWcCtEy6tx7D4Jz-kUFcM-PJTgauauWfuYIld3aio6snh0t5qRS4WXQptVDp1ZQozUu-xT4vgQ34C5v-zUxAa-MrqU4-D0wkgAWw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6NNF6yHtMjHwuTO1ia_egBcm2mk_spSE13Y4e17TFsDeS3RXg7pkOsIOCT4NKCErLW4l1bz3IrFE9FlQI3j3cruzh9Pps5uxrSV39Z_pEjx9QhismyPUo6DvdRDKE6qc9pKGJlTSqkY67Zy713FiBmdiabyQINTXD1pD7AUrLIH3OxsfIyYO6xBW7wKt0LL6EWfL8j57R-INTrHN8A6YLtuEsMIY6xQoK-iYWSKePZBpuIentNqkG=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqFxekMgpVXFDwKqYNqQ40VLgiGtfiv8VKnthlcIszwXI6v0JZALXx9FAVkIE4V94ZeyJ6FJtYLvBwyQB13EC9lNM3th9h07veuIUYoj5Pn9ZS_BbUH7mDiD7qprOSYmLQo47Hejehu3mgTTrl3Yg30Poc0ts=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd1hUAFiQbrQ5MBaPtm6Knv2EH5eZPqbtYM6hW_7wWwTpsr8hKmzBMksyq7gVBw0xLJnp4S3PHPlqC6XSojPMkwBrU1eHY4PrRN8RBMDn0055JxqrBZY0b8LFHer4ceNVgfnhc86_pHVRPKBovRNKOx1AMG8AmloF_pPX5Zn6JFCiId393oisGkIckFOYxdoWM88KhhEVJjJiCCH5oP_FPNcxO3D0OWixG2o6SnVWBfKp8grb-bd-LFAtcRlqRtZXtUBVce3TRvYg-3f8MhvSQuK58gh0HLg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzmsMEXskWx7s9ouQ9RqMU9xGusA30O8NQAfSm28A4A_ahzQ8SCq6Fp2PawgDNK0y3AW5xeCPANwUXdiKl65wnn5LDYpRrZRlHSvgah7vkcJoRD4jk-9kuKrx83NmTZ2IXajCAaAou6hZngNN1r7Xe8wh_",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF547iBWO7dtx-Ov9dJ4u3ILe_us3SFi45IvDl5r3vB41Jh6Ig3_FLQ1wGGdKn_p2jsKLCainLTtqhVLC_128wvHU1V_HJOcXdOoci7FPF7devvkag3bgtaIOkTzTjGVA5exW0H_s9KRHPkMTxJiai6-O-2FXVIMio=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9AWlI7ooXRoe4IhfRjCkjk7_Q-wsJwrrNZxCPjTop4M77jV0-b9kYP046xUPWks977F15ecAsgxAN413-cKgAYkX9_SXvrDYxICbp0DX00gN2ah0pvE2-aXIyhTdOeEH4S0_XfwWJIkiLqR0wO2A9_kovk-9bRBeeYfyQOKPfCPFMWyT4fgWU",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5nuDaCpKKOxihhdgP7BHFAZ_lyIItqtYEeZ-8bmwgHEcpNAetNdveslxU5UF_jxoV9RqIGfAl07WXxaCTM2wiJ9KdiViirSIs63LQqJe7PBalp6XJtrMnX1BNSU9UryvYS2Mjiedpb_c="
+      ]
+    },
+    {
+      "era": "1991-1996",
+      "title": "The Rise and Fall: Amma's First Reign and the Shadow of Scrutiny",
+      "narrative": "The year 1991 marked a dramatic turning point in Tamil Nadu politics, ushering in the era of J. Jayalalithaa as Chief Minister for the first time. The political landscape was charged with emotion following the tragic assassination of former Prime Minister Rajiv Gandhi during the election campaign. This created a massive sympathy wave that swept through the state, propelling the AIADMK-Indian National Congress (INC) alliance to a historic landslide victory. Jayalalithaa, a former film star and protégé of M.G. Ramachandran, assumed office on June 24, 1991, becoming the youngest Chief Minister of Tamil Nadu. Her initial term was characterized by a strong, centralized style of governance and the introduction of several populist schemes, earning her the moniker 'Amma' (Mother) from her supporters. She championed social welfare, notably launching the 'Cradle Baby Scheme' to combat female infanticide and undertaking a hunger strike to demand the release of Kaveri river water for farmers. Her government also passed a law protecting 69% reservation for certain communities. However, this period also saw the emergence of serious allegations of corruption, which would cast a long shadow over her administration. The most prominent controversy revolved around the lavish wedding of her foster son, V.N. Sudhakaran, in 1995, an extravagant affair that drew widespread public criticism for its ostentation and alleged misuse of state resources. These accusations, including the disproportionate assets case filed by Subramanian Swamy, began to erode public trust. By the 1996 assembly elections, the tide had turned dramatically. The AIADMK-INC alliance faced a strong anti-incumbency wave, fueled by the corruption charges and public dissatisfaction. The result was a stunning defeat, with the AIADMK securing only four seats, and Jayalalithaa herself losing her seat. The era ended with the AIADMK's citadel crumbling, paving the way for the DMK's return to power.",
+      "key_events": [
+        {
+          "year": 1991,
+          "month": 5,
+          "event": "Rajiv Gandhi's assassination",
+          "significance": "Generated a massive sympathy wave that contributed to the AIADMK-INC alliance's landslide victory in the 1991 elections."
+        },
+        {
+          "year": 1991,
+          "month": 6,
+          "event": "Jayalalithaa becomes Chief Minister for the first time",
+          "significance": "Marked the beginning of her first full term, making her the youngest Chief Minister of Tamil Nadu."
+        },
+        {
+          "year": 1993,
+          "month": null,
+          "event": "Jayalalithaa undertakes hunger strike for Kaveri water",
+          "significance": "Demonstrated her commitment to farmers' issues and garnered public support, leading to the Prime Minister's intervention."
+        },
+        {
+          "year": 1993,
+          "month": null,
+          "event": "Tamil Nadu passes 69% reservation law",
+          "significance": "A significant policy decision aimed at protecting reservations for certain communities."
+        },
+        {
+          "year": 1995,
+          "month": null,
+          "event": "Lavish wedding of foster son V.N. Sudhakaran",
+          "significance": "Sparked widespread public outrage and became a major symbol of alleged corruption and extravagance, contributing to anti-incumbency."
+        },
+        {
+          "year": 1996,
+          "month": 5,
+          "event": "AIADMK suffers massive defeat in Assembly elections",
+          "significance": "Ended Jayalalithaa's first term, with the party winning only 4 seats, largely due to anti-incumbency and corruption allegations."
+        }
+      ],
+      "achievements": [
+        "Launched the 'Cradle Baby Scheme' to address female infanticide by allowing safe state adoption for unwanted newborns.",
+        "Undertook a hunger strike to demand the release of Kaveri river water from Karnataka for Tamil Nadu farmers, ending only after the Prime Minister's assurance to set up committees.",
+        "Enacted a law to protect 69% reservation for certain communities in Tamil Nadu."
+      ],
+      "leadership": [
+        "J. Jayalalithaa — Chief Minister — 1991-1996"
+      ],
+      "election_results": [
+        {
+          "year": 1996,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 4,
+          "total_seats": 234,
+          "vote_share_pct": 27.08,
+          "alliance": "AIADMK-INC front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1996,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 26.1,
+          "alliance": "AIADMK-INC front",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "**Disproportionate Assets Case:** Jayalalithaa was accused of amassing properties worth ₹66.65 crore (equivalent to ₹364 crore in 2023) disproportionate to her known sources of income during her tenure from 1991 to 1996.",
+        "**Foster Son's Lavish Wedding (1995):** The extravagant wedding of her foster son, V.N. Sudhakaran, drew widespread criticism for its ostentation, with courts later estimating expenses around ₹3 crore, contradicting claims that the bride's family paid. This event significantly contributed to public perception of corruption.",
+        "**Pleasant Stay Hotel Case:** Jayalalithaa and other ministers were charged with misusing office to allow the Pleasant Stay Hotel in Kodaikanal to construct seven floors against regulations."
+      ],
+      "sources": [
+        "https://www.google.com/search?q=1991+Indian+general+election+in+Tamil+Nadu",
+        "https://www.google.com/search?q=1991+Tamil+Nadu+Legislative+Assembly+election",
+        "https://www.google.com/search?q=Tamil+Nadu+1991+-+IndiaVotes+PC",
+        "https://www.google.com/search?q=1991+Vidhan+Sabha+%2F+Assembly+election+results+Tamil+Nadu+-+IndiaVotes",
+        "https://www.google.com/search?q=Jayalalithaa+Lied%2C+She+Spent+3+Crores+on+Foster+Son%27s+Wedding%2C+Says+Court+-+NDTV",
+        "https://www.google.com/search?q=DA+case%3A+Jayalalithaa+spent+Rs+3+crore+on+foster+son%27s+wedding%2C+says+special+court+-+Mid-day",
+        "https://www.google.com/search?q=Powerful+Indian+politician+Jayalalithaa+acquitted+of+corruption+%7C+The+Straits+Times",
+        "https://www.google.com/search?q=Disproportionate+assets+case+against+J.+Jayalalithaa+-+Wikipedia",
+        "https://www.google.com/search?q=All+India+Anna+Dravida+Munnetra+Kazhagam+(AIADMK)+%7C+2026+Tamil+Nadu+Assembly+Election+Results%2C+Political+Party%2C+Tamil+Nadu%2C+M.G.+Ramachandran%2C+%26+Jayalalithaa+%7C+Britannica",
+        "https://www.google.com/search?q=Things+to+know+about+J+Jayalalithaa+-+Business+Standard",
+        "https://www.google.com/search?q=Top+5+Biggest+Election+Victories+in+Tamil+Nadu+History+-+Jagran+Josh",
+        "https://www.google.com/search?q=AIADMK-led+Alliance+-+Wikipedia",
+        "https://www.google.com/search?q=Jayalalithaa+disproportionate+assets+case%3A+Timeline+-+India+Today",
+        "https://www.google.com/search?q=Pleasant+Stay+hotel+case+-+Wikipedia",
+        "https://www.google.com/search?q=Jaya+spent+Rs+3-cr+wedding+that+sunk+Jaya%27s+political+career+-+Hindustan+Times",
+        "https://www.google.com/search?q=Jayalalitha%27s+foster+son+married+off+amid+extravagance+and+controversy+-+India+Today",
+        "https://www.google.com/search?q=Tamil+Nadu+Assembly+Election+Results+in+1991",
+        "https://www.google.com/search?q=J.+Jayalalithaa+-+Wikipedia",
+        "https://www.google.com/search?q=Dr.+J.+Jayalalithaa+excellence+leadership+quality%3A+Shaping+regional+and+national+politics+in+India",
+        "https://www.google.com/search?q=From+the+archives%3A+1996+Assembly+polls+brought+great+upset+for+AIADMK+-+The+New+Indian+Express",
+        "https://www.google.com/search?q=Elections+1996%3A+AIADMK+citadel+crumbles+as+DMK-TMC+alliance+sweeps+to+power+in+Tamil+Nadu+-+India+Today",
+        "https://www.google.com/search?q=First+Jayalalithaa+ministry+-+Wikipedia",
+        "https://www.google.com/search?q=Jayalalithaa+Jayaram+%7C+Indian+Actress%2C+Politician%2C+Chief+Minister%2C+%26+Death+%7C+Britannica",
+        "https://www.google.com/search?q=Jayalalithaa+Jayaram+Biography+-+Age%2C+Education%2C+Family%2C+Political+Life+-+Elections.in",
+        "https://www.google.com/search?q=1996+Indian+general+election+in+Tamil+Nadu+-+Wikipedia",
+        "https://www.google.com/search?q=STATISTICAL+REPORT+GENERAL+ELECTION%2C+1991+THE+LEGISLATIVE+ASSEMBLY+TAMIL+NADU",
+        "https://www.google.com/search?q=IndiaVotes+AC%3A+Winner+Candidates+of+ADMK+for+1996+in+AIADMK+ALLIANCE",
+        "https://www.google.com/search?q=How+many+times+did+Jayalalitha+become+the+chief+minister+of+Tamil+Nadu%3F+-+Quora",
+        "https://www.google.com/search?q=List+of+Chief+Ministers+of+Tamil+Nadu%3A+1920+%E2%80%93+2026+-+JAIN+PU+Colleges",
+        "https://www.google.com/search?q=DMK+vs+AIADMK+%E2%80%94+Tamil+Nadu%27s+50-Year+Political+Rivalry+-+IndiaStats.org",
+        "https://www.google.com/search?q=1991+India+General+(10th+Lok+Sabha)+Elections+Results",
+        "https://www.google.com/search?q=IndiaVotes+PC%3A+Winner+Candidates+of+INC+for+1991"
+      ]
+    },
+    {
+      "era": "1996-2001",
+      "title": "From the Brink of Defeat: Jayalalithaa's Legal Battles and Resurgent Comeback",
+      "narrative": "The period between 1996 and 2001 was arguably one of the most tumultuous and defining chapters in the history of the All India Anna Dravida Munnetra Kazhagam (AIADMK) and its formidable leader, J. Jayalalithaa. Having just concluded a term marred by accusations of corruption and ostentatious displays of wealth, the party faced a crushing defeat in the 1996 Assembly elections, securing a mere four seats out of 234, with Jayalalithaa herself losing her Bargur constituency. This was a political earthquake, leaving the AIADMK in the deepest wilderness it had ever known.\n\nWhat followed was a relentless barrage of legal challenges. The newly elected DMK government, led by M. Karunanidhi, pursued numerous corruption cases against Jayalalithaa and her associates. On December 7, 1996, in a dramatic turn of events, Jayalalithaa was arrested in connection with the Colour TV scam, marking a significant low point for the former Chief Minister. Cases like the Disproportionate Assets (DA) case, the TANSI land deal, and the Colour TV scam dominated headlines, painting a grim picture for her political future.\n\nYet, even from opposition, Jayalalithaa displayed her strategic acumen. In the 1998 Lok Sabha elections, she forged a crucial alliance with the Bharatiya Janata Party (BJP), which propelled the AIADMK to win 18 out of 39 seats in Tamil Nadu and become a key partner in the central government. This national leverage, however, was short-lived, as she famously withdrew support in April 1999, leading to the collapse of the Vajpayee government. The subsequent 1999 Lok Sabha elections saw her align with the Indian National Congress, though with reduced success.\n\nThroughout these years, Jayalalithaa meticulously crafted a narrative of political victimhood, transforming her legal woes into a symbol of persecution by her rivals. Despite convictions in cases like the TANSI land deal in October 2000, which temporarily disqualified her from contesting elections, the AIADMK-led front swept the 2001 Assembly elections with a landslide victory, securing 196 seats, with AIADMK alone winning 132. This remarkable comeback, however, was immediately challenged, and the Supreme Court nullified her appointment as Chief Minister in September 2001 due to her conviction, forcing her to step down. Nevertheless, the Madras High Court acquitted her in the TANSI and Pleasant Stay Hotel cases in December 2001, paving the way for her eventual return to power.",
+      "key_events": [
+        {
+          "year": 1996,
+          "month": null,
+          "event": "AIADMK suffers a devastating defeat in the Tamil Nadu Assembly elections, winning only 4 seats.",
+          "significance": "Marked the party's lowest point and Jayalalithaa's personal loss of her constituency, leading to a period of intense political and legal challenges."
+        },
+        {
+          "year": 1996,
+          "month": 12,
+          "event": "Jayalalithaa arrested in connection with the Colour TV scam.",
+          "significance": "A major blow to her image and political standing, initiating a series of high-profile corruption cases against her."
+        },
+        {
+          "year": 1997,
+          "month": 6,
+          "event": "Chargesheet filed against Jayalalithaa in the Disproportionate Assets (DA) case.",
+          "significance": "Formal initiation of a long-running legal battle alleging accumulation of wealth beyond known income sources."
+        },
+        {
+          "year": 1998,
+          "month": 2,
+          "event": "AIADMK forms an alliance with the BJP and wins 18 Lok Sabha seats in Tamil Nadu.",
+          "significance": "A significant political revival, allowing AIADMK to become a crucial partner in the central government."
+        },
+        {
+          "year": 1999,
+          "month": 4,
+          "event": "AIADMK withdraws support from the BJP-led Vajpayee government.",
+          "significance": "Led to the fall of the central government and triggered fresh Lok Sabha elections, demonstrating AIADMK's national political influence."
+        },
+        {
+          "year": 1999,
+          "month": 9,
+          "event": "AIADMK allies with the Indian National Congress for the Lok Sabha elections.",
+          "significance": "A shift in alliance strategy, though the party's performance was less impactful than in 1998."
+        },
+        {
+          "year": 2000,
+          "month": 5,
+          "event": "Jayalalithaa acquitted in the Colour TV scam case by a special court.",
+          "significance": "Provided some legal relief amidst ongoing cases, though other convictions still loomed."
+        },
+        {
+          "year": 2000,
+          "month": 10,
+          "event": "Jayalalithaa convicted in the TANSI land deal case by a special court.",
+          "significance": "This conviction led to her disqualification from contesting elections and later, her unseating as Chief Minister in 2001."
+        },
+        {
+          "year": 2001,
+          "month": 5,
+          "event": "AIADMK-led front wins a landslide victory in the Tamil Nadu Assembly elections; Jayalalithaa sworn in as Chief Minister.",
+          "significance": "A remarkable political comeback, demonstrating her enduring popularity despite legal challenges and her inability to contest."
+        },
+        {
+          "year": 2001,
+          "month": 9,
+          "event": "Supreme Court nullifies Jayalalithaa's appointment as Chief Minister due to her TANSI conviction.",
+          "significance": "Forced her to step down from the Chief Minister's post, highlighting the legal hurdles she faced."
+        },
+        {
+          "year": 2001,
+          "month": 12,
+          "event": "Madras High Court acquits Jayalalithaa in the TANSI land deal and Pleasant Stay Hotel cases.",
+          "significance": "Cleared the path for her eventual return to the Chief Minister's office."
+        }
+      ],
+      "achievements": [
+        "Successfully navigated a period of intense legal scrutiny and political opposition, maintaining party cohesion.",
+        "Formed strategic alliances (e.g., with BJP in 1998) that brought the party back into national relevance and government.",
+        "Achieved a landslide victory in the 2001 Assembly elections, demonstrating strong public support and a powerful political comeback despite personal legal challenges."
+      ],
+      "leadership": [
+        "J. Jayalalithaa – General Secretary – 1989-2016"
+      ],
+      "election_results": [
+        {
+          "year": 1998,
+          "type": "lok_sabha",
+          "seats_contested": 22,
+          "seats_won": 18,
+          "total_seats": 39,
+          "vote_share_pct": 25.89,
+          "alliance": "NDA (AIADMK, BJP, MDMK, PMK)",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1999,
+          "type": "lok_sabha",
+          "seats_contested": 24,
+          "seats_won": 10,
+          "total_seats": 39,
+          "vote_share_pct": 25.68,
+          "alliance": "AIADMK-INC-Left front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2001,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 132,
+          "total_seats": 234,
+          "vote_share_pct": 50.09,
+          "alliance": "AIADMK-INC-PMK-MDMK-TMC-Left front (Secular Democratic Progressive Front)",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "**1996 Assembly Election Defeat:** The AIADMK suffered a humiliating defeat, winning only 4 seats, and Jayalalithaa lost her own constituency, marking a significant public rejection.",
+        "**Disproportionate Assets (DA) Case:** Jayalalithaa was accused of amassing wealth worth ₹66.65 crore disproportionate to her known sources of income during her 1991-96 tenure. Subramanian Swamy filed the complaint in June 1996, leading to her arrest in December 1996 and a chargesheet in 1997.",
+        "**Colour TV Scam:** Allegations of irregularities in the purchase of 45,302 color TV sets for village community centers in 1995, causing a loss of ₹10.16 crore to the state exchequer. Jayalalithaa and others were arrested in December 1996, though she was later acquitted by a special court in May 2000.",
+        "**TANSI Land Deal Case:** Jayalalithaa and her associate V.K. Sasikala were accused of purchasing land from the state-owned Tamil Nadu Small Industries Corporation (TANSI) at undervalued rates in 1992. Jayalalithaa was convicted by a special court in October 2000, which led to her disqualification from contesting elections, though she was later acquitted by the Madras High Court in December 2001.",
+        "**Unseating as CM in 2001:** Following her conviction in the TANSI case, the Supreme Court nullified Jayalalithaa's appointment as Chief Minister in September 2001, ruling that a convicted person could not hold the post."
+      ],
+      "sources": []
+    },
+    {
+      "era": "2001-2006",
+      "title": "The Phoenix Rises: Jayalalithaa's Tumultuous Return and the Shifting Sands of Power",
+      "narrative": "The dawn of the new millennium brought a dramatic twist to Tamil Nadu politics, as J. Jayalalithaa, the charismatic leader of the AIADMK, staged a remarkable comeback. In the 2001 Assembly elections, the AIADMK-led front swept to power with a resounding victory, securing 196 out of 234 seats, with AIADMK alone winning 132 seats. However, the path to power was fraught with legal challenges. Jayalalithaa, convicted in the TANSI land deal case, was disqualified from contesting the elections. Despite this, she was sworn in as Chief Minister on May 14, 2001, a move that ignited a constitutional debate. Just four months later, in September 2001, the Supreme Court ruled her appointment invalid, forcing her to step down. In a display of unwavering loyalty, her trusted aide, O. Panneerselvam, took the reins as interim Chief Minister.\n\nThe political landscape remained tense until December 2001, when the Madras High Court acquitted Jayalalithaa in the TANSI and Coal import cases, paving the way for her return. The stage was set for a triumphant comeback, and in February 2002, she contested and won the Andipatti by-election by a significant margin, reclaiming her rightful place as Chief Minister in March 2002. Her second full term was marked by a firm, often autocratic, style of governance, including controversial 'midnight arrests' of political opponents, notably DMK leaders. While her government implemented various welfare schemes, the 2004 Lok Sabha elections delivered a stunning blow, with the AIADMK-BJP alliance failing to win a single seat in Tamil Nadu, a stark contrast to the DMK-led alliance's clean sweep. This defeat signaled a shift in public sentiment, culminating in the AIADMK's loss in the 2006 Assembly elections to the DMK-led front, bringing an end to a turbulent yet impactful five years.",
+      "key_events": [
+        {
+          "year": 2001,
+          "month": 5,
+          "event": "AIADMK-led front wins Tamil Nadu Assembly elections; J. Jayalalithaa sworn in as Chief Minister despite disqualification.",
+          "significance": "Marked Jayalalithaa's return to power but immediately sparked a constitutional crisis due to her conviction."
+        },
+        {
+          "year": 2001,
+          "month": 9,
+          "event": "Supreme Court rules Jayalalithaa cannot hold office; she resigns, and O. Panneerselvam becomes interim Chief Minister.",
+          "significance": "A major legal and political setback, demonstrating the judiciary's role in upholding constitutional provisions and leading to a temporary change in leadership."
+        },
+        {
+          "year": 2001,
+          "month": 12,
+          "event": "Madras High Court acquits Jayalalithaa in the TANSI land deal and Coal import cases.",
+          "significance": "Cleared the legal hurdles for Jayalalithaa to re-enter the legislative assembly and reclaim the Chief Minister's post."
+        },
+        {
+          "year": 2002,
+          "month": 2,
+          "event": "Jayalalithaa wins the Andipatti by-election.",
+          "significance": "Secured her position as an MLA, a prerequisite for becoming Chief Minister, and demonstrated her continued popular support."
+        },
+        {
+          "year": 2002,
+          "month": 3,
+          "event": "Jayalalithaa returns as Chief Minister of Tamil Nadu.",
+          "significance": "Completed her political comeback, resuming full control of the state administration."
+        },
+        {
+          "year": 2004,
+          "month": 5,
+          "event": "AIADMK-BJP alliance loses all 39 Lok Sabha seats in Tamil Nadu.",
+          "significance": "A significant electoral defeat at the national level, indicating a strong anti-incumbency wave against the AIADMK in the state."
+        },
+        {
+          "year": 2006,
+          "month": 5,
+          "event": "AIADMK loses the Tamil Nadu Assembly elections to the DMK-led front.",
+          "significance": "Marked the end of Jayalalithaa's second full term as Chief Minister and the return of the DMK to power."
+        }
+      ],
+      "achievements": [
+        "Expanded the Cradle Baby Scheme, initially launched in 1991, to combat female infanticide and promote the welfare of abandoned children.",
+        "Undertook various social welfare programs aimed at the underprivileged and disadvantaged sections of society.",
+        "Established the Theni Medical College and Hospital, contributing to infrastructure development in healthcare.",
+        "Received the Golden Star of Honour and Dignity Award by the International Human Rights Defence Committee in 2004 for efforts to promote gender equality.",
+        "Successfully orchestrated the hunt and killing of notorious brigand Veerappan by Tamil Nadu security forces."
+      ],
+      "leadership": [
+        "J. Jayalalithaa — Chief Minister — May 2001 - September 2001; March 2002 - May 2006",
+        "O. Panneerselvam — Chief Minister (interim) — September 2001 - March 2002"
+      ],
+      "election_results": [
+        {
+          "year": 2004,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 34.84,
+          "alliance": "AIADMK-BJP front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2006,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 61,
+          "total_seats": 234,
+          "vote_share_pct": 32.6,
+          "alliance": "AIADMK-DMDK front",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "Initial disqualification from contesting the 2001 Assembly elections due to conviction in the TANSI land deal case.",
+        "Appointment as Chief Minister in May 2001 despite disqualification, which was later overturned by the Supreme Court.",
+        "Controversial arrests of political opponents, including DMK leader M. Karunanidhi, in 'midnight raids'.",
+        "Filing multiple nominations in the 2001 Assembly polls, which were initially rejected but later had criminal proceedings quashed by the Supreme Court.",
+        "Continued scrutiny and legal proceedings related to the disproportionate assets case, though conviction came in a later period."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYrc6lh82yTrQOuBFTWFvAyQWDUtdt-kMDU6RtVeu8wFhpEtL0-NmgKas_uzrpdL_D2bH7P8k5S8JcMvrSsQ6JZuOPMRZ5VnJ1PDhiw0NC-U5vb0gh64CeT4NOSlyDotIfPPxpOjZy2xQdFx_bFd_yWuJv-0gM5H_lIahwqcOOrpugVKOEayXSWm9Hkkspq8Uo",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9rz9x4Y1ec2h-3Pyw-Mmze7jG5H95eRuICspjMSmrj1JwCWWTrVe57yQ_cL6WjIZgvGsJOn5CWj8PcOq69TZMAvb_qr3TyKrsVmfqmt3-rGpeeinCw_SylPaUCd1cOzEYIuXd-EUcRw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETt7EoJcBAPUPqGDb9c51NBGp9eRKoDOOso3EM8aoDHkiYy_3lnChZoTc1cMaCvFBmkWohQQ3iDc9AkJ9LqieP88sejrg6837OhBxOBc9-2O3IJ2yXXxUqFyFiZ-RjpZsuuq8oS7Pnfd-FkorXZUOxwaEF5cUbwxUk4YcyyjDDsdtbWlS7sA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHk2uFzh3wwgmIKGAOMzkLgl2byXh5DIh8C_DKyhK1dZ2I6heC9WpBtICx61IMp6VAyBFNVPPgxH5Fx2fBQs162-u5wBoRPC34WWTtquUY9PH7i9QMQDX3TiJZReCWvEYGqVanuzksYzkZ_2tLrz_CtOfEhd_0OaX3XklX00gyXtxQ3Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMMPV3OnHb78o1EvWXUACbT7gSDnPMDC-lMPUYaKgywNbasetv-6hRlFKFPXDTPd5_-Nqz5vmEqZ5xkOQF26e7e_oSw0eEXCYtUMeW2I-URf_RYzol8lSiTbO8qeqYmVbYi6urA3yOsVJPax7oZ16VY6GepcQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm9HZ2_jvJ76IUgYAuI56PmGFg1Xn2Ki_jPFupCO0yhkmNEWIGiu0aygXZvZS9xAhpuLS6NZiS-5BXs9K699GS2rlNHZ9C0Oo5opb1B_6JdRcfIOkj3URhgyafNW4rhsM8ztXtw0-6u-jU5XW5J0_wv_KVycMiK8q3H4QUMKpeDI7k4UqteL0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_2hJsxtyFZ_-3W4mefzxkhRaojiZ5SJIRfKHVI3KzeTUHPS0NkvH5Ig6jkOC1uf0FLph_bcW2tf1xyQwVUHpFyML9h3FkllZAG0Cf6TnLAbgjZdas4x4tLWioDa-BmvvT9w45Irn3UD8o7L-Q7wOkh0k4aIg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR743JSRxyOtx95XzI2ONg-hChTLIFs-487BOrJkRDNsgw6kSnCNPsqip6CTowfy1SZw75ekRPXteCg6bb3_GA9Gc7gbWKn_gNyiEoWPuc5gv4hNhkjS_9_6-R2JPGq_5HM-FjLOdVW7CU2d3etN1kpxAz259xnDzlrm1tjhcW0FeJrQPsOIE405GV3fsxZQ65eipc-MrQYj2vNroIadyPHK213tHsjUoGJmic4hqSqXoWFAJGKPCNhw4_4wKg",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGDz-VJWAtcg9eVMSlaB0l1fzxLMilnBiSUSkGLEDLNy1Z67P15IWCS7HgGUAkhePp26ISpMG81kWsmEoWQZB8SYaGoz5iCrI-gY8fLGbV5gWue3SOC0lV447JSGSg2KPRD3D8mZdUoFQlo_iXnO0cIM_We-fstSradpBpREswWr2OilLPS1QUGAAHYFUbYNHrup1O_U62WxTGFNfWe4HggfRq-icf0W21iM9m4rrlx20-47rv0qlf_mEwdnQ3F2tnJ21h9e_UGqR50LrasH90SzQtMeYP7LE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrxauIdE6LvHa8ow4OwNF6UpH76uXVSDEZl3QBJFSxcZNyhA83vL4RYvdUfLKd4GeAzxTdP1t1X7x8K-3qW1kCFZ-89FWALB34vWlAC1B8ZvZocShutS5BdferA45eehWPUT25NE5VsIHh7mc67DMizgzYo3j_",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHypcrp0POU7fdTL3DzeUwgA8S6hw-CJsZxsnFxWEbZXyCuXKi2vZ_hlEw-EbLSY5J7lZnPsur-aocW8YE52nrMRzfxzQmKVGED9ndHhV8GjWHYZeBKOz8PuSzxSCxY-wviCMQL0f6Vxo3DbIBdY1vOLyg6hiKWfWkwRp8kg6Q=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkriJROKpmgt6KKPLwmXeYh3gclCnwPb8mQ_T7QT02petz_e6kXK8Y-6gMBnOdqaciFQ0p8Q2eJGyHWmpwAXMjejK6riwvLJQWdUPkGWKDivdLCgFNGbrgNbImNrGJZ6oZDZOmAKzG5R26gSJ7N-KFm9C7RPvO1fUmRV1WITzR6JxnYrxlrOHkTd95YP7PWnWqVXEi8sU_62_n2TZmruAR1pqFgOKBZdApzjcQYrg8R3ejWSvsckU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrfZrWza4k7wb1vQetiyQicby7Oz-XBTuWRS8errFc0dj1Dy0Q7DHjkUVnGeHsjMDPpl41X2_pVIwxYhEHGBLNdUDDCt_gmWnUEyDHrsXl53TzZU88U_8vxUt6mCp8MSua8h4P5fwom7O4gbiul0Os4mhY",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4bsh6Dd8vma0vK6TDgXd1wfTEfIvD-d3MkJ6ash9_ZhOonNL_DKOmtVUom-11WzbwSeLgDaMxB7d7ZXOJ-jetONsol-k8H_de08dYLnxv8w0adF0Ul8vXxLJYLlIXVvDlK4F75-9QcZslHFR0ceCTDaQCctDQ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnAFFjoo9LC38t3xr-rlKbC5u_8zcrirqLOBvtBfYcyTD_0O7f5TMFNZv-IEGiPGgRsqStnVlW1IuZvcYLPPKa3dZ9eELVj6C4uVZnNi4uGdARSaRcwtPbTLu0XTe5shwoQqicHUIgIU2p4mrgt7c9FVoKOodz3PdKjEGGiY7Cd9c=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj6reTOWPYPPMSIgMwn9LIntqhUYHbbuO_SIRgt6Xs6UYTH8M53gbwCbldaZgmMDxAet18ivm25s2cAdOtV-iBy1ooNeGG3fo1CFHp-EUg54NXNKlFD97bdC02N6_t1H-zVIEfpOajNUMroJTwnkIMT2YimDCvFze9vaG8b15BlgE08fe_VM63Q8IhfYFRXmMznTCEiDxtPYwQVo4m__meUw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWWNYjreSQ7ggyMyjsurT_FB5PKaeQ9adt2NRanS1HLHcvlIYLeWqqjDfJspN39sNSD5fH-FD4O-CWR8-UA1VW12hir0NQDjXHEsbh9o2zgFdNCihj4Yp1k-F3d4buY1c98MBW5_v0niv-RJtIFecxZ8FQKt_2AGoCYhHRDvZUNJBAjA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT26beAcO5myFsFio_Boy8tyHpRgJF2ngP6SRKUTj4aS87aKWSG2peWckw1CIO5hRn0-tdWaQNC6fWmO7-egc-4tFjgGz3XQoosI9W2igJw-1I95YaC2cu57_DBh0UHikJ3ltlnnRQ1XtOQOS-Zp0rgr-6VLO2tiqmuRTmd5eLEtQ9RcpPL4KRLj5TBmnLEE-0LT_HpDrtT1XqFxiKKwu5yg0XW6N3PWKHE_xMJPlMFr7YTtONx2u0XAVh_lkMeZ0PP8PqxA7eKsYk2H_K3g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMzvH2yHvkCYk_NhgK2q-ZERHjr7Q7d5cIezFP-6xTPVbUpu_1CFkfT7fGdPTUfkm5HIK8xj7VC6glaajSmsJx84o_D5-D_gWpqz6VBuy8p6pLjVc5fn_KakIoEv8LrxjosoXiYRTsYjMqXf51JjBooZpfLq6JE0yb",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcra986TnKn_OjjvEbZfg8uhtaWRBxPa-Z4lA4Izyt9Pup0TVmKBO7Q40tQFd9n0JUplrHLenU7HX8cK14MDlvp1IzxovMEBbhuim8CTkFYaSJt2xhRTKYWe_ieL-O99lZxaUtFy2qKg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIXEWKUY69ANxGppi-TZg4VIfpuVp_FXTpTOe51Ii-FShqJDMq-5NXeQdujthOboMTc0hbJfuTcQkuRIG3DdcL66nbOnvplDdTWRFESaSXkkjdyUM9KsY_Xl8PIlTRyfr0oi63sg3tjxo7HWNO9zY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgK7xYx4P2h_iJakYrx-lL0rEhI4CBzHJ6qwNzKgqyRUWfHoeV_THfn6UPDQIY169Bo2dbhPwgQHcma-uBceL7Ng3c2Vg2NFkHtIzlSgY1cjBukLurPtrf99VrpE-qoih-uZsbSiqOys2p3MBoaTXcbWiFM_Xtk2M8tKrLmrfbKwQ4nZwf4KkqpL2vcNSPSCL4CtQppKRnxXc3_EHO7a2HkkCsQNn7UFN38nzF4ZAd",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS3mEH3wl3UTpk_lyvrAJlnwRHT2U41VkwwqsPFTMGSUgO98qQIxQsBen8Qt4prB9S_0X8ONgtPU4Bd6SCszCOhsTFJT70_aBiqj7T5yviWZvyUZYytv-VhDIJeZU74Kgo0LAmMeYOe4Jtda6Ur4EvTIcuk_H-4Xg3CPocfP4fxWUqoThaq5w=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4C0JzjKazWEG-PgGjC4ZM_gPYuI50vv9bblb3841MCo4vmAESNYflNgHGstr00rP2qlfcFPcAgcRyFdAV657LnJXf-kTRysMvz7vpiJnbUKpqYLG_wLiXwF6sBXaksMw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHePIb067PzzlHS5VBXYupU1hrOlZinz6HKhJ9HcJ3Tux7oF2fHIMZntt4bU2vkkcgLpq4ORV7oPZXUJ1qN-0d0_LqrnIhtE3OrvDfJHoFUbwr8xbbvo7zbcPTjRAOdygq2pXFAueSkI7sHnrXstqla3iomY6Oqlij6YPnWD9pfaIiiWERz9oQSXwviat7yCMnBfBqn-Cmpwo15"
+      ]
+    },
+    {
+      "era": "2006-2011",
+      "title": "The Phoenix in Opposition: Jayalalithaa's Resurgence",
+      "narrative": "The period between 2006 and 2011 marked a challenging yet pivotal chapter for the All India Anna Dravida Munnetra Kazhagam (AIADMK), as the party found itself in the unfamiliar territory of opposition. After a decisive defeat in the 2006 Assembly elections, where the DMK-led front swept to power, J. Jayalalithaa, the charismatic General Secretary, assumed the mantle of Leader of the Opposition, a role she had previously held with fierce determination. The AIADMK, alongside allies like MDMK, VCK, and other smaller parties, secured 69 seats in the assembly, with the AIADMK itself winning 61, but it was not enough to form the government.\n\nThis era became a crucible for Jayalalithaa, as she meticulously worked to rebuild the party's strength and expose the perceived failings of the ruling DMK. The political landscape was rife with accusations of corruption, rising prices, and persistent power cuts, which became potent ammunition for the AIADMK. Jayalalithaa, often referred to as \"Amma,\" skillfully capitalized on public discontent, orchestrating large-scale rallies across the state to highlight these issues and rally support against the UPA government at the Centre and the DMK government in the state.\n\nThe 2009 Lok Sabha elections offered a glimpse into the shifting political currents. The AIADMK forged a \"Third Front\" alliance with parties like PMK, MDMK, and the Left, aiming to challenge the dominant DMK-Congress combine. While the alliance managed to secure 12 out of 39 seats in Tamil Nadu, with AIADMK winning 9, it was still a significant improvement from their 2004 Lok Sabha performance where they won no seats. This period of opposition, though difficult, allowed Jayalalithaa to consolidate her leadership and refine her political strategy, setting the stage for a dramatic comeback. The groundwork laid during these five years, characterized by relentless opposition and a focus on public grievances, would culminate in a landslide victory in the subsequent 2011 Assembly elections, ushering in a new era of AIADMK rule.",
+      "key_events": [
+        {
+          "year": 2006,
+          "month": 5,
+          "event": "AIADMK loses Assembly elections to DMK-led front",
+          "significance": "Marked the beginning of AIADMK's five-year term in opposition, with Jayalalithaa becoming Leader of the Opposition."
+        },
+        {
+          "year": 2009,
+          "month": null,
+          "event": "AIADMK forms 'Third Front' for Lok Sabha elections",
+          "significance": "A strategic alliance with PMK, MDMK, and Left parties to challenge the DMK-Congress combine, showing AIADMK's efforts to consolidate opposition forces."
+        },
+        {
+          "year": 2009,
+          "month": 5,
+          "event": "AIADMK-led front wins 12 Lok Sabha seats",
+          "significance": "Improved performance compared to 2004, indicating a resurgence in public support and setting the stage for the 2011 Assembly elections."
+        },
+        {
+          "year": 2010,
+          "month": null,
+          "event": "Jayalalithaa holds major rallies against price rise and DMK government's policies",
+          "significance": "Demonstrated Jayalalithaa's active role as an opposition leader, capitalizing on public discontent over issues like corruption and power cuts."
+        }
+      ],
+      "achievements": [
+        "Successfully positioned AIADMK as a strong and vocal opposition, holding the ruling DMK accountable for issues like corruption, power cuts, and price rise.",
+        "Rebuilt and strengthened the party's base and alliances, culminating in a formidable front for the 2011 Assembly elections."
+      ],
+      "leadership": [
+        "J. Jayalalithaa — General Secretary, AIADMK; Leader of Opposition — 2006-2011"
+      ],
+      "election_results": [
+        {
+          "year": 2009,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 12,
+          "total_seats": 39,
+          "vote_share_pct": 37.3,
+          "alliance": "AIADMK-PMK-MDMK-Left front (Third Front)",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "AIADMK, as the opposition, consistently highlighted alleged controversies of the ruling DMK government, including corruption, rising prices, power cuts, and nepotism."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELa8X0Ym-mDM2EnWkLvVdZJ0zZXJ5X5hF75Fz78sy43g1JgyWL0Iz4-jLX6vi8rc_rhmwiXZn--T43aBXSnpDMa6V9OknAZFEzeijb15mlBtEIfMbydCaDMXeg9HqlIWbLMkowGGICTYCGmpc=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4tcsdFtaFtT2whLAgU_lbAr-8Eei1dwxz8QXd5mfysbVgyDSHIhvskPH7UIGIQk3szGQobFPruEKmxfx4DfvgIr5sViMiqAS94Q7oSMf718_Xrxd00td3NqN9bDBXHscRQRtiIVHylb7UKWXa8zuouNDSAlSvDsNY7KgpYi0QvBtk5kwNrxI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHKc8wF1IZYtV18-jBxD6V5xPOP2zeg7p9_b50o6ZyleQPQnXH8PIDv5Nw0EFkukd8zHaMvaI-PWZAQtoor5aT2hiycKWowzOpONl3_XMHT9sqp7h6VjfDQy0UGL4Fnp0WZVPrq6TVW_LMKkPnoQwm4TH0GzEz3hPI4DUyp8xjN488JbbeJ6cwcc6RSAf_Pd7uVvvEQsuD_H_vgHzTlDhQIlgZak7JBgIduzGXHsHrBNxKcFBA9u9BeCd6gePKqtc7Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxtMcplTF6CRVjcBWYsunjVAxhqsxmX6yeOW0mipqvz5vS0932CqWDDxvqpMT9vRj1P1VD-gqBsDWXi2MRrlgrYmgjLsaNskL9LjttaeADsu6AKUvakT1zTzBUZdozAcSC_QMbwPSN8NOGEcHmhxSR-J2E7OVaVL8yLnuXLRoMDF5a6-BMpfMZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8AP0OTehceZX9dXr4y06NZknES6F_4MVrewlv7MubEOjKepykBUnDZp4nV-MfxLK78RC_h8HZeMewcVG1FA0ySTYwEF9BSjBK2cuhmm6bKCsk4lgPf9k1u4vikO1pNex77L7qh_11ahAbLy6QFxXQsWP-Edaerd5XpqPDOZtX9lA-cz9FJw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOYuXrPtMOVu8lCGBDF9RlY7FlRMsJ6_B1Xx6NWfQXHdHEHV1fN3OOBuZG1RN0EfaVJOIfaJtlzs2hSHH9UdsXaZSEQyn5vNBDBMgQ26DhlONYZ-_2rTeBJBLiQrzZa25oms4P3GX_ccMXbSZOrJ9CPMkJNb03WUtbBoo2Emmh-w8vRw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAeENjEj8wcLXHCnQw1sZAjne7YatJZhsRWT2TQ_fTJ0GWGqq2V4tMiBRwuWTTffx53H93w7nrSM2VhH3FUk1xaIcXS0msNU0AETcEVpeGdzjStCq9Tv_5tzIaoYIswEbGQyH-K5UAQq9S4Fxr0f4wqqmyGLxGcRvijrDfHq2XICdsqZJ_ex9nVH4P14YAbOJdYaAJZxWy2drZz9ds5EXXzcLve8yl65oN-q8--Kl_ar-YGQptrZ3Uuogi83VP5ZcsSuldC3utGAe6kM2kyYkT8VjDMXtuPB0H59eNuA_jUSAMWg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHKaGSZOu8AsOZGFp_bxM-v6efjd989dQt0CyA7Yq3QKzLMc1A6Fesdp0uBsBZs2883mtjmlhGH79Wz0NHck2YxCQ7beh5FgBAriLjSmiNp8O15SHc9vv_3gWdRAwiNUvskbaZuDfRu0j3AGswvTHBWXEmSXXpU64f",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGfKdEYejD224GxRrHQfimWXmsgABkg4xQmHGVss28Zd5SRjtC_MXYgqpJ87vIjeCIzzbeKnh_l0IHk28JJQDiuhDWq1X4-jvGyNSUJuU7qsgH8hASyrKhS1mMMmAKKsoYI6AfvMfF0kWNLSFA7M_v3qjQF_D1W4KWH8xEsE8ufD4SsA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm4WK0fGjIb0jOUaAEdaFP35wfvg44Nz26xwIolof9L7ES1kFgKrb1aFMbBfZsrAeQHDjMWypMWJlWX4CGV96GIcec08WICVBWaE4kWEB4qDniTRnBEfx9QxeeZxdUkBG72kWW4Yhj0PUhV1ZiBXRj7d7xZY5SwnkRyL99NSZEGdLs2Wk=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0fQrlsfIOnWZ8l2vBzKljPxEcKzrNKokdv07fGHy8SWYZR1tV2Tor1yi3hygZaq4JWv3gAcwta95evLAtyUZKBWTC7nfFzNJqHoDblOzBpSha4w3sWD9qY9J3ziIABhgTVsTJ2rIElXKejww-sLsmA18pcCPhn2cB7jBWZ74MDD8Id96G",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLBkrW0woeGCt5aVwQVqqoEQnMhzJdj3o0AxqJ9__bx3Zf-LShlsl19qleFtq-oiL_RvUjFjGX0OIQWDEUSgBnYuUaRgE8eVxz8awpCtGXAG7qtDtVh4jtzj1OhBSqb523mOTobyiTPI85j7VmAo8c1GvIS90QxMgu09Z3KfbU1KO3MSxBH0CxEjrhuYTv9HIg1NQBoMi_lmgdDw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW5o8wJQcPUDDgsSKuvUy7cy5JiCsWuyVt7LQ9pkV49VjQN5pTGRb-757mhftiovmERBOw8GP1X4Er3tnydKqku6uRCyLP9QrnSwCiShypLHpGlwGn5Tfb31mrRTc4VOd0gCd58ehTdg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFHbSW_fqhT2KGcUioC9wUs59XDfPoWlrzotOOn9ZAyYCwC5wQuDFnp2BwFy0EqXo_IL4G1mOJJBjRgZzRAQqYYsKKZr3zvbg3EZ57rOcc_3LBvxNt8M3Sl9Nk-EE-LQKb-T7gx66JSjF8mbrpV1JgnD0v9iJgHIHBpBF2p_w7B1uOYMGYe7bE9ph6SHPlzFK-OQKdiG9RBPNE43FyZ5ut76U=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEveXjzMY0vLVFVqnIZLdXC4M_-tRNDpX52SDUU-bqAd7J2fGfh8ZHjW0lfoY40zbLcpVFw1RfWLTLEyOpK2dLmL_SAbFB999WKZPILZhuC6uF0FtqX_oc13NYDO4WAO6qfPc8VM-g=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEibZzcEU6Z-GVJveoEMQ1hEvl7OHmCEGTMoH6so2f8joi-T0X4GuEjKKe8Q9dAsp9351mJmjE5GTN69IKm-1yfa13PMNpZMKFFBzxjTnjwU46InjpJQTbbDOs_QL8HSNxZjmGoMvABAwDuXPE4paE7PJUZzWcMjlznLiDjYkSpj_ajeHmFdjzCU4NLF9tuu5vq4MJoftraroDyRSSTMf1sVGZuRx4LyRB9EHFiik6wG5ksc5pFvsqprYolVcBUvVJ8gYSajw32tZsjFIeLxuH9jqqHoSk_wCde68jQvNwyWByNcPwnIb4ynjsso46a",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzQh4r3-6pDBv2GDKTBC_fuII34bxGgYROYTYEE0M3i3Ech4w3msYwPQopL9NCyUedagD2zrDIZeQgfcanqCKS5nLQ6B8KUr2F1l5FMgupDsOhiSd7G1fjMN5PYN501tLuFNe4BZOYajvIAv_borwo67g6LV7TdcnJHIYKiejXkB0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5J1fCizXpjeDXW66VvvaYmdM5nUqawvcnHdauefwfRlRzsoTAjeombiKUVMo9xp1wxyRuTDX0l1SdV35Hg7Y5vrzf76oGXqPDiK2EFwKI1_rKqb4XfOwSG5TaKGRzv827se9yufNzdRKOGmR9cw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-K4wgFWRebreGrfSUBjSXACE0eLtHZaMruZqyvLslutDbCsrKsCgvmbVMmRuWiUqc9ZSokwyevbBIqR2K81BXMLH-cD8kuQGdba4u4UU5T1TdXR3zO0YAAOc3e3eY7MwIWQzPTCE3ID0Zt02meiidJAoZls9Pl2m37xiFugANNqueNTYjNg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0pyoHtG_Ojb1Iir6FU9HHlwt785bZ9B2TTZUbxgvxi2aDYMVyt3qZ8TRf-9XlATL5wS0m_CU3gtFqZRIl5cGDQ6_Hwcf1Kq6Wl86YJ-ik0BgAA6jKBGSJjPYf6sFJw8mRFiOEaoqJs5DZjxKvoH2WnWg6o-sg8S4ShZGJZGt6DBoExQdyfaSx3c7dGP3RJIxlGyZ0fgnmeYQo",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHazGOn5w4XaS-iXmY7cw0df5rLvXiJwH_q6AL-E2-9jW2c3XxZ_3Y4sWcLB7YjzuCluDW9pDvTmOF54RNPo9rJ8CQVPleoyD81Xw2E0sa9QzvkMwGMpnGdTMHHIeozst2ZxIZXl2RtM_HN3ikk_OXB6X2k0nTWdaEe6kmFRX7X7YIw_m3dYBF1ReZnwLfSNRTOnscD-cNnScXtvCuYmFo92eCoDAjQ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuwWDBKEv-xLAklA3z9XYXnkQ3GP0P9BHWgLGYGf1nTLDMruQZitXsPZn5zC8bzjfCMI-ANCvpfMyzPL0NCxDdGg0YkenMtHBUEMZh8zW-0067w6IJsSM3hvFfg8oY93Ch3Gw5bggevvmDbMqstmx6-jQjY3xxGvj0wRQTIjdw03XrhqkiHlD_3JTM8snw27wu0j_2DiAnyMaSrgAOQY0_KJBlSnYkCOhMrPY7EhmQqJtVRuUT9L7GLrhCo0lvw1Ix_B8obEIemUH_gFBJDxE="
+      ]
+    },
+    {
+      "era": "2011-2016",
+      "title": "Amma's Resurgence: Triumph, Turmoil, and a Historic Mandate",
+      "narrative": "The period from 2011 to 2016 marked a dramatic and defining chapter in the political saga of Tamil Nadu, dominated by the formidable presence of J. Jayalalithaa. Having swept back into power in the 2011 Assembly elections, leading an AIADMK-led alliance to a resounding victory, 'Amma' (Mother), as she was affectionately known, began her fourth term as Chief Minister with a renewed mandate. Her administration quickly became synonymous with a slew of populist welfare schemes, branded with the 'Amma' name, such as the highly successful Amma Canteens, providing affordable food to the masses, and initiatives for subsidized water, salt, and lentils. These schemes cemented her image as a compassionate leader dedicated to the common people, earning her widespread adoration across the state.\n\nHowever, this period was not without its profound challenges. In a stunning turn of events in September 2014, Jayalalithaa was convicted in a long-standing disproportionate assets case, leading to her immediate disqualification as Chief Minister and MLA. The state plunged into uncertainty, and her loyalist, O. Panneerselvam, stepped in as interim Chief Minister, a poignant moment captured by his emotional swearing-in. Yet, the political drama took another twist when, in May 2015, the Karnataka High Court acquitted her of all charges, paving the way for her triumphant return to the Chief Minister's office. This comeback was met with jubilant celebrations by her supporters, reinforcing her larger-than-life persona. The year 2015 also saw Tamil Nadu grappling with devastating floods, particularly in Chennai, which brought both tragedy and criticism regarding the government's response.\n\nDefying political pundits and historical trends, Jayalalithaa led the AIADMK to a rare consecutive victory in the 2016 Assembly elections, a feat not achieved by a ruling party in Tamil Nadu since 1984. This historic win underscored her unparalleled connection with the electorate and solidified her legacy as a political titan, capable of overcoming adversity and securing the trust of the people time and again.",
+      "key_events": [
+        {
+          "year": 2011,
+          "month": 5,
+          "event": "AIADMK-led alliance wins Assembly elections",
+          "significance": "Jayalalithaa returns as Chief Minister for her fourth term, marking a significant shift in state power."
+        },
+        {
+          "year": 2013,
+          "month": 2,
+          "event": "Launch of Amma Canteens",
+          "significance": "Initiation of a highly popular welfare scheme providing subsidized food, enhancing Jayalalithaa's populist image."
+        },
+        {
+          "year": 2014,
+          "month": 5,
+          "event": "AIADMK sweeps 2014 Lok Sabha elections in Tamil Nadu",
+          "significance": "The AIADMK achieved an unprecedented victory, winning 37 out of 39 seats, demonstrating Jayalalithaa's strong influence at the national level."
+        },
+        {
+          "year": 2014,
+          "month": 9,
+          "event": "Jayalalithaa convicted in Disproportionate Assets case",
+          "significance": "A major political crisis as Jayalalithaa was sentenced to imprisonment and disqualified from office, leading to O. Panneerselvam becoming interim CM."
+        },
+        {
+          "year": 2015,
+          "month": 5,
+          "event": "Jayalalithaa acquitted and returns as Chief Minister",
+          "significance": "Her acquittal by the Karnataka High Court paved the way for her dramatic return to power, showcasing her resilience and political comeback."
+        },
+        {
+          "year": 2015,
+          "month": 11,
+          "event": "Chennai Floods",
+          "significance": "Devastating floods hit Chennai and other parts of Tamil Nadu, leading to widespread damage and raising questions about disaster management."
+        },
+        {
+          "year": 2016,
+          "month": 5,
+          "event": "AIADMK wins 2016 Assembly elections",
+          "significance": "Jayalalithaa secured a historic consecutive victory, a rare achievement for a ruling party in Tamil Nadu, solidifying her political dominance."
+        }
+      ],
+      "achievements": [
+        "Securing a decisive victory in the 2011 Assembly elections, bringing AIADMK back to power.",
+        "Implementing popular 'Amma' welfare schemes, including Amma Canteens, Amma Water, and subsidized provisions, which significantly benefited the common populace.",
+        "Achieving an unprecedented sweep in the 2014 Lok Sabha elections in Tamil Nadu, winning 37 out of 39 seats.",
+        "Making a historic return to power in 2015 after being acquitted in the disproportionate assets case.",
+        "Leading AIADMK to a rare consecutive victory in the 2016 Assembly elections, becoming the first ruling party to do so since 1984."
+      ],
+      "leadership": [
+        "J. Jayalalithaa — Chief Minister — May 2011 - September 2014",
+        "O. Panneerselvam — Interim Chief Minister — September 2014 - May 2015",
+        "J. Jayalalithaa — Chief Minister — May 2015 - December 2016"
+      ],
+      "election_results": [
+        {
+          "year": 2011,
+          "type": "assembly",
+          "seats_contested": 165,
+          "seats_won": 150,
+          "total_seats": 234,
+          "vote_share_pct": 38.41,
+          "alliance": "AIADMK-DMDK-Left front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 2014,
+          "type": "lok_sabha",
+          "seats_contested": 39,
+          "seats_won": 37,
+          "total_seats": 39,
+          "vote_share_pct": 44.3,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2016,
+          "type": "assembly",
+          "seats_contested": 232,
+          "seats_won": 134,
+          "total_seats": 234,
+          "vote_share_pct": 41.3,
+          "alliance": "standalone",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "Disproportionate Assets Case (2014-2015): Jayalalithaa was convicted by a special court in September 2014 for accumulating wealth disproportionate to her known sources of income during her first term as Chief Minister (1991-1996). She was sentenced to four years imprisonment and fined ₹100 crore, leading to her disqualification from office. She was later acquitted by the Karnataka High Court in May 2015.",
+        "2015 Chennai Floods Response: The government faced criticism for its handling of the devastating floods in Chennai in late 2015, particularly regarding alleged delays in releasing water from the Chembarambakkam reservoir, which some attributed to exacerbating the crisis."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaTz67inhrLx3lcT_Cl6mFvroEYhoJ9G3UJkvdCapAbvLkyOi9toCrjm4iyyrwBbg4qcRpoj6dPJuBogTueTuPOIhDVx4DiN26lJvcn2ObP-XAzXFebhMrImLVsfrpq09Gx9htW6dPouB6Ul0MOPiDD9K9eP4ZVmE9_7hk_YKb8fi4h6cqPRCjUleEnzo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR7bk-xPKyemaGpwY-oGMVHIN_NeUjnZ6SecyeL4Pu_kZ6zjO14D_xd7h6RQCKbK7BGYa22LbFZcHL94Wab06IsyOZ1mloeQi6k67Xj01ZNWDeY5weWXaDlE9Xkjjx7S7M1P9eejsG26y6JbCGcXRkdA4qd6etfUCgHF35MKoyuhuDObTXoHEL-mxBS8BWm1asLilN4Z30DX_79YXqHWGT8U3YwAFV5Kl93UBUODmJ8Vk1gPdNIrJEkTCy58pzUlPesKoSWstDsp0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWP_zgq1mZcxf-lWF-Tcrol3l1wzf9vyDa3Qvvu1lp2d8OlYV--gpJhzoUi7RcSEmkBnIJ-yvTE4KbHr9WVI8Gu81wXMilFSdwCxM1zlZeZV862vE3m16-LTLd3xHfCuvu7_raFRj-lzxxt1Y=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgTZSDRAlzsnx1MgXriFoR-g0kioFNQ8zMM6ZuxNii0vZULtQfd9D1DGDXKmIWdLUtlFHdFdMqtTNsXyUc3PfxD4cfeZc_3clGOjsvMHKpykBghA-STBHSJnetNcNBGLiY_anxZpb7UW2uWvTMpY-_CYftE2aa-oEe1f95tF8_cLjR4FrBtgqyljW7Wv2FuEROjrFLqJoLsmdDz_duyhzf-Nqf4ALY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjvAAwYBNeI7EzswFTa51lErHGxL0jNWeqM_Az3iUBraz4Q3p1lvE2Q7TjXsK53RQBIntBcu-gWb_NS0lHqJx-1LnogSeImenvavFgjvGPRi1doZ-b4EdU3MDUyMO2dQoiisg19rWa5mWud25leQKdXWjNfL5Uv1cHEykxI09osfEL0m_Or0d_rkEbGhK5SMF0ngHNhp6ZILGs8p1YD2GASyutLQ1VfUX6bueQQbvxBof_MvUNPEbf5SeEeS3Qg4MwBSMg6YmtKiQ5=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM0oh21SkXag4FjtwceD3yAU7O_dj2s5DziGAwjl6O3--fSn0RCRUCCrEyaxQMC9yxSgQ_m6Pir-fZ22lF2A6qnBTlPMwj2Gy5x3uA9R6yv9C0CDKzETjtOfn40kNCIRcQJRD1eyQEAvj9eK4nI641=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn9oz3OLEvzqLuVfEFWz8A5U0aW3bViyonjojdF7w5k9YqZsg_enlIlUdj59mYOfKqXsrSDaJ_vhaGPDSfeiStuGUFYv_TABjsoPNboOZAGE_pZh21jDXw7KPjkMUyuB990MbcBblbPQP5aDxcfoUE6KtNAOHJhv04W2o6jl__OTLRJJJ9nfZghYUvQNsR7tcqDuNYzemLxiTNMItSS4TmXwx059DKsN2V1tVJo99DDgFZ-4bo9g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6gSL2-JuEtYCaQzthLjwL7MAjv9-vwRzbJYL5hXD-rZBnBzIBOlE7WtjMvpyuPZF1UD2KsE0nTYTnZhCneOiqV5P0gpwhRvSHEUEv3Y6JxnvW9RAQYY0Ull6vQq8pD8ltfhfIbRtyZxRYRnPwhHsSew==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9oma0545TaEhnFNOUyb_j6sjr0-R8U7uytyhg_C02KZmJXHY4mXUv61_dUSJ7eAosi0uRq4TLpNjYGKB7kTrPfj8jTmUqAiqK74S_gle2wdLvB_o5XqDG62pZ1vyFN8sZysg1VxoC7JlrZPs0NsYZIrIWR9VXri2KMoHTwueQDxz3tOBAYOUt3CoFOZ26kB2jGaAr_ugv_YGTrsNxDh1ovRfn27ryPmMehNXh",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTZgmjQ3-X6IdPsrvSJP3h94pLgYI0M_G0qytTJCpdHg4oOVi-Fq6ExyxAFp1aO_1R45Wtfo9m2x7i-KAyPLQxLrpB_rL3jtbYNhj0rxWBycv1oSfdCCIji3n4HkAcx4VLIrdLtOQOuyMEpLO5DpnLZj49irh8Dvtg0vznMUkwUGzfwx0V3H9x8onQ2TB_c4IPQAMTuSJhfPbppVy98Lct6tHGGlxOnRbEN8DombA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYUWSbk0pwEXNlocdKsMHD6752r2cIdcOCtg-VuHkL3L81hmCGusyLs0hPuh8wAryYzbgP48vYnxJHlkF6b3MEndzvoSHtjc6FiqN9XEbnfvsH4FgKLUKPaGOotTHf4XqG8pnHhQOZEbgkHojp2z5UidAp5nPEsicIlnifegBv30YIDV6RMsVfBXRzrnWBpohK3C37N0x7RPyadgtgt0dS4O2lzeUL53gNGhf01RkOj3G-hpO768qLUI50eP89x",
+        "https://vertexaisearch.cloud.google.google.com/grounding-api-redirect/AUZIYQEiQTtDRxAda6qvOyvF-sr0myMAObQB_02PJQOz-tUaKT2KPruggwH1KVurft8UhadnuK3SD9nXpBeR16yS0MS-gP7PsKY9HzQ-ugC50oC1Km7LRkM8JpAhx3m8LhZeOg6ArnaIv8EuDnsYHtdx6V9FlcUTJ202RI0Qo6JTfUi4C6OhsSmr_bbn8CN4DaZa4yKPvGJQsxu0a38w-02x67zt2IqM6KgRysco_aNT9o92bTBIrpOrB3ChnG82hHCTeSCKgqOJUQKKmsNs",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnGlJhRtXoQB8Ri1nxMIK6hNQ3lcZOsRk-2xuTlcO18fB1t-e7hV9L82z14a0usBUNaPA6TowtcM1hr_40Y3d_MV6cILgQ3W9p_ZV3cF4n7zAFvhrQ0s-XGQrS6pPYf3bIIJ5l1mJEMddgPFROFbE0ehQpAwr7Out3xAPXUwyG7VGlw9JB49fNZsbzcIGb",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfzD4yHoydhP0r51tTVOsn8SUwTUeUA6i7gVZgbkZe8nXlg7ObQrScD4LjiIZwlpR5tvRB10uyGG5Ukj9WK_930hXJDmjL3_KZlcd9A9neqEipaEby-mZLUUr-3UWpPDjFxHkzCKUYTr-QJOYsrIecGq2WaLf4RgLo0qKS3UxBA0kFMQ0MWQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH20tYB4o7ZvBvhOcAUuoju7mBpk2tLQinJz7WBTKLipnFvC-tD9DyoOdy0mWdH8zzbo5xSujXX_rmeCo4Yw5Y1rDeXV0z-0PaVcai0amjr53AwcPpVvInKAGK13y8ZwNYTKAK0lHDxZjkFUe2UwkpP2jLaQWPLdvQiIpMKbqrfQf4NV-53JhUdRs0rkjzEyLvF_Jub1166ov7E-O4Z0fZEQxEXvS2JOWHiCp7hBh1iayf-OQF7dkJyuWoruqgAS2G-z4yf2--fNEi4SMjFuofrQ6F-SkLZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAtMt8EOjGiJ0YqNfdk_NmeoNAIgLBJOj9En9pEWyk4UOfbdu9zXSUiQL7z5q1L48R0yxe3PPmpffhvO5owOdLSgChGS9L7Rbh_OdCgcd_WarZUDvPm1GKH3oY6-DYU5ZalS3CwrMEuVchjs12SBNFEMVRacuPeg6AoTSslk_lVbe7tWcTgg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd9vPfY950fxCjft-gYe0K8Z62qGsxgKxqDvQY8rXM8DoYTYSuhRoj74REO-PmdH6PFqXzY5rVWiYZWtcgLeCFkvJaojeuqz2l2mRlOrOzbyPoCI8mSXbbrbaDhC6lj78NJzmGZ8sYfbe11oMpwSW7rDHMYMwjKpp-jPBGMGHUA02OSw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUnP7EystawFMLAGz-y--lz2jFy-dgvQFLCKY5Ap7rKtU_rlq2lvmQqG2nfJVahtJay0kk-AIuawK4qExgkeZdZTZ8weAqIbL7TfooFlqzslqpEpBBAElx3PSjlk2Hu9yQkC6Vag6Zi60fOgC31wEfhVFXOYZHMhG4WCEAajUsII8wb98kHkBcSA-FzLKlVPAuzF9H2sC5Vg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIVJ2fGfJ1raHcxXibj1HipXr704rlTK4uA6UIYO2yhi6O_0LR_43OsjBWwl26yb7tIpPHvxW-36h7av8z78MkNvf9Scjj5WOZXepWWWE_ZIG8uDAcroIA84fsCDDb8kSK1Uyu71PFthb-A8x_QW19mDiXiUELst42YSeRI3--Zs_akt2sbXcErmqawc9HVn-2OP0flufuR1qYjWihr7c_xLEARsru9dbnSAxYCfgqqi9BSvPj",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjBS860dR4g6doVlkEVFy-KGpbNcLSkzJdIlEhYR-veAYint1x7AuqK7rWzeGXP8R2GceHxHeXRS-hKGaDmZgBe5KyQungh2-fINeADGcyLz2a3rQLS6bigqhUvbMW_RJxJdm7zmZWbEC327ydTuy6_7zTGwOGhVr9sIXdiMWIXrZp8eUOom6DS98LlwFmljiGqDb1H9T-xzkaGQ1DHZupyXWx-JRmyuJD7dxffZ51xTCi9DSU7fFbeK_TjA7WYzdIGc1B8ia6xaovg00=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzP_bWdl41l_vdipOMOdpClmk8IPzy-c5EJ89id1JIZvC0_zEAikSL4jk674gXfUrASfp3VgZE0QR6J2LmoXJGFGCqRdmrx5KT4gpokoAID3KXj9tJvU7elBqDny9MXPJbI_oCfNblthApciaNouxpHFBNyw-d8jccyAxznNRkKRpBwtt3nlsgX3-_TZ2cEAe5tCCvt8oJj2iFCwvQjsaHwey6Fp5j2TkIA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrWRxDcc5ZA66FVCxkkfrNd405Lovfooop2qsKydg7J4RH3F0cbOFQj2DpzSfv2buPLwCrk1H-0wrVHy41Ei6zGGS8n6UIxCCRI5D-X5K8kJioy7DhZiblN2tnhGr0amvMlTDY06aDdwF0YCPFqULUqHosX6xqwnRj",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSEz-f57c6lfVpntmbAu5S516102LP7wHNEi1bOCjJimzdxnRM_I8S_PPpTI8BYf7NlxXTJICh00zX6_RCEfnbvyFPYqsOYlleSQ0lv3dpXcn6rMIJUEFHNEU3KzqjMDNpay7duu9RIH2U0fNSh6RByC3f7ubSoZJZw9vlkENo96JUzu_AaTSAaY1G1QpCgCwk-A3YfFj7DSzEDZgWpiFgTusW2QXYWr82MJUiUwbgQ1xZQ0E-F-8aYLBJI_alJN3ScZ0XEyUXA3j9_7RW43HlOTs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaUxeXLKySRR5JWZfth4AiOocTIJmkZF96qQDlTg_M5Lyj3V2cFID6rN9KBL399qwryqhJ5JVu-2GYjQc3XiYiz-RCljTmB8xl37MzixqoIOR2SyggQ1BMkgXkk3aKuywgJ0RUwD5zpZOsSFpVN71N6hi35FQChCxpJV3MrPcUzkRMs3E6JtZBKGSWuIhU9lM0sijOOWd7OMFpim-jYTawYk5qlDH_3Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnitHlNF7wmPvbxbhU-lTyxAgUDoGXCsGwAoPQODhiqhDZaeMeoAJmhUgORL-rJUHTiww_G0Xl8GaG7koNTbfTNDL9Q1mUPd7pwmX1F-DeVteHU8W49E3QwkeyHPkth3eRmEG_FU99-cZdLQIDvmXbt227Jop0FzDrak51HmcPhxkwNqcLrtnv1A0zs8oFjoZyT0CP1vgx4EKpt8YsPJ9rUzYLsBsU0F0dZnxWAS5I4KLyl8wd5qY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkk3bMMhH2snr_Psud6M4ZMAzdkAsiS6THFlk0-Dp8L5uMdnJAZnjlSC3Xe9glCyHb_MmwoHrRxOeSeyhZMebOi4AzCcIpP9-KExW5-cnxzkI4zADLIku95elBqDn9MXPJbI_oCfNblthApciaNouxpHFBNyw-d8jccyAxznNRkKRpBwtt3nlsgX3-_TZ2cEAe5tCCvt8oJj2iFCwvQjsaHwey6Fp5j2TkIA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuZm7ARCC88MmGqw5prB-UGfNX0ly3K8JwEaV5yM-tHDNCKqRN-brGkjgPQ9-qHQU1MprXqlkJWY-nZNh6IRjcEWuQ-XqE-Mx5fSVbEIq5Qhv5gQB7d7EM6CZwUUYECqVYfaKqTG1NrRcX7li6N9nuRDl3p23OYrIEwqLN0SScUKMAye-C1quQGqA8wIDWL9m4iLZdojDxqogbcNSbG2-KQjOjCTtr8ccWx3mj",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHvsAVAd-xM8raOrgHHOpzBXQID5p3nA3xM4HUuu6QeC333L0JlC5phYFFIRRekQhIkmCdMAHvGGM32h6kBuUDEZAfYdoJWTpa5IrYJTE43g1aWdRXsuN0l9NEidf67dsGxL05wWJ8YpcieJC1ebj2a3ROh23Zx6-nYkzVwybvmRY7Gdyu1jZadWhFk6dPIO-xHSGX",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRSWi0FxHZj64r33EqT0iyeBQUtgXYJ9ENFae72iAH2HT9CZaYb8FDzOW6DEOS64o-7TljSIMu9Gw-oO9GKLjnZW2oMJrnH517rDTsiW-E5SH6mFbkfSlxV0j85wadhn5T1w10MKWcv-ILztb6lbc-HQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlQNm-ip_itsDTx81m-n36dro4q1GCP9aw3q-VZIuQyivZmn2jURyEnHb7WiIMpxZ1wIPKiuN44eDtDRrI9zRWVSvB2u2RyabqvlcGnM2Le8LOS5QISfBVhoZcV-a8Lwpfe3qQZurALDlMixJLerokXDOsxs0jz6oqJIuEf1Txl9dj4Vqtwc4LFEuDxwEPLm2INZFJ1fPy7vb3yncOzfEN-Tukw2qaS8k1WQQhdh-i9X292hQfUZA7hzYlA94ZrpnTk2wXr32TW6B3jCU48IHw_YwjfWBHctMoecxiJbui",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo03WGu-5GUUB_LRyBcDDEPnoy-oeFN4Im1agkalUnIp_qr6IWbDJESdLvw5lCDNNDke2N03JLcVnfYVP_H5vJP6rIPuTna_w9O1vARSY8sTwgGnDDRCNHCo5BwtbxU-jfdqm5dOXxYKC-m_CweNH3QcUBKOBtj-1KZA5xZ-yNQXCRYAE4mtOEQpyadWqbrjgQH4JndqAwWRK82sR0j2mSuBzzPrbgDjFgRDLtMqe2xhgyQDT6zsBmQ5qtFQU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBw7Ekm1i0ArDgAOykhTPuP2UOubewydURjt5Zuc2Z4LLCoz-bUow4vhbBu7Q31ROZqxL53LaGERs9Kf_NO2BRidlqh7FznlpzJb7CfFmnxntTaZC56TnZwovEy-QGGEAYkpInRwiqcIZYfFxWVgGZlbqmEMLq",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmqDuzcVujiGrM7G66MDGPnO-vywHz8ux5XhZEfcbXO-_yNdE1yEONoyNL5VJORXr8irF0Gac5FlWxt4FGWazqz535uvW-6178hWiyONAX6w58mN23SAs2fsNVXuF5HFmyk2AwYzUYJPmwkW_SBnG2wDP-zBZIZ8h5JHT_gjU2rOIO1aYi1P1fPuttbmc9kiHa2zpOPIsoeNkfZBXn",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTdjii5mV8x7Oin1P65ZIN6hB9SqTO7FbxscRShyOLyD9hz_ERmiTLyhwumhS8my_4uNNw_1R_z0aHYl24q0xBWBcRztF-a5xui__cOfL0pctJy2BKj3GIYs1CpTxmlqRZ7xLRjiA3U2kLWmuoY9s68Q=="
+      ]
+    },
+    {
+      "era": "2016-2021",
+      "title": "The Storm After Amma: AIADMK's Tumultuous Journey Post-Jayalalithaa",
+      "narrative": "The political landscape of Tamil Nadu was irrevocably altered on December 5, 2016, with the passing of its charismatic leader, J. Jayalalithaa, affectionately known as 'Amma'. Her death plunged the All India Anna Dravida Munnetra Kazhagam (AIADMK) into an unprecedented crisis, leaving a gaping leadership vacuum that triggered a dramatic and often chaotic power struggle. O. Panneerselvam (OPS), a trusted lieutenant who had previously served as interim Chief Minister, was swiftly sworn in, seemingly a natural successor. However, the calm was short-lived. V.K. Sasikala, Jayalalithaa's long-time confidante, quickly emerged as a formidable contender, first being appointed the party's General Secretary in December 2016, and then making a bid for the Chief Minister's chair in February 2017. This move was met with a dramatic revolt from OPS, who alleged he was coerced into resigning and staged a public protest at Jayalalithaa's memorial. The political drama reached a crescendo when the Supreme Court, in February 2017, convicted Sasikala in a long-standing disproportionate assets case, ending her Chief Ministerial ambitions and sending her to prison. In her stead, Edappadi K. Palaniswami (EPS), a loyalist from her faction, was sworn in as Chief Minister. The party remained deeply fractured, but after months of intense negotiations, the OPS and EPS factions finally merged in August 2017, with EPS continuing as Chief Minister and OPS becoming his Deputy and the party's Coordinator. This uneasy truce saw Sasikala and her nephew T.T.V. Dhinakaran sidelined and eventually expelled from the party. Despite the internal turmoil, the AIADMK government managed to complete its full term. However, the electoral landscape proved challenging. The 2019 Lok Sabha elections delivered a crushing blow, with the AIADMK-led alliance securing only one seat in Tamil Nadu. The 2021 Assembly elections saw the party, still allied with the BJP and PMK, lose power to the DMK-led Secular Progressive Alliance, marking the end of a tumultuous decade in power.",
+      "key_events": [
+        {
+          "year": 2016,
+          "month": 12,
+          "event": "J. Jayalalithaa's death; O. Panneerselvam sworn in as Chief Minister.",
+          "significance": "Created a massive power vacuum and initiated a period of intense political instability within the AIADMK."
+        },
+        {
+          "year": 2016,
+          "month": 12,
+          "event": "V.K. Sasikala appointed AIADMK General Secretary.",
+          "significance": "Marked her formal entry into a leadership role within the party, setting the stage for a power struggle."
+        },
+        {
+          "year": 2017,
+          "month": 2,
+          "event": "O. Panneerselvam revolts against V.K. Sasikala.",
+          "significance": "Publicly challenged Sasikala's leadership bid, leading to a major split within the party."
+        },
+        {
+          "year": 2017,
+          "month": 2,
+          "event": "Supreme Court convicts V.K. Sasikala in disproportionate assets case.",
+          "significance": "Ended her aspirations to become Chief Minister and led to her imprisonment, fundamentally altering the leadership dynamics."
+        },
+        {
+          "year": 2017,
+          "month": 2,
+          "event": "Edappadi K. Palaniswami sworn in as Chief Minister.",
+          "significance": "Became the new head of government, initially as a Sasikala loyalist, amidst ongoing political uncertainty."
+        },
+        {
+          "year": 2017,
+          "month": 8,
+          "event": "O. Panneerselvam and Edappadi K. Palaniswami factions merge.",
+          "significance": "Consolidated power within the AIADMK, with EPS as CM and OPS as Deputy CM and Coordinator, sidelining Sasikala and Dhinakaran."
+        },
+        {
+          "year": 2019,
+          "month": 4,
+          "event": "Lok Sabha elections.",
+          "significance": "The AIADMK-led alliance suffered a significant defeat, winning only one seat in Tamil Nadu, indicating a decline in public support."
+        },
+        {
+          "year": 2021,
+          "month": 4,
+          "event": "Tamil Nadu Assembly elections.",
+          "significance": "The AIADMK-led alliance lost to the DMK-led Secular Progressive Alliance, ending the AIADMK's decade-long rule in the state."
+        }
+      ],
+      "achievements": [
+        "Successfully completed a full five-year term in government (2016-2021) despite severe internal leadership struggles and political instability.",
+        "Implemented several welfare schemes and infrastructure projects, including maintaining Tamil Nadu as a power-surplus state, initiating irrigation projects, and reserving 7.5% of medical college seats for government school students."
+      ],
+      "leadership": [
+        "J. Jayalalithaa — Chief Minister & General Secretary — May 2016 - Dec 2016",
+        "O. Panneerselvam — Chief Minister — Dec 2016 - Feb 2017",
+        "V.K. Sasikala — General Secretary — Dec 2016 - Feb 2017",
+        "Edappadi K. Palaniswami — Chief Minister — Feb 2017 - May 2021",
+        "O. Panneerselvam — Deputy Chief Minister & Coordinator — Aug 2017 - May 2021",
+        "Edappadi K. Palaniswami — Co-Coordinator — Aug 2017 - May 2021"
+      ],
+      "election_results": [
+        {
+          "year": 2019,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 1,
+          "total_seats": 39,
+          "vote_share_pct": 30.56,
+          "alliance": "AIADMK-BJP-PMK-DMDK front (National Democratic Alliance)",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2021,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 66,
+          "total_seats": 234,
+          "vote_share_pct": 33.29,
+          "alliance": "AIADMK-BJP-PMK front",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "Intense leadership struggle and factionalism within the party following Jayalalithaa's death, leading to a split between O. Panneerselvam and V.K. Sasikala/E. Palaniswami factions.",
+        "V.K. Sasikala's conviction in the disproportionate assets case by the Supreme Court, which thwarted her Chief Ministerial ambitions and led to her imprisonment.",
+        "Allegations of 'resort politics' where MLAs were sequestered during the power struggle to prevent defections.",
+        "Reports by the Comptroller and Auditor General (CAG) pointing to corruption and administrative violations in various departments during the 2016-2021 AIADMK regime."
+      ],
+      "sources": [
+        "https://scroll.in/latest/829630/supreme-court-convicts-vk-sasikala-in-illegal-assets-case-directs-her-to-surrender-immediately",
+        "https://www.hindustantimes.com/india-news/vk-sasikala-convicted-in-da-case-rise-and-fall-of-jayalalithaa-s-aide-101487053072235.html",
+        "https://www.business-standard.com/article/current-affairs/sasikala-convicted-who-said-what-on-supreme-court-s-historic-verdict-117021400494_1.html",
+        "https://timesofindia.indiatimes.com/city/chennai/aiadmk-factions-finally-unite-panneerselvam-is-deputy-cm/articleshow/60155099.cms",
+        "https://www.india.com/news/india/lok-sabha-election-results-2019-list-of-aiadmk-winners-3670984/",
+        "https://www.thehindu.com/news/national/tamil-nadu/sasikala-convicted-in-da-case-cant-contest-elections-for-10-years/article17299863.ece",
+        "https://thewire.in/politics/aiadmk-factions-announce-merger",
+        "https://app.powerbi.com/view?r=eyJrIjoiNjY1YjY3ZWMtY2Y0Zi00YmQ0LThlYjYtYjYxN2Y4YjQzYjU3IiwidCI6IjQ3N2Y1M2FhLTMzODQtNDQ0Mi05YjQ0LThmYjYxZDY0ZWM1YSJ9",
+        "https://en.wikipedia.org/wiki/All_India_Anna_Dravida_Munnetra_Kazhagam",
+        "https://timesofindia.indiatimes.com/india/after-amma-aiadmks-struggle-to-fill-the-void-left-by-jayalalithaa/articleshow/107963385.cms",
+        "https://en.wikipedia.org/wiki/V._K._Sasikala",
+        "https://www.indiatvnews.com/politics/national/aiadmk-merger-panneerselvam-becomes-deputy-cm-in-palaniswami-govt-394982",
+        "https://www.onmanorama.com/news/india/2017/08/21/aiadmk-merger-ops-eps-sasikala-dinakaran.html",
+        "https://www.scribd.com/document/425263177/Tamil-Nadu-2019-Lok-Sabha-Results",
+        "https://www.india.com/news/india/aiadmk-merger-o-panneerselvam-takes-oath-as-the-new-deputy-cm-full-list-of-tamil-nadu-ministers-2420942/",
+        "https://timesofindia.indiatimes.com/city/chennai/tamil-nadu-cag-reports-point-to-violations-graft-under-aiadmk-regime/articleshow/99696417.cms",
+        "https://www.britannica.com/topic/All-India-Anna-Dravida-Munnetra-Kazhagam",
+        "https://www.deccanherald.com/india/tamil-nadu/timeline-a-look-at-the-power-struggle-in-aiadmk-1126131.html",
+        "https://thefederal.com/states/south/tamil-nadu/aiadmk-post-jaya-slide-internal-rifts-youth-drift-and-alliance-trouble/",
+        "https://newsclick.in/tn-after-6-years-aiadmk-gets-leader-absolute-powers",
+        "https://en.wikipedia.org/wiki/2021_Tamil_Nadu_Legislative_Assembly_election",
+        "https://www.quora.com/What-are-the-achievements-of-the-AIADMK-party-in-Tamil-Nadu",
+        "https://timesofindia.indiatimes.com/videos/news/how-dmk-won-tamil-nadu-2021-vote-share-seats-and-political-shift-explained/videoshow/109436214.cms",
+        "https://indiastats.org/blog/2021-tamil-nadu-election-results-dmk-wins-133-seats/",
+        "https://storymaps.arcgis.com/stories/333182103f53443a912e753442129528",
+        "https://www.newindianexpress.com/states/tamil-nadu/2021/apr/02/tamil-nadu-elections-aiadmks-feats-in-10-years-2284725.html",
+        "https://www.thehindu.com/elections/tamil-nadu-assembly/tamil-nadu-election-results-2021-live-updates-dmk-set-to-form-government/article34468509.ece",
+        "https://en.wikipedia.org/wiki/2019_Indian_general_election_in_Tamil_Nadu",
+        "https://www.thehindu.com/news/national/tamil-nadu/aiadmk-lists-achievements/article22776426.ece",
+        "https://www.thehindu.com/news/national/tamil-nadu/aiadmk-after-jayalalithaa-from-a-split-to-merger-in-six-months/article19532104.ece",
+        "https://en.wikipedia.org/wiki/Sixth_Jayalalithaa_ministry",
+        "https://www.peoplesdemocracy.in/2017/0604_pd/tamil-nadu-total-failure-aiadmk-government",
+        "https://www.indiavotes.com/pc/winner-candidates-aiadmk-2019",
+        "https://timesofindia.indiatimes.com/city/chennai/dvac-raids-in-corruption-case-against-aiadmk-former-mla/articleshow/103672159.cms"
+      ]
+    },
+    {
+      "era": "2021-2026",
+      "title": "The Phoenix's Trial: AIADMK's Battle for Supremacy and Survival",
+      "narrative": "The period following the 2021 Assembly elections plunged the All India Anna Dravida Munnetra Kazhagam (AIADMK) into a profound crisis, testing its very foundations. Having lost power to the DMK-led Secular Progressive Alliance, the party found itself in the unfamiliar territory of opposition, a position it hadn't occupied for a decade. The defeat, where the AIADMK-led front secured only 75 seats against the DMK's 159, immediately ignited a simmering leadership battle between Edappadi K. Palaniswami (EPS) and O. Panneerselvam (OPS), the party's dual leaders.\n\nWhat began as a subtle power struggle escalated into a dramatic public spectacle, with party functionaries openly demanding a single, strong leader. By July 2022, the AIADMK General Council, dominated by EPS supporters, made a decisive move: it abolished the dual leadership, expelled OPS and his loyalists, and appointed EPS as the interim General Secretary. This bold step was met with fierce legal challenges from OPS, leading to a protracted court battle that captivated the state. While a single judge initially sided with OPS, a division bench of the Madras High Court and ultimately the Supreme Court upheld the General Council's decisions, cementing EPS's position as the undisputed leader by early 2023. The Election Commission of India officially recognized EPS as the General Secretary in April 2023, marking a turning point in the party's internal consolidation.\n\nWith internal strife seemingly settled, AIADMK faced the 2024 Lok Sabha elections. In a significant strategic shift, the party broke its alliance with the BJP in September 2023, citing differences and criticisms from the BJP's state leadership. Contesting with a new alliance, the AIADMK faced a crushing defeat, failing to win a single seat as the DMK-led INDIA alliance swept Tamil Nadu. This setback, however, did not deter EPS, who then led the party back into an alliance with the BJP for the 2026 Assembly elections. As the 2026 results began to trickle in, a new challenger emerged in actor Vijay's Tamilaga Vettri Kazhagam (TVK), further complicating AIADMK's path to power and pushing it to a projected third position, despite EPS securing a massive victory in his own constituency. This era became a crucible for AIADMK, forcing it to redefine its leadership, alliances, and electoral strategies in a rapidly evolving political landscape.",
+      "key_events": [
+        {
+          "year": 2021,
+          "month": 5,
+          "event": "AIADMK loses 2021 Assembly elections",
+          "significance": "Ended a decade of AIADMK rule and triggered a leadership crisis within the party."
+        },
+        {
+          "year": 2022,
+          "month": 7,
+          "event": "AIADMK General Council appoints EPS as interim General Secretary and expels OPS",
+          "significance": "Marked a decisive shift towards unitary leadership under Edappadi K. Palaniswami and the formal ouster of O. Panneerselvam from key party positions."
+        },
+        {
+          "year": 2023,
+          "month": 2,
+          "event": "Supreme Court upholds EPS's unitary leadership",
+          "significance": "Legally affirmed Edappadi K. Palaniswami's control over the party, ending the prolonged leadership tussle."
+        },
+        {
+          "year": 2023,
+          "month": 3,
+          "event": "Edappadi K. Palaniswami elected AIADMK General Secretary",
+          "significance": "Formalized EPS's position as the supreme leader of the party through internal elections."
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "event": "AIADMK breaks alliance with BJP for 2024 Lok Sabha elections",
+          "significance": "A major strategic decision reflecting AIADMK's assertion of independence and dissatisfaction with the BJP's state leadership."
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "event": "AIADMK-led alliance fails to win any seats in 2024 Lok Sabha elections",
+          "significance": "A significant electoral setback, highlighting the challenges faced by the party in national elections without a strong alliance."
+        },
+        {
+          "year": 2025,
+          "month": 4,
+          "event": "AIADMK rejoins NDA for 2026 Assembly elections",
+          "significance": "A reversal of the previous decision, indicating a pragmatic approach to alliance politics ahead of crucial state elections."
+        },
+        {
+          "year": 2026,
+          "month": 2,
+          "event": "O. Panneerselvam joins DMK",
+          "significance": "The former AIADMK coordinator's move to the rival party underscored the finality of the leadership split and added a new dynamic to the political landscape."
+        },
+        {
+          "year": 2026,
+          "month": 5,
+          "event": "AIADMK projected to finish third in 2026 Assembly elections",
+          "significance": "Indicates a further decline in the party's electoral standing and the emergence of a new third force in Tamil Nadu politics."
+        }
+      ],
+      "achievements": [
+        "Successfully consolidated leadership under Edappadi K. Palaniswami, ending a prolonged internal power struggle.",
+        "Maintained its position as the principal opposition party in the Tamil Nadu Assembly post-2021 elections.",
+        "Edappadi K. Palaniswami secured a significant victory in his Edappadi constituency in the 2026 Assembly elections, demonstrating strong personal support."
+      ],
+      "leadership": [
+        "Edappadi K. Palaniswami — Joint Coordinator (until July 2022), Interim General Secretary (July 2022 - March 2023), General Secretary (March 2023 - present)",
+        "O. Panneerselvam — Coordinator (until July 2022)"
+      ],
+      "election_results": [
+        {
+          "year": 2024,
+          "type": "lok_sabha",
+          "seats_contested": 36,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 20.46,
+          "alliance": "AIADMK-DMDK-PT-SDPI front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2026,
+          "type": "assembly",
+          "seats_contested": 178,
+          "seats_won": 26,
+          "total_seats": 234,
+          "vote_share_pct": 27.22,
+          "alliance": "AIADMK-BJP-PMK-AMMK front",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "**Leadership Tussle (2021-2023):** A protracted and public power struggle between Edappadi K. Palaniswami and O. Panneerselvam, involving multiple court cases and the eventual expulsion of OPS, caused significant internal turmoil and factionalism within the party."
+      ],
+      "sources": []
+    }
+  ]
+}

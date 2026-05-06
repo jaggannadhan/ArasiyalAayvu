@@ -1,0 +1,80 @@
+```json
+[
+  {
+    "era": "2006-2011",
+    "title": "The Phoenix Rises: Jayalalithaa's Resurgent Opposition",
+    "narrative": "The year 2006 marked a challenging chapter for the AIADMK. After a full term in power, the party, under the formidable leadership of J. Jayalalithaa, found itself relegated to the opposition benches in the Tamil Nadu Assembly. The 2006 Assembly elections saw the DMK-led front return to power, albeit as a minority government, leaving the AIADMK to regroup and strategize. Jayalalithaa, ever the tenacious leader, embraced her role as Leader of the Opposition, a position she had held before, and began the arduous task of rebuilding the party's momentum.\n\nThis period was characterized by intense political rivalry, with the AIADMK relentlessly scrutinizing the ruling DMK government. Jayalalithaa and her party capitalized on growing public discontent, particularly concerning issues like persistent power cuts that plagued the state and allegations of corruption, most notably the burgeoning 2G spectrum scam that implicated key figures in the DMK. The 2009 Lok Sabha elections offered a glimpse of the AIADMK's resurgence. Forming a 'Third Front' or 'United National Progressive Alliance' with former DMK allies like the PMK and MDMK, alongside Left parties, the AIADMK significantly improved its parliamentary tally compared to its 2004 debacle. This strategic alliance-building and the consistent highlighting of the DMK government's perceived failures laid the groundwork for a dramatic comeback. The stage was set for a monumental battle in 2011, where the AIADMK, having honed its opposition strategy and forged a powerful coalition, aimed to reclaim its lost glory and restore 'Amma' to the Chief Minister's chair.",
+    "key_events": [
+      {
+        "year": 2006,
+        "month": May,
+        "event": "AIADMK loses Tamil Nadu Assembly elections",
+        "significance": "The party enters a period of opposition after a full term in power, with J. Jayalalithaa becoming the Leader of the Opposition."
+      },
+      {
+        "year": 2009,
+        "month": null,
+        "event": "AIADMK forms 'Third Front' for Lok Sabha elections",
+        "significance": "The AIADMK strategically allies with PMK, MDMK, and Left parties, improving its national parliamentary presence and demonstrating its ability to forge strong coalitions."
+      },
+      {
+        "year": 2006,
+        "month": null,
+        "event": "AIADMK highlights DMK government's controversies",
+        "significance": "As the primary opposition, AIADMK actively campaigned against the ruling DMK on issues such as severe power cuts and corruption allegations, including the 2G spectrum case, building public sentiment against the incumbent government."
+      }
+    ],
+    "achievements": [
+      "Successfully served as the primary opposition party, effectively scrutinizing the ruling DMK government and raising public awareness about issues like power shortages and corruption allegations.",
+      "Forged a significant 'Third Front' alliance for the 2009 Lok Sabha elections, which helped the party improve its seat tally and consolidate its position as a strong alternative to the ruling DMK-led UPA."
+    ],
+    "leadership": [
+      "J. Jayalalithaa — General Secretary, AIADMK & Leader of the Opposition — 2006-2011"
+    ],
+    "election_results": [
+      {
+        "year": 2006,
+        "type": "assembly",
+        "seats_contested": null,
+        "seats_won": 61,
+        "total_seats": 234,
+        "vote_share_pct": 32.6,
+        "alliance": "AIADMK-MDMK-VCK-others (Democratic People Alliance)",
+        "outcome": "opposition"
+      },
+      {
+        "year": 2009,
+        "type": "lok_sabha",
+        "seats_contested": 23,
+        "seats_won": 9,
+        "total_seats": 39,
+        "vote_share_pct": 22.9,
+        "alliance": "Third Front (AIADMK, PMK, MDMK, Left parties)",
+        "outcome": "opposition"
+      }
+    ],
+    "controversies": [
+      "The AIADMK, while in opposition, consistently highlighted controversies surrounding the ruling DMK government, including widespread power cuts across the state and allegations of corruption, particularly the 2G spectrum scam."
+    ],
+    "sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFLLm_B279oeAFPDQgv2MWyFw4xpfYgbyzfogZV-Xs3Rp3FLLG6shSIHC6pMJ_2kx0cr3pZerhl8NKebdUwbrSjw-HGsjDV3aWmVChBX4yWzZy0ouGsN3Z-gIbupd1taOl_rAiSxVLmRyfH-uvwzXnOLKMR37yNrd_XagNCw4tAPU",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSuOnlF8wRz9fnvFSV0sPu9LkkSRfHqc0w8FrqrLFJcYcL3dQBHEfhqMHCEcVpP9rRExmF0UMriU31DpJgBUChAqfUGFJMhKmnsL3nqKtkyXr2ceqN8NlbOLxx19oc0jN_fZEAFXRioP0WxwSROgO4sqF8NowA9qyeoH8ORXe_HFWR1Qe-Dg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE9dCkXI94muAsDEom1-WQ3F_UEss-kfFtR7PXj1aL6yzm-4elZYqOcUcjArEjcTzdcc619BDXxCZLfW0zruN2QYZnbSWNtDg5bs0untq4sm6mXEpVmHoPJwXr0e7R72RdXnoOlbAucqDbSUGRHY-AIax7gbo-KcaQWlu3a67XuruUS84=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNnJlRmZLHvTJFubY4zNNgXUARKBXhZqwSqBp4bH-g0ZNAS0wA5vMMBYuF8p-eiYJ1wPdDpFc32Yib2yRa33RnV8g5hNY5wQzFvSF9g_eT7U4L_AGUxkwZZsyAHohJmkqhqd8Y77SMAXEbX24BLQ2No0HdW9WvHqKF1QcCjHv2WIdqEqAzGYpbXmpr-DWH",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqls7qH9p7IFwrUicPu1mMA4iuy6OAs7zEfSypzHJ2YoJStk_kXuhsy0JiQSEZ8uoS_MEl53hHKMZrHwUT5B-toCRRZdkALIM9-Ta0w7rZa8ghc3mLUsbQ6AaEnny-GkCU4SIwtBgf1-_6uBo=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkC0kCnFykZ5netovWkVO1nUxa4RIXMBwkaRvKEskQREtkfH8yNaYxr6PxbwIDR0cI77dMzyIpKNegx6_CVcC5JA_8WmUfln-SDmocka-Tp_5him9uENEVyRnhmzCQuPlJk130t6rqIA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbg98i1aRxdBlgvU_2eSedhac6L9-BLVAwHK4-9qdeK3fRskjoTiTh4QjeRsO-KtyWwsdgGubqJ9QcucRPt3cYkJQQJbaQmSDr1I1qTDHY0LYf2VXoJU5YE_LBOU5Rztyllqk8YSahBkeN-aUex_rRkWl0JQlE5wWkeBhKlxqudkIokfwwyrWnaqe1Abefyk7ivfxYGdU=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnuJ1Y10sb7O7O9OnpqEbpWAqO-N_G0IMP-UFO3IA033z2Jd92Guff89K9sNVuBcbJLzoKQ2xFOPDgX-caU5pak_XS5S-qXSOLTKLFNJgJYFEtGBliewNUqBZDdo_tax2xuQ4fqCPz_j9ql03pHUUPFs5_VacDReG-0G9BXzAoguXXhFaOCkiIW4ad6svyQqBRrnwwIg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNiKoy-aqKb4ulpVLDicX7zeDoZpk2GRrGf_30KX4F6MKpbLpUg4SVabx268HkpXc9VEgBwxKi9Wm2mvPCY_nV-22gNNZLDQamAaC-seDzt-WfbwmN6NwOM3KEhC6eHngMKBnz0ImKi8WFyzK5Po7q574JQJ0YPanPgbvkIN3LYMHeFA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO9_hVLO76zkNU5zjJToO2kMIJNSD5fzwaY5U6JpXj3hLgzStjonvvd09JbVKc3P2tWioTww6b8BP2iGBdPVjtm_jXoibaCopZvONdx2RTkg7IMb76NcbtTmCTjdqxhOFVRuyRTWqqItCfp300TzvbLKBM-Nx8VYSzpjBYuVGVJqSYJkXVRA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZXKLqI88SlHNLVKyG5Mfy7X8YtayAzK50G7O-_uX8YrmC1m7HKX7t62NqBGwaNpb6fxDCYcsB4wsaJNmd4yS8uJlN9a0hxMTdPM3XmKNAUILWsf2eueAw4Xu75j1VbBVsGVNu-_PJPC0UkULovOfW_bEyGK7l2VwF-LTPCNTttnLgGSp8hKY8V1oLe4xGiiErOUjxivGaME8N-6RImF0wf4KtVMmz26YnQkaUee0jBNtO_0WaGVALh9BdGCd94m6fJJFDCJDZ-X7yJxgVqC0=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ2BKX2zbvz6_ewNJlevgeYg_DBWlCfjDUxAkM6vxIsaDQWhLHn5MXdO2cuINzF4n4yYmNZ0WLc7VDHSWHQrPXFRohyTul5-DMsiZkkrlHhUKtv02zYgHK9mRGJy5HtrRK_hAe07FSpg0uOcT02kc50xy8Mn8hIzr5WLnk34tcBVaFHpUJL0tx3A==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGpTRHVae3FtTxPOXxdIs8zOVg4WGcFxTxl-Lge34ZSrjLrxM9vxKaG4_OaQDzNBGUsMXLR3IzN3rhW7ueUAZX451RIEiZWkLJk2Z_IsIuOnjIa71Soa0PJtVzZM3YoT4DgSKI12Q5cswDaZi4gi-e6i8_QPSOO1fPDumSGu34FtTSE5PgcI7-uxHQh5YMEMQV_wRqSkAdtPMl81bJW5vr3cbTIlakKd9-Q7IiDy_Wt3mWhInDuSHdFONFp4IDIyTVQaOygBwUVCQETD0eoJQPLOZAbDT2i3CnNHxU-nn9Yd8xw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV2BYSNQQmlc8CMbJUyEy0leiVDFLDiKU4dJl2qbF9lDTR2v6bOxHu3I8a-Y7MYSu7Lm2iUNP8Kwfl04zeJB6YF023fXNiE6KQOy6j3MhjK5lOcco2elYU89eQnJyjMusTJ0GANN_-wngfnFRztNPNYrXVkOdBV5fkdymhBIfTBkCBFA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAwMb4hzp9aV8fehLPqZn9lafI1_oCCduN22az5Az3iJAhIJwG_f2o5DIxgndUDu2_Ma_NoEPqgY_QLNV4WpF2alctuoCHAUXlv5N2Z-dIONss3X6tTh_Z4u37REndR8EHd7VjtPzSEiC-g2EQVDtbSo2JWg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp9Aqpi6VJ785tVg6yIM1_wl1f3t4_lRL72xxmbYCkrxpUF51rqODuAyetNLHQ6HauZIb9F139t7870qkT1vdqW9RSum5244129YZnHVFKIeA92heGXrgifwivK84f2rbDJIDoiVqBLk2rAm20_ENJmP_tgx9aEd45O30hqMRu5I8hmZGcfiO3FyCwBRKGip7JaONBca-b9qIaQw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyfy_EhSETqsRxa-ExkAoyb9HNxYpM26knQreUMqrjbFJE8JCV28cfsW5rjiPhRDDuZYltLoy1qQ56rByLTNpQ9x3QvOBvbcqlc3yT2IypiEdTaLk6I-7M3htsv7snU4k_xSzfqukU82GomMsh7oNSNJhNKzoPgCHRmNnBa4c7ZmqUZdoxxqL3nkWk1jFZKZJLcOugUh61rzYaBTht3up3qg=="
+    ]
+  }
+]
+```

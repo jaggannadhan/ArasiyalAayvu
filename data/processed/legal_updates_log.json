@@ -1,0 +1,26 @@
+[
+  {
+    "check_date": "2026-05-05",
+    "timestamp": "2026-05-05T15:59:16.182081",
+    "findings_count": 0,
+    "new_updates_count": 0,
+    "sources_checked": [
+      "egazette.gov.in",
+      "indiacode.nic.in",
+      "prsindia.org"
+    ],
+    "updates": []
+  },
+  {
+    "check_date": "2026-05-05",
+    "timestamp": "2026-05-05T16:35:10.531507",
+    "findings_count": 0,
+    "new_updates_count": 0,
+    "sources_checked": [
+      "egazette.gov.in",
+      "indiacode.nic.in",
+      "prsindia.org"
+    ],
+    "updates": []
+  }
+]

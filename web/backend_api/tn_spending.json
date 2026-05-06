@@ -1,0 +1,202 @@
+{
+  "state": "Tamil Nadu",
+  "population_cr": 8.4,
+  "gsdp_lakh_cr": 31.18,
+  "gsdp_fiscal_year": "2024-25",
+  "per_capita_income_lakh": 3.62,
+  "national_avg_per_capita_lakh": 2.05,
+  "gdp_contribution_pct": 9.21,
+  "population_share_pct": 6.0,
+
+  "finance_commission": {
+    "15th": {
+      "period": "2021-26",
+      "vertical_devolution_pct": 41,
+      "tn_share_pct": 4.079,
+      "formula": {
+        "income_distance": { "weight_pct": 45.0, "description": "Distance of state's per-capita income from the highest-income state. Poorer states get more.", "tn_impact": "negative", "tn_note": "TN is a high-income state — gets penalized here" },
+        "population_2011": { "weight_pct": 15.0, "description": "Share of India's population as per 2011 Census.", "tn_impact": "moderate", "tn_note": "TN has 6% of India's population" },
+        "demographic_performance": { "weight_pct": 12.5, "description": "Reward for lower fertility rates (total fertility rate).", "tn_impact": "positive", "tn_note": "TN has among the lowest fertility rates — benefits here" },
+        "area": { "weight_pct": 15.0, "description": "Geographic area of the state.", "tn_impact": "negative", "tn_note": "TN is geographically small compared to Rajasthan, MP, etc." },
+        "forest_ecology": { "weight_pct": 10.0, "description": "Forest cover as share of state area.", "tn_impact": "moderate", "tn_note": "TN has moderate forest cover (~20%)" },
+        "tax_fiscal_effort": { "weight_pct": 2.5, "description": "Efficiency in tax collection relative to potential.", "tn_impact": "positive", "tn_note": "TN is among the best tax collectors" }
+      },
+      "state_shares": [
+        { "state": "Uttar Pradesh", "share_pct": 17.939 },
+        { "state": "Bihar", "share_pct": 10.058 },
+        { "state": "Madhya Pradesh", "share_pct": 7.850 },
+        { "state": "West Bengal", "share_pct": 7.523 },
+        { "state": "Maharashtra", "share_pct": 6.317 },
+        { "state": "Rajasthan", "share_pct": 6.026 },
+        { "state": "Odisha", "share_pct": 4.528 },
+        { "state": "Tamil Nadu", "share_pct": 4.079, "highlight": true },
+        { "state": "Andhra Pradesh", "share_pct": 4.047 },
+        { "state": "Karnataka", "share_pct": 3.647 },
+        { "state": "Gujarat", "share_pct": 3.398 },
+        { "state": "Kerala", "share_pct": 1.925 },
+        { "state": "Telangana", "share_pct": 2.133 }
+      ],
+      "tn_grants_cr": {
+        "revenue_deficit": 2204,
+        "local_body": 25526,
+        "disaster_management": 7201,
+        "sector_specific": 10532,
+        "total": 45463
+      },
+      "source": "15th Finance Commission Report (2021-26), PRS India",
+      "source_url": "https://prsindia.org/policy/report-summaries/report-15th-finance-commission-2021-26"
+    },
+    "16th": {
+      "period": "2026-31",
+      "vertical_devolution_pct": 41,
+      "tn_share_pct": 4.10,
+      "formula": {
+        "income_distance": { "weight_pct": 42.5, "description": "Distance of state's per-capita income from the highest-income state.", "change": "reduced from 45%" },
+        "population_2011": { "weight_pct": 17.5, "description": "Share of India's population as per 2011 Census.", "change": "increased from 15%" },
+        "demographic_performance": { "weight_pct": 10.0, "description": "Population growth 1971-2011 (lower growth = better).", "change": "reduced from 12.5%, redefined" },
+        "area": { "weight_pct": 10.0, "description": "Geographic area of the state.", "change": "reduced from 15%" },
+        "forest_ecology": { "weight_pct": 10.0, "description": "Forest cover including open forests.", "change": "broadened to include open forests" },
+        "gdp_contribution": { "weight_pct": 10.0, "description": "State's contribution to national GDP.", "change": "NEW — replaces tax/fiscal effort" }
+      },
+      "tn_grants_cr": {
+        "rural_local_bodies": 13544,
+        "urban_local_bodies": 20054,
+        "disaster_management": 8486,
+        "total": 42084
+      },
+      "source": "16th Finance Commission Report (2026-31), PRS India",
+      "source_url": "https://prsindia.org/policy/report-summaries/report-of-the-16th-finance-commission-for-2026-31"
+    },
+    "donor_state": {
+      "headline": "Tamil Nadu contributes 9.21% of India's GDP but has only 6% of the population — yet receives just 4.1% of central tax devolution.",
+      "contributes_gdp_pct": 9.21,
+      "population_pct": 6.0,
+      "receives_devolution_pct": 4.1,
+      "fc_share_trend": [
+        { "commission": "9th FC", "period": "1990-95", "share_pct": 7.931 },
+        { "commission": "10th FC", "period": "1995-00", "share_pct": 5.385 },
+        { "commission": "11th FC", "period": "2000-05", "share_pct": 5.305 },
+        { "commission": "12th FC", "period": "2005-10", "share_pct": 5.047 },
+        { "commission": "13th FC", "period": "2010-15", "share_pct": 4.969 },
+        { "commission": "14th FC", "period": "2015-20", "share_pct": 4.023 },
+        { "commission": "15th FC", "period": "2021-26", "share_pct": 4.079 },
+        { "commission": "16th FC", "period": "2026-31", "share_pct": 4.100 }
+      ]
+    }
+  },
+
+  "revenue_breakdown_2024_25": {
+    "fiscal_year": "2024-25",
+    "data_type": "Budget Estimate",
+    "total_revenue_cr": 299010,
+    "own_tax": {
+      "total_cr": 195173,
+      "pct_of_revenue": 65.3,
+      "breakdown": [
+        { "head": "State GST (SGST)", "amount_cr": 73788, "pct": 37.8, "ta": "மாநில ஜிஎஸ்டி" },
+        { "head": "Sales Tax / VAT", "amount_cr": 69588, "pct": 35.6, "ta": "விற்பனை வரி", "note": "Includes VAT on petrol, diesel, liquor" },
+        { "head": "Stamps & Registration", "amount_cr": 23370, "pct": 12.0, "ta": "முத்திரை & பதிவு கட்டணம்" },
+        { "head": "State Excise", "amount_cr": 12247, "pct": 6.3, "ta": "மாநில கலால் வரி", "note": "Primarily liquor revenue" },
+        { "head": "Vehicle Tax", "amount_cr": 11560, "pct": 5.9, "ta": "வாகன வரி" },
+        { "head": "Other Taxes", "amount_cr": 4620, "pct": 2.4, "ta": "இதர வரிகள்" }
+      ]
+    },
+    "non_tax_revenue": {
+      "total_cr": 30728,
+      "pct_of_revenue": 10.3,
+      "ta": "வரியல்லா வருவாய்"
+    },
+    "central_devolution": {
+      "total_cr": 49755,
+      "pct_of_revenue": 16.6,
+      "ta": "மத்திய வரிப் பகிர்வு",
+      "note": "TN's 4.079% share of 41% divisible pool"
+    },
+    "central_grants": {
+      "total_cr": 23354,
+      "pct_of_revenue": 7.8,
+      "ta": "மத்திய மானியம்",
+      "note": "Centrally Sponsored Schemes + FC grants"
+    },
+    "source": "PRS Tamil Nadu Budget Analysis 2024-25",
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25"
+  },
+
+  "department_spending_2024_25": {
+    "fiscal_year": "2024-25",
+    "data_type": "Budget Estimate",
+    "total_expenditure_cr": 412504,
+    "sectors": [
+      { "sector": "Education, Sports, Arts & Culture", "amount_cr": 54327, "pct": 13.2, "ta": "கல்வி, விளையாட்டு, கலை & கலாச்சாரம்", "national_avg_pct": 14.7 },
+      { "sector": "Social Welfare & Nutrition", "amount_cr": 34548, "pct": 8.4, "ta": "சமூக நலன் & ஊட்டச்சத்து", "national_avg_pct": null },
+      { "sector": "Agriculture & Allied", "amount_cr": 24232, "pct": 5.9, "ta": "விவசாயம்", "national_avg_pct": 5.9 },
+      { "sector": "Transport", "amount_cr": 23828, "pct": 5.8, "ta": "போக்குவரத்து", "national_avg_pct": null },
+      { "sector": "Energy", "amount_cr": 21606, "pct": 5.2, "ta": "எரிசக்தி", "national_avg_pct": 4.7 },
+      { "sector": "Health & Family Welfare", "amount_cr": 19730, "pct": 4.8, "ta": "சுகாதாரம்", "national_avg_pct": 6.2 },
+      { "sector": "Roads & Bridges", "amount_cr": 20219, "pct": 4.9, "ta": "சாலைகள் & பாலங்கள்", "national_avg_pct": 4.6 },
+      { "sector": "Rural Development", "amount_cr": 12043, "pct": 2.9, "ta": "ஊரக வளர்ச்சி", "national_avg_pct": 5.0 },
+      { "sector": "Police", "amount_cr": 11965, "pct": 2.9, "ta": "காவல்துறை", "national_avg_pct": null },
+      { "sector": "Water Supply & Sanitation", "amount_cr": 6993, "pct": 1.7, "ta": "நீர் வழங்கல் & சுகாதாரம்", "national_avg_pct": null },
+      { "sector": "Irrigation & Flood Control", "amount_cr": 7763, "pct": 1.9, "ta": "நீர்ப்பாசனம்", "national_avg_pct": null },
+      { "sector": "Housing", "amount_cr": 5500, "pct": 1.3, "ta": "வீட்டு வசதி", "national_avg_pct": null },
+      { "sector": "Urban Development", "amount_cr": 8200, "pct": 2.0, "ta": "நகர்ப்புற வளர்ச்சி", "national_avg_pct": null },
+      { "sector": "Others", "amount_cr": 161550, "pct": 39.2, "ta": "இதர செலவுகள்", "national_avg_pct": null }
+    ],
+    "source": "PRS Tamil Nadu Budget Analysis 2024-25",
+    "source_url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25"
+  },
+
+  "theory": {
+    "how_states_earn": {
+      "title_en": "How does a state earn money?",
+      "title_ta": "ஒரு மாநிலம் எவ்வாறு பணம் ஈட்டுகிறது?",
+      "buckets": [
+        {
+          "id": "own_tax",
+          "label_en": "Own Tax Revenue",
+          "label_ta": "சொந்த வரி வருவாய்",
+          "description_en": "Taxes collected directly by the state government — GST (state share), sales tax/VAT on petrol & liquor, stamp duty on property purchases, vehicle registration fees, and state excise on alcohol.",
+          "description_ta": "மாநில அரசு நேரடியாக வசூலிக்கும் வரிகள் — ஜிஎஸ்டி (மாநிலப் பங்கு), பெட்ரோல் & மது மீதான VAT, சொத்து முத்திரைக் கட்டணம், வாகனப் பதிவுக் கட்டணம், மது மீதான கலால் வரி.",
+          "icon": "building",
+          "color": "blue"
+        },
+        {
+          "id": "central_share",
+          "label_en": "Share of Central Taxes",
+          "label_ta": "மத்திய வரிப் பகிர்வு",
+          "description_en": "41% of all central taxes (income tax, corporate tax, customs, central GST) are divided among states by the Finance Commission. Tamil Nadu gets 4.1% of this pool — decided by a formula based on population, income, area, and other criteria.",
+          "description_ta": "அனைத்து மத்திய வரிகளின் (வருமான வரி, கார்ப்பரேட் வரி, சுங்க வரி, மத்திய ஜிஎஸ்டி) 41% மாநிலங்களுக்கு நிதிக்குழுவால் பிரிக்கப்படுகிறது. தமிழ்நாடு இதில் 4.1% பெறுகிறது — மக்கள்தொகை, வருமானம், பரப்பளவு போன்ற அளவுகோல்களின் அடிப்படையில் முடிவு செய்யப்படுகிறது.",
+          "icon": "landmark",
+          "color": "orange"
+        },
+        {
+          "id": "central_grants",
+          "label_en": "Grants from Centre",
+          "label_ta": "மத்திய மானியங்கள்",
+          "description_en": "Specific-purpose grants from the central government — for centrally sponsored schemes (MGNREGA, PM Awas Yojana, etc.), disaster management, and Finance Commission recommendations.",
+          "description_ta": "மத்திய அரசிடமிருந்து குறிப்பிட்ட நோக்கத்திற்கான மானியங்கள் — மத்திய நிதியுதவித் திட்டங்கள் (MGNREGA, PM Awas Yojana போன்றவை), பேரிடர் மேலாண்மை, நிதிக்குழு பரிந்துரைகள்.",
+          "icon": "hand-coins",
+          "color": "green"
+        }
+      ]
+    },
+    "what_is_finance_commission": {
+      "title_en": "What is the Finance Commission?",
+      "title_ta": "நிதிக்குழு என்றால் என்ன?",
+      "description_en": "A constitutional body appointed every 5 years by the President of India under Article 280. It decides how central tax revenue is shared between the Union and states (vertical devolution) and among states (horizontal devolution). The current 16th FC covers 2026-31.",
+      "description_ta": "இந்திய அரசியலமைப்பின் 280-வது பிரிவின் கீழ் ஒவ்வொரு 5 ஆண்டுகளுக்கும் குடியரசுத் தலைவரால் நியமிக்கப்படும் அமைப்பு. மத்திய வரி வருவாய் மத்திய-மாநில அரசுகளுக்கு இடையே (செங்குத்து பகிர்வு) மற்றும் மாநிலங்களுக்கு இடையே (கிடைமட்ட பகிர்வு) எவ்வாறு பகிர்ந்தளிக்கப்பட வேண்டும் என்பதை இது தீர்மானிக்கிறது."
+    },
+    "committed_vs_discretionary": {
+      "title_en": "Committed vs Discretionary Spending",
+      "title_ta": "உறுதிப்படுத்தப்பட்ட vs விருப்பச் செலவு",
+      "description_en": "Committed spending is money the government MUST spend regardless of priorities — salaries of existing employees, pensions of retirees, and interest on past borrowings. What's left after these obligations is discretionary — the only portion the government can actually choose how to use for new schemes, infrastructure, or welfare programs.",
+      "description_ta": "உறுதிப்படுத்தப்பட்ட செலவு என்பது அரசு கட்டாயமாக செலவிட வேண்டிய தொகை — ஊழியர்களின் சம்பளம், ஓய்வூதியம், கடன் வட்டி. இவற்றுக்குப் பிறகு மீதமுள்ளதே விருப்பச் செலவு — புதிய திட்டங்கள், உள்கட்டமைப்பு, நலத்திட்டங்களுக்கு அரசு தேர்வு செய்யக்கூடிய ஒரே பகுதி இது."
+    },
+    "fiscal_deficit_explained": {
+      "title_en": "What is Fiscal Deficit?",
+      "title_ta": "நிதிப் பற்றாக்குறை என்றால் என்ன?",
+      "description_en": "When the government spends more than it earns, the gap is the fiscal deficit. This is covered by borrowing. Tamil Nadu's fiscal deficit is ~3.4% of GSDP (2024-25). The FRBM Act limits this to 3% for fiscal discipline, but states often get temporary relaxations.",
+      "description_ta": "அரசு தனது வருவாயை விட அதிகமாக செலவிடும்போது, அந்த இடைவெளியே நிதிப் பற்றாக்குறை. இது கடன் மூலம் ஈடுசெய்யப்படுகிறது. தமிழ்நாட்டின் நிதிப் பற்றாக்குறை மாநில GDP-யின் ~3.4% (2024-25). FRBM சட்டம் இதை 3%-க்கு கட்டுப்படுத்துகிறது, ஆனால் மாநிலங்கள் தற்காலிக தளர்வுகள் பெறுவது உண்டு."
+    }
+  }
+}

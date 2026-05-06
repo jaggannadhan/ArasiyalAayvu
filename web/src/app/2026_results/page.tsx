@@ -5,6 +5,7 @@ import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
 import { useLanguage } from "@/lib/LanguageContext";
 import { partyAbbr as getPartyAbbr, partyName as getPartyName } from "@/lib/party-names";
+import { HungAssemblyNotice } from "@/components/results/HungAssemblyNotice";
 
 interface PartyResult {
   party: string;
@@ -263,6 +264,11 @@ export default function ResultsPage() {
               </span>
             </div>
 
+            {/* Hung Assembly notice — shown when no party reaches majority */}
+            {summary.total_declared === 234 && !partyData.some((p) => (p.won || 0) >= summary.majority_mark) && (
+              <HungAssemblyNotice majorityMark={summary.majority_mark} lang={lang} />
+            )}
+
             {/* Seat share bar */}
             <div className="h-3 rounded-full overflow-hidden flex bg-gray-100">
               {partyData.map((p) => {
@@ -373,6 +379,7 @@ export default function ResultsPage() {
           </>
         )}
       </div>
+
     </main>
   );
 }

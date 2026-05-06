@@ -1,0 +1,1594 @@
+{
+  "party_id": "dmk",
+  "party_name": "Dravida Munnetra Kazhagam (DMK)",
+  "party_name_tamil": "திராவிட முன்னேற்றக் கழகம்",
+  "founded_year": 1949,
+  "founded_date": "September 17, 1949",
+  "founded_place": "Madras (now Chennai), India",
+  "parent_organization": "Dravidar Kazhagam",
+  "founders": [
+    {
+      "name": "C.N. Annadurai",
+      "role": "founder and first General Secretary",
+      "brief": "A prominent orator, writer, and politician, Annadurai transformed Dravidian ideology into a successful political movement. He became the first Chief Minister of Tamil Nadu in 1967 and championed Tamil language and culture."
+    },
+    {
+      "name": "E.V.K. Sampath",
+      "role": "co-founder",
+      "brief": "A nephew of Periyar, Sampath was a key figure in the early DMK, known for his oratorical skills and organizational abilities, though he later left the party."
+    },
+    {
+      "name": "N.V. Natarajan",
+      "role": "co-founder",
+      "brief": "A close associate of C.N. Annadurai, Natarajan was instrumental in the formation of the DMK and contributed to its early organizational structure."
+    },
+    {
+      "name": "Dr. P.T. Rajan",
+      "role": "co-founder",
+      "brief": "A veteran leader from the Justice Party, Dr. P.T. Rajan was among those who announced the formation of the DMK in Chennai."
+    },
+    {
+      "name": "Dr. C. Natesa Mudaliar",
+      "role": "co-founder",
+      "brief": "One of the founders of the Justice Party, Natesa Mudaliar was also involved in the establishment of the DMK."
+    },
+    {
+      "name": "P. Thyagaraja Chetty",
+      "role": "co-founder",
+      "brief": "A prominent figure from the Justice Party, Thyagaraja Chetty was part of the group that announced the formation of the DMK."
+    }
+  ],
+  "original_ideology": "The DMK's original ideology was rooted in Dravidianism, Tamil nationalism, and social justice, advocating for language and ethnic consciousness among the people of Tamil Nadu. It initially espoused the secession of Madras state (Dravida Nadu) from the Indian union but dropped this demand after the Sino-Indian War in 1962. The party also adopted principles like anti-casteism, rationalism, and opposition to Hindi imposition from its parent organization, Dravidar Kazhagam.",
+  "current_ideology": "The DMK's current ideology is described as secular progressive, based on Dravidianism, Tamil nationalism, regionalism, social democracy, progressivism, and secularism. Key principles include social justice, state autonomy, opposition to Hindi imposition, and inclusive development, with a focus on education, healthcare, and social welfare. The party follows the principle of 'Duty, Dignity, and Discipline' as instructed by C.N. Annadurai.",
+  "original_motto": "கடமை, கண்ணியம், கட்டுப்பாடு (Kadami, Kanniyam, Kattupadu) - Duty, Dignity, Discipline",
+  "current_motto": "கடமை, கண்ணியம், கட்டுப்பாடு (Kadami, Kanniyam, Kattupadu) - Duty, Dignity, Discipline",
+  "symbol": "Rising Sun (உதயசூரியன் - Udhayasuriyan)",
+  "symbol_history": "The 'Rising Sun' symbol was inspired by M. Karunanidhi's 1950s play 'Udaya Suryan'. In the 1957 elections, the DMK was not officially recognized by the Election Commission and its candidates contested as independents, often using other free symbols like the rooster. The Election Commission formally recognized DMK as a state party in 1958 and allotted it the 'Rising Sun' symbol in 1962. The symbol has remained consistent since then, despite a legal challenge in 1993-94 when a faction claimed the symbol, but the EC ruled in favor of Karunanidhi's faction.",
+  "headquarters": "Anna Arivalayam, 367–369, Anna Salai, Teynampet, Chennai - 600018, Tamil Nadu, India",
+  "key_splits_and_mergers": [
+    {
+      "year": 1949,
+      "event": "Split from Dravidar Kazhagam (DK)",
+      "parties_involved": [
+        "Dravida Munnetra Kazhagam",
+        "Dravidar Kazhagam"
+      ],
+      "reason": "Differences with Periyar E.V. Ramasamy over participation in electoral politics and his marriage to Maniammai, who was much younger than him."
+    },
+    {
+      "year": 1972,
+      "event": "Split by M.G. Ramachandran (MGR) to form All India Anna Dravida Munnetra Kazhagam (AIADMK)",
+      "parties_involved": [
+        "Dravida Munnetra Kazhagam",
+        "All India Anna Dravida Munnetra Kazhagam"
+      ],
+      "reason": "Political feud with M. Karunanidhi, allegations of corruption within the party, and MGR's desire for a more prominent role."
+    }
+  ],
+  "notable_leaders_through_history": [
+    {
+      "name": "C.N. Annadurai",
+      "tenure": "1949-1969",
+      "role": "Founder, First General Secretary, First Chief Minister of Tamil Nadu",
+      "legacy": "He transformed Dravidian ideology into a successful political movement, championed Tamil language and culture, implemented the two-language policy, and renamed Madras State to Tamil Nadu."
+    },
+    {
+      "name": "M. Karunanidhi",
+      "tenure": "1969-2018",
+      "role": "Second President of DMK, Chief Minister of Tamil Nadu (five terms)",
+      "legacy": "He was the longest-serving Chief Minister of Tamil Nadu, a prolific writer and orator, strengthened the party's grassroots, and introduced numerous welfare schemes."
+    },
+    {
+      "name": "K. Anbazhagan",
+      "tenure": "1977-2020",
+      "role": "General Secretary",
+      "legacy": "Known as 'Perasiriyar' (Professor), he provided ideological continuity and organizational stability for 43 years, serving as a close confidant to Annadurai and Karunanidhi and holding various ministerial portfolios."
+    },
+    {
+      "name": "M.G. Ramachandran (MGR)",
+      "tenure": "Pre-1972",
+      "role": "Prominent actor and party treasurer",
+      "legacy": "He significantly popularized the party through his cinema career and charismatic appeal, though he later split from the DMK to form the AIADMK."
+    }
+  ],
+  "current_leadership": [
+    {
+      "name": "M.K. Stalin",
+      "role": "President, Chief Minister of Tamil Nadu",
+      "since": "2018 (President), 2021 (CM)"
+    },
+    {
+      "name": "Duraimurugan",
+      "role": "General Secretary",
+      "since": "2020"
+    },
+    {
+      "name": "T.R. Baalu",
+      "role": "Treasurer",
+      "since": "2008"
+    }
+  ],
+  "era_timeline": [
+    "1949-1957: Founding and Social Movement Phase: Formed as a breakaway from Dravidar Kazhagam, focused on Dravidian ideology, Tamil nationalism, and social reform, initially hesitant about electoral politics.",
+    "1957-1967: Entry into Electoral Politics and Rise to Power: Contested first elections in 1957, gained recognition, led anti-Hindi agitations, dropped demand for Dravida Nadu after 1962 Sino-Indian War, and prepared for state leadership.",
+    "1967-1969: Annadurai's Chief Ministership: DMK came to power in Madras State, C.N. Annadurai became Chief Minister, renamed Madras to Tamil Nadu, implemented two-language policy.",
+    "1969-1972: Karunanidhi's First Term and MGR's Rise: M. Karunanidhi succeeded Annadurai as CM and party president, growing internal tensions with M.G. Ramachandran.",
+    "1972-1987: AIADMK Split and Opposition Years: MGR split from DMK to form AIADMK, DMK spent significant time in opposition as AIADMK dominated state politics.",
+    "1987-1991: Karunanidhi's Return to Power and Coalition Politics: DMK returned to power in 1989, often forming alliances.",
+    "1991-1996: AIADMK Dominance: DMK in opposition.",
+    "1996-2001: DMK-TMC Alliance and Return to Power: DMK formed a successful alliance with TMC.",
+    "2001-2006: AIADMK-led Alliance in Power: DMK in opposition.",
+    "2006-2011: DMK-led Alliance in Power: DMK formed a broad alliance and governed.",
+    "2011-2016: AIADMK Dominance: DMK in opposition.",
+    "2016-2021: DMK in Opposition, Stalin's Rise: DMK lost to AIADMK, M.K. Stalin became Working President (2017) and then President (2018) after Karunanidhi's death.",
+    "2021-Present: Stalin's Chief Ministership: DMK-led Secular Progressive Alliance won the 2021 elections, M.K. Stalin became Chief Minister."
+  ],
+  "overall_sources": [
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI7rpFbJUwD5kteRVwNZ5cROSyC7KIt4VPzLeg-tTR4wbiVR8uJSOVbLPs3FodTQ1cmONSi3yBmDS3RqFAmHVg7zQPLJq-4PmDJpcOZHp3LqlYo9tA6JYg7s_pDkZ431KNn9ViBq14",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2SODAMUb3jFUFuqAmi1CvfnCtlHfQcmGrmE8swPj4xuelNJHvALC8C6ypkd4Gs6HceM32U51Nt2ZdF30h4bFQ4xLAQklQr4MUHvWj5KZmbUDm3WbcrC05A_ADcc7ND63yOkJ0-2vMRy9BYQxNHJdykQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBDSkHcuHQk67_APhPf6DU7v3-kh4n1lLf8Kh6O1rdOox3DhfthK8Bo59c0xuces2N2Ul3KuMoDdeKVHzQg7GmGMwGL2_dqIOjQNliQH0NHhyDDFijScDklATYl8uKAqsWkicPml3b4ixR_F7WkKElU2kc8g==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6R90Dt_7QFH2nVKTeF--MeDjAIyBfQplJ2tHtV9gIqdFgRtRr3HQF-MbvP-4OtlNzpx1Ox7Jjcnd962OO_wm3D-MmNrfAq-kns3A7dZDHhtApFGbAZhnycObnE6ErAF8RSr6D29AKEB_uEwEogEflSeVapgG7DofabMS7N6vK1HJm30HebqWPm9IFU8xsbLmhsLLqmRDG_xMo6-VPIKxTnpQJdWAGdxuEDgn8_FUJ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5ESS2rVxDaVpA71Od33_Ol4y0uNaGvmTp0Cr4BDPP_qHTAOlkcR8gmcD5I7kGMkoXLfYSZHmjurDU36Reg4IGfk05EAqStIrLhH4r17MbRwwxPpExUrgqBeKUCUJcTwRxNtoYLf1Nb5qaOt8IMyzyiHP_cJo1gGC2786PgUJPtFMVdJfpnp_Fnb9cbOdEoREJE8l3XX-6UXw00fZZ",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFwbEDPiR9riRAzkxNoe35eUNJGJW8sXIi7UU2J0Imj0wdnkiczBGD_Q3uHQtiWcc6fq-roptuJ-MVF-tQ6V7kML67d9NKT8txjT2eOei_UXi7O-4HdUMunITPASC4eLBiA6s=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmxymMk8fULvSbCApdhDftt5mvzAbwJvJa1x208HnaQNy33E_WczyEylt2u5yu3Z5-l3qfhKAQEVfSqKXsEBJAegAbxdzJWyUakO41d1bLVx2TVgPEha5K1aFi6VT8X3vcZpU=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3eXJLNkJXY3nEIWI_H639LXWyeMIq60hMThDPi-K6Q3s9Ua_Dq5lSddNyKPz3eaAuGFnbQ3m0tagmqm0Ko2wh4tneB2rzN4R6c_Nx2trvNm8zIVaSOmcDgftMtw9f8J-6q7FecQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqJBAvOMgPJjR3_OWY8AC1MOehVlZX57sjpF99D9PFl9GCMwcPZflpLrrVtn1vtuAmG5SlB9Br3CBzwD8KsxHdKhQGxies6WTB6f8L7GRDTnmCTjd-dIDF94fSSv7vzcfdu4wT9JL0",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS8cIs8aqiUhuAzXG2hoOh5TAVLS-6Gjv-fPWV6zlS8rQ1MXBNDJXa0krIAQY1hqWUr66obcGeLdabDuc0dnu-Pj6xHYsm2fBWGOVAJYKQ_Yy94BQak4NjZmA6hm0jZ7BJ-vLR",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXDDQHY88BbOuDBviKbNvsu89nEVZoJJCyC_6GFnyWZeHwYQivSvFitNNyzj4taLXn5gGgRFxOJgAgGeCP7hyX9uSDIFGdI379zBLU4tJhebPv8zFb2iO-XpWl6j9jXreUPGk0lYz6qd-eEmvOJ5074HNkQLqNhkS0QSNn_z0Ab7_rHBM13tp5LLlr1gXqZP45oe_E6fJkzlLJqCAzrdJziFOu05JEFNCXWD8OaStPmJdLXIWQ8MRD8yeYzFM_cE9TQy_2miHo9w==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJfpp6TgZL1ovZhUFctyFZlpwZ6-GtGPCL_1eNbNLQD3Tc0XMSOWm0uC1lmjUEdsljO5ftjiqiAkELMKL7LdnwqwLm8W38obm2bSumZ4l5vGRGeOCNEFhHK-WWWP2O2ssXdJFy5mekaz9XlVEyf3f-vnkmHTc2GBtJXs2UbZ5Mn2z5zN5MJWIcCasyL566u1rzV0FZTq2U",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE1--cZsWdcgxx7ECDcFZpSzooQRrYkfj0du9vnE20XDq1K_7mkYxIBmrrANHRVX1AZkrahQMedUAY7qkZmuPFJnE7OBBlJizd5GyD0Y5D6Tq6emUYDCSzu-KQN-LGzd4vUY2pxjizAJQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG8v7T41bFEmP6uciTB5AeMkxW9DWtVZNbPmPeq-ykyqQxZ3LjBSjZ1VgyotFDEJkIW2fjlhKqUBPob-1oorccgr0UvNFJ6EUKw0ENqmFHqkigBmpZ2w_AK5ZT6cDlFy60vQlxdAUJF7L8Dw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0vkZ1LTJn-ZtJGuma0Aoce4lA8L-awAc8a-Hz3YmJV0cd9TwtTKOnjcgmvDc4ndCZfC_dbv_bdBlOvjh9eU64VwvDEBUjk_BS7f4Xk1oSkMNPGza6VTA2BsY6LDsS9ePQfG8sxfIj6pkz6JyiYHEzgJ9E3HT6jKwy8Nf-RUhtwoIlEtojT2LNYvkdzQEwTtFxWyNZGesPCXRdOsrgt-EAPrs=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1K5vQo6yXumUFyuHy8mNVMniJlV3Ls2GWcseJSSjH8xtqqsU_JGRi0dTQX8gw5poTNPixaQFUGtrcp6VDHXVi-KQd3uxB-mIhNdGiDTAAMEn1c_XRWS4j-oqWVCb1j0Mb1YJX83APskfaK7dADK8w2GQeh58=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl-geiiQ_EE9C5lXrLQabXcnSjieT2gBvKy40NM_XCowK190BAban7TTMRtNeXbXIPcW0xbOJCnYtdZXo5VoX6O2blEUDvV77k7Gk2Dy7vp7czUXRSShVblv7A2flBT8ZqsHvfwaJBLXdVWBI=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu98hws_VvY9pn9I9UZ-tt_-lrCg8jmQWEtAtUUmITQX8sVq9cVmkEhB0mPZ9dO5_GvFyDkSHEOVsE_IY1e4tlmIoQwmq9SshDRyXMk2p8vprnj9syz6PY6TNxJEXz-5M0_L6eYNoZcfXAhsC5PYKY4Y1lSI3AN0-oDprIrCNt2l555NFFkz8oOfbrDV32YtqwJ7gtNIaNkJ3o3EHKrRy2T4DK7-wbdLR0CMQ=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgm-Kamgw1NsOm3nl6rKxHq7RBjxZxgaokuBi6ANBOJdNDk4rRsId9d4f6EOsy61Ms2fjMxQeK7GgcCsNKGENyqgZ1BokAvjw14CC-wx7QXQz0VXV0lVKmpt5RwkuUM5NcM219Rfg2QuHfZFI_r2kHdHHzmrVeLrHCqLwCHAbEvGKoM609TLwg9tlk5jjrn67koWIAmxhX0hWCy8-JUHYYLySbZcGVyYeb6D_zQg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM28V5ouCpDBRVbPMMSuSBy805yRbpyFhiveaPgn7ZI5dgj27Tfoa4c5yZbTEq0S77c965lXKhxvRB19HyMyMEX88WcFXzSmOmWaJIijeebjVwGTuZW72KTeRKBoyVKHCHRF63JAB3A84=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjfzFaaz29VgslNwV29QBcZoSbjzZ-OdP3kZl-XIopb8ztbz-a6K1yX-qBzVPyaHsVYFgtUjAioygHgiGpRz1_y2I9gnAzBRepxTXASXP_lQCWT9IjBphXu5cbjLi8Hg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIEj8u1KoOu6DSb9s_P4SJ8Dekyz9uZeR8pAoB7_pT6IdomEmm-bk3qMger_LQ-l3SuXoYGv6ZfZlhpxc1OwdcSVKdCM_rQxzNpkNM3U6zQccnPT0O-P8KEjxCoxSrNSpVpQH8BkPq4H_xA67aZeoXSFZMQnxFomVJv01YKz8qiFK_4waPPamzqcHJOXrYvlaDTNBdrrx_XjHOexaJz9T9xnxuGMDTc0KVCrI17MlVMSbpxnNYylJfOPgSkY2XobIgD38cC0COFFTtuSECyQn0NZmUFDkOVg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnPn6q6wGChb0h33Rj8BwYj9GLSW7HjVkNl9kJv3F6h1Cu6wEnfIdUAuedmpy5ethl2B3hcZrmEqI9vCPdU1jDZMJw8qNPNpdCUN04amVE4GhEypUzgB_HUDAlnud1rgPo1M5TJDitm8MFTsZn8m6pa4vSH313",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2l2OwdC2it3tcnvSy16l5C5gUD-7qrEacJRtErwkr8L1OAhEmL8B9Zw5DvvP4hz6FHySNQWHW651um21wB-d4hJxEbdkYoO4koOU9d5H3UEDA18Ax64N4uOGiiynFGezwoUIV-VQa-sduKiZi8DOzBcmyavZlncDkuEndhU-0jRs3hx18XVu6ix_reoDew7y8dHubfqJFiH8FxN7hUA==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZuebmZfbQxLZN51cOVy_9BYnEExKjK3vUPBfIacYjqGZt3n9gN5h9U9_0Gp2sOtZsQ-u0TPaXptFI0NKwT8Qe83DbJOAdGHZo57AKwTlUvrPUMUDd1xtdXkjzUnNC2UW5X0nDtRD2FZx_RGh-I0kdIYqALf-cb-PANdOfnXrM6EL47DfeqUId_eL21oh7hUhqPRVs6CyLTkfw4ktFBiFuQsGozy9Ps1pJOg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbqVwg1fICVwE8FXGxf5jwoj4re0dAn2X3bUAv3OStEJkVSdhbhTuKuJY0Ec32w-O0N14eoM6hGkapuHuMPW4v-zOXgNLgff0ep3AffUlL6rKAPwKYhrplML9sZbVIlJALiGysW4vIlE0=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKtiFeDj9kKaEMt4NDwQvPMZkYncm4hYB1Hissg47nd6jrOK3bfEtgCfACChWBpeZOkh9m_PbTmkCdQtd3OiyqcuQBELx7jdAU1hCjrdu-84fzHpxabjsl4O6pNMqvRsD6a_pok50RTQq-hZtkSF22zKrYMfFB4MQhtzWJXwg-ILXJj764HjMAIXGbMjlmkRNsfrVwxtXKb7eCECH9-vmz6FWKaw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3tHdXO4gF6neYKsETdeV2BrkeOK0nSwnksM69yy1VW0sZCeuj5DQEEShWZGBjJHgBHSlgCEnqAH_XffwWBFltb6UJbc6IPCKvnnIkGTDNH_7hZftr9R3nNcnDNCcnUD3QvIa3tCzmxH5Dizu2901bc9jRFHbe1cikX8rA-AZabudmuKAEcMGEpDh99r2wQG3_YHzUZeQa5GI3Hr0cQGdYW_Lvj8Of_Uq-lb_6Kmh2d3ye6DCcAv5_qDw4_xNot85RbN5OJI84VCP7",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNmA0ZQ-AgKyXqQcTCVJh-PIJqyqBHMwxmQDEB_Zi5LNqFHNzLswAFibT6FI6xDgHZLyyZeY85C3S9VHUuw0Ta9Kot0z_SlCjYcwdLqvFlElhE9vWjFNe4TEDmkJmybPcOUnllzhVcfunmNP8xhSYihOxB3PLw7HXRfBwQ64_09AN7C6H0glEzpB92pMSnnpTZIQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoMDo6-vpHYOE_j7p_dH6mqjScH2BuXc4PigIS3FY7uWUU6V6-kbVYaj0Bp4a7g1com2F3JSSESbWeZJW32HqqYDgsMf464KW8v0fKoDbNzcAoPW5HurLDH0RCvTCYvK6BZWxJM9Hhl7YZzwzt1N76OHFFAoA=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs5ERJzoTHZqGV0rqhHQjCUTi0QfgCQK0S6fIrN3xONo3-KE7D6pcK-4DxMfvYTR7gLA-8c8VRY5HdK6BxN0b8-EMaGVxxXL6e-gqqW_G2xSV1_Lz2T2bccPQBTv8KF1Pl8C8UqJEpcPrm",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLCpunfEAiFMfB7-GvPuAH_c2N5tPiOT719L3fNo3PBPNMwqhhyggBN_J5nDrwfxTQ-FCLs4HAhFdyzCVGByG-Vn6ihesEDxxyCHJaC6hARqUzJEEXzbn6izVGxxYfzkhmkNj8Mw==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZD_tNW3vIWlEsxA_HH9AlzcPmqpdIzGBJmNPx5_OrPv_KYHC7b0TJ7wTJ-HLai_Bbvc_-p7Ge1wme_xe52CccJLOrEKq8FVqXDfOqsza9WWzXKtYT8clyIA1LeJHwxN_PVv6LoScsfjmRmlJIhz2OXP7VQ-aBjn_UASCx0C_pSQ==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoGIBtMxg8KRib_7S0--wy4i8QXOHH1tI94p5xamYZINqFQfK2aLWQ5xS8TAo5Hugvb7fGGW0qac3N6ph7YnoeaJ0h4IQ2ixcbN0_rLmG5NeY8lfoG6mb8LZEZsm80DpWem3MDxi-G0tKr7A==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo8rykVj9oKFTLbvv47mnXBh3VNBz9rZ9fqJU22rn-cFaksp2jAz6Hi4yBUlDnuwu7lHNkAuzNHe_gqhv0a8NtcCRrCg1DrxWsU_lEbrs0PY9626KR4xzGevMN7lDIdBJTS7UW6FphvWnpWsMAcRKGubPLaEaNzHpbwZeikhM=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPfqlFSEKNtZ0Amumenvv64bC8wFDBCeIGwnakJjTOju1CWKg_SlsP7r-ILApCjCHOjpHNZOogOJ1B9gkrOHX2rmP-RIukP89tbfdyJFBBIkSKdhwmoZnfr8RqSy8KHtWz3fAhIOwBxPBTj16zLLamimR3cpVdjZGvRofLCIOgIJKOhfGLXrfyl96VWxZC01uaKWSUAiwsM408856SH5eLtJHf3M4ZZ_U4YzNGLDYIRdSQxqbENwWzF7AAu9U=",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv8ky3_5lNZkiT6sJ2Gu1_x9v5UzQvFV9ZbQpZXe0deYXmWrFFspuMEGIXe10HToaxxWe1QVo204htggveoEc0JvM0arNm15GvJf1Ac9D9R_vwrrMvbu27MwBvrOskxcivUTVggmVWYYPIb8Ao_vnU1g==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu4U5dhkpi7LVpzBB95cgsKBm2LDQ2wx49MLq6t_wYJldT4xIIkQ-CtzGF1NEepde_EbZzau874rXuAc0-44_cpiQIvTKA_mF-FDIx2jEKR_RWyMfimOWTqV09zKTD4foj2Kw__bNLBgQRIuOTMK4K8wt74622_qWzb6CkCYc2y_mO_9VQSmbPqiw44EQK3pMeqOGTjnc6mZ45fbgBRGwsgZ31Fg==",
+    "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuyp2yGKuawNM3zU70v-dBtcPMyMFwh1lyJjHUaRyLDTyRV2z6guygxt4bBJJRYHRdGW6cCYcmUxYT1Ofr8obZ7yEL3DeF64kW9LeiaV5931in6BaYFJVjIWsCl_w23qZQxwdlKy_mZyihtB8MifyJhwrl3o7qYfByavoMrT-cbluFvtACLgmChFhPjzI_GXN1jy1tWJAm4KSa-vXCdcjWmLKmdLVDx2qs6ztMdPSnxKdwtsqQU-YETpuQnJHwtu6TxCF6t7t9Sk_1OJ1RSis1BjOIiw=="
+  ],
+  "chapters": [
+    {
+      "era": "1949-1957",
+      "title": "The Dawn of Dravidian Identity: From Social Movement to Political Aspirations",
+      "narrative": "The year 1949 marked a pivotal moment in Tamil Nadu's political landscape with the birth of the Dravida Munnetra Kazhagam (DMK). Born from a significant ideological split within Periyar E.V. Ramasamy's Dravidar Kazhagam (DK), the DMK was founded by C.N. Annadurai, E.V.K. Sampath, and N.V. Natarajan, among others. The core disagreement centered on Periyar's anti-electoral stance and his controversial marriage, which led Annadurai and his followers to believe that direct political participation was essential to achieve their Dravidian ideals.\n\nInitially, the DMK functioned more as a vibrant social movement, propagating its ideology through powerful oratory, writings, drama, and even cinema, with leaders like Annadurai and M. Karunanidhi being prolific playwrights. Their message resonated deeply with the masses: Dravidian nationalism, anti-casteism, rationalism, and a fierce opposition to Hindi imposition. The party initially advocated for 'Dravida Nadu,' a separate sovereign state for Dravidian-speaking regions, reflecting a radical stance against perceived North Indian domination. However, the practicalities of electoral politics soon began to shape their approach. While the DMK did not officially contest the 1952 Assembly elections, it supported independent candidates who pledged to uphold its agenda, demonstrating an early, albeit indirect, foray into the electoral arena. By 1957, the party shed its hesitation, making its official electoral debut and signaling its intent to challenge the entrenched Congress rule.",
+      "key_events": [
+        {
+          "year": 1949,
+          "month": 9,
+          "event": "DMK founded by C.N. Annadurai and others.",
+          "significance": "Marked a decisive split from Dravidar Kazhagam, signaling a new era of Dravidian politics focused on electoral participation."
+        },
+        {
+          "year": 1953,
+          "month": 7,
+          "event": "DMK launches agitation against renaming Kallakudi to Dalmiapuram.",
+          "significance": "An early demonstration of DMK's commitment to Tamil identity and opposition to perceived North Indian cultural imposition."
+        },
+        {
+          "year": 1957,
+          "month": null,
+          "event": "DMK contests its first general elections.",
+          "significance": "A crucial turning point, moving the party from a purely social movement to an active participant in democratic politics."
+        }
+      ],
+      "achievements": [
+        "Successfully established a distinct political identity rooted in Dravidian ideology, Tamil nationalism, and social justice.",
+        "Effectively used popular media like drama and cinema to propagate its ideals and mobilize public support.",
+        "Transitioned from a social movement to a recognized political force, preparing for electoral challenges."
+      ],
+      "leadership": [
+        "C.N. Annadurai — General Secretary — 1949-1969"
+      ],
+      "election_results": [
+        {
+          "year": 1952,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 0,
+          "total_seats": 375,
+          "vote_share_pct": null,
+          "alliance": "did not contest as a party (supported independents)",
+          "outcome": "did_not_contest"
+        },
+        {
+          "year": 1957,
+          "type": "assembly",
+          "seats_contested": 112,
+          "seats_won": 15,
+          "total_seats": 205,
+          "vote_share_pct": 14.8,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1957,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 2,
+          "total_seats": 41,
+          "vote_share_pct": null,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "The split from Dravidar Kazhagam over Periyar's personal life and the question of electoral participation.",
+        "Initial advocacy for 'Dravida Nadu,' a secessionist demand for a separate Dravidian state."
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dravida_Munnetra_Kazhagam",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk956h6e4F21Qy83B6m3UPJYgXxWbBJVI3cFzp6lhwSYU7GLOd21mvCO-tSvRx38u42tXfVxGAp4JIQL7R5tN91KCtaLnR19HDLYIbtcn6iiD4JsigzlcKqDYVJWEp042eJS8dDIeYYOpORdq8Uskc6wbM7TrVK_nCP-IA3XiORCeusAeglOO04g03lClIAZU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqWKpEVGjlz_g88xyaydUpf9d6bW-ZVAGBtKtnfh39WnUO2pF5gBX5sMYrr3Urtt3OrLubB07WthQ6iBg0gjmBP6c0xNtdMpziiHfuKgxs4sIMFfHHqS0J2vKPbx-NW2fynaaQqyEUGeNnHFXGdTEPs7WF9Hwi2iqHSQ4z7jV9YCoJL8uYAF5nChmX3hb_Jy_4qGYMBcE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQnVQe7lUM7dWVKZmyeJBGEl4R8UWL3eT3MCyStX2xb08vL0suG0CaKWVhXtZb24mzGDUcBg44gu4KkfMWdF2Gav-oW3kzMJSwgR1vM0rZaP_NNRRKmd0V_Nzxt-lI3mJT3ZTfYPZ42efeGCmlaHQyjayzXOaiNHkhsi3h7YfniQI9O6GkZwsdtg4M0ICJlsJI_Z_er3CZKs5Y1plHoEfZ5_FuN0FIYoCtl5wnNHhT_g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ239r628BNEqGGC216bUwpIxNKTfAxbjhHXeSYrEatz9RAg_I-baZL1uF9_eX6KP_ngBI3KLlDzHOFxfP1nIj34Nytx6EQqIX8TDOCkfZ088vBL6xKv0gIGymwCDEjyYXSQKowHehzg==",
+        "https://vertexaisearch.cloud.google.google.com/grounding-api-redirect/AUZIYQEv66yCWT5rlhRmLCXOiSqaIShiuZLuTUYDtInupsRP8uJdIhoWDv7K0ADZM3jbIY7e3Zl4lHwNqXhfUrTZ6DSfxb1FTXNPWCs-IlexMATKBQ5OTTtbox8iPzLhtaC0Po6hwuGt1IPHd2KnU4_h_ZgN33wMmVW_j7y19E17aWp20LD5kRzrD18HslsaQd0jPHAWtndGLV4Lv7I=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvQidrm4PHpXdDZ01h65EE0-edHOQOJn8aNyqiAIfujFjtklYdgDmjPVc9MO3b0HCc3Ogb5cO8yMHRq7xl3NFoZITRUxwa3JfJn4S-cJjxMVGqMp2goyMRa0iARgBZWMm_a4IHXX6_mx0jjiod",
+        "https://en.wikipedia.org/wiki/1952_Madras_State_Legislative_Assembly_election",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo3jugKGWBfxmNTMxcEXeaVsuzFWtaeoM1kzzHWqP8ACzR86GQH9dK-nY54iBV4GK5Eea4dLsUgfR90Vug5wre8yL_cs8uLl2KyqSH3YdpMGdAX5mSIZrH_f1j3Dxt8xNWEQJWCgIbxZAE2PR01tu71JCLzcbfuV214lwMAsmsfqUuOa7vP1KC",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECVN9DVJec1D70hNwUisWLbkOSw8noas2ErGFAJlrBusVkPBtDini2ssvc8dbmMUKuPK1vIXl5TV2-Bl7JQGZMPDesMd_bqprfN71dTFaqWpAXdRX8B-bEEV3W72vPiOGTzojdbWbcAnzZIq1NRKyTKvTvkKF1rlwokDjrQ_eCY5_aVc0zQrO5uPX2N9Df-Lm_mwT_5nwHQq266D92RUYr8TFfW589s8AsNWqrnT9bTfmcRDB-KD8NL3_8IF--6DD2eb0Cm7vqXa7XeiQ2pN_SaqzXLf9C",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI-xHuYANAEUmpQCkeAvwZJaMawU8KYxKuanycrVbTgK9z8Oo-a2S0Zkcq1wj3dnH1DiirI0WHLsL6uogh1imOt5Ibrh8Xo535GIm2NUtJ2dEy4jSIO9H_Pap01Rlh2HBECEoDQ9_IDPciurFxBGLzPQ2ftPEcuxjq8P8SEKelDFwYmiwP",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjhQGoLi2_H4USyIReKwIPJgNVfzAbkuzlMTMNNN_0vlin9t184CLJuqog1DyGVSEAaB51L-_4g0gSiZvRPbS-E1CYOI9nVWYM0oRV-5vcLus1EQsB-AM8eToLJgdQe4p1t00pmw9cnB-TwN7t9sjfURowXKOVvf7m7skk0efM6c7V1_-SQZvyyUs9lZ8gRFn3EBr99mS8Q-pF_q2EOK1ywglGEFjX9KkIaelTH4pXaD-47jt8r1efAEuOyZs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE3HTM2k1DNHjgf_SHg3p4fZS8eAaO1KUDnxv5gAKWByA82P1unMWJf6j08AdqjcNFZcgJGV4ZhAZwSfEUgnC4x3wpoerjUesxH0JLfoGdcCrjNUPCwkxP-_iJFBhDF5pA4g7NGPM1wpIXpciBPP0W7jww3cDkAKSvhBUSGfBL6unClc3D5DvgTPaQu896",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtUi75A8_9kn9zzoHbbvNBuUOlx3iguiYF1r6h5ScO1Z7xdVgP8-YwaF3Jrd3xcsPFyJNzh6bCMibJ2XG7EMocl9yupWBLXprnLHe07_D69M3XN515qSCh5oIDmvteUWvDQrXfdTynRr31ruBpTFtfY7HTcXknTs-DaSkl1GthSjg4o33bvy0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2gd0chw3mtSN234rEBu2Oq2vYu1gFkL0zjuVIBXyrU7uphavk8xm4Cgz4u6sIDN9S2FS3CE9NXWo4yGZ1w0p1q6-whvgSbrAOImUXtGSdS1Aoc4mVPTRuNCdhOTrlURT-yxPrW3_6ez6xC0Jj_zzb3arUG-FkdHCGH1aMvBRls_ZS2wkf50vtjsFjnVz4vdkrr2K_EorCM6uy-lhb9mGjILzaODI7_31cGG-4G1Exy35V9-eA6wKk274",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEykzdGMzMnp5nlJoI6lKfbzq3-7S_2B8HlyVY8NkbqkRdlfXd2Rad9EFPdJQQFxkylMF16g1bk6mnnStvwXilN-VuQSNk-AdPtEz1p5OrgUrHWrDwY_j8evTiKSCEXgQI9BU3o9p1bkFxwomTAedv3ONPPCy3bMbwgnG3ThJfPlJuRWfF0SkpHJ5vEVIGAE6eVp_s8YxwaWiCiL576ZXXvXFJNXUKCkVTBbnFKhA2Zu8mLBRp_J9LBoM-3yKrIDfz4OOKsgLyxQimMdHBjkQ8NSWS21loiPf0RUU6Vh2qQZQsGbD0TfXmS1Zt66n0w580l7l1"
+      ]
+    },
+    {
+      "era": "1957-1967",
+      "title": "From Agitation to Administration: The DMK's Ascent to Power",
+      "narrative": "The decade between 1957 and 1967 was a whirlwind for the Dravida Munnetra Kazhagam (DMK), transforming it from a fiery social movement into the undisputed political force of Tamil Nadu. Having emerged from the Dravidar Kazhagam, the DMK, under the charismatic leadership of C.N. Annadurai, made its electoral debut in 1957, a bold step for a party that initially eschewed mainstream politics. Though not yet officially recognized by the Election Commission, the DMK's candidates, campaigning as independents, surprised many by securing 15 assembly seats and 2 Lok Sabha seats, signaling a nascent but potent challenge to the entrenched Congress rule.\n\nThe party's influence grew steadily, fueled by its powerful oratorical skills and its unwavering commitment to Dravidian identity and anti-Hindi imposition. The early 1960s saw the DMK solidify its position, becoming the principal opposition in the 1962 assembly elections by winning 50 seats. A pivotal moment arrived in the wake of the 1962 Sino-Indian War. Faced with national unity concerns and the anti-secessionist 16th Amendment, Annadurai made the pragmatic decision to drop the demand for 'Dravida Nadu' in November 1963, pledging allegiance to India's integrity. This strategic shift allowed the DMK to focus its energies on state autonomy and cultural preservation within the Indian Union.\n\nThe mid-1960s were dominated by intense anti-Hindi agitations, with the DMK at the forefront. These protests, often led by students, became a powerful vehicle for expressing Tamil sentiment against perceived cultural imposition. The agitations, coupled with public discontent over rising commodity prices and alleged corruption within the Congress government, created a groundswell of support for the DMK. The climax arrived in the 1967 general elections. In a historic upset, the DMK, leading a broad coalition, swept to power, winning 138 seats on its own and 179 with allies in the Assembly, and a dominant 36 out of 39 Lok Sabha seats in Madras State. C.N. Annadurai became the first non-Congress Chief Minister of Madras, marking the dawn of the Dravidian era in Tamil Nadu politics, a legacy that continues to shape the state to this day.",
+      "key_events": [
+        {
+          "year": 1957,
+          "month": null,
+          "event": "DMK contests its first general elections",
+          "significance": "Marked the party's entry into electoral politics, winning 15 assembly seats and 2 Lok Sabha seats as independents, demonstrating its growing public support."
+        },
+        {
+          "year": 1957,
+          "month": 9,
+          "event": "DMK convenes anti-Hindi conference",
+          "significance": "Formalized DMK's strong opposition to Hindi imposition, observing October 13, 1957, as 'anti-Hindi day'."
+        },
+        {
+          "year": 1962,
+          "month": null,
+          "event": "DMK becomes main opposition in Madras Assembly",
+          "significance": "Won 50 seats, solidifying its position as a major political force and a significant challenger to the ruling Congress."
+        },
+        {
+          "year": 1963,
+          "month": 11,
+          "event": "DMK drops demand for 'Dravida Nadu'",
+          "significance": "Following the Sino-Indian War and the 16th Constitutional Amendment, Annadurai strategically abandoned the secessionist demand, allowing the party to operate within the Indian Union and focus on state autonomy."
+        },
+        {
+          "year": 1965,
+          "month": 1,
+          "event": "Intensification of Anti-Hindi Agitations",
+          "significance": "Widespread student-led protests and self-immolations against Hindi imposition, significantly increasing public support for the DMK and contributing to the Congress party's downfall in the state."
+        },
+        {
+          "year": 1967,
+          "month": 2,
+          "event": "DMK wins Madras State Assembly elections",
+          "significance": "Historic landslide victory, ending decades of Congress rule and bringing the DMK to power with C.N. Annadurai as Chief Minister, ushering in the Dravidian era in Tamil Nadu politics."
+        }
+      ],
+      "achievements": [
+        "Successfully transitioned from a social movement to a formidable electoral political party.",
+        "Became the first non-Congress party to win a clear majority in a state assembly in India (Madras State) in 1967.",
+        "Effectively mobilized public sentiment through anti-Hindi agitations, leading to significant political change."
+      ],
+      "leadership": [
+        "C.N. Annadurai — General Secretary — 1949-1969"
+      ],
+      "election_results": [
+        {
+          "year": 1962,
+          "type": "assembly",
+          "seats_contested": 142,
+          "seats_won": 50,
+          "total_seats": 206,
+          "vote_share_pct": 27.1,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1962,
+          "type": "lok_sabha",
+          "seats_contested": 18,
+          "seats_won": 7,
+          "total_seats": 41,
+          "vote_share_pct": 18.64,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1967,
+          "type": "assembly",
+          "seats_contested": 173,
+          "seats_won": 138,
+          "total_seats": 234,
+          "vote_share_pct": 40.59,
+          "alliance": "DMK-led front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 1967,
+          "type": "lok_sabha",
+          "seats_contested": 25,
+          "seats_won": 25,
+          "total_seats": 39,
+          "vote_share_pct": 35.8,
+          "alliance": "DMK-led front",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "Initial demand for 'Dravida Nadu' (a separate Dravidian nation) was controversial, later dropped due to political realities and constitutional amendments."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaqOIAFFzUZJzi8a8_kqyEzvCe8dbx9xpCT_Z5DIEPJURGlsSzZV_O5KMD9HQ1freaQb9BFzrIui7MVySrb-fOvpx4ZTKaFdGgGIr2HxXgrEjbyH9St934OBmSgZO5LXSkMPml1fmtX4FJIGNZ0rKwTnMMH4zuIKgiY6dnDBf7cbnzOr9VJTtU",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-MbFV5f92h7imoPr9sm_KIl18rYe3iHWCRAV9JI3xRHk5w8N_TgBaWa8k_kAtGxGtk73Oc2ZAAOONJD1a2hABdkvNiPcQ61A14bpHsy2t0k8ialBKZoTntIwFexalLTCpDUgtkd_5y8SjkDomD_UbhydOOEJa82yX3ye2lTdWWCPupTnu8pV1iwFd7lSdPdCrg8zKBp708sCHgG5_c9HD98b-Dg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_o8XaPDQ9zf5AckSm82ZlfDT2uIHbJNQ0Lc52OAcUPtAC6fNXrhMegWFdjVD3Gh6ZiOB-unaPI-ieMuC0n8kcqfoMEy-mKbUbwEJuqdcvyyhbNnfpeLtwUiOEqbXYCR4EHGQGDsf6CSx0VUwGlquES1RacszJjJRp12jOuxzlvk1-hdkXR8g",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJnApgnbgoPgvOoqe4amRqfhs0PFwEwIxZA4DR3kDH80k22QajAtNtXe7Gy-ljzsMrRGJQKOkl-q9YpdurGy5AQd4nzWWw3Ns3eFLeTjH-UVcsy0kuTJwiuhxxuDb0F5aUMjwfTI68OgoWiyl8wSDqCLHefiqnQqf88G0X",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFpe7OhPc3reMhxxwPd4FxtSA19GLvgBaX-VgI69QopPrgyP7wKv7tgr6C8l4R4e5q36bZDDXc1keSe0m0dKanL_R2M7yclaomUJC-sZYb4OGQpIEbY6ZU4k9DhiyMpjNba7a3KY16seY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvnNYfi7Nu-w0wjndl2m-ELxPYFv1HOGQQwTcQiqpwn6v43BiTIlZ6eQiJayzO7hr4fdcyg_X7_YSUuV69_nldbaClatvysr-PEKw9JU_19Yu8WDLS4fiCvKaumc1-RH8JTsyNby9aTrYyYeXE0kqsiYH2sKsT-FtkZ0IuKOwKiNAQWifDi77_lm8YCRw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH-9Yf-MG4cZIlefrOc49D9VDK6bxSAAUVs7t7kRcR6iSvx69YUD2A8ed8f2MERR_4i9C6riNyWWKRgWuX2DUdSfgexFbfP2YgRGcH85A4ejEeJM1rMIDx5PYVJo2d__gkxzwKRbevBQIjd6Y0QgFqgDY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUA78hy7Mf8x-tNPuxTfbgv812Ni5LKSwfKd2lqK672iw6M0HczhAZuXiKuBDNcnWNyQ4SdiwX-EfnOxidXBrewGaZPFkhZ_Gs464wpg54JDTRZObrPV095K6YE1YivoEJJXrvZ2khpA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRqXaN4rObu7nypDeimXGKqHirMrB5kVOlTlu0nytNR8zElWaWKp1pIX34vlP6pBgN4lbXnj4ecrfdXvDrYdTdI-e59xyX-b3c-dvgrnTrxmnkUD658Q0ZhcyNumJNPvrVsMsw6LNRPWog5ZIVRwV9o7mSxjYJ38m1xmozt1UYqDwXQd_lZCO_",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4PgTYAEAu06J3fg2dNOKQFKUCGVHii-ksz_OIHpM3IlWQHdED5nkhLOPwL0ZPJaBgmzs40mAPwBwiiBoxvB077aSWTqptfLl5iaZNjZmtWW5tcmEAct4J3MW1ummBxR5ZUUSbjMNI7IxAC9-ZeCaZwMSCTfR9ejcCQQi0ZKmOPI74NEWb",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEz5h9Pc4sNNFd2OUxcdYhA9UWD6dM1yv8RaqI01XpkT5rKqbDam59B0H8HuLMukl13VyDmpQp2uppUIpuK3hKdEqHBfazzU2BEZ8FLjNhJ4Yy5syMd21X-kfQQhMD4nQBBnLQHKtxnQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLu03aRPoydkftihfshOWHnAQi0w0QDWPR1z5fzbLzsR_e_UpDeZGagpvSrAMAZ74x3qKNp8AWSuzbXIAlruT5HWKZ4TeZrv1zx4XodICQwH1JIqS4xhQ9ltPjOYBz_GnyzK32gZvDXmGPjw1kXnXuu1eYL8pIGkjxmqNZJRIicT3vQrEE2K5qUSDfuiL6zdAv5GN8i-5JVWF4YRBJ_1KJQjIbHHbWy1MGFpVtEUYisjDLvdZyxykSRzzkDtBysQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsrRAvODnBoajTup9uJFX8twiibTO4GN9ahF1JoRRyllHPW6OjMN-mgVTXMNHTam-Meqv4dx_VWYVmIx39qcmjFvCbe1Md1G-6Ehg50kmzPqJAdQ-g-UjP4ds5GEukSJ7iGHX0wmFgyPnFm7UeppZbOvox3Ih6Z68NG6AYgK87fsdz9gs4Ff9JrpHNuOqQN4lFHveHqexrabE_CeqD",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHeNvYnGxtaSivEvuAuZn3lOxmpn_8FyrATakNV70LTngniWwockbL5zl9whd3F8sfTDBt-HIybWvzWtQeQKNeqI4P-tDG8uKwe--q5cKZCVlymjo9rK6r8EJ6-Dn5FiWH1MwOBFaLpjvKuhhEV-cX6GzXsqGt1JYjcEg0UVa04rw68z5I",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMJNnFNTe1Z_vfsBKw8sdiR-4C0WMHIaBFelUGAd0DKgavQ6dFu3cPR05AKcIyWYBxQO5D32nrctrxaNMWznKydN6GqSI6RnIwf2LwY1h7RXUtOV1TsRMnw8IbyIS22U_4F7aYIx6nGWkNuqhj1K96ZXTmSm6SfEzST3wRiYkFq60SAgvuZLJaanGt0FqpKDKqpu2VqvusZoHWcoXKYWWDLVolrcp2FkXopSmJCNygDrCidg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCZOGlNwTNbKJuf4Jm2lFcofUYPE1Nwyh7e6dqwdrfMWOaKqKJOdEuK9gATXqrjx5I3WljqFVkU18GlEAi03lB7wKSNTV7ou9yIBZjhP6xS_2lfQFe8WGsYsCimdHW7UQGU0wpPg5avZu4k-Dj",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb3ZqxdcXTluEIp8I2HsJdVKOanTOTOp6yhk9yVp5ihg6gyRvgL2AKr1cvhXIYvCWCHhEeJvf3CY8kv69U1lIvZfRYZ4KnO5voM5wiBwrr66urdp1DE3vsg5VZW6XD4bI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwTJgJdvdSTjEmx2vWuGQo5WR-xUZxKp0a9vwS4MYFXQHLf6cYZCRscQmZoKgef4eByd2BVIH5c3CyvA9sbuMR2dbKPMm_J99HKSBETNxyKpbWT4-ZBfP0FNTSG2ybOtuTA0NuvGOaKrgXrbMHGcPg1mgQErUYxpDNRuPwqPFfhPiAjfWlBt8lJPiceSuL0yEjUDpMGT5ldkTVB_YYX4w3XOY92hncTZci8Fa128-ceKUT2pNsZLqBAAZRRM0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHANc_u9k2-7fkbpfB85KywFsgKYsaYSRMFE2nFBxRR0RhcJP-HNKaEX7tvfrzAj3Wg9S-D5zhyRZjMZoEEd-aM-w2fb544IrSBYMsGgsPbmrgyrn0sEttvhfrV1aSAaV16abVYj_Dz1_ai3US0tCJWtIoOAISXHnvA0Pe1PP5LCQFVpMKQLBqocrB6XhMHUurFPBWJdrlgNs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-ckCFoz3rFXkFUSwzJAs9RDc6OnZrApFKekwpuHpNEex302F5x8ovk2fo1KgMj9EDuzaxVNEKvd6M_ZViKwZIWrHLHdAGnGN4GeD3jGTHBFbtMq2CJCg6MhhFBbODgz05vQk-7_CEy8g=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQH1DJ18bq4EpkpBKeJLN4no64jSsY9OlsrKSdcxPGzNE0OHAOFM8tW6CM3tsesWO9O3VnhF8ZDDuTB9pg-n6EOVk6biYPMMRGQ8kRgZy8bBWBoqV2mebVjQuFMnRhDHbVgOeLsOp_fxBNXwOEXOJGYSKi8QMsR5u8EndHW8B3jkmuAXkvXdshAz7ERjz3ocr4s7S8-utOjMSs-Kj7VESChN1so_A6V2S2uwIF14Ib_D8KPwCQu78Tu7nE07R5Ox3ordwcKP2RQcuiIZoe57dDwn3ypuuu-BsjiQw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRH9WospXRgBin84hJHsP5F0YKUfKdU-J-e7v5BXA3w3ZbfB75fgkJzDjHcog5AVHNjja6464vcH-0PbV3JOWPmVjN69Jr1RZnnOkkYUV2rDWL9jI_WrtltXo5",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMJNnFNTe1Z_vfsBKw8sdiR-4C0WMHIaBFelUGAd0DKgavQ6dFu3cPR05AKcIyWYBxQO5D32nrctrxaNMWznKydN6GqSI6RnIwf2LwY1h7RXUtOV1TsRMnw8IbyIS22U_4F7aYIx6nGWkNuqhj1K96ZXTmSm6SfEzST3wRiYkFq60SAgvuZLJaanGt0FqpKDKqpu2VqvusZoHWcoXKYWWDLVolrcp2FkXopSmJCNygDrCidg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5kG0OkROxHq4CsM8SjaA1kyHFIhb_7t6a6EoKG48FUxe3MoqaWzl4rO3WPT5IKO8W7BfpHE3psGmtNDdIQXb00seP33YjsOAG-4sCEJvNESj4NEkmwbgxDKCrwFDjbmyp8mg0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA7tolWQ8tuONqj3VSynVWKMfqBWj3ybuW8SEhUICWNxOdEcK-ghE4sA1zJSons3-1XWH0B5GYlUSGaIUedTRAyZJHVKpd60EdS6qfuHqPiFJgkZo5hlPY_7OmWTwDMM-Ky9sXSKeb-7wHRLHfuhofpgvhd1psKepFm9t19C2a-Rfje_HFIHgzmIKtt0HhlE1ZAtuNaFVdDQh_Y9enrAd-4dT__fmCXDQRWEcarrDSOdhxOBTSZFpUPo=",
+        "https://vertexaisearch.cloud.google.google.com/grounding-api-redirect/AUZIYQGwtjJXWnwzHbxjfN-fby-eO-IyT61Mp3tlUrsxiX-uM28yuf4Z-zqEfISFZIdqsU3bZ7mifFgATy7lEZWnUXIloF6qB73uPH-ti1NnYEEOnRf9EhWYMjQBw6j-6CG00flAgrHHa-PL_bosNKXh37wddjcP_id_nk_YIFM1M6IytqZBNYXh7GHjmFFaFHYggsE5WnSm498JxAVwETIk4y0FFf8nxIklfLSxQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7hU_4yaP1og0cNAJFsANfSrt_isG8kix6KOsP3JntJ2W3nvBCUlcp9nxEZ1WwXS-J-UM6EguJEA-vEc7zoVoORXb6cFzf8LCS9xoxPTOxC2nXMqOzHZrk47P4QCJRbeCUpDHI2zduYU58xEqctadWkrjqpExUpNbrCAb2vz3-ChJLo0JDHbOz8lBVaC1BXYZ1hEAssne6KlYJrRA6SssvbzJy9aI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLu03aRPoydkftihfshOWHnAQi0w0QDWPR1z5fzbLzsR_e_UpDeZGagpvSrAMAZ74x3qKNp8AWSuzbXIAlruT5HWKZ4TeT_v1zx4XodICQwH1JIqS4xhQ9ltPjOYBz_GnyzK32gZvDXmGPjw1kXnXuu1eYL8pIGkjxmqNZJRIicT3vQrEE2K5qUSDfuiL6zdAv5GN8i-5JVWF4YRBJ_1KJQjIbHHbWy1MGFVbEUYisjDLvdZyxykSRzzkDtBysQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp8kBB-B4WGSQuiFp2LyAhcOS_2-BsU0VWaQIqS4hxffCrNb0nhu87gTy4uRJtgY9UEJy8sWZRYvb6sfc7vzSHat90GqG3rpUtiH0GDlAvEYmo3e0KrivIQtYK7Vlj94QQ9QPrtGCdyeecW4MQKdU-sii5J-I=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ1FSzTHFTsfoKquwrABgULZvor__7xzYbwM9q0e7c6VqVqpIp9PGdCPIbFI6ixLya8ncRMvLRbgU3Kb-3yafn2EGKVJiEPmqe1m_9BxK0A2zc8mjCrI-9puQ6YNsKW7qdPj4w7yfcX0ZXSD7GxLcDpQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzMMDhMZ6GCyipq255cuV1CIGXGuCLl6PQQP38ZGb3ofGA-uL2YBkohl35HfpfECLI7VQQ5BKkTIWDGF8RzYNcLrTTuEHIPQgXcFXAvqz3cisniu2AFHWHLeODeUSFG0JVEfjLE4ufBL6m2miNrtntDFe_m5Z6ppgs4fY-FEptVm_Poz32Ki3nIbEMxnqtydd681HVIPLN4AldCniUAOadvymW-61lkjbc0x0wTTRAnCBLZAue2EBpa0uS3lE_cQuWNArLc8j3HvX_Uhwj4bw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWWpmsdxStA45aQTuGiLgqxIvSx0D92VtsVj7mRFvXcz4vv9zGoORI_I0FKKwGqAJRvvH6RrJUQtmJvN9a-_sCkK6Q53voyHePFIfjChgSXrvXnDCGxlI-uto5l6jNmNFPlyz96HNjxax1jqQ1Z4E=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHseynwpnr3QP0sduqlWbXWVWNj7CmPW5RHMd0FiL_hCL9C_4aWYaiXjuhwUx0O1u3drlk48Tc4ynDZ9NIWsFLkHgFCJ8WCjaIk-0NyMl9lqUOrDz-w3epSZp1AHL0M-xl9Kck1xS_KLpWdpg0Htujp3Ijwe9H8fWTTm-wLYjBVjMMIZ6of",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaBmYoRjXSwq9J9DTT1giTPXW7pN-9MjfCdJc2pSLKQA0d7YAeaIagHUEgt8er2Pyn2NUWa-gJKiri_XTz7_30YyVASWdBr3B-juDX64VgMFDpu9dVvjcouZHhC0Q49u-XqtXAV8WK10k0xkq7oX4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ1FSzTHFTsfoKquwrABgULZvor__7xzYbwM9q0e7c6VqVqpIp9PGdCPIbFI6ixLya8ncRMvLRbgU3Kb-3yafn2EGKVJiEPmqe1m_9BxK0A2zc8mjCrI-9puQ6YNsKW7qdPj4w7yfcX0ZXSD7GxLcDpQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9pv5ucixf41eT3AyeLlyAYxOZk4zh1qeHP8uPLl1FAXn92Sp-wX3l0jXh9qnZBnT5-1A23X-EqAQudjpf-50hGnYGc-B9iW_2WgBwsZM2WN6qf1_upQpAD35ubWlM5cQ5s6xr9g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLu03aRPoydkftihfshOWHnAQi0w0QDWPR1z5fzbLzsR_e_UpDeZGagpvSrAMAZ74x3qKNp8AWSuzbXIAlruT5HWKZ4TeT_v1zx4XodICQwH1JIqS4xhQ9ltPjOYBz_GnyzK32gZvDXmGPjw1kXnXuu1eYL8pIGkjxmqNZJRIicT3vQrEE2K5qUSDfuiL6zdAv5GN8i-5JVWF4YRBJ_1KJQjIbHHbWy1MGFVbEUYisjDLvdZyxykSRzzkDtBysQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMJNnFNTe1Z_vfsBKw8sdiR-4C0WMHIaBFelUGAd0DKgavQ6dFu3cPR05AKcIyWYBxQO5D32nrctrxaNMWznKydN6GqSI6RnIwf2LwY1h7RXUtOV1TsRMnw8IbyIS22U_4F7aYIx6nGWkNuqhj1K96ZXTmSm6SfEzST3wRiYkFq60SAgvuZLJaanGt0FqpKDKqpu2VqvusZoHWcoXKYWWDLVolrcp2FkXopSmJCNygDrCidg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5kG0OkROxHq4CsM8SjaA1kyHFIhb_7t6a6EoKG48FUxe3MoqaWzl4rO3WPT5IKO8W7BfpHE3psGmtNDdIQXb00seP33YjsOAG-4sCEJvNESj4NEkmwbgxDKCrwFDjbmyp8mg0",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA7tolWQ8tuONqj3VSynVWKMfqBWj3ybuW8SEhUICWNxOdEcK-ghE4sA1zJSons3-1XWH0B5GYlUSGaIUedTRAyZJHVKpd60EdS6qfuHqPiFJgkZo5hlPY_7OmWTwDMM-Ky9sXSKeb-7wHRLHfuhofpgvhd1psKepFm9t19C2a-Rfje_HFIHgzmIKtt0HhlE1ZAtuNaFVdDQh_Y9enrAd-4dT__fmCXDQRWEcarrDSOdhxOBTSZFpUPo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLu03aRPoydkftihfshOWHnAQi0w0QDWPR1z5fzbLzsR_e_UpDeZGagpvSrAMAZ74x3qKNp8AWSuzbXIAlruT5HWKZ4TeT_v1zx4XodICQwH1JIqS4xhQ9ltPjOYBz_GnyzK32gZvDXmGPjw1kXnXuu1eYL8pIGkjxmqNZJRIicT3vQrEE2K5qUSDfuiL6zdAv5GN8i-5JVWF4YRBJ_1KJQjIbHHbWy1MGFVbEUYisjDLvdZyxykSRzzkDtBysQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwtjJXWnwzHbxjfN-fby-eO-IyT61Mp3tlUrsxiX-uM28yuf4Z-zqEfISFZIdqsU3bZ7mifFgATy7lEZWnUXIloF6qB73uPH-ti1NnYEEOnRf9EhWYMjQBw6j-6CG00flAgrHHa-PL_bosNKXh37wddjcP_id_nk_YIFM1M6IytqZBNYXh7GHjmFFaFHYggsE5WnSm498JxAVwETIk4y0FFf8nxIklfLSxQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7hU_4yaP1og0cNAJFsANfSrt_isG8kix6KOsP3JntJ2W3nvBCUlcp9nxEZ1WwXS-J-UM6EguJEA-vEc7zoVoORXb6cFzf8LCS9xoxPTOxC2nXMqOzHZrk47P4QCJRbeCUpDHI2zduYU58xEqctadWkrjqpExUpNbrCAb2vz3-ChJLo0JDHbOz8lBVaC1BXYZ1hEAssne6KlYJrRA6SssvbzJy9aI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLu03aRPoydkftihfshOWHnAQi0w0QDWPR1z5fzbLzsR_e_UpDeZGagpvSrAMAZ74x3qKNp8AWSuzbXIAlruT5HWKZ4TeT_v1zx4XodICQwH1JIqS4xhQ9ltPjOYBz_GnyzK32gZvDXmGPjw1kXnXuu1eYL8pIGkjxmqNZJRIicT3vQrEE2K5qUSDfuiL6zdAv5GN8i-5JVWF4YRBJ_1KJQjIbHHbWy1MGFVbEUYisjDLvdZyxykSRzzkDtBysQ=="
+      ]
+    },
+    {
+      "era": "1967-1969",
+      "title": "The Dawn of Dravidian Rule: Annadurai's Transformative Years",
+      "narrative": "The year 1967 marked a seismic shift in Tamil Nadu's political landscape. After decades of Congress dominance, the Dravida Munnetra Kazhagam (DMK), under the charismatic leadership of C.N. Annadurai, swept to power in the Madras State Assembly elections, securing a historic standalone majority. This wasn't just an electoral victory; it was a cultural and ideological triumph, fueled by widespread anti-Hindi agitations and discontent over rising commodity prices. Annadurai, affectionately known as 'Anna' (elder brother), became the first non-Congress Chief Minister of post-independence Tamil Nadu, ushering in the Dravidian era. His tenure, though tragically short, was marked by bold, symbolic, and substantive changes. On July 18, 1967, the Madras Legislative Assembly unanimously passed a resolution to rename the state 'Tamil Nadu' (Tamil Country), a long-cherished aspiration of the Dravidian movement, which officially came into effect on January 14, 1969. Anna's government also enshrined the two-language policy (Tamil and English), firmly rejecting the imposition of Hindi and scrapping the three-language formula. He legalized 'self-respect marriages,' a reformist idea from Periyar that challenged traditional, Brahmin-led ceremonies. Annadurai's leadership was characterized by humility and a focus on public service, setting a high benchmark for governance. His untimely death on February 3, 1969, from oral cancer, plunged the state into deep mourning, with his funeral drawing an estimated 15 million people, a testament to his immense popularity and the profound impact he had in just two years.",
+      "key_events": [
+        {
+          "year": 1967,
+          "month": 2,
+          "event": "DMK wins Madras State Assembly elections",
+          "significance": "Ended Congress dominance, marking the beginning of Dravidian rule in Tamil Nadu."
+        },
+        {
+          "year": 1967,
+          "month": 3,
+          "event": "C.N. Annadurai sworn in as Chief Minister",
+          "significance": "Became the first non-Congress Chief Minister of Madras State."
+        },
+        {
+          "year": 1967,
+          "month": 7,
+          "event": "Madras Legislative Assembly passes resolution to rename state 'Tamil Nadu'",
+          "significance": "A major symbolic achievement fulfilling a long-standing Dravidian demand for linguistic and cultural identity."
+        },
+        {
+          "year": 1967,
+          "month": 11,
+          "event": "Legalization of Self-Respect Marriages",
+          "significance": "A significant social reform challenging traditional caste-based marriage customs."
+        },
+        {
+          "year": 1968,
+          "month": 1,
+          "event": "Two-language policy (Tamil and English) adopted",
+          "significance": "Rejected Hindi imposition and firmly established Tamil Nadu's linguistic policy."
+        },
+        {
+          "year": 1969,
+          "month": 1,
+          "event": "Madras State officially renamed 'Tamil Nadu'",
+          "significance": "Formalized the state's new name, cementing its Dravidian identity."
+        },
+        {
+          "year": 1969,
+          "month": 2,
+          "event": "C.N. Annadurai passes away",
+          "significance": "A profound loss for the DMK and Tamil Nadu, leading to a succession crisis."
+        }
+      ],
+      "achievements": [
+        "Secured a historic standalone majority in the 1967 Assembly elections, ending decades of Congress rule.",
+        "Successfully led the renaming of Madras State to 'Tamil Nadu' on January 14, 1969, fulfilling a core Dravidian aspiration.",
+        "Implemented the two-language policy (Tamil and English), rejecting the three-language formula and Hindi imposition.",
+        "Legalized 'Self-Respect Marriages,' a progressive social reform.",
+        "Introduced subsidies for rice, a key election promise, though it faced challenges in sustained implementation.",
+        "Organized the World Tamil Conference in 1967 under UNESCO's aegis, promoting Tamil culture."
+      ],
+      "leadership": [
+        "C.N. Annadurai — Chief Minister of Madras State (1967-1969), Chief Minister of Tamil Nadu (1969) — 1967-1969",
+        "C.N. Annadurai — General Secretary of DMK — 1949-1969"
+      ],
+      "election_results": [],
+      "controversies": [
+        "While Annadurai's government was largely praised, the initial implementation of the rice subsidy scheme faced challenges, leading to its eventual withdrawal in its promised form."
+      ],
+      "sources": [
+        "https://www.britannica.com/biography/C-N-Annadurai",
+        "https://en.wikipedia.org/wiki/C._N._Annadurai",
+        "https://www.civilsdaily.com/news/renaming-of-madras-state-as-tamil-nadu/",
+        "https://en.wikipedia.org/wiki/Madras_State",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl5zt5iBO749ThFs2fxCnzgD-iDu2cxfZOpzSMSQ-fGyqc2Xp99HdDa2zmk8vqo0ML0xiwpmfpZcVedDEXUDeMuZYXjF3ZQHEZmURv1J_7WylOSNzsnWWI_0qm6cKPrgS1hKvYDxnIjXLPdjSS3CjBzcIey0rIm1awrox6X73owuXmnNSPQujkA7GqbXbJIFr6",
+        "https://www.testbook.com/question-answer/when-was-the-madras-state-officially-renamed-as-tamil-n--63a921d00c3298a44572212a",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0O9x8mLO7kDs4-o31_OtAUqE28r7xGArZ71RmGFdsgYN_6Go5PMQozpNe33Fg-I9zULJOpqc0hFDODc19np3Po73XP-OkTJsiwaitLwvFTj8m_UQWqi4sHTU4eZtswmcBeIPW-_WebX1PSt9HXedw8dJ5KEKFfPCsI8JMwdp1EyBIksCdavh1hgCtUePCZxl9Z6cbTE2AWcXoLvCoNNV0_2t34aNduQr5k0SYFofYNfycqTacXThDWF5Kzc_9fOk4eW66wvLfbOnLeZMnwFJEjus=",
+        "https://www.shikshanation.com/c-n-annadurai-biography/",
+        "https://successshiva.wordpress.com/2016/06/03/c-n-annadurai/",
+        "https://aimhighacademy.wordpress.com/2020/12/29/achievements-of-cn-annadurai/",
+        "https://en.wikipedia.org/wiki/Tamil_Nadu",
+        "https://en.wikipedia.org/wiki/1967_Madras_State_Legislative_Assembly_election",
+        "https://en.wikipedia.org/wiki/1967_Indian_general_election_in_Madras_State",
+        "https://www.indiavotes.com/pc/1967/madras/1785/1967-lok-sabha-election-results-for-madras/2275",
+        "https://www.indiavotes.com/pc/party-wise-winner-candidates/1967/dmk/1967/2275",
+        "https://www.thehindu.com/news/national/tamil-nadu/what-was-tamil-nadus-historic-1967-assembly-election-like/article68571404.ece",
+        "https://timesofindia.indiatimes.com/city/chennai/the-cm-who-said-no-to-display-yes-to-dissent/articleshow/57500595.cms",
+        "https://www.tnpsccurrentaffairs.in/2025/02/two-language-formula-in-tamilnadu.html",
+        "https://timesofindia.indiatimes.com/city/chennai/dmk-and-bjp-clash-over-tamil-nadus-two-language-policy-amid-nep-controversy/articleshow/113351930.cms",
+        "https://en.wikipedia.org/wiki/Three-language_formula",
+        "https://www.thehindu.com/news/national/tamil-nadu/how-the-two-language-policy-officially-came-into-force-in-the-state-of-madras/article67856403.ece",
+        "https://grok.wikipedia.org/wiki/C._N._Annadurai",
+        "https://grok.wikipedia.org/wiki/1967_Madras_State_Legislative_Assembly_election",
+        "https://www.indiatoday.in/elections/lok-sabha-2024/story/tamil-nadu-election-manifestos-history-ai-promises-2522709-2024-04-04",
+        "https://en.wikipedia.org/wiki/Dravida_Munnetra_Kazhagam",
+        "https://www.tnpsccurrentaffairs.in/2024/02/c-n-annadurai.html"
+      ]
+    },
+    {
+      "era": "1969-1972",
+      "title": "Karunanidhi's Ascent and the Seeds of Discord",
+      "narrative": "The political landscape of Tamil Nadu was plunged into uncertainty with the untimely demise of its charismatic Chief Minister, C.N. Annadurai, on February 3, 1969. His passing left a void, but from the ranks of the Dravida Munnetra Kazhagam (DMK) emerged a new leader, M. Karunanidhi. A brilliant orator and prolific screenwriter, Karunanidhi swiftly ascended to power, taking the oath as Chief Minister on February 10, 1969. His rise was significantly bolstered by the support of the immensely popular film star M.G. Ramachandran (MGR), who helped Karunanidhi overcome other contenders like V.R. Nedunchezhiyan. By July 27, 1969, Karunanidhi had consolidated his power, becoming the DMK President, while MGR was appointed the party's Treasurer.\n\nKarunanidhi's early tenure was marked by significant social welfare initiatives and a strong emphasis on state autonomy, including the establishment of the Rajamannar Committee. However, beneath the surface of political success, a dramatic tension began to brew between the two titans, Karunanidhi and MGR. MGR's unparalleled popularity, cultivated through his films and fan clubs, gave him immense sway. The 1971 elections saw the DMK-led alliance achieve a landslide victory in both the Assembly and Lok Sabha, further solidifying Karunanidhi's position but also highlighting MGR's crowd-pulling power. The first cracks in their alliance appeared as MGR began to publicly question financial transparency within the party and the government, a move seen by many as a direct challenge to Karunanidhi's leadership. The stage was set for a monumental confrontation that would reshape Tamil Nadu politics forever.",
+      "key_events": [
+        {
+          "year": 1969,
+          "month": 2,
+          "event": "Death of C.N. Annadurai",
+          "significance": "The passing of the DMK founder and Chief Minister created a leadership vacuum, leading to M. Karunanidhi's ascent."
+        },
+        {
+          "year": 1969,
+          "month": 2,
+          "event": "M. Karunanidhi sworn in as Chief Minister",
+          "significance": "Karunanidhi became the Chief Minister of Tamil Nadu, marking the beginning of his long and influential political career."
+        },
+        {
+          "year": 1969,
+          "month": 7,
+          "event": "M. Karunanidhi elected DMK President and M.G. Ramachandran elected DMK Treasurer",
+          "significance": "This solidified Karunanidhi's leadership within the party and formally recognized MGR's influential position."
+        },
+        {
+          "year": 1971,
+          "month": 3,
+          "event": "Tamil Nadu Legislative Assembly Election",
+          "significance": "The DMK-led alliance secured a massive victory, reinforcing the party's dominance and Karunanidhi's mandate."
+        },
+        {
+          "year": 1971,
+          "month": 3,
+          "event": "Indian General Election (Lok Sabha) in Tamil Nadu",
+          "significance": "The DMK, in alliance with INC(R), won a significant number of Lok Sabha seats, playing a crucial role in national politics by supporting Indira Gandhi's government."
+        },
+        {
+          "year": 1972,
+          "month": 5,
+          "event": "MGR's public display of popularity at a DMK meet in Madurai",
+          "significance": "MGR's immense crowd-pulling ability overshadowed Karunanidhi, intensifying the growing friction between the two leaders."
+        },
+        {
+          "year": 1972,
+          "month": 10,
+          "event": "MGR demands transparency in party finances",
+          "significance": "This public accusation of corruption was a direct challenge to Karunanidhi's leadership and a precursor to MGR's expulsion from the DMK."
+        }
+      ],
+      "achievements": [
+        "Nationalisation of Transport and establishment of Transport Corporations (1969-1971), improving public transportation infrastructure.",
+        "Implementation of the 'Electricity to all villages' scheme (1969-1971), significantly expanding access to power across the state.",
+        "Establishment of the Slum Clearance Board (1969-1971) to address urban housing issues.",
+        "Introduction of the Beggars Rehabilitation Scheme (1969) and the abolition of hand-pulled rickshaws with free distribution of cycle rickshaws (1969), aiming for social upliftment.",
+        "Provision of free concrete houses for Scheduled Castes and Tribes and the 'Kudiyiruppu Act' for conferment of house-site ownership, promoting housing rights.",
+        "Formation of the Police Commission (1969), the first of its kind in India, to reform law enforcement.",
+        "Creation of a separate Ministry for Backward Classes and Scheduled Castes and the Constitution of the A.N. Sattanathan Backward Classes Commission (1969) to ensure social justice and representation.",
+        "Increased reservation for Backward Classes from 25% to 31% and for Scheduled Castes from 16% to 18% in 1971.",
+        "Declaration of May Day as a paid holiday (1969), recognizing workers' rights.",
+        "Establishment of the first Agricultural University at Coimbatore (1971) to boost agricultural education and research.",
+        "Formation of the Rajamannar Committee (1969) to recommend greater autonomy for states, advocating for federalism."
+      ],
+      "leadership": [
+        "M. Karunanidhi — Chief Minister (February 1969 – January 1971; March 1971 – January 1976) — Party President (July 1969 – August 2018)",
+        "M.G. Ramachandran — Treasurer (July 1969 – October 1972) — Prominent Leader"
+      ],
+      "election_results": [
+        {
+          "year": 1971,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 184,
+          "total_seats": 234,
+          "vote_share_pct": 48.58,
+          "alliance": "Left and Democratic Front (Progressive Front) [DMK, INC(R), CPI, PSP, AIFB, Muslim League, Tamil National Party]",
+          "outcome": "won_government"
+        },
+        {
+          "year": 1971,
+          "type": "lok_sabha",
+          "seats_contested": 24,
+          "seats_won": 24,
+          "total_seats": 39,
+          "vote_share_pct": 55.6,
+          "alliance": "Progressive Front [DMK, INC(R), CPI, AIFB]",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "The growing rift between M. Karunanidhi and M.G. Ramachandran, fueled by MGR's immense popularity and his public questioning of financial transparency within the DMK.",
+        "MGR's demand for DMK ministers to publicly declare their assets, implying corruption within the party and government, which was a direct challenge to Karunanidhi's leadership.",
+        "Allegations that Karunanidhi attempted to promote his son, M.K. Muthu, as a political alternative to MGR, further exacerbating tensions between the two leaders."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIMQj_8zVBEctbvo-KayAuwjFuD_OL5na1Q1CvVWkeh6dUdkOJim6vTV9q0iIYraa3NV6qtbCFa2NcdudgD2vw7jxGv8_EfQX8GKSsG2ll5WVF5PkEENp6CpsLhfFcOw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFftANd2lHBu3FbP_oARqnspyAo2aFHT4F5XVQHFAM0OUXDY9BFCxLokh9ZVMF9_h8UOoENNN4IrLhGAY35s-zk6JhhCfnt2Y0V8Kf14skHVMM0QBuM8SUhPCbiNUbaNHdy0l60oa6iWQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkVUH37fA4bE_bFPR5gWyiFsJtOJgN-jc7HafMbVKl8RKyHnniQlM_JmHgBENWF-jHUOENNN4IrLhGAY35s-zk6JhhCfnt2Y0V8Kf14skHVMM0QBuM8SUhPCbiNUbaNHdy0l60oa6iWQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3iu8KogOrtRLolmjTIiXABlOt96fCUZCPuLF6OCKZQN1mmCt5d1_NrieyBQyRgaRnpY1wbxGkePPHe5FtwvK4BqYgKcg8tbn2QnZUXVJLW3eO2MjpGTCODdActoDHkh2XjJD3rR7GM3VfsuSpyXxt6JN1UKSqtk8Y1VBZtoTzn19iRq01wpBaz7iSi9ct9vPx-rIzXvGaoCPSEkim18W0EJA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx8GNzJ0nkAddbstgGvB8fS4DraZhLYnOeA719QOFbe5XOzwOxRkgczQBHpiJvvw-mPpVdV9Ui26wP5VJ-8VS87pZNid4oeHu5lX5Fm_rxvI84jlqMa51jt0PCqOAwGvqQHy7_5Q9dYPc==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfuEq_h1eALPemYvbTwWA-CbyB8UGsBk4sOLvZrXqtuTGkzH8pFXHIBJelX9oWvgn2C9CR7ZUrKsiS2XsHTOpSIXEIj85xlo5NmJLBWipHzVWW5uNy4UapuLD6bv1_2ywWnV3Igxod8T9UafE-SuEysX31jXFvfGtvKesues3ghdxZusG8yQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBy4Xg4S-RCnN4tlIlci_qFYwHuiC9B6ACHfEoUgVYEGMMiWKzu55OrJ8iiR--Q4-Ye4OF2x8wANoaS8gIYaKkWchu-tQ62RjweEGeZHq_jrbIOJsJvbvFC2Ayn2ASB7Eyq2tPvWkoWCsWNN7HaclGDszo34cJc3pGnCgKkM41qcl6GTj1wbAHJ9ZmngjG==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVh_FSw4P3TiXwe8_zsoIsZr5HH5XIXcbywInqiYThUv_8U2S1Nm0TfUu1hieikQ3RFUDZCkhJ0TWbPxnd3G2lmQqubP2vzMRtfb6ns-4zmm-Zynylw5LEBBa1iVLQRaSpItG1ZIeHFq3m5hp31-X9wmqJc-AwaT7tqYsbeY-yMsFgYA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPjRrEkNEZICC-HZqSFUv7NDZUCX2_Ibii_CGMENxRY6ZoCoUPU6oJTH5mzoqhG5F8n0Uet4pocnhTpDkViX7yW36N1cZIWniZ6xy30Lv1qjzE8We216AnG16Bif70CuqBcf3mKZQ2",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3crx6PIF9_BJCfHV7Rr6cQFiBa1VL151yWT4Loxp0l7ksDL5hI7Q66XnOLbTzsJzLbSVUoYI55JDXcdsh33jkEFQPGEClzGBDvAGamk3HWapY8DQh-JGN2lq66uGm63ajAKKJ_O_HMdj-B51nA-zZoHs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsvJ-xoUPTzAuILbJ9KT4U1CqYP0Ua8Bgd-8y49N5BEDQxZDFw3mP7zJ66kcz5akxcvPqm-TY5_EIXFBtiASDOefmxhuAUww3agdvyXeMltRQhKTYIeY_LPFfXpcyDKkTnC3zwnKIM81px1DXtblxMXwwHu0hZ1f0P6rT08qXVUAqOP4F_wfw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuJpg67YS04IBNOsT_9CfoJDcvlGPT2QOUK2qutZZ27Mv3ldeVohOmA2tPns4CPQsXRa-WxX4MLTSpT6P_8WSMJUF2wGXxAsEoFuy5AqNGV_eiRs_TaDBhfperpI5hBtmvHrwFDhpGPH-hYh9h0Dtd",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcHOaQUnIFhGjpyj7vJrt91O5OSLi7oQ_-umsHZm3ENk9kfStND8akCy6qWMxdE4TlRnnMjL1guD95usSDIr43w04MKzZFy3q8A-T6HOludoFuaRu0Nu59UIabl7ITxyUGdlATVIerH5AjP9dByT85jLZD7sjcbWnQAyigxePtoyjUnA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq9RFz3vDFVj1XM46CzlxE8_E0z_blzKxc3KyLS-g04nbnAFOAGHa6KjQCcQlBbVf_U7n_BHdy9PPU5JhuSinv01a_ishi125KN2_LNqAuZApFoLCuC2vW1C1_txRhS8tNNIuWrfPvj6a2Oa1moPyFrkZAUwt1rIUco5vQSxV47eTUu-NSl-N4OOjFpZiRmx4lDPsVEN-zOuN-QGerg7P3v3f1k2KPU-Ta-HkEj5RxjhW87SVzzVdHYNbsMyOICZSOR3e5FEwpxYSuSb0OvqTg0P2G",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8PcYDXcULJrnJnIale8cvj4bcvl808-GWSgQpGrCa28_BoCfHW3bviCj6ubXYwkhjRG9cOLMOM_cPlcQkqFUParI28VRNsnQWQNjmdXHL3Gb2SvVT1kfvMQTGiYkLomkOotb7h_VySCuUGGXperufECsc-lP4m4chaGDLuqZ_Vi7m8D2Lf_qwZw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjgMlYtnwG4FOT866SfOd_HTolZqha67Wf8euTUPQjjXEwy1iDqcjJHJTVffvd00tn_LIJECUossxsqioGnnESxgXlWsmVvYsHAH4gZXZz-h71dYMUWAJvw55DsNU-svqknK6EhtYxLOTeHQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGXzPHNsg37FBxnWbbjnclcjup5w9C5p069MNomiMtfz7_yekZy1Fl9WI1HiVyz2WdHVMCC80F_Ujw5-wCDOFKDbaCyxaDnEd5how1fbWoNnP0-0Mr_EcL4h30uajctMGRb5LsTGJ0eRBI7-u1ekSZopXLnynnf6n-Gvn5JM7_JLP1tKlCZrCmcejiyM6iSMc9wsCvMBRBtGLbDnHwXb5tKHKdavSB3-qjpsT6xwxPZys==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQjRD5QwouCLOiUNZ4DkE8KuCuFos12qHuFoXITqGGVSsSluB3hjl_5ZAD5uXZwdpCvtt3YMbtT_uX92wHeL7tGw6Ikjy-s3-l6s7Ob2FrxjnW4cvvJlfPj96_RUC3jSIpqspDZPzDKNlOrke3idd1KLk4d4N3HIydVyhv1JQTk7ft-s8lUWe2PlNLh4j8LB9smwY==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDtcoYIBj4_kkuah0ORGTm8gnnXW5CjlTtxkK3QtT3BoQ4_TWRxxpYz5IGsYb5SI3vFwbyD7jPFxBqov8zX1NMAcVbw35oH6QR86mhiouZAPgVHl3ocHvLT-3XzLYAWy5JgJ6dBpFGduuudsbHYeYSaGGFv_kq5ROFVJCKPM6BwCEy==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlDxDIUDgEhljrKIydCKLujJZ1O0ZWn-vEp_Y7Y-TJuFLpuILiPyJnqo_XsZTasYSN_K1OjlTfVcyQEPcjJebJDpC40zFP0Od9JQ62zjT9U8YCC_q6qkR2zp7nVjFruu==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_XL2jeNpi2WA2x0N63vLuEEwN_rcbW1uuo9iL6esHiCStYiQVLognwodpILmwI9uE6UG2PpomuJC9gKZVKbDr4iF2RGM1leueMdhmx7dWDt55Qx1WzUXFwus9oIEeN2IZMq7rKFwCfCjoHULonOT2ZJA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmdBt4s7VP5MlKNJ6O9BZNUy4kvNLylQ7tANpi6khIiK-k0Srw31vIQTGXAM4U9AxRsmM4qDTcR5lqUqZMGCgVQaPlx4XL0h2Sxp-AWcE4puRqeOqHqOc90Q9RObb1RxM1vjI2D0o55TNNC4-ftGMAAt0u1p_xKpj3SEz0gIK1KLm5xoHq5pUAvqU==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBriW7927rNGolhvPA18XZj-_NJKvaTerOOR_OZhOLR6du_jwIOImcxW9-TtP5Mc7rx2GxQfwmGWP8wQWpAN2CTsWUXbtyakfMFGw3rjXbdq7w1YtB0UADlMsp8QiahQIaRaEb0USTzkLdu4wwYaCK7Wysa_rGCNaeTNoLUfwxCvskwgaij5HAKZIwIu-bx1kI3K4QbkBvFkyhG3fNMVY1FclG==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzOm22OK5xiLiC5YGu8Kn1l0qT3mLF0upVRmn1oCiIpCK-oYf3EAFND_4Cvw97UBMeocxCEzV-lpDTPrI0wSQdP2U-wqCGkxTBkdsPb7iv3o91XRybyLYptPExRNlLoc7JCZ3Mn5e5pj6jjtc4Or5wrOnUbXGvbYZMmy8ThsC62iCnGiHH32rv6ueHvgQ-tNU25lWDpZijx_tyn1hg_Qaxjaq0eDkZMn03y0H8Roci==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtgcf5ZSVI5hmitR30p8DuJxZ-xTU_-tkx6GQLpcb_5tRntIv_Rt2-OxQoJzwcr2BwEmVNzhkHRsRzK1jJEx05nTC7WTdqnDV5hUibFs0ktBED_ZrslhsKgMG7i0B_dvK8kzfzZw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGgZIQqyptFfDL09irwy0fxtHYpAecuAYw9VVnY_JLWVdaE0ktVGgACTUJsM6oofZz-hC_bL-YV2IscixjWu1Oym23dYcGI7VQ-MhE4I_KQUQNyotlLwUiO8mAPpgFZ6HiDRZ_yJW7PEp4r9oVThZw3e1_UPt18VF2w4R9Dj7REB1XfkYw4EWQEJtV_dXEhKlGWHY==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElzhbSEO8PBSeAfS90xgzh3TB82nplh_-Z-7rcE-vvbLpKqeKkXIadJ0FgJOlJTswq8hO3eBaHSSWp2IGX_JjwALOsA0OZfvKhJliYaljMCizbB7EroSevK3f0tR4X9ESlJ36WpkxmLedW5PqtMQVtVS2byc8tiaPn-PlguJxrfkHsHRVZzLq_7PqY5VIMvkM==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS0Nq0jCA1cZg0pkmgu8-qvu9RH3-d8fTPBZURZnFhqYhDpMf4v99m_dHkZQEt658OJ9xXC8CLmeK5pRfR8X87aUuV9hhrzWeL9iF8skOScilrD39EJ59HgeIL63Uf2q62nmDDBaXk0HkhOvGS8vQNkadSvnd9iOdulX26Zii0mD84xQs-UAbAnGlIYr0_9OfgBxn53PRt56mOfF4Uz0CXzleiQXfM37KopGtaoLG86Y5cSy6s",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeYjTFXdWmr_EX13JlAmm5YsrUQKrBGg9r1-46rVzFeK8GVf1TePkR7QVBZRDVXrYpkupowTVUZwOP7eq7jg3q0Zfd_Rs0lqC7qdZdrj6x2ujA79r_psfxurRID4a4fgeSRorgvaGqiw3JMVmFQP8GKOxYUXOT3e4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV8-G3uVKHKimcR-lcA24BPmINtCNz8EnIPB9Bfu_jKdnZAaj-PrRqKMvFC4-RfcOyGegVtLWKPnDZUPT4TRMX2nzDzX69CIe2gBLoRRWXVGCG6dkQike52O5oxECL"
+      ]
+    },
+    {
+      "era": "1972-1987",
+      "title": "The Wilderness Years: DMK in the Shadow of MGR's Stardom",
+      "narrative": "The year 1972 marked a seismic shift in Tamil Nadu politics, as the charismatic film star M.G. Ramachandran (MGR) was expelled from the DMK amidst accusations of corruption against the party leadership, particularly Chief Minister M. Karunanidhi. MGR, a stalwart who had played a key role in DMK's 1971 victory, swiftly formed his own party, the All India Anna Dravida Munnetra Kazhagam (AIADMK), named after DMK founder C.N. Annadurai. This split plunged the DMK into a challenging period, as MGR's immense popularity with the masses, cultivated through his cinematic roles as a protector of the downtrodden, translated directly into political power.\n\nKarunanidhi's government faced its first major setback in January 1976 when it was dismissed by the central government under Prime Minister Indira Gandhi, citing failure to maintain law and order and non-cooperation during the Emergency. This dismissal, widely rumored to be influenced by the AIADMK and Congress, led to President's Rule. The subsequent 1977 Assembly elections saw the DMK suffer a significant defeat, securing only 48 seats against AIADMK's 130, ushering in MGR's long reign as Chief Minister. For the next 13 years, until MGR's death in 1987, the DMK found itself largely in opposition, a testament to MGR's enduring appeal. Despite a brief Lok Sabha alliance with Indira Gandhi's Congress in 1980, which saw the alliance win 37 of 39 seats in Tamil Nadu, the DMK failed to regain state power in the subsequent assembly elections. Karunanidhi, though in opposition, maintained a firm grip on the party, navigating these challenging years and keeping the DMK a formidable force, even if out of power.",
+      "key_events": [
+        {
+          "year": 1972,
+          "month": 10,
+          "event": "MGR's expulsion from DMK and formation of AIADMK",
+          "significance": "This event created a formidable rival to the DMK and fundamentally reshaped Tamil Nadu's political landscape, initiating a bipolar contest between the two Dravidian parties."
+        },
+        {
+          "year": 1976,
+          "month": 1,
+          "event": "Dismissal of DMK government by the Central Government",
+          "significance": "The Karunanidhi-led DMK government was dismissed under Article 356 during the Emergency, leading to President's Rule and marking a significant blow to the party's state power."
+        },
+        {
+          "year": 1977,
+          "month": 6,
+          "event": "DMK's defeat in Assembly elections; MGR becomes Chief Minister",
+          "significance": "This election solidified AIADMK's dominance and marked the beginning of DMK's long period in opposition, with MGR's popularity proving insurmountable for over a decade."
+        },
+        {
+          "year": 1980,
+          "month": 1,
+          "event": "DMK-INC alliance sweeps Lok Sabha elections in Tamil Nadu",
+          "significance": "Despite winning a significant number of parliamentary seats in alliance with Indira Gandhi's Congress, this success did not translate into state power in the subsequent assembly elections, highlighting the distinct nature of state and national mandates."
+        }
+      ],
+      "achievements": [
+        "Maintained party unity and ideological coherence despite being in opposition for a prolonged period against a highly popular leader.",
+        "Successfully forged alliances at the national level, demonstrating political adaptability and influence beyond state politics."
+      ],
+      "leadership": [
+        "M. Karunanidhi — President and Leader of Opposition — 1969-2018"
+      ],
+      "election_results": [
+        {
+          "year": 1977,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 48,
+          "total_seats": 234,
+          "vote_share_pct": 24.89,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1977,
+          "type": "lok_sabha",
+          "seats_contested": 19,
+          "seats_won": 1,
+          "total_seats": 39,
+          "vote_share_pct": null,
+          "alliance": "Janata Party front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1980,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 37,
+          "total_seats": 39,
+          "vote_share_pct": 55.89,
+          "alliance": "DMK-INC front",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1980,
+          "type": "assembly",
+          "seats_contested": 112,
+          "seats_won": 37,
+          "total_seats": 234,
+          "vote_share_pct": 22.1,
+          "alliance": "DMK-INC front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1984,
+          "type": "lok_sabha",
+          "seats_contested": 27,
+          "seats_won": 2,
+          "total_seats": 39,
+          "vote_share_pct": 37.04,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1984,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 23,
+          "total_seats": 234,
+          "vote_share_pct": null,
+          "alliance": "DMK (standalone)",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "Accusations of corruption against the Karunanidhi government by MGR, leading to the split and the formation of AIADMK.",
+        "Dismissal of the DMK government in 1976 by the central government during the Emergency, citing maladministration, corruption, and alleged secessionist activities."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHExrxYiziOlWYLzd02yDsiwt5cAKIBHEhmotAD9Rlb6cl8KKcl-UA7xEM3tsBqmw0FNaadoLIn57FZt99i7N3TGVvY6JbomJctXq9vDBJ0ihBxJniVr64QovyL5f1BwhR96GP5UUzY8grL9TIxXkhQka_Be5psp8ftD79PaaQPyw7RApkr",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB6eZ_yjHq7wIzmnD7zccNebNNOfQAcoWAiJkpyFITpOjMJ6lL7I2tfhsqxO-DpOEDI0VIq0J8_fehC-s2xDRz_vYwQxqxinKYNVhqenyOhZ_LmP3DJvals_9UHdchJoZhjofBim9WACziRaVU5FR7TxkbKRQxpnn8UlT7Ly5PhShe1g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcOdhDLE_hUQb3KkYjduaahpZkm18JZhULqRZhk1sI9nS7gAZRkCo9_Fob-tdRrFtF-evievnx3phzHbkIN4doIr-urZVqqHBnNBx6wsH97j9w0NW6Cl3TjOvBM2pqX4mc-axKJLQoVD9kWDTHJIgyag==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLPoYV0kX6lZSjoQhHyUKeC8ORLcjU2Tr-Ub-cNRbuCFbDIjmO7nNcyauI2DQCxi4VsKs5udgmptOIjDGBQiJK3qSJ9fa0ErwaKeUz5DR704hBPFkVDJ7F5S_4yQ8sSso_Cy9vEc8dkDPXiBgg23PnE-2QEXKOsa3xyqtadlowbSMLCMvf",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvecFiqq0JW0KSV8AG5f5HocWiSSxbljgWCWyAW0ave67Qczwn7OSfpG7SfTHQSrcT9b4DulsYzvEqRS2nJ3CVqwAU_XTeQOSpM5bMHfQiapL7h8XMx0InSxSqKuZxGFI50mVnwwNKmHs9YwKoSCVtB9xXpw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0R8xdM7KXcVEro8MT4PeAsf0K6s4u07BjfgI9W70xiInE4RkUqnSn0epa2w6lJ-X0a7dsggRpsPVjehzP2KCenOyDqgBIKm42ipftz1p8YDcwBkd40jTYWdqhIl13ydFWEYe43cJFBv2q",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAoUQF80czIrnneREG7ciAouKMSopQpUDef2CqDVZZgLpQVoGkyIFZcK1HyfFMnPYF0XYgpOli3ffs-YhReZ7UyE0TWQG9pyjDi_gGCeefPXyaeU9ZIutqrjhtnGpe_gEjdri9QIVt3RllxaPne6ot8aeigGfEKgI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnSVl9_VXoecQmMZpan59M7eigtP8IhQGQYNdf4TqUaO3t0xlPEn6fC0ZLQLzdIgbslkeVKMwR3rZymGcsa10vbcKjTghqCPgAn-KTyxlmMdYUP0vnXRPLcnrzVM6sTkUsFhQqfKbszROWhxMhnu7j0fyoi8RkkAVQ29GTTVSjeFVhwWV3",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-YtblEC3OKtJ_hSqSzGCi3T2KNAwZHo35f-MSB3ZYosq3cOfGjvcubasY4Ez5OwwOrlm-Pf6BQpHf6mqx7YguFs9Rek1vHS5ICwLL7J8t-Qvo6oLqAZJXfNKmx6JXLlg20S4w17XxOOtxldN9nkbbzH4UvyXTv46lYEB0s_UM2omr6hX4",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvbZHJYnCSrUDoOArY7msQ-AChcJrS_unEBr3uYVQSL9CT5FbVvc7wyCRjtvgH_hyG4RWFYq02BMWe-NNUJpuGfe4zWIL4IiR-8dceA3J-kRH19A256IWKHXRGMIJ4e0qOEHFLQc0nHZCmw3iBCKfFXJqDmDqSjWvLHap9_XxIGCTfQ4QddEVnPVkQppcyrggTbuSSls3BXnOeVQTMAF29vVtsO7e5D_37Kxr1scVeFw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuphe0Wt2IWGKvZU7axXSGDiQGBoO4h9jd9Io5p4v4XqilIn7jcbU7IeTExfopw1YgjR14OM6zDUBYnyEQVpPKlNBadUSXF-yGbTRR2AwMIib1jn3xV3N7GXG9_MZhTEK66Xmabpn-EO6Awn57NqIUjJfj7a_FiTmjw4tzLfSETGqpew==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoOoRAR8uxe5eV5houRtZa3S-Kv8ktDPm61yRxOlMKJL95dmoMizxCzjzGgqSoBiosensQ-iyinkMQHuQ7nxu2xJCVFksOns4YqZkYLqP-SA1Cs0rIpKEtg7Pf6w6GJXvl-TMSHfxVpNyrvVIx5aTOHV52bbPy2U53IQcoeQyk2J22qDBXb1hdcvsZ4JXogBvPzSpEfcCx-eN-SL9-Kpmyb8vL-yWYZFjGWF9cXhws_WZ-J1lho7jj8lmujdulHQn6wcCdqfhZ4oSgShTfQsmIkzw1LQrQhpZ9YfnAnaHwHt9-Eqag=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEJZWOzYYpyOgKSiyxr_T9Th5kxAhan84lJmBUrc-j4cImX2rJQMRIiSc6GnHpRzUh7KhrsFyX8JGBXDr3sU_JHs-esKdNCpwtNJi2GpRcvTAzmeLKHib7Omi74U5Q",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeqa1AHxM053yjrSvsvPLxRW_OM_JfInZepxfJwbWxHw6ED2FjcKikUdtS-B4_FVAutW1rRdipqwQNv0Hc-BPP5sXM67t8ZZrjdY8N-VMbRtZU3U__HJax_T-uRikGk8F7wHrD2IwMlm1dce75RbSe3VF1mghGaV0ErhUZBsP6DWvdwbZG5I1YRzS9B6h5jA3C57RKACUUWSkqxjJ2BnDm",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGknr3B1QWdNmlPdrbhC_vEZS0MlwVu6uIg3eeBnb7X6fLaSoWmrKNIMm2qZ4OShha5Ng64u9qPH7Bl3dz6YK_tjqqn1eM8r8VCvCK9Wka00XzvKNPiqiLq9I51V5-S_fij4E41OyWtYPmfxDXyia33n9XNUxoZLyOTziWyHnTiocXW6NpMYqxUWrQvi-g8h_7npQuA71u1VntziDon50-DzQ5911eypOJczlBt2V8h15_r1hxaMZtZH5IaV57CB",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI4t0A2w3WGt0YED50b94mFsKIPGsqn7lIQFSXJT2jeHSQ1ngR7jASuDJtyA0ha2Qf61XEBc--Ej0Huqoz20WgYcluhzvmyvVwaUipeEmoQokFEP69xwGKUrrCt6sZL9KEj-PSCCl2tXwF_YiTe_dmF6qpckn__MRPQO0pc5r5FI01",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE38HJ07kmgydKnb-GCjmHJRDFTUs3QNolNjmcV6dF3Lr9xqCI5YGfmKn6w93WbcYpUYZaTjZrB-nFDBAqmtS36OtVf3ldE96Ab7Bw8_zVcOdVH14SSuoYfK__9OobzQATjrT6OKjXHgjS6S5wo4DZ7SOFTLiKaVfQuTF5hO3ISAwsELA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOb5bkIxuugF0yAlXY-auhqfRh8RJf8ZiVxM4LWJDcKuWjUJBHOC4sZnhR-_cya6yvciD-XlJI3KsXYoUEldFtLqoyTIyl-_IM6akckzXXsRPc-3ft1bWYMAZxz_aOYboxXCNa",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrPAHY-gGwIo72CG4-bduSgI1bWt9J2zuTIG9-olSeQjUl9fwQcWfrp5Ot_BRdtlk4Z0wC61HqnfD4YOdF0P7r8J4P4Bvvw8xsX09KvV6YFs9P3aL2mjzAs8Zr012BBEApcVoJqvNxXoWukDzlAwWPL8Qp6ponLM8RV3ms3-rZ-L2M",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO0KkhdUlnAXoOZhBadp3gePzUkivpnU6AAIr-RINvDE-J0zqClmKTY6MassP4CRkJjKJic-SrFCrV_Sd54tzbmnl2Yfp0GRKc9kh6mEqzLFSFmijVLfZl9JeOAsx-MOBaYzfNo59bSp7mJeNJiKjkoA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK1u6xtQI0__MagWKPGNn0uw40ETCDIe4DxX_tEFwUNg0t_Z7YtAwe-XJ7yU3V8QdOziP-vl-qYSmiL4c1nsLS1OYScVadrsNmmEco5WTnlC6j_j98UG4sSrial46TXHKzcLwgLsHiuSj_ag2pQ0sRvbdLYP-Hiw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHfwKK333mPOjvIWWP2u1MUDyATQiBMv9m2s-MPHBbxJ9qFlWdgl2KWbN8UTy7C1rT972asIjmSLdHYd8J93F4au8pHC5zhVJEHoILfl-M_1cdQrOM0Ry4gwASFx-eS54AfUfCAuUPBb6StXx_RNne2vOgav6DDHHqu1SuQEcv"
+      ]
+    },
+    {
+      "era": "1987-1991",
+      "title": "The Phoenix Rises: Karunanidhi's Triumphant Return and the Winds of Change",
+      "narrative": "The political landscape of Tamil Nadu was irrevocably altered on December 24, 1987, with the passing of the charismatic Chief Minister M.G. Ramachandran (MGR). His death plunged the ruling AIADMK into a fierce succession battle, splitting the party into two warring factions: one led by MGR's wife, Janaki Ramachandran, and the other by his protégé, J. Jayalalithaa. This internal strife created a golden opportunity for the Dravida Munnetra Kazhagam (DMK) and its seasoned leader, M. Karunanidhi, who had been in the political wilderness since 1976.\n\nAs the AIADMK factions battled for supremacy, the stage was set for the 1989 Assembly elections. The DMK, under Karunanidhi's astute leadership, forged an alliance with the Janata Dal and the Communist Party of India (Marxist). The Indian National Congress, meanwhile, chose to contest alone. The people of Tamil Nadu, weary of the AIADMK's internal squabbles, delivered a resounding mandate to the DMK. Karunanidhi, affectionately known as Kalaignar, returned to power as Chief Minister for his third term on January 27, 1989, marking a significant comeback after 13 years.\n\nHowever, this period of DMK rule was destined to be short-lived. On January 30, 1991, the DMK government was controversially dismissed by the then Prime Minister Chandra Shekhar, invoking Article 356 of the Constitution. The official reason cited was a deterioration of law and order and alleged links between the DMK government and the Liberation Tigers of Tamil Eelam (LTTE). DMK leaders vehemently protested, calling it a politically motivated move influenced by the Congress and the reunited AIADMK. The subsequent 1991 elections were overshadowed by the tragic assassination of former Prime Minister Rajiv Gandhi during a campaign stop in Sriperumbudur, creating a massive sympathy wave that dramatically altered the electoral outcome.",
+      "key_events": [
+        {
+          "year": 1987,
+          "month": 12,
+          "event": "M.G. Ramachandran (MGR) passes away",
+          "significance": "His death created a power vacuum and led to a split within the AIADMK, opening an opportunity for the DMK to return to power."
+        },
+        {
+          "year": 1989,
+          "month": 1,
+          "event": "Tamil Nadu Assembly elections held",
+          "significance": "The DMK, capitalizing on the AIADMK's internal divisions, secured a victory, bringing M. Karunanidhi back as Chief Minister."
+        },
+        {
+          "year": 1989,
+          "month": 1,
+          "event": "M. Karunanidhi sworn in as Chief Minister",
+          "significance": "Marked Karunanidhi's third term as Chief Minister and the DMK's return to power after 13 years in opposition."
+        },
+        {
+          "year": 1991,
+          "month": 1,
+          "event": "DMK government dismissed by the Centre",
+          "significance": "The Karunanidhi-led government was dismissed under Article 356, with allegations of law and order breakdown and links to the LTTE, leading to President's Rule."
+        },
+        {
+          "year": 1991,
+          "month": 5,
+          "event": "Rajiv Gandhi assassinated in Sriperumbudur",
+          "significance": "The assassination of the former Prime Minister during election campaigning generated a massive sympathy wave, profoundly impacting the subsequent assembly and Lok Sabha election results in Tamil Nadu."
+        }
+      ],
+      "achievements": [
+        "Passed a law in 1989 granting equal rights to women in family properties, a significant step towards gender equality.",
+        "Increased the reservation quota up to 69% (20% for backward, 30% for most backward, 18% for downtrodden, and 1% for tribals), aiming to enhance social justice and representation.",
+        "Established Women's Self-Help Groups in Dharmapuri in 1989, pioneering efforts to integrate women and create self-employment opportunities.",
+        "Created India's first separate ministry for the welfare of backward classes and minorities, focusing on their upliftment through education, vocational training, land reforms, and housing.",
+        "Constituted the Backward Classes Commission and introduced the Department of Social Reforms to prioritize marginalized communities and ensure educational and employment opportunities."
+      ],
+      "leadership": [
+        "M. Karunanidhi — Chief Minister — January 1989 - January 1991"
+      ],
+      "election_results": [
+        {
+          "year": 1989,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 150,
+          "total_seats": 234,
+          "vote_share_pct": 33.2,
+          "alliance": "DMK-Janata Dal-CPM front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 1989,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 33.78,
+          "alliance": "National Front (DMK-Janata Dal-Left Front)",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1991,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 2,
+          "total_seats": 234,
+          "vote_share_pct": 30.05,
+          "alliance": "DMK-CPI-CPM-JD-TMK front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1991,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 27.64,
+          "alliance": "National Front (DMK-CPI-CPM-JD)",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "The DMK government's dismissal in January 1991 by the central government under Prime Minister Chandra Shekhar was highly controversial. It was officially attributed to a breakdown of law and order and alleged links with the LTTE, but DMK leaders contended it was politically motivated and influenced by the Congress and AIADMK."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj08aR02H7LvMm6c9tS9sQ_wQ4dvGRNqsUYCrGheneCPJI42KyafGiY_vuiiJS02VFUeOJ-Dx09_KwK6uPB3SU6aU-6qhrVio7QZiGYTijJevOoMYedcvLpWiG7JcuvtahoxAjq3zyNvLF11eXz5IbLjl18o0xb4FAMsk9ooR95_I5us2ktQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ACn1PKMRUX9Rkv1GnhQOuEIFXUuDfzigL7NBWbeud_PvqAHR7IfbQerks2KtdLurUkPvyLRgVVz2AvYIv4QjCuXcWnc5Y1ab2CINIBt88dh-RVwGZFx4GtuK8O6XdWkIykvjIMtn2dw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF90N6d7S4QSlDPrLyRQeht9ec2IDLbqSYvF5WiN1gznBhtSXG0iWFZL-rPv_HFFdUQ01mh1mtZ6U1ZRdFc6t3noGrb7v5Kuhx08lB6sKTsmKs0c5UNB9J4p6aMktILJYFID3znQJj4JC7HT0hF71zv",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELhXN4YGSqSeuPEK2aDXLHDTJ_2X7a9Jgy0lfD2B1qyUQCetDwt0tsenj-32-h-Jc86b9YBj4l17TA_oDR0u09BAgEhFz1d4VHR8hTIidws5OM4QUwAPfkM9m6FKWdlA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKZ6OC_JQtuRDNVpPLvQ8TlSSt0hjFHgEOhS_Vl2asIfnJCKtGRgzNm6ird9axhalZ4MYA73-PEg3jrU_6k4V9S9hqmL43VMAy5dO1NoyStiKx4Tp7OwNMQaERUYpr8D4f9aXyJ9qFayzMPsc==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYK6u-7X3arP7gqTXCMpfS70SdD0ranfUA31OIYV7HDJ5oHXi1hENCfgueenSpuOrnNw2LPk5_pqHuME3JQpBV_WALr0XsmAE5P6ctLzzunFmTY_gJ8SVADJlYaLfMbSpp-Y402iy7_DSzRw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoXhRN9IFuHjvp-rrvIZy7COMXMrC4zbGZrlnY5nkMRsIwXI9cAxe1E-1EpD34gFtMdlNWVFAdu16VqTrLpKpdhNAUoRoLm4_12cbUI5-x4MJWElYVs2ZOYiXKT4aYDFrN0EWZxwiXjk7eLaKRK3ijTaW_b0WjL2pZv87VyXvwpCUm6nPARQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMFOohah4L3PZ7LPCPYTPrFu7cYBc7rsRXcfm_gu7BcRTWyccOyh2tQuD0hokd1B4xNyZYJPm4auDHzKejpO0KJLuDQ4GGZI26zP4s5lFbkW9PoZ-He33Av3GtYFb8ckP_or0iE2lixGviBXvk3fBl50HsHvnFqH4q35H3FQSAH8IHwfB1JQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWF2j6S-ozzhM8GaKbVntGOcebBB3dtSF4negk_fTSUr0z53qgu6iF3D2pqfQ_ECm798L9f9KbLKEMbNDWCIe7_d-6nPn3viOD0P0V0T-Jyo-9c_9eTuiCuEpE_NC02DHT3Xqw1ix-sg86jVCs3OMqUOnQ9UcYaIuN1rR2_adgFBduaE65vVTxJ8MWiYYRN-g9QD0lOwq-KQJzWYRBQ7y9meVcUAJQEA6mVm9",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-2ngj9ognaHWhkSIh82M3S8tDkNyhly5r1X6unB-GwFjVMDjpcUOJ5lePhMOVyIPz1gRWpAdJH0PcBBPxo7njUV-V_UA1nwiIyvApwt6AJGmQWWuUBe2PVLFweUAtbgjU36p3xleHMjf8EsEfAl4NjRl7RiwFZ2lJ6ZTiIEjmTh0CgimG-hrk71rC0VfA",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXlOxO3o9W2AqfahsEceUpo8donqW079kXfh_adJGFy7AHUPln1U7RviHOcHlzHxKziCJ9anoFp7UkXYAgSxVKhiLs0T89ux9hA3iZ3wy6f3bu1PDUZu-b4RFxJTQCWwx9jlC99_8rnHXo_VmZlktcgdZFIRlHoE4n5HUtNVk8ENLUzm29GSvowFrZjZqbf6NPrg1wA7s7W9KGH2lR23KIL4Vywvp",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5OqomCa_tBO5W995nKENck_Gabs_w3AJwh0UK_OwasAlU2EeolxYd3tHobnHEKGqYc7Oq6modq1VvSkBPiXnHnXOsAWQ4z0T--x9evesFBWsW7rCq1M0RgzAWmkljQ2B3rAzrUN6lPZdXxAMtN6eZR1wPfF1CraBL8dhxFQGbtlbwoPLKS0VxqfxUuPSf6286SdvOIadh9be6JhDEb8ikHHRSykOQX8O6Iw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyyt2lXOBNx9__mr7rFYt5EejgnaizRwqg6qb4zJDRmZCsdoXIQq6DmW5MZtHZnTvwXByFGAuFS3TSr0Dl9ehyR-vgzjRLrp5LeTvCP5a1HXlFqNawH1I1HbOoVdYX1nc7OUJPzU07gcQt86RkwNVtcPoOB_pV8AFh",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFK_EzT0YotOBTZFwC1SabzXHtOEZnN0q4-0dH5Atbl6G7ppQnXVLow77b2xM49L5s5h_P1QIiPzFQ31nTHwF3qmFXcgeSbz1qErtth-E5EpQp2Xtycj9ZL3jxkw1qcgoAYQzQOVC3a3RJGFL7F0esheMuTw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa3Y66Gszk-Ab8gCiOSADYl64eE9p5kI1mJ1xWlvbvwIRHFMWoye1LvM7CzR0pcHTwUT1jgCTRNo0B9rQDnzXuIlQbjYYBWoDF6BQCoUH7u0Tl6Y4KTQ2LBKdW06eacCV9ZUyCCys==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWhkDleV73hUZ8hs95clWbYE9tHTTV-cKcdiHnULQLPFZJk9diMKOQvf6JnjmMK8DO2GBNg6u3MDgcVIPvoSfExtYLuYtzBWQmWEdnRTLjyVRB01NcKJ7yl8h2CXNCOl_kpnnz6OSX8jBNRjDW09Z6h22w-rdjzeZ62cqfa9FmEniJolbKE6ZXifD_hMzoKMmO1vua5PPVJSKEJzxJdVc0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5WkO_iGeg9zRjEmQenkx7a2sRusvN7UXkkjfPoFeQDMH-sQqLcMIgTCwWjS1HX6Oa8pU7uqaSUDruUZxwu95AYVM5uSXYdXrJ6-haCslpUuNGJd7SI0uDl9Vdk-DV3WXYiPE1q8oWjFb38F0A_jZxiWKLJo-uAw8yWtmVupMnIWDauA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZsiWI3enLx6ojQ2XgxZxLkWsm6hL90KYGO-AaoBnV5Wld-HrZ5I16OMisdA39eFjbYTvz5VgPsqzbapvOZVU7YwNrzGbfFv4H5d3nsRtdVjJBS78mAowPNZpeksORKzy6OdnvhkMQxH05nvciNQqE9fZXREEOCi9PEZFwsMvGjt9bfQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQjnI4LVzaWoX6Arr73amRjJqeb-xfuqDryCKLi2wy_q9bc-_on7GSms3pdnb_tau8raCCmQVAuw5dqVTqR2E3-KmW5WlrOeUCsNb-kzYVo9sQQTdE1mbg6ACgnKDdlxZqAbSlEHKf40Vn3t3U0fFPjsqOu2Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM00Li59cRrygvFlrqDBwypKISFs9E1ubDvs9Dwq30BowPjeiPMw2Kpv4LsoF-If-8Tb7by5Q3qiWFj14n12GUD0VGYAVfy8BofggB_VXkYK07I3fXlHpyr7WfAcLgOT82lhjne5b5xOG9zS_igZ30IU963nlA1_Tbq7llJ_NzEJZ7jIaFkILg",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOm45nr6mXNpcGxPDGUUiNFaBc_hvh5s8ZL5XrzKNpRhoIJBbYQqk6LasLTJfpYiL_uxeNpnq0kDrRv-oUEpiPhJS6eJykngr8obsvs8QZOfVfEYkDg9vAY2tIt77zjI3Jib1ZDRv6Jy_ZcNCeX4rJ-ed0T_gXjzlbJCs2p_kCrwtK7Dnj-HcCFSDVEUWMb_c8EoeIq--kehSr9muwJ2ys-4RTyAKvpgE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiwfEpG1-4sH_C7li_X1bswVn8F-hvrUfshY2osEnR2YBYQ7nNQiTB_Y7yeEIQIRqYJFp-uM1MppUykFitViXySEmQig7LZ7SbnHcNsZm7VoXNC2b4LTVSlrWQOkbcHR_PLgB3O0tiiqFlX8lwCVMZjArmbw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKCHZQX0gxarhP6eoFs5KjKvwLkiWgYPOxdhJLG0_pa0ljfu40Lb8ytyhPsxfdJ1CMrSXXSzftsSz1E_43wVmjt9NNJ3j9l4mt10igosXf044fr2t1mzQovXkW1C5eWkbRFSjtTbbB0ruZldB97mEPeCJech2XY-df6TKU_Xoi0mczO1ZbphI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8HugHn9ahGrjxwxCVPi4Ajw1nAzfz5O8Pxu-z54upw8lZJE9olca642rfLcLqpR1NhQUaEVJqt4KYMV6gwW_IcEwtSn7VXhZXjhUju1hpUNoKntQptL0499ciHV1J13nDah2bW5CwV_UsUU6GPb3KdAAha4m-s0-B6LxBkuFKlSf8qRKM7i9CPheQaexMUm8Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_DyDwBwjyUklaDKz-WRtxDRCxv6hZzwfQAG-_eoPTLLHzXeA7y050BvHyL9ab2shTcy2ASIl7jCKM7Zy2YR3lcQ1iqJgARknp4u2X0beaL_3AyemdHRAHlZ-FHxSw",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE06MqGw0gEKJ-RqttSdDWzjl8gLZhDcSgfC2PmA_TyOL9hcLVM7HNRII1VWYjug0a4ISQCrS6dUyITWTUiYnnKKkX7jWIoECIbiFAC46ykRVYYYHII1vp7CewgXWQl1SKGRUGNzhdoW4YemHRI4hYUzgmauc_tMpo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhd1s_jPjjCbMoGYdkKKR13le_X5uEBeK1YyRYoOlDQRqhbUMRBo8S0EwhnFSqY7QEzS5mZvsEMO2SjBp1K3h8W7j2CD9wogvWpwbEPKC_yixt1LORiffKHAK8aKK2YQTrgQdspHGI0yo62W0Ehx9wCk1cJtJ-IL_MukmnPvY-75wFY6xkMoMsJg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK1KMqnmfl9PaDNankMPr1y8Wc-uhL2vze6QFy1zVHqmM8Ch3IJ552Gb5ZVjU_UVOV-Yl0Ey1LXhaeLYUBVgnLdlui6CDAu3zP7_AzwyR6DI6iLA1zWGs_fRcDUDrfXQ8yefG8AxuAH7Q7VeqppUM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGiQAGeOiCAmIVJJZK3GDCXdOAm3dTd42sFc9vpoyQ-HVz55Kh2oe7ZIIoh02C7K9VCyLbdmnlgnfCSUeC7a9zW49ZN4dUI3sjUe9J8W6As_6XUoNIQYIkrOp1src1s9V3sNAzagKIQpowG5EjZ5fvc0uzq-wkxetki3wYq88=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsN6LGVBSWsUFTRxcTLQw9-biG53bi0yTjZiK7xpaIT6qZe9-JMzQ1ik5utymolfj4kN0WgJ7OvQNfGALJR91EcOC95r1zGZ4wSNbbtg35jjqMH3aoNev2UwAb4G8zEWdj94bT5M_3bp9cLvnWhFhcvAwY9rUS6p3iePpj41ASbX4ns1E=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAsNDClNuMxvVTgdFRCk3a84ZEd7DekvYXMquJ6lx37nz_kenWvzMocIpGZlv_RcnHvdjvpbcSDJbNC9-LtRGpsPPvlj_bWqBx4HUmyWTtkD1RB7ZnrB-cutIfQOS45-IRVUDoWLDq9sCdRq43zIuxg19AX7cWkdbepLKO6sRE60hfoOXudCmX-3Sx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF21BbYf9WRjhJIz4sS4BRKvHz1TaGTDd8v01Lz2n0vWYIr30nmg0yoOQFE3mZJy3wa0sC973zEeBERf3qLzHxjd6FyFiiBQjkwe3-aTxY46nP0QDv1Y5nBS0TF4UuNs5ygGhmXMJn0NoiZXvRWY_2M6I=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHXIAcx12UB6af0BD2KzwEGu668B3yt3PAF3vc1BeRyaCEon1EH0Sqj3lfKz_y_pwrBBgr4IQbrAlLihTLtfLieHm5eLyPK-Jh7gqhTWEeUIUBMyl3Szjf5XLBJCxG48hhrAL6U8gh-O8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR8Cm3X35hBOwwwzy8mkYx6vVgba3qBDNJI7lvLhbNJzLxXQ-zExcJhlKWL6aI9v94ugPztRQG2XGavgz9CTI60OKkwGOLPA28QZyHDoyLZuj718liyonD4WjLYietu8xdugmo7__UNSxpNhfq9ikKCiOSgZOru9c7RLdyuzVWRcDTRsXP",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU39gqnTPsVL-_KKx9MK267i3t3F0RKToG0mbp6yoDZZum0_l9xswDETkXk2PxtgIp2EUVvoBlKD4vLF9eE-HI8VbGQ9rjMQfUuTAXs0DrgtcdJ4DEiJ2QqGQ8ObrgQ4drP6DzhTdVzivZ_SYrFNx8o8zLjM5UEA7s7DlUZjeiDsoohxhDzLSlmCH0Kqbb",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1m4U7lVFwohBSa1LXot4XT5E9XaWEO7WMQkBAkLGUHZbYLGN7a82D98oHSMRT1RXC70CDO7axFwoGHVU9WuMUGdztFtjDEbN-AedoYHbcF5ZgwPudPNAM_1X-j7RKD_-CxqmLXiLZUTyxB2kQMjCysRC3mF_tkF7oj-MefKiHqcv6_EoY_KEeYl63kZ2pAljeb53M6XFjpd1jUWH6yxsMky4OzV2Adtv4izY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBrtdRtVK0c03IwAT-gyAAhYC25A3_IAfiaSCzcaRYChzaguf7dlvrGU-rMeRpgqV4h4IRFHoK2XpDG_knrbB55HGbCspRF0tkfpoXH-LvzIPRV6sPhkh1-KbMW0Mq0tA3YJbeEy2bqkEZ05do8nJG1OZAeG85_uADSbPxw0ZkXlAkIBhhDuxOLV_IVdPCtKI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAvYgeT2_jTzUgkOkejKOTJrNozcpgBv6EX-RhOj2-aTN4pIyB0LtjmWsQRlePnhI5zbFC2iwV9NS4N0CL1TBtyURzYjV2X6EbO72txnikEPKbv0XHgoXAe94cTkmfesxm_JX1cn95DjWOIDFkSDX9HalBPj_1HqSFMbuLTeRbsoFf79yREczkPA-vdIlap5c0GTIYfnfVHejNh_gq7j0e9vRtzocGcl_YpHGYavjR1Uf0V7uWce3",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu7bFgQxv0VJXkuPgU6OxZyI5mBn2NM4Xm_HITVrlW9Nl--tuOIshsHunhEZM77Yt72N0a4sh8p4QZUQhabaDPIIhImBOk-kd8PofOdghtJW3scvfP9DeYzLQ7OfApozAvYWTVqcp7y2Ck8kPJ0D_lYLybB_gv_Gpu0yrxJx00mgWZyxXZ_0s49KbJ_OwvFFwfCY-Ff0g_DbnMY89GroQezqnvcHQeKUML3xQnEPGCCzZq4-G19CMmascwj1l3hHBw9YW1GVeZ8OAyOBPivaF48obQ4BJt3KdLmO60m4N0wUFh8UuQRqmiMZyi9YVRkwW58MA="
+      ]
+    },
+    {
+      "era": "1991-1996",
+      "title": "The Wilderness Years: DMK in the Shadow of AIADMK's Resurgence",
+      "narrative": "The period between 1991 and 1996 marked a challenging chapter for the Dravida Munnetra Kazhagam, as the party found itself in the political wilderness, overshadowed by the formidable rise of the All India Anna Dravida Munnetra Kazhagam (AIADMK) under J. Jayalalithaa. The 1991 assembly elections delivered a crushing blow to the DMK, largely influenced by a wave of public sympathy following the assassination of Rajiv Gandhi and the unified strength of the AIADMK. The DMK secured a mere two seats in the assembly, its worst performance since entering electoral politics in 1957. M. Karunanidhi, the party's stalwart leader, managed to win his own seat from Harbour constituency, but the party's overall vote share plummeted below 30 percent. \n\nThroughout these five years, the DMK functioned as a vigilant opposition, frequently highlighting alleged corruption and misgovernance by the ruling AIADMK. The Jayalalithaa government, in its first term, faced accusations of high-handedness and a series of corruption scandals, which gradually eroded public goodwill. This period also saw internal shifts within the Dravidian political landscape, including the expulsion of Vaiko from the DMK in 1993, leading to the formation of the Marumalarchi Dravida Munnetra Kazhagam (MDMK) the following year. Despite the electoral setback, Karunanidhi's resilience and his unwavering commitment to the Dravidian ideology kept the party's spirit alive, laying the groundwork for a potential comeback. The widespread discontent against the AIADMK government, fueled by issues like power shortages and rising prices, created an opportune environment for the DMK to regain public trust.",
+      "key_events": [
+        {
+          "year": 1991,
+          "month": 6,
+          "event": "DMK suffers a massive defeat in the Tamil Nadu Assembly elections.",
+          "significance": "The party won only 2 out of 234 seats, marking its worst electoral performance since 1957, and was relegated to a marginal opposition role."
+        },
+        {
+          "year": 1993,
+          "month": null,
+          "event": "Vaiko expelled from DMK, forms MDMK.",
+          "significance": "This split marked a significant internal challenge for the DMK, as a prominent leader left to form a rival Dravidian party."
+        },
+        {
+          "year": 1996,
+          "month": 4,
+          "event": "DMK forms alliance with newly formed Tamil Maanila Congress (TMC) for upcoming elections.",
+          "significance": "This alliance proved crucial in consolidating anti-AIADMK votes and was a turning point for the DMK's return to power."
+        }
+      ],
+      "achievements": [
+        "Maintained its presence as a vocal opposition, consistently raising issues of alleged corruption and misgovernance by the ruling AIADMK government.",
+        "M. Karunanidhi successfully retained his own assembly seat, demonstrating his individual electoral strength even amidst a party-wide rout."
+      ],
+      "leadership": [
+        "M. Karunanidhi — President — 1969-2018"
+      ],
+      "election_results": [],
+      "controversies": [
+        "The DMK government was dismissed in January 1991 by the central government, citing deterioration of law and order, just prior to the assembly elections."
+      ],
+      "sources": [
+        "https://www.google.com/search?q=Elections+1996%3A+AIADMK+citadel+crumbles+as+DMK-TMC+alliance+sweeps+to+power+in+Tamil+Nadu+-+India+Today",
+        "https://www.google.com/search?q=1996+Tamil+Nadu+Legislative+Assembly+election+-+Wikipedia",
+        "https://www.google.com/search?q=1996+Tamil+Nadu+Legislative+Assembly+election+-+Grokipedia",
+        "https://www.google.com/search?q=1996+Indian+general+election+in+Tamil+Nadu+-+Wikipedia",
+        "https://www.google.com/search?q=1991+Tamil+Nadu+Legislative+Assembly+election+-+Wikipedia",
+        "https://www.google.com/search?q=The+Chennai+factor%3A+How+DMK+outperformed+in+the+capital+-+India+Today",
+        "https://www.google.com/search?q=M.+Karunanidhi+Facts+for+Kids",
+        "https://www.google.com/search?q=Tamil+Nadu+Assembly+Election+Results+in+1996",
+        "https://www.google.com/search?q=When+DMK-TMC+alliance+won+big+in+1996+-+The+New+Indian+Express",
+        "https://www.google.com/search?q=ARASIYAL+ISSUES+-+TN-ASSEMBLY-1996-NEW",
+        "https://www.google.com/search?q=Muthuvel+Karunanidhi+%7C+Indian+Politician%2C+Tamil+Nadu%2C+%26+DMK+Leader+%7C+Britannica",
+        "https://www.google.com/search?q=Muthuvel+Karunanidhi+-+Wikipedia",
+        "https://www.google.com/search?q=AC%3A+All+Candidates+of+-+DMK+for+-+1991+-+IndiaVotes",
+        "https://www.google.com/search?q=PC%3A+Tamil+Nadu+1996+-+IndiaVotes",
+        "https://www.google.com/search?q=Worst-ever+show+by+DMK+in+citadel+Chennai+-+The+Times+of+India",
+        "https://www.google.com/search?q=AC%3A+Winner+Candidates+of+DMK+for+1991+-+IndiaVotes",
+        "https://www.google.com/search?q=1991+Indian+general+election+in+Tamil+Nadu+-+Wikipedia",
+        "https://www.google.com/search?q=1996+Indian+general+election+-+Wikipedia",
+        "https://www.google.com/search?q=1991+Vidhan+Sabha+%2F+Assembly+election+results+Tamil+Nadu+-+IndiaVotes"
+      ]
+    },
+    {
+      "era": "1996-2001",
+      "title": "A Resurgent Alliance: DMK's Return to Power (1996-2001)",
+      "narrative": "The mid-1990s in Tamil Nadu were ripe for change. The incumbent AIADMK government, led by J. Jayalalithaa, faced a strong wave of anti-incumbency, fueled by widespread corruption allegations and public discontent, notably highlighted by the extravagant wedding of her foster son. This political climate created a dramatic opening for the Dravida Munnetra Kazhagam (DMK), then in opposition. A pivotal moment arrived when the national Congress party decided to ally with the AIADMK for the 1996 elections, against the wishes of its state unit. This led to a significant split, giving birth to the Tamil Maanila Congress (TMC) under the veteran leadership of G.K. Moopanar. The TMC, driven by a desire to uphold 'Tamil self-respect', promptly forged an alliance with the DMK, creating a formidable front. The 1996 Assembly elections witnessed a landslide victory for this DMK-TMC alliance, sweeping 221 out of 234 seats. M. Karunanidhi, the seasoned leader of the DMK, once again ascended to the Chief Minister's office for his fourth term, marking a triumphant return to power. Simultaneously, the alliance achieved a stunning clean sweep in the 1996 Lok Sabha elections, securing all 39 seats in Tamil Nadu, and becoming a crucial part of the United Front government at the Centre. However, this period was not without its turbulence. Cracks appeared in the DMK-TMC alliance in 1997 over G.K. Moopanar's potential Prime Ministerial bid, with the TMC eventually supporting the United Front from outside while DMK remained in the government. The political landscape shifted dramatically in 1998 following the Jain Commission report, which controversially linked the DMK to the LTTE in connection with Rajiv Gandhi's assassination. This led to the Congress withdrawing support from the United Front, triggering fresh Lok Sabha elections. In a significant turning point, the AIADMK allied with the BJP, securing 30 seats in Tamil Nadu, while the DMK-TMC front managed only 9. Yet, political alliances proved fluid. By the 1999 Lok Sabha elections, the DMK itself formed an alliance with the BJP, joining the National Democratic Alliance (NDA) at the Centre, winning 12 seats for DMK and 26 for the NDA in Tamil Nadu. The era concluded in 2001 with the DMK facing anti-incumbency, leading to a loss in the Assembly elections to the AIADMK, and a dramatic arrest of M. Karunanidhi on corruption charges shortly after.",
+      "key_events": [
+        {
+          "year": 1996,
+          "month": 5,
+          "event": "DMK-TMC alliance wins Tamil Nadu Assembly elections, M. Karunanidhi becomes Chief Minister.",
+          "significance": "Marked the DMK's return to power after a period in opposition, fueled by strong anti-incumbency against the AIADMK and the formation of a powerful new alliance."
+        },
+        {
+          "year": 1996,
+          "month": 5,
+          "event": "DMK-TMC-Left alliance sweeps all 39 Lok Sabha seats in Tamil Nadu.",
+          "significance": "Demonstrated the alliance's overwhelming popularity and gave the DMK significant leverage in national politics as part of the United Front government."
+        },
+        {
+          "year": 1996,
+          "month": null,
+          "event": "M.K. Stalin elected Mayor of Chennai.",
+          "significance": "Began M.K. Stalin's significant administrative career, where he initiated urban development projects."
+        },
+        {
+          "year": 1997,
+          "month": null,
+          "event": "Cracks appear in DMK-TMC alliance over G.K. Moopanar's Prime Ministerial aspirations.",
+          "significance": "Highlighted internal tensions within the alliance and differing national political strategies, with TMC eventually supporting the United Front from outside."
+        },
+        {
+          "year": 1998,
+          "month": 2,
+          "event": "Jain Commission report linking DMK to LTTE and Coimbatore bomb blasts lead to Congress withdrawing support from United Front, triggering fresh Lok Sabha elections.",
+          "significance": "Caused a major political crisis at the national level and significantly impacted the DMK's political standing and alliances in Tamil Nadu."
+        },
+        {
+          "year": 1998,
+          "month": 2,
+          "event": "AIADMK-BJP alliance wins 30 Lok Sabha seats in Tamil Nadu.",
+          "significance": "Represented a major setback for the DMK-TMC alliance and a shift in the state's national political alignment."
+        },
+        {
+          "year": 1999,
+          "month": 9,
+          "event": "DMK allies with BJP for Lok Sabha elections, joining the National Democratic Alliance (NDA).",
+          "significance": "A significant ideological shift for the DMK, aligning with a national party it had previously opposed, to secure national influence."
+        },
+        {
+          "year": 2001,
+          "month": 5,
+          "event": "DMK loses Tamil Nadu Assembly elections to AIADMK.",
+          "significance": "Ended DMK's five-year term in power, marking the cyclical nature of Dravidian politics."
+        },
+        {
+          "year": 2001,
+          "month": 6,
+          "event": "M. Karunanidhi arrested on corruption charges by the newly formed AIADMK government.",
+          "significance": "A dramatic and controversial event that underscored the intense political rivalry between the DMK and AIADMK."
+        }
+      ],
+      "achievements": [
+        "Renamed the state capital 'Madras' to 'Chennai' in 1996, fulfilling a long-standing cultural and linguistic demand.",
+        "Introduced 'Uzhavar Sandhais' (farmers' markets) across the state, allowing farmers to sell produce directly to consumers.",
+        "Launched 'Samathuvapuram' (Equality Village) schemes in 145 locations to promote social harmony and eliminate caste-based segregation.",
+        "Implemented 33% reservation for women in local body elections, leading to the election of 44,143 women, including two women Mayors.",
+        "Initiated the establishment of Tidel Park in 1999, a landmark project that boosted the Information Technology sector in Tamil Nadu.",
+        "Nationalized the literary works of eminent Tamil scholars, making them accessible to the public.",
+        "Introduced the 'Namakku Naame Thittam' (Self-Sufficiency Scheme) in 1997-1998, promoting community participation in local development.",
+        "Increased financial assistance for the Anjugam Ammaiyar Memorial Intercaste Marriage Scheme to promote social integration.",
+        "Established India's first ministry for the welfare of backward classes and minorities in Tamil Nadu."
+      ],
+      "leadership": [
+        "M. Karunanidhi — Chief Minister of Tamil Nadu — 1996-2001",
+        "G.K. Moopanar — Leader, Tamil Maanila Congress (TMC) — 1996-2001",
+        "M.K. Stalin — Mayor of Chennai — 1996-2001"
+      ],
+      "election_results": [
+        {
+          "year": 1996,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 221,
+          "total_seats": 234,
+          "vote_share_pct": 60.77,
+          "alliance": "DMK-TMC front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 1996,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 39,
+          "total_seats": 39,
+          "vote_share_pct": 54.96,
+          "alliance": "DMK-TMC-Left front (United Front)",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 1998,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 9,
+          "total_seats": 39,
+          "vote_share_pct": 42.72,
+          "alliance": "DMK-TMC-Left front (United Front + Left Front)",
+          "outcome": "opposition"
+        },
+        {
+          "year": 1999,
+          "type": "lok_sabha",
+          "seats_contested": 19,
+          "seats_won": 12,
+          "total_seats": 39,
+          "vote_share_pct": 23.1,
+          "alliance": "NDA (DMK, PMK, MDMK, BJP, M.G.R. Anna D.M.Kazhagam, Tamizhaga Rajiv Congress)",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "The Jain Commission report in 1998 controversially linked the DMK to the LTTE, leading to the Indian National Congress withdrawing support from the United Front government at the Centre.",
+        "Following its defeat in the 2001 Assembly elections, then-Chief Minister M. Karunanidhi was dramatically arrested by the new AIADMK government on corruption charges related to flyover construction projects, though the case was later dismissed."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaPjXEMe5mx2bCDG95XUK1jLPFz4zM-ntb_rWd0vnl2CfBYhrX_IKjRSjvRu_JiQyj9w-Dku-0soRNWuhqVqudeTiaL3C5tt-9zmnjScrU7IZ2DpifP-dWSmq6K_wl6YlUzmEdtGF0o63v2B5sV_v1Fu8np_03n2LpueGggEiyalgM1KIsJw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRxDX3wr7ZzPKqbtaWmI9G1sdSkIWmmNrI_RnVFu5jKhgqOC4GZCKxVXG_71Zv66U4HaLd0VAP-vrWucZjQZFxXw0fZUdQ3rFxcwSHnG3F7i_MakziWibjxKd8kXFwWii9k6HkbPaicnEpZMgVXVL4dyOOjV6-BXSRcccPE5L8h77BVg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoz9P5UOeqdskzOaM6yJ8TpItznWRlmeK529b_hxiE0XRlo_ku3UjBvVP8jH81OyyMVIsgB5XEmnjuTmSwQy-MJ2EhuNfHZz-PpybT0kkdWOe43zrNnl70sKLxRLTSISwVDdm7iL3t5O-s2Pk9qYW0yzets_LMOOTJiUqsdOXjjKHs1bh3FWtGja2C_Hq",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHijO3jXhCsh8zgDjFseKQtzvV17B2O3JlJoRNTejkElXhzjOBZs47lbnge6koda3TdVbflybrN0r7dJbJZwuThThmmTZWB2oS2mZvxwdh2ObREYXuxYmyahc3iw5rnHqEfdEQTVDSfzNn5SI_OttnNuGgasHhbCc36hLlwdw4xM8DDo8y7x2vDyPst58FIHjBb",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQzvQJXgDovps4_KBpX4MtyIdWkJHY_pj3qe-1dIEL0vfAHVNBdpj9D9dUPVYNrBYvYFZKbi3MZSyo3HxkT3NnLYZNXOAfKVXxdtK8e48OuoR5BhRE19eF1dOXrbgl22-0-2B2Ejt2PCV6NoWy1zmXfXLvDMkbQu74G-VLRaXKc_ZkUS4GhRFsKJMbgnAWlWwE8WmpbsxWXYessYRwvw=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvkYO_5b__2ESXv31EwK0hC3-dPhWn3eydWBnNFw9oBtWrge8tbYMJUrVnIEt7REwFK7tFd9Q2Fwn9yRT8UuZbji0UM3ujS4j0LZn6ze57JDoGQjA_-tBQ8_6sdCgCGg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRCO3UN0tRrtQ2_5vxTk4IqdK11to5fMunMFG3Ji-CqJ2fdvHcc4wNts72kFWFW0uG-htmEhMy-H-gLMr1VOF1wZO2uaqHHtV1b4oul1GwJeQ4uyS_2u58lq-UsahMPjY4eq6Pb_KjV82d3VO5edtF1v0=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeK8FbwgohRATONvoDL8hYZCuoIkKi1pm0JchWYmfZhPX1ourm7ENWkGIHVViX5nMGkQXw6vOfx43O3A6DYQH6dEJ6yePLMvqW1F2kjHNPYQQnSxza3HVILRJ6lN1KY7ZhtrzxRN_QBFufqMyNP3nJJP-mMlQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv-dredqBnQeNbHfFNjQYMKnYFTwgWEqezmGfYGKJ8NSRVvZNWc1EIC0buLMHwAOrH5V4sEEAVJDxr5b0dnywhXrLitIUf1VKIpgldbbrVv1SJvEc40StBq15c91CjvqaLdA_Vh1RXhL0uGFgkoWGBjAxVoZ6Ez3mhDbk9dqVERTSKhw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0pdGQ_svkoWrlfUO0XyXwtP1ZG24Nroq-C1YXDmSLCimBp4QBsFw6n7OIXkTw8K1NZLmIA8lUtgRVM1qJAOLChamZlLNc0fhJuGDlv-rAbLGwHUgs6dM1V7POkQ22yMeM6FWgjXnbKjzE9Xi4fm1rGS3Do6WVfco0I4t9bTwh1jnUkA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWxW5bgkLAQrkjHe_B7ZoC2b0Xx-9zkbwcan9uBFmnnCc5pNq99F6UQRRSRDu1C61qXQc_sIhXgLksb9zduCl_joJUfu_25gyZPe4GGi0DV1JglZSbo_H9Mg6C2jzrMq7lQ0o46WUIV2hQnB34T7TkcH_jGQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKugqkJWtsnVwU3UlEvMW9ccUwBT_IBb3wI_IYv7fDwYJTFkgs_w9sM_BjFXfOn-8EP4iHQ1HG_fGjvCxnqzPRMajTzvV18kDt-KGiHtxkIu_L5wmgmXPGsi-tS2Pjvq5akmikwtP1QmapQJ6go0B1PaxRbNYaeg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe2k6ud-Tx9Z1XUzVblTgcM0tR10pHvKm4T4gMvYA-mQ3L-4LO853J8vuDJ5xpn4xIJYbNs-np2eXfAGE56-BSW0PmCvf_PFth9h8eKoO5DLx3IKXWQTTV9LX18p7rhHTKQxwiagcEr2HhhQGifD-g-ZzIpw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIG_pJ5pvEyE6AVb_9ZsRmofKQmWLFmncyMQ3kInXCOu2qs-eXFLOpAmj-G_dijOol-lkQY9XoshkVh9lWkOCNWpXRa1LaRN7G8ePbv5DIgz1OCoc14LTG3cRtIodxQ4F8g1uRMpJvOLF3bRaEQUIs5XWMN5DjlDT7GmsQt3KobH1hdQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHukj6p5LddKwyg2pPM4tZ_AvZd4ZquNsFdRAqDCNXqvyPZ0pTc3oq3OJZo9NkmedGaUf69IhVQo3J-82wxcD5NzJWJXREfF1Cmqp0_cjBqcBUnOVvyImdL_cwS1SRzwwQmGiJk4CJ5LII1pSrprXprZ6zZBfoOhftkLrXRt04rxW6NSMlfFMwTdKjmaFhYiGm3DzrozuYtV0ZOVtYBZTRkErjjz-LqagEswnE4NnhnrS8ZJt60wukPh5RGiPrrF1XZ0tnVyZN2xOPevOOFY2s3pLQbw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX007D-EmYuy2lXVgGFaAYwQZFFQU_iQS1kbqzSgxEz0FHeWHfauzrwvIwvnfoKe2Z-zeWE3f8KKrGZRJMXnmyKfHY7bcSm4zt1nIlGwG3KG3zEOG_QmiuLtqEb9M4kWYH5rjBBqjnDrvs13HmpvGoAQ76Mm8icLK1qZ5y4OpQEQk=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeWQUCDs1sdUvetXKU9EjzYlfm7lkoNLs4-DvQYObHBNbXwkm5GxKkFMSNSXhFEX5Qm8tJMlBdIyMC6vvRxTb5kMB-OuXxAFDBqaV4LqB2fqUrRfzatfxUXGGLJxVoqKssyjG2EBDqYvW_FWixdwnlu1T6",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECRH2_YL4I9lqHbfo8GUW_l1_qFDnEQkdER8Y-uMOp1kg6LijaoHwSyya-OcO6NSQx4WovWBJDCZ5mfrJT1yjnB0-qO56pGUStElT7uYvxogn0_9HDHmVrNBg7L_OmxX_lUTkdTH9AXoPBAAET8eZGswFOkf9_Wp-obWDKJv9MS1lMO9FECPuTxrmqDYE3qVL2EhL80pDeZdeu1hJ4HbVMh_FP3gJAwAwDXFyGNDrJ0QxyZw14oFCHGCh8KpIesG9T2187SGlSocyoSqpggg60pY50GwyFRsOtrEvUbdE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwSwD7DIhs3E9RU8U9njYZHKoNsODrgoQXL2ruMDBIsb8XfAaufqNqdRoIkMKOfNGaqmGbQx1yQkEGAanRVrftCdpu9SwT6uv7BH8AbilEi1L2d3Wd8Fh_BJVqtqArXUuZcTz3FXfKz0NY7zAN65cLRQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9H7ZehXa-2aNuMojp2I8dAMXjrYUHTJO4DhZzhb9PG2Y_iGtftRURvx6N-4Yzfj7_ZvQYa713l3ye2oChnaLM4iNqGllGDz_TSEiu_HWNLGdz2Ed1HUercYqzFnyr8aeDixj9DK7CDptCs3-soE3XkYdQYE1Rz6B_l5Gc9Biv0hYpwfjOEA1z9rN3OceJpaJ1V77VKWsel2BdScWcL-r0op_ONgi5I_Q_2y60l8wdauz3BEz0CaFh2QMemTV7DJBbruLWCeqt4yUmDCvkFhk83V-1kQ3eQTRFnQmS0mVFwXsfuh7yp3GEA_vkSrsjI1g50fAbCLkXylqXNOB83nBGnNl1ebUANbNGemt5Ji2S8gXu2XDG2F2Ho3Y35z-d1IfN2z4ZH4YK0YzqoAEgSktdjUgKoGoZPNWZQVgS2TEab_tJRGvgiOeYUqv6cY9-2JL9U5t4-f2PBQE-QD144cZVPTEhvmYsAS2CnEPmTgSjU2y429dCps3dJWEL5Lo9TrCmeeTOaxoMTtnRn-36Wwss8nt-6NCCqXgBDEDCEkcYnYqg5nGRyky1IUcqFLW2dkQuNz5ZLa42OOP2689HBezogMqgqZ_ChQS3egofvqNblRHMGn3NfGxG4QrovH6dL-VTLKk8RBm0hYjywCkTsSm4oMJqdaVo9c_WweIf5_ldgpseP2rFdne1sbKygcNqCtde886w73A3CeArBp6OVB2i_Y=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1mXLFSuRGiqU_nb8hS1t2VW8FFNs5nAmJggcpShxq3daz8eUpArDtcURfq_KqvO1v5_EBPHdZsUmIP5bCIYRC3_CeXqU1CavDWTX9WGUNO5f-oXd-VfNv-TQPRDW6iUNNIXdfHeOn47cNLGfWdh438en9larlqmItgVK1IoBsRmKV2NGDcNz4NPURmt3nABOyvpFcSrwx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3oY8vIYVO_sp9cjoqhl1H7dRyTwSQzAzrAR1sv_Fp8FP_3V-geWkaAOl9o5XcCIjDLju_uU4jyUp2H71Sg49Wy_ulPo7hgJDLeV4osPB5GVAKac5c7NEvY0c60hI6",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu89ml0y_4ZeKINdwEah9oJhBN0mBkTl3rMFnZeKDpOGJ_npWcxeGABh4FpPPzNNBwKE0HFX5BI13vH5UZh_5m0y-Dcm75EVDjHTcOIVgWjuJ7KABq9Og9UWVejQTuJuCgIfAyJXp2S8__YA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv5ok_9uG1JCrQ3dOVYAGu8V_3eLaFnbLmP81mJ0aVTU02PhJWRy2yoFcFI85_ToA-XHOR4ZAxmWFRZ-Fvcy7HCYIvfb8BwRKZlvJpJ3U2-WWtxIt3yN7ividT7UlIhPn2VIYbEyXZApW7sdEV5J_B9ICIfhkInlvMtDMOpeIuHcq2-0cIjrOURp5GxyR7mg7WSqmgBy8hHOWYfxxbLjkdU13IIsAFpgbKk-QvISTpjY5Mlnz7E2XkecKOSCO_mo7pPI9sxekj6_1BYaOdXC3UwA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE0S2_UqY3aNL2RUtpeI-Lf1_ZHRxz6HtqNpJ68IvtJIKTmaDOxfmeE5Fud5bu4vBhRg9QYILGIBHHDHYLAk9yh83Mhb4pp5f2UGX7AGl0kGhM3Itr7gmBFfqHw_eb_EzafquqywRRZyT1q-vvfpPSyWYJfCeKUmU=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOGKMkfdunVMjXftAsujydUm3kmByJrHQ1K0oiyPjQAs9KDBmxcyJA7pde3q3y6jG4se2jThRfsyctPMuuP4DsnHqNIaIKwvkMrtvme5v8HHCO0rBa7h8xh2YPK63MJJRJi-PZY-OH5eKYL4GxhaB7N2huA5FLfQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLuEYZFXj-Py2E4Wfb-17N97sfKAes4csgVRwYHVw9gOUBnMZyiBvTF0p1d5XUzP-nmadlNRhti-_Wv4IVSwoiMZQ2GFKCpzHPDLAlg3Ga_YFxmdXJHDCR5nhieJYb6yXlSijWpG62q961e9s_h_JeFNqd9NVMmOr1QwG8MPkePOncc33akVZr2_b_5acEWFbU5nCTNa4LtE5ze4qq8E5-Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG_19usQNMJJHhGTGaHh3v1l1puZitTJRpizfdwS9WnSYSUclnQTk73yoSBy47R3S1pVrbbfgUFHjITtZNgXX1Xo3U98MSUduR7kSbQvINh5I-dYVQ5TSNWB0jFhURypEG8pajp1cnygDWtFn_in17W6ZWASCVQN52pKPBWPmbAZC3Wxg1ieW3w7eGWfP6mWbBvkikUpnUF04J0LKTjQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJOU0WMHmffEtQ2xhENoBTXAS8vcT_6-Ao9xIuE9lPbtg2bua_mDev02GecSaI0ZdEYL_2ywj4KfR_c4rr-8a6L8ZD2-SHpKpamivG0HQBol5U9HbF0uYF0dbsSZbxWx6omLIID_utnh__wXarBizjFA78rNzv-xD57jy5tXEEV3ZEzWkMd8ndcOWavx-s9VqVf8GVP5RycA=="
+      ]
+    },
+    {
+      "era": "2001-2006",
+      "title": "The Phoenix Rises: DMK's Resurgence from Opposition",
+      "narrative": "The dawn of the new millennium saw the Dravida Munnetra Kazhagam (DMK) facing a formidable challenge. After a full five-year term in power, the 2001 Assembly elections delivered a stunning blow, with the AIADMK-led front securing a massive victory, pushing the DMK into opposition. M. Karunanidhi, the seasoned patriarch, found his party relegated to just 31 seats, a stark contrast to the AIADMK's 132. The political landscape was dominated by the dramatic events surrounding AIADMK leader J. Jayalalithaa, who, despite leading her alliance to victory, was initially disqualified from holding office due to a conviction in the TANSI land deal case. This led to O. Panneerselvam briefly serving as Chief Minister, only for Jayalalithaa to return to power in March 2002 after her acquittal and a by-election win. \n\nDuring these years, the DMK, under Karunanidhi's unwavering leadership, played the crucial role of a vigilant opposition. While facing allegations of corruption from the ruling party, including the arrest of Karunanidhi and his son M.K. Stalin on charges related to flyover construction projects, the DMK weathered the storm. The turning point arrived in the 2004 Lok Sabha elections. The DMK strategically forged a powerful alliance, the Democratic Progressive Alliance (DPA), which included the Indian National Congress, PMK, and MDMK. This alliance swept Tamil Nadu, winning all 39 Lok Sabha seats, including the single seat in Puducherry, marking a significant resurgence for the DMK and its allies. This landslide victory at the national level provided a crucial momentum shift, setting the stage for the upcoming state elections and signaling the DMK's return to prominence.",
+      "key_events": [
+        {
+          "year": 2001,
+          "month": 5,
+          "event": "DMK loses Assembly elections, AIADMK-led front comes to power.",
+          "significance": "The DMK was relegated to opposition, marking a significant setback after a full term in government."
+        },
+        {
+          "year": 2001,
+          "month": 9,
+          "event": "J. Jayalalithaa unseated as CM due to TANSI case conviction.",
+          "significance": "This created political instability and a brief period of an interim Chief Minister, O. Panneerselvam."
+        },
+        {
+          "year": 2002,
+          "month": 3,
+          "event": "J. Jayalalithaa returns as Chief Minister after acquittal and by-election win.",
+          "significance": "Restored AIADMK's full leadership, intensifying the political rivalry with DMK."
+        },
+        {
+          "year": 2004,
+          "month": 5,
+          "event": "DMK-led Democratic Progressive Alliance sweeps Lok Sabha elections in Tamil Nadu.",
+          "significance": "This landslide victory marked a significant comeback for the DMK and its allies, providing crucial momentum for the upcoming state elections."
+        }
+      ],
+      "achievements": [
+        "Effectively functioned as a strong opposition, holding the ruling party accountable despite facing political challenges.",
+        "Successfully forged a broad and winning alliance (Democratic Progressive Alliance) for the 2004 Lok Sabha elections, demonstrating strategic political acumen."
+      ],
+      "leadership": [
+        "M. Karunanidhi — President, DMK — 1969-2018"
+      ],
+      "election_results": [
+        {
+          "year": 2001,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 31,
+          "total_seats": 234,
+          "vote_share_pct": 30.9,
+          "alliance": "DMK-BJP front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2004,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 16,
+          "total_seats": 39,
+          "vote_share_pct": 24.6,
+          "alliance": "DMK-INC-PMK-MDMK front",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "Arrest of M. Karunanidhi and M.K. Stalin in 2001 on corruption charges related to flyover construction projects, which was later dismissed."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpkZjQ5zOjhoa59FWLlkWSCWFmzVnhubpHPPVBMOaaR_DoTCuGgw-HSpzWOZPj3z3-k8F9Twob8IPMh6dXLai_RH83qn1O-IMExSrMLuOALeJG00HbmZqF81Jg3Iv2-8Qdln4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuyt2iZrJwb0ZayrnoB3SXSW6nbAjygJ9xmFhaX9gOSWUjAc3BZQ9fjsXmO63-Evxs0QGidDqICvJLvL7gYGKj_zzfLqRR2XluF_R9YpSHtJF7g00J1l-Z0wC1jK0Jm2eXhQVcBMb5kwIoFL0PKHp7MendN2LSBx8S_6ctDJbXOlS8Srsr",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr8wU0DY2RQc0_mNdpmdxdnsh_QspTvS6dc1bvADlNxtHhVQ_Hvdx6FUuwxqa_v3MImvIiAVKXh82o7xDS4lFOJkODpkNeTibqR94qFe-xHX1j-Oj0mq1Z5gRulSi9P3CTGIbi19mYCmVFwfPxX4Q9X4jwPbfkFLqjKj-DWB3siy_Q",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuXrHdwp6Com-23poutizWKtJgJpAQNNE9Z42WvVqdcFyvxBXkXPUb89y4mxhpn-otU8xXjeWBuACqjwnLn_wuEDSJ69jkZT02jiG_O0b-Ywp_fviGUzHon_PyQGjhOPuevL0sYM85TKJgILCPAe2q2zaMew6kHFvpeAJiPX5kaHfGBnYmIr3_wkOhX4bviawyRfTPBIFgvU3JaArpWNPY4M_oIw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDmmY_Ncuko0UO6Bd4jSy5u-73orM1FGikAyhWmCn9Cps4yViuoeu-fkJIB7cOdnEWpqB6DererNT41zxxGBxMZ6NNNjjXw4D4aRbNpB0wi22ZEuDWwx_i8LW7pw6hxalqEs9YWJl-OwrHdzjdCt4CsAr8r1tYFiPmY8sK9q8aljLYKTymxb3Gzh7eF53bDtA61ue_JJXmzISy5hgRtf_QVK5_YvA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpQrp0nnsTLL5gWD07_j3TfG4kazcm_U9sSg4mIhmuKxbLpVLojR0QJXqB8bDm0xCA_svXJGkW0wn3d6ysPQeoOO1rz-AoLfjn3QotpKMt6kZ-RaUSuBVjXiIdbAUIK3fAmVY8sRput8nRjPLGSsv3xtJqdWeXsehVhvz8SjGGZhyN2-pl2A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh4LymUu3IyGwp3QhTIypHfdNAXEOFjn4bdMRCA2zivVcbWf0xM8SFr9aP674o88rzu2CrHjCOBrBvcEwvK0Wzu1h1GQEVOBISEO22yBiaisJXB6LN_MOQjdc9z59drQeLGlPAiycVr45FIzN11_OiQ1c5R1n5hjEF9xHyosoGGscz8rE61eZoUAaykY8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF79kuQFH_PAISCZYcFRwRMymU2c3c-NwwaaFIPV_rtHqXVZcC4TL-7-6WRIA5Cx3qrUSvHCy7S8FdnsiyhIeLeAYwRjACBLlUIYrgqe1ybAlw5aMePGHd8vm0JQ8VIl_XnBIIc2o1O9Sz4ap60p8ThKquOqvS8qzim6u6h2iI0QgKOin36",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF17SUIBI4cbOVuhMtu9MO-ZShoEDyjkxAwB1l77KsuVrV0LAtA27BnSg9r37cBuXMJE4x0amH_owhJfaEO0qatSgAFp121dem2uExCSzbJSjeI40uw3uO1WjvIHun0Y-I6chJBpuUkYG1CKcv2PBerHPHlFNf_f-HbEtMi2AAkFvAPqpRZPabeatucXFQKeWXbXuD5X-MFtzyDbCFarLKNaIPyOMcuusmpfwvTwHm29u4pOy1FNt_yijR0ooepIVC6eWQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmJI6UXii0C_MLpsNtoZlxl-0AfLB0ObfoVGcinWl4CekZan1pZm2G1MX5sKh3P4MKlKaJm4XARSyd9ftYZpBb5QC0vn3pwHRAEgOYr4WqSAcbLaU3ovKBXKF0gP0yQYjTPVvRrBuOEuN69WkvbXXhHeSbzu8CTP7MUIZnxWiVkslSQPDuJj0gQwz4t1v2pOZrLOs1k3Ff7sRjdQPAxqsb0xlRyVfnIjq8Z1OolvxrBe54IzrWgKs=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKCzk4JAHFHP_wnb5SZkgu85mBACvhcJTfmV2mvinJIniLBX1Wzf7i-0ae4Up2twXqyKeD3f544cG392hJOKtE__qgvdE_Q1Dt6HL1itRx75JFwHDNuL3rq1vJmWsA_fIEvscWGP8ri419tvGc8OV7dTBWph6MvLFK65IX8CrQyUZXXBk_bUf67XCumgi3sNoUUMlg",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhzWaPJV3NrG99MiKWIbwZTRY0VnsHTG22y3vjXrrDTuUIim51ju6rG5sloDTP547ajPvSLerhltN25lwmN-fEGcpZHhyKMRTkDiYlSEIYABwiL20NfSReHksz0gd-V6IARFNdInCpXb8J3DW3jsEEoD6AAlvYXKdJEembBR9oGXY2GLkjBL_SV3URxwHfO3ERWlnIvboI5g7UA9LDrjD7ci_2cytxPeXY",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXsagLqjphoikPojX6EwJv9anFFOaCZVWeuRGyK-_yxIttNo0wrvy2ZvTTjevqsGSDipKxnUrxaNMqUraGzHod3efSPMDxoKCyGOPPdR_zFhloFsrOFVmYq4OabLlo5_LSUHWxfcwg",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfk8ZPAKEDe5V7In98kxjRRzobNH7aLp-VghkgOFzybwLfqfc062Xq70SFtdczQIcti2Ve996wiZAlJ1nyvddbONrgzLZnpOUC8Y2pe_XYeF1RKnMkolcn-OAopYunU0bn7LeUzX1-glm_k3BIO2lA1mPhwd57xBM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG17CVaFT7hRRqIuxu8T1lcpk-57glbd62Rj_XYjkCRwKA6aTcJLnyMdzznfW7TcQw6lZxc_I5XzQgUoChLFpHS2dCKuYgQJBBXroyNBeWI5FPGVU4MJZMRtCMhGNclAzuqowuIuOY0mlApzfJ3xAtGXZC-Zg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy9STSmswcWrgKvVkgWCZsAnXcoutkyHhHBPsu5FfV5_ABAd464gpdFXAFyyNp0z9yVfbgQ2YZW_PcGKQhAL_h7t5JJfArAjbfJC0cRosqGztURKCrFRvEnNHRZDspdtjAZizI89W2hBUPhmVc7O_h5veeHiwG-UF3jH4kTWGw3A==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxh63pFWZa1rWV8LbBHva3JaCGcdM23s5lHtS6BFeICRb9-fAlYDpd88dZbz4ns1SNZfZyCIxkwI9ya7Qkf2XS05j25Oz-EJrcA7umKwTgVCvuTJM5DjO7wpV2b32_IB5-Di82WZzRyV8lbGpxC4Re8IAhTyBIJnsvk1Gd0sujHZq7Cg0PrPRZ8dyvqail6mWHQxy2Gg6DoQXNJmGfdtSIPCb-cgNLOT_0Rgj6OhH_Fq-0ww==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIYdKqMDKNSh5CwXvBKgU50TJcS48XOqALR0oWjXNlZASd5F9uD8GRRY4yyoR2RdgLyimAMO2mU9YxB1G2e5iDIcMW8Hif8RU9VgXFexhCQ56n411OPQB9DVL-0g-ou-cO_De6DjgJIrudviYWCTJTP908bw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcpWBXaFCOR-MmK9IeNlFIIFuvg-7lJtU2TbERC7OayqrFyyyB6RA_nvZGDem-OacwyozJVXpLHhZ1u1nbA0XEVM63yNtxwF8ugASIBode3CmG6H7V0MLXMbo8kw54nDXDvmKMCnO-imQaU7ulGNNK8e_ODlZ-BJtt3tY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_0I8mOWmKtDgX8axehdr9hek1ABIQM0HtSN46W8XkRbYVhWguxDDEHUdP2oU2lPt1v4ZCpwtsmsdhoU2OVPfMJaCCGwf2xDiXB4afv-G2JQGUBOuUFhMKNK6CFuUN30jJJ81LYwICoGH8V3mczlMFbOSCGaNKI-fkL64mQZat0nVbwWBD"
+      ]
+    },
+    {
+      "era": "2006-2011",
+      "title": "The Era of Welfare and Controversy: DMK's Fifth Term",
+      "narrative": "The year 2006 marked a dramatic return to power for the Dravida Munnetra Kazhagam (DMK) in Tamil Nadu, with the seasoned patriarch M. Karunanidhi at the helm for his fifth term as Chief Minister. This victory was particularly significant as the DMK-led alliance, a broad coalition including the Indian National Congress and various Left parties, secured a majority, though the DMK itself formed a minority government, a first for the state since 1952. The government quickly embarked on a path of populist welfare schemes, fulfilling manifesto promises that resonated deeply with the electorate. Initiatives like the Kalaignar Insurance Scheme, launched in July 2009, aimed to provide free health insurance for life-saving treatments to economically disadvantaged families, offering coverage up to Rs. 1 lakh. The period also saw the ambitious initiation of the Chennai Metro Rail project in 2007, a vision for modernizing urban infrastructure. Culturally, the government celebrated Tamil heritage by hosting the grand World Classical Tamil Conference in Coimbatore in June 2010, chaired by Karunanidhi himself.\n\nHowever, this period of progressive governance was increasingly overshadowed by swirling controversies. The 2009 Lok Sabha elections had seen the DMK-led United Progressive Alliance (UPA) secure a significant victory in Tamil Nadu, winning 27 out of 39 seats, further cementing the party's national influence. But this national presence soon became a source of immense trouble. The infamous 2G spectrum allocation scam, involving Union Telecom Minister A. Raja, a prominent DMK leader, erupted, alleging massive irregularities and a presumptive loss of Rs 1.76 lakh crore to the national exchequer. Raja's resignation in November 2010 and subsequent arrest in February 2011 sent shockwaves through the political landscape. Simultaneously, the state government faced severe accusations of widespread land-grabbing by DMK functionaries, leading to a public outcry and numerous arrests once the AIADMK returned to power. These scandals, coupled with persistent criticisms of family politics, began to erode public trust, setting the stage for a dramatic political shift in the upcoming 2011 assembly elections.",
+      "key_events": [
+        {
+          "year": 2006,
+          "month": 5,
+          "event": "DMK-led alliance wins Tamil Nadu Assembly Elections.",
+          "significance": "Marked the return of M. Karunanidhi as Chief Minister for his fifth term, leading a minority government for the first time since 1952."
+        },
+        {
+          "year": 2007,
+          "month": 5,
+          "event": "A. Raja takes over as Union Telecom Minister.",
+          "significance": "His tenure later became central to the 2G spectrum allocation scam, a major controversy for the DMK."
+        },
+        {
+          "year": 2009,
+          "month": null,
+          "event": "M.K. Stalin appointed Deputy Chief Minister.",
+          "significance": "A significant elevation for Karunanidhi's son, signaling a succession plan and increased family influence in governance."
+        },
+        {
+          "year": 2009,
+          "month": 7,
+          "event": "Kalaignar Insurance Scheme launched.",
+          "significance": "A major welfare initiative providing free health insurance for life-saving treatments to the poor."
+        },
+        {
+          "year": 2009,
+          "month": 5,
+          "event": "DMK-led UPA alliance wins 27 out of 39 Lok Sabha seats in Tamil Nadu.",
+          "significance": "Demonstrated strong public support for the alliance at the national level, despite emerging state-level controversies."
+        },
+        {
+          "year": 2010,
+          "month": 6,
+          "event": "World Classical Tamil Conference held in Coimbatore.",
+          "significance": "A large-scale cultural event chaired by M. Karunanidhi, aimed at promoting Tamil language and heritage on a global stage."
+        },
+        {
+          "year": 2010,
+          "month": 11,
+          "event": "A. Raja resigns as Union Telecom Minister.",
+          "significance": "Followed intense pressure and allegations related to the 2G spectrum allocation scam."
+        },
+        {
+          "year": 2011,
+          "month": 2,
+          "event": "A. Raja arrested by CBI in connection with the 2G scam.",
+          "significance": "A major blow to the DMK's image and a key turning point in the political narrative leading up to the 2011 assembly elections."
+        }
+      ],
+      "achievements": [
+        "Launched the Kalaignar Insurance Scheme (Kalaignar Kaappittu Thittam) in July 2009, providing free health insurance coverage up to Rs. 1 lakh for life-saving treatments to economically weaker families.",
+        "Initiated the Chennai Metro Rail project, with the decision taken in 2007 and central government approval secured in early 2009.",
+        "Hosted the World Classical Tamil Conference in Coimbatore from June 23-27, 2010, promoting Tamil language and culture globally.",
+        "Implemented the Uniform System of School Education (Samacheer Kalvi) by passing the Act in 2009, aiming to standardize education across the state. (Further research indicates implementation in 2010-2011).",
+        "Fulfilled election promises such as providing free color televisions and distributing 2 acres of land to landless peasants."
+      ],
+      "leadership": [
+        "M. Karunanidhi — Chief Minister — 2006-2011",
+        "M.K. Stalin — Deputy Chief Minister — 2009-2011",
+        "A. Raja — Union Minister for Communications & IT — May 2007 - November 2010",
+        "Kanimozhi — Member of Parliament (Rajya Sabha)"
+      ],
+      "election_results": [
+        {
+          "year": 2006,
+          "type": "assembly",
+          "seats_contested": 234,
+          "seats_won": 163,
+          "total_seats": 234,
+          "vote_share_pct": 44.75,
+          "alliance": "DMK-INC-PMK-Left front",
+          "outcome": "won_government"
+        },
+        {
+          "year": 2009,
+          "type": "lok_sabha",
+          "seats_contested": 39,
+          "seats_won": 27,
+          "total_seats": 39,
+          "vote_share_pct": 42.53,
+          "alliance": "DMK-INC-VCK (UPA)",
+          "outcome": "coalition_partner"
+        }
+      ],
+      "controversies": [
+        "**2G Spectrum Scam**: Allegations of massive irregularities in the allocation of 2G spectrum licenses by Union Telecom Minister A. Raja, a DMK leader, leading to a presumptive loss of Rs 1.76 lakh crore to the exchequer as per the CAG report. This resulted in Raja's resignation and subsequent arrest.",
+        "**Land Grabbing Allegations**: Widespread accusations of land grabbing and forced sale of land by DMK functionaries during the 2006-2011 regime, which became a significant issue leading to numerous arrests after the AIADMK came to power in 2011.",
+        "**Family Politics**: Continued criticism regarding the perceived dominance and influence of M. Karunanidhi's family members in party and government affairs."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1-e6eIOutc_--uUhDmZ6Xq1obGm7THn0fdLHDKW7K8NkCOQeqkbhc5sU2o3RInDYJPOXHOH3eTAfkYcGhBxZspP4k10pN_L9T50DoBWmMTg6121GCXm82zs0NG93O3RinkuvFyK7X0bDlhfQPQl6BPL_CohMdfJiHMW_iDWu3U3CMl6_wx89FdRBLDwBUZxBgucfqBklj4nwS",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa35pi4ZssViUOeEuP9wmFgr0zyVsTgEKdZzFDisvH7lwg70PvpWinv6aGE1hI5kfPcdjXbHy_1azZjWkq4ZSPiuubF7YFgOwHC3q800BbcuYiXBWSu4f_I2AQyVMjP6MsEMrEeME0xhJ7LYnEgNOj-uz7t66uHu9QYbGdaQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZhrqVSFL1xAOMbaIvjmXYq6weGT1uiDFhzn0023mVqf6d7W7vbJtHICYIs92SZZXU6CpmhPSmiwql5g41SAQGyyrP-r_ZAQqaP2958mARmX8WynVCUtan0GiYZCcKh4dXfDJKUQSVWsli52TGqG6qoRMiiNXgAU-wit3oSPcGgd5aBQf-5g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqqU2Y2BwYruBGfZmne0-gOXQWlxmig26xxavZzIWCOFeOGShahv5nZcIWUKF71gxfgdHFE6vCHuNZZNdQOcB575LMTunGCD1KISxR3tS6Jg2Xj6ASVZJMF54x-vmMxNnYnYhIbJz7ah5Awaf2d6VfE-OkJVL2h-D3XdQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcVL5FU_lvMGXdQTBK17tmqi3726sg5lwsnsoWmT4QmRuqOi79puugowL6tDKPcCKK7hjH3dyTGr7OI_iH0tEIs-Cqy4gGHvEfjCi15lZ-DdEhPGBO6JBrjiBr5NVu60aFcR8QM9jm4JF8UeSQTL118KPGN_2UgdFSrGPRDXYPuH5mzE4B",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUaz1doAsoobOvngV0sxUKcKl_GbHag80H5K3136B1fW3VRk49i71ZRCtG2cl_2vOy0khPfgS5O_E7-46HjxnNRkBmup41SKAe96SlAbEEIesBOwh5x7AqXmzcHp_By3GUImu1IFuAhSNmnmGFEH_NcbJXRRDsRffm6UtcXisv3bpEHulOJ36Zz17Vuj4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyI9cf0L_3rl1sSCE_mL_wx7GNQDxnsbjkJnR3CxdoIkOqlANHP_u8qOb9yzdana1Oe0C40rvQ0ze_4xBiVYQPDZhBj9nhFAHmDjgFU_5f4hREQFWQu-aPNL01Huk-4m54dqNfgyks3nKF-_NcizFgj0LCHjfmkdte7fU5tCyGqEhcB1FDwi_VgrXqh85U_33py2CxEjmi5aB7",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-l716o0DNYnTv4ATnkKHYepHB_4ILdEoe4vLunO8iRQGQcZ_GEq8DMStNNrpMGnuwBO3JYHytTomzZfnKcj0SdeBZ1oKIEsAXFJTF0WCCX17TUFBt3-V9RMnggarZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENAaMU8v3t7iknorimNNAJ6JjGW5Q_oIJ5rZtVI_UbIYnVhtnGHGhtttkQotShVt0JPmQKQu9fUWbl9oFKjdir9oLaKeYk8yhInR7BPw296iNv7coBEEwWQpuJSWyzWzNjYq2H78JECo1BximS_efxYujeQLEn1FmNZPnpcCMeF2r-",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtoDO2KokvGTzzkM6Ol2cX1poGrJiL4aeOBWSRN_l9ziF2c4_MXXEHRevlWujMEV14XZkwOHQJ4_JR9GZgx9iyYKYpnqcSoyUl0Zw6nhVG8zvwaIMg8s7m_SwS6Yf78F9plp8wpJDkGNvPFWgB9kzPs7eZpNF5euA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQvX0rF3kiIREr--s-2RzRETbVwjlp20Ua2lyf5uCXLkWNX5ALCuY7gCItLmYNsO1yKm6kCTIt1kvSKswNH0r3_jDnGPSzO-Qxlm57Z5Xubv1vb8HnTyLV9NdVtm8GFUcwxu8FOW1JcQyrdyA4Q1Pg82-ezho=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQVN39xdr2g3cMCvNnz9jH4eFJsTQUQoiumhueDx_BHlhDg2e_YOdtopmvEJoBCs5jdAAh2-dQl3WXlGuDUnsorv9PlHBEwdGA6YlMk2I-TM_Ob9rCmvnw1kjZ2dfR5OmDWTKiN48IFMrX0OABwVz3r5fc8YIsODkuP1a84mN17V_0k3SueyJh9_M0CLXGTWrHuEJm3dL7oP8rpl6mIP29P58iag==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTIQsv4HFrjbGL3iTzSfxDo_KR5uAVIkTrnYagRQwp53v39dtpq2TQvX5LWEQXJFpjyQs8DPNNgeDlgAEQ52aE04daAV3xE6eZ9p2MIx8FnKZkIXXk3yQvnaHEGjIkeB_PM23qvI01oQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs_ZsFUCLb-IvKmMnCEFDgno7P_nuKQnYyN5_LsQAjCOFpg0nsjlsrZFMibmZ-VnlgbzsswWIjp787P5VTwts9t0rAIgA1VZbJ_CrmT5S38tQNbqo0ldqeIpLEleANUD8kLsPVaF4T3PQRFNT1-inS2U3rVuHL9WxTmsD0PI6V044=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-RjOz50iHNHtMzqAcBJq1A3Ifd5nUQjswpLV4NFJCooPWF_W1eXSajvA_9HgF8_HMNSYnAWcakjwDV4Fwp5tvcvw1m1QyvQLwtvub3B8hW5QZDSAqdY1eUjGAFRhcGNgvugUc6xIfWFoHa_gHCA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5sIsC50zgHr_rwXmr6r33IyzlKs37nemAM2dj3ddo3IWZV6gBr8n3U0BddEewl6oKf6FGiLXzGtDmZyKmWCDwsRVe4yKcnfMka5L0tZImVN91BMDYNMRRTvS7gpgY7Iv2tjw-_gIjug1qDXEODBS_pr9rxWtKOCj9VKZ05XlgJVp2PJhTkKGqO7TLGQv2SzFQeMRGlccRfF2RTmVQufg=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcYx2bZmGCNYRoIj0rHRZphsQZNtNP2PbUql3bD5DHKE3fIOIfmR3Cc22d6kTGb-O1MqQQZtjLugvHHrqhuJDuyzK3Cc1LOrlKXIxV9-MvVsjHPSObHNkg7HI2x2WC5f28CcOIU6M1wmM7phBmVsgjzx9spxRSLYBwFpjf-AtIJwn-0QOsQotoXa-T",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFny2CJqueDI-HxZwhbuk-kWPtWrSU_oAYdGwqz6c3kP8V3PvTo2RhXw25I5oKGlwdEWQCn1Kz6F1AjFAHwdj_YzQPn73JnnsNnBACJc_6EYmoHmsDj9F-xgwl-dD42nT7fH4o2kUgDiqCu1VJ3f-Xlz4W997of4JHe9HtVTNBmjROymXNFTjxWQ6MT6h16vu2EKEX2_WC3mC2PPouInk9Gmw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdyT4nK0fm-IKVlqnS-Re7EWhpDn0N2yyR6f9QuQLzMGDSwMCaYS4FYNOaqXZGd5SuusKPPAxx_nEDKsFg2akY_VEdmd7-M_Xf-A00YDPE0vUEEWLC8H2bf4b3UWFXkenumlUd4brQyabM5FUYMVZcGMzo-hVfwCKxdIY9J-Jkfpo",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxzOvTCZDa8gOXoxtuci5QA1E8a7o-p-Fw0Pf9Ny-7pwcu2NIqTBswhxKeU79qBkZRklkFjWKYAyiYwtpCi-nSGVgf5gykPQzpvmMMhFVYQRGrKNOcRMn4nCFrDDA=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJmZyPTJO1b10KJNEepbarVxJsu8kCpVg1M9NFLRVtTodF8rXmYRl7EsOLLw8mMf3HQTHovQUH9cWsLiZtCkDHxtYQ8GdstN-Z0Rbb4vboudWHOTHBnhQtanLw-Jxf-DJ6TyyOYWw7wBZCsN3s0mKpU4aWgOUNEdZnNrNNpP2Jl948",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYvWiOdAvU6YaflzVtccV_cXjnEMnGmLguCzBQsH8Yyu_QgwZycLTtNFUe5_3O0Qtsc2A0qMhTjfh6W_dQBxtFSEZn8_KK0rAIsYzjZIN2nKnI7TIV9PBkqa74SGQdjV_5K-BhlT2qOYQj7Bb5z2WNacEI",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaSMr0TeeshBo7m2xpGP-iKpmXikW3tn6NHY9g5BOfDDa4EvHyMQHyK_ydzMRi7X0pc0ZMiseKdoRWlNvaP8Sz8R5Mc_LlpwO_UvVtg97QRQUhysoQmxZ-VAs1M4rVcP_Inkdh9fwkzLcm1pL8RwsQKraL4VILGvXpEY4Gq2rBI5fo_ZNsy8s=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-un48XFZO8WLA41HuQ2z0laMUCRV2CjNOTbVAuhMwwh71foRyGdIy3mMhFn1geBrGMKXGwvX5A2TuNw9hwllFh2IIJzKGJI06J3py1anyvWpv_ZkQrrDFfgoL8JOgK6L9tqdhRXNa3VXHX9p2jxmXwyPNyZ8QIs6VRAy1QwNgZEBqhfRCV-jBeaE5SaaNi77-hYNOEyy_uRzzOhsOiL2X3BElmA-fupPj",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsfmTXVi5ecWj0c9JABxV3rCjOWSAVWCYa2R9mhLl0oyeZTANXTsI-wvVPpvGge5kj6qDGAVO5VT6i0YN4phF6-O4a2PPw4fn-1N_G4tOobF_yCbZJjEQINCAtSmWQcYVbnOiKtshobddHYP0U_USdvMEvxxMpCa_R5z_yJQqeeSfudwO7dcjpBaT4-UTDB_mFXzaDa0RjRGRCCA5knukoRMWf4qHkNTsxsfws_HuDcD3WVzT6DMBOb3cYc4dE6o7wRRiLNLzh-s2lc6x3GCA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOFWAuTUm1ylPZrh68pksdSROPyR3DPe7rvfXsdhD_vzBnCEidVrM3qddbWbsRwH2yIORX772VLBX3i7PGyUHr-jfJSakRfv4e9KahApjljf370koRt0bPtrzHZ_--ewcRzZms",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9qpCJyHsx9V08bL2VjBzQ3saZllgvoFdO4oOB4wc2eIOru6mlnzu1g9NZnixu02YyIcmvgO4n_0VazSLLYoxZb_wB8I2DKrtFnAPHzK9yqGLMefRNES_IvhDek9j2Ud5pNRd-KtvBb8WfO4GASTPgZ4bMqDFfyU91w-Z9-zIoWu7ZFQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHngPqsAjzYGT6gTM8b80HpdsvOnc7Kt_ZfhhrSFVDR53MBIHJlL-x_niAowaxJc0aw49nvqfIprGmX8xuABNjebsliwzA27PFD-39upGemyEMySJxJ-tzAHc5DiazNlvwU78t-SA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4iyENobJK4SvEfYb7Q1BnYjF9MV9gdGE2SGNWurz7nLtQ0HFFpmFGf0SJFFF-1RZVQCvVijhRzosqugNcLXk00cJQF3QnTUbmqqk3LnT1kFBilpix8tC-8DGyupV04MCyJ1T_M4EaZFI_UDTKHe97RgmTpa0c9pajZMlj1XsU-7JhK8CZJL55sGeKIUsCPNle-SJLx8n1d9q6P0CM2c1oHfS5AADI7IzZIlTD_orzBIFjHumrjTCg4NhrMQP85o9y3jCN17f_PaOC-XPSQve4Q7q1r4R8JAzmb9LhvCV1CdKGFNPwMpCGq6p5Yit9XdivDeGlYwiawqYjh-s3Si0rDfwJ0PIXB6A=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2s0j5lFAMsgl63BXoIZ5ENealTiH8vt0RzsORjCpBqs-R0T0bVE74JvO4hLSWWNdHHv4nXcFhELrNrmSwqrsBUnAJ_N1D1qWi7qT-36ne2hRGgAXUFpSw-DhMwJwPbhB7sjnqdik=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm2OjFpY89Q0ndy1iSUcdFaVQqvzMSvlj9_XsEjo2tFtTdazIvIAekPj3LbSy-vNeJfM-a1anHrv3VpEJTaEVhY-0lwaikh9pjfkgYWfdDsTVSaH1GN4BVLV9SA5sPn07qrVI9ATDlJKBeZDI-6",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5DYnS_xg-uOTn05iFB3ays2GGnRjHnqUQv5cp-_IxSMdPurj0xC2aeVFtJqQWoTAHxpWA0OVVeXG3J3uI66XF3732kg-CAU5tvJgWhvyRPsJomKkAAViOQ8881bbagzIZ56XGOJge9YDaU7CawprrRCXGNzx1xDi8BiW_YaG8ZIS4bJ_C-mqRQjyPqbg8wDHgZ9MK",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Iei99lzNB0uf_PwPk2i5XVl5StW7rJt_F2wGlWfTKjcFNspR9JQ86JXV3Y7F3Ds-liCbB56eMcnHXxx2FF8RZgTaU2RJ1kyaafHBxwon7hxygg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEF1DgzOyBh2XGeL15xaEQxJoEjdWD-I_NbMesroKt1INqZjvVQCY2XaPhXiQ-H_Vpkuh2tG1-N1lkHTSOvcF2BKKdPvyEu0pCpstloXYtqwBDwBG3MVcUyUqz-DRXdTOhQBOjPdwrDV--7x6y3BHqPsTAAFbCXCOlJrPmAjBtynePpuX2K4GY_ioo_pFjhENN8fkHmVwrVic7dQMJmX1PuY7WyHxfNmjmcMQGp5IJrSzwwT_BTpP9DeNakGazKy5vY1_9ywmaF2ywEF9mhmvpUPfTdOhQNJ7DVHdmfbKyn3M=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMMDw5mMnzVg9tq3BhW7NhNAvxP7ItPQWQGds9H_YvHrgwSf8EPIWHt5gm9OA7H83Sz5t_HNDrgYMm9OrZ9sLpAsyQLs3Y0Wh43Ppa8M-2GxXvNFtQgEA46nWXCBgRsN59By69ZviVaTQ6YYOAn7A_nn2MyTPx7P5QuXprvEtpW7kM2DK6qky4vY-bTrDB",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2VFx3CXoypAlRe0XXXywqsC2NmzJMOpfVyp8el0awcMtmy6tZDHz1YFslF8KBPEFQNVl1iTwY1scwcOEZS69kaG9wbCSaaTVOed645zjTW0rEuTdNik4DQ80fyR5F1F1bU9h9Szf3MWHntIWY-pyeZxaNFXPTzNN7WY1Bt0Dqln9yYrjpudSmsn0K2S_yH1I2lUCxnU9AxjEd9Se21qEbtUgxW2u3qDRAsNZZho8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-x8ah86jgtLOPWVwd5zmDd0umZzFbrTIZv1yqfzckmlRnntpmZJlJAt-zFDkZr0Y7vFOyNwxZPy2jwowZ8P52aKrxUwtGW077vLxK-k4BNhYjud68z5Ylb1_zW4vdwgOiZuh746jDF5-36GKpATukpgfiVRSiLJAWoHJBH610H5pXKl1tidvdQ1bP-L7KnqAjUofaWxuhiBT_EoPHYoZFQiLNLzh-s2lc6x3GCA==",
+        "https://www.scribd.com/document/354714470/2006-Tamil-Nadu-Assembly-Election-Results"
+      ]
+    },
+    {
+      "era": "2011-2016",
+      "title": "The Wilderness Years: DMK in Opposition Amidst AIADMK's Resurgence",
+      "narrative": "The period between 2011 and 2016 marked a challenging chapter for the Dravida Munnetra Kazhagam, as the party found itself relegated to the opposition benches, facing a formidable All India Anna Dravida Munnetra Kazhagam (AIADMK) led by J. Jayalalithaa. The 2011 Assembly elections delivered a crushing blow, with the DMK-led alliance securing only 31 seats, a stark decline from its previous performance. The DMK itself managed to win just 23 seats out of the 124 it contested, garnering a 22.4% vote share, while the AIADMK-led front swept to power with a massive mandate. This electoral setback was widely attributed to a strong anti-incumbency wave and the lingering shadow of the 2G spectrum allocation scam, which had implicated several prominent DMK leaders.\n\nAs the party navigated its role in opposition, the leadership of M. Karunanidhi, the veteran 'Kalaignar,' remained central, even as his son, M.K. Stalin, began to assume a more prominent role. Stalin embarked on the 'Namakku Naame' (By Us, For Us) statewide tour, an initiative aimed at directly engaging with the public and revitalizing the party's grassroots connect ahead of the next elections. The 2014 Lok Sabha elections further underscored the DMK's struggles, as the party, contesting alone, failed to win a single seat in Tamil Nadu, while the AIADMK secured an unprecedented 37 out of 39 constituencies. Despite securing a 23.61% vote share, the lack of parliamentary representation was a significant blow. This era was a period of introspection and rebuilding for the DMK, as it sought to regain public trust and prepare for a comeback against a dominant political rival.",
+      "key_events": [
+        {
+          "year": 2011,
+          "month": 4,
+          "event": "DMK loses Tamil Nadu Assembly elections",
+          "significance": "Marked the beginning of a five-year term in opposition, with the AIADMK sweeping to power."
+        },
+        {
+          "year": 2014,
+          "month": 5,
+          "event": "DMK fails to win any seats in the Lok Sabha elections",
+          "significance": "A significant electoral setback, highlighting the party's struggles at both state and national levels."
+        },
+        {
+          "year": 2015,
+          "month": null,
+          "event": "M.K. Stalin undertakes 'Namakku Naame' tour",
+          "significance": "A major outreach initiative to connect with the public and rejuvenate the party's image ahead of the 2016 assembly elections."
+        }
+      ],
+      "achievements": [
+        "Effective functioning as the principal opposition party, raising public issues in the Assembly.",
+        "M.K. Stalin's 'Namakku Naame' campaign successfully re-engaged grassroots workers and the public, laying groundwork for future electoral efforts."
+      ],
+      "leadership": [
+        "M. Karunanidhi — President — 1969-2018",
+        "M.K. Stalin — Treasurer — 2008-2017"
+      ],
+      "election_results": [
+        {
+          "year": 2011,
+          "type": "assembly",
+          "seats_contested": 124,
+          "seats_won": 23,
+          "total_seats": 234,
+          "vote_share_pct": 22.4,
+          "alliance": "DMK-INC-PMK-VCK front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2014,
+          "type": "lok_sabha",
+          "seats_contested": 39,
+          "seats_won": 0,
+          "total_seats": 39,
+          "vote_share_pct": 23.61,
+          "alliance": "standalone",
+          "outcome": "opposition"
+        }
+      ],
+      "controversies": [
+        "The lingering impact and public perception surrounding the 2G spectrum allocation scam continued to affect the party's image and electoral performance."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtylpsSCius_MXU_niIpLpu1sECARYl9yoNlvDemPmamKWOheOstVhBQ78uxPBj6StAz_0j5heWxy2URqX91E6ghMjHmhI9iXbzAjudJJKRgWV3yh7ERWtGupAeThG5ni9BP40kpMqtJJPQ8kGF9Yai5rqx5sdMqSUJ2JViXfkup6rfIqD9et-Af6TyGwf8f2VFQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsCWLhLXrsPJ6iriD7bTSCAT8RFZZDDdngXy_pYzzL0lUXnEtC4uWKaLL3QQgWUnOeSe2OIkJgYc7wMQ_TuOangXDYbyI7jVsA1NRGNrLqtcBJg_4UolHrJdEgc1zImiOp8B4aS81dHljLyGtjuRlV",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk8sBKOk8e4qH38OuyfHMTSJTpASuj5Dp-fwu9-QYY9KpUQJK-ggQCK9nChozbLYCm4k-UPGtA86d5Gts8_CJwEULuZDHaoEU4zilTd88SaW7wVPBY5cTk2rCe5Gqy2WqopjkCHPI=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGf3QsZ1xqZqfWuq1k4MXifetX1qfIE37z8GRfQvaCfeaXMn6ORNHFsuazmzTpJqCZFizVGh9vQtiIr3usps5bmhysIIOiRbHJMKKIwTfQ9p5CBpvR89SDNFNQiUISYbz6IvHDZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXMzdhPQ7vhRdAexhVsPcLGqy6urlHpNcDqvtQlw_rRhjrmSJSuHONT7Gr_vWNFalvrBm2qxWe07ult0J09WQuN-Kbxss0bw11pp1p4-yLCxKDx2RM_D9Xxl1qr7gRnOwkx52h77KELjpA3pfyE160UhSWH854vJAOBbp8r9P-jCAkSLe88MylhIRDuW9j31sd9DNy9PiGcHfoVtzON-wjc0o1AbLTJqfrBWb7dD9wbkZo2EZovukK5agi0zDekRLZ",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjwKerELLGXFiYueGK4tFiOEyuFf1cJKM1jO99xbrbfkRrgJ2j0DfKme8HipXr2_VYext0infqB5g9yWmw91eMlpgyuzgvrKi4KuyWRbW5Xyq35Q7NcpnWryRz3E6DmCzH5wgphX9N3w-ZX_v6TfC20x3dMWUk4SyyXA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6_VMSVMS2UKqVTz7hKvLLJpGFHFHb99e3qvOHuHbHONvDOqpcd8ZNqKHdihbF3WJrfyoJ6uFLggWMarkrCjHz7nYCTUq8djwnVbfIpEErWM7_VxZEXiPOdxDEzdN2pos90rXUXvp4mapHFc2OL_lFjoFCmUF7SDmuqDpRPxaCTumIaosbagyDMkty1rS_vdbaH_-KPPAjLRPKJwiL-5612jrWj0WuPv1zTl0WJ73xmk1Puo6eJQFmjpfBWzVBBc9ZFWgSbq8WdRbrrQetOTo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJFTrswTISKD4OoAYJI1_U5pvN0ZOVk1Rq_GmbVdA9GDBa4QkRGg0kKZ6HCluMF8Z20Tx6E3tX0GBdK8id5L6zq6_F5ayiH0Y-DPEVxShJc-Al-gZ_IfiIhVbR92219828ws7DYUip9Z3C1R9_rSlHk3AWWAY-PaCJTsSld5IVv0qf-cxP",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxQcGhvOrwtDQMQAgsKW605_0j61dYWBX8ZsdkSDMcnD-TLBCNhnFZXv2n5mpWqs3uRuVQLzHXUMqnaxEAVeTGG9nZGyW8zF9SeKurjadWfSvwD3aNXX9CZjBplFMQk72YoZWn9FSzt3Qzb6v2O1j3r48bTg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJTJC21fCIc1yU37lPaYNLTe9KjHX25u2PfD-TS1ZAjYYmdyIxVY4VQA_Kvi8XK3CNNPmc-I3JKnv8p-M0kguuT8lRnm0jvel0R2gt1B73LuF7uwtzIvIM7VjBxmxeXb1vx5s4rnxSsrWYBGPUxDS-B2pNnc4XEksQMjBvHDPwZLBrV8Sd8veqiCeK_bGCag1IEY2apw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXvu91-4SPX1OY03bjWQhKJURlchqpntJ4316UeJ43YySUK0WeL-UfYyjWKy1IrDF4N5XWAA9GIR-xBEyKIx1TF_856Bx70RRM1iazLJw0LvgMiPXEk2y_1qt-Cz_appRBQ6-a8WoTSNlE61-LNbOSw1lttA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdYvTYPH3RuWALthUzsi6_xg3r849if8A6FZiK8_MoNe0Pq9-T2RGMHILZOy5wa2c6t2BKc0-APoLEOoscssLwivFiD1JtXe_3H6DtwxLQh3zVsn6TFJQ9_C7PUBY5muEc6mG0j2b1xPm-RqGW5w61wh_NJa_tSsNtGAC6suq6Lg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUXpWb5UlFLacV0OjlpUfhW9gD84ZhrTYFGfQ27W-4niSm40TTgsV6ZqeYg7NjtnVLQvTAobIxoDu65ekJHoXrMmoCoKn-cj-BOvlAV60sX8v1ubvb5TzzqcHQRxSRBT_QnxKhPUJZNXpVKiXXPXQD"
+      ]
+    },
+    {
+      "era": "2016-2021",
+      "title": "From Opposition's Shadow to the Chief Minister's Chair: Stalin's Ascent",
+      "narrative": "The period between 2016 and 2021 marked a dramatic turning point for the Dravida Munnetra Kazhagam (DMK), a journey from the depths of electoral defeat to the pinnacle of state power. The 2016 Assembly elections delivered a stinging blow, as the DMK-led alliance, despite a spirited campaign, fell short against the incumbent AIADMK. The party found itself in the opposition benches, with M. Karunanidhi, the towering patriarch, leading the charge. However, the political landscape was shifting rapidly. Karunanidhi's health began to decline, casting a long shadow over the party's future and intensifying the focus on his political heir, M.K. Stalin. \n\nStalin, long seen as the 'prince-in-waiting', formally stepped into a more prominent role on January 4, 2017, when he was unanimously elected as the DMK's Working President. This elevation was a clear signal of the generational shift underway. The inevitable, yet deeply emotional, moment arrived on August 7, 2018, with the passing of M. Karunanidhi, 'Kalaignar', after nearly five decades at the helm of the DMK. His demise left a void, but also paved the way for Stalin to assume full leadership. On August 28, 2018, M.K. Stalin was officially elected as the President of the DMK, inheriting a legacy of Dravidian politics and a party hungry for power. \n\nUnder Stalin's revitalized leadership, the DMK transformed its opposition role into a dynamic force. The party meticulously built the 'Secular Progressive Alliance' (SPA) and demonstrated its formidable strength in the 2019 Lok Sabha elections, sweeping Tamil Nadu by winning 38 out of 39 parliamentary seats. This resounding victory was a powerful precursor to the 2021 Assembly elections. Stalin, campaigning on a platform of inclusive growth and the 'Dravidian Model', led the SPA to a decisive win, ending a decade of AIADMK rule. The DMK alone secured 133 seats, achieving an absolute majority and marking Stalin's triumphant ascent to the Chief Minister's chair on May 7, 2021.",
+      "key_events": [
+        {
+          "year": 2016,
+          "month": 5,
+          "event": "DMK-led alliance loses Tamil Nadu Assembly elections to AIADMK.",
+          "significance": "Marked the beginning of DMK's period in opposition and intensified focus on leadership transition."
+        },
+        {
+          "year": 2017,
+          "month": 1,
+          "event": "M.K. Stalin elected as DMK Working President.",
+          "significance": "Formalized M.K. Stalin's role as the de facto leader and successor to his ailing father, M. Karunanidhi."
+        },
+        {
+          "year": 2018,
+          "month": 8,
+          "event": "M. Karunanidhi passes away.",
+          "significance": "The end of an era for DMK, as its long-serving president and five-time Chief Minister passed away, leaving a significant void."
+        },
+        {
+          "year": 2018,
+          "month": 8,
+          "event": "M.K. Stalin elected as DMK President.",
+          "significance": "M.K. Stalin officially took over the leadership of the DMK, consolidating his position and preparing the party for future elections."
+        },
+        {
+          "year": 2019,
+          "month": 4,
+          "event": "DMK-led Secular Progressive Alliance sweeps Lok Sabha elections in Tamil Nadu.",
+          "significance": "A major electoral success that boosted the party's morale and established M.K. Stalin's leadership ahead of the crucial 2021 Assembly elections."
+        },
+        {
+          "year": 2021,
+          "month": 5,
+          "event": "DMK-led Secular Progressive Alliance wins Tamil Nadu Assembly elections; M.K. Stalin becomes Chief Minister.",
+          "significance": "The culmination of M.K. Stalin's rise, bringing the DMK back to power after a decade in opposition and marking a new chapter in Tamil Nadu politics."
+        }
+      ],
+      "achievements": [
+        "Successfully transitioned leadership from M. Karunanidhi to M.K. Stalin, maintaining party unity and strength.",
+        "Formed and led the Secular Progressive Alliance (SPA) to a landslide victory in the 2019 Lok Sabha elections, winning 38 out of 39 seats in Tamil Nadu.",
+        "Led the DMK-led SPA to victory in the 2021 Tamil Nadu Assembly elections, securing 159 seats and forming the government after a decade in opposition."
+      ],
+      "leadership": [
+        "M. Karunanidhi — President — 1969-2018",
+        "M.K. Stalin — Working President — 2017-2018",
+        "M.K. Stalin — President — 2018-present"
+      ],
+      "election_results": [
+        {
+          "year": 2016,
+          "type": "assembly",
+          "seats_contested": null,
+          "seats_won": 89,
+          "total_seats": 234,
+          "vote_share_pct": 31.39,
+          "alliance": "DMK-INC-Left front",
+          "outcome": "opposition"
+        },
+        {
+          "year": 2019,
+          "type": "lok_sabha",
+          "seats_contested": null,
+          "seats_won": 23,
+          "total_seats": 39,
+          "vote_share_pct": 53.15,
+          "alliance": "Secular Progressive Alliance",
+          "outcome": "coalition_partner"
+        },
+        {
+          "year": 2021,
+          "type": "assembly",
+          "seats_contested": 173,
+          "seats_won": 133,
+          "total_seats": 234,
+          "vote_share_pct": 37.7,
+          "alliance": "Secular Progressive Alliance",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [],
+      "sources": [
+        "https://simple.wikipedia.org/wiki/M._Karunanidhi",
+        "https://www.thehindu.com/news/national/tamil-nadu/karunanidhi-death-at-94-the-passing-of-a-patriarch/article24632860.ece",
+        "https://www.straitstimes.com/asia/south-asia/thousands-mourn-as-revered-veteran-tamil-nadu-leader-karunanidhi-dies",
+        "https://en.wikipedia.org/wiki/M._Karunanidhi",
+        "https://www.nationalheraldindia.com/india/m-karunanidhi-dmk-leader-and-former-tamil-nadu-cm-dies-aged-94",
+        "https://www.indiastats.org/blog/2021-tamil-nadu-election-results-dmk-wins-133-seats/",
+        "https://www.youtube.com/watch?v=11b_n_b78Y8",
+        "https://en.wikipedia.org/wiki/2021_Tamil_Nadu_Legislative_Assembly_election",
+        "https://en.wikipedia.org/wiki/M._K._Stalin",
+        "https://timesofindia.indiatimes.com/city/chennai/stalin-set-to-take-over-as-dmk-president-on-august-28/articleshow/65561014.cms",
+        "https://www.scribd.com/document/411333769/Tamil-Nadu-2019-Lok-Sabha-Results",
+        "https://www.thehindu.com/news/national/tamil-nadu/mk-stalin-elected-as-working-president-of-dmk/article16987157.ece",
+        "https://www.aninews.in/news/national/general-news/stalin-elected-as-dmk-working-president20170104160456/",
+        "https://en.wikipedia.org/wiki/2016_Tamil_Nadu_Legislative_Assembly_election",
+        "https://www.britannica.com/biography/M-K-Stalin",
+        "https://en.wikipedia.org/wiki/2019_Indian_general_election_in_Tamil_Nadu",
+        "https://www.business-standard.com/article/politics/mk-stalin-elected-as-dmk-working-president-117010400518_1.html",
+        "https://zeenews.india.com/lok-sabha-elections/lok-sabha-election-results-2019-list-of-dmk-winners-2205096.html",
+        "https://www.youtube.com/watch?v=17X2e_8eS3g",
+        "https://www.indiavotes.com/ac/party-wise-performance/2021/tamil-nadu/24/32",
+        "https://www.chennaionline.com/news/politics/tamil-nadu-election-results-2021-dmks-377-vote-share-second-lowest-1996-brings-133-seats",
+        "https://www.jagranjosh.com/general-knowledge/mk-stalin-biography-1682337774-1"
+      ]
+    },
+    {
+      "era": "2021-Present",
+      "title": "The Dravidian Model Ascendant: Stalin's Stewardship",
+      "narrative": "After a decade in the opposition wilderness, the Dravida Munnetra Kazhagam (DMK) roared back to power in the 2021 Assembly elections, marking a pivotal moment in Tamil Nadu politics. M.K. Stalin, son of the legendary M. Karunanidhi, stepped into the Chief Minister's office on May 7, 2021, inheriting a state grappling with the tail-end of the COVID-19 pandemic and a complex economic landscape. His ascension was not just a personal triumph but a generational shift, as he became the first Chief Minister of Tamil Nadu after the demise of both J. Jayalalithaa and his father, M. Karunanidhi, who had dominated the state's political stage for decades.\n\nStalin's government immediately set about implementing key electoral promises, focusing on what it termed the 'Dravidian Model' of governance. This model, emphasizing social justice, women's welfare, education, and healthcare, quickly translated into flagship schemes. The 'Vidiyal Payanam' scheme, offering free bus travel for women, became one of the most visible and impactful initiatives, directly benefiting millions daily. The 'Kalaignar Magalir Urimai Thittam', providing a monthly financial assistance of ₹1,000 to eligible women heads of families, further cemented the government's commitment to women's empowerment. Other notable schemes like the Chief Minister's Breakfast Scheme for school children and 'Naan Mudhalvan' for skill development underscored a holistic approach to welfare.\n\nDespite these achievements, the Stalin government has faced its share of challenges and controversies. Allegations of corruption, particularly a 'cash for jobs' scam and tender manipulation, have been leveled by opposition parties, though the DMK has consistently denied these, calling them politically motivated. The issue of NEET exemption for medical admissions, a long-standing promise, has also remained unresolved, leading to public scrutiny. However, the DMK-led Secular Progressive Alliance achieved a resounding victory in the 2024 Lok Sabha elections, sweeping all 39 seats in Tamil Nadu, which further solidified Stalin's position and the alliance's strength ahead of the 2026 Assembly elections.",
+      "key_events": [
+        {
+          "year": 2021,
+          "month": 5,
+          "event": "DMK-led Secular Progressive Alliance wins 2021 Assembly elections.",
+          "significance": "Ended a decade of AIADMK rule and marked the return of the DMK to power after the demise of its patriarch M. Karunanidhi. M.K. Stalin became Chief Minister."
+        },
+        {
+          "year": 2021,
+          "month": 5,
+          "event": "M.K. Stalin sworn in as Chief Minister of Tamil Nadu.",
+          "significance": "A generational shift in Tamil Nadu politics, with Stalin taking the helm after years as the party's working president and opposition leader."
+        },
+        {
+          "year": 2021,
+          "month": null,
+          "event": "Launch of 'Vidiyal Payanam' (Free Bus Travel for Women) scheme.",
+          "significance": "One of the first and most impactful welfare schemes, providing free travel for women in government ordinary buses, directly benefiting millions and promoting women's mobility and economic participation."
+        },
+        {
+          "year": 2022,
+          "month": 9,
+          "event": "Launch of Chief Minister's Breakfast Scheme.",
+          "significance": "Aimed at improving nutrition and school attendance for primary school children, receiving positive media and public policy attention."
+        },
+        {
+          "year": 2023,
+          "month": 9,
+          "event": "Launch of 'Kalaignar Magalir Urimai Thittam' (Women's Rights Grant Scheme).",
+          "significance": "Provides ₹1,000 monthly financial assistance to eligible women heads of families, becoming a flagship welfare pillar of the government."
+        },
+        {
+          "year": 2024,
+          "month": 6,
+          "event": "DMK-led INDIA bloc sweeps 2024 Lok Sabha elections in Tamil Nadu.",
+          "significance": "The alliance won all 39 parliamentary seats in the state, demonstrating strong public support for the DMK government and its allies, further strengthening its position ahead of the 2026 Assembly elections."
+        }
+      ],
+      "achievements": [
+        "Implementation of the 'Dravidian Model' of governance, focusing on social justice, women's welfare, education, and healthcare.",
+        "Successful rollout of 'Vidiyal Payanam' (Free Bus Travel for Women) scheme, benefiting millions daily and reducing commuting costs.",
+        "Introduction of 'Kalaignar Magalir Urimai Thittam', providing ₹1,000 monthly financial assistance to over 1 crore eligible women.",
+        "Launch of the Chief Minister's Breakfast Scheme for school children, addressing child nutrition and improving school enrollment.",
+        "Significant economic growth, with Tamil Nadu recording a nominal 16% growth in Gross State Domestic Product (GSDP) for the 2024–25 financial year and real GSDP growth exceeding 10% for the first time in 14 years.",
+        "Increased reservation for women in government jobs from 30% to 40% and extended maternity leave from nine months to 12 months.",
+        "Strong advocacy for state autonomy and federalism, opposing national policies like the National Education Policy and challenging the role of governors."
+      ],
+      "leadership": [
+        "M.K. Stalin — Chief Minister — May 7, 2021 – Present"
+      ],
+      "election_results": [
+        {
+          "year": 2024,
+          "type": "lok_sabha",
+          "seats_contested": 22,
+          "seats_won": 22,
+          "total_seats": 39,
+          "vote_share_pct": 26.93,
+          "alliance": "Indian National Developmental Inclusive Alliance (INDIA)",
+          "outcome": "won_government"
+        }
+      ],
+      "controversies": [
+        "Allegations of corruption, including a 'cash for jobs' scam and tender manipulation, leveled by opposition parties, which the DMK has denied as politically motivated.",
+        "Unresolved issue of NEET exemption for medical admissions, a key electoral promise that has faced legal and political hurdles.",
+        "Accusations of dynastic politics and anti-Hindu bias from opposition parties, which CM Stalin has refuted."
+      ],
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFevqyNhb-mYVQ8zbsurHHfcW80xyOCaOlbom-x7NxUyQzpQOwLVmEErDX-5pnGsr-OSvaE5vQev7dQ1MODyIa2JVbykZytx4a3nPbo0CKPm3gKyWQh1NzfOwcyCIbAdehlt5F-YOsCn-fpF_fDstU8ynO_2co_Um9udVxQPN0E",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyZ1qpev5euzqfXobsQp5LcH49uG8q_jKj75zayLIFtOlSW31RZxDJ8uQgC7JF7FslRzJj7w6ApSoVs2ccsTLOlMXkf9Ce8HMMFlxeKKvVtB_X-toBUjw62S_-lMPfX2gV-YCzptYygBWVH0tdkW4R76cPjagD1iU4dzN32qBlWlzahiRzQQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi9moFIbOY4TxvbzwKyLL4GMsn2V_Kf-FmHyDd9Z8S-Qvg_BiLnzXRw9TJVnJHVVFoZLznDJgbQrU_DdpTiAxHivdFT29gBxXAOK56P_0B1Po3BX4Kv6L26Gt77qETe3v5zaZiNDVPP3PEqDGNBlaUEmk8hYPNSrxJo3w=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa3JVZVLKjNeVdHl0oYSZeGIwQEpTG5aGAUhXkBp_fOAEGWOF9dOsCOsOYzKIIjT3pUZ885p_e2316VvszBp9uiUG0-TRuOzatySKlgLl_R3j2S-c5CxrHGd2FQr1dVW_Elu5UTGQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoA9vXDpa81ZbTMqCmZAB0kJW-M1PQM5WFVO3smx2mPmL_DI1_2HAs405IUfvmMTKTkIUbZJgfPJ0clcQPPrqeKwRadGgTlM86gFlsUpTWFQMRy97oopQlQjSyBW503dw65-zdwVunckC0smCL5VAKT7JVuQkX0sKChnTv9VUdDRyG03IKO-DzrQ7Ot6tTC-E_Ms4MSvbi4N2trphp5zxx4QUk0c7z29MZxU6Z2W87Tld1STtXi--lhA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjZRscpsM2E-YWc6tdBCeCAgyrPpuFB0Ce-58KGvMchJ7-EyYQh49hNoAFE_JAjDCnB84H9TBMXt7EpiphhgYGSTevOHCbSiVaLOA8Gyg7a87qZnys-TeUMlv_f6VnPSzyeGhJncqCKMHyxM6XY3Hhg9UTD_3yCpNlCtM6lYHJ0nFItK9X2yY1BShc4oMeLCfgtwMD-euOdos0dnR2ThFr37Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpwnmm_a0VnZ55SGeTnhVrQfFgispKOzvLSQF0mdS9J5_uHQx7m5pbdGB7T8rgc1PDMrcvHwjIXrJooMhPmmhuFVbgvgTqdt53An_Jn20g1wIM7Tr2ibhU2lKWxHTt1HcL93wG6KEqcfK2FIVC3gYPUlIEUZjfdI-FXHUI8V5hzepvtgDZmQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE99AezjIwI0JsnqLbRE5Ltjo7kJSaedTVUJhYJNlHJO-XAy3qctIwzHPNfj7GBdFHhrzHKf_MXs3EEVWiBEHqSihCtHF9PB4xfc3QOQWEREBWfOWHnWtoRi4PGSx669DGJqxG6jgrQczTOLrNxeoytOh2Uc3BG14nvH7ZgdE-GpS66H3P0_RIQizRvduE5GKHKUJuixUOuldnqfSN8vVfytg-BGdngnorVLJ1DkB2F_HysyILjMKVuhM7-mJd29tuAZeZS5DAl_dgdv-QzU8cKSaIDi7G6byG9cJyx",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIfqd_Gnlnen5F7UB0Qo5PGbb0HX7aI5jQSnaLjIvfyITDj9V_Z9UKpprIVdy-4ltzFbFJ9YY56M3UxxxcO-qdnUfnbcM3HwD-iAwpj57IxcZjyklGl9G8LQsJP2ncVWK2y3Nu3TFp3hB4iRGmXOGOyaR37aF4W14MFPg80-Z4pmAYOL9dFuXZs-naXeccQWi-JZJAnXdSIANlr4BOfQwrQ8jwe-p3aRxbUKHVZJW3-p_kja5SRWWiFgZDqSJMBDtKcD0jMnbotDyBV9RDbmE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEVLbZkH5Wii7uHTBlYAVqfn_KnwC3P96hH5Pg2gfJ-IB-hNaEEKi50YJxZEKzvyVYCTankWnqh8uo57G5PDB-TAgP_TfP9kvzViW2hvq79n9FNKqVQPeZyTnzh_01dbM9BM4UTdP9oIM3HlNqvSv5Q1SIXUzq103UWMgnxZ5By04DAg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETIthmIvM2LevadhRq83GXtuAGAvZC6PyApnaVgpJO-CXlQxl19xtKwghUxt125SfwtS7n3muzeNbMP21bUC5SSiETHBMdPEOcwTtHfeGjcy9jk4ImzV8hE4jTYchrrUQOho75Abhu",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIvENl3vNtvs5QHIF55nk1xfpqm4EF0PHAp1i59dP3LKfB1XrObgU-ggcCM4KM2ZZVip3tWCN8WrfTwe5Ywk8Z6SSf3xBpMuh2nhzY76vlLJ-udOD3LWOEWndZfSkqlY3pFP1Vr8CQa9Oxr42kBSEo8y1JYF11qKvkvMLN_zQG01YOWjPYYQ1xvIABrHY1BLYhcis6Zps6F2iRN5itX5ClF5DRAOomie1sCYztqu1aOL3t4NnFFjkWBXZLtY5ajjOZI_Qv9wuFZOpNRFVdgPbPWe1h8wu0ISZPTZNjbu_D0Z7Nz3MI6qKEQpKaWNXaTJ8moy88ROk=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWzCUTU9pFdx_H-N87svaYxw0zCHJP7iOKxScIBcsCeQSukakK-0hHvKklKayPh_wnncW_4hlkQkttC2YFSGpMqnEZft81Sb4g9VO0jMgW8cPYpkxRq02WMbeCDBEMt9aWawgchVty63yZeccoMiTz_p5OVh_wTX5XYvvsOdj3bwET306B",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEj3gNDe12N10Nu_8MG4DSZr7SMrKEjXhuuPxh-hoOEJu3NsmtzX8hJYMCOUojAMdZn8TO3waEsqfKwhPcd803ZK73YWdNI7Qcob4syjAN2M9WV0n-G2AjfzR92wugLvBJvQrQ7GxkqY9831IDE7H-tLbSFmwECY08MnYK1baDXWEClTGbYD3i7b2fSNDd2CB8369AhC7wOT9Qt0iEIirWNoXKbKXekCSexr2cYTfl0_UD-W8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2HGqtTrh5hQlqrSKOJ3E_P8Mx42kAF-V7IW3uEaUlMosouzgfy3-4JAAZYiNTxWuJ4v2J4OgEYioyco7gvjOSaPcjpkrAeze-ocfJ0MO0NQnt51cxk-cSVHvrQNMFCZipHdGDqamrkr-rKhsgJcc6OPGr5Ob6fGdhsUq34Lq29SYtlMWSIeeo9HIh5l4CRMboAJHEF269lucGzi21FMQXruHgfF9q_g==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtWhVuNHgaHaqVubnsFeNaPlbVQpJq5qF8e7yLYK0lIZ0ObEZ3rRO4dDZh1bjhIl3_b0j6exNCh47vXSj5-hHHp1Hrewfa1VGBGGA6iVM_bTjDPNlZlS96OBmljFdA4Xg2J43OxjuTF93Pj4O0uoL_ytTNlSlRAgpb40nX8lpfuRr_aGXIg8xD_sPXOclTOlQw_E5pTU-JI4OF9aRRE1oUJuVmLnbkaBQqkHZyFw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8ZQ40BFkp1Kij0E6yzEgej8t1anqZpQ0VQWoMQpLrEMt1SDnUo30JGEOXTANRw5qd3ZltzAgdBVrobZuutmJdtAPp4o6uOWg9XY5x14BB2-KDSvffxbh8UvEUgHTB2wnm0RA4ai4_X95j",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJF8p2M0qBM5soNX6PJt8OLomSjkX_CnRJ54-GU49o-p1qZVCiMBpS1u6Ear7umzboutdKKLyJG6QVdXuRb3chtUvAHe5qUXkw3zYzFABGcEQg_8C_0FCb6BmlbxrlfSgx6WNp-i8INg12SgCPmiQS0INWNH3XOAQUucvjemE5Zdns6zwnRsuW_3XzMPy4wD76VF7HeEEdmO7zRs08YpdIjRePZ-FNmkzE3Fz8GL7r",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3WF72Fq5PqsoRYqQVit2UNkrOLnQ_ErXWps2KfwpO11kbpaZFyRftg9Ybx335DkRmACKxDhRjinebZ0GR3oacEzvTgGzavUN09Vbs4jfoS8dQeLBGrCTZbpYxj_1PeOCDE4vzOrmJJhkDBSy6qA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_YJSwQTILLAafwAR1wQpEBPdQ1NQGA1hF43gPUKJ32Z8qVywkqP5fUuzqs6rmEFybre4ZQpYmPRXmwNMfCf9J_9MfwG0J0RkY7puqS1BvFZUxn_Hn17vT3_AMw40fLaZGM2AnrbDSnCav5Uted91I8kIMokLJxD4C5spX_a5EykPNTtpBRg_gBT-upFHFO083JbEHJs6JQUdUPWo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7IMkuR_Iguh7MdHKZWh_F2l0IN-a0hrm1zKsOwiGTFdgc26paoyNVxTGwbO_O1MiuhlJksEWwp7wt5UI3-Wb2Jt_j6WZdEMl9jqlGFJDojJN2-zUYC5kKOBpKM1000GqC-K8QinE=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU2hVQWaNIBzhSZ3lgHI6L6il2irMKNMsycpvC_N-2jz_MWw30Y6bTLzHRVPkSbcU3gWyNBua5hB5hOodX6CKFPLFGX51XKykbeZ378mOlqfASbgRk554brbLKl_Gnrea31PIiDZM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIKyGP9HiV0MuVaypL1TRWneEaAVAxNfheTNzJO0iK7l4IHxKZ2etQo6jW48kGEAc27fghI_0PBz6IYC59yHNO2oKa12VUKLXkmVlBa5lhT4wK1Nl1zQp8qsBG_HX3Cw7XYfV90tNZY5yMfcDjhFd4pmaVC9PQgA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5XHyOPd0yKRZdowkVYV8XaVADzPuddeVi1GIqdS7spCGg3Tc3ENo1qyqqLHtHjYJPoRuGtsdk9mODPcA72iHJ7aEh-W9gyUey2f0ExjE-zd17wKSiaIycoD_eWJGTYL2lWng4BQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxfXCflyhn6G7ge62186SzojuS2Au2fNX3Zq2mezOnWPM_QMsvDEdee5g6UdGsCyeknE0oP88joyikmmhZJMexYbZGi2o0xVSgFZnzpjM7h2oq5H6DIzjRjzBw6iZtEGa00xdjWGWiHTWAjStO8qvFiTv2nR0idHkWSZ0rwgJ1Hraw0OO3TsbedcsgyXAPSU0pFk2SFdFJMLrpQavWAzxdgbJk61td79osLG3KQ9l6rDn2_4RcQEcs0Wgz-R5sd4-8FjewgyL5WLgcDs38_ki5n464q_O8l71KEln81dii1Q7zbdnfkw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMPMIxD9O4KYK8in_0GnqVALqRfMFOgZeITbe_DuDNVQJ-TTZUZyqIvj4ejQPz6H9Q2egYu9ejonSutVIoDnJtsmAr2u3wQipjXlVwGm1V-9XxINjvj7fJt-lJPYTNhBwzpc8Kz3EN4xGGvyseNZ1LMr3J0lZO-INk0iZpszzqZX081ymh8nyBRe_jZNwA-_IacDo0kFncIXnERpLiq65yBRdPM52Ci7SA-ko2OVtZlMktOS0iZTN-",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYQWkX3BRKlZ5Y1_7WK8sD2t02Cgmr-GAL2VxHOjlkbXxaM2xn3lcBJt1Ri4tIR1hQRSasxFzXrvScVWvtBdncV1Sq4uyWyq58VHlTe5dnr5IkIEBW6N6GTinMJpMXpIu_WvVbLLo=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgW_pKAdm1BW7g_Zfj2ob5ydIAyiafA7Egkcb8DI4CETce-Q1m-9kPIIl45z60BamweygherI3VT9Hk8Vweke_SoZsyOzzvZDeAO6m6wLstTgKrhYU9_vyzKrWxQxk95WHbC-1Z4o=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA0-rhEdVgWqNGe6tjJeTJf1KooHRlhAZC6tMv0UoXv7MUC_09PeM7JF4_BwjZxEMzCwLo4qKel45dWw3FUASXqxMs87bXQZXw-gX5rCpz3yfGy_wySCVA7jiZ44fE0lXe-wBf3PSVRaUFlrMRobb2phYsjcTSClE7mf7fki5VzHgA2aAkT3bIJCPzYTDk01n_Gazc9Z1ABU1XhKh8r8f8_0VvoQu48IehS8ZDxDfQmLto0kYn580GEqJEhKj2J9tZA="
+      ]
+    }
+  ]
+}

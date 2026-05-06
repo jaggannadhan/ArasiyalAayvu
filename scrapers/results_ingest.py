@@ -55,15 +55,28 @@ def _load_constituency_map() -> dict[str, str]:
         return {}
     with open(CONSTITUENCY_MAP_PATH, "r") as f:
         data = json.load(f)
-    # Build a lookup: normalized name → slug
+    # Build a lookup: normalized name → canonical slug
     lookup: dict[str, str] = {}
-    for entry in data if isinstance(data, list) else data.values():
-        if isinstance(entry, dict):
-            name = entry.get("name", "") or entry.get("ac_name", "")
-            slug = entry.get("slug", "") or _slugify(name)
-            if name and slug:
-                lookup[name.lower().strip()] = slug
-                lookup[_slugify(name)] = slug
+    if isinstance(data, dict):
+        for slug, entry in data.items():
+            if isinstance(entry, dict):
+                name = entry.get("name", "") or entry.get("ac_name", "")
+                if name:
+                    lookup[name.lower().strip()] = slug
+                    lookup[_slugify(name)] = slug
+                    # Also map the base name without (SC)/(ST) suffix
+                    base = re.sub(r"\s*\((?:SC|ST|GEN)\)\s*$", "", name, flags=re.IGNORECASE)
+                    if base != name:
+                        lookup[base.lower().strip()] = slug
+                        lookup[_slugify(base)] = slug
+    else:
+        for entry in data:
+            if isinstance(entry, dict):
+                name = entry.get("name", "") or entry.get("ac_name", "")
+                slug = entry.get("slug", "") or _slugify(name)
+                if name and slug:
+                    lookup[name.lower().strip()] = slug
+                    lookup[_slugify(name)] = slug
     return lookup
 
 

@@ -25,7 +25,7 @@ function CandidatePhoto({ url, gender, name, className }: {
   url: string | null | undefined; gender: string; name: string; className: string;
 }) {
   const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
-  if (url?.includes("suvidha.eci.gov.in")) {
+  if (url?.includes("eci.gov.in")) {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={url} alt={name} className={className} />;
   }

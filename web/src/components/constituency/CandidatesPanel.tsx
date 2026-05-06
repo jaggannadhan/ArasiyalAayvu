@@ -39,7 +39,7 @@ function CandidatePhoto({ url, gender, name, className }: {
 }) {
   const def = gender === "Female" ? "/default-mla-female.svg" : "/default-mla.svg";
   // ECI URLs are blocked by Next.js optimizer (WAF) — render as plain <img> so browser fetches directly
-  if (url?.includes("suvidha.eci.gov.in")) {
+  if (url?.includes("eci.gov.in")) {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={url} alt={name} className={className} />;
   }
