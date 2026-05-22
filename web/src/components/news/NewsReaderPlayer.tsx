@@ -75,6 +75,7 @@ export function NewsReaderPlayer() {
   const liveElapsedRef = useRef(0);
   const elapsedTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sequencerIdRef = useRef(0);
+  const pendingResumeRef = useRef<{ phase: Phase; articleIdx: number } | null>(null);
 
   const preloadedRef = useRef<Map<string, string>>(new Map());
 
@@ -137,9 +138,28 @@ export function NewsReaderPlayer() {
     }
   };
 
-  /* ── Fetch metadata (refetches when lang flips) ── */
+  /* ── Fetch metadata (refetches when lang flips) ──
+   * If a broadcast is in flight, remember which article was playing so we can
+   * resume in the new language at the same article. The resume effect below
+   * picks this up once new meta lands.
+   */
   useEffect(() => {
     let cancelled = false;
+
+    const wasMidBroadcast = phase === "intro" || phase === "intro-pause" ||
+      phase === "article" || phase === "transition" || phase === "outro";
+    pendingResumeRef.current = wasMidBroadcast
+      ? { phase, articleIdx: currentArticle }
+      : null;
+
+    // Hard stop the previous-language broadcast — don't let stale audio bleed under the new UI
+    sequencerIdRef.current++;
+    audioRef.current?.pause();
+    if (audioRef.current) audioRef.current.src = "";
+    stopFade();
+    stopElapsedTimer();
+    setIsPaused(false);
+
     setPhase("loading");
     setMeta(null);
     fetch(`${GCS_BASE}/latest_meta_${lang}.json?t=${Date.now()}`)
@@ -150,16 +170,21 @@ export function NewsReaderPlayer() {
       .then((data: ReaderMeta) => {
         if (cancelled) return;
         setMeta(data);
-        setCountdown(COUNTDOWN_SEC);
-        setCurrentArticle(0);
-        elapsedRef.current = 0; liveElapsedRef.current = 0; setElapsed(0);
-        transitionIdx.current = 0;
-        setPhase("countdown");
+        if (!pendingResumeRef.current) {
+          // Cold start (no broadcast was running) — show the countdown intro
+          setCountdown(COUNTDOWN_SEC);
+          setCurrentArticle(0);
+          elapsedRef.current = 0; liveElapsedRef.current = 0; setElapsed(0);
+          transitionIdx.current = 0;
+          setPhase("countdown");
+        }
+        // Otherwise the resume effect (below) jumps to the matching article in the new language
       })
       .catch((err) => {
         if (!cancelled) console.error("Failed to load metadata:", err);
       });
     return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);
 
   /* ── Preload priority clips during countdown ── */
@@ -316,8 +341,8 @@ export function NewsReaderPlayer() {
     const segs = timeline.current;
     if (segs.length === 0) return;
 
-    // Bg bed: fade in once at start of run, stays low for entire broadcast
-    if (startSegIdx === 0) fadeInBg(BG_VOLUME, 1500);
+    // Bg bed: fade in if not already playing (also handles language-toggle resume)
+    if (bgAudioRef.current?.paused !== false) fadeInBg(BG_VOLUME, 1500);
 
     for (let si = startSegIdx; si < segs.length; si++) {
       if (sequencerIdRef.current !== seqId) return;
@@ -392,6 +417,41 @@ export function NewsReaderPlayer() {
   }, [meta, playClip, waitAbortable, fadeInBg, fadeOutBg, preloadNext, startElapsedTimer, stopElapsedTimer]);
 
   const runShow = useCallback(() => runShowFrom(0), [runShowFrom]);
+
+  /* ── Resume in new language at the matching article when meta refreshes ── */
+  useEffect(() => {
+    if (!meta) return;
+    const resume = pendingResumeRef.current;
+    if (!resume) return;
+    pendingResumeRef.current = null;
+
+    const segs = timeline.current;
+    let targetIdx = -1;
+    if (resume.phase === "outro") {
+      targetIdx = segs.findIndex(s => s.type === "outro");
+    } else {
+      // intro / intro-pause / article / transition → land on the matching article
+      // (or article 0 if we hadn't started one yet)
+      const targetArticle = (resume.phase === "intro" || resume.phase === "intro-pause") ? 0 : resume.articleIdx;
+      targetIdx = segs.findIndex(s => s.type === "article" && s.index === targetArticle);
+    }
+
+    if (targetIdx < 0) {
+      // Fallback — couldn't find a matching segment, do a cold countdown
+      setCountdown(COUNTDOWN_SEC);
+      setCurrentArticle(0);
+      elapsedRef.current = 0; liveElapsedRef.current = 0; setElapsed(0);
+      setPhase("countdown");
+      return;
+    }
+
+    const seg = segs[targetIdx];
+    setCurrentArticle(seg.type === "article" ? seg.index : 0);
+    elapsedRef.current = seg.startAt;
+    liveElapsedRef.current = Math.max(liveElapsedRef.current, seg.startAt);
+    setElapsed(elapsedRef.current);
+    runShowFrom(targetIdx);
+  }, [meta, runShowFrom]);
 
   /* ── User clicks play ── */
   const handleStart = useCallback(() => {
