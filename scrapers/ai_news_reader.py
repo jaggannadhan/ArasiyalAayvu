@@ -1,16 +1,17 @@
-"""AI News Reader — per-article TTS + parallel Wav2Lip video generation.
+"""AI News Reader — audio-only pipeline (EN + TA).
 
-Pipeline:
-  1. Firestore articles → Gemini per-article scripts → edge-tts per-article audio
-  2. Parallel Wav2Lip: one video clip per article (+ intro/outro)
-  3. Upload individual clips + metadata to GCS
+Pipeline (per language):
+  1. Firestore articles → Gemini per-article scripts (or pre-computed) → edge-tts MP3
+  2. Upload per-article audio + intro/outro to GCS
+  3. Write latest_meta_<lang>.json with audio_urls
 
-Each article gets its own video file — article sync is structurally guaranteed.
+Both languages are generated in a single run by default.
 
 Usage:
-    python scrapers/ai_news_reader.py              # full pipeline
-    python scrapers/ai_news_reader.py --test        # sample articles (skip Gemini)
-    python scrapers/ai_news_reader.py --no-upload   # skip GCS upload
+    python scrapers/ai_news_reader.py                # both languages, full pipeline
+    python scrapers/ai_news_reader.py --lang ta      # tamil only
+    python scrapers/ai_news_reader.py --test         # sample articles (skip Firestore + Gemini)
+    python scrapers/ai_news_reader.py --no-upload    # skip GCS upload
 """
 from __future__ import annotations
 
@@ -19,15 +20,11 @@ import asyncio
 import json
 import os
 import subprocess
-import sys
-import concurrent.futures
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-WAV2LIP_DIR = ROOT.parent / "Wav2Lip"
-ANCHOR_IMAGE = ROOT / "data" / "assets" / "news_anchor_female_cropped.png"
 OUTPUT_DIR = ROOT / "data" / "processed" / "news_reader"
 
 PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT", "naatunadappu")
@@ -43,8 +40,30 @@ INTRO_SCRIPT_EN = "Good evening! This is TamilSelvi, reading the news for Arasiy
 OUTRO_SCRIPT_TA = "மீண்டும் சந்திப்போம், அரசியல் ஆய்வு செய்தி சேனலில் இருந்து தமிழ் செல்வி."
 OUTRO_SCRIPT_EN = "See you again, this is TamilSelvi from Arasiyal Aayvu news channel."
 
+TEST_ARTICLES: list[dict[str, Any]] = [
+    {"title": "TN Assembly Election Results on May 4", "snippet": "Election Commission announces results date",
+     "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
+    {"title": "DMK Confident of Victory", "snippet": "MK Stalin expresses confidence",
+     "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
+    {"title": "TVK Vijay Asks Candidates to Stay Alert", "snippet": "Vijay urges vigilance at counting centres",
+     "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
+]
 
-# ── Helpers ────────────────────────────────────────────────────────────────────
+TEST_SCRIPTS: dict[str, list[str]] = {
+    "ta": [
+        "தமிழ்நாடு சட்டமன்ற தேர்தல் முடிவுகள் மே 4ம் தேதி வெளியாகும் என தேர்தல் ஆணையம் அறிவித்துள்ளது.",
+        "திமுக தலைவர் முதலமைச்சர் மு.க.ஸ்டாலின் வெற்றி நம்பிக்கையுடன் இருப்பதாக தெரிவித்துள்ளார்.",
+        "தமிழக வெற்றி கழகம் தலைவர் விஜய் வாக்கு எண்ணிக்கை மையங்களில் விழிப்புடன் இருக்குமாறு கேட்டுக்கொண்டுள்ளார்.",
+    ],
+    "en": [
+        "The Tamil Nadu Assembly election results will be announced on May 4th.",
+        "DMK leader Chief Minister MK Stalin has expressed confidence of victory.",
+        "TVK president Vijay has asked party candidates to stay alert at counting centres.",
+    ],
+}
+
+
+# ── Audio helpers ──────────────────────────────────────────────────────────────
 
 def _get_audio_duration(path: Path) -> float:
     result = subprocess.run(
@@ -68,9 +87,9 @@ def _fade_out_audio(input_path: Path, output_path: Path, fade_ms: int = 300) -> 
     return output_path
 
 
-# ── Step A: Generate per-article scripts via Gemini ────────────────────────────
+# ── Script generation ─────────────────────────────────────────────────────────
 
-async def generate_article_script(article: dict[str, Any], lang: str = "ta") -> str:
+async def generate_article_script(article: dict[str, Any], lang: str) -> str:
     from google import genai
     from google.genai import types
 
@@ -114,9 +133,9 @@ Script:"""
     return resp.text.strip()
 
 
-# ── Step B: Per-article TTS ────────────────────────────────────────────────────
+# ── TTS ───────────────────────────────────────────────────────────────────────
 
-async def generate_tts(text: str, output_path: Path, lang: str = "ta") -> Path:
+async def generate_tts(text: str, output_path: Path, lang: str) -> Path:
     import edge_tts
     voice = TAMIL_VOICE if lang == "ta" else ENGLISH_VOICE
     raw_path = output_path.with_suffix(".raw.mp3")
@@ -127,91 +146,7 @@ async def generate_tts(text: str, output_path: Path, lang: str = "ta") -> Path:
     return output_path
 
 
-# ── Step C: Wav2Lip per clip ───────────────────────────────────────────────────
-
-def _run_wav2lip(audio_path: Path, output_path: Path, label: str) -> Path:
-    """Run Wav2Lip for a single audio clip.
-
-    Each call gets its own temp directory to avoid collisions when running in parallel.
-    Wav2Lip uses hardcoded 'temp/' for intermediate files — parallel runs clobber each other
-    if they share the same cwd.
-    """
-    import shutil
-    import tempfile
-
-    # Create an isolated working directory with Wav2Lip code symlinked
-    work_dir = Path(tempfile.mkdtemp(prefix=f"wav2lip_{label}_"))
-    temp_dir = work_dir / "temp"
-    temp_dir.mkdir()
-
-    shim_dir = work_dir / "_shim"
-    shim_dir.mkdir()
-    (shim_dir / "sitecustomize.py").write_text(
-        "import numpy as np\n"
-        "for attr, val in [('float',float),('int',int),('complex',complex),('bool',bool),('object',object),('str',str)]:\n"
-        "    if not hasattr(np, attr): setattr(np, attr, val)\n"
-    )
-
-    cmd = [
-        sys.executable,
-        str(WAV2LIP_DIR / "inference.py"),
-        "--checkpoint_path", str(WAV2LIP_DIR / "checkpoints" / "wav2lip_gan.pth"),
-        "--face", str(ANCHOR_IMAGE),
-        "--audio", str(audio_path.resolve()),
-        "--outfile", str(output_path.resolve()),
-        "--pads", "0", "15", "5", "5",
-    ]
-
-    env = os.environ.copy()
-    existing_pp = env.get("PYTHONPATH", "")
-    env["PYTHONPATH"] = str(shim_dir) + os.pathsep + str(WAV2LIP_DIR) + (os.pathsep + existing_pp if existing_pp else "")
-
-    t0 = __import__("time").time()
-    result = subprocess.run(
-        cmd, capture_output=True, text=True,
-        cwd=str(work_dir),  # isolated cwd — each process gets its own temp/
-        env=env, timeout=600,
-    )
-    elapsed = __import__("time").time() - t0
-
-    # Cleanup isolated work dir
-    shutil.rmtree(work_dir, ignore_errors=True)
-
-    if result.returncode != 0:
-        print(f"  [{label}] FAILED ({elapsed:.1f}s): {result.stderr[-300:]}")
-        raise RuntimeError(f"Wav2Lip failed for {label}")
-
-    size_kb = output_path.stat().st_size // 1024
-    print(f"  [{label}] Done in {elapsed:.1f}s ({size_kb} KB)")
-    return output_path
-
-
-def run_wav2lip_parallel(tasks: list[tuple[Path, Path, str]], max_workers: int = 3) -> list[Path]:
-    """Run multiple Wav2Lip jobs in parallel using a thread pool.
-
-    Args:
-        tasks: List of (audio_path, output_video_path, label) tuples
-        max_workers: Max parallel Wav2Lip processes (3 is safe for most CPUs)
-
-    Returns:
-        List of output video paths in the same order as input tasks
-    """
-    print(f"  Launching {len(tasks)} Wav2Lip jobs (max {max_workers} parallel)...")
-
-    results: dict[int, Path] = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_idx = {
-            executor.submit(_run_wav2lip, audio, video, label): idx
-            for idx, (audio, video, label) in enumerate(tasks)
-        }
-        for future in concurrent.futures.as_completed(future_to_idx):
-            idx = future_to_idx[future]
-            results[idx] = future.result()
-
-    return [results[i] for i in range(len(tasks))]
-
-
-# ── Step D: Fetch articles from Firestore ──────────────────────────────────────
+# ── Firestore ─────────────────────────────────────────────────────────────────
 
 def fetch_top_articles(limit: int = 5) -> list[dict[str, Any]]:
     from google.cloud import firestore
@@ -245,7 +180,7 @@ def fetch_top_articles(limit: int = 5) -> list[dict[str, Any]]:
     return articles
 
 
-# ── Step E: Upload to GCS ──────────────────────────────────────────────────────
+# ── GCS ───────────────────────────────────────────────────────────────────────
 
 def upload_to_gcs(local_path: Path, gcs_name: str) -> str:
     from google.cloud import storage
@@ -256,162 +191,98 @@ def upload_to_gcs(local_path: Path, gcs_name: str) -> str:
     blob.upload_from_filename(str(local_path))
     blob.make_public()
     url = blob.public_url
-    print(f"  Uploaded: {url}")
+    print(f"    uploaded: {url}")
     return url
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# ── Per-language render ───────────────────────────────────────────────────────
 
-async def main():
-    parser = argparse.ArgumentParser(description="AI News Reader — Per-article Wav2Lip Pipeline")
-    parser.add_argument("--test", action="store_true", help="Use sample scripts (skip Gemini)")
-    parser.add_argument("--lang", default="ta", choices=["ta", "en"], help="Language")
-    parser.add_argument("--no-upload", action="store_true", help="Skip GCS upload")
-    parser.add_argument("--workers", type=int, default=3, help="Max parallel Wav2Lip jobs")
-    args = parser.parse_args()
+async def render_language(
+    lang: str,
+    articles: list[dict[str, Any]],
+    run_dir: Path,
+    *,
+    test_mode: bool,
+    no_upload: bool,
+) -> dict[str, Any]:
+    print(f"\n=== Rendering [{lang}] ===")
+    lang_dir = run_dir / lang
+    lang_dir.mkdir(parents=True, exist_ok=True)
 
-    from dotenv import load_dotenv
-    env_path = ROOT / "web" / ".env.local"
-    if env_path.exists():
-        load_dotenv(env_path)
-
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M")
-    run_dir = OUTPUT_DIR / f"run_{timestamp}"
-    run_dir.mkdir(parents=True, exist_ok=True)
-
-    print("=== AI News Reader Pipeline (Per-Article Wav2Lip) ===")
-    print(f"  Language: {args.lang}")
-    print(f"  Parallel workers: {args.workers}")
-    print()
-
-    # ── Step A: Get articles + generate scripts ──
-    if args.test:
-        print("[A] Using test articles...")
-        articles = [
-            {"title": "TN Assembly Election Results on May 4", "snippet": "Election Commission announces results date",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
-            {"title": "DMK Confident of Victory", "snippet": "MK Stalin expresses confidence",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
-            {"title": "TVK Vijay Asks Candidates to Stay Alert", "snippet": "Vijay urges vigilance at counting centres",
-             "ov_category": "POLITICS", "sdg_alignment": ["SDG-16"], "source_name": "Test", "source_url": ""},
-        ]
-        scripts = [
-            "தமிழ்நாடு சட்டமன்ற தேர்தல் முடிவுகள் மே 4ம் தேதி வெளியாகும் என தேர்தல் ஆணையம் அறிவித்துள்ளது." if args.lang == "ta" else "The Tamil Nadu Assembly election results will be announced on May 4th.",
-            "திமுக தலைவர் முதலமைச்சர் மு.க.ஸ்டாலின் வெற்றி நம்பிக்கையுடன் இருப்பதாக தெரிவித்துள்ளார்." if args.lang == "ta" else "DMK leader Chief Minister MK Stalin has expressed confidence of victory.",
-            "தமிழக வெற்றி கழகம் தலைவர் விஜய் வாக்கு எண்ணிக்கை மையங்களில் விழிப்புடன் இருக்குமாறு கேட்டுக்கொண்டுள்ளார்." if args.lang == "ta" else "TVK president Vijay has asked party candidates to stay alert at counting centres.",
-        ]
+    # ── Scripts ──
+    if test_mode:
+        scripts = TEST_SCRIPTS[lang][: len(articles)]
+        print(f"  [scripts] test mode — {len(scripts)} scripts")
     else:
-        print("[A] Fetching top articles from Firestore...")
-        articles = fetch_top_articles(5)
-        print(f"  Found {len(articles)} articles")
-        if not articles:
-            print("  No articles found. Exiting.")
-            return
-
-        print("[A] Extracting per-article scripts...")
-        scripts = []
+        print(f"  [scripts] extracting per-article scripts...")
+        scripts: list[str] = []
+        script_key = "consolidated_script_ta" if lang == "ta" else "consolidated_script_en"
         for i, a in enumerate(articles):
-            # Use pre-computed consolidated script from ingestion if available
-            script_key = "consolidated_script_ta" if args.lang == "ta" else "consolidated_script_en"
             pre_computed = a.get(script_key, "")
             if pre_computed:
                 scripts.append(pre_computed)
-                print(f"  Article {i+1} [consolidated]: {pre_computed[:80]}{'...' if len(pre_computed) > 80 else ''}")
+                preview = pre_computed[:80] + ("..." if len(pre_computed) > 80 else "")
+                print(f"    {i + 1} [pre]: {preview}")
             else:
-                # Fallback: generate fresh via Gemini
-                script = await generate_article_script(a, lang=args.lang)
+                script = await generate_article_script(a, lang=lang)
                 scripts.append(script)
-                print(f"  Article {i+1} [generated]: {script[:80]}{'...' if len(script) > 80 else ''}")
+                preview = script[:80] + ("..." if len(script) > 80 else "")
+                print(f"    {i + 1} [gen]: {preview}")
 
-    print()
+    # ── TTS ──
+    print(f"  [tts] generating audio...")
+    intro_text = INTRO_SCRIPT_TA if lang == "ta" else INTRO_SCRIPT_EN
+    outro_text = OUTRO_SCRIPT_TA if lang == "ta" else OUTRO_SCRIPT_EN
 
-    # ── Step B: Generate TTS audio for intro, articles, outro ──
-    print("[B] Generating TTS audio...")
-
-    intro_text = INTRO_SCRIPT_TA if args.lang == "ta" else INTRO_SCRIPT_EN
-    outro_text = OUTRO_SCRIPT_TA if args.lang == "ta" else OUTRO_SCRIPT_EN
-
-    intro_audio = run_dir / "intro.mp3"
-    await generate_tts(intro_text, intro_audio, lang=args.lang)
-    print(f"  Intro: {_get_audio_duration(intro_audio):.2f}s")
+    intro_audio = lang_dir / "intro.mp3"
+    await generate_tts(intro_text, intro_audio, lang=lang)
+    print(f"    intro: {_get_audio_duration(intro_audio):.2f}s")
 
     article_audios: list[Path] = []
     for i, script in enumerate(scripts):
-        audio_path = run_dir / f"article_{i:02d}.mp3"
-        await generate_tts(script, audio_path, lang=args.lang)
+        audio_path = lang_dir / f"article_{i:02d}.mp3"
+        await generate_tts(script, audio_path, lang=lang)
         dur = _get_audio_duration(audio_path)
-        print(f"  Article {i}: {dur:.2f}s — {articles[i].get('title', '')[:60]}")
+        title_preview = articles[i].get("title", "")[:60]
+        print(f"    article {i}: {dur:.2f}s — {title_preview}")
         article_audios.append(audio_path)
 
-    outro_audio = run_dir / "outro.mp3"
-    await generate_tts(outro_text, outro_audio, lang=args.lang)
-    print(f"  Outro: {_get_audio_duration(outro_audio):.2f}s")
+    outro_audio = lang_dir / "outro.mp3"
+    await generate_tts(outro_text, outro_audio, lang=lang)
+    print(f"    outro: {_get_audio_duration(outro_audio):.2f}s")
 
-    print()
-
-    # ── Step C: Run Wav2Lip in parallel for all clips ──
-    print("[C] Running Wav2Lip (parallel)...")
-
-    wav2lip_tasks: list[tuple[Path, Path, str]] = []
-
-    # Intro
-    wav2lip_tasks.append((intro_audio, run_dir / "intro.mp4", "intro"))
-
-    # Per-article
-    for i, audio_path in enumerate(article_audios):
-        wav2lip_tasks.append((audio_path, run_dir / f"article_{i:02d}.mp4", f"article_{i}"))
-
-    # Outro
-    wav2lip_tasks.append((outro_audio, run_dir / "outro.mp4", "outro"))
-
-    import time
-    t0 = time.time()
-    video_paths = run_wav2lip_parallel(wav2lip_tasks, max_workers=args.workers)
-    elapsed = time.time() - t0
-    print(f"  All {len(video_paths)} clips done in {elapsed:.1f}s (wall-clock)")
-
-    # video_paths order: [intro, article_0, article_1, ..., outro]
-    intro_video = video_paths[0]
-    article_videos = video_paths[1:-1]
-    outro_video = video_paths[-1]
-
-    print()
-
-    # ── Step D: Upload to GCS ──
-    if not args.no_upload:
-        print("[D] Uploading video clips to GCS...")
-        intro_url = upload_to_gcs(intro_video, "clips/intro.mp4")
-        outro_url = upload_to_gcs(outro_video, "clips/outro.mp4")
-
-        article_urls = []
-        for i, vp in enumerate(article_videos):
-            url = upload_to_gcs(vp, f"clips/article_{i:02d}.mp4")
-            article_urls.append(url)
+    # ── Upload ──
+    if not no_upload:
+        print(f"  [upload] uploading audio clips...")
+        intro_url = upload_to_gcs(intro_audio, f"clips/{lang}/intro.mp3")
+        outro_url = upload_to_gcs(outro_audio, f"clips/{lang}/outro.mp3")
+        article_urls = [
+            upload_to_gcs(ap, f"clips/{lang}/article_{i:02d}.mp3")
+            for i, ap in enumerate(article_audios)
+        ]
     else:
-        print("[D] Skipping GCS upload (--no-upload)")
-        intro_url = "/news-reader/clips/intro.mp4"
-        outro_url = "/news-reader/clips/outro.mp4"
-        article_urls = [f"/news-reader/clips/article_{i:02d}.mp4" for i in range(len(article_videos))]
+        print(f"  [upload] skipped (--no-upload)")
+        intro_url = f"/news-reader/clips/{lang}/intro.mp3"
+        outro_url = f"/news-reader/clips/{lang}/outro.mp3"
+        article_urls = [
+            f"/news-reader/clips/{lang}/article_{i:02d}.mp3"
+            for i in range(len(article_audios))
+        ]
 
-    print()
-
-    # ── Step E: Build and upload metadata ──
-    print("[E] Building metadata...")
-    meta = {
+    # ── Metadata ──
+    meta: dict[str, Any] = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "lang": args.lang,
+        "lang": lang,
         "intro": {
-            "video_url": intro_url,
+            "audio_url": intro_url,
             "duration": round(_get_audio_duration(intro_audio), 3),
         },
         "outro": {
-            "video_url": outro_url,
+            "audio_url": outro_url,
             "duration": round(_get_audio_duration(outro_audio), 3),
         },
         "articles": [],
     }
-
     for i, a in enumerate(articles):
         meta["articles"].append({
             "title": a.get("title", ""),
@@ -420,20 +291,69 @@ async def main():
             "sdg_alignment": a.get("sdg_alignment", []),
             "source_name": a.get("source_name", ""),
             "source_url": a.get("source_url", ""),
-            "video_url": article_urls[i],
+            "audio_url": article_urls[i],
             "duration": round(_get_audio_duration(article_audios[i]), 3),
         })
 
-    meta_path = run_dir / "meta.json"
+    meta_path = lang_dir / "meta.json"
     meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2))
-    print(f"  Metadata saved: {meta_path}")
 
-    if not args.no_upload:
-        upload_to_gcs(meta_path, "latest_meta.json")
+    if not no_upload:
+        upload_to_gcs(meta_path, f"latest_meta_{lang}.json")
+        print(f"  [meta] uploaded latest_meta_{lang}.json")
+    else:
+        print(f"  [meta] {meta_path}")
 
     total_dur = sum(_get_audio_duration(a) for a in [intro_audio] + article_audios + [outro_audio])
-    print(f"\n=== Done! {len(articles)} articles, total: {total_dur:.1f}s, rendered in {elapsed:.1f}s ===")
-    print(f"  Run directory: {run_dir}")
+    print(f"  done — {len(articles)} articles, total {total_dur:.1f}s")
+    return meta
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+async def main() -> None:
+    parser = argparse.ArgumentParser(description="AI News Reader — audio-only pipeline (EN + TA)")
+    parser.add_argument("--test", action="store_true", help="Use sample articles (skip Firestore + Gemini)")
+    parser.add_argument("--lang", choices=["ta", "en", "all"], default="all", help="Language (default: all)")
+    parser.add_argument("--no-upload", action="store_true", help="Skip GCS upload")
+    args = parser.parse_args()
+
+    try:
+        from dotenv import load_dotenv
+        env_path = ROOT / "web" / ".env.local"
+        if env_path.exists():
+            load_dotenv(env_path)
+    except ImportError:
+        pass
+
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M")
+    run_dir = OUTPUT_DIR / f"run_{timestamp}"
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    print("=== AI News Reader Pipeline (audio only) ===")
+    print(f"  Languages: {args.lang}")
+    print(f"  Run dir:   {run_dir}")
+
+    if args.test:
+        articles = TEST_ARTICLES
+        print(f"  Articles:  test mode, {len(articles)} sample articles")
+    else:
+        print("  Articles:  fetching from Firestore...")
+        articles = fetch_top_articles(5)
+        if not articles:
+            print("  No articles found. Exiting.")
+            return
+        print(f"  Articles:  {len(articles)} fetched")
+
+    langs = ["en", "ta"] if args.lang == "all" else [args.lang]
+    for lang in langs:
+        await render_language(
+            lang, articles, run_dir,
+            test_mode=args.test, no_upload=args.no_upload,
+        )
+
+    print(f"\n=== Done — {len(langs)} language(s), {len(articles)} articles ===")
 
 
 if __name__ == "__main__":

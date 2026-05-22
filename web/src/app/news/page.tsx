@@ -103,7 +103,7 @@ export default function NewsPage() {
 
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-8">
         {/* News Recordings */}
-        <NewsReaderPlayer lang={lang} />
+        <NewsReaderPlayer />
 
         {/* Today's News heading */}
         <div className="flex items-center justify-between">

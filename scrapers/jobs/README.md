@@ -5,6 +5,7 @@
 | Fuel prices | `fuel_refresh.py` | Monthly (1st, 01:00 IST) | Scrapes LPG/petrol/diesel from Goodreturns → new `cost_of_living_india` snapshot |
 | CoL non-fuel | `col_refresh.py` | 6-monthly (1 Apr, 1 Oct, 07:00 IST) | Scrapes Aavin dairy; flags electricity/PDS/transport for manual check → new `cost_of_living_tamil_nadu` snapshot |
 | SDG Index | `sdg_check.py` | Annual (1 Jul, 09:00 IST) | Checks for new NITI CSV; ingests if found; prints step-by-step reminder if not |
+| News reader | `news_reader_refresh.py` | Twice daily (06:00, 18:00 IST) | Generates EN + TA TTS audio broadcast (intro + top 5 articles + outro) → uploads to `gs://naatunadappu-media/news-reader/` |
 
 ## Running locally
 
@@ -12,11 +13,13 @@
 # dry-run (fetch + print, no write)
 .venv/bin/python3 scrapers/jobs/fuel_refresh.py --dry-run
 .venv/bin/python3 scrapers/jobs/col_refresh.py  --dry-run
+.venv/bin/python3 scrapers/jobs/news_reader_refresh.py --test --no-upload
 
 # actual run
 .venv/bin/python3 scrapers/jobs/fuel_refresh.py
 .venv/bin/python3 scrapers/jobs/col_refresh.py
 .venv/bin/python3 scrapers/jobs/sdg_check.py
+.venv/bin/python3 scrapers/jobs/news_reader_refresh.py
 ```
 
 ## Cloud infrastructure
@@ -26,6 +29,13 @@
 **Image:** `gcr.io/naatunadappu/kg-jobs`
 **Service account:** `301895032269-compute@developer.gserviceaccount.com`
 
+> **Heads-up:** all `gcloud` commands below assume the active project is
+> `naatunadappu`. If your default project differs (`gcloud config get-value project`),
+> either run `gcloud config set project naatunadappu` first, or append
+> `--project=naatunadappu` to every command. Otherwise builds will push to the
+> wrong registry and fail with a confusing `artifactregistry.repositories.uploadArtifacts`
+> permission error.
+
 ### Cloud Run Jobs
 
 | Job name | Entrypoint |
@@ -33,6 +43,7 @@
 | `fuel-refresh` | `python scrapers/jobs/fuel_refresh.py` |
 | `col-refresh` | `python scrapers/jobs/col_refresh.py --skip-manual-check` |
 | `sdg-check` | `python scrapers/jobs/sdg_check.py` |
+| `news-reader-refresh` | `python scrapers/jobs/news_reader_refresh.py` |
 
 ### Cloud Scheduler triggers
 
@@ -41,6 +52,9 @@
 | `fuel-refresh-monthly` | `0 1 1 * *` (1st of month, 01:00) | `fuel-refresh` |
 | `col-refresh-biannual` | `0 7 1 4,10 *` (1 Apr, 1 Oct, 07:00) | `col-refresh` |
 | `sdg-check-annual` | `0 9 1 7 *` (1 Jul, 09:00) | `sdg-check` |
+| `news-reader-twice-daily` | `0 6,18 * * *` (06:00 + 18:00 IST) | `news-reader-refresh` |
+
+All schedulers use `--time-zone=Asia/Kolkata`.
 
 ### Rebuilding the jobs image
 
@@ -52,15 +66,52 @@ gcloud builds submit --config ../cloudbuild-jobs.yaml .
 Then update each Cloud Run Job to use the new image:
 
 ```bash
-gcloud run jobs update fuel-refresh --image gcr.io/naatunadappu/kg-jobs --region asia-south1
-gcloud run jobs update col-refresh  --image gcr.io/naatunadappu/kg-jobs --region asia-south1
-gcloud run jobs update sdg-check    --image gcr.io/naatunadappu/kg-jobs --region asia-south1
+gcloud run jobs update fuel-refresh        --image gcr.io/naatunadappu/kg-jobs --region asia-south1
+gcloud run jobs update col-refresh         --image gcr.io/naatunadappu/kg-jobs --region asia-south1
+gcloud run jobs update sdg-check           --image gcr.io/naatunadappu/kg-jobs --region asia-south1
+gcloud run jobs update news-reader-refresh --image gcr.io/naatunadappu/kg-jobs --region asia-south1
 ```
 
 ### Manual execution
 
 ```bash
-gcloud run jobs execute fuel-refresh --region asia-south1 --wait
-gcloud run jobs execute col-refresh  --region asia-south1 --wait
-gcloud run jobs execute sdg-check    --region asia-south1 --wait
+gcloud run jobs execute fuel-refresh        --region asia-south1 --wait
+gcloud run jobs execute col-refresh         --region asia-south1 --wait
+gcloud run jobs execute sdg-check           --region asia-south1 --wait
+gcloud run jobs execute news-reader-refresh --region asia-south1 --wait
 ```
+
+## First-time setup for the news-reader job
+
+Run these once to create the Cloud Run Job and its Scheduler trigger. The `kg-jobs`
+image must already exist (`gcloud builds submit --config ../cloudbuild-jobs.yaml .`).
+
+```bash
+# 1) Create the Cloud Run Job
+gcloud run jobs create news-reader-refresh \
+    --image gcr.io/naatunadappu/kg-jobs \
+    --region asia-south1 \
+    --command python \
+    --args scrapers/jobs/news_reader_refresh.py \
+    --memory 1Gi \
+    --cpu 1 \
+    --max-retries 1 \
+    --task-timeout 900s \
+    --service-account 301895032269-compute@developer.gserviceaccount.com
+
+# 2) Create the Scheduler trigger (06:00 + 18:00 IST daily)
+PROJECT_ID="naatunadappu"
+PROJECT_NUMBER=$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')
+
+gcloud scheduler jobs create http news-reader-twice-daily \
+    --location=asia-south1 \
+    --schedule="0 6,18 * * *" \
+    --time-zone="Asia/Kolkata" \
+    --uri="https://asia-south1-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/${PROJECT_ID}/jobs/news-reader-refresh:run" \
+    --http-method=POST \
+    --oauth-service-account-email="${PROJECT_NUMBER}-compute@developer.gserviceaccount.com" \
+    --oauth-token-scope="https://www.googleapis.com/auth/cloud-platform"
+```
+
+Tip: trigger one manual run after creating, to confirm the audio + meta land in
+GCS before the first scheduled execution.
