@@ -22,6 +22,13 @@ from .provenance import (
     stamp_provenance,
 )
 from .rollback import SnapshotStore
+from .tools import (
+    ToolRegistry,
+    ToolResult,
+    ToolSpec,
+    UnknownTool,
+    get_registry,
+)
 
 __all__ = [
     "RunContext",
@@ -33,4 +40,9 @@ __all__ = [
     "get_default_store",
     "set_default_store",
     "SnapshotStore",
+    "ToolRegistry",
+    "ToolSpec",
+    "ToolResult",
+    "UnknownTool",
+    "get_registry",
 ]

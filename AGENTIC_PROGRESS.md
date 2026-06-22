@@ -18,7 +18,7 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 |---|---|---|---|---|
 | 1 | Schemas — Pydantic contracts + validation engine | `feat/agentic-schemas` | ✅ **Done (awaiting push)** | 21 unit/integration tests; real data files |
 | 2 | Provenance + `runs` collection | `feat/agentic-provenance` | ✅ **Done (awaiting push)** | 32 tests total; in-mem fake client + emulator recipe |
-| 3 | Tool Registry | `feat/agentic-tool-registry` | ⬜ Not started | unit |
+| 3 | Tool Registry | `feat/agentic-tool-registry` (stacked on M2) | ✅ **Done (awaiting push)** | 42 tests total; 16 tools resolve |
 | 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` | ⬜ Not started | emulator + mocked HTTP |
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` | ⬜ Not started | emulator |
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` | ⬜ Not started | unit + sample queries |
@@ -156,9 +156,59 @@ python -m agentic recent 5                       # reads it back from the emulat
 
 ---
 
-## Next up — Module 3 (Tool Registry)
+## Module 3 — Tool Registry ✅
 
-**Goal:** a single registry that wraps each scraper / transformer / loader as a
-callable tool with a uniform `run(args)` interface and typed I/O (Module 1
-schemas), so the planner/agents (Modules 4–6) can discover and invoke pipeline
-steps — each invocation wrapped automatically in a Module 2 `RunContext`.
+**Branch:** `feat/agentic-tool-registry` (stacked on `feat/agentic-provenance`)
+
+**What it delivers**
+- `agentic/tools.py` — `ToolSpec` / `ToolRegistry` / `ToolResult`.
+  - Tools are declared by **dotted import path** and resolved lazily, so the
+    registry imports nothing heavy (Playwright, Gemini, google.cloud) until a
+    tool is actually invoked.
+  - `ToolRegistry.invoke(name, args)` wraps the call in a Module-2 `RunContext`
+    (automatic provenance + `runs` record), passes args as kwargs, **validates
+    the returned docs against the Module-1 schema** of the tool's
+    `output_collection`, and returns a structured `ToolResult` (status, output,
+    output_validation, error, rows_written, run_id) instead of raising — so a
+    planner can inspect and react.
+  - Args are summarised (`list[1234]`) in the run record, never stored raw.
+- `agentic/catalog.py` — 16 tools wrapping existing transformers (pure) and
+  loaders (Firestore), tagged and annotated with reads/writes/side-effects.
+- CLI: `python -m agentic tools` lists the catalogue.
+
+**Why this shape**
+- This is the surface the autonomous agents (Modules 4-6) plan over: discover
+  tools by capability, invoke uniformly, get typed results — with every step
+  automatically audited (M2) and schema-checked (M1). M1 + M2 + M3 now compose.
+
+**Validation evidence**
+- `pytest tests/` → **42 passed** (21 M1 + 11 M2 + 10 M3).
+- All **16 catalogue tools resolve** to real callables (no path typos).
+- Real transformer invoked end-to-end (`transform.debt_history`): output
+  validated against the `debt_history` schema, run recorded.
+- Error capture, invalid-output flagging, and arg summarisation verified.
+
+**Files**
+```
+agentic/{tools,catalog}.py
+agentic/{__init__,__main__}.py   (registry exports + `tools` command)
+tests/test_tools.py
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q        # 42 passed
+python -m agentic tools           # list the 16 registered tools
+```
+
+**Push / deploy notes**
+- Additive; imports nothing heavy. No runtime/behavioural change to the app.
+
+---
+
+## Next up — Module 4 (Source Watcher)
+
+**Goal:** generalise `scrapers/jobs/sdg_check.py` into a config-driven change
+detector across sources (page-hash / "last updated" / CSV-present), emitting a
+refresh task when a source has new data — the first agent that decides *when* to
+run a tool from the Module-3 registry, recording each check as a Module-2 run.

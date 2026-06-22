@@ -2,6 +2,7 @@
 
     python -m agentic recent [N]    # list the N most recent runs (needs Firestore)
     python -m agentic demo          # offline: run a fake RunContext, print the record
+    python -m agentic tools         # list registered pipeline tools
 """
 
 from __future__ import annotations
@@ -42,6 +43,16 @@ def _cmd_demo() -> int:
     return 0
 
 
+def _cmd_tools() -> int:
+    from .tools import get_registry
+
+    for spec in get_registry().list():
+        se = ("[" + ",".join(spec.side_effects) + "]") if spec.side_effects else ""
+        writes = ("-> " + ",".join(spec.writes)) if spec.writes else ""
+        print(f"{spec.name:32} {spec.category:9} {writes} {se}")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -52,6 +63,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _cmd_recent(n)
     if argv[0] == "demo":
         return _cmd_demo()
+    if argv[0] == "tools":
+        return _cmd_tools()
     print(f"unknown command: {argv[0]}")
     return 2
 
