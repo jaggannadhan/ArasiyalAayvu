@@ -22,6 +22,13 @@ from .provenance import (
     stamp_provenance,
 )
 from .rollback import SnapshotStore
+from .sources import (
+    ChangeResult,
+    InMemorySourceStateStore,
+    SourceSpec,
+    SourceWatcher,
+    WatchReport,
+)
 from .tools import (
     ToolRegistry,
     ToolResult,
@@ -45,4 +52,9 @@ __all__ = [
     "ToolResult",
     "UnknownTool",
     "get_registry",
+    "SourceWatcher",
+    "SourceSpec",
+    "ChangeResult",
+    "WatchReport",
+    "InMemorySourceStateStore",
 ]

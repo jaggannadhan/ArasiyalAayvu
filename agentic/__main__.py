@@ -3,6 +3,8 @@
     python -m agentic recent [N]    # list the N most recent runs (needs Firestore)
     python -m agentic demo          # offline: run a fake RunContext, print the record
     python -m agentic tools         # list registered pipeline tools
+    python -m agentic sources       # list watched sources
+    python -m agentic watch         # poll sources for changes (suggest mode)
 """
 
 from __future__ import annotations
@@ -53,6 +55,26 @@ def _cmd_tools() -> int:
     return 0
 
 
+def _cmd_sources() -> int:
+    from .sources_config import get_sources
+
+    for s in get_sources():
+        print(f"{s.name:20} {s.detector:13} {s.description}")
+    return 0
+
+
+def _cmd_watch() -> int:
+    from .sources import SourceWatcher
+    from .sources_config import get_sources
+
+    report = SourceWatcher().poll(get_sources(), persist=False, act=False)
+    print(report.summary())
+    for r in report.results:
+        flag = "CHANGED" if r.changed else ("ERROR" if r.error else "ok")
+        print(f"  {flag:8} {r.source:20} {r.reason}{(' — ' + r.error) if r.error else ''}")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -65,6 +87,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _cmd_demo()
     if argv[0] == "tools":
         return _cmd_tools()
+    if argv[0] == "sources":
+        return _cmd_sources()
+    if argv[0] == "watch":
+        return _cmd_watch()
     print(f"unknown command: {argv[0]}")
     return 2
 

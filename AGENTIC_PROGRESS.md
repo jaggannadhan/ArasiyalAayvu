@@ -16,10 +16,10 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 
 | # | Module | Branch | Status | Validation |
 |---|---|---|---|---|
-| 1 | Schemas — Pydantic contracts + validation engine | `feat/agentic-schemas` | ✅ **Done (awaiting push)** | 21 unit/integration tests; real data files |
-| 2 | Provenance + `runs` collection | `feat/agentic-provenance` | ✅ **Done (awaiting push)** | 32 tests total; in-mem fake client + emulator recipe |
-| 3 | Tool Registry | `feat/agentic-tool-registry` (stacked on M2) | ✅ **Done (awaiting push)** | 42 tests total; 16 tools resolve |
-| 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` | ⬜ Not started | emulator + mocked HTTP |
+| 1 | Schemas — Pydantic contracts + validation engine | `feat/agentic-schemas` (merged to main) | ✅ **Done** | 21 unit/integration tests; real data files |
+| 2 | Provenance + `runs` collection | `feat/agentic-provenance` (merged to main) | ✅ **Done** | 32 tests total; in-mem fake client + emulator recipe |
+| 3 | Tool Registry | `feat/agentic-tool-registry` (merged to main) | ✅ **Done** | 42 tests total; 16 tools resolve |
+| 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (off main) | ✅ **Done (awaiting push)** | 53 tests total; 4 detectors, real-data poll |
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` | ⬜ Not started | emulator |
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` | ⬜ Not started | unit + sample queries |
 
@@ -206,9 +206,65 @@ python -m agentic tools           # list the 16 registered tools
 
 ---
 
-## Next up — Module 4 (Source Watcher)
+## Module 4 — Source Watcher ✅
 
-**Goal:** generalise `scrapers/jobs/sdg_check.py` into a config-driven change
-detector across sources (page-hash / "last updated" / CSV-present), emitting a
-refresh task when a source has new data — the first agent that decides *when* to
-run a tool from the Module-3 registry, recording each check as a Module-2 run.
+**Branch:** `feat/agentic-source-watcher` (off `main`, which now carries M1-M3)
+
+> **Branching switched to merge-as-you-go (#2):** M1-M3 were fast-forwarded onto
+> `main`; from M4 on, each module branches off `main` and is merged back after
+> review — no more long stacks.
+
+**What it delivers**
+- `agentic/sources.py` — generalises `scrapers/jobs/sdg_check.py` into a
+  config-driven watcher with four pluggable detectors:
+  `file_present` (new file in a dir — the sdg_check case), `http_hash`
+  (page body changed, optional `extract_regex` to cut noise), `http_header`
+  (ETag / Last-Modified), `json_field` (a JSON field changed).
+- Per-source fingerprints persist via a `SourceStateStore`
+  (`InMemory` + `Firestore` (`source_state`)), so a check is a comparison
+  against history.
+- `SourceWatcher.poll(...)` wraps the whole sweep in a Module-2 `RunContext`;
+  detector/network failures are isolated per source (one bad source never
+  aborts the sweep). Defaults to **suggest mode** (detect + report only); with
+  `act=True` it triggers the configured Module-3 registry tool, nested under the
+  poll run (parent/child run linkage).
+- `agentic/sources_config.py` — declarative catalogue (NITI SDG CSV + web, PRS
+  TN budget, Chennai fuel) mirroring the real refresh jobs.
+- Network is injected (`fetch`), so all detectors are unit-tested offline.
+- CLI: `python -m agentic sources` / `python -m agentic watch`.
+
+**Validation evidence**
+- `pytest tests/` → **53 passed** (21 M1 + 11 M2 + 10 M3 + 11 M4).
+- All four detectors verified (baseline → change), extract_regex noise-immunity,
+  error isolation (poll marked `partial`), `act=True` tool trigger with parent
+  linkage, and suggest-mode-does-not-trigger.
+- Real-data poll of `niti_sdg_csv` against `data/raw/niti_sdg/` correctly
+  reports "no new files" (the 3 known CSVs are recognised).
+
+**Files**
+```
+agentic/{sources,sources_config}.py
+agentic/{__init__,__main__}.py   (exports + sources/watch commands)
+tests/test_sources.py
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q        # 53 passed
+python -m agentic sources         # list watched sources
+python -m agentic watch           # poll (suggest mode; http sources hit network)
+```
+
+**Push / deploy notes**
+- Additive; nothing runs it automatically yet. To schedule, a future Cloud Run
+  Job can call `SourceWatcher(FirestoreSourceStateStore()).poll(get_sources())`
+  — the natural replacement for the bespoke `jobs/*_check.py` scripts.
+
+---
+
+## Next up — Module 5 (Feedback Triage)
+
+**Goal:** finally consume the `feedback` collection — classify each item
+(correction / missing-data / bug), de-dupe, and route to a review queue or a
+Module-3 tool, recording each triage decision as a Module-2 run. The first step
+of the "learn from feedback" loop.
