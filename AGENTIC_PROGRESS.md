@@ -19,8 +19,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 1 | Schemas — Pydantic contracts + validation engine | `feat/agentic-schemas` (merged to main) | ✅ **Done** | 21 unit/integration tests; real data files |
 | 2 | Provenance + `runs` collection | `feat/agentic-provenance` (merged to main) | ✅ **Done** | 32 tests total; in-mem fake client + emulator recipe |
 | 3 | Tool Registry | `feat/agentic-tool-registry` (merged to main) | ✅ **Done** | 42 tests total; 16 tools resolve |
-| 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (off main) | ✅ **Done (awaiting push)** | 53 tests total; 4 detectors, real-data poll |
-| 5 | Feedback Triage worker | `feat/agentic-feedback-triage` | ⬜ Not started | emulator |
+| 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (merged to main) | ✅ **Done** | 55 tests total; 4 detectors, real-data poll |
+| 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (off main) | ✅ **Done (awaiting push)** | 67 tests total; classify/route/dedup |
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` | ⬜ Not started | unit + sample queries |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
@@ -262,9 +262,63 @@ python -m agentic watch           # poll (suggest mode; http sources hit network
 
 ---
 
-## Next up — Module 5 (Feedback Triage)
+## Module 5 — Feedback Triage ✅
 
-**Goal:** finally consume the `feedback` collection — classify each item
-(correction / missing-data / bug), de-dupe, and route to a review queue or a
-Module-3 tool, recording each triage decision as a Module-2 run. The first step
-of the "learn from feedback" loop.
+**Branch:** `feat/agentic-feedback-triage` (off `main`)
+
+**What it delivers**
+- `agentic/feedback.py` — finally consumes the `feedback` collection (nothing
+  read it before). `FeedbackTriager`:
+  - **classifies** each item: `priority` (high/medium/low, escalated by
+    factual/severe terms), `route` (data / engineering / product — by category,
+    so a bug always goes to engineering regardless of page), and `domain` +
+    `target` + `target_collection` (what it's about, resolved from
+    `entity_context` or by parsing `page_url`, e.g. `/constituency/kolathur`).
+  - **de-duplicates** near-identical reports (category + domain + target +
+    message head) — duplicates flagged, not re-queued.
+  - **routes** by transitioning `status` `new → triaged` and attaching a
+    `triage` record (the review queue is `feedback where status==triaged`).
+  - **confidence** score reflecting how concretely the target was resolved.
+- `FeedbackStore` (InMemory + Firestore `feedback`).
+- Defaults to **suggest mode** (triage + queue only — corrections are never
+  auto-applied; they need human verification). With `act=True` + a
+  `route_tools` mapping it triggers a Module-3 tool, nested under the triage run.
+- Each sweep wrapped in a Module-2 `RunContext`. CLI: `python -m agentic triage`.
+
+**Design choice worth noting**
+- **route vs domain** are kept separate: *route* is who handles it (stable, by
+  category), *domain* is what it concerns (by page/entity). Conflating them sent
+  bug reports to the wrong queue — splitting them fixed it.
+
+**Validation evidence**
+- `pytest tests/` → **67 passed** (21 M1 + 11 M2 + 10 M3 + 13 M4 + 12 M5).
+- Classification, URL/entity target resolution, dedup, status transitions,
+  suggest-mode-no-trigger, and `act=True` tool trigger with parent linkage all
+  verified. End-to-end in-memory triage demo produces sensible queues.
+
+**Files**
+```
+agentic/feedback.py
+agentic/{__init__,__main__}.py   (exports + triage command)
+tests/test_feedback.py
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q        # 67 passed
+python -m agentic triage          # triage new feedback (needs Firestore creds)
+```
+
+**Push / deploy notes**
+- Additive; reads/updates `feedback` only when run. A future Cloud Run Job can
+  call `FeedbackTriager().run(FirestoreFeedbackStore())` on a schedule. The
+  backend could later surface `status==triaged` items in an admin view.
+
+---
+
+## Next up — Module 6 (GraphRAG vector index + cited Q&A)
+
+**Goal:** turn the deterministic knowledge graph into a retrieval surface — index
+KG nodes + manifesto text into a vector index, combine vector similarity with
+graph traversal, and expose a cited Q&A capability. The final module; makes the
+"GraphRAG" name in the README actually true.

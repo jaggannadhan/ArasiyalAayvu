@@ -5,6 +5,7 @@
     python -m agentic tools         # list registered pipeline tools
     python -m agentic sources       # list watched sources
     python -m agentic watch         # poll sources for changes (suggest mode)
+    python -m agentic triage        # triage new feedback (needs Firestore)
 """
 
 from __future__ import annotations
@@ -75,6 +76,20 @@ def _cmd_watch() -> int:
     return 0
 
 
+def _cmd_triage() -> int:
+    from .feedback import FeedbackTriager, FirestoreFeedbackStore
+
+    try:
+        report = FeedbackTriager().run(FirestoreFeedbackStore(), persist=False)
+    except Exception as exc:
+        print(f"Could not read feedback: {exc}")
+        return 1
+    print(report.summary())
+    for d in report.by_priority("high") + report.by_priority("medium"):
+        print(f"  {d.priority:6} {d.category:13} route={d.route:11} domain={d.domain} target={d.target} -> {d.recommended_action}")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -91,6 +106,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _cmd_sources()
     if argv[0] == "watch":
         return _cmd_watch()
+    if argv[0] == "triage":
+        return _cmd_triage()
     print(f"unknown command: {argv[0]}")
     return 2
 

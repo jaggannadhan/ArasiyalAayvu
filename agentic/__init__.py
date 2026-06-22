@@ -21,6 +21,12 @@ from .provenance import (
     set_default_store,
     stamp_provenance,
 )
+from .feedback import (
+    FeedbackTriager,
+    InMemoryFeedbackStore,
+    TriageDecision,
+    TriageReport,
+)
 from .rollback import SnapshotStore
 from .sources import (
     ChangeResult,
@@ -57,4 +63,8 @@ __all__ = [
     "ChangeResult",
     "WatchReport",
     "InMemorySourceStateStore",
+    "FeedbackTriager",
+    "InMemoryFeedbackStore",
+    "TriageDecision",
+    "TriageReport",
 ]
