@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -8,9 +9,52 @@ db = firestore.Client(project="naatunadappu")
 
 BATCH_SIZE = 400
 
+# Schema validation at the write boundary (Phase 0 — agent-ready data plane).
+# Controlled by env var AAYVU_SCHEMA_VALIDATION:
+#   "off"    — skip validation entirely
+#   "warn"   — validate and print a summary, never block the upload (default)
+#   "strict" — validate and raise if any document violates the contract
+_SCHEMA_VALIDATION_MODE = os.environ.get("AAYVU_SCHEMA_VALIDATION", "warn").lower()
+
+
+class SchemaValidationFailed(RuntimeError):
+    """Raised in strict mode when a batch contains contract-violating docs."""
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _validate_chunk(collection: str, chunk: list[dict]) -> None:
+    """Best-effort schema check. Never breaks an upload unless strict mode is on.
+
+    Import and any unexpected failure are swallowed so the loader keeps working
+    even if the schemas package is unavailable.
+    """
+    if _SCHEMA_VALIDATION_MODE == "off":
+        return
+    try:
+        from schemas import UnknownCollection, validate_docs
+
+        try:
+            report = validate_docs(collection, chunk)
+        except UnknownCollection:
+            return  # collection has no schema yet — nothing to check
+    except Exception:  # pragma: no cover - validation must never block writes
+        return
+
+    if report.ok and not report.warned:
+        return
+
+    print(f"  [schema] {report.summary()}")
+    for r in report.errored[:10]:
+        for e in r.errors:
+            print(f"    schema-error [{r.doc_id}] {e.loc}: {e.message}")
+
+    if _SCHEMA_VALIDATION_MODE == "strict" and not report.ok:
+        raise SchemaValidationFailed(
+            f"{len(report.errored)} doc(s) in '{collection}' failed schema validation"
+        )
 
 
 def _batch_upload(collection: str, documents: list[dict], id_field: str) -> None:
@@ -20,6 +64,8 @@ def _batch_upload(collection: str, documents: list[dict], id_field: str) -> None
     for chunk_start in range(0, total, BATCH_SIZE):
         batch = db.batch()
         chunk = documents[chunk_start: chunk_start + BATCH_SIZE]
+
+        _validate_chunk(collection, chunk)
 
         for doc in chunk:
             doc_id = str(doc[id_field])
