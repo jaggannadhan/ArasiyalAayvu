@@ -38,11 +38,24 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _default_fetch(url: str, method: str = "GET", timeout: int = 20):
+# Many government / news sites reject non-browser user-agents (e.g. goodreturns
+# returns 403). A realistic browser UA is the pragmatic default; individual
+# sources can override via params["headers"].
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
+def _default_fetch(url: str, method: str = "GET", timeout: int = 20, headers=None):
     """Lazy default fetcher (keeps `requests` out of import time)."""
     import requests  # lazy
 
-    r = requests.request(method, url, timeout=timeout)
+    merged = {**DEFAULT_HEADERS, **(headers or {})}
+    r = requests.request(method, url, timeout=timeout, headers=merged)
     return r.status_code, dict(r.headers), (r.text if method != "HEAD" else "")
 
 
@@ -185,7 +198,7 @@ class HttpHashDetector(Detector):
 
     def detect(self, spec, previous, fetch):
         url = spec.params["url"]
-        status, _headers, text = fetch(url)
+        status, _headers, text = fetch(url, headers=spec.params.get("headers"))
         if status >= 400:
             return DetectOutcome(False, f"http {status}", previous or {}, {"status": status}, error=f"http {status}")
         rx = spec.params.get("extract_regex")
@@ -208,7 +221,7 @@ class HttpHeaderDetector(Detector):
 
     def detect(self, spec, previous, fetch):
         url = spec.params["url"]
-        status, headers, _ = fetch(url, method="HEAD")
+        status, headers, _ = fetch(url, method="HEAD", headers=spec.params.get("headers"))
         if status >= 400:
             return DetectOutcome(False, f"http {status}", previous or {}, {"status": status}, error=f"http {status}")
         norm = {k.lower(): v for k, v in (headers or {}).items()}
@@ -238,7 +251,7 @@ class JsonFieldDetector(Detector):
     def detect(self, spec, previous, fetch):
         url = spec.params["url"]
         field_path = spec.params["field"]
-        status, _headers, text = fetch(url)
+        status, _headers, text = fetch(url, headers=spec.params.get("headers"))
         if status >= 400:
             return DetectOutcome(False, f"http {status}", previous or {}, {"status": status}, error=f"http {status}")
         try:

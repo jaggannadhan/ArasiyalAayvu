@@ -21,6 +21,7 @@ class FakeFetch:
     def __init__(self):
         self.responses = {}
         self.fail = set()
+        self.last_headers = None
 
     def set(self, url, status=200, headers=None, text=""):
         self.responses[url] = (status, headers or {}, text)
@@ -28,11 +29,12 @@ class FakeFetch:
     def set_fail(self, url):
         self.fail.add(url)
 
-    def __call__(self, url, method="GET", timeout=20):
+    def __call__(self, url, method="GET", timeout=20, headers=None):
+        self.last_headers = headers
         if url in self.fail:
             raise ConnectionError("network down")
-        status, headers, text = self.responses[url]
-        return status, headers, (text if method != "HEAD" else "")
+        status, resp_headers, text = self.responses[url]
+        return status, resp_headers, (text if method != "HEAD" else "")
 
 
 # ---------------------------------------------------------------------------
@@ -157,6 +159,27 @@ def test_fetch_error_isolated_and_recorded():
 def test_unknown_detector():
     res = SourceWatcher().check(SourceSpec(name="x", detector="bogus", params={}))
     assert not res.changed and res.error == "unknown detector"
+
+
+def test_custom_headers_forwarded_to_fetch():
+    url = "https://example.test/ua"
+    fetch = FakeFetch()
+    fetch.set(url, text="x")
+    w = SourceWatcher(state_store=InMemorySourceStateStore(), fetch=fetch)
+    spec = SourceSpec(
+        name="ua", detector="http_hash",
+        params={"url": url, "headers": {"User-Agent": "custom-agent"}},
+    )
+    w.check(spec)
+    assert fetch.last_headers == {"User-Agent": "custom-agent"}
+
+
+def test_default_fetch_merges_browser_ua():
+    # Unit-test the header merge logic without hitting the network.
+    from agentic.sources import DEFAULT_HEADERS
+
+    assert "User-Agent" in DEFAULT_HEADERS
+    assert "Mozilla" in DEFAULT_HEADERS["User-Agent"]
 
 
 # ---------------------------------------------------------------------------

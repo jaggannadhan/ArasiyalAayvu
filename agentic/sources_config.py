@@ -35,12 +35,14 @@ SOURCES: List[SourceSpec] = [
         description="NITI SDG index site resource changed (possible new edition).",
         tags=["sdg"],
     ),
-    # PRS budget analysis listing for Tamil Nadu (finance refresh trigger)
+    # PRS budget analysis for Tamil Nadu (finance refresh trigger).
+    # Points at the latest published analysis page (200 OK); revisions or a new
+    # edition change the body hash. Bump the year when the next edition lands.
     SourceSpec(
         name="prs_tn_budget",
         detector="http_hash",
-        params={"url": "https://prsindia.org/budgets/states/tamil-nadu"},
-        description="PRS Tamil Nadu budget-analysis page changed (new fiscal year?).",
+        params={"url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"},
+        description="PRS Tamil Nadu budget analysis changed (revision / new edition).",
         tags=["finance"],
     ),
     # Fuel prices — generalises scrapers/jobs/fuel_refresh.py
