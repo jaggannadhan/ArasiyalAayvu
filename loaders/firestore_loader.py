@@ -57,6 +57,25 @@ def _validate_chunk(collection: str, chunk: list[dict]) -> None:
         )
 
 
+def _provenance_stamp(collection: str, docs: list[dict]) -> None:
+    """Stamp ``_provenance`` on each doc and record the write on the active run.
+
+    Best-effort: if the agentic layer is unavailable or no run is active this is
+    a no-op, so uncoordinated uploads behave exactly as before.
+    """
+    try:
+        from agentic.provenance import current_run, stamp_provenance
+
+        run = current_run()
+        if run is None:
+            return
+        for d in docs:
+            stamp_provenance(d, run)
+        run.record_write(collection, len(docs))
+    except Exception:  # pragma: no cover - provenance must never block writes
+        return
+
+
 def _batch_upload(collection: str, documents: list[dict], id_field: str) -> None:
     total = len(documents)
     uploaded = 0
@@ -66,6 +85,7 @@ def _batch_upload(collection: str, documents: list[dict], id_field: str) -> None
         chunk = documents[chunk_start: chunk_start + BATCH_SIZE]
 
         _validate_chunk(collection, chunk)
+        _provenance_stamp(collection, chunk)
 
         for doc in chunk:
             doc_id = str(doc[id_field])
@@ -142,6 +162,7 @@ def upload_finance_manual(doc: dict) -> None:
     """Single-document upsert — used by the manual-link PDF utility."""
     doc["_uploaded_at"] = datetime.now(timezone.utc).isoformat()
     doc["_schema_version"] = "1.0"
+    _provenance_stamp("state_finances", [doc])
     year = doc.get("fiscal_year", "unknown")
     db.collection("state_finances").document(year).set(doc, merge=True)
     print(f"  [uploaded] state_finances/{year}")
@@ -174,6 +195,7 @@ def upload_assembly_summary(summary: dict) -> None:
     """Upload single assembly-level summary document."""
     summary["_uploaded_at"] = datetime.now(timezone.utc).isoformat()
     summary["_schema_version"] = "1.0"
+    _provenance_stamp("candidate_accountability", [summary])
     doc_id = summary.get("doc_id", "tn_assembly_2021_summary")
     db.collection("candidate_accountability").document(doc_id).set(summary, merge=True)
     print(f"  [uploaded] candidate_accountability/{doc_id}")

@@ -39,6 +39,7 @@ from .registry import (
     get_model,
     list_collections,
 )
+from .runs import CollectionWrite, RunRecordDoc
 from .socio import SocioEconomicDoc
 from .validate import (
     BatchReport,
@@ -68,6 +69,8 @@ __all__ = [
     "DepartmentalSpendingDoc",
     "SocioEconomicDoc",
     "FeedbackDoc",
+    "RunRecordDoc",
+    "CollectionWrite",
     "KGNode",
     "KGEdge",
     "KnowledgeGraphDoc",

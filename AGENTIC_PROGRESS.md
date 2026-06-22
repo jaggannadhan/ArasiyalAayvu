@@ -17,7 +17,7 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | # | Module | Branch | Status | Validation |
 |---|---|---|---|---|
 | 1 | Schemas — Pydantic contracts + validation engine | `feat/agentic-schemas` | ✅ **Done (awaiting push)** | 21 unit/integration tests; real data files |
-| 2 | Provenance + `runs` collection | `feat/agentic-provenance` | ⬜ Not started | Firestore emulator |
+| 2 | Provenance + `runs` collection | `feat/agentic-provenance` | ✅ **Done (awaiting push)** | 32 tests total; in-mem fake client + emulator recipe |
 | 3 | Tool Registry | `feat/agentic-tool-registry` | ⬜ Not started | unit |
 | 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` | ⬜ Not started | emulator + mocked HTTP |
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` | ⬜ Not started | emulator |
@@ -82,16 +82,83 @@ python -m schemas manifesto_promises data/processed/manifesto_promises_2026_dmk.
 
 ---
 
-## Next up — Module 2 (Provenance + `runs` collection)
+## Module 2 — Provenance + `runs` collection ✅
 
-**Goal:** every ingestion/transform/load run writes a structured outcome record
-(`runs` collection) and stamps provenance on the docs it produces — the audit log
-and the training signal the agents (Modules 4–6) learn from.
+**Branch:** `feat/agentic-provenance` (stacked on `feat/agentic-schemas`)
 
-**Planned scope**
-- A thin run-context wrapper (`agentic/provenance.py`) that records
-  `{tool, args, started_at, status, rows_written, errors, triggered_by}`.
-- Extend the loader to stamp `_provenance` (source run id) alongside the existing
-  `_uploaded_at` / `_schema_version`.
-- Snapshot/rollback token hook for reversible agentic writes.
-- Validate against the **Firestore emulator**.
+**What it delivers**
+- New `agentic/` package — the control-plane home.
+  - `agentic/provenance.py` — `RunContext` context manager that records every
+    pipeline run to the `runs` collection (`status`, `started/finished`,
+    `duration_s`, `rows_written`, per-collection `writes`, `errors`,
+    `parent_run_id`). Active run is discoverable via `contextvars`
+    (`current_run()` / `current_run_id()`), so scrapers need no signature change.
+  - `RunStore` interface with `FirestoreRunStore` (lazy client — no creds needed
+    to import) and `InMemoryRunStore` (tests); pluggable via
+    `get_default_store` / `set_default_store`.
+  - `agentic/rollback.py` — `SnapshotStore.snapshot(...)` / `rollback(token)` for
+    reversible writes (restores edited docs, removes newly-created ones).
+- `schemas/runs.py` — `RunRecordDoc` contract; `runs` registered in the schema
+  registry (Module 1 reused).
+- Loader now stamps `_provenance = {run_id, tool, written_at}` on every written
+  doc and auto-increments the active run's counters — best-effort, a no-op when
+  no run is active (uncoordinated uploads behave exactly as before).
+- CLI: `python -m agentic demo` (offline) and `python -m agentic recent [N]`.
+
+**Design choices**
+- Provenance/logging is best-effort everywhere: a store failure never aborts a
+  real ingestion run (same principle as Module 1's validation hook).
+- Importing `agentic.provenance` pulls in **no** GCP libraries — Firestore is
+  imported lazily inside `FirestoreRunStore` only.
+
+**Validation evidence**
+- `pytest tests/` → **32 passed** (21 M1 + 11 M2).
+- Loader integration verified with an in-memory Firestore fake mirroring the
+  real client surface (`collection/document/get/set/delete/batch`): an upload
+  inside a `RunContext` stamps `_provenance` and records `rows_written`.
+- Snapshot/rollback verified (restore + delete paths); run records validate
+  against the `runs` schema contract.
+
+**Files**
+```
+agentic/{__init__,provenance,rollback,__main__}.py
+schemas/runs.py                 (+ registry/__init__ wiring)
+loaders/firestore_loader.py     (provenance stamping + auto row-count)
+tests/test_provenance.py
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q                 # 32 passed
+python -m agentic demo                      # prints a sample run record
+```
+
+**Verify against the Firestore emulator (optional, matches dev preference)**
+```bash
+gcloud beta emulators firestore start --host-port=localhost:8085 &
+export FIRESTORE_EMULATOR_HOST=localhost:8085
+export GOOGLE_CLOUD_PROJECT=naatunadappu
+python - <<'PY'
+from agentic import RunContext
+from agentic.provenance import FirestoreRunStore, set_default_store
+set_default_store(FirestoreRunStore())          # writes to the emulator
+with RunContext(tool="smoke", trigger="manual") as r:
+    r.record_write("manifesto_promises", 3)
+print("wrote run", r.run_id)
+PY
+python -m agentic recent 5                       # reads it back from the emulator
+```
+
+**Push / deploy notes**
+- Additive; no behavioural change unless code runs inside a `RunContext`.
+- The loader stamps `_provenance` only when a run is active — safe to merge
+  before any scraper is wrapped.
+
+---
+
+## Next up — Module 3 (Tool Registry)
+
+**Goal:** a single registry that wraps each scraper / transformer / loader as a
+callable tool with a uniform `run(args)` interface and typed I/O (Module 1
+schemas), so the planner/agents (Modules 4–6) can discover and invoke pipeline
+steps — each invocation wrapped automatically in a Module 2 `RunContext`.
