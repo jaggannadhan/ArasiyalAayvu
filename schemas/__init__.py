@@ -15,8 +15,8 @@ Quick start::
 
 CLI::
 
-    python -m schemas.validate manifesto_promises data/processed/manifesto_promises_2026_dmk.json
-    python -m schemas.validate --list
+    python -m schemas manifesto_promises data/processed/manifesto_promises_2026_dmk.json
+    python -m schemas --list
 """
 
 from ._base import Confidence, CriminalSeverity, EducationTier, FirestoreDoc

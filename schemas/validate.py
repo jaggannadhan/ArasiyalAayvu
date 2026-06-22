@@ -16,8 +16,8 @@ Errors vs. warnings
 
 CLI
 ---
-    python -m schemas.validate <collection> <path-to-json> [--strict]
-    python -m schemas.validate --list
+    python -m schemas <collection> <path-to-json> [--strict]
+    python -m schemas --list
 
 The JSON file may contain a single object, a list of objects, or a dict keyed
 by id (as ``elections.json`` / ``alliances.json`` are) — all are handled.

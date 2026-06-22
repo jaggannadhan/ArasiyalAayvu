@@ -45,7 +45,7 @@ provenance/run-log (2), and tool registry (3).
 - A non-breaking, opt-in validation hook at the single write boundary
   (`loaders/firestore_loader._batch_upload`), controlled by
   `AAYVU_SCHEMA_VALIDATION = off | warn | strict` (default `warn`).
-- CLI: `python -m schemas.validate <collection> <path.json> [--strict]`.
+- CLI: `python -m schemas <collection> <path.json> [--strict]`.
 
 **Design choices**
 - `extra="allow"` on every model so new fields and loader metadata
@@ -72,7 +72,7 @@ requirements-dev.txt
 ```bash
 pip install -r requirements-dev.txt
 python -m pytest tests/test_schemas.py -q
-python -m schemas.validate manifesto_promises data/processed/manifesto_promises_2026_dmk.json
+python -m schemas manifesto_promises data/processed/manifesto_promises_2026_dmk.json
 ```
 
 **Push / deploy notes**
