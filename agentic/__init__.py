@@ -27,6 +27,14 @@ from .feedback import (
     TriageDecision,
     TriageReport,
 )
+from .graphrag import (
+    AnswerResult,
+    GraphRAG,
+    HashingEmbedder,
+    VectorIndex,
+    answer_question,
+    build_local_index,
+)
 from .rollback import SnapshotStore
 from .sources import (
     ChangeResult,
@@ -67,4 +75,10 @@ __all__ = [
     "InMemoryFeedbackStore",
     "TriageDecision",
     "TriageReport",
+    "GraphRAG",
+    "HashingEmbedder",
+    "VectorIndex",
+    "AnswerResult",
+    "build_local_index",
+    "answer_question",
 ]

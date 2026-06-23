@@ -20,8 +20,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 2 | Provenance + `runs` collection | `feat/agentic-provenance` (merged to main) | ✅ **Done** | 32 tests total; in-mem fake client + emulator recipe |
 | 3 | Tool Registry | `feat/agentic-tool-registry` (merged to main) | ✅ **Done** | 42 tests total; 16 tools resolve |
 | 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (merged to main) | ✅ **Done** | 55 tests total; 4 detectors, real-data poll |
-| 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (off main) | ✅ **Done (awaiting push)** | 67 tests total; classify/route/dedup |
-| 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` | ⬜ Not started | unit + sample queries |
+| 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (merged to main) | ✅ **Done** | 67 tests total; classify/route/dedup |
+| 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (off main) | ✅ **Done (awaiting push)** | 78 tests total; real-data ask + /api/ask |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -316,9 +316,78 @@ python -m agentic triage          # triage new feedback (needs Firestore creds)
 
 ---
 
-## Next up — Module 6 (GraphRAG vector index + cited Q&A)
+## Module 6 — GraphRAG vector index + cited Q&A ✅
 
-**Goal:** turn the deterministic knowledge graph into a retrieval surface — index
-KG nodes + manifesto text into a vector index, combine vector similarity with
-graph traversal, and expose a cited Q&A capability. The final module; makes the
-"GraphRAG" name in the README actually true.
+**Branch:** `feat/agentic-graphrag` (off `main`)
+
+**What it delivers**
+- `agentic/graphrag.py` — makes the README's "GraphRAG" real.
+  - **Embedder** (pluggable): `HashingEmbedder` — deterministic, offline,
+    whole-word + char 3/4-gram hashing so morphological variants overlap
+    (farmer~farmers, loan~loans); `VertexEmbedder` for production (lazy).
+  - **VectorIndex** — in-memory numpy cosine search (sub-10ms at this scale),
+    JSON save/load.
+  - **GraphRAG** — builds records from KG nodes + manifesto promises, retrieves
+    by similarity, then **expands KG hits through graph neighbours** for context;
+    answers are **extractive + cited by default**, with an optional pluggable
+    `GeminiSynthesizer` (grounded, cite-only prompt).
+  - Persists index **+ adjacency** together; `build_local_index` / `answer_question`
+    convenience for CLI and the API.
+- `GET /api/ask?q=&k=&synth=` added to `web/backend_api/main.py` — loads the
+  index from GCS (`graphrag/latest.json`) with a local fallback, cached 1h.
+- CLI: `python -m agentic build-index` and `python -m agentic ask "..."`.
+
+**Validation evidence**
+- `pytest tests/` → **78 passed** (21 M1 + 11 M2 + 10 M3 + 13 M4 + 12 M5 + 11 M6).
+- Real-data build: **8,760 records** (6,871 KG nodes + 1,889 promises) indexed
+  offline in ~2s. `ask "loan waiver for farmers"` and `"monthly cash assistance
+  for women"` return the right promises across parties, with citations and SDG
+  graph-neighbour expansion.
+- A modeling fix mid-build: pure exact-token hashing missed word variants and
+  matched on stopwords — added stopword removal + char n-grams (caught by the
+  ranking test before it shipped).
+
+**Files**
+```
+agentic/graphrag.py
+agentic/{__init__,__main__}.py        (exports + build-index/ask commands)
+web/backend_api/main.py               (GET /api/ask endpoint)
+tests/test_graphrag.py
+.gitignore                            (ignore generated data/processed/graphrag_index.json)
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q                       # 78 passed
+python -m agentic build-index                     # 8,760 records -> data/processed/
+python -m agentic ask "free bus travel for women"
+# backend endpoint (dev, run from repo root so `agentic` is importable):
+make run-be   # then: curl "localhost:8000/api/ask?q=loan%20waiver%20for%20farmers"
+```
+
+**⚠️ Deployment wiring required for /api/ask (not done here — needs your infra)**
+The backend image is built from the `web/` context, so it does **not** contain
+the repo-root `agentic/` package or the index. Before the endpoint works in prod:
+1. `COPY agentic/ ./agentic/` (and `numpy`) into `web/backend_api/Dockerfile`,
+   or pip-install the repo into the image.
+2. Build the index and upload it:
+   `python -m agentic build-index` →
+   `gsutil cp data/processed/graphrag_index.json gs://naatunadappu-media/graphrag/latest.json`
+   (use `VertexEmbedder` for production-quality embeddings; the endpoint
+   reconstructs the matching embedder from the index's stored model name).
+The endpoint is defensive: until then it returns a 503, never crashing the app.
+
+---
+
+## ✅ All six modules complete
+
+Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built, each on
+its own branch, each validated end-to-end. **78 tests** across the suite. The
+deterministic data plane is now agent-ready: typed contracts (M1), provenance +
+reversible writes (M2), a uniform tool surface (M3), change detection (M4), a
+feedback learning loop (M5), and GraphRAG retrieval/Q&A (M6) — all composing,
+all defaulting to safe "suggest" behaviour with opt-in `act`.
+
+**Remaining (future phases, not in this batch):** scheduling the watcher/triage
+as Cloud Run Jobs, wiring `/api/ask` into the frontend, the Self-Healing and
+Bridge-Rule-Learner agents, and promoting proven workflows from suggest → auto.

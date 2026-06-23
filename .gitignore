@@ -13,3 +13,6 @@ data/processed/news_reader/*.mp3
 data/processed/news_reader/*_meta.json
 data/processed/news_reader/_*
 data/assets/reader_video.mp4
+
+# GraphRAG generated vector index (Module 6) — rebuild with `python -m agentic build-index`
+data/processed/graphrag_index.json

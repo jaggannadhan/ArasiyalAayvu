@@ -6,6 +6,8 @@
     python -m agentic sources       # list watched sources
     python -m agentic watch         # poll sources for changes (suggest mode)
     python -m agentic triage        # triage new feedback (needs Firestore)
+    python -m agentic build-index   # build the GraphRAG vector index (offline)
+    python -m agentic ask "..."     # ask a cited question over the KG + manifestos
 """
 
 from __future__ import annotations
@@ -90,6 +92,29 @@ def _cmd_triage() -> int:
     return 0
 
 
+def _cmd_build_index() -> int:
+    from .graphrag import DEFAULT_INDEX_PATH, build_local_index
+
+    rag = build_local_index()
+    print(f"Built index: {len(rag.index.records)} records, dim={rag.index.dim} "
+          f"({rag.embedder.name}) -> {DEFAULT_INDEX_PATH}")
+    return 0
+
+
+def _cmd_ask(question: str) -> int:
+    from .graphrag import DEFAULT_INDEX_PATH, GraphRAG, build_local_index
+
+    import os
+
+    if os.path.exists(DEFAULT_INDEX_PATH):
+        rag = GraphRAG.load(DEFAULT_INDEX_PATH)
+    else:
+        print("(no prebuilt index — building one in memory...)")
+        rag = build_local_index(out_path=None)
+    print(rag.answer(question, k=5).answer)
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -108,6 +133,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _cmd_watch()
     if argv[0] == "triage":
         return _cmd_triage()
+    if argv[0] == "build-index":
+        return _cmd_build_index()
+    if argv[0] == "ask":
+        if len(argv) < 2:
+            print('usage: python -m agentic ask "your question"')
+            return 2
+        return _cmd_ask(" ".join(argv[1:]))
     print(f"unknown command: {argv[0]}")
     return 2
 

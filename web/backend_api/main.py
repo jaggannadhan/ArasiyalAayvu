@@ -1084,6 +1084,91 @@ def knowledge_graph():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# GraphRAG — cited Q&A over the KG + manifestos (Module 6 of the agentic layer)
+# ─────────────────────────────────────────────────────────────────────────────
+
+_graphrag_cache: Dict[str, Any] = {"rag": None, "ts": 0.0}
+
+
+def _load_graphrag(GraphRAG):
+    """Load the GraphRAG index from GCS (prod) or a local file (dev)."""
+    import os
+    import tempfile
+
+    try:
+        from google.cloud import storage
+
+        blob = storage.Client(project=PROJECT_ID).bucket("naatunadappu-media").blob(
+            "graphrag/latest.json"
+        )
+        if blob.exists():
+            tmp = os.path.join(tempfile.gettempdir(), "graphrag_latest.json")
+            blob.download_to_filename(tmp)
+            return GraphRAG.load(tmp)
+    except Exception:
+        pass
+
+    local = ROOT_DIR.parent / "data" / "processed" / "graphrag_index.json"
+    if local.exists():
+        return GraphRAG.load(str(local))
+    raise HTTPException(
+        status_code=503,
+        detail="GraphRAG index not found — build it and upload graphrag/latest.json to GCS.",
+    )
+
+
+@app.get("/api/ask")
+def ask(
+    q: str = Query(..., min_length=3, max_length=500),
+    k: int = Query(5, ge=1, le=20),
+    synth: str = Query("extractive"),
+) -> Dict[str, Any]:
+    """Cited Q&A over the knowledge graph + manifestos. Extractive by default;
+    pass synth=gemini (or set GRAPHRAG_SYNTH=gemini) for LLM synthesis."""
+    import os
+    import sys
+    import time
+
+    # The agentic package lives at the repo root. In dev (uvicorn run from the
+    # repo root) it is importable; the container image must COPY agentic/ in.
+    repo_root = str(ROOT_DIR.parent)
+    if repo_root not in sys.path:
+        sys.path.insert(0, repo_root)
+    try:
+        from agentic.graphrag import GeminiSynthesizer, GraphRAG
+    except Exception as exc:  # package not bundled
+        raise HTTPException(status_code=503, detail=f"GraphRAG unavailable: {exc}") from exc
+
+    now = time.time()
+    rag = _graphrag_cache["rag"]
+    if rag is None or now - _graphrag_cache["ts"] > 3600:
+        rag = _load_graphrag(GraphRAG)
+        _graphrag_cache.update(rag=rag, ts=now)
+
+    synthesizer = None
+    if synth == "gemini" or os.environ.get("GRAPHRAG_SYNTH") == "gemini":
+        synthesizer = GeminiSynthesizer()
+
+    res = rag.answer(q, k=k, synthesizer=synthesizer)
+    return {
+        "question": res.question,
+        "answer": res.answer,
+        "citations": res.citations,
+        "hits": [
+            {
+                "id": h.id,
+                "kind": h.kind,
+                "score": h.score,
+                "text": h.text,
+                "citation": h.citation,
+                "neighbors": h.neighbors,
+            }
+            for h in res.hits
+        ],
+    }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Graph Query API — runtime traversal over the KG
 # ─────────────────────────────────────────────────────────────────────────────
 
