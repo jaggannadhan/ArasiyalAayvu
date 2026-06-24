@@ -418,11 +418,19 @@ main.py                              (RunContext wrap of task dispatch)
 tests/test_jobs.py
 ```
 
-**What still needs your infra (can't be done/tested in the dev sandbox)**
-- `gcloud builds submit --config cloudbuild-agentic-jobs.yaml .` then create the
-  Cloud Run Jobs + Scheduler triggers (commands in `agentic/jobs/README.md`).
-- For `/api/ask`: run `graphrag-build-index`, then make `agentic` importable in
-  the backend image (build-context change *or* vendor) — verify with `make run-be`.
+**Deployed (confirmed live in `naatunadappu`):**
+- `agentic-jobs` image built + pushed; Cloud Run Jobs `agentic-watch`,
+  `agentic-triage`, `graphrag-build-index` created; Scheduler triggers ENABLED;
+  `run.invoker` granted to the runtime SA.
+- Manual executions succeeded — `python -m agentic recent` shows
+  `build_index_job` (8,795 records), `source_watcher.poll`, and
+  `feedback_triage.run` all recorded. The index is published to
+  `gs://naatunadappu-media/graphrag/latest.json`.
+
+**`/api/ask` wiring (done in code):** `agentic/graphrag.py` is vendored into
+`web/backend_api/graphrag.py` (byte-identical, guarded by a sync test) and the
+endpoint imports it; `numpy` added to backend requirements. **Remaining: redeploy
+the backend** (`cloudbuild.yaml`) and verify with `make run-be`.
 
 ---
 

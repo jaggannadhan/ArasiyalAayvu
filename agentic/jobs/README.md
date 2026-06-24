@@ -27,8 +27,15 @@ the existing `kg-jobs` or backend images.
 
 ### 1. Build the image
 
+> **Heads-up:** these commands assume the active project is `naatunadappu`.
+> Check with `gcloud config get-value project`. If it differs (e.g. `brawnedw`),
+> the build runs in the wrong project and the push fails with a confusing
+> `artifactregistry.repositories.uploadArtifacts` permission error. Either run
+> `gcloud config set project naatunadappu` first, or append `--project=naatunadappu`
+> to every command below.
+
 ```bash
-gcloud builds submit --config cloudbuild-agentic-jobs.yaml .
+gcloud builds submit --project=naatunadappu --config cloudbuild-agentic-jobs.yaml .
 ```
 
 ### 2. Create the Cloud Run Jobs
@@ -88,20 +95,22 @@ gcloud run jobs execute graphrag-build-index --region asia-south1 --wait
 # → writes gs://naatunadappu-media/graphrag/latest.json
 ```
 
-**b) Make `agentic` available to the backend image.** The backend currently
-builds from the `web/` context, which excludes the repo-root `agentic/` package.
-Apply ONE of:
+**b) Backend can serve it — already wired.** `agentic/graphrag.py` is fully
+self-contained (numpy + stdlib), so it is **vendored** into
+`web/backend_api/graphrag.py` (kept byte-identical by
+`tests/test_backend_graphrag_sync.py`) and the endpoint imports the local copy.
+No build-context change is needed; `numpy` is added to the backend requirements.
 
-- *Preferred:* change the backend build context to the repo root —
-  in `cloudbuild.yaml` drop `dir: 'web'`, set the context to `.`, and use
-  `-f web/backend_api/Dockerfile`; then add to `web/backend_api/Dockerfile`:
-  `COPY agentic/ ./agentic/  &&  COPY schemas/ ./schemas/` and add `numpy` to
-  `web/backend_api/requirements.txt`.
-- *Or:* vendor a copy of `agentic/graphrag.py` (+ its deps) under `web/backend_api/`.
+So to go live you just **redeploy the backend** with the current code:
+```bash
+gcloud builds submit --project=naatunadappu --config cloudbuild.yaml .
+# (verify locally first)  make run-be
+#   curl "localhost:8000/api/ask?q=loan%20waiver%20for%20farmers"
+```
 
-> These backend-build changes touch a live deploy and could not be tested in the
-> dev sandbox — verify locally first: run `make run-be` from the repo root and
-> `curl "localhost:8000/api/ask?q=loan%20waiver%20for%20farmers"`.
+> If you ever edit `agentic/graphrag.py`, re-copy it to the backend
+> (`cp agentic/graphrag.py web/backend_api/graphrag.py`) — the sync test fails
+> otherwise. The query embedder must match the one the index was built with.
 
 ---
 

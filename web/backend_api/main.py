@@ -1126,17 +1126,14 @@ def ask(
     """Cited Q&A over the knowledge graph + manifestos. Extractive by default;
     pass synth=gemini (or set GRAPHRAG_SYNTH=gemini) for LLM synthesis."""
     import os
-    import sys
     import time
 
-    # The agentic package lives at the repo root. In dev (uvicorn run from the
-    # repo root) it is importable; the container image must COPY agentic/ in.
-    repo_root = str(ROOT_DIR.parent)
-    if repo_root not in sys.path:
-        sys.path.insert(0, repo_root)
+    # graphrag.py is vendored from the repo-root agentic package (kept
+    # byte-identical — see tests/test_backend_graphrag_sync.py) so the backend
+    # image needs no build-context change.
     try:
-        from agentic.graphrag import GeminiSynthesizer, GraphRAG
-    except Exception as exc:  # package not bundled
+        from .graphrag import GeminiSynthesizer, GraphRAG
+    except Exception as exc:  # numpy missing, etc.
         raise HTTPException(status_code=503, detail=f"GraphRAG unavailable: {exc}") from exc
 
     now = time.time()
