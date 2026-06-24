@@ -126,6 +126,46 @@ def test_pluggable_synthesizer_used():
 
 
 # ---------------------------------------------------------------------------
+# dedup: KG-node copy of a promise collapses into the promise doc
+# ---------------------------------------------------------------------------
+
+
+def _rag_with_duplicate_promise():
+    # A manifesto promise appears BOTH as a KG node (promise:p1) and a promise doc (p1).
+    nodes = [
+        {"id": "promise:p1", "type": "manifesto_item", "label": "Free bus travel for women"},
+        {"id": "sdg:5", "type": "sdg_goal", "label": "SDG 5: Gender Equality"},
+    ]
+    edges = [{"source": "promise:p1", "target": "sdg:5", "verb": "targets_goal"}]
+    promises = [
+        {"doc_id": "p1", "party_id": "dmk", "target_year": 2026, "category": "Women",
+         "scheme_name": "Free Bus", "promise_text_en": "Free bus travel for women.",
+         "manifesto_pdf_page": 3},
+    ]
+    return GraphRAG.build_from_sources(HashingEmbedder(dim=256), nodes=nodes, edges=edges, promises=promises)
+
+
+def test_dedup_collapses_promise_node_into_doc():
+    rag = _rag_with_duplicate_promise()
+    hits = rag.retrieve("free bus travel for women", k=5)
+    ids = [h.id for h in hits]
+    # p1 appears once, and as the promise doc (not the KG node)
+    assert ids.count("p1") == 1
+    assert "promise:p1" not in ids
+    p1 = next(h for h in hits if h.id == "p1")
+    assert p1.kind == "promise"
+    # the promise doc inherited the KG node's SDG neighbour
+    assert any("SDG 5" in n for n in p1.neighbors)
+
+
+def test_dedup_keeps_distinct_nodes():
+    rag = _sample_rag()  # party + constituency nodes, distinct promises
+    hits = rag.retrieve("DMK Kolathur agriculture", k=5)
+    ids = [h.id for h in hits]
+    assert len(ids) == len(set(ids))  # no accidental collapsing
+
+
+# ---------------------------------------------------------------------------
 # persistence (index + adjacency)
 # ---------------------------------------------------------------------------
 

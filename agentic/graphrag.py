@@ -299,23 +299,67 @@ class GraphRAG:
 
     # -- query ---------------------------------------------------------------
 
-    def retrieve(self, question: str, k: int = 5, *, expand: bool = True) -> List[Hit]:
+    @staticmethod
+    def _dedup_key(rec: Dict[str, Any]):
+        """A manifesto promise is indexed twice — as a KG node (id ``promise:<doc_id>``)
+        and as a promise doc (id ``<doc_id>``). Map both to the same key so they
+        collapse; everything else stays unique."""
+        rid = rec.get("id")
+        if rec.get("kind") == "promise":
+            return ("promise", rid)
+        if isinstance(rid, str) and rid.startswith("promise:"):
+            return ("promise", rid.split("promise:", 1)[1])
+        return ("node", rid)
+
+    def _neighbors_for(self, rec: Dict[str, Any]) -> List[str]:
+        """Adjacency for a record, also checking the ``promise:<id>`` KG node so a
+        promise doc inherits its SDG neighbours even if the node wasn't retrieved."""
+        ids = [rec.get("id")]
+        if rec.get("kind") == "promise":
+            ids.append(f"promise:{rec.get('id')}")
+        out: List[str] = []
+        for i in ids:
+            for n in self.adjacency.get(i, []):
+                if n not in out:
+                    out.append(n)
+        return out
+
+    def retrieve(self, question: str, k: int = 5, *, expand: bool = True,
+                 pool: Optional[int] = None) -> List[Hit]:
         qv = self.embedder.embed_one(question)
-        hits: List[Hit] = []
-        for score, rec in self.index.search(qv, k):
-            neighbors = self.adjacency.get(rec["id"], [])[:5] if expand else []
-            hits.append(
-                Hit(
-                    id=rec["id"],
-                    kind=rec["kind"],
-                    score=round(score, 4),
-                    text=rec["text"],
-                    citation=rec["citation"],
-                    meta=rec.get("meta", {}),
-                    neighbors=neighbors,
-                )
+        # Over-fetch so dedup doesn't shrink the result below k.
+        pool = pool if pool is not None else max(k * 4, 20)
+
+        groups: Dict[Any, Dict[str, Any]] = {}
+        for score, rec in self.index.search(qv, pool):
+            key = self._dedup_key(rec)
+            nbrs = self._neighbors_for(rec) if expand else []
+            g = groups.get(key)
+            if g is None:
+                groups[key] = {"rec": rec, "score": score, "neighbors": list(nbrs)}
+            else:
+                if score > g["score"]:
+                    g["score"] = score
+                # prefer the promise doc as representative (carries the page cite)
+                if rec.get("kind") == "promise" and g["rec"].get("kind") != "promise":
+                    g["rec"] = rec
+                for n in nbrs:
+                    if n not in g["neighbors"]:
+                        g["neighbors"].append(n)
+
+        ranked = sorted(groups.values(), key=lambda g: -g["score"])[:k]
+        return [
+            Hit(
+                id=g["rec"]["id"],
+                kind=g["rec"]["kind"],
+                score=round(g["score"], 4),
+                text=g["rec"]["text"],
+                citation=g["rec"]["citation"],
+                meta=g["rec"].get("meta", {}),
+                neighbors=g["neighbors"][:5],
             )
-        return hits
+            for g in ranked
+        ]
 
     def answer(
         self,

@@ -22,7 +22,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (merged to main) | ✅ **Done** | 55 tests total; 4 detectors, real-data poll |
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (merged to main) | ✅ **Done** | 67 tests total; classify/route/dedup |
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (merged to main) | ✅ **Done** | 78 tests total; real-data ask + /api/ask |
-| 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (off main) | ✅ **Done (awaiting push)** | 82 tests total; isolated agentic-jobs image |
+| 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (merged + deployed) | ✅ **Done** | 83 tests; jobs scheduled, /api/ask live in prod |
+| 8 | GraphRAG retrieval dedup | `feat/agentic-graphrag-dedup` (off main) | ✅ **Done (awaiting push)** | 85 tests; collapses KG-node/promise-doc overlap |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -434,7 +435,39 @@ the backend** (`cloudbuild.yaml`) and verify with `make run-be`.
 
 ---
 
-## ✅ All seven modules complete
+## Module 8 — GraphRAG retrieval dedup ✅
+
+**Branch:** `feat/agentic-graphrag-dedup` (off `main`)
+
+**What it delivers** — a query-time fix in `GraphRAG.retrieve()`: a manifesto
+promise is indexed both as a KG node (`promise:<doc_id>`) and a promise doc
+(`<doc_id>`), so results showed it twice. Now retrieve over-fetches a pool,
+groups the two representations by `doc_id`, keeps the **promise doc** as the
+representative (it carries the page citation), and **merges the KG node's SDG
+neighbours** onto it. Non-promise nodes are untouched.
+
+- No index rebuild needed (query-time only); the published index stays valid.
+- Only the **backend** needs redeploy (vendored `graphrag.py` re-synced; guard
+  test keeps the two copies identical). The agentic-jobs image doesn't use
+  `retrieve()`, so it needs no rebuild.
+
+**Validation evidence**
+- `pytest tests/` → **85 passed** (+ dedup collapse test, + distinct-nodes test).
+- Demo: result that was a duplicate KG-node copy is now a distinct promise doc
+  with a page citation and inherited SDG neighbours.
+
+**Files**
+```
+agentic/graphrag.py            (retrieve dedup + _dedup_key/_neighbors_for)
+web/backend_api/graphrag.py    (re-synced vendored copy)
+tests/test_graphrag.py         (dedup tests)
+```
+
+**To go live:** redeploy the backend (build + `gcloud run deploy`).
+
+---
+
+## ✅ All eight modules complete
 
 Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built (M1-M6)
 and wired to run on a schedule (M7), each on its own branch, each validated
