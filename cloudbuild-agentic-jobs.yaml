@@ -1,0 +1,16 @@
+# Build the agentic-jobs image from the repo root (so agentic/ + schemas/ +
+# loaders/ + transformers/ are all in the build context).
+#
+#   gcloud builds submit --config cloudbuild-agentic-jobs.yaml .
+#
+steps:
+  - name: 'gcr.io/cloud-builders/docker:20.10.24'
+    args:
+      - build
+      - -f
+      - agentic/jobs/Dockerfile
+      - -t
+      - gcr.io/naatunadappu/agentic-jobs
+      - .
+images:
+  - gcr.io/naatunadappu/agentic-jobs

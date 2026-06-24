@@ -320,31 +320,47 @@ def main() -> None:
     parser.add_argument("--upload", action="store_true", help="[manual-pdf] Upload to Firestore after parsing")
     args = parser.parse_args()
 
-    if args.task == "static":
-        run_static_upload()
-    elif args.task == "finance":
-        run_finance(args.years)
-    elif args.task == "manual-pdf":
-        if not args.year:
-            parser.error("--year is required for manual-pdf task")
-        run_manual_pdf(args.pdf, args.url, args.year, args.upload)
-    elif args.task == "socio":
-        run_socio()
-    elif args.task == "accountability":
-        run_accountability()
-    elif args.task == "awareness":
-        run_socio()
-        run_accountability()
-    elif args.task == "manifesto":
-        run_manifesto()
-    else:
+    # Record this run for provenance (agentic Module 2). Guarded so the ETL
+    # never depends on the agentic layer being present or Firestore being up.
+    try:
+        from agentic.provenance import RunContext
 
-        if args.task in ("all", "scrape"):
-            run_scrape()
-        if args.task in ("all", "transform"):
-            run_transform()
-        if args.task in ("all", "upload"):
-            run_upload()
+        _run = RunContext(
+            tool=f"main:{args.task}",
+            trigger="cli",
+            args={k: v for k, v in vars(args).items() if v is not None},
+        )
+    except Exception:
+        from contextlib import nullcontext
+
+        _run = nullcontext()
+
+    with _run:
+        if args.task == "static":
+            run_static_upload()
+        elif args.task == "finance":
+            run_finance(args.years)
+        elif args.task == "manual-pdf":
+            if not args.year:
+                parser.error("--year is required for manual-pdf task")
+            run_manual_pdf(args.pdf, args.url, args.year, args.upload)
+        elif args.task == "socio":
+            run_socio()
+        elif args.task == "accountability":
+            run_accountability()
+        elif args.task == "awareness":
+            run_socio()
+            run_accountability()
+        elif args.task == "manifesto":
+            run_manifesto()
+        else:
+
+            if args.task in ("all", "scrape"):
+                run_scrape()
+            if args.task in ("all", "transform"):
+                run_transform()
+            if args.task in ("all", "upload"):
+                run_upload()
 
 
 if __name__ == "__main__":

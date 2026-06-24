@@ -21,7 +21,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 3 | Tool Registry | `feat/agentic-tool-registry` (merged to main) | ✅ **Done** | 42 tests total; 16 tools resolve |
 | 4 | Source Watcher (generalize `sdg_check`) | `feat/agentic-source-watcher` (merged to main) | ✅ **Done** | 55 tests total; 4 detectors, real-data poll |
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (merged to main) | ✅ **Done** | 67 tests total; classify/route/dedup |
-| 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (off main) | ✅ **Done (awaiting push)** | 78 tests total; real-data ask + /api/ask |
+| 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (merged to main) | ✅ **Done** | 78 tests total; real-data ask + /api/ask |
+| 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (off main) | ✅ **Done (awaiting push)** | 82 tests total; isolated agentic-jobs image |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -379,10 +380,57 @@ The endpoint is defensive: until then it returns a 503, never crashing the app.
 
 ---
 
-## ✅ All six modules complete
+## Module 7 — Activation (deploy + scheduling) ✅
 
-Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built, each on
-its own branch, each validated end-to-end. **78 tests** across the suite. The
+**Branch:** `feat/agentic-activation` (off `main`)
+
+**What it delivers** — turns the six tested libraries into something that runs.
+- `agentic/jobs/` — three Cloud Run Job entrypoints with testable cores
+  (injected deps) + thin `main()` wrappers:
+  - `watch_job` — Source Watcher poll against `FirestoreSourceStateStore` +
+    `FirestoreRunStore`.
+  - `triage_job` — Feedback Triage against `FirestoreFeedbackStore`.
+  - `build_index_job` — rebuild GraphRAG index from GCS KG + Firestore promises,
+    upload `graphrag/latest.json` (HashingEmbedder default, `--vertex` for prod).
+  - All **suggest-mode by default**; `--act` opts into triggering; `--dry-run`
+    is read-only.
+- A **new isolated image** `gcr.io/naatunadappu/agentic-jobs`
+  (`agentic/jobs/Dockerfile` + `cloudbuild-agentic-jobs.yaml`, repo-root context)
+  — does not touch the existing `kg-jobs` or backend images.
+- `agentic/jobs/README.md` — build + Cloud Run Job + Scheduler commands, and the
+  exact steps to activate `/api/ask` (publish the index; make `agentic`
+  available to the backend image).
+- `main.py` now wraps every ETL task in a `RunContext` (guarded — falls back to
+  a nullcontext if the agentic layer is absent), activating provenance for the
+  existing pipeline.
+
+**Validation evidence**
+- `pytest tests/` → **82 passed** (78 + 4 job-core tests). `main.py` and all job
+  modules compile.
+- Job cores tested offline with in-memory stores + injected sources/upload;
+  each records its run.
+
+**Files**
+```
+agentic/jobs/{__init__,watch_job,triage_job,build_index_job,Dockerfile,requirements.txt,README.md}
+cloudbuild-agentic-jobs.yaml
+main.py                              (RunContext wrap of task dispatch)
+tests/test_jobs.py
+```
+
+**What still needs your infra (can't be done/tested in the dev sandbox)**
+- `gcloud builds submit --config cloudbuild-agentic-jobs.yaml .` then create the
+  Cloud Run Jobs + Scheduler triggers (commands in `agentic/jobs/README.md`).
+- For `/api/ask`: run `graphrag-build-index`, then make `agentic` importable in
+  the backend image (build-context change *or* vendor) — verify with `make run-be`.
+
+---
+
+## ✅ All seven modules complete
+
+Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built (M1-M6)
+and wired to run on a schedule (M7), each on its own branch, each validated
+end-to-end. **82 tests** across the suite. The
 deterministic data plane is now agent-ready: typed contracts (M1), provenance +
 reversible writes (M2), a uniform tool surface (M3), change detection (M4), a
 feedback learning loop (M5), and GraphRAG retrieval/Q&A (M6) — all composing,

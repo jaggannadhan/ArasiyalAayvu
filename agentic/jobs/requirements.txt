@@ -1,0 +1,8 @@
+# Dependencies for the agentic-jobs Cloud Run image.
+pydantic>=2
+numpy>=1.26
+requests>=2.31
+google-cloud-firestore>=2.16
+google-cloud-storage>=2.16
+# Optional — only needed for `build_index_job --vertex` (Vertex AI embeddings):
+# google-cloud-aiplatform>=1.60
