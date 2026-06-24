@@ -23,7 +23,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 5 | Feedback Triage worker | `feat/agentic-feedback-triage` (merged to main) | ✅ **Done** | 67 tests total; classify/route/dedup |
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (merged to main) | ✅ **Done** | 78 tests total; real-data ask + /api/ask |
 | 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (merged + deployed) | ✅ **Done** | 83 tests; jobs scheduled, /api/ask live in prod |
-| 8 | GraphRAG retrieval dedup | `feat/agentic-graphrag-dedup` (off main) | ✅ **Done (awaiting push)** | 85 tests; collapses KG-node/promise-doc overlap |
+| 8 | GraphRAG retrieval dedup | `feat/agentic-graphrag-dedup` (merged to main) | ✅ **Done** | 85 tests; collapses KG-node/promise-doc overlap |
+| 9 | Critic / Verifier — data-quality gate | `feat/agentic-verifier` (off main) | ✅ **Done (awaiting push)** | 98 tests; range/outlier/consistency/hallucination |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -467,7 +468,58 @@ tests/test_graphrag.py         (dedup tests)
 
 ---
 
-## ✅ All eight modules complete
+## Module 9 — Critic / Verifier (data-quality gate) ✅
+
+**Branch:** `feat/agentic-verifier` (off `main`)
+
+**What it delivers** — `agentic/quality.py`: report-only checks on data *values*
+(M1 only checks structure). Four check types, config-driven and pluggable:
+- **RangeCheck** — numeric bounds per (collection, field): percentages 0–100,
+  non-negative assets/counts, debt-to-GSDP 0–100, plausible `target_year`, etc.
+- **OutlierCheck** — IQR fences (with a σ fallback for degenerate spreads) flag
+  statistical outliers as *info*.
+- **ConsistencyCheck** — cross-field rules: `net_assets == assets − liabilities`,
+  `is_crorepati == (assets ≥ 1 Cr)`, `criminal_severity` matches case count,
+  socio `percent` values in 0–100.
+- **ManifestoHallucinationCheck** — the class of bug that once produced
+  "200 TASMAC outlets" for an anti-liquor party: empty/too-short promise text,
+  or an amount stated while the cost note says "data unavailable".
+
+`Verifier` aggregates into a `QualityReport` (info / warning / error). It never
+modifies or blocks data — findings go to a `quality_findings` collection via the
+job, for human review. Errors mark the run `partial` (visible in `agentic recent`).
+
+- Job: `agentic/jobs/verify_job.py` (testable core + Firestore wiring).
+- CLI: `python -m agentic verify <collection> <path.json>`.
+
+**Validation evidence**
+- `pytest tests/` → **98 passed** (+13 quality tests).
+- On real data: 0 false errors; `candidate_accountability` surfaces 23 *info*
+  outliers (genuinely high-asset MLAs); `party_accountability` / `debt_history`
+  clean.
+
+**Files**
+```
+agentic/quality.py
+agentic/jobs/verify_job.py
+agentic/{__init__,__main__}.py   (exports + verify command)
+tests/test_quality.py
+```
+
+**How to verify locally**
+```bash
+python -m pytest tests/ -q
+python -m agentic verify candidate_accountability data/processed/mla_winners.json
+```
+
+**Deploy (optional, same image):** the `agentic-jobs` image already contains it
+once rebuilt — create a `data-verify` Cloud Run Job
+(`--args agentic.jobs.verify_job`) + a daily Scheduler trigger (see
+`agentic/jobs/README.md`).
+
+---
+
+## ✅ All nine modules complete
 
 Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built (M1-M6)
 and wired to run on a schedule (M7), each on its own branch, each validated

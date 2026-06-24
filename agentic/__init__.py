@@ -21,6 +21,13 @@ from .provenance import (
     set_default_store,
     stamp_provenance,
 )
+from .quality import (
+    Finding,
+    QualityReport,
+    Verifier,
+    default_verifier,
+    verify_docs,
+)
 from .feedback import (
     FeedbackTriager,
     InMemoryFeedbackStore,
@@ -81,4 +88,9 @@ __all__ = [
     "AnswerResult",
     "build_local_index",
     "answer_question",
+    "Verifier",
+    "QualityReport",
+    "Finding",
+    "default_verifier",
+    "verify_docs",
 ]

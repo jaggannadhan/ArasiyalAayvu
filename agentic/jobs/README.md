@@ -9,6 +9,7 @@ mode** unless you pass `--act`.
 | Source Watcher | `python -m agentic.jobs.watch_job` | Daily 05:00 IST | Detect new data across configured sources; persist fingerprints + a run record. `--act` triggers configured tools. |
 | Feedback Triage | `python -m agentic.jobs.triage_job` | Daily 07:00 IST | Classify/route/de-dupe new `feedback`; move `new → triaged`. `--act` triggers tools for routed items. |
 | GraphRAG Index | `python -m agentic.jobs.build_index_job --vertex` | Weekly / after data refresh | Rebuild the index from GCS KG + Firestore promises; upload `graphrag/latest.json`. |
+| Data Verify | `python -m agentic.jobs.verify_job` | Daily 06:00 IST | Range/outlier/consistency/hallucination checks; write `quality_findings` (report-only). |
 
 ## Local dry-run (no writes)
 
@@ -54,6 +55,11 @@ gcloud run jobs create agentic-triage \
 gcloud run jobs create graphrag-build-index \
   --image gcr.io/naatunadappu/agentic-jobs --region asia-south1 \
   --memory 1Gi --args agentic.jobs.build_index_job \
+  --service-account 301895032269-compute@developer.gserviceaccount.com
+
+gcloud run jobs create data-verify \
+  --image gcr.io/naatunadappu/agentic-jobs --region asia-south1 \
+  --args agentic.jobs.verify_job \
   --service-account 301895032269-compute@developer.gserviceaccount.com
 ```
 
