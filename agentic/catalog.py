@@ -165,6 +165,44 @@ _SPECS = [
         side_effects=["firestore"],
         tags=["election"],
     ),
+    # ---- refresh (composite: scrape -> transform -> load, argument-free) ----
+    ToolSpec(
+        name="refresh.finance",
+        summary="Full finance pipeline: PRS budget -> state finances/debt/spending.",
+        category="refresh",
+        path="agentic.refresh:refresh_finance",
+        writes=["state_finances", "debt_history", "departmental_spending"],
+        side_effects=["network", "firestore"],
+        tags=["finance"],
+    ),
+    ToolSpec(
+        name="refresh.socio",
+        summary="Full socio pipeline: ASER -> socio_economics.",
+        category="refresh",
+        path="agentic.refresh:refresh_socio",
+        writes=["socio_economics"],
+        side_effects=["network", "firestore"],
+        tags=["socio"],
+    ),
+    ToolSpec(
+        name="refresh.accountability",
+        summary="Full accountability pipeline: MyNeta -> candidate/party accountability.",
+        category="refresh",
+        path="agentic.refresh:refresh_accountability",
+        writes=["candidate_accountability", "party_accountability"],
+        side_effects=["network", "firestore"],
+        tags=["accountability"],
+    ),
+    ToolSpec(
+        name="refresh.political_history",
+        summary="Full political-history pipeline: scrape -> transform -> upload.",
+        category="refresh",
+        path="agentic.refresh:refresh_political_history",
+        writes=["assembly_elections", "alliances", "political_parties",
+                "leaders", "chief_ministers", "achievements"],
+        side_effects=["network", "firestore"],
+        tags=["election"],
+    ),
 ]
 
 
