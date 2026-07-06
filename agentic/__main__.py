@@ -10,6 +10,7 @@
     python -m agentic ask "..."     # ask a cited question over the KG + manifestos
     python -m agentic verify <collection> <path.json>   # data-quality check a file
     python -m agentic refresh <domain>   # run a refresh.* pipeline (finance/socio/...)
+    python -m agentic plan "<goal>" tool1 tool2 ...   # build a plan DAG (no execution)
 """
 
 from __future__ import annotations
@@ -153,6 +154,28 @@ def _cmd_refresh(domain: str) -> int:
     return 0 if result.ok else 1
 
 
+def _cmd_plan(goal: str, tools: List[str]) -> int:
+    from .planner import PlanError, Planner
+
+    try:
+        plan = Planner().plan(goal, tools)
+    except PlanError as exc:
+        print(f"cannot plan: {exc}")
+        return 2
+    print(f"Plan {plan.plan_id}  ({plan.status}, mode={plan.mode})")
+    print(f"  goal: {plan.goal}")
+    for i, stage in enumerate(plan.stages()):
+        parallel = " (parallel)" if len(stage) > 1 else ""
+        print(f"  stage {i}{parallel}:")
+        for t in stage:
+            deps = ", ".join(d.split(":", 1)[-1] for d in t.depends_on) or "-"
+            writes = ",".join(t.writes) or "-"
+            print(f"    {t.tool:26} risk={t.risk:6} after=[{deps}] writes={writes}")
+    if plan.requires_approval:
+        print("  → awaiting approval (nothing executed)")
+    return 0
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -188,6 +211,11 @@ def main(argv: Optional[List[str]] = None) -> int:
             print("usage: python -m agentic refresh <domain>")
             return 2
         return _cmd_refresh(argv[1])
+    if argv[0] == "plan":
+        if len(argv) < 3:
+            print('usage: python -m agentic plan "<goal>" tool1 tool2 ...')
+            return 2
+        return _cmd_plan(argv[1], argv[2:])
     print(f"unknown command: {argv[0]}")
     return 2
 

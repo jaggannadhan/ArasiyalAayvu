@@ -25,7 +25,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (merged + deployed) | ✅ **Done** | 83 tests; jobs scheduled, /api/ask live in prod |
 | 8 | GraphRAG retrieval dedup | `feat/agentic-graphrag-dedup` (merged to main) | ✅ **Done** | 85 tests; collapses KG-node/promise-doc overlap |
 | 9 | Critic / Verifier — data-quality gate | `feat/agentic-verifier` (merged to main) | ✅ **Done** | 98 tests; range/outlier/consistency/hallucination |
-| 10 | Refresh (composite) tools | `feat/agentic-refresh-tools` (off main) | ✅ **Done (awaiting push)** | 104 tests; 4 argument-free domain pipelines |
+| 10 | Refresh (composite) tools | `feat/agentic-refresh-tools` (merged to main) | ✅ **Done** | 104 tests; 4 argument-free domain pipelines |
+| 11 | Plans schema + plan-only planner | `feat/agentic-orchestrator-planner` (off main) | ✅ **Done (awaiting push)** | 115 tests; DAG derivation, cycle check, approval gate |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -563,7 +564,49 @@ image (which already has them).
 
 ---
 
-## ✅ All ten modules complete
+## Module 11 — Plans/plan_tasks schema + plan-only planner ✅
+
+**Branch:** `feat/agentic-orchestrator-planner` (off `main`)
+
+**What it delivers** — the first piece of the Orchestrator: it **plans, does not
+execute**.
+- `schemas/plans.py` — `PlanDoc` + `PlanTaskDoc` (the two new collections from the
+  ER sketch), registered in the schema registry.
+- `agentic/planner.py` — `Plan` / `PlanTask` + `Planner`:
+  - Takes a goal expressed as a set of registry tools and **derives the DAG
+    edges from each tool's `reads`/`writes` metadata** (M3) — a task that reads a
+    collection depends on the task that writes it.
+  - Topological sort (Kahn) with **cycle detection** (`PlanCycleError`) and
+    **stage** assignment (parallelizable bands).
+  - **Risk + approval gate**: tasks writing high-risk collections
+    (candidate/party accountability, politician profiles, manifestos) are `high`
+    and force `awaiting_approval` even in `act` mode; `suggest` always awaits.
+  - Persists to `plans`/`plan_tasks` via `PlanStore` (InMemory + Firestore).
+    Executes nothing.
+- CLI: `python -m agentic plan "<goal>" tool1 tool2 …`.
+
+**Validation evidence**
+- `pytest tests/` → **115 passed** (+11 planner tests): edge derivation, parallel
+  stages, cycle rejection, risk/approval gating, schema conformance.
+- Demo: `plan refresh.accountability transform.party_accountability` derives the
+  stage 0 → stage 1 dependency; three independent refreshes collapse to one
+  parallel stage — all `awaiting_approval`, nothing run.
+
+**Files**
+```
+schemas/plans.py               (+ registry/__init__ wiring)
+agentic/planner.py
+agentic/{__init__,__main__}.py  (exports + plan command)
+tests/test_planner.py
+```
+
+**Next (not built):** the executor — walk the DAG, run each task as a Module-2
+run, react to schema/verifier results, roll back on failure. Deferred per your
+"talk about the orchestrator later".
+
+---
+
+## ✅ All eleven modules complete
 
 Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built (M1-M6)
 and wired to run on a schedule (M7), each on its own branch, each validated

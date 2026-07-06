@@ -42,6 +42,13 @@ from .graphrag import (
     answer_question,
     build_local_index,
 )
+from .planner import (
+    InMemoryPlanStore,
+    Plan,
+    Planner,
+    PlanCycleError,
+    PlanTask,
+)
 from .rollback import SnapshotStore
 from .sources import (
     ChangeResult,
@@ -93,4 +100,9 @@ __all__ = [
     "Finding",
     "default_verifier",
     "verify_docs",
+    "Planner",
+    "Plan",
+    "PlanTask",
+    "PlanCycleError",
+    "InMemoryPlanStore",
 ]

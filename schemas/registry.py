@@ -28,6 +28,7 @@ from .political import (
     PartyAccountabilityDoc,
     PoliticianProfileDoc,
 )
+from .plans import PlanDoc, PlanTaskDoc
 from .runs import RunRecordDoc
 from .socio import SocioEconomicDoc
 
@@ -45,6 +46,8 @@ COLLECTION_MODELS: Dict[str, Type[FirestoreDoc]] = {
     "socio_economics": SocioEconomicDoc,
     "feedback": FeedbackDoc,
     "runs": RunRecordDoc,
+    "plans": PlanDoc,
+    "plan_tasks": PlanTaskDoc,
 }
 
 # Collection name -> document id field (mirrors firestore_loader) ----------
@@ -61,6 +64,8 @@ ID_FIELDS: Dict[str, str] = {
     "socio_economics": "metric_id",
     "feedback": None,  # Firestore auto-id
     "runs": "run_id",
+    "plans": "plan_id",
+    "plan_tasks": "task_id",
 }
 
 # (collection, field) -> observed value domain (soft warning if outside) ---

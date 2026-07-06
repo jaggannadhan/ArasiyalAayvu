@@ -39,6 +39,7 @@ from .registry import (
     get_model,
     list_collections,
 )
+from .plans import PlanDoc, PlanTaskDoc
 from .runs import CollectionWrite, RunRecordDoc
 from .socio import SocioEconomicDoc
 from .validate import (
@@ -71,6 +72,8 @@ __all__ = [
     "FeedbackDoc",
     "RunRecordDoc",
     "CollectionWrite",
+    "PlanDoc",
+    "PlanTaskDoc",
     "KGNode",
     "KGEdge",
     "KnowledgeGraphDoc",
