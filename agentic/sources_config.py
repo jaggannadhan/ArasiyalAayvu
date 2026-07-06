@@ -43,9 +43,6 @@ SOURCES: List[SourceSpec] = [
         detector="http_hash",
         params={"url": "https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2025-26"},
         description="PRS Tamil Nadu budget analysis changed (revision / new edition).",
-        # Wired for --act: when this changes, the watcher can trigger a finance
-        # refresh. Inert in suggest mode (the default).
-        on_change_tool="refresh.finance",
         tags=["finance"],
     ),
     # Fuel prices — generalises scrapers/jobs/fuel_refresh.py

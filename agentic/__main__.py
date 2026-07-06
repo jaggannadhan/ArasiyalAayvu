@@ -9,7 +9,6 @@
     python -m agentic build-index   # build the GraphRAG vector index (offline)
     python -m agentic ask "..."     # ask a cited question over the KG + manifestos
     python -m agentic verify <collection> <path.json>   # data-quality check a file
-    python -m agentic refresh <domain>   # run a refresh.* pipeline (finance/socio/...)
 """
 
 from __future__ import annotations
@@ -137,22 +136,6 @@ def _cmd_verify(collection: str, path: str) -> int:
     return 0
 
 
-def _cmd_refresh(domain: str) -> int:
-    from .tools import UnknownTool, get_registry
-
-    name = domain if domain.startswith("refresh.") else f"refresh.{domain}"
-    try:
-        result = get_registry().invoke(name, trigger="cli")
-    except UnknownTool:
-        avail = [s.name for s in get_registry().list(category="refresh")]
-        print(f"unknown refresh tool: {name}. Available: {avail}")
-        return 2
-    print(f"{name}: {result.status} (run {result.run_id}, rows={result.rows_written})")
-    if result.error:
-        print(f"  error: {result.error}")
-    return 0 if result.ok else 1
-
-
 def main(argv: Optional[List[str]] = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv or argv[0] in {"-h", "--help"}:
@@ -183,11 +166,6 @@ def main(argv: Optional[List[str]] = None) -> int:
             print("usage: python -m agentic verify <collection> <path.json>")
             return 2
         return _cmd_verify(argv[1], argv[2])
-    if argv[0] == "refresh":
-        if len(argv) < 2:
-            print("usage: python -m agentic refresh <domain>")
-            return 2
-        return _cmd_refresh(argv[1])
     print(f"unknown command: {argv[0]}")
     return 2
 
