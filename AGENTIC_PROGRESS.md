@@ -24,7 +24,8 @@ its own `feat/*` branch, validated end-to-end, then handed off for push + deploy
 | 6 | GraphRAG vector index + cited Q&A | `feat/agentic-graphrag` (merged to main) | ✅ **Done** | 78 tests total; real-data ask + /api/ask |
 | 7 | Activation — Cloud Run Jobs + provenance wiring | `feat/agentic-activation` (merged + deployed) | ✅ **Done** | 83 tests; jobs scheduled, /api/ask live in prod |
 | 8 | GraphRAG retrieval dedup | `feat/agentic-graphrag-dedup` (merged to main) | ✅ **Done** | 85 tests; collapses KG-node/promise-doc overlap |
-| 9 | Critic / Verifier — data-quality gate | `feat/agentic-verifier` (off main) | ✅ **Done (awaiting push)** | 98 tests; range/outlier/consistency/hallucination |
+| 9 | Critic / Verifier — data-quality gate | `feat/agentic-verifier` (merged to main) | ✅ **Done** | 98 tests; range/outlier/consistency/hallucination |
+| 10 | Refresh (composite) tools | `feat/agentic-refresh-tools` (off main) | ✅ **Done (awaiting push)** | 104 tests; 4 argument-free domain pipelines |
 
 Dependency order: **1 → 2 → 3 → (4, 5) → 6**. Modules 4–6 consume the schemas (1),
 provenance/run-log (2), and tool registry (3).
@@ -519,7 +520,50 @@ once rebuilt — create a `data-verify` Cloud Run Job
 
 ---
 
-## ✅ All nine modules complete
+## Module 10 — Refresh (composite) tools ✅
+
+**Branch:** `feat/agentic-refresh-tools` (off `main`)
+
+**What it delivers** — `agentic/refresh.py`: four **argument-free, end-to-end**
+pipeline tools (the granularity a Source Watcher trigger / the future
+Orchestrator actually wants, vs. the fine-grained transform/load steps):
+`refresh.finance`, `refresh.socio`, `refresh.accountability`,
+`refresh.political_history`. Each wraps the existing `main.py` orchestration —
+no logic duplicated — with lazy imports (importing the module pulls in nothing
+heavy) and injectable run hooks (so the wrapper logic is unit-tested without
+scraping / Firestore).
+
+- Registered in the catalogue as a new `refresh` category with
+  `writes` + `side_effects=[network, firestore]` metadata.
+- The `prs_tn_budget` source is now wired `on_change_tool="refresh.finance"` —
+  **inert in suggest mode**, ready for when you enable `--act`.
+- CLI: `python -m agentic refresh <domain>`.
+
+**Validation evidence**
+- `pytest tests/` → **104 passed** (+6 refresh tests): wrapper call/order,
+  catalogue registration, lazy resolution, source wiring.
+
+**Files**
+```
+agentic/refresh.py
+agentic/catalog.py            (4 refresh tools)
+agentic/sources_config.py     (prs_tn_budget on_change_tool)
+agentic/__main__.py           (refresh command)
+tests/test_refresh.py
+```
+
+**⚠️ Execution-environment note** — because refresh tools run the scrapers, they
+must execute in an image containing `scrapers/` + `main.py` + the full
+`requirements.txt` (Playwright, Gemini, pdfplumber, …). The current
+`agentic-jobs` image does **not** include those. This doesn't matter yet
+(triggering is deferred with `--act`), but before the watcher/orchestrator can
+actually run a refresh you'll either extend the `agentic-jobs` image to include
+`scrapers/` + `main.py` + root requirements, or run refreshes from the `kg-jobs`
+image (which already has them).
+
+---
+
+## ✅ All ten modules complete
 
 Phase 0-2 of the agentic roadmap (`architecture.md` Part II) are built (M1-M6)
 and wired to run on a schedule (M7), each on its own branch, each validated
